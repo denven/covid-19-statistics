@@ -36,9 +36,10 @@ export default function ButtonAppBar() {
               <li className="area">China</li> 
               <li className="area">Canada</li>
               <li className="area">Global</li>            
+              <li className="area">News</li>            
           </ul>
           <Typography variant="h6" className={classes.title}>
-            News
+            {/* News */}
           </Typography>
           <Button color="inherit">
             <a href="https://github.com/denven/Smart-Retailer">

@@ -1,14 +1,22 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
+
+import AppBar from './components/AppBar';
+import MapChina from './components/MapChina';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>
+    <div>
+      <AppBar />
+      <div className="bodyContainer">
+        <div className="bodyLeft">
+          <MapChina data=""/>
+        </div>
+        <div className="bodyRight">LineChart</div>
+      </div>
     </div>
   );
 }
+
 
 export default App;
