@@ -1,17 +1,31 @@
 .bodyContainer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bodyTop {
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.bodyBottom {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #C0C0C0;
+    width: 100%;
+    height: 90%;
+    /* background-color: #C0C0C0; */
 }
 
 .bodyLeft {
     /* display: flex; */
-    width: 55%;
+    width: 50%;
 }
 
 .bodyRight {
-    width: 45%;
+    width: 50%;
 }
 
 /* .App {
