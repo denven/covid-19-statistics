@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/title';
-import { height } from '@material-ui/system';
 
 import axios from 'axios';
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
-// import 'echarts/map/json/province/'
 
 export default function MapChina() {
   const [data, setData] = useState([]);
@@ -24,8 +20,7 @@ export default function MapChina() {
     axios.get('http://www.dzyong.top:3005/yiqing/province').then((provinces) => {
       const tempData = provinces.data.data.map(p => ( 
         { name: p.provinceName, value: p.confirmedNum })
-      );
-      console.log(tempData);      
+      );    
       setData(tempData);
     }).catch(e => { console.log('Request province data in China', e) })
   },[])
@@ -35,7 +30,7 @@ export default function MapChina() {
       // backgroundColor: '#C0C0C0',
       title:  {
           x: 'center',
-          text: 'COVID-19 Statistics in China',
+          text: 'Cases by Province in China',
           subtext: 'Data from https://ncov.dxy.cn/',
           sublink: 'https://ncov.dxy.cn/ncovh5/view/pneumonia',
           // right: '10px',
@@ -67,6 +62,7 @@ export default function MapChina() {
         itemHeight: 10,
         textStyle: { fontSize: 12, fontWeight: 'bold' }
       },
+      toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
           return (

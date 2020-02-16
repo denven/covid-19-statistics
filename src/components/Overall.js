@@ -10,7 +10,6 @@ export default function OverallData (props) {
     .then((total) => {
         const {date, diagnosed, suspect, cured, death} = total.data.data[0];
         // {dayjs(modifyTime).format('YYYY-MM-DD HH:mm');
-        console.log(total);
         setData({ 
           time: date,
           confirmed: diagnosed, 
@@ -19,17 +18,17 @@ export default function OverallData (props) {
           death: death,
           fatality: (100 * death / (diagnosed + cured)).toFixed(2) + '%'
         }) ;
-    }).catch(e => { console.log('Request province data in China', e) })
+    }).catch(e => { console.log('Request latest overall data in China', e) })
   },[])
 
   return (
     <>
       <div>As of: <span className="dataTime">{data.time}</span></div>
-      <div>Confirmed Cases: <span className="confirmedNumber">{data.confirmed}</span></div>
-      <div>Suspected Cases: <span className="suspectedNumber">{data.suspect}</span></div>
-      <div>Cured Cases: <span className="curedNumber">{data.cured}</span></div>
-      <div>Death:<span className="deathNumber">{data.death}</span></div>
-      <div>Fatality Rate: <span className="fatalityNumber">{data.fatality}</span></div>
+      <div>Presumptive: <span className="confirmedNumber">{data.confirmed}</span></div>
+      <div>Suspected: <span className="suspectedNumber">{data.suspect}</span></div>
+      <div>Recovered: <span className="curedNumber">{data.cured}</span></div>
+      <div>Deaths:<span className="deathNumber">{data.death}</span></div>
+      <div>Lethality: <span className="fatalityNumber">{data.fatality}</span></div>
     </>
 
   );
