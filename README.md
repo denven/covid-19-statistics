@@ -1,8 +1,10 @@
 
-## packages
+## A web app use material ui and echarts to represent statistics of coronavirus in the world.
 
-npm install @material-ui/core
-npm install @material-ui/icons
+## Todo
 
-npm install echarts-for-react
-npm install echarts
+### deployment
+### canada data 
+### world data
+### news feeds
+### optimize
