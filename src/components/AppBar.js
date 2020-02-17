@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Route, Switch} from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,6 +15,10 @@ import MapGlobal from './MapGlobal';
 import OverallData from './Overall';
 import ChinaTrend  from './LineChart';
 
+import axios from 'axios';
+import moment from 'moment';
+import { filter, pick } from 'lodash';
+
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1, },
   menuButton: { marginRight: theme.spacing(2), },
@@ -26,7 +30,7 @@ function Home() {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData />
+        <OverallData showGlobal={false}/>
       </div>
       <div className="bodyBottom">
         <div className="bodyLeft"> <MapChina/> </div>
@@ -37,10 +41,11 @@ function Home() {
 }       
 
 function Global() {
+
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData />
+        <OverallData showGlobal={true}/>
       </div>
       <div className="bodyBottom">   
       <div className="bodyGlobalMap">
