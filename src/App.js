@@ -1,30 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';
+import AppBar from './components/AppBar';
 import './styles/App.css';
 
-import AppBar from './components/AppBar';
-import MapChina from './components/MapChina';
-import MapGlobal from './components/MapGlobal';
-
-import OverallData from './components/Overall';
-import ChinaTrend  from './components/LineChart';
-
-function App() {
+export default function App() {
   return (
     <div>
-      <AppBar />
-            {/* <MapGlobal data=""/> */}
-      <div className="bodyContainer">
-        <div className="bodyTop">     
-          <OverallData />
-        </div>
-        <div className="bodyBottom">
-          <div className="bodyLeft"> <MapChina/> </div>
-          <div className="bodyRight"> <ChinaTrend/> </div>
-        </div>
-      </div>
+      <Router>
+        <AppBar />
+      </Router>
     </div>
   );
 }
 
-
-export default App;

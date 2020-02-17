@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
+import 'echarts/lib/chart/line';
 
 import axios from 'axios';
-import 'echarts/lib/chart/line';
-import {map, reverse} from 'lodash';
+import { map } from 'lodash';
 
 export default function ChinaTrend() {
   

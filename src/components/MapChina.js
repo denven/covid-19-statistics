@@ -8,13 +8,14 @@ import titleize from 'titleize';
 
 export default function MapChina() {
   const [data, setData] = useState([]);
+  // const [ready, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
 
   useEffect(() => {
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
       echarts.registerMap('china-', map.default)  
-    },[])    
-  })
+    },[]);
+  }, [])
 
   useEffect(() => {
     axios.get('http://www.dzyong.top:3005/yiqing/province').then((provinces) => {
@@ -24,6 +25,10 @@ export default function MapChina() {
       setData(tempData);
     }).catch(e => { console.log('Request province data in China', e) })
   },[])
+
+  const onChartReady = (chart) => {
+    setTimeout(() => { chart.hideLoading(); }, 1000);
+  };
 
   const getOption = () => {
     return {
@@ -108,10 +113,11 @@ export default function MapChina() {
       style={{height: "600px"}}
       echarts={echarts}
       option={getOption()}
+      onChartReady={onChartReady}
+      showLoading={true}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
-      // onChartReady={this.onChartReadyCallback}
       // onEvents={EventsDict}
       // opts={} 
     />

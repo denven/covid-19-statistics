@@ -1,7 +1,15 @@
-ul {list-style: none;}
+ul li {
+    list-style: none;
+} /* hide li bullet */
 
-.area {
-    float: left; 
+li {
+    float: left; /* let li be horizonal */
     padding: 0 40px;
     /* display: inline; */
 }
+
+li:hover {
+    height: 100%;
+	background-color:#0099bf; 
+}
+    
