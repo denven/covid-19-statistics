@@ -13,11 +13,8 @@ import '../styles/AppBar.css'
 import MapChina from './MapChina';
 import MapGlobal from './MapGlobal';
 import OverallData from './Overall';
-import ChinaTrend  from './LineChart';
-
-import axios from 'axios';
-import moment from 'moment';
-import { filter, pick } from 'lodash';
+import ChinaTrend from './LineChart';
+import TableGlobal from './TableGlobal';
 
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1, },
@@ -51,7 +48,9 @@ function Global() {
       <div className="bodyGlobalMap">
         <MapGlobal />
       </div>    
-      <div className="bodyGlobalTable"></div>
+      <div className="bodyGlobalTable">
+        <TableGlobal />
+      </div>
       </div>
     </div>
   )
