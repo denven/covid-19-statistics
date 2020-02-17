@@ -8,11 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+
 import '../styles/AppBar.css'
-
 import MapChina from './MapChina';
-// import MapGlobal from './MapGlobal';
-
+import MapGlobal from './MapGlobal';
 import OverallData from './Overall';
 import ChinaTrend  from './LineChart';
 
@@ -36,6 +35,22 @@ function Home() {
     </div>
   )
 }       
+
+function Global() {
+  return (
+    <div className="bodyContainer">
+      <div className="bodyTop">     
+        <OverallData />
+      </div>
+      <div className="bodyBottom">   
+      <div className="bodyGlobalMap">
+        <MapGlobal />
+      </div>    
+      <div className="bodyGlobalTable"></div>
+      </div>
+    </div>
+  )
+}  
 
 function Navigator() {
   const classes = useStyles();
@@ -73,9 +88,9 @@ export default function TopAppBar() {
       {/* Router Configuration */}
       <Switch>
           <Route exact path="/" component={Home}></Route>
-          {/* <Route path="/canada" component={Classes}></Route>
-          <Route path="/global" component={Mine}></Route>
-          <Route path="/news" component={Notfound}></Route> */}
+          {/* <Route path="/canada" component={Canada}></Route> */}
+          <Route path="/global" component={Global}></Route>
+          {/* <Route path="/news" component={News}></Route> */}
       </Switch>
     </div>
   );

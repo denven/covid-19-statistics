@@ -5,6 +5,8 @@
 
 ### deployment
 ### canada data 
+### REACT ROUTER
 ### world data
+### add logo in title
 ### news feeds
 ### optimize

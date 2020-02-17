@@ -24,8 +24,9 @@ export default function ChinaTrend() {
       },
       tooltip: { trigger: 'axis' },
       legend: {
-          data: ['Presumptive', 'Suspected', 'Recovered', 'Deaths'], // four curves
-          top : '30px'
+          data: ['Confirmed', 'Suspected', 'Recovered', 'Deaths'], // four curves
+          top : '30px',
+          textStyle: {fontSize: 12, fontWeight: 600},
       },
       grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
       toolbox: { feature: { saveAsImage: {} } },
@@ -39,7 +40,7 @@ export default function ChinaTrend() {
       },
       series: [
           {
-              name: 'Presumptive',
+              name: 'Confirmed',
               type: 'line',
               // stack: 'Toll',
               data: map(data, 'confirmedNum').reverse()
@@ -74,9 +75,6 @@ export default function ChinaTrend() {
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
-      // onChartReady={this.onChartReadyCallback}
-      // onEvents={EventsDict}
-      // opts={} 
     />
   )
 }

@@ -10,6 +10,7 @@
     "echarts": "^4.6.0",
     "echarts-for-react": "^2.0.15-beta.1",
     "lodash": "^4.17.15",
+    "material-table": "^1.57.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
@@ -41,5 +42,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8080",
+  "secure": false
 }

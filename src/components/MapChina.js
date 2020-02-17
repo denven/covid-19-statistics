@@ -14,7 +14,7 @@ export default function MapChina() {
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
       echarts.registerMap('china-', map.default)  
-    },[]);
+    });
   }, [])
 
   useEffect(() => {
@@ -22,12 +22,12 @@ export default function MapChina() {
       const tempData = provinces.data.data.map(p => ( 
         { name: p.provinceName, value: p.confirmedNum })
       );    
-      setData(tempData);
+      setData(tempData); console.log(tempData)
     }).catch(e => { console.log('Request province data in China', e) })
   },[])
 
   const onChartReady = (chart) => {
-    setTimeout(() => { chart.hideLoading(); }, 1000);
+    setTimeout(() => { chart.hideLoading(); }, 1500);
   };
 
   const getOption = () => {
@@ -35,7 +35,7 @@ export default function MapChina() {
       // backgroundColor: '#C0C0C0',
       title:  {
           x: 'center',
-          text: 'Cases by Province in China',
+          text: 'Cases by Province in China today',
           subtext: 'Data from https://ncov.dxy.cn/',
           sublink: 'https://ncov.dxy.cn/ncovh5/view/pneumonia',
           // right: '10px',
@@ -70,9 +70,11 @@ export default function MapChina() {
       toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
+          let value = (params.value + '').split('.');
+          value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           return (
             params.seriesName + '<br />' + 
-            titleize(pinyin(params.name, {removeTone: true})) + ': ' + params.value
+            titleize(pinyin(params.name, {removeTone: true})) + ': ' + value
           );
         }
       },
