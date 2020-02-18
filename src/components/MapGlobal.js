@@ -114,13 +114,14 @@ export default function MapGlobal() {
       },
       tooltip: {
         formatter: (params) => {
-          let value = ((params.value || 'Not Found') + '').split('.');
+          let value = ((params.value || 'No Case') + '').split('.');
           value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           return (params.seriesName + '<br />' + params.name + ': ' + value );
         }
       },
       // geo: {  },
       series: [{
+        top: '20%',
         left: 'center',
         type: 'map',
         name: 'Confirmed Cases',
@@ -147,7 +148,7 @@ export default function MapGlobal() {
           }
         },
         mapType: 'world',        
-        zoom: 1.2,        
+        zoom: 1.15,        
         roam: false,
         showLegendSymbol: false,
         rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },
@@ -157,7 +158,7 @@ export default function MapGlobal() {
 
   return (
     <ReactEcharts 
-      style={{height: "650px"}}
+      style={{height: "600px"}}
       echarts={echarts}
       option={getOption()}
       // loadingOption={getLoadingOption()}

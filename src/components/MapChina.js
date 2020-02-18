@@ -37,7 +37,7 @@ export default function MapChina() {
           x: 'center',
           text: 'Cases by Province in China today',
           subtext: 'Data from https://ncov.dxy.cn/',
-          sublink: 'https://ncov.dxy.cn/ncovh5/view/pneumonia',
+          // sublink: 'https://ncov.dxy.cn/ncovh5/view/pneumonia',
           // right: '10px',
           textStyle: {fontSize: 22},
       },
@@ -70,7 +70,7 @@ export default function MapChina() {
       toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
-          let value = (params.value + '').split('.');
+          let value = ((params.value || "No Case") + '').split('.');
           value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           return (
             params.seriesName + '<br />' + 

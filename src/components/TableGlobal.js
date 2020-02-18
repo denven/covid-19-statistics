@@ -23,7 +23,7 @@ const columns = [
       return newVal[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
     },
   },
-  { id: 'suspectedCount', label: 'Suspected', align: 'right', maxWidth: 50 },
+  // { id: 'suspectedCount', label: 'Suspected', align: 'right', maxWidth: 50 },
   { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 },
   { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 },
 ];
@@ -92,7 +92,7 @@ export default function StickyHeadTable() {
       });
       countriesAllData.push(chinaCases);
       let rowsData = filter(countriesAllData, (data) => { return (data.countryEnglishName); })
-      let validRowsData = orderBy(rowsData, ['confirmedCount', 'countryEnglishName'], ['desc', 'asc'])
+      let validRowsData = orderBy(rowsData, ['confirmedCount', 'curedCount', 'countryEnglishName'], ['desc', 'asc'])
       setRows(validRowsData);
     }).catch(e => console.log('Request global data:', e));
   }, []);
