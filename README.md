@@ -1,12 +1,13 @@
 
-## A web app use material ui and echarts to represent statistics of coronavirus in the world.
+## A web app use react, material ui and echarts to represent statistics of coronavirus in the world.
+https://covid-19-statistics.herokuapp.com/
+
+## Data Source
+https://lab.isaaclin.cn/nCoV/en
+
+## Screenshots
+![China Statistics](./screenshots/1.ChinaStatistics.png#pic_center=960x500)
+![Global Statistics](./screenshots/2.WorldStatistics.png#pic_center=960x500)
 
 ## Todo
-
-### deployment
-### canada data 
-### REACT ROUTER
-### world data
-### add logo in title
-### news feeds
-### optimize
+### Canada data and news collection
