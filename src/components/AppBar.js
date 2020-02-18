@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import '../styles/AppBar.css'
 import AppLogo from './AppLogo';
@@ -85,12 +86,10 @@ export default function TopAppBar() {
           <Typography variant="h6" className={classes.title}>
             {/* News */}
           </Typography>
-          <Button color="inherit">
-            <a href="https://github.com/denven/covid-19-statistics">
-              <img src="https://echarts.apache.org/en/images/github.png" alt="github" width="26px"/>
-            </a>         
+          <Button color="inherit" align="center"
+            target="_blank" href="https://github.com/denven/covid-19-statistics">
+            <GitHubIcon />
           </Button>
-
         </Toolbar>
       </AppBar>
       {/* Router Configuration */}
