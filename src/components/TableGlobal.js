@@ -9,23 +9,52 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
 
-
 import axios from 'axios'
 import { orderBy, filter, pick } from 'lodash';
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 300,
+const columns = [
+  { id: 'countryEnglishName', label: 'Place', maxWidth: 50},
+  {
+    id: 'confirmedCount',
+    label: 'Confirmed',
+    align: 'right',
+    format: value => {
+      let newVal = (value + '').split('.');
+      return newVal[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+    },
   },
+  { id: 'suspectedCount', label: 'Suspected', align: 'right', maxWidth: 50 },
+  { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 },
+  { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 },
+];
+
+const useStyles = makeStyles({
+  root: { width: '100%', }, container: { maxHeight: 600 },
 });
 
+let initRows = [];  // Init an empty table data array
+for(let i = 0; i < 25; i++) {
+  initRows.push({ countryEnglishName: 'Loading...', confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
+}
 
-export default function DenseTable() {
+export default function StickyHeadTable() {
   const classes = useStyles();
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(25);
 
-  const [rows, setRows] = useState([]);  
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = event => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
+  };
+
+  const [rows, setRows] = useState([]);   // data operation
 
   useEffect(() => {
+    // setRows(initRows);
     axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
       let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
       let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
@@ -66,35 +95,52 @@ export default function DenseTable() {
       let validRowsData = orderBy(rowsData, ['confirmedCount', 'countryEnglishName'], ['desc', 'asc'])
       setRows(validRowsData);
     });
-  },[]);
-
+  }, []);
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Country/Place</TableCell>
-            <TableCell align="right">Confirmed</TableCell>
-            <TableCell align="right">Suspected</TableCell>
-            <TableCell align="right">Recoverd</TableCell>
-            <TableCell align="right">Deaths</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <TableRow key={row.countryEnglishName}>
-              <TableCell component="th" scope="row">
-                {row.countryEnglishName}
-              </TableCell>
-              <TableCell align="right">{row.confirmedCount}</TableCell>
-              <TableCell align="right">{row.suspectedCount}</TableCell>
-              <TableCell align="right">{row.curedCount}</TableCell>
-              <TableCell align="right">{row.deadCount}</TableCell>
+    <Paper className={classes.root}>
+      <TableContainer className={classes.container}>
+        <Table stickyHeader aria-label="sticky table" size="small">
+          <TableHead>
+            <TableRow>
+              {columns.map(column => (
+                <TableCell
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
+                >
+                  {column.label}
+                </TableCell>
+              ))}
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
+              return (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.countryEnglishName}>
+                  {columns.map(column => {
+                    const value = row[column.id];
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        {column.format && typeof value === 'number' ? column.format(value) : value}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      {/* <TablePagination
+        rowsPerPageOptions={[25, 50, 100]}
+        component="div"
+        count={rows.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+      /> */}
+    </Paper>
   );
 }

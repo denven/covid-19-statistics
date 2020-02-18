@@ -149,7 +149,7 @@ export default function MapGlobal() {
 
   return (
     <ReactEcharts 
-      style={{height: "600px"}}
+      style={{height: "650px"}}
       echarts={echarts}
       option={getOption()}
       // onChartReady={onChartReady}

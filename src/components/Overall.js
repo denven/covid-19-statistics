@@ -73,7 +73,7 @@ export default function OverallData ({showGlobal}) {
   return (
     <>
       <div>As of <span className="dataTime">{data.time}</span></div>
-      <div>{showGlobal ? 'Cases found worldwide(China not included)' : 'Cases found in China'}
+      <div>{showGlobal ? 'Cases Worldwide (out of China)' : 'Cases found in China'}
         <span className="confirmedNumber"></span>
       </div>
       <div>Confirmed: <span className="confirmedNumber">{data.confirmed}</span></div>
