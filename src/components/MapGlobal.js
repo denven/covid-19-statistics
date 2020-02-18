@@ -59,12 +59,22 @@ export default function MapGlobal() {
         }
       });
       countriesAllDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
-      setMapData(countriesAllDataWithChina);
+      setMapData(countriesAllDataWithChina);  // rendering the map coz map loading again all the time
     });
   },[]);
 
+  const getLoadingOption = () => {
+    return {
+      text: 'Loading data...',
+      color: '#4413c2',
+      textColor: '#270240',
+      maskColor: 'rgba(194, 88, 86, 0.3)',
+      zlevel: 0
+    };
+  };
+
   const onChartReady = (chart) => {
-    setTimeout(() => { chart.hideLoading(); }, 1000);
+    setTimeout(() => { chart.hideLoading(); }, 3000);
   };
 
   const getOption = () => {
@@ -137,8 +147,7 @@ export default function MapGlobal() {
           }
         },
         mapType: 'world',        
-        zoom: 1.2,
-        
+        zoom: 1.2,        
         roam: false,
         showLegendSymbol: false,
         rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },
@@ -151,6 +160,7 @@ export default function MapGlobal() {
       style={{height: "650px"}}
       echarts={echarts}
       option={getOption()}
+      // loadingOption={getLoadingOption()}
       // onChartReady={onChartReady}
       // showLoading={true}
       notMerge={true}

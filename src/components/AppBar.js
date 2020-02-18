@@ -64,7 +64,7 @@ function Navigator() {
   return (
     <>
       <Link to="/"  className={classes.link}><AppLogo/> </Link>
-      <div class="menu">
+      <div className="menu">
         <ul>
           <li><Link to="/" className={classes.link}>China</Link></li> 
           <li><Link to="/canada" className={classes.link}>Canada</Link></li>
