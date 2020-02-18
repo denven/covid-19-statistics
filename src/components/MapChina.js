@@ -27,7 +27,7 @@ export default function MapChina() {
   },[])
 
   const onChartReady = (chart) => {
-    setTimeout(() => { chart.hideLoading(); }, 1500);
+    setTimeout(() => { chart.hideLoading(); }, 5000);
   };
 
   const getOption = () => {
@@ -115,8 +115,8 @@ export default function MapChina() {
       style={{height: "600px"}}
       echarts={echarts}
       option={getOption()}
-      onChartReady={onChartReady}
-      showLoading={true}
+      // onChartReady={onChartReady}
+      // showLoading={true}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
