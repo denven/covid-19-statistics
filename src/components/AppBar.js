@@ -10,11 +10,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import '../styles/AppBar.css'
+import AppLogo from './AppLogo';
 import MapChina from './MapChina';
 import MapGlobal from './MapGlobal';
 import OverallData from './Overall';
 import ChinaTrend from './LineChart';
 import TableGlobal from './TableGlobal';
+import { fontWeight } from '@material-ui/system';
 
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1, },
@@ -59,14 +61,17 @@ function Global() {
 function Navigator() {
   const classes = useStyles();
   return (
-    <div class="menu">
-      <ul>
-        <li><Link to="/" className={classes.link}>China</Link></li> 
-        <li><Link to="/canada" className={classes.link}>Canada</Link></li>
-        <li><Link to="/global" className={classes.link}>Global</Link></li>            
-        <li><Link to="/news" className={classes.link}>News</Link></li>            
-      </ul>   
-    </div>
+    <>
+      <Link to="/"  className={classes.link}><AppLogo/> </Link>
+      <div class="menu">
+        <ul>
+          <li><Link to="/" className={classes.link}>China</Link></li> 
+          <li><Link to="/canada" className={classes.link}>Canada</Link></li>
+          <li><Link to="/global" className={classes.link}>Global</Link></li>            
+          <li><Link to="/news" className={classes.link}>News</Link></li>            
+        </ul>   
+      </div>
+    </>
   );
 }
 
@@ -74,18 +79,15 @@ export default function TopAppBar() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+      <AppBar position="static" >
+        <Toolbar variant="dense">          
           <Navigator />
           <Typography variant="h6" className={classes.title}>
             {/* News */}
           </Typography>
           <Button color="inherit">
-            <a href="https://github.com/denven/Smart-Retailer">
-              <img src="https://echarts.apache.org/en/images/github.png" alt="github" width="26"/>
+            <a href="https://github.com/denven/covid-19-statistics">
+              <img src="https://echarts.apache.org/en/images/github.png" alt="github" width="26px"/>
             </a>         
           </Button>
 
