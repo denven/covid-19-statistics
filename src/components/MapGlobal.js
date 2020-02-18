@@ -3,7 +3,6 @@ import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
-import { height } from '@material-ui/system';
 
 import axios from 'axios'
 import { map, filter, pick } from 'lodash';
@@ -17,8 +16,8 @@ export default function MapGlobal() {
   }, []);
  
   const [mapData, setMapData] = useState([]);  // countries current data to display on map
-  const [allData, setAllData] = useState([]);  // countries all data to display in table
-  const [toll, setToll] = useState({}); // overall data without china's
+  // const [allData, setAllData] = useState([]);  // countries all data to display in table
+  // const [toll, setToll] = useState({}); // overall data without china's
 
   useEffect(() => {
     axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {

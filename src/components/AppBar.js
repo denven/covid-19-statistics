@@ -59,12 +59,14 @@ function Global() {
 function Navigator() {
   const classes = useStyles();
   return (
-    <ul>
-      <li><Link to="/" className={classes.link}>China</Link></li> 
-      <li><Link to="/canada" className={classes.link}>Canada</Link></li>
-      <li><Link to="/global" className={classes.link}>Global</Link></li>            
-      <li><Link to="/news" className={classes.link}>News</Link></li>            
-    </ul>   
+    <div class="menu">
+      <ul>
+        <li><Link to="/" className={classes.link}>China</Link></li> 
+        <li><Link to="/canada" className={classes.link}>Canada</Link></li>
+        <li><Link to="/global" className={classes.link}>Global</Link></li>            
+        <li><Link to="/news" className={classes.link}>News</Link></li>            
+      </ul>   
+    </div>
   );
 }
 
