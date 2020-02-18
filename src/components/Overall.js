@@ -10,7 +10,6 @@ export default function OverallData ({showGlobal}) {
 
   useEffect(() => {
     if(showGlobal) {
-
       axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
         let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
       
@@ -50,10 +49,8 @@ export default function OverallData ({showGlobal}) {
           death: globalCases.deadCount,
           fatality: (100 * globalCases.deadCount / (globalCases.confirmedCount + globalCases.curedCount)).toFixed(2) + '%'
         };
-        console.log('test', tollData)
         setData(tollData);
-      });
-
+      }).catch(e => console.log('Request global data:', e));
     } else {
       axios.get('http://www.dzyong.top:3005/yiqing/total')
         .then((total) => {

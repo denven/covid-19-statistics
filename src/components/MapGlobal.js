@@ -60,7 +60,7 @@ export default function MapGlobal() {
       });
       countriesAllDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
       setMapData(countriesAllDataWithChina);  // rendering the map coz map loading again all the time
-    });
+    }).catch(e => console.log('Request global data:', e));
   },[]);
 
   const getLoadingOption = () => {

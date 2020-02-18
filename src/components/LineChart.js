@@ -10,9 +10,8 @@ export default function ChinaTrend() {
   
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get('http://www.dzyong.top:3005/yiqing/history')
-    .then((hisData) => {
-        setData(hisData.data.data)
+    axios.get('http://www.dzyong.top:3005/yiqing/history').then((hisData) => {
+        setData(hisData.data.data);
     }).catch(e => { console.log('Request history data in China', e) })
   }, [])
 

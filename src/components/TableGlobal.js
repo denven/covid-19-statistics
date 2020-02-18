@@ -94,7 +94,7 @@ export default function StickyHeadTable() {
       let rowsData = filter(countriesAllData, (data) => { return (data.countryEnglishName); })
       let validRowsData = orderBy(rowsData, ['confirmedCount', 'countryEnglishName'], ['desc', 'asc'])
       setRows(validRowsData);
-    });
+    }).catch(e => console.log('Request global data:', e));
   }, []);
 
   return (

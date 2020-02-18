@@ -22,7 +22,7 @@ export default function MapChina() {
       const tempData = provinces.data.data.map(p => ( 
         { name: p.provinceName, value: p.confirmedNum })
       );    
-      setData(tempData); console.log(tempData)
+      setData(tempData);
     }).catch(e => { console.log('Request province data in China', e) })
   },[])
 
