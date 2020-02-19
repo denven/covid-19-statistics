@@ -10,8 +10,9 @@ const newsapi = new NewsAPI('2845360f3ed1414c96bfa71468b0cc5c');
 
 // One piece of news
 function OnePiece ({ source, publishedAt, title, description, url, urlToImage, content }) {
+  //add a defalut image
+  if(!urlToImage) urlToImage = "https://media.graytvinc.com/images/690*392/coronavirus6.png";
   return (
-
       <div className="image-text">
         <div> <img src={urlToImage} alt='' style={{width: '300px', height: '168px'}} /> </div>
         <div className ='news-text'>
