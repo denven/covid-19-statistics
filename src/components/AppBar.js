@@ -6,8 +6,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 import '../styles/AppBar.css'
@@ -17,7 +15,7 @@ import MapGlobal from './MapGlobal';
 import OverallData from './Overall';
 import ChinaTrend from './LineChart';
 import TableGlobal from './TableGlobal';
-import { fontWeight } from '@material-ui/system';
+import LatestNews from './News';
 
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1, },
@@ -26,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   link: { color: '#FFF', textDecoration: 'none' }
 }));
 
-function Home() {
+function China() {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
@@ -41,7 +39,6 @@ function Home() {
 }       
 
 function Global() {
-
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
@@ -59,6 +56,19 @@ function Global() {
   )
 }  
 
+function News() {
+  return (
+    <div className="bodyContainer">
+      <div className="bodyTop">     
+        <OverallData showGlobal={false}/>
+      </div>
+      <div className="bodyBottom">
+        <LatestNews />
+      </div>
+    </div>
+  )
+}       
+
 function Navigator() {
   const classes = useStyles();
   return (
@@ -66,9 +76,9 @@ function Navigator() {
       <Link to="/"  className={classes.link}><AppLogo/> </Link>
       <div className="menu">
         <ul>
-          <li><Link to="/" className={classes.link}>China</Link></li> 
-          <li><Link to="/canada" className={classes.link}>Canada</Link></li>
-          <li><Link to="/global" className={classes.link}>Global</Link></li>            
+          <li><Link to="/" className={classes.link}>Global</Link></li> 
+          <li><Link to="/china" className={classes.link}>China</Link></li>            
+          {/* <li><Link to="/canada" className={classes.link}>Canada</Link></li> */}
           <li><Link to="/news" className={classes.link}>News</Link></li>            
         </ul>   
       </div>
@@ -94,10 +104,9 @@ export default function TopAppBar() {
       </AppBar>
       {/* Router Configuration */}
       <Switch>
-          <Route exact path="/" component={Home}></Route>
-          {/* <Route path="/canada" component={Canada}></Route> */}
-          <Route path="/global" component={Global}></Route>
-          {/* <Route path="/news" component={News}></Route> */}
+          <Route exact path="/" component={Global}></Route>
+          <Route path="/china" component={China}></Route>
+          <Route path="/news" component={News}></Route>
       </Switch>
     </div>
   );

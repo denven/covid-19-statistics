@@ -15,10 +15,11 @@ export default function MapChina() {
     import(`echarts/map/json/china.json`).then(map => {
       echarts.registerMap('china-', map.default)  
     });
-  }, [])
+
+  }, []);
 
   useEffect(() => {
-    axios.get('http://www.dzyong.top:3005/yiqing/province').then((provinces) => {
+      axios.get('http://www.dzyong.top:3005/yiqing/province').then((provinces) => {
       const tempData = provinces.data.data.map(p => ( 
         { name: p.provinceName, value: p.confirmedNum })
       );    
@@ -91,7 +92,10 @@ export default function MapChina() {
         silent: false, // province area is clickable
         label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
         itemStyle: {
-          normal:{ borderColor: 'rgba(0, 0, 0, 0.2)' },
+          normal:{ 
+            borderColor: 'rgba(0, 0, 0, 0.2)',
+            areaColor: '#B2E5BC'  // default area color 
+          },
           emphasis:{
               areaColor: '#53adf3', // change color when click
               shadowOffsetX: 0,

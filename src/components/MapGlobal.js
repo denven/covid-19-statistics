@@ -130,14 +130,17 @@ export default function MapGlobal() {
         map: 'world',
         // the following attributes can be put in geo, but the map will smaller
         // and cannot be zoomed out
-        silent: false, // province area is clickable
+        silent: false, // country area is clickable
         label: { normal: { 
           show: false,  // do not show country name
           fontSize:'8', 
-          color: 'rgba(0,0,0,0.7)' 
+          color: 'rgba(0,0,0,0.7)'  // default area color
         }}, 
         itemStyle: {
-          normal:{ borderColor: 'rgba(0, 0, 0, 0.2)' },
+          normal:{ 
+            borderColor: 'rgba(0, 0, 0, 0.2)',
+            areaColor: '#B2E5BC'  // default area color 
+          },
           emphasis:{
               areaColor: '#53adf3', // change color when click
               shadowOffsetX: 0,

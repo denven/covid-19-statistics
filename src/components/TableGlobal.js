@@ -92,7 +92,7 @@ export default function StickyHeadTable() {
       });
       countriesAllData.push(chinaCases);
       let rowsData = filter(countriesAllData, (data) => { return (data.countryEnglishName); })
-      let validRowsData = orderBy(rowsData, ['confirmedCount', 'curedCount', 'countryEnglishName'], ['desc', 'asc'])
+      let validRowsData = orderBy(rowsData, ['confirmedCount', 'curedCount', 'countryEnglishName'], ['desc', 'desc', 'asc'])
       setRows(validRowsData);
     }).catch(e => console.log('Request global data:', e));
   }, []);
