@@ -5,7 +5,7 @@ import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 
 import axios from 'axios'
-import { map, filter, pick } from 'lodash';
+import { filter, pick } from 'lodash';
 
 export default function MapGlobal() {
 

@@ -9,13 +9,26 @@
     /* padding: 0 3% 0.5% 2%; */
 }
 
+/* when mouse hover */
+div.card > div:hover
+{
+    background-color: #dfe8f1;
+}
+
+img {
+    opacity: 0.8;
+}
+
+img:hover {
+    opacity: 1.0;
+}
 
 .news-date {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     color: #888;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .news-date > .relative {
@@ -31,7 +44,7 @@
     animation-direction: row;
     justify-content: start;
     margin-top: 10px;
-    padding: 0 0% 0.5% 2%;
+    padding: 0.3% 0% 0.3% 2%;
     border-bottom: 1px solid lightgray;
     width: 48%;
 }
@@ -40,7 +53,7 @@
     display: flex;
     font-size: 1.0rem;
     font-weight: 600;
-    color: #f60;
+    color: #011010;
     margin-bottom: .5rem;
     display: block;
     text-decoration: none;
