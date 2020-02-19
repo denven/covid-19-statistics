@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import { filter, pick } from 'lodash';
+import { filter } from 'lodash';
 
 import '../styles/Overall.css'
 
@@ -65,7 +65,7 @@ export default function OverallData ({showGlobal}) {
             });
         }).catch(e => { console.log('Request latest overall data in China', e) });
       }
-  },[]);
+  },[showGlobal]);
 
   return (
     <>

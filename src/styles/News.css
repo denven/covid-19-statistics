@@ -1,55 +1,61 @@
-.card {
+/* for all the news */
+.news-container {
     /* padding: 1rem 0; */
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;   
+    flex-wrap: wrap; 
+    -webkit-flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-between;    
+    justify-content: space-between;   
     border-bottom: 1px solid lightgray;
     /* padding: 0 3% 0.5% 2%; */
 }
 
 /* when mouse hover */
-div.card > div:hover
+div.news-container > div:hover
 {
     background-color: #dfe8f1;
 }
 
-img {
-    opacity: 0.8;
-}
-
-img:hover {
-    opacity: 1.0;
-}
-
-.news-date {
+.news-card {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    color: #888;
-    margin-bottom: 4px;
-}
-
-.news-date > .relative {
-    display: flex;
-    color: gray;
-    font-weight: 400;
-    display: inline-block;
-    padding-right: 1rem;
-}
-
-.image-text {
-    display: flex;
-    animation-direction: row;
-    justify-content: start;
+    justify-content: center;
     margin-top: 10px;
     padding: 0.3% 0% 0.3% 2%;
     border-bottom: 1px solid lightgray;
     width: 48%;
 }
 
-.title {
+.news-image {
+    display: flex;   
+    width: 38%;
+}
+
+a > img {
+    opacity: 0.8;
+    width: 18vw;
+    height: 10vw;
+   /*  width: 275px; 18vw; */
+   /*  height: 155px10vw; */
+}
+
+a > img:hover {
+    opacity: 1.0;
+}
+
+/* for news text (title, time, summary, content, description etc. */
+.news-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-content: space-between; */
+    /* align-items: flex-end; */
+    margin: 0 20px 0 20px;
+    width: 60%;
+}
+
+.news-title {
     display: flex;
     font-size: 1.0rem;
     font-weight: 600;
@@ -59,15 +65,24 @@ img:hover {
     text-decoration: none;
 }
 
-.news-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    /* align-content: space-between; */
-    /* align-items: flex-end; */
-    margin: 0 20px 0 20px;
-}
 
 .summary {
     margin-bottom: 30px;
+}
+
+.news-date {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    color: #888;
+    margin-bottom: 4px;
+    flex-grow: 1;
+}
+
+.news-date > .relative {
+    display: flex;
+    color: gray;
+    font-weight: 400;
+    display: inline-block;
+    padding-right: 1rem;
 }

@@ -15,7 +15,7 @@ export default function AppLogo() {
   return (
     <>
       <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-        <img src="https://github.com/denven/covid-19-statistics/blob/master/public/logo.jpg?raw=true"
+        <img src="https://github.com/denven/covid-19-statistics/blob/master/public/logo.jpg?raw=true" alt=''
         style={{borderRadius: "50%", width: "26px"}}
         />
         <span style={{fontWeight: '600', fontSize: "1.2rem", marginLeft: 10}}>COVID-19 Stat</span>

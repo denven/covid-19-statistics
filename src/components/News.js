@@ -11,16 +11,17 @@ const newsapi = new NewsAPI('2845360f3ed1414c96bfa71468b0cc5c');
 // One piece of news
 function OnePiece ({ source, publishedAt, title, description, url, urlToImage, content }) {
   //add a defalut image
-  if(!urlToImage) urlToImage = "https://media.graytvinc.com/images/690*392/coronavirus6.png";
+  const subImage = "https://media.graytvinc.com/images/690*392/coronavirus6.png";
+
   return (
-      <div className="image-text">
-        <div> 
+      <div className="news-card">
+        <div className="news-image"> 
           <a href={url} >
-            <img src={urlToImage} alt='' style={{width: '300px', height: '168px'}} />
+            <img src={!urlToImage ? subImage : urlToImage} alt={''} />
           </a> </div>
         <div className ='news-text'>
-          <div style={{flexGrow: 1}}>
-            <div> <a className="title" href={url}>{ title.split('-')[0].split('.')[0] }</a> </div>
+          <div>
+            <div> <a className="news-title" href={url}>{ title.split('-')[0].split('.')[0] }</a> </div>
             <div className="summary">{ description ? description.slice(0, 100) : "" } ... </div>
           </div>
           <div className="news-date">
@@ -54,7 +55,7 @@ export default function LatestNews () {
   }, []);
 
   return (
-    <div className="card">
+    <div className="news-container">
       { news.slice(0, maxCount).map((article, index) => <OnePiece {...article} key={index} />) }
     </div>
   )

@@ -29,7 +29,7 @@ const columns = [
 ];
 
 const useStyles = makeStyles({
-  root: { width: '100%', }, container: { maxHeight: 600 },
+  root: { width: '100%', }, container: { maxHeight: "82vh" },
 });
 
 let initRows = [];  // Init an empty table data array

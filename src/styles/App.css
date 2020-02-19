@@ -33,6 +33,8 @@
 .bodyBottom {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
     width: 100%;
     height: 90%;
@@ -42,10 +44,11 @@
 }
 
 .bodyLeft {
-    /* display: flex; */
+    display: inline-block;
     width: 50%;
 }
 
 .bodyRight {
-    width: 50%;
+    display: inline-block;
+    width: 50%;  
 }

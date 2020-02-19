@@ -5,7 +5,7 @@ import './styles/App.css';
 
 export default function App() {
   return (
-    <div>
+    <div style={{display: 'flex'}}>
       <Router>
         <AppBar />
       </Router>

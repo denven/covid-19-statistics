@@ -40,7 +40,7 @@ export default function MapChina() {
           subtext: 'Data from https://ncov.dxy.cn/',
           // sublink: 'https://ncov.dxy.cn/ncovh5/view/pneumonia',
           // right: '10px',
-          textStyle: {fontSize: 22},
+          textStyle: {fontSize: 18},
       },
       visualMap: {
         show: true,
@@ -116,7 +116,7 @@ export default function MapChina() {
 
   return (
     <ReactEcharts 
-      style={{height: "600px"}}
+      style={{height: "85vh"}}
       echarts={echarts}
       option={getOption()}
       onChartReady={onChartReady}

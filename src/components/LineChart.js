@@ -68,7 +68,7 @@ export default function ChinaTrend() {
 
   return (
     <ReactEcharts 
-      style={{height: "600px"}}
+      style={{height: "83vh"}}
       echarts={echarts}
       option={getOption()}
       notMerge={true}

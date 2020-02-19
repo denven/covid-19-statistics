@@ -3,7 +3,7 @@ div.menu ul
     list-style:none; /* remove bullets */
     margin: 0px;     /* MUST */
     padding: 0px;    /* Needed */
-    width: auto; /* auto-adjust according to contents*/
+    width: auto;     /* auto-adjust according to contents*/
 }
 
 div.menu ul li
@@ -19,7 +19,7 @@ div.menu ul li a, div.menu ul li a:visited
     /* color: #dde4ec;  */
     display: block;             /* block can have multiple-lines, change it to inline-block */
     line-height: 3.5em;         /* This MUST be set manually by height, cannot use 100% */
-    padding: 0px 40px;          /* Inner paddings */
+    padding: 0px 2.5vw;         /* Inner paddings */
     text-decoration: none;      /* no underscore of hyperlink */
     white-space: nowrap;        /* no wrap with text until break line */
 }

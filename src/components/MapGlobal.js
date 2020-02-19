@@ -85,7 +85,7 @@ export default function MapGlobal() {
           text: 'Cases by country Worldwide',
           subtext: 'Data from https://lab.isaaclin.cn/',
           margin: '10px',
-          textStyle: {fontSize: 22},
+          textStyle: {fontSize: 18},
       },
       visualMap: {
         show: true,
@@ -161,7 +161,7 @@ export default function MapGlobal() {
 
   return (
     <ReactEcharts 
-      style={{height: "600px"}}
+      style={{height: "85vh"}}
       echarts={echarts}
       option={getOption()}
       // loadingOption={getLoadingOption()}
