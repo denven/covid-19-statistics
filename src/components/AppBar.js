@@ -17,6 +17,8 @@ import ChinaTrend from './LineChart';
 import TableGlobal from './TableGlobal';
 import LatestNews from './News';
 
+import useAppData from '../hooks/useAppData';
+
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1, },
   menuButton: { marginRight: theme.spacing(2), },
@@ -28,7 +30,7 @@ function China() {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={false}/>
+        <OverallData showGlobal={false} overall={{}}/>
       </div>
       <div className="bodyBottom">
         <div className="bodyLeft"> <MapChina/> </div>
@@ -39,17 +41,20 @@ function China() {
 }       
 
 function Global() {
+  
+  const {overall, mapData, tableData} = useAppData();
+
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={true}/>
+        <OverallData showGlobal={true} overall={overall}/>
       </div>
       <div className="bodyBottom">   
       <div className="bodyGlobalMap">
-        <MapGlobal />
+        <MapGlobal mapData={mapData}/>
       </div>    
       <div className="bodyGlobalTable">
-        <TableGlobal />
+        <TableGlobal rows={tableData} />
       </div>
       </div>
     </div>

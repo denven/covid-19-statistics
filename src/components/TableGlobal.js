@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,9 +8,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
-
-import axios from 'axios'
-import { orderBy, filter, pick } from 'lodash';
 
 const columns = [
   { id: 'countryEnglishName', label: 'Place', maxWidth: 50},
@@ -37,7 +34,7 @@ for(let i = 0; i < 25; i++) {
   initRows.push({ countryEnglishName: 'Loading...', confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
 }
 
-export default function StickyHeadTable() {
+export default function StickyHeadTable({rows}) {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(25);
@@ -50,53 +47,7 @@ export default function StickyHeadTable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-
-  const [rows, setRows] = useState([]);   // data operation
-
-  useEffect(() => {
-    // setRows(initRows);
-    axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
-      let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
-      let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
-
-      let chinaCases = { 
-        countryEnglishName: 'China', 
-        currentConfirmedCount: 0, 
-        confirmedCount: 0, 
-        suspectedCount: 0, 
-        curedCount: 0, 
-        deadCount: 0
-      };
-
-      for(const prov of chinaData) {
-        chinaCases.confirmedCount += prov.confirmedCount;
-        chinaCases.currentConfirmedCount += prov.currentConfirmedCount;
-        chinaCases.curedCount += prov.curedCount;
-        chinaCases.deadCount += prov.deadCount;
-        chinaCases.suspectedCount += prov.suspectedCount;
-      }
-
-      let countriesAllData = otherCountries.map((country) => { 
-        if(country.countryName === "钻石公主号邮轮") {
-          country.countryEnglishName = 'Diamond Princess'
-        }        
-        if(country.countryName === "阿联酋") {
-          country.countryEnglishName = "United Arab Emirates";
-        }
-        if(country.countryEnglishName === "United States of America") {
-          country.countryEnglishName = "United States";
-        }
-
-        return pick(country, "countryEnglishName", "confirmedCount", 
-        "currentConfirmedCount", "suspectedCount", "curedCount", "deadCount");        
-      });
-      countriesAllData.push(chinaCases);
-      let rowsData = filter(countriesAllData, (data) => { return (data.countryEnglishName); })
-      let validRowsData = orderBy(rowsData, ['confirmedCount', 'curedCount', 'countryEnglishName'], ['desc', 'desc', 'asc'])
-      setRows(validRowsData);
-    }).catch(e => console.log('Request global data:', e));
-  }, []);
-
+  
   return (
     <Paper className={classes.root} elevation={0} >
       <TableContainer className={classes.container}>

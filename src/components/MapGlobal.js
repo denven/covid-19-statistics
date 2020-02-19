@@ -4,10 +4,7 @@ import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 
-import axios from 'axios'
-import { filter, pick } from 'lodash';
-
-export default function MapGlobal() {
+export default function MapGlobal({mapData}) {
 
   useEffect(() => {
     import(`echarts/map/json/world.json`).then(map => {
@@ -15,54 +12,6 @@ export default function MapGlobal() {
     });
   }, []);
  
-  const [mapData, setMapData] = useState([]);  // countries current data to display on map
-  // const [allData, setAllData] = useState([]);  // countries all data to display in table
-  // const [toll, setToll] = useState({}); // overall data without china's
-
-  useEffect(() => {
-    axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
-      let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
-      let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
-
-      let chinaCases = { 
-        countryEnglishName: 'China', 
-        currentConfirmedCount: 0, 
-        confirmedCount: 0, 
-        suspectedCount: 0, 
-        curedCount: 0, 
-        deadCount: 0
-      };
-
-      for(const prov of chinaData) {
-        chinaCases.confirmedCount += prov.confirmedCount;
-        chinaCases.currentConfirmedCount += prov.currentConfirmedCount;
-        chinaCases.curedCount += prov.curedCount;
-        chinaCases.deadCount += prov.deadCount;
-        chinaCases.suspectedCount += prov.suspectedCount;
-      }
-
-      let countriesAllData = otherCountries.map((country) => { 
-        if(country.countryName === "阿联酋") {
-          country.countryEnglishName = "United Arab Emirates";
-        }
-        return pick(country, "countryEnglishName", "confirmedCount", 
-        "currentConfirmedCount", "suspectedCount", "curedCount", "deadCount")} 
-      );
-      
-      let countriesAllDataWithChina = countriesAllData.map((country) => {          
-        if(country.countryEnglishName === "United States of America") {
-          country.countryEnglishName = "United States";
-        }
-
-        if(country.countryEnglishName) {
-            return {name: country.countryEnglishName, value: country.confirmedCount};
-        }
-      });
-      countriesAllDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
-      setMapData(countriesAllDataWithChina);  // rendering the map coz map loading again all the time
-    }).catch(e => console.log('Request global data:', e));
-  },[]);
-
   const getLoadingOption = () => {
     return {
       text: 'Loading data...',
