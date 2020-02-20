@@ -9,11 +9,26 @@ import { map } from 'lodash';
 export default function ChinaTrend() {
   
   const [data, setData] = useState([]);
+  const [loaded, setReady] = useState(false); 
+
   useEffect(() => {
     axios.get('http://www.dzyong.top:3005/yiqing/history').then((hisData) => {
         setData(hisData.data.data);
+        setReady(true);
     }).catch(e => { console.log('Request history data in China', e) })
-  }, [])
+  }, []);
+
+  const getLoadingOption = () => {
+    return { text: 'Data Loading ...' };
+  };
+
+  const onChartReady = (chart, loaded) => {
+    if(loaded) {
+      setTimeout(() => {
+        chart.hideLoading();
+      }, 1000); 
+    }
+  };
 
   const getOption = () => {
     return {
@@ -71,10 +86,12 @@ export default function ChinaTrend() {
       style={{height: "83vh"}}
       echarts={echarts}
       option={getOption()}
+      loadingOption={getLoadingOption()}
+      onChartReady={onChartReady}
+      showLoading={!loaded}  //official showloading always have bugs 
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
     />
   )
 }
-

@@ -63,7 +63,7 @@ function Global() {
             <>
               <TableGlobal rows={tableData} />
               <div className="dataLoading"> 
-                <Loader type="TailSpin" color="#9c0505" height={25} width={25} /> 
+                <Loader type="TailSpin" color="#C23531" height={25} width={25} /> 
                 <span style={{fontSize: 12, fontWeight: 600}}>&nbsp; Data Loading ...</span>
               </div>
             </>

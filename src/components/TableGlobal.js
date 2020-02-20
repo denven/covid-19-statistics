@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
 
 const columns = [
-  { id: 'countryEnglishName', label: 'Place', maxWidth: 50},
+  { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 50},
   {
     id: 'confirmedCount',
     label: 'Confirmed',
@@ -24,6 +24,15 @@ const columns = [
   { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 },
   { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 },
 ];
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    // backgroundColor: theme.palette.common.black,
+    // color: theme.palette.common.white,
+    fontWeight: 600
+  },
+  body: { fontSize: 14, },
+}))(TableCell);
 
 const useStyles = makeStyles({
   root: { width: '100%', }, container: { maxHeight: "82vh" },
@@ -52,16 +61,14 @@ export default function StickyHeadTable({rows}) {
     <Paper className={classes.root} elevation={0} >
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table" size="small">
-          <TableHead>
+          <TableHead >
             <TableRow>
               {columns.map(column => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
+                <StyledTableCell key={column.id} align={column.align}
                   style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
-                </TableCell>
+                </StyledTableCell>
               ))}
             </TableRow>
           </TableHead>

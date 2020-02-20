@@ -23,7 +23,6 @@ export default function MapGlobal({mapData, loaded}) {
   };
 
   const onChartReady = (chart, loaded) => {
-    // setTimeout(() => { chart.hideLoading(); }, 3000);
     if(loaded) chart.hideLoading();
   };
 
@@ -54,7 +53,7 @@ export default function MapGlobal({mapData, loaded}) {
           {min: 10, max: 49},
           {min: 1, max: 9},
         ],        
-        padding: 30,
+        padding: 40,
         orient: 'vertical',
         showLabel: true,
         text: ['Outbreak', 'Minor Break'],

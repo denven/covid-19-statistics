@@ -8,7 +8,7 @@ import titleize from 'titleize';
 
 export default function MapChina() {
   const [data, setData] = useState([]);
-  // const [ready, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
+  const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
 
   useEffect(() => {
     // register as 'china-' rather than 'china' to hide Southern seas on map
@@ -24,6 +24,7 @@ export default function MapChina() {
         { name: p.provinceName, value: p.confirmedNum })
       );    
       setData(tempData);
+      setReady(true);
     }).catch(e => { console.log('Request province data in China', e) })
   },[]);
 
@@ -131,7 +132,7 @@ export default function MapChina() {
       option={getOption()}
       loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
-      showLoading={true}
+      showLoading={!loaded}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
