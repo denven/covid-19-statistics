@@ -22,8 +22,9 @@ export default function MapGlobal({mapData, loaded}) {
     };
   };
 
-  const onChartReady = (chart) => {
-    setTimeout(() => { chart.hideLoading(); }, 3000);
+  const onChartReady = (chart, loaded) => {
+    // setTimeout(() => { chart.hideLoading(); }, 3000);
+    if(loaded) chart.hideLoading();
   };
 
   const getOption = () => {
@@ -115,7 +116,7 @@ export default function MapGlobal({mapData, loaded}) {
       option={getOption()}
       loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
-      showLoading={!loaded ? true : false}
+      showLoading={!loaded}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
