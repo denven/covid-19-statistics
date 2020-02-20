@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 
 let initRows = [];  // Init an empty table data array
 for(let i = 0; i < 25; i++) {
-  initRows.push({ countryEnglishName: '...', confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
+  initRows.push({ countryEnglishName: 'Loading...', confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
 }
 
 export default function StickyHeadTable({rows}) {
@@ -47,7 +47,7 @@ export default function StickyHeadTable({rows}) {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  
+
   return (
     <Paper className={classes.root} elevation={0} >
       <TableContainer className={classes.container}>

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, Route, Switch} from 'react-router-dom';
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner'
+
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -46,7 +49,6 @@ function Global() {
   const {loaded, overall, mapData, tableData} = useAppData();
 
   return (  
-    //{/* !loaded ? <div className="dataLoading">LOADING...</div> : */}     
     <div className="bodyContainer">
       <div className="bodyTop">     
         <OverallData showGlobal={true} overall={overall}/>
@@ -56,7 +58,18 @@ function Global() {
         <MapGlobal mapData={mapData} loaded={loaded}/>
       </div>    
       <div className="bodyGlobalTable">
-        <TableGlobal rows={tableData} />
+        { 
+          !loaded ? (
+            <>
+              <TableGlobal rows={tableData} />
+              <div className="dataLoading"> 
+                <Loader type="TailSpin" color="#9c0505" height={25} width={25} /> 
+                <span style={{fontSize: 12, fontWeight: 600}}>&nbsp; Data Loading ...</span>
+              </div>
+            </>
+          ):          
+          <TableGlobal rows={tableData} />
+        }
       </div>
       </div>
     </div>
