@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 
 let initRows = [];  // Init an empty table data array
 for(let i = 0; i < 25; i++) {
-  initRows.push({ countryEnglishName: 'Loading...', confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
+  initRows.push({ countryEnglishName: '...', confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
 }
 
 export default function StickyHeadTable({rows}) {

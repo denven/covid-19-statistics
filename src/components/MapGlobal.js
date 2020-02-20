@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/component/tooltip';
@@ -14,11 +14,11 @@ export default function MapGlobal({mapData}) {
  
   const getLoadingOption = () => {
     return {
-      text: 'Loading data...',
-      color: '#4413c2',
-      textColor: '#270240',
-      maskColor: 'rgba(194, 88, 86, 0.3)',
-      zlevel: 0
+      text: 'Data Loading ...',
+      // color: '#4413c2',
+      // textColor: '#270240',
+      // maskColor: 'rgba(194, 88, 86, 0.3)',
+      // zlevel: 0
     };
   };
 
@@ -113,9 +113,9 @@ export default function MapGlobal({mapData}) {
       style={{height: "85vh"}}
       echarts={echarts}
       option={getOption()}
-      // loadingOption={getLoadingOption()}
-      // onChartReady={onChartReady}
-      // showLoading={true}
+      loadingOption={getLoadingOption()}
+      onChartReady={onChartReady}
+      showLoading={true}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}

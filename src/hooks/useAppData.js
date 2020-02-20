@@ -3,11 +3,11 @@ import axios from "axios";
 import moment from 'moment';
 import { filter, pick, orderBy } from 'lodash';
 
-import reducer, { SET_OVERALL, SET_TABLE_DATA, SET_MAP_DATA } from "./reducer";
+import reducer, { SET_LOAD_STATUS, SET_OVERALL, SET_TABLE_DATA, SET_MAP_DATA } from "./reducer";
 
 export default function useAppData(props) {
 
-  const initialData = { overall: {}, mapData: [], tableData: []};
+  const initialData = { loaded: false, overall: {}, mapData: [], tableData: []};
   const [covidData, dispatch] = useReducer(reducer, initialData);
 
   // const setOverall = data => dispatch({type: SET_OVERALL, overall: data});
@@ -82,7 +82,7 @@ export default function useAppData(props) {
       }
 
       if(country.countryEnglishName) {
-          return {name: country.countryEnglishName, value: country.confirmedCount};
+        return {name: country.countryEnglishName, value: country.confirmedCount};
       }
     });
     countriesDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
@@ -120,7 +120,6 @@ export default function useAppData(props) {
   }
 
   useEffect(() => {
-    // setRows(initRows);
     axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
       
       let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
@@ -142,6 +141,7 @@ export default function useAppData(props) {
       let overall = getOverall(otherCountries, getUpdateTime(data.data.results));
       let mapData = getMapData(chinaData, otherCountries);
       let tableData = getTableData(chinaData, otherCountries);
+      dispatch({type: SET_LOAD_STATUS, loaded: true});
       dispatch({type: SET_OVERALL, overall: overall});
       dispatch({type: SET_MAP_DATA, mapData: mapData});
       dispatch({type: SET_TABLE_DATA, tableData: tableData})

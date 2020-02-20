@@ -41,17 +41,17 @@ function China() {
 }       
 
 function Global() {
-  
-  const {overall, mapData, tableData} = useAppData();
 
-  return (
+  const {loaded, overall, mapData, tableData} = useAppData();
+  return (  
+    //{/* !loaded ? <div className="dataLoading">LOADING...</div> : */}     
     <div className="bodyContainer">
       <div className="bodyTop">     
         <OverallData showGlobal={true} overall={overall}/>
       </div>
       <div className="bodyBottom">   
       <div className="bodyGlobalMap">
-        <MapGlobal mapData={mapData}/>
+        <MapGlobal mapData={mapData} loaded={loaded}/>
       </div>    
       <div className="bodyGlobalTable">
         <TableGlobal rows={tableData} />

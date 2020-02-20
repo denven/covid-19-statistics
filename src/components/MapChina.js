@@ -25,7 +25,17 @@ export default function MapChina() {
       );    
       setData(tempData);
     }).catch(e => { console.log('Request province data in China', e) })
-  },[])
+  },[]);
+
+  const getLoadingOption = () => {
+    return {
+      text: 'Data Loading ...',
+      // color: '#4413c2',
+      // textColor: '#270240',
+      // maskColor: 'rgba(194, 88, 86, 0.3)',
+      // zlevel: 0
+    };
+  };
 
   const onChartReady = (chart) => {
     setTimeout(() => { chart.hideLoading(); }, 1500);
@@ -119,6 +129,7 @@ export default function MapChina() {
       style={{height: "85vh"}}
       echarts={echarts}
       option={getOption()}
+      loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
       showLoading={true}
       notMerge={true}
