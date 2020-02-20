@@ -59,7 +59,7 @@ export default function MapChina() {
         min: 0,
         max: 100000,
         align: 'right',
-        top: '50%',
+        top: '60%',
         left: 'right',
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area

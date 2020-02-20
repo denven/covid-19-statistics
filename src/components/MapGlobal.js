@@ -42,7 +42,7 @@ export default function MapGlobal({mapData, loaded}) {
         min: 0,
         max: 100000,
         align: 'left',
-        top: '50%',
+        top: '60%',
         left: 'left',
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
@@ -53,7 +53,7 @@ export default function MapGlobal({mapData, loaded}) {
           {min: 10, max: 49},
           {min: 1, max: 9},
         ],        
-        padding: 40,
+        padding: 35,
         orient: 'vertical',
         showLabel: true,
         text: ['Outbreak', 'Minor Break'],
@@ -100,7 +100,7 @@ export default function MapGlobal({mapData, loaded}) {
           }
         },
         mapType: 'world',        
-        zoom: 1.15,        
+        zoom: 1.18,        
         roam: false,
         showLegendSymbol: false,
         rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },

@@ -24,8 +24,8 @@ function OnePiece ({ source, publishedAt, title, description, url, urlToImage, c
           </a> </div>
         <div className ='news-text'>
           <div>
-            <div> <a className="news-title" href={url}>{ title.split('-')[0].split('.')[0] }</a> </div>
-            <div className="summary">{ description ? description.slice(0, 100) : "" } ... </div>
+            <div> <a className="news-title" href={url}>{ title.split('-') }</a> </div>
+            <div className="summary">{ description ? description.slice(0, 150) : "" } ... </div>
           </div>
           <div className="news-date">
             <div className="relative"> { titleize(moment(publishedAt).fromNow()) } </div>
