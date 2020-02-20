@@ -19,12 +19,10 @@ export default function OverallData ({showGlobal, overall}) {
             death: death,
             fatality: (100 * death / (diagnosed + cured)).toFixed(2) + '%'
           });
-          console.log('send request to overall', total.data.data[0]);
       }).catch(e => { console.log('Request latest overall data in China', e) });
     }
   },[overall, showGlobal]);
 
-  console.log('renderwithdata', data);
   return (
     <>
       <div>As of <span className="dataTime">{data.time}</span></div>

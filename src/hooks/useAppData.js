@@ -86,7 +86,6 @@ export default function useAppData(props) {
       }
     });
     countriesDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
-    console.log(countriesDataWithChina);
     return countriesDataWithChina;
   }
 

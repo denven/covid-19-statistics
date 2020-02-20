@@ -67,8 +67,7 @@ function Global() {
                 <span style={{fontSize: 12, fontWeight: 600}}>&nbsp; Data Loading ...</span>
               </div>
             </>
-          ):          
-          <TableGlobal rows={tableData} />
+          ) : ( <TableGlobal rows={tableData} /> )
         }
       </div>
       </div>

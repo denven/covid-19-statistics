@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,7 +10,8 @@ import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
 
 const columns = [
-  { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 50},
+  { id: 'no', label: 'No.', maxWidth: 10},
+  { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 40},
   {
     id: 'confirmedCount',
     label: 'Confirmed',
@@ -39,23 +40,17 @@ const useStyles = makeStyles({
 });
 
 let initRows = [];  // Init an empty table data array
-for(let i = 0; i < 25; i++) {
-  initRows.push({ countryEnglishName: 'Loading...', confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
+for(let i = 0; i < 3; i++) {
+  initRows.push({ countryEnglishName: 'Loading...' + i, confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
 }
 
 export default function StickyHeadTable({rows}) {
   const classes = useStyles();
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(25);
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = event => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
+  const [rowsData, setRows] = useState((rows.length === 0) ? initRows: rows);
+  useEffect(() => {
+    if(rows.length > 0) { setRows(rows); } 
+  },[rows]);
 
   return (
     <Paper className={classes.root} elevation={0} >
@@ -72,11 +67,11 @@ export default function StickyHeadTable({rows}) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
+            {rowsData.map( (row, index) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.countryEnglishName}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={index}>
                   {columns.map(column => {
-                    const value = row[column.id];
+                    const value = row[column.id] || index+1;
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
