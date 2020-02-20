@@ -12,12 +12,15 @@ const newsapi = new NewsAPI('2845360f3ed1414c96bfa71468b0cc5c');
 function OnePiece ({ source, publishedAt, title, description, url, urlToImage, content }) {
   //add a defalut image
   const subImage = "https://media.graytvinc.com/images/690*392/coronavirus6.png";
+  const [imgUrl, setImage] = useState(!urlToImage ? subImage : urlToImage);
+
+  const onError = () => { setImage(subImage) }; // add substitution fallback when image cannot load
 
   return (
       <div className="news-card">
         <div className="news-image"> 
           <a href={url} >
-            <img src={!urlToImage ? subImage : urlToImage} alt={''} />
+            <img src={imgUrl} alt={''} onError={onError} />
           </a> </div>
         <div className ='news-text'>
           <div>
