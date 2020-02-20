@@ -40,9 +40,11 @@ function China() {
   )
 }       
 
+// global data is also for homepage
 function Global() {
 
   const {loaded, overall, mapData, tableData} = useAppData();
+
   return (  
     //{/* !loaded ? <div className="dataLoading">LOADING...</div> : */}     
     <div className="bodyContainer">

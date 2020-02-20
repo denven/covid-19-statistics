@@ -4,7 +4,7 @@ import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 
-export default function MapGlobal({mapData}) {
+export default function MapGlobal({mapData, loaded}) {
 
   useEffect(() => {
     import(`echarts/map/json/world.json`).then(map => {
@@ -115,7 +115,7 @@ export default function MapGlobal({mapData}) {
       option={getOption()}
       loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
-      showLoading={true}
+      showLoading={!loaded ? true : false}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
