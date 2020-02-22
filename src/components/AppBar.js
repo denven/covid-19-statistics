@@ -29,24 +29,22 @@ const useStyles = makeStyles(theme => ({
   link: { color: '#FFF', textDecoration: 'none' }
 }));
 
-function China() {
+function China({overall}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={false} overall={{}}/>
+        <OverallData showGlobal={false} overall={overall}/>
       </div>
       <div className="bodyBottom">
         <div className="bodyLeft"> <MapChina/> </div>
         <div className="bodyRight"> <ChinaTrend/> </div>
       </div>
     </div>
-  )
+  );
 }       
 
 // global data is also for homepage
-function Global() {
-
-  const {loaded, overall, mapData, tableData} = useAppData();
+function Global({loaded, overall, globalMap, tableData}) {
 
   return (  
     <div className="bodyContainer">
@@ -55,7 +53,7 @@ function Global() {
       </div>
       <div className="bodyBottom">   
       <div className="bodyGlobalMap">
-        <MapGlobal mapData={mapData} loaded={loaded}/>
+        <MapGlobal mapData={globalMap} loaded={loaded}/>
       </div>    
       <div className="bodyGlobalTable">
         { 
@@ -75,11 +73,11 @@ function Global() {
   )
 }  
 
-function News() {
+function News({overall}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={false}/>
+        <OverallData showGlobal={false} overall={overall}/>
       </div>
       <div className="bodyBottom">
         <LatestNews />
@@ -106,7 +104,11 @@ function Navigator() {
 }
 
 export default function TopAppBar() {
+
   const classes = useStyles();
+  const {loaded, globalOverall, chinaOverall, otherOverall, globalMap, tableData} = useAppData();
+  // console.log('appbar', globalOverall);
+
   return (
     <div className={classes.root}>
       <AppBar position="static" >
@@ -123,9 +125,18 @@ export default function TopAppBar() {
       </AppBar>
       {/* Router Configuration */}
       <Switch>
-          <Route exact path="/" component={Global}></Route>
-          <Route path="/china" component={China}></Route>
-          <Route path="/news" component={News}></Route>
+          <Route 
+            exact path="/"
+            component={() => <Global loaded={loaded} globalMap={globalMap} tableData={tableData} overall={globalOverall}/>}
+          />
+          <Route 
+            path="/china" 
+            component={() => <China loaded={loaded} overall={chinaOverall} />}
+          />
+          <Route 
+            path="/news" 
+            component={() => <News loaded={loaded} overall={otherOverall} />}
+          />
       </Switch>
     </div>
   );

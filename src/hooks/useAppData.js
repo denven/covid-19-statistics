@@ -3,25 +3,37 @@ import axios from "axios";
 import moment from 'moment';
 import { filter, pick, orderBy } from 'lodash';
 
-import reducer, { SET_LOAD_STATUS, SET_OVERALL, SET_TABLE_DATA, SET_MAP_DATA } from "./reducer";
+import reducer, { 
+  SET_LOAD_STATUS, 
+  SET_OTHER_OVERALL, 
+  SET_CHINA_OVERALL, 
+  SET_GLOBAL_OVERALL, 
+  SET_GLOBAL_MAP, 
+  SET_CHINA_MAP,
+  SET_GLOBAL_TABLE } from "./reducer";
 
 export default function useAppData(props) {
 
-  const initialData = { loaded: false, overall: {}, mapData: [], tableData: []};
+  const initialData = { 
+    loaded: false, 
+    mapData: [], 
+    tableData: []
+  };
   const [covidData, dispatch] = useReducer(reducer, initialData);
-
-  // const setOverall = data => dispatch({type: SET_OVERALL, overall: data});
-  // const setMapData = data => dispatch({type: SET_MAP_DATA, mapData: data});
-  // const setTableData = data => dispatch({type: SET_TABLE_DATA, tableData: data})
 
   const getUpdateTime = (data) => {
     let time = moment.unix(data[0].updateTime/1000).toString();
     return moment(time).format("YYYY-MM-DD HH:mm:ss");
   };
 
+  //history data is for line charts
+  const getHisData = () => {
+
+  }
+
   // overall data without China
-  const getOverall = (otherCountries, updateTime) => {      
-    let globalCases = { 
+  const getOverall = (data, updateTime) => {      
+    let cases = { 
       currentConfirmedCount: 0, 
       confirmedCount: 0, 
       suspectedCount: 0, 
@@ -29,27 +41,27 @@ export default function useAppData(props) {
       deadCount: 0
     };
 
-    for(const country of otherCountries) {
+    for(const country of data) {
       if(country.countryEnglishName) {
-        globalCases.confirmedCount += country.confirmedCount;
-        globalCases.currentConfirmedCount += country.currentConfirmedCount;
-        globalCases.curedCount += country.curedCount;
-        globalCases.deadCount += country.deadCount;
-        globalCases.suspectedCount += country.suspectedCount;
+        cases.confirmedCount += country.confirmedCount;
+        cases.currentConfirmedCount += country.currentConfirmedCount;
+        cases.curedCount += country.curedCount;
+        cases.deadCount += country.deadCount;
+        cases.suspectedCount += country.suspectedCount;
       }
     }      
 
     return { 
       time: updateTime,
-      confirmed: globalCases.confirmedCount, 
-      suspect: globalCases.suspectedCount,
-      cured: globalCases.curedCount, 
-      death: globalCases.deadCount,
-      fatality: (100 * globalCases.deadCount / (globalCases.confirmedCount + globalCases.curedCount)).toFixed(2) + '%'
+      confirmed: cases.confirmedCount, 
+      suspect: cases.suspectedCount,
+      cured: cases.curedCount, 
+      death: cases.deadCount,
+      fatality: (100 * cases.deadCount / (cases.confirmedCount + cases.curedCount)).toFixed(2) + '%'
     };
   }
 
-  const getMapData = (chinaData, otherCountries) => {
+  const getGlobalMapData = (chinaData, data) => {
 
     let chinaCases = { 
       countryEnglishName: 'China', 
@@ -68,7 +80,7 @@ export default function useAppData(props) {
       chinaCases.suspectedCount += prov.suspectedCount;
     }
 
-    let countriesData = otherCountries.map((country) => { 
+    let countriesData = data.map((country) => { 
       if(country.countryName === "阿联酋") {
         country.countryEnglishName = "United Arab Emirates";
       }
@@ -86,6 +98,7 @@ export default function useAppData(props) {
       }
     });
     countriesDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
+
     return countriesDataWithChina;
   }
 
@@ -119,6 +132,8 @@ export default function useAppData(props) {
   }
 
   useEffect(() => {
+
+    // latest data of all places in the world
     axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
       
       let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
@@ -137,15 +152,30 @@ export default function useAppData(props) {
         }
       }
 
-      let overall = getOverall(otherCountries, getUpdateTime(data.data.results));
-      let mapData = getMapData(chinaData, otherCountries);
+      let updateTime = getUpdateTime(data.data.results);
+      let chinaOverall = getOverall(chinaData, updateTime);
+      let otherOverall = getOverall(otherCountries, updateTime);
+      let globalOverall = getOverall([...chinaData, ...otherCountries], updateTime);
+
+      let globalMapData = getGlobalMapData(chinaData, otherCountries);
       let tableData = getTableData(chinaData, otherCountries);
       dispatch({type: SET_LOAD_STATUS, loaded: true});
-      dispatch({type: SET_OVERALL, overall: overall});
-      dispatch({type: SET_MAP_DATA, mapData: mapData});
-      dispatch({type: SET_TABLE_DATA, tableData: tableData})
+      dispatch({type: SET_OTHER_OVERALL, otherToll: otherOverall});
+      dispatch({type: SET_CHINA_OVERALL, chinaToll: chinaOverall});
+      dispatch({type: SET_GLOBAL_OVERALL, globalToll: globalOverall});
+      console.log(globalOverall);
+      dispatch({type: SET_GLOBAL_MAP, globalMap: globalMapData});
+      // dispatch({type: SET_CHINA_MAP, chinaMap: mapData});
+      dispatch({type: SET_GLOBAL_TABLE, tableData: tableData})
 
     }).catch(e => console.log('Request global data:', e));
+
+    // request for history data
+    axios.get('https://lab.isaaclin.cn/nCoV/api/area?latest=0', 
+      { headers: {'Access-Control-Allow-Origin': '*'} }).then((data)=> {
+      console.log('hisdata', data.data.results);
+    });
+
   }, []);
 
   return covidData;
