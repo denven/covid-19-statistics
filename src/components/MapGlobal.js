@@ -42,8 +42,8 @@ export default function MapGlobal({mapData, loaded}) {
         min: 0,
         max: 100000,
         align: 'left',
-        top: '60%',
-        left: 'left',
+        top: '4%',
+        left: 'center',
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
         pieces: [ 
@@ -54,7 +54,7 @@ export default function MapGlobal({mapData, loaded}) {
           {min: 1, max: 9},
         ],        
         padding: 35,
-        orient: 'vertical',
+        orient: 'horizontal',
         showLabel: true,
         text: ['Outbreak', 'Minor Break'],
         itemWidth: 10,

@@ -59,9 +59,9 @@ export default function MapChina() {
         type: 'piecewise',
         min: 0,
         max: 100000,
-        align: 'right',
-        top: '60%',
-        left: 'right',
+        align: 'left',
+        top: '4%',
+        left: 'center',
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
         pieces: [ 
@@ -73,7 +73,7 @@ export default function MapChina() {
           {min: 1, max: 9},
         ],
         padding: 30,
-        orient: 'vertical',
+        orient: 'horizontal',
         showLabel: true,
         text: ['Outbreak', 'Minor Break'],
         itemWidth: 10,
@@ -94,6 +94,7 @@ export default function MapChina() {
       // geo: {  },
       series: [{
         left: 'center',
+        top: '19%',
         type: 'map',
         name: 'Confirmed Cases',
         geoIndex: 0,
