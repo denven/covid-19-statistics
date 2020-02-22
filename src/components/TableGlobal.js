@@ -40,8 +40,9 @@ const useStyles = makeStyles({
 });
 
 let initRows = [];  // Init an empty table data array
-for(let i = 0; i < 3; i++) {
-  initRows.push({ countryEnglishName: 'Loading...' + i, confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
+for(let i = 0, loadSting = 'Loading '; i < 3; i++) {
+  loadSting +='..';
+  initRows.push({ countryEnglishName: loadSting, confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
 }
 
 export default function StickyHeadTable({rows}) {
