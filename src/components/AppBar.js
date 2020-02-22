@@ -33,7 +33,7 @@ function China({overall}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData place={'China'} overall={overall}/>
+        <OverallData showGlobal={false} overall={overall}/>
       </div>
       <div className="bodyBottom">
         <div className="bodyLeft"> <MapChina/> </div>
@@ -49,7 +49,7 @@ function Global({loaded, overall, globalMap, tableData}) {
   return (  
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData place={'Global'} overall={overall}/>
+        <OverallData showGlobal={true} overall={overall}/>
       </div>
       <div className="bodyBottom">   
       <div className="bodyGlobalMap">
@@ -77,7 +77,7 @@ function News({overall}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData place={'Other'} overall={overall}/>
+        <OverallData showGlobal={false} overall={overall}/>
       </div>
       <div className="bodyBottom">
         <LatestNews />
@@ -107,7 +107,6 @@ export default function TopAppBar() {
 
   const classes = useStyles();
   const {loaded, globalOverall, chinaOverall, otherOverall, globalMap, tableData} = useAppData();
-  // console.log('appbar', globalOverall);
 
   return (
     <div className={classes.root}>

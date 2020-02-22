@@ -136,7 +136,8 @@ export default function useAppData(props) {
 
     let patchCount = 0;
     axios.get(hisDataUrl + indicators + today + endDate).then( today => {
-      patchCount = today.data.data[0][0];
+      if(today.data.errCode === 0)
+        patchCount = today.data.data[0][0];
     });
 
     // latest data of all places in the world
@@ -169,7 +170,6 @@ export default function useAppData(props) {
       dispatch({type: SET_OTHER_OVERALL, otherToll: otherOverall});
       dispatch({type: SET_CHINA_OVERALL, chinaToll: chinaOverall});
       dispatch({type: SET_GLOBAL_OVERALL, globalToll: globalOverall});
-      console.log(globalOverall);
       dispatch({type: SET_GLOBAL_MAP, globalMap: globalMapData});
       // dispatch({type: SET_CHINA_MAP, chinaMap: mapData});
       dispatch({type: SET_GLOBAL_TABLE, tableData: tableData})

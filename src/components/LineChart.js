@@ -2,36 +2,39 @@ import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
-
 import axios from 'axios';
-import { map } from 'lodash';
 import moment from 'moment';
+import { useAlert } from 'react-alert'
 
 export default function ChinaTrend() {
   
   const [data, setData] = useState([]);
   const [loaded, setReady] = useState(false); 
-
+  
+  const alert = useAlert();
   useEffect(() => {
     const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?userid=2a5db344-6b19-4828-9673-d0d81bd265bc';
     const indicators = '&indicators=S6274770,S6274773,S6274772,S6274771&startdate=2020-01-20&enddate=';
     const endDate = moment(new Date()).format('YYYY-MM-DD');
 
     axios.get(hisDataUrl + indicators + endDate).then( hisData => {
-      let newdata = { 
-        date: hisData.data.times.map( s => { return moment.unix(s / 1000).format('YYYY-MM-DD') }),
-        confirmedNum: hisData.data.data[0],
-        suspectedNum: hisData.data.data[1], 
-        curesNum: hisData.data.data[2],
-        deathsNum: hisData.data.data[3]
-      };
-
-      setData(newdata)  
+      if(hisData.data.errCode === 0) {
+        setData({ 
+          date: hisData.data.times.map( s => { return moment.unix(s / 1000).format('YYYY-MM-DD') }),
+          confirmedNum: hisData.data.data[0],
+          suspectedNum: hisData.data.data[1], 
+          curesNum: hisData.data.data[2],
+          deathsNum: hisData.data.data[3]
+        });
+      } else {
+        console.log('Requst for history data in China:', hisData.data.errCode);
+        alert.show("Opps... Failed to get history data!");
+      }
       setReady(true);
     }).catch(e => { console.log('Request history data in China', e) });
 
     return (console.log('Cleanup'));
-  }, []);
+  },[alert]);
 
   const getLoadingOption = () => {
     return { text: 'Data Loading ...' };
