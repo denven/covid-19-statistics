@@ -169,13 +169,6 @@ export default function useAppData(props) {
       dispatch({type: SET_GLOBAL_TABLE, tableData: tableData})
 
     }).catch(e => console.log('Request global data:', e));
-
-    // request for history data
-    axios.get('https://lab.isaaclin.cn/nCoV/api/area?latest=0', 
-      { headers: {'Access-Control-Allow-Origin': '*'} }).then((data)=> {
-      console.log('hisdata', data.data.results);
-    });
-
   }, []);
 
   return covidData;

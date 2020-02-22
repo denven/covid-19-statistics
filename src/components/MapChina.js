@@ -24,7 +24,7 @@ export default function MapChina() {
         { name: p.provinceName, value: p.confirmedNum })
       );    
       setData(tempData);
-      console.log('Province Data', provinces.data.data);
+      // console.log('Province Data', provinces.data.data);
       setReady(true);
     }).catch(e => { console.log('Request province data in China', e) })
   },[]);

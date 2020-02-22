@@ -9,7 +9,6 @@ export default function OverallData ({showGlobal, overall}) {
     if(overall)  setData(overall);
   }, [overall]);
   
-  console.log('overdata', overall);
   return (
     <>
       <div>As of <span className="dataTime">{data.time}</span></div>
