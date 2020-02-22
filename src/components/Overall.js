@@ -1,28 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import '../styles/Overall.css';
 
 export default function OverallData ({showGlobal, overall}) {  
-  const [data, setData] = useState(showGlobal ? overall: { });
+  
+  const [data, setData] = useState({time: '', confirmed: '', suspect: '', cured: '', death: '', fatality: '' });
 
   useEffect(() => {
-    if(showGlobal) {setData(overall)}
-    else {
-    axios.get('http://www.dzyong.top:3005/yiqing/total')
-      .then((total) => {
-          const {date, diagnosed, suspect, cured, death} = total.data.data[0];
-          setData({ 
-            time: date,
-            confirmed: diagnosed, 
-            suspect: suspect,
-            cured: cured, 
-            death: death,
-            fatality: (100 * death / (diagnosed + cured)).toFixed(2) + '%'
-          });
-      }).catch(e => { console.log('Request latest overall data in China', e) });
-    }
-  },[overall, showGlobal]);
-
+    if(overall)  setData(overall);
+  }, [overall]);
+  
+  console.log('overdata', overall);
   return (
     <>
       <div>As of <span className="dataTime">{data.time}</span></div>

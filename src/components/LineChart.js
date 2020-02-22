@@ -15,6 +15,7 @@ export default function ChinaTrend() {
     axios.get('http://www.dzyong.top:3005/yiqing/history').then((hisData) => {
         setData(hisData.data.data);
         setReady(true);
+        console.log(hisData.data.data);
     }).catch(e => { console.log('Request history data in China', e) })
   }, []);
 
