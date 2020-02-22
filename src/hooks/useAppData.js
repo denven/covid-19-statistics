@@ -26,17 +26,12 @@ export default function useAppData(props) {
     return moment(time).format("YYYY-MM-DD HH:mm:ss");
   };
 
-  //history data is for line charts
-  const getHisData = () => {
-
-  }
-
   // overall data without China
-  const getOverall = (data, updateTime) => {      
+  const getOverall = (data, patchCount, updateTime) => {      
     let cases = { 
       currentConfirmedCount: 0, 
       confirmedCount: 0, 
-      suspectedCount: 0, 
+      suspectedCount: patchCount, 
       curedCount: 0, 
       deadCount: 0
     };
@@ -133,6 +128,17 @@ export default function useAppData(props) {
 
   useEffect(() => {
 
+    //patch for the area api not always getting 0 susptected cases
+    const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?userid=2a5db344-6b19-4828-9673-d0d81bd265bc';
+    const indicators = '&indicators=S6274773&startdate=';
+    const today = moment(new Date()).format('YYYY-MM-DD');
+    const endDate = '&enddate=' + today;
+
+    let patchCount = 0;
+    axios.get(hisDataUrl + indicators + today + endDate).then( today => {
+      patchCount = today.data.data[0][0];
+    });
+
     // latest data of all places in the world
     axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
       
@@ -153,9 +159,9 @@ export default function useAppData(props) {
       }
 
       let updateTime = getUpdateTime(data.data.results);
-      let chinaOverall = getOverall(chinaData, updateTime);
-      let otherOverall = getOverall(otherCountries, updateTime);
-      let globalOverall = getOverall([...chinaData, ...otherCountries], updateTime);
+      let chinaOverall = getOverall(chinaData, patchCount, updateTime);
+      let otherOverall = getOverall(otherCountries, patchCount, updateTime);
+      let globalOverall = getOverall([...chinaData, ...otherCountries], patchCount, updateTime);
 
       let globalMapData = getGlobalMapData(chinaData, otherCountries);
       let tableData = getTableData(chinaData, otherCountries);

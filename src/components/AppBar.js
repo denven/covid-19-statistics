@@ -33,7 +33,7 @@ function China({overall}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={false} overall={overall}/>
+        <OverallData place={'China'} overall={overall}/>
       </div>
       <div className="bodyBottom">
         <div className="bodyLeft"> <MapChina/> </div>
@@ -49,7 +49,7 @@ function Global({loaded, overall, globalMap, tableData}) {
   return (  
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={true} overall={overall}/>
+        <OverallData place={'Global'} overall={overall}/>
       </div>
       <div className="bodyBottom">   
       <div className="bodyGlobalMap">
@@ -77,7 +77,7 @@ function News({overall}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={false} overall={overall}/>
+        <OverallData place={'Other'} overall={overall}/>
       </div>
       <div className="bodyBottom">
         <LatestNews />
