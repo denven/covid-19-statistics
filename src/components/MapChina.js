@@ -48,7 +48,7 @@ export default function MapChina() {
       // backgroundColor: '#C0C0C0',
       title:  {
           x: 'center',
-          text: 'Cases by Province in China today',
+          text: 'Cases by Province in China',
           subtext: 'Data from https://ncov.dxy.cn/',
           // sublink: 'https://ncov.dxy.cn/ncovh5/view/pneumonia',
           // right: '10px',

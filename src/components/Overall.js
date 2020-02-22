@@ -18,13 +18,13 @@ export default function OverallData ({place, overall}) {
 
   return (
     <>
-      <div>As of <span className="dataTime">{data.time}</span></div>
-      <div>{placeString}</div>     
-      <div>Confirmed: <span className="confirmedNumber">{data.confirmed}</span></div>
-      <div>Suspected: <span className="suspectedNumber">{data.suspect}</span></div>
-      <div>Recovered: <span className="curedNumber">{data.cured}</span></div>
-      <div>Deaths: <span className="deathNumber">{data.death}</span></div>
-      <div>Lethality: <span className="fatalityNumber">{data.fatality}</span></div>
+      <div className="eachText">As of <span className="dataTime">&nbsp; {data.time}</span></div>
+      <div className="eachText">{placeString}</div>     
+      <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; {data.confirmed}</span></div>
+      <div className="eachText">Suspected <span className="suspectedNumber">&nbsp; {data.suspect}</span></div>
+      <div className="eachText">Recovered <span className="curedNumber">&nbsp; {data.cured}</span></div>
+      <div className="eachText">Deaths <span className="deathNumber">&nbsp; {data.death}</span></div>
+      <div className="eachText">Lethality <span className="fatalityNumber">&nbsp; {data.fatality}</span></div>
     </>
 
   );
