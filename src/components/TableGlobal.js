@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
 
 const columns = [
-  { id: 'no', label: 'No.', maxWidth: 10},
+  { id: 'no', label: '#', maxWidth: 10},
   { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 40},
   {
     id: 'confirmedCount',
@@ -70,9 +70,9 @@ export default function StickyHeadTable({rows}) {
           <TableBody>
             {rowsData.map( (row, index) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={index}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.countryEnglishName}>
                   {columns.map(column => {
-                    const value = row[column.id] || index+1;
+                    const value = ((column.id === 'no') && !row[column.id]) ? (index+1) : row[column.id];
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
