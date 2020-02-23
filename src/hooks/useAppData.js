@@ -22,7 +22,6 @@ export default function useAppData(props) {
   const [covidData, dispatch] = useReducer(reducer, initialData);
 
   const getUpdateTime = (data) => {
-    console.log('aaaaaaa', data);
     let time = moment.unix(data[0].updateTime/1000).toString();
     // return moment(time).format("YYYY-MM-DD HH:mm:ss");
     return moment(time).format("YYYY-MM-DD");
@@ -133,8 +132,7 @@ export default function useAppData(props) {
     //patch for the area api not always getting 0 susptected cases
     const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?userid=2a5db344-6b19-4828-9673-d0d81bd265bc';
     const indicators = '&indicators=S6274773&startdate=';
-    const today = moment().format('YYYY-MM-DD');
-    console.log('today', today);
+    const today = moment().format('YYYY-MM-DD');  // do not use moment(new Date())
     const endDate = '&enddate=' + today;
 
     let patchCount = 0;
