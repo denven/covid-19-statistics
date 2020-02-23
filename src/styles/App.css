@@ -30,11 +30,11 @@
 }
 
 .bodyGlobalMap {
-    width: 70%
+    width: 65%
 }
 
 .bodyGlobalTable {
-    width: 30%
+    width: 35%
 }
 
 .bodyBottom {
@@ -70,7 +70,8 @@
 
     .bodyGlobalMap {
         width: 100%;
-        height: 30%;
+        max-height: 45%;
+        margin-bottom: 0px;
     }
     
     .bodyGlobalTable {
@@ -84,7 +85,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        height: 90%;
+        height: 85%;
         padding-top: 10px;
         border-top: 1px solid lightgray;
         /* background-color: #C0C0C0; */
@@ -94,12 +95,14 @@
         display: inline-block;
         text-align: center;
         width: 100%;
+        height: 50%;
     }
     
     .bodyRight {
         display: inline-block;
         text-align: center;
         width: 100%;  
+        height: 50%;
     }
 }
 
