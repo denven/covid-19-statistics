@@ -28,7 +28,7 @@ export default function ChinaTrend() {
         });
       } else {
         console.log('Requst for history data in China:', hisData.data.errCode);
-        alert.show("Opps... Failed to get history data!");
+        alert.show('Opps... Failed to get history data!');
       }
       setReady(true);
     }).catch(e => { console.log('Request history data in China', e) });
