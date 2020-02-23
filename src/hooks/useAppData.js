@@ -162,7 +162,7 @@ export default function useAppData(props) {
 
       let updateTime = getUpdateTime(data.data.results);
       let chinaOverall = getOverall(chinaData, patchCount, updateTime);
-      let otherOverall = getOverall(otherCountries, patchCount, updateTime);
+      let otherOverall = getOverall(otherCountries, 0, updateTime);
       let globalOverall = getOverall([...chinaData, ...otherCountries], patchCount, updateTime);
 
       let globalMapData = getGlobalMapData(chinaData, otherCountries);
