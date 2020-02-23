@@ -42,7 +42,7 @@ export default function MapGlobal({mapData, loaded}) {
         min: 0,
         max: 100000,
         align: 'left',
-        top: '4%',
+        top: '5%',
         left: 'center',
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
@@ -100,7 +100,7 @@ export default function MapGlobal({mapData, loaded}) {
           }
         },
         mapType: 'world',        
-        zoom: 1.18,        
+        zoom: 1.0,        
         roam: false,
         showLegendSymbol: false,
         rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },
@@ -108,9 +108,21 @@ export default function MapGlobal({mapData, loaded}) {
     }
   }
 
+  const getModerateHeight = () => {
+      let mediaQuery = window.matchMedia("(orientation: portrait)");
+      // console.log('sss', mediaQuery);
+      if(mediaQuery.matches) {
+        if(document.body.clientWidth < 1024) {
+          return "48vh";
+        }        
+      }
+      return "85vh";
+  }
+
+  // console.log('width height', document.body.clientWidth, document.body.clientHeight);
   return (
     <ReactEcharts 
-      style={{height: "85vh"}}
+      style={{height: getModerateHeight()}}
       echarts={echarts}
       option={getOption()}
       loadingOption={getLoadingOption()}
