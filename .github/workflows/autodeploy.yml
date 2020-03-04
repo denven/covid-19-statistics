@@ -1,0 +1,50 @@
+name: CI-Auto-Update
+
+on: 
+    schedule:
+    - cron: '* */3 * * *'
+      
+jobs:
+  download:   
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download latest data ...
+      run: |
+          wget https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYArea.json -O ./public/areas.json
+          ls ./public
+          git config --global user.email "myregs@foxmail.com"
+          git config --global user.name "denven"
+          git add ./public/areas.json
+          git commit -m 'Auto update'
+          git push 
+          
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: 'us-west-2' 
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: |
+        npm install
+        npm install react-scripts        
+      env:
+        CI: true  
+    - name: Upload latest data file to S3 bucket ...
+      run: | #aws s3 cp ./public/areas.json s3://covid-19-statistics/  
+          npm run build
+          npm run deploy  
