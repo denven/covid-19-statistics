@@ -23,7 +23,9 @@ export default function MapGlobal({mapData, loaded}) {
   };
 
   const onChartReady = (chart, loaded) => {
-    if(loaded) chart.hideLoading();
+    
+    if(loaded) setTimeout(() => { chart.hideLoading(); }, 500);
+    // chart.hideLoading();
   };
 
   const getOption = () => {
