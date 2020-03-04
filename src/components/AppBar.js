@@ -29,14 +29,14 @@ const useStyles = makeStyles(theme => ({
   link: { color: '#FFF', textDecoration: 'none' }
 }));
 
-function China({overall}) {
+function China({overall, chinaMap}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
         <OverallData showGlobal={false} place={'China'} overall={overall}/>
       </div>
       <div className="bodyBottom">
-        <div className="bodyLeft"> <MapChina/> </div>
+        <div className="bodyLeft"> <MapChina chinaMap={chinaMap}/> </div>
         <div className="bodyRight"> <ChinaTrend/> </div>
       </div>
     </div>
@@ -106,7 +106,7 @@ function Navigator() {
 export default function TopAppBar() {
 
   const classes = useStyles();
-  const {loaded, globalOverall, chinaOverall, otherOverall, globalMap, tableData} = useAppData();
+  const {loaded, globalOverall, chinaOverall, otherOverall, chinaMap, globalMap, tableData} = useAppData();
 
   return (
     <div className={classes.root}>
@@ -130,7 +130,7 @@ export default function TopAppBar() {
           />
           <Route 
             path="/china" 
-            component={() => <China loaded={loaded} overall={chinaOverall} />}
+            component={() => <China loaded={loaded} overall={chinaOverall} chinaMap={chinaMap} />}
           />
           <Route 
             path="/news" 

@@ -18,6 +18,9 @@ export default function reducer(state, action) {
     case SET_CHINA_OVERALL:
       return { ...state, chinaOverall: action.chinaToll };
 
+    case SET_CHINA_MAP:
+      return { ...state, chinaMap: action.chinaMap };
+
     case SET_GLOBAL_OVERALL:
       return { ...state, globalOverall: action.globalToll };
 

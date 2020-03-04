@@ -57,6 +57,11 @@ export default function useAppData(props) {
     };
   }
 
+  const getChinaProvData = (chinaData) => {
+    return chinaData.map( ({provinceShortName, confirmedCount}) => {
+      return {name: provinceShortName, value: confirmedCount};
+    });
+  }
   const getGlobalMapData = (chinaData, data) => {
 
     let chinaCases = { 
@@ -143,7 +148,7 @@ export default function useAppData(props) {
 
     // latest data of all places in the world
     axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
-      
+
       let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
       let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
 
@@ -165,6 +170,7 @@ export default function useAppData(props) {
       let otherOverall = getOverall(otherCountries, 0, updateTime);
       let globalOverall = getOverall([...chinaData, ...otherCountries], patchCount, updateTime);
 
+      let chinaMapData = getChinaProvData(chinaData);
       let globalMapData = getGlobalMapData(chinaData, otherCountries);
       let tableData = getTableData(chinaData, otherCountries);
       dispatch({type: SET_LOAD_STATUS, loaded: true});
@@ -172,11 +178,11 @@ export default function useAppData(props) {
       dispatch({type: SET_CHINA_OVERALL, chinaToll: chinaOverall});
       dispatch({type: SET_GLOBAL_OVERALL, globalToll: globalOverall});
       dispatch({type: SET_GLOBAL_MAP, globalMap: globalMapData});
-      // dispatch({type: SET_CHINA_MAP, chinaMap: mapData});
+      dispatch({type: SET_CHINA_MAP, chinaMap: chinaMapData});
       dispatch({type: SET_GLOBAL_TABLE, tableData: tableData})
 
     }).catch(e => console.log('Request global data:', e));
   }, []);
-
+  
   return covidData;
 }

@@ -2,32 +2,31 @@ import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 
-import axios from 'axios';
+// import axios from 'axios';
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
 
-export default function MapChina() {
-  const [data, setData] = useState([]);
-  const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
+export default function MapChina({chinaMap}) {
+  // const [data, setData] = useState([]);
+  // const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
 
   useEffect(() => {
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
-      echarts.registerMap('china-', map.default)  
+      echarts.registerMap('china-', map.default);
     });
-
   }, []);
 
-  useEffect(() => {
-      axios.get('http://www.dzyong.top:3005/yiqing/province').then((provinces) => {
-      const tempData = provinces.data.data.map(p => ( 
-        { name: p.provinceName, value: p.confirmedNum })
-      );    
-      setData(tempData);
-      // console.log('Province Data', provinces.data.data);
-      setReady(true);
-    }).catch(e => { console.log('Request province data in China', e) })
-  },[]);
+  // useEffect(() => {
+  //     axios.get('http://www.dzyong.top:3005/yiqing/province').then((provinces) => {
+  //     const tempData = provinces.data.data.map(p => ( 
+  //       { name: p.provinceName, value: p.confirmedNum })
+  //     );    
+  //     setData(tempData);
+  //     setReady(true);
+  //   }).catch(e => { console.log('Request province data in China', e) })
+
+  // },[chinaMap]);
 
   const getLoadingOption = () => {
     return {
@@ -40,7 +39,9 @@ export default function MapChina() {
   };
 
   const onChartReady = (chart) => {
-    setTimeout(() => { chart.hideLoading(); }, 1500);
+    if(Array.isArray(chinaMap) && chinaMap.length > 0) {
+      setTimeout(() => { chart.hideLoading(); }, 1500);
+    }
   };
 
   const getOption = () => {
@@ -98,7 +99,7 @@ export default function MapChina() {
         type: 'map',
         name: 'Confirmed Cases',
         geoIndex: 0,
-        data: data, // area(provinces) data
+        data: chinaMap, // area(provinces) data
         map: 'china-',
         // the following attributes can be put in geo, but the map will smaller
         // and cannot be zoomed out
@@ -134,7 +135,7 @@ export default function MapChina() {
       option={getOption()}
       loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
-      showLoading={!loaded}
+      showLoading={true}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
