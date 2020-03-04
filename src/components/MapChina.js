@@ -9,7 +9,7 @@ import titleize from 'titleize';
 export default function MapChina({chinaMap}) {
   // const [data, setData] = useState([]);
   // const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
-
+  console.log('chinampa', chinaMap);
   useEffect(() => {
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
@@ -85,12 +85,13 @@ export default function MapChina({chinaMap}) {
       toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
+          console.log('values', params);
+          let { name, existing, death, cured } = params.data;
           let value = ((params.value || "No Case") + '').split('.');
           value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-          return (
-            params.seriesName + '<br />' + 
-            titleize(pinyin(params.name, {removeTone: true})) + ': ' + value
-          );
+          name = titleize(pinyin(name, {removeTone: true}));
+          const tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Existing: \t${existing}<br />Cured：\t${cured}<br />Death：\t${death}`;
+          return tipString
         }
       },
       // geo: {  },
@@ -98,7 +99,7 @@ export default function MapChina({chinaMap}) {
         left: 'center',
         top: '19%',
         type: 'map',
-        name: 'Confirmed Cases',
+        name: '',
         geoIndex: 0,
         data: chinaMap, // area(provinces) data
         map: 'china-',

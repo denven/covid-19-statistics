@@ -58,8 +58,14 @@ export default function useAppData(props) {
   }
 
   const getChinaProvData = (chinaData) => {
-    return chinaData.map( ({provinceShortName, confirmedCount}) => {
-      return {name: provinceShortName, value: confirmedCount};
+    return chinaData.map( ({provinceShortName, currentConfirmedCount, confirmedCount, curedCount, deadCount}) => {
+        return {
+          name: provinceShortName, 
+          existing: currentConfirmedCount,
+          value: confirmedCount,
+          cured: curedCount,
+          death: deadCount
+        }                
     });
   }
   const getGlobalMapData = (chinaData, data) => {
