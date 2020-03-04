@@ -9,7 +9,7 @@ import titleize from 'titleize';
 export default function MapChina({chinaMap}) {
   // const [data, setData] = useState([]);
   // const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
-  console.log('chinampa', chinaMap);
+
   useEffect(() => {
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
@@ -85,7 +85,6 @@ export default function MapChina({chinaMap}) {
       toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
-          console.log('values', params);
           let { name, existing, death, cured } = params.data;
           let value = ((params.value || "No Case") + '').split('.');
           value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');

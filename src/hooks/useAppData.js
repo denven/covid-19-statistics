@@ -153,8 +153,9 @@ export default function useAppData(props) {
     }).catch(e => console.log('Failed to get suspected cases count!'));
 
     // latest data of all places in the world
-    axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
-
+    axios.get('./areas.json').then((data)=> {
+    // axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
+      console.log('getiti', data.data.results);
       let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
       let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
 
