@@ -16,6 +16,8 @@ function OnePiece ({ source, publishedAt, title, description, url, urlToImage, c
 
   const onError = () => { setImage(subImage) }; // add substitution fallback when image cannot load
 
+  description = description.replace(/%20/g, ' ');  // fixed the content contains characters like `20%`
+  
   return (
       <div className="news-card">
         <div className="news-image"> 
