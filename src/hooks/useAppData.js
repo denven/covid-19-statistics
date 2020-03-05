@@ -7,6 +7,7 @@ import reducer, {
   SET_LOAD_STATUS, 
   SET_OTHER_OVERALL, 
   SET_CHINA_OVERALL, 
+  SET_CANADA_OVERALL, 
   SET_GLOBAL_OVERALL, 
   SET_GLOBAL_MAP, 
   SET_CHINA_MAP,
@@ -156,8 +157,9 @@ export default function useAppData(props) {
     axios.get('./areas.json').then((data)=> {
     // axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
       let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
+      let canadaData = filter(data.data.results, ({countryEnglishName})=>{ return (countryEnglishName === 'Canada') });
       let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
-
+      console.log('test canada', canadaData)
       // spectial process of unmatched data with map geo
       for(const country of otherCountries) {
         if(country.countryName === "钻石公主号邮轮") {
@@ -173,15 +175,19 @@ export default function useAppData(props) {
 
       let updateTime = getUpdateTime(data.data.results);
       let chinaOverall = getOverall(chinaData, patchCount, updateTime);
+      let canadaOverall = getOverall(canadaData, 0, updateTime);
       let otherOverall = getOverall(otherCountries, 0, updateTime);
       let globalOverall = getOverall([...chinaData, ...otherCountries], patchCount, updateTime);
 
       let chinaMapData = getChinaProvData(chinaData);
       let globalMapData = getGlobalMapData(chinaData, otherCountries);
       let tableData = getTableData(chinaData, otherCountries);
+
       dispatch({type: SET_LOAD_STATUS, loaded: true});
       dispatch({type: SET_OTHER_OVERALL, otherToll: otherOverall});
       dispatch({type: SET_CHINA_OVERALL, chinaToll: chinaOverall});
+      dispatch({type: SET_CANADA_OVERALL, canadaToll: canadaOverall});
+
       dispatch({type: SET_GLOBAL_OVERALL, globalToll: globalOverall});
       dispatch({type: SET_GLOBAL_MAP, globalMap: globalMapData});
       dispatch({type: SET_CHINA_MAP, chinaMap: chinaMapData});

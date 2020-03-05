@@ -49,14 +49,14 @@ function China({overall, chinaMap}) {
   );
 }       
 
-function Canada({overall, chinaMap}) {
+function Canada({overall}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
         <OverallData showGlobal={false} place={'Canada'} overall={overall}/>
       </div>
       <div className="bodyBottom">
-        <div className="bodyLeft"> <MapCanada chinaMap={chinaMap}/> </div>
+        <div className="bodyLeft"> <MapCanada/> </div>
         <div className="bodyRight timeCase"> 
           <div className="timeScroll"><Timeline/></div>
         </div>
@@ -128,7 +128,16 @@ function Navigator() {
 export default function TopAppBar() {
 
   const classes = useStyles();
-  const {loaded, globalOverall, chinaOverall, otherOverall, chinaMap, globalMap, tableData} = useAppData();
+  const { 
+    loaded, 
+    globalOverall, 
+    chinaOverall, 
+    canadaOverall, 
+    otherOverall, 
+    chinaMap, 
+    globalMap, 
+    tableData
+  } = useAppData();
 
   return (
     <div className={classes.root}>
@@ -156,7 +165,7 @@ export default function TopAppBar() {
           />
           <Route 
             path="/canada" 
-            component={() => <Canada loaded={loaded} overall={chinaOverall} chinaMap={chinaMap} />}
+            component={() => <Canada loaded={loaded} overall={canadaOverall} />}
           />
           <Route 
             path="/news" 

@@ -1,5 +1,6 @@
 export const SET_OTHER_OVERALL = "SET_OTHER_OVERALL";
 export const SET_CHINA_OVERALL = "SET_CHINA_OVERALL";
+export const SET_CANADA_OVERALL = "SET_CANADA_OVERALL";
 export const SET_GLOBAL_OVERALL = "SET_GLOBAL_OVERALL";
 export const SET_GLOBAL_MAP = "SET_GLOBAL_MAP";
 export const SET_CHINA_MAP = "SET_CHINA_MAP";
@@ -17,6 +18,9 @@ export default function reducer(state, action) {
 
     case SET_CHINA_OVERALL:
       return { ...state, chinaOverall: action.chinaToll };
+
+      case SET_CANADA_OVERALL: 
+        return { ...state, canadaOverall: action.canadaToll };
 
     case SET_CHINA_MAP:
       return { ...state, chinaMap: action.chinaMap };

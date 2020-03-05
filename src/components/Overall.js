@@ -10,8 +10,10 @@ export default function OverallData ({place, overall}) {
   }, [overall]);
 
   let placeString = 'Cases Found Worldwide'
-  if(place === 'China') {
-    placeString = 'Cases Found in China'
+  if(place === 'China') {    
+    placeString = 'Cases Found in China'  
+  } else if(place === 'Canada') {
+      placeString = 'Cases Found in Canada'
   } else if(place === 'Other') {
     placeString = 'Cases Found out of China'
   }
