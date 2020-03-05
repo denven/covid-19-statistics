@@ -58,6 +58,28 @@
 .bodyRight {
     display: inline-block;
     width: 50%;  
+ }
+
+
+.timelineBox {
+    /* background: #3F51B5;   */
+    /* give the outermost container a predefined size */
+    position: absolute;
+    top: 12%;
+    bottom: 5%;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollable {
+    background: white;
+    flex-grow: 1;
+    overflow: auto;
+
+    /* for Firefox */
+    min-height: 0;
 }
 
  /* Desktop styles */
@@ -103,6 +125,16 @@
         text-align: center;
         width: 100%;  
         height: 50%;
+    }
+
+    .timelineBox {
+        top: 65%;
+        left: 0%;
+        text-align: left;
+    }
+
+    .scrollable {
+        overflow: visible;
     }
 }
 

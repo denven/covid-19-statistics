@@ -13,11 +13,17 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 
 import '../styles/AppBar.css'
 import AppLogo from './AppLogo';
-import MapChina from './MapChina';
-import MapGlobal from './MapGlobal';
 import OverallData from './Overall';
-import ChinaTrend from './LineChart';
+
+import MapGlobal from './MapGlobal';
 import TableGlobal from './TableGlobal';
+
+import MapChina from './MapChina';
+import ChinaTrend from './LineChart';
+
+import MapCanada from './MapCanada';
+import Timeline from './Timeline';
+
 import LatestNews from './News';
 
 import useAppData from '../hooks/useAppData';
@@ -42,6 +48,22 @@ function China({overall, chinaMap}) {
     </div>
   );
 }       
+
+function Canada({overall, chinaMap}) {
+  return (
+    <div className="bodyContainer">
+      <div className="bodyTop">     
+        <OverallData showGlobal={false} place={'Canada'} overall={overall}/>
+      </div>
+      <div className="bodyBottom">
+        <div className="bodyLeft"> <MapCanada chinaMap={chinaMap}/> </div>
+        <div className="bodyRight timeCase"> 
+          <div className="timeScroll"><Timeline/></div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // global data is also for homepage
 function Global({loaded, overall, globalMap, tableData}) {
@@ -95,7 +117,7 @@ function Navigator() {
         <ul>
           <li><Link to="/" className={classes.link}>Global</Link></li> 
           <li><Link to="/china" className={classes.link}>China</Link></li>            
-          {/* <li><Link to="/canada" className={classes.link}>Canada</Link></li> */}
+          <li><Link to="/canada" className={classes.link}>Canada</Link></li>
           <li><Link to="/news" className={classes.link}>News</Link></li>            
         </ul>   
       </div>
@@ -131,6 +153,10 @@ export default function TopAppBar() {
           <Route 
             path="/china" 
             component={() => <China loaded={loaded} overall={chinaOverall} chinaMap={chinaMap} />}
+          />
+          <Route 
+            path="/canada" 
+            component={() => <Canada loaded={loaded} overall={chinaOverall} chinaMap={chinaMap} />}
           />
           <Route 
             path="/news" 
