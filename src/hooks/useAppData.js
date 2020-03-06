@@ -54,7 +54,7 @@ export default function useAppData(props) {
       suspect: cases.suspectedCount,
       cured: cases.curedCount, 
       death: cases.deadCount,
-      fatality: (100 * cases.deadCount / (cases.confirmedCount + cases.curedCount)).toFixed(2) + '%'
+      fatality: (100 * cases.deadCount / (cases.confirmedCount)).toFixed(2) + '%'
     };
   }
 
@@ -159,7 +159,7 @@ export default function useAppData(props) {
       let chinaData = filter(data.results, ({cities})=>{ return (Array.isArray(cities)) });
       let canadaData = filter(data.results, ({countryEnglishName})=>{ return (countryEnglishName === 'Canada') });
       let otherCountries = filter(data.results, ({cities})=>{ return (!Array.isArray(cities)) });
-      console.log('test canada', canadaData)
+
       // spectial process of unmatched data with map geo
       for(const country of otherCountries) {
         if(country.countryName === "钻石公主号邮轮") {
