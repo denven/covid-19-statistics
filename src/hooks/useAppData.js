@@ -24,8 +24,8 @@ export default function useAppData(props) {
 
   const getUpdateTime = (data) => {
     let time = moment.unix(data[0].updateTime/1000).toString();
-    // return moment(time).format("YYYY-MM-DD HH:mm:ss");
-    return moment(time).format("YYYY-MM-DD");
+    return moment(time).format("YYYY-MM-DD HH:mm:ss");
+    // return moment(time).format("YYYY-MM-DD");
   };
 
   // overall data without China
