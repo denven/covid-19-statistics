@@ -144,14 +144,15 @@
     }
 
     .timelineBox {
-        top: 76%;
+        position: relative;
         left: 0%;
         text-align: left;
     }
 
     .timelineTitle {
-        top: 70%;
+        position: relative;
         width: 100%;
+        margin-bottom: 5px;
     }
 
     .scrollable {
