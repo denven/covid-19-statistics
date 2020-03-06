@@ -68,7 +68,8 @@ export default function MapCanada() {
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
         pieces: [ 
-          {min: 100},
+          {min: 200},
+          {min: 100, max: 199},
           {min: 50, max: 99},
           {min: 20, max: 49},
           {min: 6, max: 19},

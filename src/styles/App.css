@@ -60,24 +60,40 @@
     width: 50%;  
  }
 
-
+/* for cases reported timeline in Canada */
 .timelineBox {
     /* background: #3F51B5;   */
     /* give the outermost container a predefined size */
     position: absolute;
-    top: 12%;
+    top: 18%;
     bottom: 5%;
     left: 50%;
-
     display: flex;
     flex-direction: column;
+}
+
+.timelineTitle {
+    position: absolute;
+    top: 11%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #353535;
+    width: 50%;
+}   
+
+.subTitle {
+    font-size: 0.8rem;
+    color: gray;
+    margin-top: 5px;
 }
 
 .scrollable {
     background: white;
     flex-grow: 1;
     overflow: auto;
-
     /* for Firefox */
     min-height: 0;
 }
@@ -128,9 +144,14 @@
     }
 
     .timelineBox {
-        top: 65%;
+        top: 76%;
         left: 0%;
         text-align: left;
+    }
+
+    .timelineTitle {
+        top: 70%;
+        width: 100%;
     }
 
     .scrollable {

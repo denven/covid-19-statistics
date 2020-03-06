@@ -57,9 +57,7 @@ function Canada({overall}) {
       </div>
       <div className="bodyBottom">
         <div className="bodyLeft"> <MapCanada/> </div>
-        <div className="bodyRight timeCase"> 
-          <div className="timeScroll"><Timeline/></div>
-        </div>
+        <div className="bodyRight"> <Timeline/> </div>
       </div>
     </div>
   );
