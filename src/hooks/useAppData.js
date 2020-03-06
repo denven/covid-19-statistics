@@ -154,11 +154,11 @@ export default function useAppData(props) {
     }).catch(e => console.log('Failed to get suspected cases count!'));
 
     // latest data of all places in the world
-    axios.get('./areas.json').then((data)=> {
+    import('../assets/areas.json').then((data)=> {
     // axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
-      let chinaData = filter(data.data.results, ({cities})=>{ return (Array.isArray(cities)) });
-      let canadaData = filter(data.data.results, ({countryEnglishName})=>{ return (countryEnglishName === 'Canada') });
-      let otherCountries = filter(data.data.results, ({cities})=>{ return (!Array.isArray(cities)) });
+      let chinaData = filter(data.results, ({cities})=>{ return (Array.isArray(cities)) });
+      let canadaData = filter(data.results, ({countryEnglishName})=>{ return (countryEnglishName === 'Canada') });
+      let otherCountries = filter(data.results, ({cities})=>{ return (!Array.isArray(cities)) });
       console.log('test canada', canadaData)
       // spectial process of unmatched data with map geo
       for(const country of otherCountries) {
@@ -173,7 +173,7 @@ export default function useAppData(props) {
         }
       }
 
-      let updateTime = getUpdateTime(data.data.results);
+      let updateTime = getUpdateTime(data.results);
       let chinaOverall = getOverall(chinaData, patchCount, updateTime);
       let canadaOverall = getOverall(canadaData, 0, updateTime);
       let otherOverall = getOverall(otherCountries, 0, updateTime);

@@ -11,7 +11,7 @@ export default function MapCanada() {
   const [loaded, setReady] = useState(false);
 
   useEffect(() => {
-    import(`../assets/Canada.json`).then(map => {
+    import(`../assets/CanadaGEO.json`).then(map => {
       echarts.registerMap('Canada', map.default);
     });
   }, []);

@@ -41,33 +41,39 @@ export default function Timeline() {
 
   useEffect(() => {
 
-    let casesTimeline = [];
-    async function getCasesTimeline () {
-      let data = await wiki().page('2020_coronavirus_outbreak_in_Canada').then(page => page.html());
-      const $ = cheerio.load(data);
+    // let casesTimeline = [];
+    // async function getCasesTimeline () {
+    //   let data = await wiki().page('2020_coronavirus_outbreak_in_Canada').then(page => page.html());
+    //   const $ = cheerio.load(data);
 
-      $('p', 'div').each( (index, ele) => {
-        // console.log($(ele).text());
-        if(index > 0) {
-          let message = $(ele).text().replace(/\[\d{1,2}\]/g,'');
-          let date = message.match(/^On [A-Z][a-z]{2,10} \d{1,2}/g);
-          let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, '').trim();
-          if(date) {
-            date = date[0].slice(3) + ', 2020';
-            content = content.charAt(0).toUpperCase() + content.substring(1);
-            if(content.search('Shopify') > -1) return '';
-            if(content.search('TED') > -1) return '';
-            casesTimeline.push({date, content});
-          }
-        }        
-      });
+    //   $('p', 'div').each( (index, ele) => {
+    //     // console.log($(ele).text());
+    //     if(index > 0) {
+    //       let message = $(ele).text().replace(/\[\d{1,2}\]/g,'');
+    //       let date = message.match(/^On [A-Z][a-z]{2,10} \d{1,2}/g);
+    //       let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, '').trim();
+    //       if(date) {
+    //         date = date[0].slice(3) + ', 2020';
+    //         content = content.charAt(0).toUpperCase() + content.substring(1);
+    //         if(content.search('Shopify') > -1) return '';
+    //         if(content.search('TED') > -1) return '';
+    //         casesTimeline.push({date, content});
+    //       }
+    //     }        
+    //   });
 
-      if(casesTimeline.length) {
-        setCases(casesTimeline.reverse());
-      }
-    }
-
-    getCasesTimeline();  // get all the cases reported
+    //   if(casesTimeline.length) {
+    //     setCases(casesTimeline.reverse());
+    //   }
+    // }
+  
+    // getCasesTimeline();  // get all the cases reported
+    
+    import('../assets/Timeline.json').then( ({cases}) => {
+        if(Array.isArray(cases)){
+          setCases(cases);
+        }
+    });
 
   }, []);
 
