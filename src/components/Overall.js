@@ -5,6 +5,7 @@ export default function OverallData ({place, overall}) {
   
   const [data, setData] = useState({time: '', confirmed: '', suspect: '', cured: '', death: '', fatality: '' });
   const [time, setTime] = useState(data.time);
+  const [placeString, setPlace] = useState(place +' Cases');
 
   const isWideScreen = () => {
     
@@ -12,21 +13,47 @@ export default function OverallData ({place, overall}) {
     // console.log('sss', mediaQuery);
     if(mediaQuery.matches) { return false };
 
-    if(document.body.clientWidth < 1024) {  return false; }
+    if(document.body.clientWidth < 1024) { return false; }
 
     return true;
   }
+  
+  const handleResize = useCallback(() => {        
+    console.log('triggered')
+    let placeString = '';
 
-  const handleResize = useCallback(() => {
-      if(isWideScreen()) {
-        if (time.length < 15) setTime(data.time);
-        return;
-      } 
-
-      if (time.length > 15) {
-        setTime(data.time.slice(11));
+    if(isWideScreen()) {
+      if (time.length < 15) {          
+        setTime(data.time);
       }
-  },[data.time, time.length]);
+      if(place === 'China') {    
+        placeString = 'Cases Found in China';  
+      } else if(place === 'Canada') {
+          placeString = 'Cases Found in Canada';
+      } else if(place === 'Other') {
+        placeString = 'Cases Found out of China';
+      } else {
+        placeString = 'Cases Found Worldwide';
+      }
+      setPlace(placeString);
+      return;
+    } 
+
+    // if (time.length > 15) {
+      setTime(data.time.slice(11, 16));
+    // }
+    if(place === 'China') {    
+      placeString = 'China Cases';  
+    } else if(place === 'Canada') {
+        placeString = 'Canada Cases';
+    } else if(place === 'Other') {
+      placeString = 'NonChina Cases';
+    } else {
+      placeString = 'Global Cases';
+    }
+    setPlace(placeString);
+
+  },[data.time, place, time.length]);
 
   useEffect(() => {
     if(overall)  {
@@ -38,15 +65,6 @@ export default function OverallData ({place, overall}) {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
   }, [handleResize]);
-
-  let placeString = 'Cases Found Worldwide'
-  if(place === 'China') {    
-    placeString = 'Cases Found in China'  
-  } else if(place === 'Canada') {
-      placeString = 'Cases Found in Canada'
-  } else if(place === 'Other') {
-    placeString = 'Cases Found out of China'
-  }
 
   return (
     <>
