@@ -40,7 +40,7 @@ export default function MapChina({chinaMap}) {
 
   const onChartReady = (chart) => {
     if(Array.isArray(chinaMap) && chinaMap.length > 0) {
-      setTimeout(() => { chart.hideLoading(); }, 500);
+      setTimeout(() => { chart.hideLoading(); }, 1500);
       // chart.hideLoading();
     }
   };
