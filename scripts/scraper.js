@@ -78,7 +78,7 @@ async function getHistoryCases () {
   let ele = $('tr', '.wikitable').last();
   let countryCases = $(ele).text().trim().replace(/\n{1,5}/g, ',').match(/\d{1,3}/g);
 
-  // get new cases data
+  // get new cases data, otherwise, no need to update
   if(countryCases && (countryCases[countryCases.length - 1] - totalCases) !== 0) {
     let provinces = ["Ontario", "British Columbia", "Quebec", "Alberta"];
 
@@ -102,6 +102,10 @@ async function getHistoryCases () {
     let dateString = (date.getMonth() + 1) + '/' + date.getDate();
     if(dateString !== allCases[allCases.length - 1].date)
       allCases.push({date: dateString, cases: curCases});
+    else {
+      allCases.pop();  // for updating the last days cases
+      allCases.push({date: dateString, cases: curCases});
+    }
 
     // save to json file
     const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
