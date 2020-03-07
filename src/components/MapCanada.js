@@ -107,7 +107,7 @@ export default function MapCanada() {
         series: [
           {
             // left: '0%', // not working, cannot be adjusted
-            type: 'bar',  
+            type: 'bar', 
             label: {
               position: 'inside',
               show: true,
@@ -115,7 +115,7 @@ export default function MapCanada() {
             },
           },
           {
-            left: '16%',
+            left: 'right',
             top: '19%',
             type: 'map',
             name: '',
@@ -139,7 +139,7 @@ export default function MapCanada() {
               }
             },
             mapType: 'map',        
-            zoom: 1.1,
+            zoom: 1.2,
             roam: false,
             showLegendSymbol: false,
             rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },
