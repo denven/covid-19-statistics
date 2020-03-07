@@ -3,16 +3,10 @@ import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
 
-import axios from 'axios'
-import cheerio from 'cheerio';
-
-//  data: ['Ontario', 'British Columbia', 'Quebec', 'Alberta', 'Saskachewan', 'Manitoba', '冰岛', '日本', '美国', '(131)中国']
-
 export default function MapCanada() {
   // const [data, setData] = useState([]);
   const [loaded, setReady] = useState(false);
   const [cases, setCases] = useState({dates:[], data:[]});
-
 
   useEffect(() => {
     import(`../assets/CanadaGEO.json`).then(map => {
@@ -32,26 +26,6 @@ export default function MapCanada() {
       setReady(true);
     });
   }, []);
-
-  // useEffect(() => {
-  //     axios.get("https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html")
-  //     .then( response => {
-  //         if(response.status === 200) {
-  //           let curCases = [];
-  //           const $ = cheerio.load(response.data);
-  //           $(".table").each( (index, ele) => {
-  //             if(index === 0)              
-  //               $('tr', 'tbody', ele).each( (index, ele) => {
-  //                 let province = $(ele).text().trim().split("\n")[0];
-  //                 let cases = $(ele).text().trim().split("\n")[1].replace(/ /g, '');
-  //                 curCases.push({name: province, value: cases});
-  //               });
-  //           });
-  //           setData(curCases);
-  //           setReady(true);
-  //         }
-  //     });
-  // }, []);
 
   const getLoadingOption = () => {
     return {

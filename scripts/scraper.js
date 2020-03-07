@@ -139,7 +139,7 @@ async function getLatestCases () {
     }
 
     const casesString = JSON.stringify(jsonData, null, 4);
-    fs.writeFile("../src/assets/Latest.json", casesString, (err, result) => {
+    fs.writeFile("../src/assets/CasesLatest.json", casesString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated latest cases data at ${jsonData.date}`);
     });
