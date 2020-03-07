@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/chart/line';
+// import 'echarts/lib/chart/line';
 
 export default function MapCanada() {
   // const [data, setData] = useState([]);
@@ -35,7 +35,7 @@ export default function MapCanada() {
 
   const onChartReady = (chart) => {
     if(Array.isArray(cases) && cases.length > 0) {
-      setTimeout(() => { chart.hideLoading(); }, 1500);
+      setTimeout(() => { chart.hideLoading(); }, 1000);
     }
   };
 
@@ -106,6 +106,7 @@ export default function MapCanada() {
         }],
         series: [
           {
+            // left: '0%', // not working, cannot be adjusted
             type: 'bar',  
             label: {
               position: 'inside',
@@ -114,7 +115,7 @@ export default function MapCanada() {
             },
           },
           {
-            left: '20%',
+            left: '16%',
             top: '19%',
             type: 'map',
             name: '',

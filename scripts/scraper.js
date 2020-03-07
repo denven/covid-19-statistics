@@ -148,5 +148,5 @@ async function getLatestCases () {
 }
 
 getCasesTimeline();  // get all the cases reported
-// getLatestCases(); // no needed right now
-// getHistoryCases();
+getLatestCases(); // no needed right now
+getHistoryCases();
