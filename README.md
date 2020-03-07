@@ -12,7 +12,8 @@ Note:
 https://lab.isaaclin.cn/nCoV/en
 
 ## Screenshots
-![China Statistics](./screenshots/1.ChinaStatistics.png#pic_center=960x500)
 ![Global Statistics](./screenshots/2.WorldStatistics.png#pic_center=960x500)
-![News Feeds](./screenshots/3.NewsFeeds.png#pic_center=960x500)
+![Canada Statistics](./screenshots/3.CanadaStatistics.png#pic_center=960x500)
+![China Statistics](./screenshots/1.ChinaStatistics.png#pic_center=960x500)
+![News Feeds](./screenshots/4.NewsFeeds.png#pic_center=960x500)
 
