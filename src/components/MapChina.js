@@ -17,17 +17,6 @@ export default function MapChina({chinaMap}) {
     });
   }, []);
 
-  // useEffect(() => {
-  //     axios.get('http://www.dzyong.top:3005/yiqing/province').then((provinces) => {
-  //     const tempData = provinces.data.data.map(p => ( 
-  //       { name: p.provinceName, value: p.confirmedNum })
-  //     );    
-  //     setData(tempData);
-  //     setReady(true);
-  //   }).catch(e => { console.log('Request province data in China', e) })
-
-  // },[chinaMap]);
-
   const getLoadingOption = () => {
     return {
       text: 'Data Loading ...',
@@ -40,8 +29,7 @@ export default function MapChina({chinaMap}) {
 
   const onChartReady = (chart) => {
     if(Array.isArray(chinaMap) && chinaMap.length > 0) {
-      setTimeout(() => { chart.hideLoading(); }, 1500);
-      // chart.hideLoading();
+      setTimeout(() => { chart.hideLoading(); }, 1000);
     }
   };
 

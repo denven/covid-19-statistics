@@ -11,6 +11,7 @@ export default function MapCanada() {
   useEffect(() => {
     import(`../assets/CanadaGEO.json`).then(map => {
       echarts.registerMap('Canada', map.default);
+      setReady(true);
     });
   }, []);
 
@@ -23,7 +24,6 @@ export default function MapCanada() {
           // barData: cases.map(day => day.cases.map(prov => prov.value))  // for bar Chart component
         }
       );
-      setReady(true);
     });
   }, []);
 
@@ -35,7 +35,7 @@ export default function MapCanada() {
 
   const onChartReady = (chart) => {
     if(Array.isArray(cases) && cases.length > 0) {
-      setTimeout(() => { chart.hideLoading(); }, 1000);
+      setTimeout(() => { chart.hideLoading(); }, 1500);
     }
   };
 
