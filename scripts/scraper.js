@@ -27,12 +27,13 @@ async function getCasesTimeline () {
   });
 
   $('p', 'div').each( (index, ele) => {
-    if(index < 5 && $(ele).text()) {      
+
+    if(index < 5 && $(ele).text()) {   
       let message = $(ele).text().replace(/\[[a-z]{0,10}\d{0,2}\]/g,'');
-      let date = message.match(/^As of [A-Z][a-z]{2,10}.*, 2020/g);
-      let content = message.replace(/^As of [A-Z][a-z]{2,10}.*, 2020, /g, '').trim();
+      let date = message.match(/As of [A-Z][a-z]{2,10}.*, 2020/g);
+      let content = message.replace(/(.*)As of [A-Z][a-z]{2,10}.*, 2020, /g, '').trim();
       if(date) {
-        date = date[0].slice(6);
+        date = date[0];
         content = content.charAt(0).toUpperCase() + content.substring(1);
         casesTimeline.push({date, content});
       }
@@ -147,5 +148,5 @@ async function getLatestCases () {
 }
 
 getCasesTimeline();  // get all the cases reported
-getLatestCases(); // no needed right now
-getHistoryCases();
+// getLatestCases(); // no needed right now
+// getHistoryCases();
