@@ -2,7 +2,7 @@ name: CI-Auto-Update
 
 on: 
     schedule:
-    - cron: '45 */1 * * *'
+    - cron: '45 16,20,24 * * *'
       
 jobs:
   update:   
