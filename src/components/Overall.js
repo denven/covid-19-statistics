@@ -5,7 +5,18 @@ export default function OverallData ({place, overall}) {
   
   const [data, setData] = useState({time: '', confirmed: '', suspect: '', cured: '', death: '', fatality: '' });
   const [time, setTime] = useState(data.time);
-  const [placeString, setPlace] = useState(place +' Cases');
+
+  let placeString = 'Global Cases';
+
+  if(place === 'China') {    
+    placeString = 'China Cases';  
+  } else if(place === 'Canada') {
+      placeString = 'Canada Cases';
+  } else if(place === 'Other') {
+    placeString = 'NonChina Cases';
+  } else {
+    placeString = 'Global Cases';
+  }
 
   const isWideScreen = () => {
     
@@ -19,41 +30,17 @@ export default function OverallData ({place, overall}) {
   }
   
   const handleResize = useCallback(() => {        
-    console.log('triggered')
-    let placeString = '';
 
     if(isWideScreen()) {
       if (time.length < 15) {          
         setTime(data.time);
       }
-      if(place === 'China') {    
-        placeString = 'Cases Found in China';  
-      } else if(place === 'Canada') {
-          placeString = 'Cases Found in Canada';
-      } else if(place === 'Other') {
-        placeString = 'Cases Found out of China';
-      } else {
-        placeString = 'Cases Found Worldwide';
-      }
-      setPlace(placeString);
       return;
     } 
 
-    // if (time.length > 15) {
-      setTime(data.time.slice(11, 16));
-    // }
-    if(place === 'China') {    
-      placeString = 'China Cases';  
-    } else if(place === 'Canada') {
-        placeString = 'Canada Cases';
-    } else if(place === 'Other') {
-      placeString = 'NonChina Cases';
-    } else {
-      placeString = 'Global Cases';
-    }
-    setPlace(placeString);
+    setTime(data.time.slice(11, 16));
 
-  },[data.time, place, time.length]);
+  },[data.time, time.length]);
 
   useEffect(() => {
     if(overall)  {

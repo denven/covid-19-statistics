@@ -24,7 +24,7 @@ export default function MapGlobal({mapData, loaded}) {
 
   const onChartReady = (chart, loaded) => {
     
-    if(loaded) setTimeout(() => { chart.hideLoading(); }, 500);
+    if(loaded) setTimeout(() => { chart.hideLoading(); }, 1500);
     // chart.hideLoading();
   };
 
