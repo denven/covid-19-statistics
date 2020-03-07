@@ -13,7 +13,7 @@ export default function OverallData ({place, overall}) {
   } else if(place === 'Canada') {
       placeString = 'Canada Cases';
   } else if(place === 'Other') {
-    placeString = 'NonChina Cases';
+    placeString = 'Non-China Cases';
   } else {
     placeString = 'Global Cases';
   }
