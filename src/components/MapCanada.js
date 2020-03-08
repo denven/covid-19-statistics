@@ -93,7 +93,7 @@ export default function MapCanada() {
         visualMap: setVisualMap(),   
         xAxis: [{
           type: 'value',
-          max: 100,
+          max: 100,  // max cases number
           axisLine: { show: false },
           axisTick: { show: false },
           axisLabel: { show: false },
@@ -115,7 +115,7 @@ export default function MapCanada() {
             },
           },
           {
-            left: 'right',
+            left: '15%',
             top: '19%',
             type: 'map',
             name: '',
@@ -139,7 +139,7 @@ export default function MapCanada() {
               }
             },
             mapType: 'map',        
-            zoom: 1.2,
+            zoom: 1.0,
             roam: false,
             showLegendSymbol: false,
             rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },

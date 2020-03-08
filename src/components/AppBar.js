@@ -19,10 +19,12 @@ import MapGlobal from './MapGlobal';
 import TableGlobal from './TableGlobal';
 
 import MapChina from './MapChina';
-import ChinaTrend from './LineChart';
+import CasesTrend from './LineChart';
 
 import MapCanada from './MapCanada';
 import Timeline from './Timeline';
+
+import MapUSA from './MapUsa';
 
 import LatestNews from './News';
 
@@ -43,7 +45,7 @@ function China({overall, chinaMap}) {
       </div>
       <div className="bodyBottom">
         <div className="bodyLeft"> <MapChina chinaMap={chinaMap}/> </div>
-        <div className="bodyRight"> <ChinaTrend/> </div>
+        <div className="bodyRight"> <CasesTrend country={'China'}/> </div>
       </div>
     </div>
   );
@@ -63,13 +65,29 @@ function Canada({overall}) {
   );
 }
 
+
+function USA() {
+
+  return (
+    <div className="bodyContainer">
+      <div className="bodyTop">     
+        <OverallData showGlobal={false} place={'USA'} overall={{}}/>
+      </div>
+      <div className="bodyBottom">
+        <div className="bodyLeft"> <MapUSA/> </div>
+        <div className="bodyRight"> <CasesTrend country={'USA'}/> </div>
+      </div>
+    </div>
+  );
+}
+
 // global data is also for homepage
 function Global({loaded, overall, globalMap, tableData}) {
 
   return (  
     <div className="bodyContainer">
       <div className="bodyTop">     
-        <OverallData showGlobal={true} place={Global} overall={overall}/>
+        <OverallData showGlobal={true} place={'Global'} overall={overall}/>
       </div>
       <div className="bodyBottom">   
       <div className="bodyGlobalMap">
@@ -115,6 +133,7 @@ function Navigator() {
         <ul>
           <li><Link to="/" className={classes.link}>Global</Link></li> 
           <li><Link to="/canada" className={classes.link}>Canada</Link></li>
+          <li><Link to="/usa" className={classes.link}>USA</Link></li>
           <li><Link to="/china" className={classes.link}>China</Link></li>            
           <li><Link to="/news" className={classes.link}>News</Link></li>            
         </ul>   
@@ -165,6 +184,7 @@ export default function TopAppBar() {
             path="/canada" 
             component={() => <Canada loaded={loaded} overall={canadaOverall} />}
           />
+          <Route path="/usa" component={() => <USA />} />
           <Route 
             path="/news" 
             component={() => <News loaded={loaded} overall={otherOverall} />}

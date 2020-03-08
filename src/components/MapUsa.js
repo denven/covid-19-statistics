@@ -1,34 +1,54 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 
-// import axios from 'axios';
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
 
-export default function MapChina({chinaMap}) {
-  // const [data, setData] = useState([]);
-  // const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
- console.log('sfsdf', chinaMap);
+export default function MapUSA() {
+  const [loaded, setReady] = useState(false);
+  const [cases, setCases] = useState({dates:[], data:[]});
+
   useEffect(() => {
-    // register as 'china-' rather than 'china' to hide Southern seas on map
-    import(`echarts/map/json/china.json`).then(map => {
-      echarts.registerMap('china-', map.default);
+    import(`../assets/UsaGEO.json`).then(map => {
+      echarts.registerMap('USA', map.default, {
+        // Move Alaska to the bottom left of United States
+        Alaska: {      
+            left: -131,   // Upper left longitude            
+            top: 25,      // Upper left latitude            
+            width: 15     // Range of longitude
+        },
+        // Hawaii
+        Hawaii: { left: -110, top: 28, width: 5 },
+        // Puerto Rico
+        'Puerto Rico': { left: -76, top: 26, width: 2 }
+      });
     });
   }, []);
+
+  useEffect(() => {
+    import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
+      console.log(cases);
+      setCases(cases.map( ({name, confirmed, death, recovered}) => {
+        return {
+          name: name,
+          value: confirmed,
+          cured: recovered,
+          death: death
+        }
+      }));
+      setReady(loaded);
+    });
+  }, [loaded]);
 
   const getLoadingOption = () => {
     return {
       text: 'Data Loading ...',
-      // color: '#4413c2',
-      // textColor: '#270240',
-      // maskColor: 'rgba(194, 88, 86, 0.3)',
-      // zlevel: 0
     };
   };
 
   const onChartReady = (chart) => {
-    if(Array.isArray(chinaMap) && chinaMap.length > 0) {
+    if(Array.isArray(cases) && cases.length > 0) {
       setTimeout(() => { chart.hideLoading(); }, 1000);
     }
   };
@@ -38,10 +58,8 @@ export default function MapChina({chinaMap}) {
       // backgroundColor: '#C0C0C0',
       title:  {
           x: 'center',
-          text: 'Cases by Province in China',
+          text: 'Cases by State in USA',
           subtext: 'Data from https://ncov.dxy.cn/',
-          // sublink: 'https://ncov.dxy.cn/ncovh5/view/pneumonia',
-          // right: '10px',
           textStyle: {fontSize: 18},
       },
       visualMap: {
@@ -73,11 +91,22 @@ export default function MapChina({chinaMap}) {
       toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
-          let { name, existing, death, cured } = params.data;
+          console.log(params)
+          let name = params.name;
+          let death = 0, cured = 0;
+          if(params.data) {
+            death = params.data.death;
+            cured = params.data.death;
+          }
+          let tipString = '';
           let value = ((params.value || "No Case") + '').split('.');
-          value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-          name = titleize(pinyin(name, {removeTone: true}));
-          const tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Existing: \t${existing}<br />Cured：\t${cured}<br />Death：\t${death}`;
+          if(!params.value) {
+            tipString = `<b>${name}</b><br />Confirmed: ${value}`;
+          } else {
+            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+            name = titleize(pinyin(name, {removeTone: true}));
+            tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Existing: \t${value - cured - death}<br />Cured：\t${cured}<br />Death：\t${death}`;
+          }
           return tipString
         }
       },
@@ -88,10 +117,8 @@ export default function MapChina({chinaMap}) {
         type: 'map',
         name: '',
         geoIndex: 0,
-        data: chinaMap, // area(provinces) data
-        map: 'china-',
-        // the following attributes can be put in geo, but the map will smaller
-        // and cannot be zoomed out
+        data: cases, // area(provinces) data
+        map: 'USA',
         silent: false, // province area is clickable
         label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
         itemStyle: {
@@ -108,8 +135,8 @@ export default function MapChina({chinaMap}) {
               shadowColor: 'rgba(0, 0, 0, 0.5)'
           }
         },
-        mapType: 'china-',        
-        zoom: 1.0,
+        mapType: 'USA',        
+        zoom: 1.2,
         roam: false,
         showLegendSymbol: false,
         rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },
@@ -124,7 +151,7 @@ export default function MapChina({chinaMap}) {
       option={getOption()}
       loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
-      showLoading={true}
+      showLoading={false}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}

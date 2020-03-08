@@ -5,48 +5,50 @@ import 'echarts/lib/chart/line';
 import axios from 'axios';
 import moment from 'moment';
 
-// import Alert from '@material-ui/lab/Alert';
-// import { makeStyles } from '@material-ui/core/styles';
-
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     width: '100%',
-//     '& > * + *': { marginTop: theme.spacing(2),},
-//     textAlign: 'center',
-//   },
-// }));
-
-export default function ChinaTrend() {
+export default function CasesTrend({country}) {
   
   const [data, setData] = useState([]);
   const [loaded, setReady] = useState(false);  // flag for loading map
   const [error, setError] = useState(false);  // dependency flag for re-send request
   
-  // const classes = useStyles();
-
   useEffect(() => {
-    const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?userid=2a5db344-6b19-4828-9673-d0d81bd265bc';
-    const indicators = '&indicators=S6274770,S6274773,S6274772,S6274771&startdate=2020-01-20&enddate=';
-    const endDate = moment().format('YYYY-MM-DD');
+    if(country === 'China') {
+      const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?userid=2a5db344-6b19-4828-9673-d0d81bd265bc';
+      const indicators = '&indicators=S6274770,S6274773,S6274772,S6274771&startdate=2020-01-20&enddate=';
+      const endDate = moment().format('YYYY-MM-DD');
 
-    axios.get(hisDataUrl + indicators + endDate).then( hisData => {
-      if(hisData.data.errCode === 0) {
-        setData({ 
-          date: hisData.data.times.map( s => { return moment.unix(s / 1000).format('YYYY-MM-DD') }),
-          confirmedNum: hisData.data.data[0],
-          suspectedNum: hisData.data.data[1], 
-          curesNum: hisData.data.data[2],
-          deathsNum: hisData.data.data[3]
+      axios.get(hisDataUrl + indicators + endDate).then( hisData => {
+        if(hisData.data.errCode === 0) {
+          setData({ 
+            date: hisData.data.times.map( s => { return moment.unix(s / 1000).format('YYYY-MM-DD') }),
+            confirmedNum: hisData.data.data[0],
+            suspectedNum: hisData.data.data[1], 
+            curesNum: hisData.data.data[2],
+            deathsNum: hisData.data.data[3]
+          });
+          console.log(hisData.data)
+          setReady(true);
+        } else {
+          console.log('Requst for history data in China, errCode:', hisData.data.errCode);
+          setError(true);  // this will activate another request
+        }        
+      }).catch(e => { console.log('Request history data in China', e) });
+    }
+
+    if(country === 'USA') {
+      import(`../assets/UsaCasesHistory.json`).then( ({cases}) => {
+        setData({
+          date: cases.map(day => day.date),
+          confirmedNum: cases.map(day => day.confirmedNum),
+          increasedNum: cases.map(day => day.increasedNum),
+          curesNum: cases.map(day => day.curesNum),
+          deathsNum: cases.map(day => day.deathsNum)
         });
         setReady(true);
-      } else {
-        console.log('Requst for history data in China, errCode:', hisData.data.errCode);
-        setError(true);  // this will activate another request
-      }
-    }).catch(e => { console.log('Request history data in China', e) });
-
+      });
+    }
     // return (console.log('Cleanup'));
-  },[error]);
+  },[country, error]);
 
   const getLoadingOption = () => {
     return { text: 'Data Loading ...' };
@@ -64,11 +66,11 @@ export default function ChinaTrend() {
     return {
       title: {
           x: 'center',
-          text: 'Accumulated Cases by day in China'
+          text: 'Accumulated Cases by day in ' + country
       },
       tooltip: { trigger: 'axis' },
       legend: {
-          data: ['Confirmed', 'Suspected', 'Recovered', 'Deaths'], // four curves
+          data: ['Confirmed', (country === 'China') ? 'Suspected' : 'Increased', 'Recovered', 'Deaths'], // four curves
           top : '30px',
           textStyle: {fontSize: 12, fontWeight: 600},
       },
@@ -90,10 +92,10 @@ export default function ChinaTrend() {
               data: data.confirmedNum
           },
           {
-              name: 'Suspected',
+              name: (country === 'China') ? 'Suspected' : 'Increased',
               type: 'line',
               // stack: 'Toll',
-              data: data.suspectedNum
+              data: (country === 'China') ? data.suspectedNum : data.increasedNum
           },          
           {
               name: 'Recovered',

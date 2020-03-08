@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import '../styles/Overall.css';
-
+import moment from 'moment';
 export default function OverallData ({place, overall}) {  
   
   const [data, setData] = useState({time: '', confirmed: '', suspect: '', cured: '', death: '', fatality: '' });
@@ -8,16 +8,12 @@ export default function OverallData ({place, overall}) {
 
   let placeString = 'Global Cases';
 
-  if(place === 'China') {    
-    placeString = 'China Cases';  
-  } else if(place === 'Canada') {
-      placeString = 'Canada Cases';
-  } else if(place === 'Other') {
+  if(place === 'Other') { 
     placeString = 'Non-China Cases';
   } else {
-    placeString = 'Global Cases';
+    placeString = place + ' Cases';
   }
-
+   
   const isWideScreen = () => {
     
     let mediaQuery = window.matchMedia("(orientation: portrait)");
@@ -43,11 +39,30 @@ export default function OverallData ({place, overall}) {
   },[data.time, time.length]);
 
   useEffect(() => {
-    if(overall)  {
+
+    if(place === 'USA') {
+      import(`../assets/UsaCasesHistory.json`).then( ({date, cases}) => {
+        if(cases) {
+          let lastData = cases[cases.length - 1];
+          let srcDate = new Date(date);
+          let timeStr = moment(srcDate).format('YYYY-MM-DD HH:MM:SS');
+
+          setData ({
+            time: timeStr,
+            confirmed: lastData.confirmedNum, 
+            suspect: lastData.increasedNum, 
+            cured: lastData.curesNum, 
+            death: lastData.deathsNum, 
+            fatality: (100 * lastData.deathsNum / (lastData.confirmedNum)).toFixed(2) + '%'
+          });
+          handleResize();
+        }
+      });
+    } else if(overall)  {
       setData(overall);   
       handleResize();
     }
-  }, [handleResize, overall]);
+  }, [handleResize, overall, place]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -58,7 +73,7 @@ export default function OverallData ({place, overall}) {
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {data.confirmed}</span></div>
-      <div className="eachText">Suspected <span className="suspectedNumber">&nbsp; &nbsp; {data.suspect}</span></div>
+      <div className="eachText"> {(place !== 'USA') ? 'Suspected' : 'Increased'} <span className="suspectedNumber">&nbsp; &nbsp; {data.suspect}</span></div>
       <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {data.cured}</span></div>
       <div className="eachText">Deaths <span className="deathNumber">&nbsp; {data.death}</span></div>
       <div className="eachText">Lethality <span className="fatalityNumber">&nbsp; {data.fatality}</span></div>
