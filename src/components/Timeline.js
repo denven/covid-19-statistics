@@ -48,10 +48,10 @@ export default function Timeline() {
                 key={item.date}  // add key to remove complains
                 // className="vertical-timeline-element--work"
                 className={classes.margin}
-                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff'}}
+                contentStyle={{ background: 'white', color: 'black', paddingTop: '0', bottom: '0'}}
                 contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
                 // date={item.date}
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                iconStyle={{ background: 'gray', color: '#fff' }}
                 icon={<EventNoteIcon />}
               >
                 <h4 className="vertical-timeline-element-subtitle">{item.date}</h4>
