@@ -17,6 +17,7 @@ jobs:
           cd scripts
           npm install
           npm run generate
+          npm run update
           cd ..
     - name: Commit the latest data ...
       run: |
