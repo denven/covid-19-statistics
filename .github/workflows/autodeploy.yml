@@ -1,33 +1,11 @@
-name: CI-Auto-Update
+name: CI-Auto-Deploy
 
 on: 
     schedule:
-    - cron: '45 */4 * * *'
+    - cron: '45 */8 * * *'
       
 jobs:
-  update:   
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-    - name: Download the latest data ...
-      run: wget https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYArea.json -O ./src/assets/Areas.json
-    - name: Scraping latest data from internet ...
-      run: | 
-          cd scripts
-          npm install
-          npm run generate
-          cd ..
-    - name: Commit the latest data ...
-      run: |
-          git status
-          git config --global user.email "myregs@foxmail.com"
-          git config --global user.name "denven"
-          git add ./src/assets/
-          git commit -m 'Auto update all Json assets file'
-          git push 
-          
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     strategy:
