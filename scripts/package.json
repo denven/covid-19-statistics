@@ -4,7 +4,8 @@
   "description": "",
   "main": "scraper.js",
   "scripts": {
-    "generate": "node scraper.js"
+    "generate": "node scraper.js",
+    "update": "node updateUsaCases.js"
   },
   "keywords": [],
   "author": "",
