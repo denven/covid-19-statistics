@@ -23,26 +23,15 @@ function Title () {
     </div>
   )
 }
-export default function Timeline() {
+
+function Timeline ({cases}) {
 
   const classes = useStyles();
-  const [cases, setCases] = useState([]);
-
-  useEffect(() => {    
-    import('../assets/Timeline.json').then( ({cases}) => {
-        if(Array.isArray(cases)){
-          setCases(cases);
-        }
-    });
-
-  }, []);
 
   return (
-    <>
-      <Title />
-      <div className="timelineBox">
-        <div className="scrollable">
-        <VerticalTimeline layout={'1-column'} className={classes.padding}>          
+    <div className="timelineBox">
+      <div className="scrollable">
+        <VerticalTimeline layout={'1-column'} className={classes.padding} animate={true}>          
           { cases.map( item => (
               <VerticalTimelineElement
                 key={item.date}  // add key to remove complains
@@ -59,8 +48,27 @@ export default function Timeline() {
               </VerticalTimelineElement>        
           ))}
         </VerticalTimeline>
-        </div>
       </div>
-    </>
+    </div>
+  )
+}
+export default function MyTimeline() {
+
+  const [cases, setCases] = useState([]);
+
+  useEffect(() => {    
+    import('../assets/Timeline.json').then( ({cases}) => {
+        if(Array.isArray(cases)){
+          setCases(cases);
+        }
+    });
+
+  }, []);
+
+  return (
+    <div className="timelineContainer">
+      <Title />
+      <Timeline cases={cases}/>
+    </div>
    )
 }

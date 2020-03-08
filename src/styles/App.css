@@ -60,28 +60,22 @@
     width: 50%;  
  }
 
-/* for cases reported timeline in Canada */
-.timelineBox {
-    /* background: #3F51B5;   */
-    /* give the outermost container a predefined size */
-    position: absolute;
-    top: 18%;
-    bottom: 5%;
-    left: 50%;
+.timelineContainer {
+    position: relative;  /* needed, as we set absolute for son boxes*/
     display: flex;
+    width: 100%;
+    height: 92vh;
     flex-direction: column;
+    align-items: center;
 }
 
 .timelineTitle {
-    position: absolute;
-    top: 11%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.2rem;
     font-weight: 600;
     color: #353535;
-    width: 50%;
 }   
 
 .subTitle {
@@ -90,10 +84,22 @@
     margin-top: 5px;
 }
 
+/* sun box for cases reported timeline in Canada */
+.timelineBox {
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .scrollable {
     background: white;
     flex-grow: 1;
     overflow: auto;
+    left: 0;
     /* for Firefox */
     min-height: 0;
 }
@@ -145,7 +151,7 @@
 
     .timelineBox {
         position: relative;
-        left: 0%;
+        top: 0;
         text-align: left;
     }
 
