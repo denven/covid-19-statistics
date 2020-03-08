@@ -2,7 +2,7 @@ name: CI-Auto-Deploy
 
 on: 
     schedule:
-    - cron: '50 */8 * * *'
+    - cron: '55 */8 * * *'
       
 jobs:
   deploy:

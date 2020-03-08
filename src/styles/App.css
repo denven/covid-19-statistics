@@ -52,8 +52,16 @@
 
 .bodyLeft {
     display: inline-block;
+    text-align: left;
     width: 50%;
 }
+
+/* .bodyLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+} */
 
 .bodyRight {
     display: inline-block;

@@ -14,7 +14,7 @@ export default function MapUSA() {
       echarts.registerMap('USA', map.default, {
         // Move Alaska to the bottom left of United States
         Alaska: {      
-            left: -131,   // Upper left longitude            
+            left: -129,   // Upper left longitude            
             top: 25,      // Upper left latitude            
             width: 15     // Range of longitude
         },
@@ -28,7 +28,6 @@ export default function MapUSA() {
 
   useEffect(() => {
     import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
-      console.log(cases);
       setCases(cases.map( ({name, confirmed, death, recovered}) => {
         return {
           name: name,
@@ -55,7 +54,6 @@ export default function MapUSA() {
 
   const getOption = () => {
     return {
-      // backgroundColor: '#C0C0C0',
       title:  {
           x: 'center',
           text: 'Cases by State in USA',
@@ -69,15 +67,16 @@ export default function MapUSA() {
         max: 100000,
         align: 'left',
         top: '5%',
+        // bottom: '25%',
         left: 'center',
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
         pieces: [ 
-          {min: 10000},
-          {min: 1000, max: 9999},
+          {min: 1000},
           {min: 500, max: 999},
-          {min: 100, max: 499},
-          {min: 10, max: 99},
+          {min: 200, max: 499},
+          {min: 50, max: 199},
+          {min: 10, max: 49},
           {min: 1, max: 9},
         ],
         padding: 30,
@@ -113,13 +112,14 @@ export default function MapUSA() {
       // geo: {  },
       series: [{
         left: 'center',
-        top: '19%',
+        top: '15%',
         type: 'map',
         name: '',
         geoIndex: 0,
         data: cases, // area(provinces) data
         map: 'USA',
         silent: false, // province area is clickable
+        // layoutCenter: ['30%', '30%'],
         label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
         itemStyle: {
           normal:{ 
@@ -136,7 +136,7 @@ export default function MapUSA() {
           }
         },
         mapType: 'USA',        
-        zoom: 1.2,
+        zoom: 1.0,
         roam: false,
         showLegendSymbol: false,
         rippleEffect: { show: true, brushType: 'stroke', scale: 2.5, period: 4 },
@@ -146,7 +146,7 @@ export default function MapUSA() {
 
   return (
     <ReactEcharts 
-      style={{height: "85vh"}}
+      style={{height: "60vh"}}
       echarts={echarts}
       option={getOption()}
       loadingOption={getLoadingOption()}

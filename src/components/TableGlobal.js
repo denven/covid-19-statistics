@@ -7,7 +7,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-// import TablePagination from '@material-ui/core/TablePagination';
 
 const columns = [
   { id: 'no', label: '#', maxWidth: 10},
@@ -28,8 +27,6 @@ const columns = [
 
 const StyledTableCell = withStyles(theme => ({
   head: {
-    // backgroundColor: theme.palette.common.black,
-    // color: theme.palette.common.white,
     fontWeight: 600
   },
   body: { fontSize: 14, },
@@ -45,13 +42,33 @@ for(let i = 0, loadSting = 'Loading '; i < 3; i++) {
   initRows.push({ countryEnglishName: loadSting, confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
 }
 
-export default function StickyHeadTable({rows}) {
+export default function StickyHeadTable({place, rows}) {
   const classes = useStyles();
-
   const [rowsData, setRows] = useState((rows.length === 0) ? initRows: rows);
+
   useEffect(() => {
-    if(rows.length > 0) { setRows(rows); } 
-  },[rows]);
+    if(place === 'USA') {
+      import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
+        // console.log(cases);
+        setRows(cases.map( ({name, confirmed, death, recovered}) => {
+          return {
+            countryEnglishName: name,
+            confirmedCount: confirmed,
+            suspectedCount: '0',
+            curedCount: recovered,
+            deadCount: death
+          }
+        }));
+      });
+    } else {
+      if(rows.length > 0) { 
+        console.log('test rrr', rows);
+        setRows(rows); 
+      } 
+    }
+  },[place, rows]);
+
+  console.log('tttttttttt', rowsData);
 
   return (
     <Paper className={classes.root} elevation={0} >
@@ -85,15 +102,7 @@ export default function StickyHeadTable({rows}) {
           </TableBody>
         </Table>
       </TableContainer>
-      {/* <TablePagination
-        rowsPerPageOptions={[25, 50, 100]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      /> */}
+
     </Paper>
   );
 }

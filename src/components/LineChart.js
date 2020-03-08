@@ -74,7 +74,7 @@ export default function CasesTrend({country}) {
           top : '30px',
           textStyle: {fontSize: 12, fontWeight: 600},
       },
-      grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+      grid: { left: 'center', right: 'center', bottom: '3%', containLabel: true, width: '85%' },
       toolbox: { feature: { saveAsImage: {} } },
       xAxis: {
           type: 'category',
@@ -120,7 +120,7 @@ export default function CasesTrend({country}) {
     //  </div>) :
     (
       <ReactEcharts 
-        style={{height: "83vh"}}
+        style={{height: country === 'China' ? "83vh" : "25vh" }}
         echarts={echarts}
         option={getOption()}
         loadingOption={getLoadingOption()}
