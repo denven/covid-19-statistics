@@ -68,7 +68,11 @@ export default function StickyHeadTable({place, rows}) {
     }
   },[place, rows]);
 
-  console.log('tttttttttt', rowsData);
+  if(place === 'USA') { 
+    columns[1].label = 'State/Province'; 
+  } else { 
+    columns[1].label = 'Country/Place'; 
+  }
 
   return (
     <Paper className={classes.root} elevation={0} >
