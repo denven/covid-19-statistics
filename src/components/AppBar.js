@@ -37,14 +37,14 @@ const useStyles = makeStyles(theme => ({
   link: { color: '#FFF', textDecoration: 'none' }
 }));
 
-function China({overall, chinaMap}) {
+function China({loaded, overall, chinaMap}) {
   return (
     <div className="bodyContainer">
       <div className="bodyTop">     
         <OverallData showGlobal={false} place={'China'} overall={overall}/>
       </div>
       <div className="bodyBottom">
-        <div className="bodyLeft"> <MapChina chinaMap={chinaMap}/> </div>
+        <div className="bodyLeft"> <MapChina chinaMap={chinaMap} loaded={loaded}/> </div>
         <div className="bodyRight"> <CasesTrend country={'China'}/> </div>
       </div>
     </div>
@@ -66,7 +66,7 @@ function Canada({overall}) {
 }
 
 
-function USA() {
+function USA({loaded}) {
 
   return (
     <div className="bodyContainer">
@@ -75,7 +75,7 @@ function USA() {
       </div>
       <div className="bodyBottom">
         <div className="bodyGlobalMap"> 
-          <MapUSA/> 
+          <MapUSA loaded={loaded}/> 
           <CasesTrend country={'USA'}/> 
         </div>
         <div className="bodyGlobalTable"> <TableGlobal place={'USA'} rows={ [] } /></div>
@@ -187,7 +187,7 @@ export default function TopAppBar() {
             path="/canada" 
             component={() => <Canada loaded={loaded} overall={canadaOverall} />}
           />
-          <Route path="/usa" component={() => <USA />} />
+          <Route path="/usa" component={() => <USA loaded={loaded} />} />
           <Route 
             path="/news" 
             component={() => <News loaded={loaded} overall={otherOverall} />}

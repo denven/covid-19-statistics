@@ -132,6 +132,7 @@ async function updateUsaHisCases () {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated USA's history cases data at ${date}`);
     });
+
   }
 }
 
@@ -177,6 +178,6 @@ async function getCaLatestCases () {
 }
 
 getUsaLatestCases();       // by states
-updateUsaHisCases();
+// updateUsaHisCases();
 
 // getCaLatestCases();

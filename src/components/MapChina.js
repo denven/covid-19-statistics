@@ -6,10 +6,9 @@ import echarts from 'echarts/lib/echarts';
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
 
-export default function MapChina({chinaMap}) {
+export default function MapChina({loaded, chinaMap}) {
   // const [data, setData] = useState([]);
   // const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
- console.log('sfsdf', chinaMap);
   useEffect(() => {
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
@@ -20,10 +19,6 @@ export default function MapChina({chinaMap}) {
   const getLoadingOption = () => {
     return {
       text: 'Data Loading ...',
-      // color: '#4413c2',
-      // textColor: '#270240',
-      // maskColor: 'rgba(194, 88, 86, 0.3)',
-      // zlevel: 0
     };
   };
 
@@ -124,7 +119,7 @@ export default function MapChina({chinaMap}) {
       option={getOption()}
       loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
-      showLoading={true}
+      showLoading={!loaded}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}

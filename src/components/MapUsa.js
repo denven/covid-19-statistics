@@ -5,8 +5,8 @@ import echarts from 'echarts/lib/echarts';
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
 
-export default function MapUSA() {
-  const [loaded, setReady] = useState(false);
+export default function MapUSA({loaded}) {
+  // const [loaded, setReady] = useState(false);
   const [cases, setCases] = useState({dates:[], data:[]});
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export default function MapUSA() {
           death: death
         }
       }));
-      setReady(loaded);
+      // setReady(loaded);
     });
-  }, [loaded]);
+  }, []);
 
   const getLoadingOption = () => {
     return {
@@ -150,7 +150,7 @@ export default function MapUSA() {
       option={getOption()}
       loadingOption={getLoadingOption()}
       onChartReady={onChartReady}
-      showLoading={false}
+      showLoading={!loaded}
       notMerge={true}
       lazyUpdate={true}
       theme={"theme_name"}
