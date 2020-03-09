@@ -111,7 +111,7 @@ export default function MapUSA({loaded}) {
       // geo: {  },
       series: [{
         left: 'center',
-        top: '15%',
+        top: '18%',
         type: 'map',
         name: '',
         geoIndex: 0,
@@ -148,7 +148,7 @@ export default function MapUSA({loaded}) {
     // console.log('sss', mediaQuery);
     if(mediaQuery.matches) {
       if(document.body.clientWidth < 1024) {
-        return "50vh";
+        return "53vh";
       }        
     }
     return "60vh";
