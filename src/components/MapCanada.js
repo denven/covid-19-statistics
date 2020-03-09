@@ -16,7 +16,7 @@ export default function MapCanada() {
   }, []);
 
   useEffect(() => {
-    import(`../assets/CasesDb.json`).then( ({cases}) => {
+    import(`../assets/CanadaCasesDb.json`).then( ({cases}) => {
       setCases(
         {
           dates: cases.map(day => day.date),     // for timeline component

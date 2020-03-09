@@ -49,7 +49,6 @@ export default function StickyHeadTable({place, rows}) {
   useEffect(() => {
     if(place === 'USA') {
       import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
-        // console.log(cases);
         setRows(cases.map( ({name, confirmed, death, recovered}) => {
           return {
             countryEnglishName: name,
@@ -62,7 +61,6 @@ export default function StickyHeadTable({place, rows}) {
       });
     } else {
       if(rows.length > 0) { 
-        console.log('test rrr', rows);
         setRows(rows); 
       } 
     }

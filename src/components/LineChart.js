@@ -26,7 +26,6 @@ export default function CasesTrend({country}) {
             curesNum: hisData.data.data[2],
             deathsNum: hisData.data.data[3]
           });
-          console.log(hisData.data)
           setReady(true);
         } else {
           console.log('Requst for history data in China, errCode:', hisData.data.errCode);
@@ -68,7 +67,9 @@ export default function CasesTrend({country}) {
           x: 'center',
           text: 'Accumulated Cases by day in ' + country
       },
-      tooltip: { trigger: 'axis' },
+      tooltip: { 
+        trigger: 'axis',
+      },
       legend: {
           data: ['Confirmed', (country === 'China') ? 'Suspected' : 'Increased', 'Recovered', 'Deaths'], // four curves
           top : '30px',

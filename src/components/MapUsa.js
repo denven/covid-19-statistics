@@ -28,11 +28,11 @@ export default function MapUSA() {
 
   useEffect(() => {
     import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
-      setCases(cases.map( ({name, confirmed, death, recovered}) => {
+      setCases(cases.map( ({name, confirmed, death, increased}) => {
         return {
           name: name,
           value: confirmed,
-          cured: recovered,
+          cured: increased,
           death: death
         }
       }));
@@ -90,12 +90,11 @@ export default function MapUSA() {
       toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
-          console.log(params)
           let name = params.name;
           let death = 0, cured = 0;
           if(params.data) {
             death = params.data.death;
-            cured = params.data.death;
+            cured = params.data.cured;
           }
           let tipString = '';
           let value = ((params.value || "No Case") + '').split('.');

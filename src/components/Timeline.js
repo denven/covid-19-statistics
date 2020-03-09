@@ -57,7 +57,7 @@ export default function MyTimeline() {
   const [cases, setCases] = useState([]);
 
   useEffect(() => {    
-    import('../assets/Timeline.json').then( ({cases}) => {
+    import('../assets/CanadaTimeline.json').then( ({cases}) => {
         if(Array.isArray(cases)){
           setCases(cases);
         }

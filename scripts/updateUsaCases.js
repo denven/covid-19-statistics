@@ -35,7 +35,7 @@ const getStateEnName = (cnName, nameTable) => {
 }
 
 // get latest cases by states in USA
-async function getLatestCases () {
+async function getUsaLatestCases () {
 
   // get latest cases data
   let url = "https://coronavirus.1point3acres.com/en";
@@ -46,16 +46,21 @@ async function getLatestCases () {
   if(res.status === 200) {
     const $ = cheerio.load(res.data);
 
-    let data = $('span', '.jsx-2915694336');
-    for(let key = 4; key < data.length;) {
+    let data = $('span', '.stat');
+    for(let key = 0; key < data.length;) {
+      // console.log($(data[key]).text() , $(data[key+1]).text(), $(data[key+2]).text() , $(data[key+3]).text() );
       if($(data[key]).text() === '地区') 
         break;
-      curCases.push({
-        name: getStateEnName($(data[key]).text(), statesNames),
-        confirmed: $(data[key + 1]).text(),
-        recovered: $(data[key + 2]).text(),
-        death: $(data[key + 3]).text()
-      })
+      let stateEnglishName = getStateEnName($(data[key]).text(), statesNames);
+      if(stateEnglishName) {
+        curCases.push({
+          name: stateEnglishName,
+          // cnName: $(data[key]).text(),
+          confirmed: $(data[key + 1]).text(),
+          increased: $(data[key + 2]).text(),
+          death: $(data[key + 3]).text()
+        })
+      }
       key = key + 4;
     }
   }
@@ -74,7 +79,7 @@ async function getLatestCases () {
   }
 }
 
-async function updateHistoryCases () {
+async function updateUsaHisCases () {
 
   let oldData = fs.readFileSync(`../src/assets/UsaCasesHistory.json`);
   let allCases = JSON.parse(oldData).cases;
@@ -127,9 +132,51 @@ async function updateHistoryCases () {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated USA's history cases data at ${date}`);
     });
-
   }
 }
 
-getLatestCases();       // by states
-updateHistoryCases();
+async function getCaLatestCases () {
+
+  // get latest cases data
+  let url = "https://coronavirus.1point3acres.com/en";
+  let res = await axios.get(url);
+
+  let curCases = [];
+  let statesNames = await gerateUSStatesNames();
+  if(res.status === 200) {
+    const $ = cheerio.load(res.data);
+
+    let data = $('span', '.jsx-2915694336');
+    for(let key = 4; key < data.length;) {
+      if($(data[key]).text() === '地区') {
+        console.log(key)
+        curCases.push({
+          name: getStateEnName($(data[key]).text(), statesNames),
+          confirmed: $(data[key + 1]).text(),
+          recovered: $(data[key + 2]).text(),
+          death: $(data[key + 3]).text()
+        });
+      }
+      key = key + 4;
+    }
+    console.log('ca', curCases);
+  }
+
+  // if(curCases.length > 0) {
+  //   let jsonData = {
+  //     date: (new Date()),
+  //     cases: curCases
+  //   }
+
+  //   const casesString = JSON.stringify(jsonData, null, 4);
+  //   fs.writeFile("../src/assets/UsaStatesCases.json", casesString, (err, result) => {
+  //     if(err) console.log('Error in writing data into Json file', err);
+  //     console.log(`Updated latest US states cases at ${jsonData.date}`);
+  //   });
+  // }
+}
+
+getUsaLatestCases();       // by states
+updateUsaHisCases();
+
+// getCaLatestCases();

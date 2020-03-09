@@ -2,6 +2,7 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const wiki = require('wikijs').default;
 const axios = require('axios');
+const _ = require('lodash');
 
 // get cases timeline announced by the gov
 async function getCasesTimeline () {
@@ -26,6 +27,25 @@ async function getCasesTimeline () {
     }        
   });
 
+  let tmp = _.orderBy(casesTimeline, ['date', 'desc']);
+  let tmpCases = [];
+
+  const getOneMonthReports = (reports, month) => {   
+    let tmp = []; 
+    reports.forEach(item => {
+      if(item.date.includes(month))
+        tmp.push(item);
+    });
+    return tmp;
+  }
+
+  tmpCases = [ 
+    ...getOneMonthReports(tmp, 'January'), 
+    ...getOneMonthReports(tmp, 'February'),
+    ...getOneMonthReports(tmp, 'March'),
+    ...getOneMonthReports(tmp, 'April')
+  ];
+
   $('p', 'div').each( (index, ele) => {
 
     if(index < 5 && $(ele).text()) {   
@@ -35,21 +55,21 @@ async function getCasesTimeline () {
       if(date) {
         date = date[0];
         content = content.charAt(0).toUpperCase() + content.substring(1);
-        casesTimeline.push({date, content});
+        tmpCases.push({date, content});
       }
     }
   });
 
-  if(casesTimeline.length > 0) {
+  if(tmpCases.length > 0) {
     let jsonData = {
       time: (new Date()),
-      cases: casesTimeline.reverse()
+      cases: tmpCases.reverse()
     }
     const timelineString = JSON.stringify(jsonData, null, 4);
     // console.log(timelineString);
-    fs.writeFile("../src/assets/Timeline.json", timelineString, (err, result) => {
+    fs.writeFile("../src/assets/CanadaTimeline.json", timelineString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
-      console.log(`Updated timeline data at ${jsonData.time}`);
+      console.log(`Updated Canada timeline data at ${jsonData.time}`);
     });
   }
 }
@@ -62,7 +82,7 @@ async function getHistoryCases () {
   // step 3: compare the last data and save new cases data
   // step 4: rewrite data to json file
 
-  let oldData = fs.readFileSync(`../src/assets/CasesDb.json`);
+  let oldData = fs.readFileSync(`../src/assets/CanadaCasesDb.json`);
   let allCases = JSON.parse(oldData).cases;
   let lastDay = allCases[allCases.length - 1];
   let totalCases = 0;
@@ -109,9 +129,9 @@ async function getHistoryCases () {
 
     // save to json file
     const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
-    fs.writeFile("../src/assets/CasesDb.json", casesString, (err, result) => {
+    fs.writeFile("../src/assets/CanadaCasesDb.json", casesString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
-      console.log(`Updated history cases data at ${date}`);
+      console.log(`Updated Canada history cases data at ${date}`);
     });
 
   }
@@ -152,5 +172,5 @@ async function getLatestCases () {
 }
 
 getCasesTimeline();  // get all the cases reported
-getLatestCases(); // no needed right now
+// getLatestCases(); // no needed right now
 getHistoryCases();
