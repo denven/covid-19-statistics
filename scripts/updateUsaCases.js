@@ -1,6 +1,7 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
 const axios = require('axios');
+const moment = require('moment')
 
 // get latest cases from cdc canada
 async function gerateUSStatesNames () {
@@ -107,17 +108,22 @@ async function updateUsaHisCases () {
     }
 
     let srcDate = $('span', '.jsx-2711182874');
-    let srcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2})/g).join(); 
-    srcDateStr = srcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
+    // extract the exact date and time(UTC time)
+    let utcSrcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2} [\d]{2}:[\d]{2} UTC)/g).join();
+    // change UTC time to localtime(its important for the src string containing the letters 'UTC' )
+    let localSrcDateStr = moment(new Date(utcSrcDateStr)).format('YYYY-MM-DD');
 
-    // step 3: increase a new day's data by comparision
+    // console.log(localSrcDateStr, moment(new Date()).format('YYYY-MM-DD HH:MM:SS'));
+    let srcDateStr = localSrcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
+
+    // step 3-1: increase a new day's data by comparision
     if(lastDay.date !== srcDateStr)  {
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
       latestStatus.date = srcDateStr;
       allCases.push(latestStatus);
     }
 
-    // step 3: or update today's cases realtimely
+    // step 3-2: or update today's cases realtimely
     if(lastDay.date === srcDateStr && lastDay.confirmedNum < latestStatus.confirmedNum) {
       allCases.pop();
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
