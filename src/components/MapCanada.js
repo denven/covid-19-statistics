@@ -177,7 +177,7 @@ export default function MapCanada() {
     // console.log('sss', mediaQuery);
     if(mediaQuery.matches) {
       if(document.body.clientWidth < 1024) {
-        return "48vh";
+        return "60vh";
       }        
     }
     return "85vh";
