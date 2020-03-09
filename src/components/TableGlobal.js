@@ -68,6 +68,7 @@ export default function StickyHeadTable({place, rows}) {
 
   if(place === 'USA') { 
     columns[1].label = 'State/Province'; 
+    columns[3].label = 'Increased'; 
   } else { 
     columns[1].label = 'Country/Place'; 
   }
