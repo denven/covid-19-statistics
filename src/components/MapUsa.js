@@ -143,9 +143,20 @@ export default function MapUSA({loaded}) {
     }
   }
 
+  const getModerateHeight = () => {
+    let mediaQuery = window.matchMedia("(orientation: portrait)");
+    // console.log('sss', mediaQuery);
+    if(mediaQuery.matches) {
+      if(document.body.clientWidth < 1024) {
+        return "48vh";
+      }        
+    }
+    return "60vh";
+  }
+
   return (
     <ReactEcharts 
-      style={{height: "60vh"}}
+      style={{height: getModerateHeight()}}
       echarts={echarts}
       option={getOption()}
       loadingOption={getLoadingOption()}
