@@ -178,6 +178,6 @@ async function getCaLatestCases () {
 }
 
 getUsaLatestCases();       // by states
-// updateUsaHisCases();
+updateUsaHisCases();
 
 // getCaLatestCases();
