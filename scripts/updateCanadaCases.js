@@ -113,7 +113,7 @@ async function updateHistoryCases () {
             return total = parseInt(total) + parseInt(curProv.value); 
           },[0]);
 
-          if(totalHisCases < provCases[4]) { //there are new increased cases
+          if(totalHisCases <= provCases[4]) { //there are new increased cases
             let provinces = ["Ontario", "British Columbia", "Quebec", "Alberta"];
             casesAsOfToday = provinces.map( (prov, index) => {
               let provIdx = 0;
@@ -162,7 +162,7 @@ async function updateHistoryCases () {
   }
 
   try {
-    
+
     // save new cases data to array (provinces' cases)
     if(casesAsOfToday.length > 0) {
       if(dateString !== allDaysCases[allDaysCases.length - 1].date)
@@ -178,7 +178,12 @@ async function updateHistoryCases () {
     let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
       return total = parseInt(total) + parseInt(curProv.value); 
     },[0]);
-    newOverall.increased = newOverall.confirmed - yesterdayTotal;
+
+    // if(dateString.replace(/\//g, '') > allDaysCases[allDaysCases.length - 1].date.replace(/\//g, '')) {
+    //   newOverall.increased = newOverall.confirmed - yesterdayTotal;
+    // } else {
+      newOverall.increased = newOverall.confirmed - yesterdayTotal;
+    // }
 
     // save to json file
     const casesString = JSON.stringify({
