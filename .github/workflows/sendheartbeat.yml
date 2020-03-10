@@ -1,29 +1,13 @@
-name: CI-Auto-Update
+name: SEND-Heart-Beat
 
 on: 
     schedule:
-    - cron: '45 */1 * * *'
+    - cron: '15 * * * *'
       
 jobs:
   update:   
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2
-    - name: Download the latest data ...
-      run: wget https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYArea.json -O ./src/assets/Areas.json
-    - name: Scraping latest data from internet ...
-      run: | 
-          cd scripts
-          npm install
-          npm run generate
-          npm run update
-          cd ..
-    - name: Commit the latest data ...
-      run: |
-          git status
-          git config --global user.email "myregs@foxmail.com"
-          git config --global user.name "denven"
-          git add src/assets/
-          git commit -m 'Auto update all Json assets file'
-          git push           
+    - name: Send heart beat to heroku site ...
+      run: curl https://covid-19-statistics.herokuapp.com/
