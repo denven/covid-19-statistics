@@ -53,10 +53,25 @@ export default function OverallData ({place, overall}) {
             suspect: lastData.increasedNum, 
             cured: lastData.curesNum, 
             death: lastData.deathsNum, 
-            fatality: (100 * lastData.deathsNum / (lastData.confirmedNum)).toFixed(2) + '%'
+            fatality: (100 * lastData.deathsNum / lastData.confirmedNum).toFixed(2) + '%'
           });
           handleResize();
         }
+      });
+    } else if(place === 'Canada') {
+      import(`../assets/CanadaCasesDb.json`).then( ({date, overall}) => {
+        console.log(overall);
+        let srcDate = new Date(date);
+        let timeStr = moment(srcDate).format('YYYY-MM-DD HH:MM:SS');
+        setData ({
+          time: timeStr,
+          confirmed: overall.confirmed, 
+          suspect: overall.increased, 
+          cured: overall.recovered, 
+          death: overall.death, 
+          fatality: (100 * overall.death / overall.confirmed).toFixed(2) + '%'
+        });
+        handleResize();
       });
     } else if(overall)  {
       setData(overall);   
@@ -73,7 +88,7 @@ export default function OverallData ({place, overall}) {
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {data.confirmed}</span></div>
-      <div className="eachText"> {(place !== 'USA') ? 'Suspected' : 'Increased'} <span className="suspectedNumber">&nbsp; &nbsp; {data.suspect}</span></div>
+      <div className="eachText"> {(place !== 'USA' && place !== 'Canada') ? 'Suspected' : 'Increased'} <span className="suspectedNumber">&nbsp; &nbsp; {data.suspect}</span></div>
       <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {data.cured}</span></div>
       <div className="eachText">Deaths <span className="deathNumber">&nbsp; {data.death}</span></div>
       <div className="eachText">Lethality <span className="fatalityNumber">&nbsp; {data.fatality}</span></div>
