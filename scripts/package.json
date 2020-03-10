@@ -2,9 +2,9 @@
   "name": "scripts",
   "version": "1.0.0",
   "description": "",
-  "main": "scraper.js",
+  "main": "updateCanadaCases.js",
   "scripts": {
-    "generate": "node scraper.js",
+    "generate": "node updateCanadaCases.js",
     "update": "node updateUsaCases.js"
   },
   "keywords": [],
