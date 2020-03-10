@@ -9,7 +9,7 @@ export default function OverallData ({place, overall}) {
   let placeString = 'Global Cases';
 
   if(place === 'Other') { 
-    placeString = 'Non-China Cases';
+    placeString = 'Outside China';
   } else {
     placeString = place + ' Cases';
   }
@@ -60,7 +60,7 @@ export default function OverallData ({place, overall}) {
       });
     } else if(place === 'Canada') {
       import(`../assets/CanadaCasesDb.json`).then( ({date, overall}) => {
-        console.log(overall);
+        // console.log(overall);
         let srcDate = new Date(date);
         let timeStr = moment(srcDate).format('YYYY-MM-DD HH:MM:SS');
         setData ({

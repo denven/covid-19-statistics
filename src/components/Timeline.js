@@ -32,9 +32,9 @@ function Timeline ({cases}) {
     <div className="timelineBox">
       <div className="scrollable">
         <VerticalTimeline layout={'1-column'} className={classes.padding} animate={true}>          
-          { cases.map( item => (
+          { cases.map( (item,index) => (
               <VerticalTimelineElement
-                key={item.date}  // add key to remove complains
+                key={index}  // add key to remove complains
                 // className="vertical-timeline-element--work"
                 className={classes.margin}
                 contentStyle={{ background: 'white', color: 'black', paddingTop: '0', bottom: '0'}}
