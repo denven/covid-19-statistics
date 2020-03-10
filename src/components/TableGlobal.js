@@ -71,6 +71,7 @@ export default function StickyHeadTable({place, rows}) {
     columns[3].label = 'Increased'; 
   } else { 
     columns[1].label = 'Country/Place'; 
+    columns[3].label = 'Cured'; 
   }
 
   return (
