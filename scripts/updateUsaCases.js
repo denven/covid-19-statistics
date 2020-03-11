@@ -50,10 +50,10 @@ async function getUsaLatestCases () {
 
     let data = $('span', '.stat');
     for(let key = 0; key < data.length;) {
-      // console.log($(data[key]).text() , $(data[key+1]).text(), $(data[key+2]).text() , $(data[key+3]).text() );
-      if($(data[key]).text() === '地区') 
-        break;
-      let stateEnglishName = getStateEnName($(data[key]).text(), statesNames);
+      if($(data[key]).text() === '') key++;
+      // console.log($(data[key]).text() , $(data[key+1]).text(), $(data[key+2]).text() , $(data[key+3]).text(), data.length, 'end' );
+      if($(data[key]).text() === '地区') break;
+      let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
       if(stateEnglishName) {
         curCases.push({
           name: stateEnglishName,
