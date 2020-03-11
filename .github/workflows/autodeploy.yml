@@ -1,8 +1,8 @@
-name: CI-Auto-Deploy
+name: CI-Auto-Deploy  #deploy to AWS S3 from 7:55, 11.55, 15.55, 20.55 every 4 hours
 
 on: 
     schedule:
-    - cron: '55 */8 * * *'
+    - cron: '55 2,15,19,23 * * *'
       
 jobs:
   deploy:
