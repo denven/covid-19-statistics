@@ -1,8 +1,8 @@
-name: CI-Auto-Update
+name: CI-Auto-Update  # Update from 8.55-21.55 every one hour
 
 on: 
     schedule:
-    - cron: '45 */1 * * *'
+    - cron: '45 0,1,2,3,4,15,16,17,18,19,20,21,22,23 * * *'
       
 jobs:
   update:   
