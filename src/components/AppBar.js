@@ -135,8 +135,8 @@ function Navigator() {
       <div className="menu">
         <ul>
           <li><Link to="/" className={classes.link}>Global</Link></li> 
-          <li><Link to="/usa" className={classes.link}>USA</Link></li>
           <li><Link to="/canada" className={classes.link}>Canada</Link></li>
+          <li><Link to="/usa" className={classes.link}>USA</Link></li>
           <li><Link to="/china" className={classes.link}>China</Link></li>            
           <li><Link to="/news" className={classes.link}>News</Link></li>            
         </ul>   
