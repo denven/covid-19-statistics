@@ -19,9 +19,9 @@ Note:
 ![Desktop GIF](https://github.com/denven/hello_world/blob/master/COVID-19-Desktop.gif#pic_center=960x500)
 
 ### Mobile View
-![Global Statistics](./screenshots/1.mobile-Global.jpg)
-![USA Statistics](./screenshots/2.mobile-Usa.jpg)
-![Canada Statistics](./screenshots/3.mobile-Canada.jpg)
-![China Statistics](./screenshots/4.mobile-China.jpg)
-![Latest News](./screenshots/5.mobile-News.jpg)
+![Global Statistics](./screenshots/1.mobile-Global.jpg#pic_center=414x736)
+![USA Statistics](./screenshots/2.mobile-Usa.jpg#pic_center=414x736)
+![Canada Statistics](./screenshots/3.mobile-Canada.jpg#pic_center=414x736)
+![China Statistics](./screenshots/4.mobile-China.jpg#pic_center=414x736)
+![Latest News](./screenshots/5.mobile-News.jpeg#pic_center=414x736)
 
