@@ -23,8 +23,8 @@ export default function MapUSA() {
         // Puerto Rico
         'Puerto Rico': { left: -76, top: 26, width: 2 }
       });
+      setReady(true);
     });
-    setReady(true);
   }, []);
 
   useEffect(() => {
