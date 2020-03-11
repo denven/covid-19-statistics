@@ -22,12 +22,9 @@ jobs:
     - name: Commit the latest data ...
       run: |
           git status
-          git remote -v
-          git remote add heroku https://git.heroku.com/covid-19-statistics.git
           git config --global user.email "myregs@foxmail.com"
           git config --global user.name "denven"
           git add src/assets/
           git commit -m 'Auto update all Json assets file'
-          git push heroku master
-          git push origin master
+          git push 
           
