@@ -5,8 +5,8 @@ import echarts from 'echarts/lib/echarts';
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
 
-export default function MapUSA({loaded}) {
-  // const [loaded, setReady] = useState(false);
+export default function MapUSA() {
+  const [loaded, setReady] = useState(false);
   const [cases, setCases] = useState({dates:[], data:[]});
 
   useEffect(() => {
@@ -24,6 +24,7 @@ export default function MapUSA({loaded}) {
         'Puerto Rico': { left: -76, top: 26, width: 2 }
       });
     });
+    setReady(true);
   }, []);
 
   useEffect(() => {

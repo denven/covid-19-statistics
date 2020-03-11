@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 
@@ -6,13 +6,14 @@ import echarts from 'echarts/lib/echarts';
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
 
-export default function MapChina({loaded, chinaMap}) {
+export default function MapChina({chinaMap}) {
   // const [data, setData] = useState([]);
-  // const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
+  const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
   useEffect(() => {
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
       echarts.registerMap('china-', map.default);
+      setReady(true);
     });
   }, []);
 

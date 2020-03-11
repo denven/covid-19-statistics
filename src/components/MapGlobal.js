@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 
-export default function MapGlobal({mapData, loaded}) {
-  // const [loaded, setReady] = useState(false);
+export default function MapGlobal({mapData}) {
+  const [loaded, setReady] = useState(false);
 
   useEffect(() => {
     import(`echarts/map/json/world.json`).then(map => {
       echarts.registerMap('world', map.default)  
-      // setReady(true);
+      setReady(true);
     });
    }, []);
  
