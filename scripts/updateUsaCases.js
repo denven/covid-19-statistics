@@ -2,7 +2,7 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const axios = require('axios');
 const moment = require('moment')
-const DEBUG_MODE_OFF = false;
+const DEBUG_MODE_ON = false;
 
 // get latest cases from cdc canada
 async function gerateUSStatesNames () {
@@ -66,9 +66,9 @@ async function getUsaLatestCases () {
       key = key + 4;
     }
   }
-  // console.log(curCases); //
+  // console.log(curCases); 
 
-  if(!DEBUG_MODE_OFF) {
+  if(!DEBUG_MODE_ON) {
     if(curCases.length > 0) {
       let jsonData = {
         date: (new Date()),
@@ -143,7 +143,7 @@ async function updateUsaHisCases () {
     // console.log(allCases, latestStatus);
 
     // step 4: save new data back to json file
-    if(DEBUG_MODE_OFF) {
+    if(!DEBUG_MODE_ON) {
       let date = new Date();
       const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
       fs.writeFile("../src/assets/UsaCasesHistory.json", casesString, (err, result) => {

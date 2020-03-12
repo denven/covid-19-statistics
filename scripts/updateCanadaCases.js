@@ -13,7 +13,7 @@ async function getCasesTimeline () {
         
   $('p', 'div').each( (index, ele) => {
     if(index > 0) {
-      let message = $(ele).text().replace(/\[\d{1,2}\]/g,'');
+      let message = $(ele).text().replace(/\[\d{1,3}\]/g,''); //remove [no] refereneces
       let date = message.match(/^On [A-Z][a-z]{2,10} \d{1,2}/g);
       let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, '').trim();
       if(date) {
