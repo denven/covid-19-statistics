@@ -106,7 +106,7 @@ async function updateHistoryCases () {
         let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
 
         if(tabRow.includes('Total')) {
-          //Order: BC:0,	AB:1,	ON:2,	QC:3, total: 4
+          //Order: BC:0,	AB:1,	ON:2,	QC:3,  NB:4  total provinces: 5  :as of 2020-03-11
           let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g,'').split(','); 
 
           let lastDay = allDaysCases[allDaysCases.length - 1];
@@ -114,7 +114,9 @@ async function updateHistoryCases () {
             return total = parseInt(total) + parseInt(curProv.value); 
           },[0]);
 
-          if(totalHisCases <= provCases[5]) { //there are new increased cases
+          //there are new increased cases(5 provinces as of 2020-03-20), provCases[5] is total number
+          let tollNumberIdx = 5; // confirm this value by checking the html table row
+          if(totalHisCases <= provCases[tollNumberIdx]) { 
             let provinces = [
               "Ontario", "British Columbia", "Quebec", 
               "Alberta", "Manitoba", "Saskatchewan", 
