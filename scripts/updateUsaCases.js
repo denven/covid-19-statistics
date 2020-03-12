@@ -124,7 +124,7 @@ async function updateUsaHisCases () {
 
     let lastDay = allCases[allCases.length - 1];
     // step 3-1: increase a new day's data by comparision
-    // console.log(lastDay.date, srcDateStr)
+    console.log(utcSrcDateStr, localSrcDateStr, lastDay.date, srcDateStr);
     if(lastDay.date !== srcDateStr)  {
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
       latestStatus.date = srcDateStr;
@@ -143,7 +143,7 @@ async function updateUsaHisCases () {
     // console.log(allCases, latestStatus);
 
     // step 4: save new data back to json file
-    if(!DEBUG_MODE_OFF) {
+    if(DEBUG_MODE_OFF) {
       let date = new Date();
       const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
       fs.writeFile("../src/assets/UsaCasesHistory.json", casesString, (err, result) => {
