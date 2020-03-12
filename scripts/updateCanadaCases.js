@@ -111,7 +111,7 @@ async function updateHistoryCases () {
 
           let lastDay = allDaysCases[allDaysCases.length - 1];
           let totalHisCases = lastDay.cases.reduce((total, curProv) => {
-            return total = parseInt(total) + parseInt(curProv.value); 
+            return total = parseInt(total) + parseInt(curProv.value || 0); 
           },[0]);
 
           //there are new increased cases(5 provinces as of 2020-03-20), provCases[5] is total number
@@ -175,7 +175,7 @@ async function updateHistoryCases () {
     // save new cases data to array (provinces' cases)
     if(casesAsOfToday.length > 0) {
       if(dateString !== allDaysCases[allDaysCases.length - 1].date)
-      allDaysCases.push({date: dateString, cases: casesAsOfToday});  // new day's data
+        allDaysCases.push({date: dateString, cases: casesAsOfToday});  // new day's data
       else {
         allDaysCases.pop();  // for updating the same day's cases
         allDaysCases.push({date: dateString, cases: casesAsOfToday});
@@ -185,7 +185,7 @@ async function updateHistoryCases () {
 
     let yesterdayCases = allDaysCases[allDaysCases.length - 2];
     let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
-      return total = parseInt(total) + parseInt(curProv.value); 
+      return total = parseInt(total) + parseInt(curProv.value || 0); 
     },[0]);
 
     // if(dateString.replace(/\//g, '') > allDaysCases[allDaysCases.length - 1].date.replace(/\//g, '')) {
