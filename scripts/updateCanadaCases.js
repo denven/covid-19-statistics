@@ -15,7 +15,7 @@ async function getCasesTimeline () {
     if(index > 0) {
       let message = $(ele).text().replace(/\[\d{1,2}\]/g,'');
       let date = message.match(/^On [A-Z][a-z]{2,10} \d{1,2}/g);
-      let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, '').trim();
+      let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, '').replace(/ ([\d],)/g, ' 0$1').trim();
       if(date) {
         date = date[0].slice(3) + ', 2020';
         content = content.charAt(0).toUpperCase() + content.substring(1);
@@ -43,7 +43,8 @@ async function getCasesTimeline () {
     ...getOneMonthReports(tmp, 'January'), 
     ...getOneMonthReports(tmp, 'February'),
     ...getOneMonthReports(tmp, 'March'),
-    ...getOneMonthReports(tmp, 'April')
+    ...getOneMonthReports(tmp, 'April'),
+    ...getOneMonthReports(tmp, 'May')
   ];
 
   $('p', 'div').each( (index, ele) => {
