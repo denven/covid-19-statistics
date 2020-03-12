@@ -2,7 +2,7 @@
 ## Introduction
 A web app uses react, material ui, echarts, and js scraper to collect and represent statistics of coronavirus in the world.
 - New Hosting on AWS S3: http://covid-19-statistics.s3-website-us-west-2.amazonaws.com/
-- Original Hosting on heroku: http://covid-19-statistics.herokuapp.com/
+- Original Hosting on heroku: https://covid-19-statistics.herokuapp.com/
 
 Note: 
 - The hosting on AWS S3 is auto-deployed(epidemic data updates every 8 hours) by github Actions workflow script;
@@ -19,9 +19,23 @@ Note:
 ![Desktop GIF](https://github.com/denven/hello_world/blob/master/COVID-19-Desktop.gif#pic_center=960x500)
 
 ### Mobile View
-![Global Statistics](./screenshots/1.mobile-Global.jpg#pic_center=414x736)
-![USA Statistics](./screenshots/2.mobile-Usa.jpg#pic_center=414x736)
-![Canada Statistics](./screenshots/3.mobile-Canada.jpg#pic_center=414x736)
-![China Statistics](./screenshots/4.mobile-China.jpg#pic_center=414x736)
-![Latest News](./screenshots/5.mobile-News.jpeg#pic_center=414x736)
 
+<style>
+table th:first-of-type {
+    width: 33%;
+}
+table th:nth-of-type(2) {
+    width: 33%;
+}
+table th:nth-of-type(3) {
+    width: 33%;
+}
+</style>
+
+Global Statistics           |  USA Statistics            |  Canada Ocean
+:-------------------------:|:-------------------------:|:-------------------------:
+  ![Global Statistics](./screenshots/1.mobile-Global.jpg "Global Statistics")|![USA Statistics](./screenshots/2.mobile-Usa.jpg "USA Statistics") |![Canada Statistics](./screenshots/3.mobile-Canada.jpg "Canada Statistics")
+
+China Statistics           |  Latest News          | |
+:-------------------------:|:-------------------------:|:-------------------------:  
+  ![China Statistics](./screenshots/4.mobile-China.jpg "China Statistics")  | ![Latest News](./screenshots/5.mobile-News.jpeg#pic_center=414x736 "Latest News") | |
