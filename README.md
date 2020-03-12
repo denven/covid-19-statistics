@@ -20,22 +20,10 @@ Note:
 
 ### Mobile View
 
-<style>
-table th:first-of-type {
-    width: 33%;
-}
-table th:nth-of-type(2) {
-    width: 33%;
-}
-table th:nth-of-type(3) {
-    width: 33%;
-}
-</style>
-
-Global Statistics           |  USA Statistics            |  Canada Ocean
+Global Statistics           |  USA Statistics            |  Canada Statistics
 :-------------------------:|:-------------------------:|:-------------------------:
   ![Global Statistics](./screenshots/1.mobile-Global.jpg "Global Statistics")|![USA Statistics](./screenshots/2.mobile-Usa.jpg "USA Statistics") |![Canada Statistics](./screenshots/3.mobile-Canada.jpg "Canada Statistics")
 
 China Statistics           |  Latest News          | |
 :-------------------------:|:-------------------------:|:-------------------------:  
-  ![China Statistics](./screenshots/4.mobile-China.jpg "China Statistics")  | ![Latest News](./screenshots/5.mobile-News.jpeg#pic_center=414x736 "Latest News") | |
+  ![China Statistics](./screenshots/4.mobile-China.jpg "China Statistics")  | ![Latest News](./screenshots/5.mobile-News.jpeg#pic_center=414x736 "Latest News") |<div style="width: 350px"></div> |
