@@ -2,7 +2,7 @@ name: SEND-Heart-Beat
 
 on: 
     schedule:
-    - cron: '15 * * * *'
+    - cron: '*/20 * * * *'
       
 jobs:
   update:   
