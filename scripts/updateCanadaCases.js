@@ -15,9 +15,9 @@ async function getCasesTimeline () {
     if(index > 0) {
       let message = $(ele).text().replace(/\[\d{1,2}\]/g,'');
       let date = message.match(/^On [A-Z][a-z]{2,10} \d{1,2}/g);
-      let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, '').replace(/ ([\d],)/g, ' 0$1').trim();
+      let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, '').trim();
       if(date) {
-        date = date[0].slice(3) + ', 2020';
+        date = (date[0].slice(3) + ', 2020').replace(/ ([\d],)/g, ' 0$1');
         content = content.charAt(0).toUpperCase() + content.substring(1);
         if(content.search('Shopify') > -1) return '';
         if(content.search('TED') > -1) return '';
@@ -114,24 +114,30 @@ async function updateHistoryCases () {
             return total = parseInt(total) + parseInt(curProv.value); 
           },[0]);
 
-          if(totalHisCases <= provCases[4]) { //there are new increased cases
-            let provinces = ["Ontario", "British Columbia", "Quebec", "Alberta"];
+          if(totalHisCases <= provCases[5]) { //there are new increased cases
+            let provinces = [
+              "Ontario", "British Columbia", "Quebec", 
+              "Alberta", "Manitoba", "Saskatchewan", 
+              "Newfoundland and Labrador", "Prince Edward Island", "Nova Scotia", "New Brunswick", 
+              "Yukon", "Northwest Territories", "Nunavut"
+              ];
+            // ['ON', 'BC', 'QC', 'AB', 'MB', 'SK', 'NL', 'PE', 'NS', 'NB', 'YT', 'NT', 'NU'] order on yAxis
+            // The provIdx value is the index of collected province array from wikipedia, the order is:
+            // BC, AB, ON, QC, NB ... 
             casesAsOfToday = provinces.map( (prov, index) => {
-              let provIdx = 0;
+              let provIdx = -1; 
               if(index === 0) provIdx = 2;  // ON
               if(index === 1) provIdx = 0;  // BC
               if(index === 2) provIdx = 3;  // ON
               if(index === 3) provIdx = 1;  // QC
-              
-              if(index < provinces.length) {
-                return {
-                  "name": prov,
-                  "value": provCases[provIdx]
-                }
+              if(index === 9) provIdx = 4;  // NB
+
+              return {
+                "name": prov,
+                "value": provIdx >= 0 ? provCases[provIdx] : ''
               }
             });
           }
-          // console.log(casesAsOfToday);
         }
       }
     });
