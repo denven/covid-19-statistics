@@ -4,8 +4,8 @@
   "description": "",
   "main": "updateCanadaCases.js",
   "scripts": {
-    "generate": "node updateCanadaCases.js",
-    "update": "node updateUsaCases.js"
+    "generate": "env TZ='America/Vancouver' node updateCanadaCases.js",
+    "update": "env TZ='America/Vancouver' node updateUsaCases.js"
   },
   "keywords": [],
   "author": "",
