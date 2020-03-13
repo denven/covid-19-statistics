@@ -78,7 +78,7 @@ export default function MapCanada() {
           autoPlay: true,
           playInterval: 1500,
           data: cases.dates,        // Days since the 1st cases
-          currentIndex: cases.dates.length - 1,
+          currentIndex: cases.dates.length - 4 // play from the last four days
         },  
         title:  {
           x: 'center',
