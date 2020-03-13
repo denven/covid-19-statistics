@@ -4,6 +4,27 @@ const wiki = require('wikijs').default;
 const axios = require('axios');
 const _ = require('lodash');
 
+const provinces = [
+  { fullname: "Ontario", abbr: 'ON'},
+  { fullname: "British Columbia", abbr: 'BC'},
+  { fullname: "Quebec", abbr: 'QC'},
+  { fullname: "Alberta", abbr: 'AB'},
+  { fullname: "Manitoba", abbr: 'ON'},
+  { fullname: "Saskatchewan", abbr: 'SK'},
+  { fullname: "Newfoundland and Labrador", abbr: 'NL'},
+  { fullname: "Prince Edward Island", abbr: 'PE'},
+  { fullname: "Nova Scotia", abbr: 'NS'},
+  { fullname: "New Brunswick", abbr: 'NB'},
+  { fullname: "Yukon", abbr: 'YK'},
+  { fullname: "Northwest Territories", abbr: 'NT'},
+  { fullname: "Nunavut", abbr: 'NU'}
+];
+
+const getProvFullName = (shortName) => {
+  let prov= provinces.find(item => item.abbr === shortName);
+  return prov.fullname;
+}
+
 // get cases timeline announced by the gov
 async function getCasesTimeline () {
 
@@ -99,14 +120,18 @@ async function updateHistoryCases () {
   let elements = $('tr', '.wikitable');  //get table rows
 
   try {  
+    let provAbbrs = [];
     elements.each( (index, item) => {
+      // get the abbreviations of provinces
+      if(index === 1) {
+        provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
+      }
 
-      if(index > 0) {
+      if(index > 1) {
         // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
         let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
-
         if(tabRow.includes('Total')) {
-          //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5  :as of 2020-03-12
+          //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5 :as of 2020-03-12
           let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g,'').split(','); 
 
           let lastDay = allDaysCases[allDaysCases.length - 1];
@@ -115,29 +140,14 @@ async function updateHistoryCases () {
           },[0]);
 
           //there are new increased cases(5 provinces as of 2020-03-20), provCases[5] is total number
-          let tollNumberIdx = 7; // confirm this value by checking the html table row
+          let tollNumberIdx = provCases.length - 1; // confirm this value by checking the html table row
+          // console.log(totalHisCases, provCases[tollNumberIdx], provCases.length);
           if(totalHisCases <= provCases[tollNumberIdx]) { 
-            let provinces = [
-              "Ontario", "British Columbia", "Quebec", 
-              "Alberta", "Manitoba", "Saskatchewan", 
-              "Newfoundland and Labrador", "Prince Edward Island", "Nova Scotia", "New Brunswick", 
-              "Yukon", "Northwest Territories", "Nunavut"
-              ];
-            // ['ON', 'BC', 'QC', 'AB', 'MB', 'SK', 'NL', 'PE', 'NS', 'NB', 'YT', 'NT', 'NU'] order on yAxis
-            // The provIdx value is the index of collected province array from wikipedia, the order is:
-             //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6 
             casesAsOfToday = provinces.map( (prov, index) => {
-              let provIdx = -1; 
-              if(index === 0) provIdx = 2;  // ON
-              if(index === 1) provIdx = 0;  // BC
-              if(index === 2) provIdx = 4;  // QC
-              if(index === 3) provIdx = 1;  // AB
-              if(index === 4) provIdx = 6;  // MB
-              if(index === 5) provIdx = 5;  // SK
-              if(index === 9) provIdx = 3;  // NB
-
+              let provIdx = provAbbrs.findIndex(prov.shortName);
+              console.log(provIdx, prov.fullname, provCases[provIdx])
               return {
-                "name": prov,
+                "name": prov.fullname, // the map need the full name
                 "value": provIdx >= 0 ? provCases[provIdx] : ''
               }
             });
@@ -248,9 +258,6 @@ async function updateOverallCases () {
       },[0]);
       newOverall.increased = newOverall.confirmed - yesterdayTotal;
     }
-
-
-
   } catch(error) {
     console.log('Failed to get Canada overall cases: ', error);
   }
@@ -271,8 +278,6 @@ async function getLatestCases () {
         $('tr', 'tbody', ele).each( (index, ele) => {
           let province = $(ele).text().trim().split("\n")[0];
           let cases = $(ele).text().trim().split("\n")[1].replace(/ /g, '');
-          console.log(cases);
-
           curCases.push({name: province, value: cases});
         });
     });
