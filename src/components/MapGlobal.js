@@ -66,10 +66,26 @@ export default function MapGlobal({mapData}) {
         textStyle: { fontSize: 12, fontWeight: 'bold' }
       },
       tooltip: {
-        formatter: (params) => {
-          let value = ((params.value || 'No Case') + '').split('.');
-          value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-          return (params.seriesName + '<br />' + params.name + ': ' + value );
+        formatter: ({name, value, data}) => {
+          if(!value) {
+            return `<b>${name}</b><br />Confirmed: ${value || "No Case"}`;
+          };
+
+          let { currentConfirmedCount, suspectedCount, curedCount, deadCount}  = data;
+
+          const valueFormat = (value) => {
+            console.log(value)
+            // return value;
+            return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+          }
+
+          let lethalityStr =  (deadCount > 0) ? `Lethality:\t${(100 * deadCount / (value)).toFixed(2) + '%'}` : '';
+          let tipString = `<b>${name}</b><br />
+                        Confirmed: ${valueFormat(value)}<br />
+                        Existing:\t${valueFormat(currentConfirmedCount)}<br />
+                        Cured:\t${valueFormat(curedCount)}<br />
+                        Death:\t${valueFormat(deadCount)}<br />${lethalityStr}`;
+          return tipString;
         }
       },
       // geo: {  },
@@ -77,7 +93,7 @@ export default function MapGlobal({mapData}) {
         top: '20%',
         left: 'center',
         type: 'map',
-        name: 'Confirmed Cases',
+        // name: 'Confirmed Cases',
         geoIndex: 0,
         data: mapData, // area(countries) data
         map: 'world',

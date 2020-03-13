@@ -96,18 +96,26 @@ export default function useAppData(props) {
       "currentConfirmedCount", "suspectedCount", "curedCount", "deadCount")} 
     );
     
-    let countriesDataWithChina = countriesData.map((country) => {          
+    let countriesDataWithChina = [];
+    countriesData.forEach((country) => {          
       if(country.countryEnglishName === "United States of America") {
         country.countryEnglishName = "United States";
       }
 
-      if(country.countryEnglishName) {
-        return {name: country.countryEnglishName, value: country.confirmedCount};
+      //Note: there are some places without an English country name is not added to the map.
+      if(country.countryEnglishName !== null) {
+        countriesDataWithChina.push(country);
+        // return {name: country.countryEnglishName, value: country.confirmedCount};
       }
     });
-    countriesDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
 
-    return countriesDataWithChina;
+    // countriesDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
+    countriesDataWithChina.push(chinaCases);
+    return countriesDataWithChina.map(country => {
+      delete Object.assign(country, {"name": country["countryEnglishName"]})["countryEnglishName"];
+      delete Object.assign(country, {"value": country["confirmedCount"]})["confirmedCount"];
+      return country;
+    })
   }
 
   const getTableData = (chinaData, otherCountries) => {

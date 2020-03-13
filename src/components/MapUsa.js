@@ -104,7 +104,7 @@ export default function MapUSA() {
           } else {
             value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
             name = titleize(pinyin(name, {removeTone: true}));
-            tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Death：\t${cured}<br />Lethality：\t${death}`;
+            tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Death：\t${cured}<br />Lethality:\t${death}`;
           }
           return tipString
         }
