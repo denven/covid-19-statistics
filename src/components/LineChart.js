@@ -14,7 +14,7 @@ export default function CasesTrend({country}) {
   useEffect(() => {
     if(country === 'China') {
       // { date, confirmedNum, suspectedNum, curesNum, deathsNum } 
-      import(`../assets/LatestNews.json`).then( hisData => {
+      import(`../assets/ChinaHisCases.json`).then( hisData => {
         setData(hisData);
         setReady(true);
       }).catch(e => { 
