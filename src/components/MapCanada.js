@@ -51,11 +51,11 @@ export default function MapCanada() {
       orient: 'horizontal',
       inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
       pieces: [ 
-        {min: 100},
+        {min: 500},
+        {min: 100, max: 499},
         {min: 50, max: 99},
         {min: 20, max: 49},
-        {min: 10, max: 19},
-        {min: 6, max: 9},
+        {min: 6, max: 19},
         {min: 0, max: 5},
       ],
       padding: 30,
@@ -93,7 +93,7 @@ export default function MapCanada() {
         visualMap: setVisualMap(),   
         xAxis: [{
           type: 'value',
-          max: 100,  // max cases number
+          max: 200,  // max cases number 3-13 2020 adjusted
           axisLine: { show: false },
           axisTick: { show: false },
           axisLabel: { show: false },
