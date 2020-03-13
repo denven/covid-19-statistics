@@ -6,6 +6,7 @@
   "scripts": {
     "update-ca": "env TZ='America/Vancouver' node updateCanadaCases.js",
     "update-usa": "env TZ='America/Vancouver' node updateUsaCases.js",
+    "update-cn": "node updateChinaHisCases.js",
     "update-news": "node updateUsaCases.js"
   },
   "keywords": [],

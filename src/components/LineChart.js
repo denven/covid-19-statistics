@@ -13,25 +13,14 @@ export default function CasesTrend({country}) {
   
   useEffect(() => {
     if(country === 'China') {
-      const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?userid=2a5db344-6b19-4828-9673-d0d81bd265bc';
-      const indicators = '&indicators=S6274770,S6274773,S6274772,S6274771&startdate=2020-01-20&enddate=';
-      const endDate = moment().format('YYYY-MM-DD');
-
-      axios.get(hisDataUrl + indicators + endDate).then( hisData => {
-        if(hisData.data.errCode === 0) {
-          setData({ 
-            date: hisData.data.times.map( s => { return moment.unix(s / 1000).format('YYYY-MM-DD') }),
-            confirmedNum: hisData.data.data[0],
-            suspectedNum: hisData.data.data[1], 
-            curesNum: hisData.data.data[2],
-            deathsNum: hisData.data.data[3]
-          });
-          setReady(true);
-        } else {
-          console.log('Requst for history data in China, errCode:', hisData.data.errCode);
-          setError(true);  // this will activate another request
-        }        
-      }).catch(e => { console.log('Request history data in China', e) });
+      // { date, confirmedNum, suspectedNum, curesNum, deathsNum } 
+      import(`../assets/LatestNews.json`).then( hisData => {
+        setData(hisData);
+        setReady(true);
+      }).catch(e => { 
+        setError(true);  // this will activate another request
+        console.log('Request history data in China', e) 
+      });
     }
 
     if(country === 'USA') {
