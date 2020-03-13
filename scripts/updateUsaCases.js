@@ -3,6 +3,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const moment = require('moment')
 const DEBUG_MODE_ON = false;
+// const DEBUG_MODE_ON = true;
 
 // get latest cases from cdc canada
 async function gerateUSStatesNames () {
@@ -40,18 +41,26 @@ const getStateEnName = (cnName, nameTable) => {
 async function getUsaLatestCases () {
 
   // get latest cases data
-  let url = "https://coronavirus.1point3acres.com/en";
+  let url = "https://coronavirus.1point3acres.com";
   let res = await axios.get(url);
 
   let curCases = [];
   let statesNames = await gerateUSStatesNames();
   if(res.status === 200) {
+    
     const $ = cheerio.load(res.data);
+    // console.log(res.data.replace(/sup/g,'span'))
+    // /html/body/div[1]/div/div[5]/div[2]/div[1]/div[3]/div[1]/div/span[2]/sup/text()[2]
+    let increases = $('sup', 'span').text();
+    for(let key = 0; key < increases.length; key++) {
+      console.log(`key:`, $(increases[key]).text(), increases.length);
+    }
+    // console.log(`key:`, $('sup:contains("87")').text());
 
     let data = $('span', '.stat');
     for(let key = 0; key < data.length;) {
       if($(data[key]).text() === '') key++;
-      // console.log($(data[key]).text(), $(data[key+1]).text(), $(data[key+2]).text() , $(data[key+3]).text(), data.length, 'end' );
+      // console.log($(data[key]).text(), $(data[key+1]).text(), $(data[key+2]).text(), $(data[key+3]).text(), data.length, 'end' );
       if($(data[key]).text() === '地区') break;
       let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
       if(stateEnglishName) {
@@ -59,8 +68,9 @@ async function getUsaLatestCases () {
           name: stateEnglishName,
           // cnName: $(data[key]).text(),
           confirmed: $(data[key + 1]).text().match(/[\d]{1,4}/g)[0],
-          increased: $(data[key + 1]).text().match(/[\d]{1,4}/g)[1],// $(data[key + 2]).text(),
-          death: $(data[key + 2]).text()
+          // increased: '0',  // this is death number
+          death: $(data[key + 2]).text(),  // this is death number
+          deathRate: $(data[key + 3]).text()   // this is death rate
           //death: $(data[key + 3]).text() // death rate
         })
       }

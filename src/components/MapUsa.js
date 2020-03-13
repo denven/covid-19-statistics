@@ -29,12 +29,12 @@ export default function MapUSA() {
 
   useEffect(() => {
     import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
-      setCases(cases.map( ({name, confirmed, death, increased}) => {
+      setCases(cases.map( ({name, confirmed, death, increased, deathRate}) => {
         return {
           name: name,
           value: confirmed,
-          cured: increased,
-          death: death
+          cured: death,    // this is weired as the table column name changes, recoverd/increased number cannot be fetchable
+          death: deathRate // this is weired as the table column name changes
         }
       }));
       // setReady(loaded);
@@ -104,7 +104,7 @@ export default function MapUSA() {
           } else {
             value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
             name = titleize(pinyin(name, {removeTone: true}));
-            tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Existing: \t${value - cured - death}<br />Cured：\t${cured}<br />Death：\t${death}`;
+            tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Death：\t${cured}<br />Lethality：\t${death}`;
           }
           return tipString
         }

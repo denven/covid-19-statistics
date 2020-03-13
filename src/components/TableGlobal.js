@@ -49,13 +49,15 @@ export default function StickyHeadTable({place, rows}) {
   useEffect(() => {
     if(place === 'USA') {
       import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
-        setRows(cases.map( ({name, confirmed, death, increased}) => {
+        setRows(cases.map( ({name, confirmed, death, increased, deathRate}) => {
+          // the following keys doesn't match the value name, as I don't want to change the 
+          // key names for global data(the two pages share the same data structure)
           return {
             countryEnglishName: name,
             confirmedCount: confirmed,
             suspectedCount: '0',
-            curedCount: increased,
-            deadCount: death
+            curedCount: death,
+            deadCount: deathRate
           }
         }));
       });
@@ -68,10 +70,12 @@ export default function StickyHeadTable({place, rows}) {
 
   if(place === 'USA') { 
     columns[1].label = 'State/Province'; 
-    columns[3].label = 'Increased'; 
+    columns[3].label = 'Death'; 
+    columns[4].label = 'Lethality'; 
   } else { 
     columns[1].label = 'Country/Place'; 
     columns[3].label = 'Cured'; 
+    columns[4].label = 'Death';
   }
 
   return (
