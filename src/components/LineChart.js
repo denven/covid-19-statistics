@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
-import axios from 'axios';
-import moment from 'moment';
+// import axios from 'axios';
+// import moment from 'moment';
 
 export default function CasesTrend({country}) {
   

@@ -1,23 +1,23 @@
 {
-  "name": "scripts",
-  "version": "1.0.0",
-  "description": "",
-  "main": "updateCanadaCases.js",
-  "scripts": {
-    "update-ca": "env TZ='America/Vancouver' node updateCanadaCases.js",
-    "update-usa": "env TZ='America/Vancouver' node updateUsaCases.js",
-    "update-cn": "node updateChinaHisCases.js",
-    "update-news": "node updateUsaCases.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3",
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
-    "newsapi": "^2.4.0",
-    "wikijs": "^6.0.1"
+    "name": "scripts",
+    "version": "1.0.0",
+    "description": "",
+    "main": "updateCanadaCases.js",
+    "scripts": {
+      "update-ca": "env TZ='America/Vancouver' node updateCanadaCases.js",
+      "update-usa": "env TZ='America/Vancouver' node updateUsaCases.js",
+      "update-cn":  "env TZ='America/Vancouver' node updateChinaHisCases.js",
+      "update-news": "node updateLatestNews.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "axios": "^0.19.2",
+      "cheerio": "^1.0.0-rc.3",
+      "lodash": "^4.17.15",
+      "moment": "^2.24.0",
+      "newsapi": "^2.4.0",
+      "wikijs": "^6.0.1"
+    }
   }
-}
