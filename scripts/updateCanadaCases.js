@@ -125,10 +125,11 @@ async function updateHistoryCases () {
       if(index > 1) {
         // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
         let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
+
         if(tabRow.includes('Total')) {
+
           //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5 :as of 2020-03-12
           let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g,'').split(','); 
-
           let lastDay = allDaysCases[allDaysCases.length - 1];
           let totalHisCases = lastDay.cases.reduce((total, curProv) => {
             return total = parseInt(total) + parseInt(curProv.value || 0); 
@@ -137,7 +138,7 @@ async function updateHistoryCases () {
           //there are new increased cases(5 provinces as of 2020-03-20), provCases[5] is total number
           let tollNumberIdx = provCases.length - 1; // confirm this value by checking the html table row
           // console.log(totalHisCases, provCases[tollNumberIdx], provCases.length);
-          if(totalHisCases <= provCases[tollNumberIdx]) { 
+          if(totalHisCases !== provCases[tollNumberIdx]) { 
             casesAsOfToday = provinces.map( (prov, index) => {
               let provIdx = provAbbrs.indexOf(prov.abbr);
               return {
@@ -221,7 +222,6 @@ async function updateOverallCases () {
 
   let oldData = fs.readFileSync(`../src/assets/CanadaCasesDb.json`);
   let oldOverall = JSON.parse(oldData).overall;
-  console.log(oldOverall);
 
   // fetch data by scraping
   let html = await wiki().page('2020_coronavirus_outbreak_in_Canada').then(page => page.html());
