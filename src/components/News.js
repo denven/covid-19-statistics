@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/News.css'
 
-import { pick } from 'lodash';
 import moment from 'moment';
 import titleize from 'titleize';
-
-const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI('2845360f3ed1414c96bfa71468b0cc5c');
 
 // One piece of news
 function OnePiece ({ source, publishedAt, title, description, url, urlToImage, content }) {
@@ -46,18 +42,8 @@ export default function LatestNews () {
   const [news, setNews] = useState([])
 
   useEffect(() => {
-    newsapi.v2.topHeadlines({
-      // sources: 'bbc-news,the-verge',
-      q: 'coronavirus',
-      qInTitle: 'Coronavirus',
-      category: 'health',
-      language: 'en',
-      country: 'ca',
-      sortBy: 'publishedAt',
-    }).then(response => {
-      setNews( response.articles.map((article) => { 
-        return pick(article, "source", "publishedAt", "title", "url", "urlToImage", "description", "content")} 
-      ));
+    import(`../assets/LatestNews.json`).then( ({articles}) => {
+      setNews(articles);
     });
   }, []);
 

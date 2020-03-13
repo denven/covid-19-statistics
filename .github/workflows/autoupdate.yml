@@ -13,11 +13,15 @@ jobs:
     - name: Download the latest data ...
       run: wget https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYArea.json -O ./src/assets/Areas.json
     - name: Scraping latest data from internet ...
+      with:
+        my-news-api-key: ${{ secrets.NEWS_API_KEY }}
       run: | 
           cd scripts
           npm install
           npm run generate
           npm run update
+          export MYAPIKEY=${my-news-api-key}
+          node updateLatestNews.js
           cd ..
     - name: Commit the latest data ...
       run: |
