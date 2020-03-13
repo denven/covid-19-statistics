@@ -106,7 +106,7 @@ async function updateHistoryCases () {
         let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
 
         if(tabRow.includes('Total')) {
-          //Order: BC:0,	AB:1,	ON:2,	QC:3,  NB:4  total provinces: 5  :as of 2020-03-11
+          //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5  :as of 2020-03-12
           let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g,'').split(','); 
 
           let lastDay = allDaysCases[allDaysCases.length - 1];
@@ -115,7 +115,7 @@ async function updateHistoryCases () {
           },[0]);
 
           //there are new increased cases(5 provinces as of 2020-03-20), provCases[5] is total number
-          let tollNumberIdx = 5; // confirm this value by checking the html table row
+          let tollNumberIdx = 7; // confirm this value by checking the html table row
           if(totalHisCases <= provCases[tollNumberIdx]) { 
             let provinces = [
               "Ontario", "British Columbia", "Quebec", 
@@ -125,14 +125,16 @@ async function updateHistoryCases () {
               ];
             // ['ON', 'BC', 'QC', 'AB', 'MB', 'SK', 'NL', 'PE', 'NS', 'NB', 'YT', 'NT', 'NU'] order on yAxis
             // The provIdx value is the index of collected province array from wikipedia, the order is:
-            // BC, AB, ON, QC, NB ... 
+             //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6 
             casesAsOfToday = provinces.map( (prov, index) => {
               let provIdx = -1; 
               if(index === 0) provIdx = 2;  // ON
               if(index === 1) provIdx = 0;  // BC
-              if(index === 2) provIdx = 3;  // ON
-              if(index === 3) provIdx = 1;  // QC
-              if(index === 9) provIdx = 4;  // NB
+              if(index === 2) provIdx = 4;  // QC
+              if(index === 3) provIdx = 1;  // AB
+              if(index === 4) provIdx = 6;  // MB
+              if(index === 5) provIdx = 5;  // SK
+              if(index === 9) provIdx = 3;  // NB
 
               return {
                 "name": prov,
