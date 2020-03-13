@@ -9,7 +9,7 @@ const provinces = [
   { fullname: "British Columbia", abbr: 'BC'},
   { fullname: "Quebec", abbr: 'QC'},
   { fullname: "Alberta", abbr: 'AB'},
-  { fullname: "Manitoba", abbr: 'ON'},
+  { fullname: "Manitoba", abbr: 'MB'},
   { fullname: "Saskatchewan", abbr: 'SK'},
   { fullname: "Newfoundland and Labrador", abbr: 'NL'},
   { fullname: "Prince Edward Island", abbr: 'PE'},
