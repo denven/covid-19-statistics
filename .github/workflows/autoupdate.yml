@@ -21,7 +21,7 @@ jobs:
           npm install
           npm run generate
           npm run update
-          export MYAPIKEY=${my-news-api-key}
+          export MYAPIKEY=$my-news-api-key
           echo $MYAPIKEY
           node updateLatestNews.js
           cd ..
