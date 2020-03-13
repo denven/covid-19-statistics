@@ -20,11 +20,6 @@ const provinces = [
   { fullname: "Nunavut", abbr: 'NU'}
 ];
 
-const getProvFullName = (shortName) => {
-  let prov= provinces.find(item => item.abbr === shortName);
-  return prov.fullname;
-}
-
 // get cases timeline announced by the gov
 async function getCasesTimeline () {
 
@@ -144,8 +139,7 @@ async function updateHistoryCases () {
           // console.log(totalHisCases, provCases[tollNumberIdx], provCases.length);
           if(totalHisCases <= provCases[tollNumberIdx]) { 
             casesAsOfToday = provinces.map( (prov, index) => {
-              let provIdx = provAbbrs.findIndex(prov.shortName);
-              console.log(provIdx, prov.fullname, provCases[provIdx])
+              let provIdx = provAbbrs.indexOf(prov.abbr);
               return {
                 "name": prov.fullname, // the map need the full name
                 "value": provIdx >= 0 ? provCases[provIdx] : ''
