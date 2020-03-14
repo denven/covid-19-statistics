@@ -23,6 +23,7 @@ const columns = [
   // { id: 'suspectedCount', label: 'Suspected', align: 'right', maxWidth: 50 },
   { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 },
   { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 },
+  { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 }
 ];
 
 const StyledTableCell = withStyles(theme => ({
@@ -39,16 +40,17 @@ const useStyles = makeStyles({
 let initRows = [];  // Init an empty table data array
 for(let i = 0, loadSting = 'Loading '; i < 3; i++) {
   loadSting +='..';
-  initRows.push({ countryEnglishName: loadSting, confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0 });
+  initRows.push({ countryEnglishName: loadSting, confirmedCount: 0, suspectedCount: 0, curedCount: 0, deadCount: 0, infectRate: 0 });
 }
 
 export default function StickyHeadTable({place, rows}) {
   const classes = useStyles();
-  const [rowsData, setRows] = useState((rows.length === 0) ? initRows: rows);
+  const [rowsData, setRows] = useState((Array.isArray(rows)) ? initRows: rows);
 
   useEffect(() => {
     if(place === 'USA') {
       import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
+        if(columns.length === 6) columns.pop();
         setRows(cases.map( ({name, confirmed, death, increased, deathRate}) => {
           // the following keys doesn't match the value name, as I don't want to change the 
           // key names for global data(the two pages share the same data structure)
@@ -62,8 +64,27 @@ export default function StickyHeadTable({place, rows}) {
         }));
       });
     } else {
+      // Global data
+      if(columns.length === 5) {
+        columns.push({ id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 });
+      }
+      
       if(rows.length > 0) { 
-        setRows(rows); 
+        //Added infected rate per million in population Mar 14, 2020
+        import(`../assets/WorldPopulation.json`).then( (countries) => {    
+          let dataWithInfectRate = rows.map(country => {
+            let infectRate = 0;  // infection number per million 
+            if( countries[country.countryEnglishName] > 0 ) {
+              infectRate = Math.ceil(country.confirmedCount * 1000000 / countries[country.countryEnglishName]);
+            };
+            Object.assign(country, {"infectRate": infectRate})
+            if(country.countryEnglishName === "Diamond Princess Cruise") {
+              country.infectRate = (country.confirmedCount * 100 / countries[country.countryEnglishName]).toFixed(2) + '%';
+            }
+            return country;
+          });
+          setRows(dataWithInfectRate); 
+        });
       } 
     }
   },[place, rows]);
