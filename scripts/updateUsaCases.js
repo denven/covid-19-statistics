@@ -21,11 +21,11 @@ async function gerateUSStatesNames () {
     key = key + 3;
   }
 
-  const statesNames = JSON.stringify({states: statesMapping}, null, 4);
-  fs.writeFile("./usaStatesNames.json", statesNames, (err, result) => {
-    if(err) console.log('Error in writing data into Json file', err);
-    console.log(`Generated US states name mapping`);
-  });
+  // const statesNames = JSON.stringify({states: statesMapping}, null, 4);
+  // fs.writeFile("./usaStatesNames.json", statesNames, (err, result) => {
+  //   if(err) console.log('Error in writing data into Json file', err);
+  //   console.log(`Generated US states name mapping`);
+  // });
 
   return statesMapping;
 }
