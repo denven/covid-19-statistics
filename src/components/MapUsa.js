@@ -58,7 +58,7 @@ export default function MapUSA() {
       title:  {
           x: 'center',
           text: 'Cases by State in USA',
-          subtext: 'Data from https://ncov.dxy.cn/',
+          subtext: 'Data from https://coronavirus.1point3acres.com/',
           textStyle: {fontSize: 18},
       },
       visualMap: {
