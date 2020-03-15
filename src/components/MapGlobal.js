@@ -71,7 +71,7 @@ export default function MapGlobal({mapData}) {
             return `<b>${name}</b><br />Confirmed: ${value || "No Case"}`;
           };
 
-          let { currentConfirmedCount, suspectedCount, curedCount, deadCount}  = data;
+          let { currentConfirmedCount, curedCount, deadCount}  = data;
 
           const valueFormat = (value) => {
             return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');

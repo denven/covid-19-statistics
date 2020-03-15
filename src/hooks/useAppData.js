@@ -1,5 +1,4 @@
 import { useEffect, useReducer } from "react";
-import axios from "axios";
 import moment from 'moment';
 import { filter, pick, orderBy } from 'lodash';
 
@@ -151,18 +150,6 @@ export default function useAppData(props) {
 
   useEffect(() => {
 
-    //patch for the area api not always getting 0 susptected cases
-    const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?userid=2a5db344-6b19-4828-9673-d0d81bd265bc';
-    const indicators = '&indicators=S6274773&startdate=';
-    const today = moment().format('YYYY-MM-DD');  // do not use moment(new Date())
-    const endDate = '&enddate=' + today;
-
-    let patchCount = 0;
-    axios.get(hisDataUrl + indicators + today + endDate).then( today => {
-      if(today.data.errCode === 0)
-        patchCount = today.data.data[0][0];
-    }).catch(e => console.log('Failed to get suspected cases count!'));
-
     // latest data of all places in the world
     import('../assets/Areas.json').then((data)=> {
     // axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
@@ -184,10 +171,10 @@ export default function useAppData(props) {
       }
 
       let updateTime = getUpdateTime(data.results);
-      let chinaOverall = getOverall(chinaData, patchCount, updateTime);
+      let chinaOverall = getOverall(chinaData, 0, updateTime);
       let canadaOverall = getOverall(canadaData, 0, updateTime);
       let otherOverall = getOverall(otherCountries, 0, updateTime);
-      let globalOverall = getOverall([...chinaData, ...otherCountries], patchCount, updateTime);
+      let globalOverall = getOverall([...chinaData, ...otherCountries], 0, updateTime);
 
       let chinaMapData = getChinaProvData(chinaData);
       let globalMapData = getGlobalMapData(chinaData, otherCountries);
