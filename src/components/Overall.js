@@ -44,11 +44,9 @@ export default function OverallData ({place, overall}) {
       import(`../assets/UsaCasesHistory.json`).then( ({date, cases}) => {
         if(cases) {
           let lastData = cases[cases.length - 1];
-          let srcDate = new Date(date);
-          let timeStr = moment(srcDate).format('YYYY-MM-DD HH:MM:SS');
 
           setData ({
-            time: timeStr,
+            time: date,
             confirmed: lastData.confirmedNum, 
             suspect: lastData.increasedNum, 
             cured: lastData.curesNum, 
@@ -60,11 +58,8 @@ export default function OverallData ({place, overall}) {
       });
     } else if(place === 'Canada') {
       import(`../assets/CanadaCasesDb.json`).then( ({date, overall}) => {
-        // console.log(overall);
-        let srcDate = new Date(date);
-        let timeStr = moment(srcDate).format('YYYY-MM-DD HH:MM:SS');
         setData ({
-          time: timeStr,
+          time: date,
           confirmed: overall.confirmed, 
           suspect: overall.increased, 
           cured: overall.recovered, 

@@ -23,8 +23,10 @@ export default function useAppData(props) {
   const [covidData, dispatch] = useReducer(reducer, initialData);
 
   const getUpdateTime = (data) => {
-    let time = moment.unix(data[0].updateTime/1000).toString();
-    return moment(time).format("YYYY-MM-DD HH:mm:ss");
+
+    let latestTimestamp = Math.max(...data.map( place => place.updateTime));
+    // let time = moment.unix(data[0].updateTime/1000).toString();
+    return moment(new Date(latestTimestamp)).format("YYYY-MM-DD HH:mm:ss");
     // return moment(time).format("YYYY-MM-DD");
   };
 

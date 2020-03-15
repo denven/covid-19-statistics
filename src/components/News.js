@@ -29,7 +29,7 @@ function OnePiece ({ source, publishedAt, title, description, url, urlToImage, c
           </div>
           <div className="news-date">
             <div className="relative"> { titleize(moment(publishedAt).fromNow()) } </div>
-            <div className="relative"> { moment(publishedAt).format("YYYY-MM-DD HH:MM:SS") } </div>
+            <div className="relative"> { moment(publishedAt).format("YYYY-MM-DD HH:mm:ss") } </div>
             {/* <div className="relative"> { source.name } </div> */}
           </div>
         </div>

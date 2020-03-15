@@ -74,8 +74,6 @@ export default function MapGlobal({mapData}) {
           let { currentConfirmedCount, suspectedCount, curedCount, deadCount}  = data;
 
           const valueFormat = (value) => {
-            console.log(value)
-            // return value;
             return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           }
 
