@@ -7,7 +7,8 @@
       "update-ca": "env TZ='America/Vancouver' node updateCanadaCases.js",
       "update-usa": "env TZ='America/Vancouver' node updateUsaCases.js",
       "update-cn":  "env TZ='America/Vancouver' node updateChinaHisCases.js",
-      "update-news": "node updateLatestNews.js"
+      "update-news": "node updateLatestNews.js",
+      "update-global": "node updateGlobalCases.js"
     },
     "keywords": [],
     "author": "",

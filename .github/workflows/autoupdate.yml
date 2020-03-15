@@ -26,8 +26,7 @@ jobs:
           npm run update-usa
           npm run update-cn
           npm run update-news
-          # echo $MYAPIKEY  # test keys
-          # echo $WINDAPIKEY
+          npm run update-global
           cd ..
     - name: Commit the latest data ...
       run: |

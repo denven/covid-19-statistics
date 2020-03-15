@@ -11,16 +11,16 @@ Note:
 - The heroku site may not be accessible because it's sleeping when it's idle, just give a second visit after 2-3 minutes and it will be awaken.
 
 ## Collected Data Source (Auto-update every hour)
+### Epidemic data for downloading
+  - Latest cases numbers are collected/scraped periodically and written into JSON files in [assets](https://github.com/denven/covid-19-statistics/tree/master/src/assets) directory.
+
+## Screenshots
 - Thanks to:
   - https://lab.isaaclin.cn/nCoV/en
   - https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Canada
   - https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html
   - https://www.worldometers.info/coronavirus/
 
-### Epidemic data for downloading
-  Latest cases numbers are collected/scraped periodically and written into JSON files in [assets](https://github.com/denven/covid-19-statistics/tree/master/src/assets) directory.
-
-## Screenshots
 ### Desktop View
 ![Desktop GIF](https://github.com/denven/hello_world/blob/master/COVID-19-Desktop.gif#pic_center=960x500)
 
