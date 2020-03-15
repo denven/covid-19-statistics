@@ -50,28 +50,29 @@ async function getUsaLatestCases () {
     
     const $ = cheerio.load(res.data);
     // console.log(res.data.replace(/sup/g,'span'))
-    // /html/body/div[1]/div/div[5]/div[2]/div[1]/div[3]/div[1]/div/span[2]/sup/text()[2]
+    // Note: this catch is not reliable, sometimes the data is available, sometimes it's not!!!
     let increases = $('sup', 'span').text();
     for(let key = 0; key < increases.length; key++) {
-      console.log(`key:`, $(increases[key]).text(), increases.length);
+      console.log(`Increased Cases Available:`, $(increases[key]).text(), increases.length);
     }
-    // console.log(`key:`, $('sup:contains("87")').text());
 
     let data = $('span', '.stat');
-    for(let key = 0; key < data.length;) {
+    for(let key = 0; key < data.length - 1;) {
       if($(data[key]).text() === '') key++;
       // console.log($(data[key]).text(), $(data[key+1]).text(), $(data[key+2]).text(), $(data[key+3]).text(), data.length, 'end' );
       if($(data[key]).text() === '地区') break;
+
       let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
+      let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,4}/g).length > 1 ? 
+                           $(data[key + 1]).text().match(/[\d]{1,4}/g)[1] : '0'; 
+
       if(stateEnglishName) {
         curCases.push({
           name: stateEnglishName,
-          // cnName: $(data[key]).text(),
           confirmed: $(data[key + 1]).text().match(/[\d]{1,4}/g)[0],
-          // increased: '0',  // this is death number
-          death: $(data[key + 2]).text(),  // this is death number
+          increased: stateIncreased,
+          death: $(data[key + 2]).text().match(/[\d]{1,4}/g)[0],  // this is death number
           deathRate: $(data[key + 3]).text()   // this is death rate
-          //death: $(data[key + 3]).text() // death rate
         })
       }
       key = key + 4;
@@ -82,7 +83,7 @@ async function getUsaLatestCases () {
   if(!DEBUG_MODE_ON) {
     if(curCases.length > 0) {
       let jsonData = {
-        date: (new Date()),
+        date: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
         cases: curCases
       }
 
@@ -124,18 +125,15 @@ async function updateUsaHisCases () {
     // console.log($(casesData[0]).text(), latestStatus)
 
     let srcDate = $('span', 'h2');
-    // console.log($(srcDate).text());
     // extract the exact date and time(UTC time)
     let utcSrcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2} [\d]{2}:[\d]{2} UTC)/g).join();
     // change UTC time to localtime(its important for the src string containing the letters 'UTC' )
     let localSrcDateStr = moment(new Date(utcSrcDateStr)).format('YYYY-MM-DD');
-
-    // console.log(localSrcDateStr, moment(new Date()).format('YYYY-MM-DD HH:MM:SS'));
     let srcDateStr = localSrcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
 
     let lastDay = allCases[allCases.length - 1];
     // step 3-1: increase a new day's data by comparision
-    console.log(utcSrcDateStr, localSrcDateStr, lastDay.date, srcDateStr);
+    // console.log(utcSrcDateStr, localSrcDateStr, lastDay.date, srcDateStr);
     if(lastDay.date !== srcDateStr)  {
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
       latestStatus.date = srcDateStr;
@@ -152,10 +150,9 @@ async function updateUsaHisCases () {
     } 
 
     // console.log(allCases, latestStatus);
-
     // step 4: save new data back to json file
     if(!DEBUG_MODE_ON) {
-      let date = new Date();
+      let date = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
       const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
       fs.writeFile("../src/assets/UsaCasesHistory.json", casesString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
@@ -191,22 +188,7 @@ async function getCaLatestCases () {
     }
     console.log('ca', curCases);
   }
-
-  // if(curCases.length > 0) {
-  //   let jsonData = {
-  //     date: (new Date()),
-  //     cases: curCases
-  //   }
-
-  //   const casesString = JSON.stringify(jsonData, null, 4);
-  //   fs.writeFile("../src/assets/UsaStatesCases.json", casesString, (err, result) => {
-  //     if(err) console.log('Error in writing data into Json file', err);
-  //     console.log(`Updated latest US states cases at ${jsonData.date}`);
-  //   });
-  // }
 }
 
 getUsaLatestCases();       // by states
-updateUsaHisCases();
-
-// getCaLatestCases();
+updateUsaHisCases();       // by days

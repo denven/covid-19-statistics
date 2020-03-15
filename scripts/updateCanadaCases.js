@@ -3,6 +3,7 @@ const cheerio = require('cheerio');
 const wiki = require('wikijs').default;
 const axios = require('axios');
 const _ = require('lodash');
+const moment = require('moment');
 
 const provinces = [
   { fullname: "Ontario", abbr: 'ON'},
@@ -79,7 +80,7 @@ async function getCasesTimeline () {
 
   if(tmpCases.length > 0) {
     let jsonData = {
-      time: (new Date()),
+      time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
       cases: tmpCases.reverse()
     }
     const timelineString = JSON.stringify(jsonData, null, 4);
@@ -203,7 +204,7 @@ async function updateHistoryCases () {
 
     // save to json file
     const casesString = JSON.stringify({
-        date: date, 
+        date: moment(date).format('YYYY-MM-DD HH:mm:ss'), 
         cases: allDaysCases, 
         overall: newOverall
       }, null, 4);
@@ -279,7 +280,7 @@ async function getLatestCases () {
 
   if(curCases.length > 0) {
     let jsonData = {
-      date: (new Date()),
+      date: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
       cases: curCases
     }
 
