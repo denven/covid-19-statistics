@@ -41,6 +41,9 @@ export default function useAppData(props) {
 
     for(const country of data) {
       if(country.countryEnglishName) {
+        if((patchCount === 1) && (country.countryEnglishName === 'China')) {
+          continue;
+        }
         cases.confirmedCount += country.confirmedCount;
         cases.currentConfirmedCount += country.currentConfirmedCount;
         cases.curedCount += country.curedCount;
@@ -111,7 +114,7 @@ export default function useAppData(props) {
     });
 
     // countriesDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
-    countriesDataWithChina.push(chinaCases);
+    // countriesDataWithChina.push(chinaCases);
     return countriesDataWithChina.map(country => {
       delete Object.assign(country, {"name": country["countryEnglishName"]})["countryEnglishName"];
       delete Object.assign(country, {"value": country["confirmedCount"]})["confirmedCount"];
@@ -143,7 +146,7 @@ export default function useAppData(props) {
       "currentConfirmedCount", "suspectedCount", "curedCount", "deadCount");        
     });
 
-    countriesData.push(chinaCases);
+    // countriesData.push(chinaCases);
     let rowsData = filter(countriesData, (data) => { return (data.countryEnglishName); });
     return orderBy(rowsData, ['confirmedCount', 'curedCount', 'countryEnglishName'], ['desc', 'desc', 'asc']);   
   }
@@ -173,8 +176,9 @@ export default function useAppData(props) {
       let updateTime = getUpdateTime(data.results);
       let chinaOverall = getOverall(chinaData, 0, updateTime);
       let canadaOverall = getOverall(canadaData, 0, updateTime);
-      let otherOverall = getOverall(otherCountries, 0, updateTime);
-      let globalOverall = getOverall([...chinaData, ...otherCountries], 0, updateTime);
+      let otherOverall = getOverall(otherCountries, 1, updateTime);
+      // let globalOverall = getOverall([...chinaData, ...otherCountries], 0, updateTime);
+      let globalOverall = getOverall(otherCountries, 0, updateTime);
 
       let chinaMapData = getChinaProvData(chinaData);
       let globalMapData = getGlobalMapData(chinaData, otherCountries);
