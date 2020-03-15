@@ -1,13 +1,11 @@
 
 ## Introduction
 A web app uses react, material ui, echarts, and js scraper to collect and represent statistics of coronavirus in the world.
-- Latest host on AWS EC2: https://covid19-stat.site/
-- New Hosting on AWS S3: http://covid-19-statistics.s3-website-us-west-2.amazonaws.com/
-- Original Hosting on heroku: https://covid-19-statistics.herokuapp.com/
+- Latest host on AWS EC2: https://covid19-stat.site/ (Update every 10 minutes)
+- New Hosting on AWS S3: http://covid-19-statistics.s3-website-us-west-2.amazonaws.com/ (update every 2 hours by github actions)
+- Original Hosting on heroku: https://covid-19-statistics.herokuapp.com/ (update every hour by github actions))
 
 Note: 
-- The hosting on AWS S3 is auto-deployed(epidemic data updates every 8 hours) by github Actions workflow script;
-- The hosting on Heroku is auto-deployed(epidemic data updates every hour) by github Actions workflow script;
 - The heroku site may not be accessible because it's sleeping when it's idle, just give a second visit after 2-3 minutes and it will be awaken.
 
 ## Collected Data Source (Auto-update every hour)
