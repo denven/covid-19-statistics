@@ -119,7 +119,7 @@ async function updateHistoryCases () {
     let provAbbrs = [];
     elements.each( (index, item) => {
       // get the abbreviations of provinces
-      if(index === 1) {
+      if(index === 2) {  // wikipedia changed table format Mar 15, 2020
         provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
       }
 
