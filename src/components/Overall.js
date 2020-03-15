@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import '../styles/Overall.css';
-import moment from 'moment';
+// import moment from 'moment';
 export default function OverallData ({place, overall}) {  
   
   const [data, setData] = useState({time: '', confirmed: '', suspect: '', cured: '', death: '', fatality: '' });
@@ -69,8 +69,23 @@ export default function OverallData ({place, overall}) {
         handleResize();
       });
     } else if(overall)  {
-      setData(overall);   
-      handleResize();
+      import(`../assets/GlobalCasesToday.json`).then( data => {
+        let chinaIncreased = 0, globalIncreased = 0;
+
+        chinaIncreased = data.countries.find( c => c.name === 'China').increased;
+        globalIncreased = data.countries.reduce((total, country) => {
+          return total = parseInt(total) + parseInt(country.increased || 0); 
+        },[0]);
+
+        if(place === 'Global') {
+          setData({...overall, suspect: globalIncreased});  
+        } else if(place === 'China') {
+          setData({...overall, suspect: chinaIncreased});  
+        } else {
+          setData({...overall, suspect: globalIncreased - chinaIncreased}); 
+        }
+        handleResize();
+      });
     }
   }, [handleResize, overall, place]);
 
@@ -83,7 +98,7 @@ export default function OverallData ({place, overall}) {
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {data.confirmed}</span></div>
-      <div className="eachText"> {(place !== 'USA' && place !== 'Canada') ? 'Suspected' : 'Increased'} <span className="suspectedNumber">&nbsp; &nbsp; {data.suspect}</span></div>
+      <div className="eachText">Increased <span className="suspectedNumber">&nbsp; &nbsp; {data.suspect}</span></div>
       <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {data.cured}</span></div>
       <div className="eachText">Deaths <span className="deathNumber">&nbsp; {data.death}</span></div>
       <div className="eachText">Lethality <span className="fatalityNumber">&nbsp; {data.fatality}</span></div>
