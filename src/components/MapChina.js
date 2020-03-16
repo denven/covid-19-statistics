@@ -69,11 +69,11 @@ export default function MapChina({chinaMap}) {
       toolbox: { feature: { saveAsImage: {} } },
       tooltip: {
         formatter: (params) => {
-          let { name, existing, death, cured } = params.data;
+          let { name, confirmed, death, cured } = params.data;
           let value = ((params.value || "No Case") + '').split('.');
           value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           name = titleize(pinyin(name, {removeTone: true}));
-          const tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Existing: \t${existing}<br />Cured：\t${cured}<br />Death：\t${death}`;
+          const tipString = `<b>${name}</b><br />Existing: \t${value}<br />Confirmed: ${confirmed}<br />Cured：\t${cured}<br />Death：\t${death}`;
           return tipString
         }
       },

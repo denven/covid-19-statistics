@@ -66,8 +66,9 @@ export default function useAppData(props) {
     return chinaData.map( ({provinceShortName, currentConfirmedCount, confirmedCount, curedCount, deadCount}) => {
         return {
           name: provinceShortName, 
-          existing: currentConfirmedCount,
-          value: confirmedCount,
+          // input empty data will make area show the original green color Mar 15, 2020
+          value: currentConfirmedCount > 0 ? currentConfirmedCount : '',  
+          confirmed: confirmedCount,
           cured: curedCount,
           death: deadCount
         }                
