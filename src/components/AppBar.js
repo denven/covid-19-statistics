@@ -78,7 +78,7 @@ function USA({loaded}) {
           <MapUSA loaded={loaded}/> 
           <CasesTrend country={'USA'}/> 
         </div>
-        <div className="bodyGlobalTable"> <TableGlobal place={'USA'} rows={ [] } /></div>
+        <div className="bodyGlobalTable"> <TableGlobal place={'USA'} rows={ [] } /> </div>
       </div>
     </div>
   );

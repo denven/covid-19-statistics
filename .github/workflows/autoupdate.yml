@@ -24,7 +24,7 @@ jobs:
           git status
           git config --global user.email "myregs@foxmail.com"
           git config --global user.name "denven"
-          git add src/assets/
+          git add 
           git commit -m 'Auto update history cases in China'
           git push 
           

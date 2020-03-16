@@ -110,7 +110,7 @@ export default function MapUSA() {
           return tipString
         }
       },
-      // geo: {  },
+      bottom: '4%',
       series: [{
         left: 'center',
         top: '18%',
