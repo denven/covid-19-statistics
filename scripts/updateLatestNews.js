@@ -20,7 +20,7 @@ const updateHeadlines = () => {
 
     let date = new Date();
     const newsString = JSON.stringify({articles: articles}, null, 4);
-    fs.writeFile("./assets/LatestNews.json", newsString, (err, result) => {
+    fs.writeFile("../build/assets/LatestNews.json", newsString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated latest news at ${date}`);
     });

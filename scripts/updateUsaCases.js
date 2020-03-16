@@ -88,7 +88,7 @@ async function getUsaLatestCases () {
       }
 
       const casesString = JSON.stringify(jsonData, null, 4);
-      fs.writeFile("./assets/UsaStatesCases.json", casesString, (err, result) => {
+      fs.writeFile("../build/assets/UsaStatesCases.json", casesString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated latest US states cases at ${jsonData.date}`);
       });
@@ -98,7 +98,7 @@ async function getUsaLatestCases () {
 
 async function updateUsaHisCases () {
 
-  let oldData = fs.readFileSync(`../src/assets/UsaCasesHistory.json`);
+  let oldData = fs.readFileSync(`../build/assets/UsaCasesHistory.json`);
   let allCases = JSON.parse(oldData).cases;
 
   // step 1: get latest cases data in us
@@ -156,7 +156,7 @@ async function updateUsaHisCases () {
     if(!DEBUG_MODE_ON) {
       let date = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
       const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
-      fs.writeFile("./assets/UsaCasesHistory.json", casesString, (err, result) => {
+      fs.writeFile("../build/assets/UsaCasesHistory.json", casesString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated USA's history cases data at ${date}`);
       });
