@@ -78,7 +78,7 @@ export default function MapCanada() {
           autoPlay: true,
           playInterval: 1500,
           data: cases.dates,        // Days since the 1st cases
-          currentIndex: cases.dates.length - 4 // play from the last four days
+          currentIndex: cases.dates.length - 7 // start to play from the last seven days
         },  
         title:  {
           x: 'center',
@@ -88,12 +88,12 @@ export default function MapCanada() {
         },
         tooltip: {
           show: true,
-          trigger: 'item',
+          trigger: 'item'
         },
         visualMap: setVisualMap(),   
         xAxis: [{
           type: 'value',
-          max: 200,  // max cases number 3-13 2020 adjusted
+          max: 400,  // max cases number 3-13 2020 adjusted
           axisLine: { show: false },
           axisTick: { show: false },
           axisLabel: { show: false },
@@ -107,13 +107,27 @@ export default function MapCanada() {
         series: [
           {
             // left: '0%', // not working, cannot be adjusted
+            stack: 'All',
             type: 'bar', 
             label: {
               position: 'inside',
               show: true,
-              color: 'blue'
+              color: 'blue',
             },
+            name: 'Confirmed',
+            color: 'rgb(64,141,39)',
           },
+          // {
+          //   stack: 'All',
+          //   type: 'bar', 
+          //   label: {
+          //     position: 'inside',
+          //     show: true,
+          //     color: 'blue',
+          //   },
+          //   name: 'Presumptive',
+          //   color: 'rgb(224,144,115)',
+          // },
           {
             left: '15%',
             top: '19%',
@@ -148,21 +162,25 @@ export default function MapCanada() {
       },          
     
       // played data changes here, one timespot(day) one data
-      options: cases.data.map( (dayCases, index) => {
+      options: cases.data.map( (dayCases, index) => {  // for different days
         return {
           title: { text: 'Cases by Province in Canada on ' + cases.dates[index] + ', 2020', }, //by day          
           series: 
           [
             {
-              data: dayCases.map(prov => prov.value) // for barchart(province data)
+              data: dayCases.map(prov => parseInt(prov.value) + parseInt(prov.suspect ? prov.suspect : 0)), // for bar chart(province data)  
             },
+            // {
+            //   data: dayCases.map(prov => prov.suspect ? prov.suspect : ''), // for bar chart(province data)
+            // },
             {
               data: dayCases, // for map
               tooltip: {
-                formatter: (params) => {
-                  let value = ((params.value || "No Case") + '').split('.');
+                formatter: ({name, value, data}) => {
+                  value = ((value || "No Case") + '').split('.');
                   value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-                  return `<b>${params.name}</b><br />Confirmed: ${value}<br />`;
+                  let suspectNum = (data && 'suspect' in data) ? data.suspect : 0;
+                  return `<b>${name}</b><br />Confirmed: ${value}<br />Presumptive: ${suspectNum}<br />`;
                 }
               },
             },
