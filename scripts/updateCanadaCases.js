@@ -113,6 +113,7 @@ async function updateHistoryCases () {
 
   // PART 1: GET provinces cases today
   let casesAsOfToday = [];
+  let presumptiveCases = [];
   let elements = $('tr', '.wikitable');  //get table rows
 
   try {  
@@ -126,7 +127,7 @@ async function updateHistoryCases () {
       if(index > 1) {
         // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
         let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
-
+        // Total confirmed row
         if(tabRow.includes('Total')) {
 
           //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5 :as of 2020-03-12
@@ -142,10 +143,23 @@ async function updateHistoryCases () {
           if(totalHisCases !== provCases[tollNumberIdx]) { 
             casesAsOfToday = provinces.map( (prov, index) => {
               let provIdx = provAbbrs.indexOf(prov.abbr);
+              let value = provIdx >= 0 ? provCases[provIdx].trim() : '';
               return {
                 "name": prov.fullname, // the map need the full name
-                "value": provIdx >= 0 ? provCases[provIdx] : ''
+                "value": value > 0 ? value : ''
               }
+            });
+          }
+        } 
+        // Presumptive Cases row Mar 15, 2020 Added
+        else if (tabRow.includes('Presumptive')) {
+          let temp = $(item).text().trim().replace(/\n[^\d]/g, ',0').replace(/0([\d]{1,3})/g,'$1');
+          presumptiveCases = temp.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g, '').trim().split(',');
+
+          if(presumptiveCases.length > 0) {
+            provinces.forEach( (prov, index) => {
+              let provIdx = provAbbrs.indexOf(prov.abbr);
+              casesAsOfToday[index].suspect = (presumptiveCases[provIdx] > 0) ? presumptiveCases[provIdx] : '';
             });
           }
         }
@@ -193,14 +207,18 @@ async function updateHistoryCases () {
 
     let yesterdayCases = allDaysCases[allDaysCases.length - 2];
     let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
-      return total = parseInt(total) + parseInt(curProv.value || 0); 
+      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
+    },[0]);
+    let todayTotal = casesAsOfToday.reduce((total, curProv) => {
+      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
     },[0]);
 
     // if(dateString.replace(/\//g, '') > allDaysCases[allDaysCases.length - 1].date.replace(/\//g, '')) {
     //   newOverall.increased = newOverall.confirmed - yesterdayTotal;
     // } else {
-      newOverall.increased = newOverall.confirmed - yesterdayTotal;
+      newOverall.increased = todayTotal - yesterdayTotal;
     // }
+    // console.log(todayTotal, yesterdayTotal, casesAsOfToday, yesterdayCases, newOverall);
 
     // save to json file
     const casesString = JSON.stringify({
@@ -213,6 +231,7 @@ async function updateHistoryCases () {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated Canada history cases data at ${date}`);
     });
+
   } catch (error) {
     console.log(`Writing Canada's latest cases to file`, error)
   }
@@ -292,6 +311,6 @@ async function getLatestCases () {
   }
 }
 
-getCasesTimeline();  // get all the cases reported
+// getCasesTimeline();  // get all the cases reported
 // getLatestCases(); // no needed right now
 updateHistoryCases(); // update today's cases into history table
