@@ -1,8 +1,8 @@
-name: CI-Auto-Deploy  #deploy to AWS S3 from 7:55, 11.55, 15.55, 20.55 every 4 hours
+name: CI-Auto-Deploy  #deploy to AWS S3 from 7:55, 11.55, 15.55, 20.55 every 1 hours
 
 on: 
     schedule:
-    - cron: '55 2,15,19,23 * * *'
+    - cron: '0 */1 * * *'
       
 jobs:
   deploy:
@@ -30,6 +30,6 @@ jobs:
       env:
         CI: true  
     - name: Upload latest data file to S3 bucket ...
-      run: | #aws s3 cp ./public/areas.json s3://covid-19-statistics/  
-          npm run build
-          npm run deploy  
+      run: aws s3 cp ./public/assets s3://covid-19-statistics/
+          # npm run build
+          # npm run deploy  
