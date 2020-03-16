@@ -5,6 +5,8 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 import EventNoteIcon from '@material-ui/icons/EventNote';
 import '../styles/App.css'
+import axios from 'axios';
+
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -57,9 +59,9 @@ export default function MyTimeline() {
   const [cases, setCases] = useState([]);
 
   useEffect(() => {    
-    import('../assets/CanadaTimeline.json').then( ({cases}) => {
-        if(Array.isArray(cases)){
-          setCases(cases);
+    axios.get(`./assets/CanadaTimeline.json`).then( ({data}) => {
+        if(Array.isArray(data.cases)){
+          setCases(data.cases);
         }
     });
 

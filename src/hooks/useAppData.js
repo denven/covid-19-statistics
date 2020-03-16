@@ -1,5 +1,6 @@
 import { useEffect, useReducer } from "react";
 import moment from 'moment';
+import axios from 'axios';
 import { filter, pick, orderBy } from 'lodash';
 
 import reducer, { 
@@ -155,7 +156,7 @@ export default function useAppData(props) {
   useEffect(() => {
 
     // latest data of all places in the world
-    import('../assets/Areas.json').then((data)=> {
+    axios.get(`./assets/Areas.json`).then(({data})=> {
     // axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
       let chinaData = filter(data.results, ({cities})=>{ return (Array.isArray(cities)) });
       let canadaData = filter(data.results, ({countryEnglishName})=>{ return (countryEnglishName === 'Canada') });

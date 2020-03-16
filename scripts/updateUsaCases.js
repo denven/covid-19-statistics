@@ -88,7 +88,7 @@ async function getUsaLatestCases () {
       }
 
       const casesString = JSON.stringify(jsonData, null, 4);
-      fs.writeFile("../src/assets/UsaStatesCases.json", casesString, (err, result) => {
+      fs.writeFile("./assets/UsaStatesCases.json", casesString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated latest US states cases at ${jsonData.date}`);
       });
@@ -156,7 +156,7 @@ async function updateUsaHisCases () {
     if(!DEBUG_MODE_ON) {
       let date = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
       const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
-      fs.writeFile("../src/assets/UsaCasesHistory.json", casesString, (err, result) => {
+      fs.writeFile("./assets/UsaCasesHistory.json", casesString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated USA's history cases data at ${date}`);
       });

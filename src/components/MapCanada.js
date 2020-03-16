@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 // import 'echarts/lib/chart/line';
+import axios from 'axios';
 
 export default function MapCanada() {
   // const [data, setData] = useState([]);
@@ -9,18 +10,18 @@ export default function MapCanada() {
   const [cases, setCases] = useState({dates:[], data:[]});
 
   useEffect(() => {
-    import(`../assets/CanadaGEO.json`).then(map => {
-      echarts.registerMap('Canada', map.default);
+    axios.get(`./assets/CanadaGEO.json`).then( ({data}) => {
+      echarts.registerMap('Canada', data);
       setReady(true);
     });
   }, []);
 
   useEffect(() => {
-    import(`../assets/CanadaCasesDb.json`).then( ({cases}) => {
+    axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
       setCases(
         {
-          dates: cases.map(day => day.date),     // for timeline component
-          data: cases.map(day => day.cases),  // for map component
+          dates: data.cases.map(day => day.date),     // for timeline component
+          data: data.cases.map(day => day.cases),  // for map component
           // barData: cases.map(day => day.cases.map(prov => prov.value))  // for bar Chart component
         }
       );
@@ -114,8 +115,8 @@ export default function MapCanada() {
               show: true,
               color: 'blue',
             },
-            name: 'Confirmed',
-            color: 'rgb(64,141,39)',
+            // name: 'Confirmed',
+            // color: 'rgb(64,141,39)',
           },
           // {
           //   stack: 'All',

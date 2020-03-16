@@ -85,7 +85,7 @@ async function getCasesTimeline () {
     }
     const timelineString = JSON.stringify(jsonData, null, 4);
     // console.log(timelineString);
-    fs.writeFile("../src/assets/CanadaTimeline.json", timelineString, (err, result) => {
+    fs.writeFile("./assets/CanadaTimeline.json", timelineString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated Canada timeline data at ${jsonData.time}`);
     });
@@ -227,7 +227,7 @@ async function updateHistoryCases () {
         overall: newOverall
       }, null, 4);
 
-    fs.writeFile("../src/assets/CanadaCasesDb.json", casesString, (err, result) => {
+    fs.writeFile("./assets/CanadaCasesDb.json", casesString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated Canada history cases data at ${date}`);
     });
@@ -304,7 +304,7 @@ async function getLatestCases () {
     }
 
     const casesString = JSON.stringify(jsonData, null, 4);
-    fs.writeFile("../src/assets/CasesLatest.json", casesString, (err, result) => {
+    fs.writeFile("./assets/CasesLatest.json", casesString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated latest cases data at ${jsonData.date}`);
     });
