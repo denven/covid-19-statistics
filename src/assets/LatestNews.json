@@ -2,6 +2,54 @@
     "articles": [
         {
             "source": {
+                "id": "cnbc",
+                "name": "CNBC"
+            },
+            "publishedAt": "2020-03-16T18:36:12Z",
+            "title": "First human trial for coronavirus vaccine begins Monday in the US - CNBC",
+            "url": "https://www.cnbc.com/2020/03/16/first-human-trial-for-coronavirus-vaccine-begins-monday-in-the-us.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106445807-1584364345863gettyimages-1204808423.jpeg?v=1584364425",
+            "description": "The trial is taking place at the Kaiser Permanente Washington Health Research Institute in Seattle, Washington, where cases have surged in recent weeks.",
+            "content": "The first human trial testing a potential vaccine to prevent COVID-19 began Monday, U.S. health officials confirmed.\r\nFinding \"a safe and effective vaccine\" to prevent infection from the new coronavirus \"is an urgent public health priority,\" Dr. Anthony Fauci… [+3202 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "publishedAt": "2020-03-16T16:54:22Z",
+            "title": "Why fighting the coronavirus depends on you - Vox",
+            "url": "https://www.youtube.com/watch?v=dSQztKXR6k0",
+            "urlToImage": "https://i.ytimg.com/vi/dSQztKXR6k0/maxresdefault.jpg",
+            "description": "If we can slow the virus down, it could save hundreds of thousands of lives. Read more about the Covid-19 coronavirus pandemic at http://vox.com/coronavirus ...",
+            "content": "If we can slow the virus down, it could save hundreds of thousands of lives.\r\nRead more about the Covid-19 coronavirus pandemic at http://vox.com/coronavirus\r\nIn March 2020, the World Health Organization officially classified Covid-19, the disease caused by t… [+2255 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Intelligencer.ca"
+            },
+            "publishedAt": "2020-03-16T16:37:40Z",
+            "title": "Health unit identifies 35 in Quinte as probable COVID-19 carriers - Belleville Intelligencer",
+            "url": "https://www.intelligencer.ca/news/local-news/health-unit-identifies-35-in-quinte-as-probable-covid-19-carriers",
+            "urlToImage": "https://nexus.prod.postmedia.digital/wp-content/uploads/2020/03/BI.GEN-INT-NEWBORNS-DOCTORS.jpg",
+            "description": "Thirty-five people in Quinte region have been identified as probable carriers of the novel coronavirus COVID-19, said officials with the local health unit Monday.All have been told they should ente…",
+            "content": "Thirty-five people in Quinte region have been identified as probable carriers of the novel coronavirus COVID-19, said officials with the local health unit Monday.\r\nAll have been told they should enter self-isolation to stem the further spread of the virus in … [+3666 chars]"
+        },
+        {
+            "source": {
+                "id": "al-jazeera-english",
+                "name": "Al Jazeera English"
+            },
+            "publishedAt": "2020-03-16T16:33:01Z",
+            "title": "WHO: 'Test every suspected case' of COVID-19 - Live updates - Al Jazeera English",
+            "url": "https://www.aljazeera.com/news/2020/03/toll-rises-coronavirus-tightens-global-grip-live-updates-200315231500487.html",
+            "urlToImage": "https://www.aljazeera.com/mritems/Images/2020/3/16/e4ceee0b1a814ac39d9843a3d77a414c_18.jpg",
+            "description": "WHO urges nations to ramp up testing to contain spread of coronavirus as more governments impose lockdown, stop travel.",
+            "content": "The World Health Organization has warned that the coronavirus pandemic is a \"defining global health crisis of our time\", as it urged countries to test all suspected cases.\r\nThe United States and countries across Europe have closed schools, entertainment venue… [+52915 chars]"
+        },
+        {
+            "source": {
                 "id": null,
                 "name": "Globalnews.ca"
             },
@@ -39,54 +87,6 @@
         {
             "source": {
                 "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-16T15:14:46Z",
-            "title": "How to get the medical help you need while social distancing - Good Morning America",
-            "url": "https://www.youtube.com/watch?v=YyL2HiT_Aa4",
-            "urlToImage": "https://i.ytimg.com/vi/YyL2HiT_Aa4/maxresdefault.jpg",
-            "description": "Telemedicine is the popular new way to see doctors about the coronavirus. KEEP UP WITH OUR LATEST ON THE DEVELOPING NOVEL CORONAVIRUS OUTBREAK (COVID-19): ht...",
-            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Greekreporter.com"
-            },
-            "publishedAt": "2020-03-16T15:12:00Z",
-            "title": "Twenty Coronavirus “Facts” That are Just Myths - Greek Reporter",
-            "url": "https://greece.greekreporter.com/2020/03/16/twenty-coronavirus-facts-that-are-just-myths/",
-            "urlToImage": "https://greece.greekreporter.com/files/corona-2.jpg",
-            "description": "The spread of the Coronavirus has also generated a global trend where know-it-alls who sit in front of their computers all day long offer advice, cures and wild conspiracy theories",
-            "content": "The spread of the Coronavirus has also been responsible for the spreading of a global trend where know-it-alls who sit in front of their computers all day long offer advice, cures and wild conspiracy theories.\r\nWatching the news on TV or laptop is frightening… [+7201 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-16T15:00:11Z",
-            "title": "Coronavirus outbreak: WHO provides update on COVID-19 pandemic | LIVE - Global News",
-            "url": "https://www.youtube.com/watch?v=9SSYviES-rI",
-            "urlToImage": "https://i.ytimg.com/vi/9SSYviES-rI/maxresdefault.jpg",
-            "description": "The World Health Organization (WHO) is expected to provide an update on the COVID-19 global pandemic. ***Please note that this press conference is virtual. *...",
-            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Ctvnews.ca"
-            },
-            "publishedAt": "2020-03-16T14:27:45Z",
-            "title": "'It's safe': Canadians urged to continue donating blood amid coronavirus spread - CTV News",
-            "url": "https://www.ctvnews.ca/health/coronavirus/worrying-rise-in-blood-donation-cancellations-canadian-blood-services-1.4854589",
-            "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.4854607.1584366678!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
-            "description": "Canadian Blood Services says there has been a 'worrying' spike in cancellations of appointments to donate blood amid the COVID-19 pandemic.",
-            "content": "TORONTO -- \r\nCanadian Blood Services says there has been a worrying spike in cancellations of appointments to donate blood amid the COVID-19 pandemic.\r\nOn Monday, the non-profit charity which is responsible for the national blood system outside of Quebec, mad… [+1832 chars]"
-        },
-        {
-            "source": {
-                "id": null,
                 "name": "Lfpress.com"
             },
             "publishedAt": "2020-03-16T13:49:36Z",
@@ -99,26 +99,14 @@
         {
             "source": {
                 "id": null,
-                "name": "Freep.com"
+                "name": "Refinery29.com"
             },
-            "publishedAt": "2020-03-16T13:41:25Z",
-            "title": "How your pets may be affected by coronavirus - Detroit Free Press",
-            "url": "https://www.freep.com/story/news/local/michigan/2020/03/16/dogs-cats-coronavirus-world-health-organization/5056376002/",
-            "urlToImage": "https://www.gannett-cdn.com/presto/2019/08/23/PDTF/60080f07-c437-4814-bf66-9d9b37076485-GettyImages-1023645844.jpg?crop=2118,1192,x0,y0&width=1600&height=800&fit=bounds",
-            "description": "Can your cat or dog catch the novel coronavirus or transmit it?",
-            "content": "What is novel coronavirus?\r\nMilwaukee Journal Sentinel\r\nCan your cat or dog catch the novel coronavirus or transmit it? Probably not, but nothing is certain.\r\nThe World Health Organization initially said that there was no evidence that cats or dogs could be i… [+884 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Bbc.com"
-            },
-            "publishedAt": "2020-03-16T13:33:17Z",
-            "title": "Coronavirus in Wales: First Covid-19 death confirmed - BBC News",
-            "url": "https://www.bbc.com/news/uk-wales-51909109",
-            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/16BEF/production/_111276139_mediaitem111276137.jpg",
-            "description": "A 68-year-old patient from Wrexham is the first death in Wales to be confirmed.",
-            "content": "Image copyrightEPAImage caption\r\n A microscopic image of Sars-CoV-2, the virus that causes Covid-19\r\nA patient has died after testing positive for coronavirus, according to the chief medical officer for Wales.\r\nThe patient, 68, with underlying health conditio… [+1748 chars]"
+            "publishedAt": "2020-03-16T13:37:00Z",
+            "title": "Social Distancing Means Skipping Brunch, But It Will Save Lives - Refinery29",
+            "url": "https://www.refinery29.com/en-ca/2020/03/9561111/what-is-social-distancing-coronavirus",
+            "urlToImage": "https://www.refinery29.com/images/9558864.jpg?crop=40%3A21",
+            "description": "Practicing social distancing is not a snow day. Here are the dos and don'ts of self quarantining during coronavirus.",
+            "content": "1. A very short thread on the power of data graphics and scientific communication.\r\nRoughly a week ago, some very smart person* sat down, drew this graph, and saved lives. \r\n(*It's 2 AM. Without an economist subscription, I can't quickly discover whom. Maybe … [+94 chars]"
         },
         {
             "source": {
@@ -135,18 +123,6 @@
         {
             "source": {
                 "id": null,
-                "name": "Theguardian.com"
-            },
-            "publishedAt": "2020-03-16T12:40:58Z",
-            "title": "First participant in US coronavirus vaccine trial to be given dose - The Guardian",
-            "url": "https://www.theguardian.com/world/2020/mar/16/first-participant-us-coronavirus-vaccine-trial-moderna-dose",
-            "urlToImage": "https://i.guim.co.uk/img/media/0764a88a0e4985d0fe44bedc2c2c6de41e039ccb/0_155_6720_4032/master/6720.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=a0bba418334e81e915e232ae1baa6e27",
-            "description": "Human trial of vaccine created by Moderna and the National Institutes of Health to begin in Seattle",
-            "content": "The first participant in a clinical trial for a vaccine against Covid-19 will receive an experimental dose on Monday, according to a US government official.\r\nThe trial, taking place at the Kaiser Permanente Washington Health Research Institute in Seattle, wil… [+4547 chars]"
-        },
-        {
-            "source": {
-                "id": null,
                 "name": "Youtube.com"
             },
             "publishedAt": "2020-03-16T12:16:33Z",
@@ -158,15 +134,15 @@
         },
         {
             "source": {
-                "id": null,
-                "name": "Dailymail.co.uk"
+                "id": "wired",
+                "name": "Wired"
             },
-            "publishedAt": "2020-03-16T12:11:42Z",
-            "title": "Monkeys CAN'T be reinfected with the coronavirus, scientists find - Daily Mail",
-            "url": "https://www.dailymail.co.uk/sciencetech/article-8116571/Monkeys-reinfected-coronavirus-scientists-find.html",
-            "urlToImage": "https://i.dailymail.co.uk/1s/2020/03/16/11/26025002-0-image-a-20_1584357444282.jpg",
-            "description": "Researchers in China infected rhesus monkeys with coronavirus, allowed them to recover, and then re-exposed them to the virus 28 days after the initial infection.",
-            "content": "What is the coronavirus? \r\nA coronavirus is a type of virus which can cause illness in animals and people. Viruses break into cells inside their host and use them to reproduce itself and disrupt the body's normal functions. Coronaviruses are named after the L… [+10659 chars]"
+            "publishedAt": "2020-03-16T12:12:01Z",
+            "title": "Everything You Need to Know About Coronavirus Testing - WIRED",
+            "url": "https://www.wired.com/story/everything-you-need-to-know-about-coronavirus-testing/",
+            "urlToImage": "https://media.wired.com/photos/5e6c3ca9d582c600084545f9/191:100/w_1280,c_limit/Science_covid19_testkits_1212277468.jpg",
+            "description": "How it works, why we need it, and why it's taking so damn long for the US to get people diagnosed.",
+            "content": "In principle, any certified lab in the US with the right equipment could have followed suitincluding hospitals and commercial labs. All theyd need to do is use any one of the protocols publicized by the WHO as a guide for ordering primers from any number of D… [+3608 chars]"
         },
         {
             "source": {
@@ -182,15 +158,15 @@
         },
         {
             "source": {
-                "id": null,
-                "name": "Kwtx.com"
+                "id": "independent",
+                "name": "Independent"
             },
-            "publishedAt": "2020-03-16T11:08:08Z",
-            "title": "Two US ER doctors in critical condition with coronavirus - KWTX",
-            "url": "https://www.kwtx.com/content/news/Two-US-ER-doctors-in-critical-condition-with-coronavirus-568824951.html",
-            "urlToImage": "https://media.graytvinc.com/images/coronavirus+mgn8.jpg",
-            "description": "Two emergency doctors in the US are in a critical condition after they were infected with the coronavirus, according to the American College of Emergency Physicians (ACEP).",
-            "content": "CNN Two emergency doctors in the US are in a critical condition after they were infected with the coronavirus, according to the American College of Emergency Physicians (ACEP).\r\nOne doctor is in his 40s in the state of Washington, the second is a 70-year-old … [+909 chars]"
+            "publishedAt": "2020-03-16T11:10:53Z",
+            "title": "Coronavirus: How can you protect yourself from Covid-19? Do face masks work? - The Independent",
+            "url": "https://www.independent.co.uk/news/health/coronavirus-how-to-prevent-avoid-mask-symptoms-covid-19-uk-nhs-a9404036.html",
+            "urlToImage": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/03/15/14/coronavirus-pandemic.jpg",
+            "description": "Public urged to stay at home for seven days if they have coronavirus symptoms",
+            "content": "As the number of coronavirus cases in the UK continues to rise, the government has issued advice to help people reduce their risk of spreading the illness.\r\nBoris Johnson said anyone with coronavirus symptoms, however mild, such as a new and continuous cough … [+1910 chars]"
         },
         {
             "source": {
@@ -206,18 +182,6 @@
         },
         {
             "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-16T09:58:22Z",
-            "title": "Europe faces its worst day of the Coronavirus outbreak! - WION",
-            "url": "https://www.youtube.com/watch?v=RYtL1crnZhI",
-            "urlToImage": "https://i.ytimg.com/vi/RYtL1crnZhI/maxresdefault.jpg",
-            "description": "Europe has become the most affected by the virus as a total of 1,809 people died of COVID-19 in the country & the number of infection cases exceeded 24,700. ...",
-            "content": "Europe has become the most affected by the virus as a total of 1,809 people died of COVID-19 in the country &amp; the number of infection cases exceeded 24,700.\r\n#Europe#CoronaEpicentre#WION\r\nAbout Channel: \r\nWION -The World is One News, examines global issue… [+1047 chars]"
-        },
-        {
-            "source": {
                 "id": "fox-news",
                 "name": "Fox News"
             },
@@ -230,15 +194,51 @@
         },
         {
             "source": {
-                "id": "the-times-of-india",
-                "name": "The Times of India"
+                "id": null,
+                "name": "France24.com"
             },
-            "publishedAt": "2020-03-16T07:52:43Z",
-            "title": "US moves nearer to shutdown amid coronavirus fears - Times of India",
-            "url": "https://timesofindia.indiatimes.com/world/us/us-moves-nearer-to-shutdown-amid-coronavirus-fears/articleshow/74645388.cms",
-            "urlToImage": "https://static.toiimg.com/thumb/msid-74645365,width-1070,height-580,imgsize-188519,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg",
-            "description": "US News: Officials across the US curtailed many elements of American life to fight the coronavirus outbreak, with officials recommending that groups of 50 or m",
-            "content": "Copyright © 2020 Bennett, Coleman &amp; Co. Ltd. All rights reserved. For reprint rights: Times Syndication Service"
+            "publishedAt": "2020-03-16T07:40:01Z",
+            "title": "Medical impact of coronavirus becomes clearer as experts’ research continues - FRANCE 24 English",
+            "url": "https://www.france24.com/en/20200316-medical-impact-of-coronavirus-becomes-clearer-as-experts-research-continues",
+            "urlToImage": "https://s.france24.com/media/display/9aabede8-6753-11ea-97c4-005056a964fe/w:1240/p:16x9/2020-03-15_Antony_FauciHEALTH-CORONAVIRUS-USA.JPG",
+            "description": "The medical impact of the new coronavirus is coming into sharper focus as it continues its spread in what is now officially recognized as a pandemic.",
+            "content": "The medical impact of the new coronavirus is coming into sharper focus as it continues its spread in what is now officially recognized as a pandemic.\r\n Its true fatality rate isn't yet known, but it seems 10 times higher than the flu, which kills hundreds of … [+7129 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Ctvnews.ca"
+            },
+            "publishedAt": "2020-03-16T07:15:31Z",
+            "title": "Immunocompromised people urge public to take COVID-19 precautions seriously - CTV News",
+            "url": "https://www.ctvnews.ca/health/coronavirus/immunocompromised-people-urge-public-to-take-covid-19-precautions-seriously-1.4854065",
+            "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.4854089.1584308638!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
+            "description": "Those most at risk from the virus sweeping across the globe are taking to Twitter to share their stories under the hashtag #HighRiskCovid19 and urge the general public to take coronavirus precautions seriously.",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Technologynetworks.com"
+            },
+            "publishedAt": "2020-03-16T06:45:00Z",
+            "title": "Coronavirus Can Be Infectious Before You Have Symptoms - Technology Networks",
+            "url": "https://www.technologynetworks.com/immunology/news/coronavirus-can-be-infectious-before-you-have-symptoms-332069",
+            "urlToImage": "https://cdn.technologynetworks.com/tn/images/thumbs/jpeg/640_360/coronavirus-can-be-infectious-before-you-have-symptoms-332069.jpg",
+            "description": "The time between cases of the novel coronavirus in a chain of transmission is less than a week, but researchers found that more than 10% of patients are infected by somebody who has the virus but does not yet have symptoms.",
+            "content": "Infectious disease researchers at The University of Texas at Austin studying the novel coronavirus were able to identify how quickly the virus can spread, a factor that may help public health officials in their efforts at containment. They found that time bet… [+3369 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "publishedAt": "2020-03-16T05:59:12Z",
+            "title": "Mental Health Therapist Michel Chawala Gives Tips To Tackle Anxiety, Paranoia Over COVID-19 - India Today",
+            "url": "https://www.youtube.com/watch?v=xILqgQH20zs",
+            "urlToImage": "https://i.ytimg.com/vi/xILqgQH20zs/maxresdefault.jpg",
+            "description": "Nearly 800 people in Massachusetts have been tested for coronavirus, state health officials announced on Sunday — a significant increase from the 475-person ...",
+            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
         }
     ]
 }
