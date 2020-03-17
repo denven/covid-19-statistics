@@ -21,7 +21,7 @@ const updateChinaHisCases = () => {
 
       let date = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
       const newsString = JSON.stringify(jsonHisDataObj, null, 4);
-      fs.writeFile("../src/assets/ChinaHisCases.json", newsString, (err, result) => {
+      fs.writeFile("../public/assets/ChinaHisCases.json", newsString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated China History Cases at ${date}`);
       });

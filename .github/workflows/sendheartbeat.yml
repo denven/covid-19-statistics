@@ -1,4 +1,6 @@
-name: SEND-Heart-Beat
+# This action is used to keep heroku site alive other than sleeping when idle
+
+name: SEND-Heart-Beat 
 
 on: 
     schedule:

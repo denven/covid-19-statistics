@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import '../styles/Overall.css';
 // import moment from 'moment';
+import axios from 'axios';
+
 export default function OverallData ({place, overall}) {  
   
   const [data, setData] = useState({time: '', confirmed: '', suspect: '', cured: '', death: '', fatality: '' });
@@ -41,12 +43,12 @@ export default function OverallData ({place, overall}) {
   useEffect(() => {
 
     if(place === 'USA') {
-      import(`../assets/UsaCasesHistory.json`).then( ({date, cases}) => {
-        if(cases) {
-          let lastData = cases[cases.length - 1];
+      axios.get(`./assets/UsaCasesHistory.json`).then( ({data}) => {
+        if(data.cases) {
+          let lastData = data.cases[data.cases.length - 1];
 
           setData ({
-            time: date,
+            time: data.date,
             confirmed: lastData.confirmedNum, 
             suspect: lastData.increasedNum, 
             cured: lastData.curesNum, 
@@ -57,19 +59,19 @@ export default function OverallData ({place, overall}) {
         }
       });
     } else if(place === 'Canada') {
-      import(`../assets/CanadaCasesDb.json`).then( ({date, overall}) => {
+      axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
         setData ({
-          time: date,
-          confirmed: overall.confirmed, 
-          suspect: overall.increased, 
-          cured: overall.recovered, 
-          death: overall.death, 
-          fatality: (100 * overall.death / overall.confirmed).toFixed(2) + '%'
+          time: data.date,
+          confirmed: data.overall.confirmed, 
+          suspect: data.overall.increased, 
+          cured: data.overall.recovered, 
+          death: data.overall.death, 
+          fatality: (100 * data.overall.death / data.overall.confirmed).toFixed(2) + '%'
         });
         handleResize();
       });
     } else if(overall)  {
-      import(`../assets/GlobalCasesToday.json`).then( data => {
+      axios.get(`./assets/GlobalCasesToday.json`).then( ({data}) => {
         let chinaIncreased = 0, globalIncreased = 0;
 
         chinaIncreased = data.countries.find( c => c.name === 'China').increased;

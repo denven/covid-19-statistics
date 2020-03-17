@@ -4,14 +4,15 @@ import echarts from 'echarts/lib/echarts';
 
 import pinyin from 'chinese-to-pinyin';
 import titleize from 'titleize';
+import axios from 'axios';
 
 export default function MapUSA() {
   const [loaded, setReady] = useState(false);
   const [cases, setCases] = useState({dates:[], data:[]});
 
   useEffect(() => {
-    import(`../assets/UsaGEO.json`).then(map => {
-      echarts.registerMap('USA', map.default, {
+    axios.get(`./assets/UsaGEO.json`).then( ({data}) => {
+      echarts.registerMap('USA', data, {
         // Move Alaska to the bottom left of United States
         Alaska: {      
             left: -129,   // Upper left longitude            
@@ -28,8 +29,8 @@ export default function MapUSA() {
   }, []);
 
   useEffect(() => {
-    import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
-      setCases(cases.map( ({name, confirmed, death, increased, deathRate}) => {
+    axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
+      setCases(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
         return {
           name: name,
           value: confirmed,
@@ -109,7 +110,7 @@ export default function MapUSA() {
           return tipString
         }
       },
-      // geo: {  },
+      bottom: '4%',
       series: [{
         left: 'center',
         top: '18%',

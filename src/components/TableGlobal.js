@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import axios from 'axios';
 
 const columns = [
   { id: 'no', label: '#', maxWidth: 10},
@@ -49,9 +50,9 @@ export default function StickyHeadTable({place, rows}) {
 
   useEffect(() => {
     if(place === 'USA') {
-      import(`../assets/UsaStatesCases.json`).then( ({cases}) => {
+      axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
         if(columns.length === 6) columns.pop();
-        setRows(cases.map( ({name, confirmed, death, increased, deathRate}) => {
+        setRows(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
           // the following keys doesn't match the value name, as I don't want to change the 
           // key names for global data(the two pages share the same data structure)
           return {
@@ -71,15 +72,15 @@ export default function StickyHeadTable({place, rows}) {
       
       if(rows.length > 0) { 
         //Added infected rate per million in population Mar 14, 2020
-        import(`../assets/WorldPopulation.json`).then( (countries) => {    
+        axios.get(`./assets/WorldPopulation.json`).then( ({data}) => {    
           let dataWithInfectRate = rows.map(country => {
             let infectRate = 0;  // infection number per million 
-            if( countries[country.countryEnglishName] > 0 ) {
-              infectRate = Math.ceil(country.confirmedCount * 1000000 / countries[country.countryEnglishName]);
+            if( data[country.countryEnglishName] > 0 ) {
+              infectRate = Math.ceil(country.confirmedCount * 1000000 / data[country.countryEnglishName]);
             };
             Object.assign(country, {"infectRate": infectRate})
             if(country.countryEnglishName === "Diamond Princess Cruise") {
-              country.infectRate = (country.confirmedCount * 100 / countries[country.countryEnglishName]).toFixed(2) + '%';
+              country.infectRate = (country.confirmedCount * 100 / data[country.countryEnglishName]).toFixed(2) + '%';
             }
             return country;
           });

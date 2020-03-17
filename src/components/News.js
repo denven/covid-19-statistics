@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/News.css'
 
+import axios from 'axios';
 import moment from 'moment';
 import titleize from 'titleize';
 
@@ -42,8 +43,8 @@ export default function LatestNews () {
   const [news, setNews] = useState([])
 
   useEffect(() => {
-    import(`../assets/LatestNews.json`).then( ({articles}) => {
-      setNews(articles);
+    axios.get(`./assets/LatestNews.json`).then( ({data}) => {
+      setNews(data.articles);
     });
   }, []);
 

@@ -88,7 +88,7 @@ async function getUsaLatestCases () {
       }
 
       const casesString = JSON.stringify(jsonData, null, 4);
-      fs.writeFile("../src/assets/UsaStatesCases.json", casesString, (err, result) => {
+      fs.writeFile("../public/assets/UsaStatesCases.json", casesString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated latest US states cases at ${jsonData.date}`);
       });
@@ -98,7 +98,7 @@ async function getUsaLatestCases () {
 
 async function updateUsaHisCases () {
 
-  let oldData = fs.readFileSync(`../src/assets/UsaCasesHistory.json`);
+  let oldData = fs.readFileSync(`../public/assets/UsaCasesHistory.json`);
   let allCases = JSON.parse(oldData).cases;
 
   // step 1: get latest cases data in us
@@ -129,13 +129,14 @@ async function updateUsaHisCases () {
     let utcSrcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2} [\d]{2}:[\d]{2} UTC)/g).join();
     // change UTC time to localtime(its important for the src string containing the letters 'UTC' )
     let localSrcDateStr = moment(new Date(utcSrcDateStr)).format('YYYY-MM-DD');
-    // let srcDateStr = localSrcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
+    let srcDateStr = localSrcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
 
     // Mar 16, they changed utcSrcDate to local time
-    let srcDateStr = utcSrcDateStr.slice(5, 10).replace(/^0/,'').trim()
+    // let srcDateStr = utcSrcDateStr.slice(5, 10).replace(/^0/,'').trim()
 
     let lastDay = allCases[allCases.length - 1];
     // step 3-1: increase a new day's data by comparision
+    console.log(utcSrcDateStr, localSrcDateStr, lastDay.date, srcDateStr);
     if(lastDay.date !== srcDateStr)  {
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
       latestStatus.date = srcDateStr;
@@ -156,7 +157,7 @@ async function updateUsaHisCases () {
     if(!DEBUG_MODE_ON) {
       let date = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
       const casesString = JSON.stringify({date: date, cases: allCases}, null, 4);
-      fs.writeFile("../src/assets/UsaCasesHistory.json", casesString, (err, result) => {
+      fs.writeFile("../public/assets/UsaCasesHistory.json", casesString, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated USA's history cases data at ${date}`);
       });

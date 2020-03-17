@@ -48,7 +48,7 @@ async function updateGlobalCases () {
       }
 
       const worldCasesStr = JSON.stringify(jsonData, null, 4);
-      fs.writeFile("../src/assets/GlobalCasesToday.json", worldCasesStr, (err, result) => {
+      fs.writeFile("../public/assets/GlobalCasesToday.json", worldCasesStr, (err, result) => {
         if(err) console.log('Error in writing data into Json file', err);
         console.log(`Updated ${countries.length} countries cases global at ${jsonData.time}`);
       });

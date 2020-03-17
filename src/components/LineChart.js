@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
-// import axios from 'axios';
+import axios from 'axios';
 // import moment from 'moment';
 
 export default function CasesTrend({country}) {
@@ -14,8 +14,8 @@ export default function CasesTrend({country}) {
   useEffect(() => {
     if(country === 'China') {
       // { date, confirmedNum, suspectedNum, curesNum, deathsNum } 
-      import(`../assets/ChinaHisCases.json`).then( hisData => {
-        setData(hisData);
+      axios.get(`./assets/ChinaHisCases.json`).then( ({data}) => {
+        setData(data);
         setReady(true);
       }).catch(e => { 
         setError(true);  // this will activate another request
@@ -24,13 +24,13 @@ export default function CasesTrend({country}) {
     }
 
     if(country === 'USA') {
-      import(`../assets/UsaCasesHistory.json`).then( ({cases}) => {
+      axios.get(`./assets/UsaCasesHistory.json`).then( ({data}) => {
         setData({
-          date: cases.map(day => day.date),
-          confirmedNum: cases.map(day => day.confirmedNum),
-          increasedNum: cases.map(day => day.increasedNum),
-          curesNum: cases.map(day => day.curesNum),
-          deathsNum: cases.map(day => day.deathsNum)
+          date: data.cases.map(day => day.date),
+          confirmedNum: data.cases.map(day => day.confirmedNum),
+          increasedNum: data.cases.map(day => day.increasedNum),
+          curesNum: data.cases.map(day => day.curesNum),
+          deathsNum: data.cases.map(day => day.deathsNum)
         });
         setReady(true);
       });

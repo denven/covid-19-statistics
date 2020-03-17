@@ -85,7 +85,7 @@ async function getCasesTimeline () {
     }
     const timelineString = JSON.stringify(jsonData, null, 4);
     // console.log(timelineString);
-    fs.writeFile("../src/assets/CanadaTimeline.json", timelineString, (err, result) => {
+    fs.writeFile("../public/assets/CanadaTimeline.json", timelineString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated Canada timeline data at ${jsonData.time}`);
     });
@@ -100,7 +100,7 @@ async function updateHistoryCases () {
   // step 3: compare the last data and save new cases data
   // step 4: rewrite data to json file
 
-  let oldData = fs.readFileSync(`../src/assets/CanadaCasesDb.json`);
+  let oldData = fs.readFileSync(`../public/assets/CanadaCasesDb.json`);
   let allDaysCases = JSON.parse(oldData).cases;
   let oldOverall = JSON.parse(oldData).overall;
   
@@ -227,7 +227,7 @@ async function updateHistoryCases () {
         overall: newOverall
       }, null, 4);
 
-    fs.writeFile("../src/assets/CanadaCasesDb.json", casesString, (err, result) => {
+    fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated Canada history cases data at ${date}`);
     });
@@ -240,7 +240,7 @@ async function updateHistoryCases () {
 // update the latest overall cases
 async function updateOverallCases () {
 
-  let oldData = fs.readFileSync(`../src/assets/CanadaCasesDb.json`);
+  let oldData = fs.readFileSync(`../public/assets/CanadaCasesDb.json`);
   let oldOverall = JSON.parse(oldData).overall;
 
   // fetch data by scraping
@@ -304,7 +304,7 @@ async function getLatestCases () {
     }
 
     const casesString = JSON.stringify(jsonData, null, 4);
-    fs.writeFile("../src/assets/CasesLatest.json", casesString, (err, result) => {
+    fs.writeFile("../public/assets/CasesLatest.json", casesString, (err, result) => {
       if(err) console.log('Error in writing data into Json file', err);
       console.log(`Updated latest cases data at ${jsonData.date}`);
     });
