@@ -144,6 +144,7 @@ async function updateUsaHisCases () {
     }
 
     // step 3-2: or update today's cases realtimely
+    console.log(latestStatus.confirmedNum, lastDay.confirmedNum)
     if(lastDay.date === srcDateStr && lastDay.confirmedNum < latestStatus.confirmedNum) {
       allCases.pop();
       lastDay = allCases[allCases.length - 1];
