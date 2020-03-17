@@ -80,11 +80,11 @@ export default function OverallData ({place, overall}) {
         },[0]);
 
         if(place === 'Global') {
-          setData({...overall, suspect: globalIncreased});  
+          setData({...overall, time: data.time, suspect: globalIncreased});  
         } else if(place === 'China') {
-          setData({...overall, suspect: chinaIncreased});  
+          setData({...overall, time: data.time, suspect: chinaIncreased});  
         } else {
-          setData({...overall, suspect: globalIncreased - chinaIncreased}); 
+          setData({...overall, time: data.time, suspect: globalIncreased - chinaIncreased}); 
         }
         handleResize();
       });
