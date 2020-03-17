@@ -1,5 +1,5 @@
 {
-    "time": "2020-03-16 16:00:04",
+    "time": "2020-03-16 16:50:02",
     "countries": [
         {
             "name": "China",
@@ -7,8 +7,8 @@
             "increased": "20",
             "dead": "3,213",
             "newDeath": "0",
-            "recovered": "67,819",
-            "active": "9,848",
+            "recovered": "67,823",
+            "active": "9,844",
             "severe": "3,226",
             "perMppl": "56.2"
         },
@@ -58,14 +58,14 @@
         },
         {
             "name": "Germany",
-            "total": "7,241",
-            "increased": "1,428",
-            "dead": "15",
-            "newDeath": "2",
-            "recovered": "65",
-            "active": "7,161",
+            "total": "7,272",
+            "increased": "1,459",
+            "dead": "17",
+            "newDeath": "4",
+            "recovered": "67",
+            "active": "7,188",
             "severe": "2",
-            "perMppl": "86.4"
+            "perMppl": "86.8"
         },
         {
             "name": "France",
@@ -80,14 +80,14 @@
         },
         {
             "name": "USA",
-            "total": "4,599",
-            "increased": "919",
+            "total": "4,657",
+            "increased": "977",
             "dead": "86",
             "newDeath": "18",
             "recovered": "74",
-            "active": "4,439",
+            "active": "4,497",
             "severe": "12",
-            "perMppl": "13.9"
+            "perMppl": "14.1"
         },
         {
             "name": "Switzerland",
@@ -179,14 +179,14 @@
         },
         {
             "name": "Japan",
-            "total": "895",
-            "increased": "56",
+            "total": "827",
+            "increased": "0",
             "dead": "27",
             "newDeath": "3",
             "recovered": "144",
-            "active": "724",
+            "active": "656",
             "severe": "41",
-            "perMppl": "7.1"
+            "perMppl": "6.5"
         },
         {
             "name": "Diamond Princess",
@@ -783,6 +783,17 @@
             "perMppl": "38.1"
         },
         {
+            "name": "Costa Rica",
+            "total": "41",
+            "increased": "6",
+            "dead": "0",
+            "newDeath": "0",
+            "recovered": "0",
+            "active": "41",
+            "severe": "3",
+            "perMppl": "8.0"
+        },
+        {
             "name": "Hungary",
             "total": "39",
             "increased": "7",
@@ -825,17 +836,6 @@
             "active": "33",
             "severe": "0",
             "perMppl": "3.8"
-        },
-        {
-            "name": "Costa Rica",
-            "total": "35",
-            "increased": "0",
-            "dead": "0",
-            "newDeath": "0",
-            "recovered": "0",
-            "active": "35",
-            "severe": "3",
-            "perMppl": "6.9"
         },
         {
             "name": "Latvia",
@@ -891,6 +891,17 @@
             "active": "28",
             "severe": "1",
             "perMppl": "7.2"
+        },
+        {
+            "name": "Uruguay",
+            "total": "29",
+            "increased": "23",
+            "dead": "0",
+            "newDeath": "0",
+            "recovered": "0",
+            "active": "29",
+            "severe": "0",
+            "perMppl": "8.3"
         },
         {
             "name": "Sri Lanka",
@@ -992,6 +1003,17 @@
             "perMppl": "9.1"
         },
         {
+            "name": "Lithuania",
+            "total": "18",
+            "increased": "4",
+            "dead": "0",
+            "newDeath": "0",
+            "recovered": "1",
+            "active": "17",
+            "severe": "0",
+            "perMppl": "6.6"
+        },
+        {
             "name": "Faeroe Islands",
             "total": "18",
             "increased": "7",
@@ -1001,17 +1023,6 @@
             "active": "18",
             "severe": "0",
             "perMppl": "0"
-        },
-        {
-            "name": "Lithuania",
-            "total": "17",
-            "increased": "3",
-            "dead": "0",
-            "newDeath": "0",
-            "recovered": "1",
-            "active": "16",
-            "severe": "0",
-            "perMppl": "6.2"
         },
         {
             "name": "Venezuela",
@@ -1190,17 +1201,6 @@
             "perMppl": "1.1"
         },
         {
-            "name": "Uruguay",
-            "total": "8",
-            "increased": "2",
-            "dead": "0",
-            "newDeath": "0",
-            "recovered": "0",
-            "active": "8",
-            "severe": "0",
-            "perMppl": "2.3"
-        },
-        {
             "name": "Uzbekistan",
             "total": "8",
             "increased": "4",
@@ -1243,6 +1243,17 @@
             "active": "7",
             "severe": "0",
             "perMppl": "0"
+        },
+        {
+            "name": "Rwanda",
+            "total": "7",
+            "increased": "2",
+            "dead": "0",
+            "newDeath": "0",
+            "recovered": "0",
+            "active": "7",
+            "severe": "0",
+            "perMppl": "0.5"
         },
         {
             "name": "Monaco",
@@ -1331,17 +1342,6 @@
             "active": "5",
             "severe": "0",
             "perMppl": "1.7"
-        },
-        {
-            "name": "Rwanda",
-            "total": "5",
-            "increased": "0",
-            "dead": "0",
-            "newDeath": "0",
-            "recovered": "0",
-            "active": "5",
-            "severe": "0",
-            "perMppl": "0.4"
         },
         {
             "name": "Ivory Coast",
@@ -1797,12 +1797,12 @@
     ],
     "overall": {
         "name": "Total",
-        "total": "182,352",
-        "increased": "2,776",
-        "dead": "7,142",
-        "newDeath": "23",
-        "recovered": "78,340",
-        "active": "96,870",
+        "total": "182,403",
+        "increased": "2,839",
+        "dead": "7,144",
+        "newDeath": "25",
+        "recovered": "78,346",
+        "active": "96,913",
         "severe": "6,163",
         "perMppl": "23.4"
     }
