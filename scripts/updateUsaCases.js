@@ -53,7 +53,7 @@ async function getUsaLatestCases () {
     // Note: this catch is not reliable, sometimes the data is available, sometimes it's not!!!
     let increases = $('sup', 'span').text();
     for(let key = 0; key < increases.length; key++) {
-      console.log(`Increased Cases Available:`, $(increases[key]).text(), increases.length);
+      console.log(`Increased Cases Available:`, $(increases[key]).text()[0], increases.length);
     }
 
     let data = $('span', '.stat');
