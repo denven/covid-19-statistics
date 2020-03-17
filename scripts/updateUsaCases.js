@@ -51,10 +51,10 @@ async function getUsaLatestCases () {
     const $ = cheerio.load(res.data);
     // console.log(res.data.replace(/sup/g,'span'))
     // Note: this catch is not reliable, sometimes the data is available, sometimes it's not!!!
-    let increases = $('sup', 'span').text();
-    for(let key = 0; key < increases.length; key++) {
-      console.log(`Increased Cases Available:`, $(increases[key]).text()[0], increases.length);
-    }
+    // let increases = $('sup', 'span').text();
+    // for(let key = 0; key < increases.length; key++) {
+    //   console.log(`Increased Cases Available:`, $(increases[key]).text()[0], increases.length);
+    // }
 
     let data = $('span', '.stat');
     for(let key = 0; key < data.length - 1;) {
