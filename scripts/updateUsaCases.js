@@ -129,13 +129,14 @@ async function updateUsaHisCases () {
     let utcSrcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2} [\d]{2}:[\d]{2} UTC)/g).join();
     // change UTC time to localtime(its important for the src string containing the letters 'UTC' )
     let localSrcDateStr = moment(new Date(utcSrcDateStr)).format('YYYY-MM-DD');
-    // let srcDateStr = localSrcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
+    let srcDateStr = localSrcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
 
     // Mar 16, they changed utcSrcDate to local time
-    let srcDateStr = utcSrcDateStr.slice(5, 10).replace(/^0/,'').trim()
+    // let srcDateStr = utcSrcDateStr.slice(5, 10).replace(/^0/,'').trim()
 
     let lastDay = allCases[allCases.length - 1];
     // step 3-1: increase a new day's data by comparision
+    console.log(utcSrcDateStr, localSrcDateStr, lastDay.date, srcDateStr);
     if(lastDay.date !== srcDateStr)  {
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
       latestStatus.date = srcDateStr;
