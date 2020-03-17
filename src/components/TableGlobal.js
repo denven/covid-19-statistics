@@ -12,15 +12,7 @@ import axios from 'axios';
 const columns = [
   { id: 'no', label: '#', maxWidth: 10},
   { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 40},
-  {
-    id: 'confirmedCount',
-    label: 'Confirmed',
-    align: 'right',
-    format: value => {
-      let newVal = (value + '').split('.');
-      return newVal[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-    },
-  },
+  { id: 'confirmedCount', label: 'Confirmed', align: 'right', },
   // { id: 'suspectedCount', label: 'Suspected', align: 'right', maxWidth: 50 },
   { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 },
   { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 },
@@ -100,6 +92,10 @@ export default function StickyHeadTable({place, rows}) {
     columns[4].label = 'Death';
   }
 
+  const valueFormat = (value) => {
+    return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+  }
+
   return (
     <Paper className={classes.root} elevation={0} >
       <TableContainer className={classes.container}>
@@ -119,7 +115,8 @@ export default function StickyHeadTable({place, rows}) {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.countryEnglishName}>
                   {columns.map(column => {
-                    const value = ((column.id === 'no') && !row[column.id]) ? (index+1) : row[column.id];
+                    let value = ((column.id === 'no') && !row[column.id]) ? (index+1) : row[column.id];
+                    value = valueFormat(value);
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}

@@ -95,14 +95,18 @@ export default function OverallData ({place, overall}) {
     window.addEventListener("resize", handleResize);
   }, [handleResize]);
 
+  const valueFormat = (value) => {
+    return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+  }
+
   return (
     <>
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
-      <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {data.confirmed}</span></div>
-      <div className="eachText">Increased <span className="suspectedNumber">&nbsp; &nbsp; {data.suspect}</span></div>
-      <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {data.cured}</span></div>
-      <div className="eachText">Deaths <span className="deathNumber">&nbsp; {data.death}</span></div>
+      <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {valueFormat(data.confirmed)}</span></div>
+      <div className="eachText">Increased <span className="suspectedNumber">&nbsp; &nbsp; {valueFormat(data.suspect)}</span></div>
+      <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {valueFormat(data.cured)}</span></div>
+      <div className="eachText">Deaths <span className="deathNumber">&nbsp; {valueFormat(data.death)}</span></div>
       <div className="eachText">Lethality <span className="fatalityNumber">&nbsp; {data.fatality}</span></div>
     </>
   );

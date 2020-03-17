@@ -17,6 +17,11 @@ export default function MapChina({chinaMap}) {
     });
   }, []);
 
+  // Number value formatter
+  const valueFormat = (value) => {
+    return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+  }
+
   const getLoadingOption = () => {
     return {
       text: 'Data Loading ...',
@@ -73,7 +78,11 @@ export default function MapChina({chinaMap}) {
           let value = ((params.value || "No Case") + '').split('.');
           value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           name = titleize(pinyin(name, {removeTone: true}));
-          const tipString = `<b>${name}</b><br />Existing: \t${value}<br />Confirmed: ${confirmed}<br />Cured:\t${cured}<br />Death:\t${death}`;
+          const tipString = `<b>${name}</b><br />
+                                Existing: \t${valueFormat(value)}<br />
+                                Confirmed: ${valueFormat(confirmed)}<br />
+                                Cured:\t${valueFormat(cured)}<br />
+                                Death:\t${valueFormat(death)}`;
           return tipString
         }
       },
