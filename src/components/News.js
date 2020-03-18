@@ -20,12 +20,12 @@ function OnePiece ({ source, publishedAt, title, description, url, urlToImage, c
   return (
       <div className="news-card">
         <div className="news-image"> 
-          <a href={url} >
+          <a href={url} rel="noopener noreferrer" target="_blank">
             <img src={imgUrl} alt={''} onError={onError} />
           </a> </div>
         <div className ='news-text'>
           <div>
-            <div> <a className="news-title" href={url}>{ title.split('-') }</a> </div>
+            <div> <a className="news-title" href={url} rel="noopener noreferrer" target="_blank">{ title.split('-') }</a> </div>
             <div className="summary">{ description ? description.slice(0, 150) : "" } ... </div>
           </div>
           <div className="news-date">
