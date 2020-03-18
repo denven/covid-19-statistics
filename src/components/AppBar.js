@@ -33,8 +33,8 @@ import useAppData from '../hooks/useAppData';
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1, },
   menuButton: { marginRight: theme.spacing(2), },
-  title: { flexGrow: 1, },
-  link: { color: '#FFF', textDecoration: 'none' }
+  title: { flexGrow: 1, justifyContent: 'flex-end'},
+  link: { color: '#FFF', textDecoration: 'none' },
 }));
 
 function China({loaded, overall, chinaMap}) {
@@ -162,13 +162,12 @@ export default function TopAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static" >
-        <Toolbar variant="dense">          
+        <Toolbar variant="dense" >   
           <Navigator />
-          <Typography variant="h6" className={classes.title}>
+          {/* <Typography variant="h6" className={classes.title}> */}
             {/* News */}
-          </Typography>
-          <Button color="inherit" align="center"
-            target="_blank" href="https://github.com/denven/covid-19-statistics">
+          {/* </Typography> */}
+          <Button className={classes.title} color="inherit" align="right" target="_blank" href="https://github.com/denven/covid-19-statistics">
             <GitHubIcon />
           </Button>
         </Toolbar>
