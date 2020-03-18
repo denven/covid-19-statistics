@@ -2,6 +2,12 @@ import React, {useState, useEffect, useCallback} from 'react';
 import '../styles/Overall.css';
 // import moment from 'moment';
 import axios from 'axios';
+import moment from 'moment';
+// The moment-timezone.js can be used to convert local time(the code runs on which device located at) 
+// to another timezone, but it doesn't convert a time from one(not local) timezone to another wanted timezone
+// As we need to convert a absolute America/Vancouver time string to another local time
+// we will use `new Date().getTimezoneOffset()` and moment.diff() moment.add() to fullfil this time conversion
+// import momentTz from 'moment-timezone'; 
 
 export default function OverallData ({place, overall}) {  
   
@@ -26,6 +32,13 @@ export default function OverallData ({place, overall}) {
 
     return true;
   }
+
+  const getLocalTime = (time) => {
+    // let localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;   
+    // vancouver is 420 miniutes behind of GMT, getTimezoneOffset() returns +420, eg, for Shanghai, GMT+8 retunrs -480
+    let minutesDiff = 420 - new Date().getTimezoneOffset();
+    return moment(time).add(minutesDiff, 'minutes').format("YYYY-MM-DD HH:mm:ss");
+  }
   
   const handleResize = useCallback(() => {        
 
@@ -48,7 +61,7 @@ export default function OverallData ({place, overall}) {
           let lastData = data.cases[data.cases.length - 1];
 
           setData ({
-            time: data.date,
+            time: getLocalTime(data.date),
             confirmed: lastData.confirmedNum, 
             suspect: lastData.increasedNum, 
             cured: lastData.curesNum, 
@@ -61,7 +74,7 @@ export default function OverallData ({place, overall}) {
     } else if(place === 'Canada') {
       axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
         setData ({
-          time: data.date,
+          time: getLocalTime(data.date),
           confirmed: data.overall.confirmed, 
           suspect: data.overall.increased, 
           cured: data.overall.recovered, 
@@ -79,12 +92,13 @@ export default function OverallData ({place, overall}) {
           return total = parseInt(total) + parseInt(country.increased || 0); 
         },[0]);
 
+        let localTime = getLocalTime(data.time);
         if(place === 'Global') {
-          setData({...overall, time: data.time, suspect: globalIncreased});  
+          setData({...overall, time: localTime, suspect: globalIncreased});  
         } else if(place === 'China') {
-          setData({...overall, time: data.time, suspect: chinaIncreased});  
+          setData({...overall, time: localTime, suspect: chinaIncreased});  
         } else {
-          setData({...overall, time: data.time, suspect: globalIncreased - chinaIncreased}); 
+          setData({...overall, time: localTime, suspect: globalIncreased - chinaIncreased}); 
         }
         handleResize();
       });
