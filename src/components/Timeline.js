@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
 function Title () {
   return (
     <div className="timelineTitle">
-      <div>Timeline of reported covid-19 cases in Canada</div>
+      <div>Timeline of reported cases and gov anouncements in Canada</div>
       <div className="subTitle" >Data from https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Canada</div>
     </div>
   )
