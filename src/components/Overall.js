@@ -85,20 +85,25 @@ export default function OverallData ({place, overall}) {
       });
     } else if(overall)  {
       axios.get(`./assets/GlobalCasesToday.json`).then( ({data}) => {
-        let chinaIncreased = 0, globalIncreased = 0;
+        // let chinaIncreased = 0, globalIncreased = 0;
 
-        chinaIncreased = data.countries.find( c => c.name === 'China').increased;
-        globalIncreased = data.countries.reduce((total, country) => {
-          return total = parseInt(total) + parseInt(country.increased || 0); 
-        },[0]);
+        let chinaIncreased = data.countries.find( c => c.name === 'China').increased;
+        let chinaConfirmed = data.countries.find( c => c.name === 'China').total;
+        // globalIncreased = data.countries.reduce((total, country) => {
+        //   return total += parseInt(country.increased.replace(/,/, '')); 
+        // }, 0);
+
+        console.log(chinaConfirmed, chinaIncreased);
 
         let localTime = getLocalTime(data.time);
         if(place === 'Global') {
-          setData({...overall, time: localTime, suspect: globalIncreased});  
+          setData({...overall, time: localTime, suspect: data.overall.increased, confirmed: data.overall.total});  
         } else if(place === 'China') {
           setData({...overall, time: localTime, suspect: chinaIncreased});  
         } else {
-          setData({...overall, time: localTime, suspect: globalIncreased - chinaIncreased}); 
+          setData({...overall, time: localTime, 
+            suspect: parseInt(data.overall.increased.replace(/,/g, '')) - parseInt(chinaIncreased.replace(/,/g, '')), 
+            confirmed: parseInt(data.overall.total.replace(/,/g, '')) -  parseInt(chinaConfirmed.replace(/,/g, ''))}); 
         }
         handleResize();
       });
