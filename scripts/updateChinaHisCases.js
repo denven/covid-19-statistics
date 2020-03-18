@@ -7,7 +7,7 @@ const updateChinaHisCases = () => {
   const hisDataUrl = 'https://www.windquant.com/qntcloud/data/edb?' + process.env.WINDAPIKEY;
   const indicators = '&indicators=S6274770,S6274773,S6274772,S6274771&startdate=2020-01-20&enddate=';
   const endDate = moment().format('YYYY-MM-DD');  // today
-  console.log(hisDataUrl + indicators + endDate);
+  // console.log(hisDataUrl + indicators + endDate);
   axios.get(hisDataUrl + indicators + endDate).then( hisData => {
 
     if(hisData.data.errCode === 0) {
