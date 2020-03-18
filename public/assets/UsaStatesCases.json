@@ -1,12 +1,12 @@
 {
-    "date": "2020-03-18 12:00:09",
+    "date": "2020-03-18 13:00:09",
     "cases": [
         {
             "name": "New York",
-            "confirmed": "2495",
-            "increased": "806",
-            "death": "16",
-            "deathRate": "0.6%"
+            "confirmed": "2499",
+            "increased": "810",
+            "death": "20",
+            "deathRate": "0.8%"
         },
         {
             "name": "Washington",
@@ -17,10 +17,17 @@
         },
         {
             "name": "California",
-            "confirmed": "751",
-            "increased": "33",
-            "death": "13",
-            "deathRate": "1.7%"
+            "confirmed": "771",
+            "increased": "53",
+            "death": "14",
+            "deathRate": "1.8%"
+        },
+        {
+            "name": "New Jersey",
+            "confirmed": "427",
+            "increased": "162",
+            "death": "5",
+            "deathRate": "1.2%"
         },
         {
             "name": "Florida",
@@ -28,13 +35,6 @@
             "increased": "97",
             "death": "7",
             "deathRate": "2.2%"
-        },
-        {
-            "name": "New Jersey",
-            "confirmed": "267",
-            "increased": "0",
-            "death": "3",
-            "deathRate": "1.1%"
         },
         {
             "name": "Louisiana",
@@ -52,8 +52,8 @@
         },
         {
             "name": "Georgia",
-            "confirmed": "199",
-            "increased": "54",
+            "confirmed": "197",
+            "increased": "52",
             "death": "3",
             "deathRate": "1.5%"
         },
@@ -66,8 +66,8 @@
         },
         {
             "name": "Texas",
-            "confirmed": "173",
-            "increased": "41",
+            "confirmed": "176",
+            "increased": "44",
             "death": "3",
             "deathRate": "1.7%"
         },
@@ -87,15 +87,22 @@
         },
         {
             "name": "Wisconsin",
-            "confirmed": "92",
-            "increased": "2",
+            "confirmed": "107",
+            "increased": "17",
+            "death": "0",
+            "deathRate": "0%"
+        },
+        {
+            "name": "Tennessee",
+            "confirmed": "98",
+            "increased": "20",
             "death": "0",
             "deathRate": "0%"
         },
         {
             "name": "Ohio",
-            "confirmed": "86",
-            "increased": "19",
+            "confirmed": "88",
+            "increased": "21",
             "death": "0",
             "deathRate": "0%"
         },
@@ -114,13 +121,6 @@
             "deathRate": "1.2%"
         },
         {
-            "name": "Tennessee",
-            "confirmed": "79",
-            "increased": "1",
-            "death": "0",
-            "deathRate": "0%"
-        },
-        {
             "name": "Minnesota",
             "confirmed": "77",
             "increased": "17",
@@ -135,6 +135,13 @@
             "deathRate": "2.6%"
         },
         {
+            "name": "Oregon",
+            "confirmed": "75",
+            "increased": "7",
+            "death": "3",
+            "deathRate": "4%"
+        },
+        {
             "name": "North Carolina",
             "confirmed": "70",
             "increased": "4",
@@ -142,16 +149,16 @@
             "deathRate": "0%"
         },
         {
-            "name": "Oregon",
-            "confirmed": "68",
-            "increased": "0",
-            "death": "2",
-            "deathRate": "2.9%"
-        },
-        {
             "name": "Connecticut",
             "confirmed": "68",
             "increased": "0",
+            "death": "0",
+            "deathRate": "0%"
+        },
+        {
+            "name": "Utah",
+            "confirmed": "63",
+            "increased": "12",
             "death": "0",
             "deathRate": "0%"
         },
@@ -163,11 +170,11 @@
             "deathRate": "1.8%"
         },
         {
-            "name": "Utah",
-            "confirmed": "51",
-            "increased": "0",
-            "death": "0",
-            "deathRate": "0%"
+            "name": "South Carolina",
+            "confirmed": "48",
+            "increased": "1",
+            "death": "1",
+            "deathRate": "2.1%"
         },
         {
             "name": "Diamond Princess Cruise",
@@ -175,13 +182,6 @@
             "increased": "0",
             "death": "0",
             "deathRate": "0%"
-        },
-        {
-            "name": "South Carolina",
-            "confirmed": "47",
-            "increased": "0",
-            "death": "1",
-            "deathRate": "2.1%"
         },
         {
             "name": "Alabama",
@@ -247,6 +247,13 @@
             "deathRate": "0%"
         },
         {
+            "name": "New Mexico",
+            "confirmed": "28",
+            "increased": "5",
+            "death": "0",
+            "deathRate": "0%"
+        },
+        {
             "name": "Arizona",
             "confirmed": "27",
             "increased": "6",
@@ -270,13 +277,6 @@
         {
             "name": "Nebraska",
             "confirmed": "24",
-            "increased": "0",
-            "death": "0",
-            "deathRate": "0%"
-        },
-        {
-            "name": "New Mexico",
-            "confirmed": "23",
             "increased": "0",
             "death": "0",
             "deathRate": "0%"
