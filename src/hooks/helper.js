@@ -15,6 +15,8 @@ const getCountryEnName = (country) => {
       case "赞比亚共和国": return "Zambia";
       case "阿鲁巴": return "Aruba";
       case "钻石公主号邮轮": return "Diamond Princess Cruise";
+      case "至尊公主邮轮": return "Grand Princess Cruise";
+
       default:
         return null;  // don't know the actual english name  
     }
