@@ -51,11 +51,11 @@ export default function MapGlobal({mapData}) {
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
         pieces: [ 
-          {min: 500},
-          {min: 100, max: 499},
-          {min: 50, max: 99},
-          {min: 10, max: 49},
-          {min: 1, max: 9},
+          {min: 10000},
+          {min: 2000, max: 9999},
+          {min: 500, max: 1999},
+          {min: 50, max: 499},
+          {min: 1, max: 49},
         ],        
         padding: 35,
         orient: 'horizontal',
