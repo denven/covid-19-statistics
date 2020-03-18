@@ -2,6 +2,7 @@ import { useEffect, useReducer } from "react";
 import moment from 'moment';
 import axios from 'axios';
 import { filter, pick, orderBy } from 'lodash';
+import processCountryNames from './helper';
 
 import reducer, { 
   SET_LOAD_STATUS, 
@@ -94,34 +95,18 @@ export default function useAppData(props) {
       chinaCases.suspectedCount += prov.suspectedCount;
     }
 
-    let countriesData = data.map((country) => { 
-      if(country.countryName === "阿联酋") {
-        country.countryEnglishName = "United Arab Emirates";
-      }
-      return pick(country, "countryEnglishName", "confirmedCount", 
-      "currentConfirmedCount", "suspectedCount", "curedCount", "deadCount")} 
-    );
-    
     let countriesDataWithChina = [];
-    countriesData.forEach((country) => {          
-      if(country.countryEnglishName === "United States of America") {
-        country.countryEnglishName = "United States";
-      }
-
-      //Note: there are some places without an English country name is not added to the map.
-      if(country.countryEnglishName !== null) {
+    data.forEach((item) => { 
+      if(item.countryEnglishName !== null) {
+        let country = pick(item, "countryEnglishName", "confirmedCount", 
+                      "currentConfirmedCount", "suspectedCount", "curedCount", "deadCount");
+        delete Object.assign(country, {"name": country["countryEnglishName"]})["countryEnglishName"];
+        delete Object.assign(country, {"value": country["confirmedCount"]})["confirmedCount"];
         countriesDataWithChina.push(country);
-        // return {name: country.countryEnglishName, value: country.confirmedCount};
       }
     });
-
-    // countriesDataWithChina.push({name: 'China', value: chinaCases.confirmedCount});
-    // countriesDataWithChina.push(chinaCases);
-    return countriesDataWithChina.map(country => {
-      delete Object.assign(country, {"name": country["countryEnglishName"]})["countryEnglishName"];
-      delete Object.assign(country, {"value": country["confirmedCount"]})["confirmedCount"];
-      return country;
-    })
+    
+    return countriesDataWithChina;
   }
 
   const getTableData = (chinaData, otherCountries) => {
@@ -158,22 +143,10 @@ export default function useAppData(props) {
     // latest data of all places in the world
     axios.get(`./assets/Areas.json`).then(({data})=> {
     // axios.get('https://lab.isaaclin.cn/nCoV/api/area').then((data)=> {
-      let chinaData = filter(data.results, ({cities})=>{ return (Array.isArray(cities)) });
-      let canadaData = filter(data.results, ({countryEnglishName})=>{ return (countryEnglishName === 'Canada') });
-      let otherCountries = filter(data.results, ({cities})=>{ return (!Array.isArray(cities)) });
-
-      // spectial process of unmatched data with map geo
-      for(const country of otherCountries) {
-        if(country.countryName === "钻石公主号邮轮") {
-          country.countryEnglishName = 'Diamond Princess Cruise'
-        }        
-        if(country.countryName === "阿联酋") {
-          country.countryEnglishName = "United Arab Emirates";
-        }
-        if(country.countryEnglishName === "United States of America") {
-          country.countryEnglishName = "United States";
-        }
-      }
+      let results = processCountryNames(data.results);
+      let chinaData = filter(results, ({cities})=>{ return (Array.isArray(cities)) });
+      let canadaData = filter(results, ({countryEnglishName})=>{ return (countryEnglishName === 'Canada') });
+      let otherCountries = filter(results, ({cities})=>{ return (!Array.isArray(cities)) });
 
       let updateTime = getUpdateTime(data.results);
       let chinaOverall = getOverall(chinaData, 0, updateTime);
