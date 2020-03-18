@@ -20,10 +20,13 @@ async function updateGlobalCases () {
       let name = $(tableRows[index]).text().match(/[a-zA-Z ]+/g);  // match country or place name
 
       if(Array.isArray(name)){
+        let increasedNum = ( name[0].trim() !== 'Total' ? 
+                             $(tableRows[index+2]).text().trim().slice(1) :
+                             $(tableRows[index+2]).text().trim()) || '0';
         let country = {
           name: name[0].trim(),
           total: $(tableRows[index+1]).text().trim(),
-          increased: $(tableRows[index+2]).text().trim().slice(1) || '0',
+          increased: increasedNum,
           dead: $(tableRows[index+3]).text().trim() || '0',
           newDeath: $(tableRows[index+4]).text().trim().slice(1) || '0',
           recovered: $(tableRows[index+5]).text().trim() || '0',
@@ -32,6 +35,9 @@ async function updateGlobalCases () {
           perMppl: $(tableRows[index+8]).text().trim() || '0'        
         };
         countries.push(country);
+
+        if( name[0].trim() === 'Total') break;
+
         index += 9;
 
       } else {
@@ -40,6 +46,7 @@ async function updateGlobalCases () {
     };
 
     let overall = countries.pop();
+    // console.log(overall);
     if(countries.length > 0) {
       let jsonData = {
         time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
