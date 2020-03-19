@@ -167,9 +167,9 @@ export default function TopAppBar() {
           {/* <Typography variant="h6" className={classes.title}> */}
             {/* News */}
           {/* </Typography> */}
-          <Button className={classes.title} color="inherit" align="right" target="_blank" href="https://github.com/denven/covid-19-statistics">
+          {/* <Button className={classes.title} color="inherit" align="right" target="_blank" href="https://github.com/denven/covid-19-statistics">
             <GitHubIcon />
-          </Button>
+          </Button> */}
         </Toolbar>
       </AppBar>
       {/* Router Configuration */}
