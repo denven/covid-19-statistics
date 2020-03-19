@@ -65,7 +65,7 @@ async function getUsaLatestCases () {
       let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
       let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,4}/g).length > 1 ? 
                            $(data[key + 1]).text().match(/[\d]{1,4}/g)[1] : '0'; 
-      console.log(stateEnglishName, stateIncreased, 'key:', key);
+      // console.log(stateEnglishName, stateIncreased, 'key:', key);
       if(key > 300) break;
       if(stateEnglishName) {
         curCases.push({
@@ -125,11 +125,11 @@ async function updateUsaHisCases () {
     }
     // console.log($(casesData[0]).text(), latestStatus)
 
-    let srcDate = $('span', 'h2');
+    // let srcDate = $('span', 'h2');
     // extract the exact date and time(UTC time)
-    let utcSrcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2} [\d]{2}:[\d]{2} UTC)/g).join();
+    // let utcSrcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2} [\d]{2}:[\d]{2} UTC)/g).join();
     // change UTC time to localtime(its important for the src string containing the letters 'UTC' )
-    let localSrcDateStr = moment(new Date(utcSrcDateStr)).format('YYYY-MM-DD');
+    let localSrcDateStr = moment(new Date()).format('YYYY-MM-DD');
     let srcDateStr = localSrcDateStr.slice(5).replace(/^0/,'').replace(/-[0]{0,1}/,'/');
 
     // Mar 16, they changed utcSrcDate to local time
@@ -137,7 +137,7 @@ async function updateUsaHisCases () {
 
     let lastDay = allCases[allCases.length - 1];
     // step 3-1: increase a new day's data by comparision
-    console.log(utcSrcDateStr, localSrcDateStr, lastDay.date, srcDateStr);
+    console.log(localSrcDateStr, lastDay.date, srcDateStr);
     if(lastDay.date !== srcDateStr)  {
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
       latestStatus.date = srcDateStr;
