@@ -134,7 +134,7 @@ async function updateHistoryCases () {
       let provAbbrs = [];
       elements.each( (index, item) => {
         // get the abbreviations of provinces
-        if(index === 2) {  // wikipedia changed table format Mar 15, 2020
+        if(index === 1) {  // wikipedia changed table format Mar 19, 2020
           provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
         }
 
@@ -142,7 +142,7 @@ async function updateHistoryCases () {
           // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
           let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
           // Total confirmed row
-          if(tabRow.includes('Total')) {
+          if(tabRow.includes('Confirmed')) {
 
             //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5 :as of 2020-03-12
             let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g,'').split(','); 
