@@ -10,22 +10,31 @@ export default function MapCanada() {
   const [cases, setCases] = useState({dates:[], data:[]});
 
   useEffect(() => {
+    let isCanceled = false;
+
     axios.get(`./assets/CanadaGEO.json`).then( ({data}) => {
       echarts.registerMap('Canada', data);
-      setReady(true);
+      if(!isCanceled) setReady(true);
     });
+    
+    return () => {isCanceled = true;}
+
   }, []);
 
   useEffect(() => {
+    let isCanceled = false;
     axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
-      setCases(
-        {
-          dates: data.cases.map(day => day.date),     // for timeline component
-          data: data.cases.map(day => day.cases),  // for map component
-          // barData: cases.map(day => day.cases.map(prov => prov.value))  // for bar Chart component
-        }
-      );
+      if(!isCanceled) {
+        setCases(
+          {
+            dates: data.cases.map(day => day.date),     // for timeline component
+            data: data.cases.map(day => day.cases),  // for map component
+            // barData: cases.map(day => day.cases.map(prov => prov.value))  // for bar Chart component
+          }        
+        );
+      }
     });
+  return () => {isCanceled = true;}
   }, []);
 
   const getLoadingOption = () => {

@@ -54,60 +54,66 @@ export default function OverallData ({place, overall}) {
   },[data.time, time.length]);
 
   useEffect(() => {
-
+    const source = axios.CancelToken.source();
+    let isCancelled = false;
     if(place === 'USA') {
       axios.get(`./assets/UsaCasesHistory.json`).then( ({data}) => {
         if(data.cases) {
           let lastData = data.cases[data.cases.length - 1];
-
-          setData ({
-            time: getLocalTime(data.date),
-            confirmed: lastData.confirmedNum, 
-            suspect: lastData.increasedNum, 
-            cured: lastData.curesNum, 
-            death: lastData.deathsNum, 
-            fatality: (100 * lastData.deathsNum / lastData.confirmedNum).toFixed(2) + '%'
-          });
-          handleResize();
+          if(!isCancelled) {
+            setData ({
+              time: getLocalTime(data.date),
+              confirmed: lastData.confirmedNum, 
+              suspect: lastData.increasedNum, 
+              cured: lastData.curesNum, 
+              death: lastData.deathsNum, 
+              fatality: (100 * lastData.deathsNum / lastData.confirmedNum).toFixed(2) + '%'
+            });
+            handleResize();
+          }          
         }
       });
     } else if(place === 'Canada') {
       axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
-        setData ({
-          time: getLocalTime(data.date),
-          confirmed: data.overall.confirmed, 
-          suspect: data.overall.increased, 
-          cured: data.overall.recovered, 
-          death: data.overall.death, 
-          fatality: (100 * data.overall.death / data.overall.confirmed).toFixed(2) + '%'
-        });
-        handleResize();
+        if(!isCancelled) {
+          setData ({
+            time: getLocalTime(data.date),
+            confirmed: data.overall.confirmed, 
+            suspect: data.overall.increased, 
+            cured: data.overall.recovered, 
+            death: data.overall.death, 
+            fatality: (100 * data.overall.death / data.overall.confirmed).toFixed(2) + '%'
+          });
+          handleResize();
+        }
+        
       });
     } else if(overall)  {
       axios.get(`./assets/GlobalCasesToday.json`).then( ({data}) => {
-        // let chinaIncreased = 0, globalIncreased = 0;
-
         let chinaIncreased = data.countries.find( c => c.name === 'China').increased;
         let chinaConfirmed = data.countries.find( c => c.name === 'China').total;
-        // globalIncreased = data.countries.reduce((total, country) => {
-        //   return total += parseInt(country.increased.replace(/,/, '')); 
-        // }, 0);
-
-        console.log(chinaConfirmed, chinaIncreased);
-
         let localTime = getLocalTime(data.time);
         if(place === 'Global') {
-          setData({...overall, time: localTime, suspect: data.overall.increased, confirmed: data.overall.total});  
+          if(!isCancelled) {
+            setData({...overall, time: localTime, suspect: data.overall.increased, confirmed: data.overall.total});  
+          }
         } else if(place === 'China') {
-          setData({...overall, time: localTime, suspect: chinaIncreased});  
+          if(!isCancelled) {
+            setData({...overall, time: localTime, suspect: chinaIncreased});  
+          }
         } else {
-          setData({...overall, time: localTime, 
-            suspect: parseInt(data.overall.increased.replace(/,/g, '')) - parseInt(chinaIncreased.replace(/,/g, '')), 
-            confirmed: parseInt(data.overall.total.replace(/,/g, '')) -  parseInt(chinaConfirmed.replace(/,/g, ''))}); 
+          if(!isCancelled) {
+            setData({...overall, time: localTime, 
+              suspect: parseInt(data.overall.increased.replace(/,/g, '')) - parseInt(chinaIncreased.replace(/,/g, '')), 
+              confirmed: parseInt(data.overall.total.replace(/,/g, '')) -  parseInt(chinaConfirmed.replace(/,/g, ''))}); 
+          }
         }
-        handleResize();
+        if(!isCancelled) handleResize();
       });
     }
+  
+    return () => { source.cancel(); isCancelled = true; };
+
   }, [handleResize, overall, place]);
 
   useEffect(() => {

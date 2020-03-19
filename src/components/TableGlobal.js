@@ -41,20 +41,24 @@ export default function StickyHeadTable({place, rows}) {
   const [rowsData, setRows] = useState((Array.isArray(rows)) ? initRows: rows);
 
   useEffect(() => {
+
+    let isCanceled = false;
     if(place === 'USA') {
       axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
         if(columns.length === 6) columns.pop();
-        setRows(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
-          // the following keys doesn't match the value name, as I don't want to change the 
-          // key names for global data(the two pages share the same data structure)
-          return {
-            countryEnglishName: name,
-            confirmedCount: confirmed,
-            suspectedCount: '0',
-            curedCount: death,
-            deadCount: deathRate
-          }
-        }));
+        if(!isCanceled) {
+          setRows(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
+            // the following keys doesn't match the value name, as I don't want to change the 
+            // key names for global data(the two pages share the same data structure)
+            return {
+              countryEnglishName: name,
+              confirmedCount: confirmed,
+              suspectedCount: '0',
+              curedCount: death,
+              deadCount: deathRate
+            }
+          }));
+        }
       });
     } else {
       // Global data
@@ -76,10 +80,11 @@ export default function StickyHeadTable({place, rows}) {
             }
             return country;
           });
-          setRows(dataWithInfectRate); 
+          if(!isCanceled) setRows(dataWithInfectRate); 
         });
       } 
     }
+    return () => {isCanceled = true;};
   },[place, rows]);
 
   if(place === 'USA') { 

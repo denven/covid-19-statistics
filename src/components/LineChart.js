@@ -12,11 +12,17 @@ export default function CasesTrend({country}) {
   const [error, setError] = useState(false);  // dependency flag for re-send request
   
   useEffect(() => {
+
+    const source = axios.CancelToken.source();
+    let isCanceled = false;
+
     if(country === 'China') {
       // { date, confirmedNum, suspectedNum, curesNum, deathsNum } 
       axios.get(`./assets/ChinaHisCases.json`).then( ({data}) => {
-        setData(data);
-        setReady(true);
+        if(!isCanceled) {
+          setData(data);
+          setReady(true);
+        }
       }).catch(e => { 
         setError(true);  // this will activate another request
         console.log('Request history data in China', e) 
@@ -25,17 +31,21 @@ export default function CasesTrend({country}) {
 
     if(country === 'USA') {
       axios.get(`./assets/UsaCasesHistory.json`).then( ({data}) => {
-        setData({
-          date: data.cases.map(day => day.date),
-          confirmedNum: data.cases.map(day => day.confirmedNum),
-          increasedNum: data.cases.map(day => day.increasedNum),
-          curesNum: data.cases.map(day => day.curesNum),
-          deathsNum: data.cases.map(day => day.deathsNum)
-        });
-        setReady(true);
+        if(!isCanceled) {
+          setData({
+            date: data.cases.map(day => day.date),
+            confirmedNum: data.cases.map(day => day.confirmedNum),
+            increasedNum: data.cases.map(day => day.increasedNum),
+            curesNum: data.cases.map(day => day.curesNum),
+            deathsNum: data.cases.map(day => day.deathsNum)
+          });
+          setReady(true);
+        }
       });
     }
-    // return (console.log('Cleanup'));
+ 
+    return () => { source.cancel(); isCanceled = true; };
+
   },[country, error]);
 
   const getLoadingOption = () => {

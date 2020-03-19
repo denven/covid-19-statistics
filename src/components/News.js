@@ -43,9 +43,12 @@ export default function LatestNews () {
   const [news, setNews] = useState([])
 
   useEffect(() => {
+    const source = axios.CancelToken.source();
+    let isCanceled = false;
     axios.get(`./assets/LatestNews.json`).then( ({data}) => {
-      setNews(data.articles);
+      if(!isCanceled) setNews(data.articles);
     });
+    return () => { source.cancel(); isCanceled = true; }; 
   }, []);
 
   return (

@@ -11,6 +11,7 @@ export default function MapUSA() {
   const [cases, setCases] = useState({dates:[], data:[]});
 
   useEffect(() => {
+    let isCanceled = false;
     axios.get(`./assets/UsaGEO.json`).then( ({data}) => {
       echarts.registerMap('USA', data, {
         // Move Alaska to the bottom left of United States
@@ -24,22 +25,30 @@ export default function MapUSA() {
         // Puerto Rico
         'Puerto Rico': { left: -76, top: 26, width: 2 }
       });
-      setReady(true);
+
+      if(!isCanceled) setReady(true);
     });
+
+    return () => {isCanceled = true;}
+
   }, []);
 
   useEffect(() => {
+    let isCanceled = false;
     axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
-      setCases(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
-        return {
-          name: name,
-          value: confirmed,
-          cured: death,    // this is weired as the table column name changes, recoverd/increased number cannot be fetchable
-          death: deathRate // this is weired as the table column name changes
-        }
-      }));
+      if(!isCanceled) {
+        setCases(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
+          return {
+            name: name,
+            value: confirmed,
+            cured: death,    // this is weired as the table column name changes, recoverd/increased number cannot be fetchable
+            death: deathRate // this is weired as the table column name changes
+          }
+        }));
+      }
       // setReady(loaded);
     });
+    return () => {isCanceled = true;}
   }, []);
 
   const getLoadingOption = () => {

@@ -8,11 +8,16 @@ export default function MapGlobal({mapData}) {
   const [loaded, setReady] = useState(false);
 
   useEffect(() => {
+    let isCancelled = false;
+    
     import(`echarts/map/json/world.json`).then(map => {
-      echarts.registerMap('world', map.default)  
-      setReady(true);
-    });
-   }, []);
+      echarts.registerMap('world', map.default);
+      if(!isCancelled) setReady(true);
+    }).catch(error => console.log(error));
+    
+    return () => {isCancelled = true;};
+
+  }, []);
  
   const getLoadingOption = () => {
     return {

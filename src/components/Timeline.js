@@ -60,12 +60,14 @@ export default function MyTimeline() {
   const [cases, setCases] = useState([]);
 
   useEffect(() => {    
+    let isCanceled = false;
     axios.get(`./assets/CanadaTimeline.json`).then( ({data}) => {
-        if(Array.isArray(data.cases)){
+        if(Array.isArray(data.cases) && !isCanceled){
           setCases(data.cases);
         }
     });
 
+    return () => {isCanceled = true;}
   }, []);
 
   return (

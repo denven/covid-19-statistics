@@ -10,11 +10,13 @@ export default function MapChina({chinaMap}) {
   // const [data, setData] = useState([]);
   const [loaded, setReady] = useState(false);  // is map data ready? cannot change it in useEffect!!!
   useEffect(() => {
+    let isCancelled = false;
     // register as 'china-' rather than 'china' to hide Southern seas on map
     import(`echarts/map/json/china.json`).then(map => {
       echarts.registerMap('china-', map.default);
-      setReady(true);
+      if(!isCancelled) setReady(true);
     });
+    return () => {isCancelled = true;};
   }, []);
 
   // Number value formatter
