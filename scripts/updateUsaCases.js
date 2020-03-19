@@ -65,7 +65,8 @@ async function getUsaLatestCases () {
       let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
       let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,4}/g).length > 1 ? 
                            $(data[key + 1]).text().match(/[\d]{1,4}/g)[1] : '0'; 
-
+      console.log(stateEnglishName, stateIncreased, 'key:', key);
+      if(key > 300) break;
       if(stateEnglishName) {
         curCases.push({
           name: stateEnglishName,
