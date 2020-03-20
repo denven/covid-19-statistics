@@ -1,5 +1,5 @@
 {
-    "date": "2020-03-19 12:00:08",
+    "date": "2020-03-20 00:00:08",
     "cases": [
         {
             "date": "1/28",
@@ -872,12 +872,12 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "257",
+                    "value": "258",
                     "suspect": ""
                 },
                 {
                     "name": "British Columbia",
-                    "value": "231",
+                    "value": "271",
                     "suspect": ""
                 },
                 {
@@ -887,7 +887,7 @@
                 },
                 {
                     "name": "Alberta",
-                    "value": "119",
+                    "value": "146",
                     "suspect": ""
                 },
                 {
@@ -897,8 +897,8 @@
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "2",
-                    "suspect": "14"
+                    "value": "8",
+                    "suspect": "12"
                 },
                 {
                     "name": "Newfoundland and Labrador",
@@ -917,8 +917,78 @@
                 },
                 {
                     "name": "New Brunswick",
+                    "value": "7",
+                    "suspect": "4"
+                },
+                {
+                    "name": "Yukon",
+                    "value": "",
+                    "suspect": ""
+                },
+                {
+                    "name": "Northwest Territories",
+                    "value": "",
+                    "suspect": ""
+                },
+                {
+                    "name": "Nunavut",
+                    "value": "",
+                    "suspect": ""
+                }
+            ]
+        },
+        {
+            "date": "3/20",
+            "cases": [
+                {
+                    "name": "Ontario",
+                    "value": "258",
+                    "suspect": ""
+                },
+                {
+                    "name": "British Columbia",
+                    "value": "271",
+                    "suspect": ""
+                },
+                {
+                    "name": "Quebec",
+                    "value": "121",
+                    "suspect": ""
+                },
+                {
+                    "name": "Alberta",
+                    "value": "146",
+                    "suspect": ""
+                },
+                {
+                    "name": "Manitoba",
+                    "value": "17",
+                    "suspect": ""
+                },
+                {
+                    "name": "Saskatchewan",
+                    "value": "8",
+                    "suspect": "12"
+                },
+                {
+                    "name": "Newfoundland and Labrador",
+                    "value": "1",
+                    "suspect": "2"
+                },
+                {
+                    "name": "Prince Edward Island",
                     "value": "2",
+                    "suspect": ""
+                },
+                {
+                    "name": "Nova Scotia",
+                    "value": "5",
                     "suspect": "9"
+                },
+                {
+                    "name": "New Brunswick",
+                    "value": "7",
+                    "suspect": "4"
                 },
                 {
                     "name": "Yukon",
@@ -939,9 +1009,9 @@
         }
     ],
     "overall": {
-        "confirmed": "800",
+        "confirmed": "846",
         "recovered": "12",
-        "death": "10",
-        "increased": 73
+        "death": "12",
+        "increased": 0
     }
 }
