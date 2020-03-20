@@ -2,6 +2,78 @@
     "articles": [
         {
             "source": {
+                "id": null,
+                "name": "Birminghammail.co.uk"
+            },
+            "publishedAt": "2020-03-20T16:24:34Z",
+            "title": "Where each of the latest 39 UK coronavirus deaths took place - Birmingham Live",
+            "url": "https://www.birminghammail.co.uk/news/midlands-news/each-latest-39-uk-coronavirus-17955817",
+            "urlToImage": "https://i2-prod.walesonline.co.uk/incoming/article17913355.ece/ALTERNATES/s1200/2_Drive-Through-Coronavirus-Test-Site-Established-In-Wolverhampton.jpg",
+            "description": "A further 39 people, who tested positive for the coronavirus (Covid-19) have died, bringing the total number of confirmed reported deaths in England to 167",
+            "content": "A further 39 people who tested positive for coronavirus have died, bringing the total number of confirmed reported deaths in England to 167, NHS England said.\r\nA statement from NHS England said: A further 39 people, who tested positive for the coronavirus (Co… [+1306 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "publishedAt": "2020-03-20T16:00:00Z",
+            "title": "Coronavirus symptoms: A list and when to seek help - CNN",
+            "url": "https://www.cnn.com/2020/03/20/health/coronavirus-symptoms-list-what-to-do-wellness/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200204130938-cdc-coronavirus-illustration-super-tease.jpg",
+            "description": "CNN asked three of the nation's leading medical experts about the symptoms of the novel coronavirus or Covid-19 as well as when and how to act upon that information.",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Globalnews.ca"
+            },
+            "publishedAt": "2020-03-20T15:48:07Z",
+            "title": "Coronavirus: How COVID-19 is spreading across Canada - Global News",
+            "url": "http://globalnews.ca/news/6700788/coronavirus-covid-19-canada-cases-data/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/nykw104-313_2020_231834-1.jpg?quality=70&strip=all&w=720&h=379&crop=1",
+            "description": "As data comes out, charts can tell us more about Canada's COVID-19 outbreak: so far, B.C. has been hit the hardest by the new coronavirus.",
+            "content": "The new coronavirus has been spreading quickly in Canada, with known cases of COVID-19, the disease caused by the virus, soaring toward 1,000.\r\nHow many are really out there? It’s impossible to tell since not everybody who may have the new coronavirus gets te… [+2874 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Globalnews.ca"
+            },
+            "publishedAt": "2020-03-20T15:47:51Z",
+            "title": "Waterloo Region confirms 2 new coronavirus cases, total rises to 14 active cases - Global News",
+            "url": "http://globalnews.ca/news/6707425/coronavirus-waterloo-region-new-cases/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/nyjm103-311_2020_164606.jpg?quality=70&strip=all&w=720&h=379&crop=1",
+            "description": "Region of Waterloo Public Health has announced two new cases of the novel coronavirus, including a man in his 70s who is now hospitalized.",
+            "content": "Region of Waterloo Public Health has announced two new cases of the novel coronavirus, including a man in his 70s who is now hospitalized.\r\nOfficials said on Friday that the man is also the third case of community transmission in the region.\r\nREAD MORE:\r\nWate… [+1908 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "publishedAt": "2020-03-20T15:12:46Z",
+            "title": "Pandemic: The global spread of coronavirus - RTÉ News",
+            "url": "https://www.youtube.com/watch?v=_Z0lrBKzL2E",
+            "urlToImage": "https://i.ytimg.com/vi/_Z0lrBKzL2E/maxresdefault.jpg",
+            "description": "The number of people infected with coronavirus was more than 244,000 across the world as of Friday 20 March), with more than 10,000 deaths. The flu-like viru...",
+            "content": "The number of people infected with coronavirus was more than 244,000 across the world as of Friday 20 March), with more than 10,000 deaths.The flu-like virus was first detected in the Chinese city of Wuhan late last year and has since spread to more than 180 … [+859 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nydailynews.com"
+            },
+            "publishedAt": "2020-03-20T14:20:10Z",
+            "title": "Early coronavirus symptom could be upset stomach - New York Daily News",
+            "url": "https://www.nydailynews.com/coronavirus/ny-coronavirus-early-symptoms-digestive-upset-tummy-study-20200320-cavf5vbcjvce3argsgu6x3hae4-story.html",
+            "urlToImage": "https://www.nydailynews.com/resizer/5l7dcs-CGKIgdxKp1I5ug5XWtGA=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/R5YCJWSHFBESLNDSNVHOL3XLHE.jpg",
+            "description": "Nearly half of the patients hospitalized in Wuhan and the wider Chinese province of Hubei, where the coronavirus first emerged, suffered from digestive issues.",
+            "content": null
+        },
+        {
+            "source": {
                 "id": "cnn",
                 "name": "CNN"
             },
@@ -14,27 +86,15 @@
         },
         {
             "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "publishedAt": "2020-03-20T13:40:08Z",
-            "title": "Woman, 51, who caught coronavirus with her husband describes symptoms - Wales Online",
-            "url": "https://news.google.com/__i/rss/rd/articles/CBMiU2h0dHBzOi8vd3d3LndhbGVzb25saW5lLmNvLnVrL25ld3MvdWstbmV3cy93b21hbi01MS13aG8tY2F1Z2h0LWNvcm9uYXZpcnVzLTE3OTUzNDIw0gFXaHR0cHM6Ly93d3cud2FsZXNvbmxpbmUuY28udWsvbmV3cy91ay1uZXdzL3dvbWFuLTUxLXdoby1jYXVnaHQtY29yb25hdmlydXMtMTc5NTM0MjAuYW1w?oc=5",
-            "urlToImage": null,
-            "description": null,
-            "content": null
-        },
-        {
-            "source": {
                 "id": null,
-                "name": "Ecowatch.com"
+                "name": "Youtube.com"
             },
-            "publishedAt": "2020-03-20T13:16:25Z",
-            "title": "Will Warmer Weather Curb the Spread of Coronavirus? - EcoWatch",
-            "url": "https://www.ecowatch.com/coronavirus-warm-weather-2645546364.html",
-            "urlToImage": "https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjg4NzU5MC9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYzMzczMDQxMH0._7fkoZYoAy26poB6ajMqkql314pUbo1HKSqEq9TcmZI/img.jpg?width=1200&coordinates=0%2C37%2C0%2C38&height=600",
-            "description": "Experts caution that several factors will determine whether transmission rates decline in the coming months.",
-            "content": "As the world continues to cope with the onset of SARS-CoV-2, the virus responsible for the disease COVID-19, there is hope that the virus may follow the suit of similar respiratory illnesses and see a slower spread during the warmer months.\r\nA growing body of… [+4908 chars]"
+            "publishedAt": "2020-03-20T13:15:00Z",
+            "title": "Doctor tells Britons: The NHS can't cope with coronavirus, please stop going out | LBC - LBC",
+            "url": "https://www.youtube.com/watch?v=KpfStJ9qa70",
+            "urlToImage": "https://i.ytimg.com/vi/KpfStJ9qa70/maxresdefault.jpg",
+            "description": "This doctor pleaded with people to take the government's social distancing advice seriously and stay at home because the NHS is already struggling to cope wi...",
+            "content": "This doctor pleaded with people to take the government's social distancing advice seriously and stay at home because the NHS is already struggling to cope with the coronavirus crisis.\r\nJack is an Intensive Care consultant at the NHS and called Tom Swarbrick t… [+1389 chars]"
         },
         {
             "source": {
@@ -47,18 +107,6 @@
             "urlToImage": "https://i.ytimg.com/vi/39vZ7BE-cdg/maxresdefault.jpg",
             "description": "BREAKING: Social distancing restrictions need to be in place for \"at least most of a year\", according to scientists advising the government on how to contain...",
             "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-20T12:40:16Z",
-            "title": "Coronavirus Pandemic: Tunisia announces first COVID-19 death, gears up to battle virus - FRANCE 24 English",
-            "url": "https://www.youtube.com/watch?v=kHPLLBaYm9E",
-            "urlToImage": "https://i.ytimg.com/vi/kHPLLBaYm9E/maxresdefault.jpg",
-            "description": "Coronavirus Pandemic: Tunisia announces first COVID-19 death, gears up to battle virus Subscribe to France 24 now: http://f24.my/youtubeEN FRANCE 24 live new...",
-            "content": "Coronavirus Pandemic: Tunisia announces first COVID-19 death, gears up to battle virus\r\nSubscribe to France 24 now:http://f24.my/youtubeEN\r\nFRANCE 24 live news stream: all the latest news 24/7http://f24.my/YTliveEN\r\nVisit our website:http://www.france24.com\r\n… [+171 chars]"
         },
         {
             "source": {
@@ -99,26 +147,14 @@
         {
             "source": {
                 "id": null,
-                "name": "Vox.com"
+                "name": "Citynews.ca"
             },
-            "publishedAt": "2020-03-20T11:39:15Z",
-            "title": "Coronavirus and cancer treatment: How doctors and patients are managing in the pandemic - Vox.com",
-            "url": "https://www.vox.com/2020/3/20/21186681/coronavirus-cancer-treatment",
-            "urlToImage": "https://cdn.vox-cdn.com/thumbor/FlQDU78n-t7GArpTiK_Z1oJz7Fg=/0x1193:3024x2776/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19819670/IMG_3369.jpg",
-            "description": "“Oncologists are in a very particular predicament right now,” says Dr. Siddhartha Mukherjee.",
-            "content": "Silver Leo has been trying to keep her young children, ages 3 and 9, entertained at home since March 13, when their public schools in Alexandria, Virginia, announced closures. Child care is a challenge for a lot of parents these days, but particularly for Leo… [+12527 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-20T11:07:39Z",
-            "title": "CDC: Younger Adults Also at Risk of Coronavirus Hospitalization - NBC New York",
-            "url": "https://www.youtube.com/watch?v=2Isgexy6b8U",
-            "urlToImage": "https://i.ytimg.com/vi/2Isgexy6b8U/hqdefault.jpg",
-            "description": "Younger people are also at risk of contracting coronavirus and being hospitalized, the CDC said Thursday. Chris Glorioso reports.",
-            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
+            "publishedAt": "2020-03-20T11:13:14Z",
+            "title": "Western University researchers begin work on developing a COVID-19 vaccine - CityNews",
+            "url": "https://toronto.citynews.ca/2020/03/20/western-university-coronavirus-vaccine/",
+            "urlToImage": "https://toronto.citynews.ca/wp-content/blogs.dir/sites/10/2015/12/14/needlesyringeassistedsuicide16x9-1024x576.jpg",
+            "description": "A team of Western University researchers has begun work on creating a vaccine for the devastating novel coronavirus. University officials say experts in virology, microbiology, vaccinology, bioinformatics and immunology have united in a bid to develop and tes…",
+            "content": "A team of Western University researchers has begun work on creating a vaccine for the devastating novel coronavirus.\r\nUniversity officials say experts in virology, microbiology, vaccinology, bioinformatics and immunology have united in a bid to develop and te… [+1238 chars]"
         },
         {
             "source": {
@@ -134,15 +170,39 @@
         },
         {
             "source": {
-                "id": null,
-                "name": "Ghanaweb.com"
+                "id": "the-globe-and-mail",
+                "name": "The Globe And Mail"
             },
-            "publishedAt": "2020-03-20T10:00:32Z",
-            "title": "Coronavirus and the workforce behind the testing in Ghana - GhanaWeb",
-            "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Coronavirus-and-the-workforce-behind-the-testing-in-Ghana-899629",
-            "urlToImage": null,
-            "description": null,
-            "content": null
+            "publishedAt": "2020-03-20T09:29:13Z",
+            "title": "The latest on the coronavirus: Irregular migrants to be turned away at border; Ottawa to boost efforts to secure supplies of medical gear - The Globe and Mail",
+            "url": "https://www.theglobeandmail.com/canada/article-the-latest-on-the-coronavirus-ottawa-to-announce-new-measures-to/",
+            "urlToImage": "https://www.theglobeandmail.com/resizer/_X6r4aP288CT7GShsnngbTsVPu4=/1200x0/filters:quality(80)/arc-anglerfish-tgam-prod-tgam.s3.amazonaws.com/public/QWHNDR4NHFCJNLOAOGNZLT6N3E.jpg",
+            "description": "Plus: Ontario reports 50 new cases; Sobeys installs plexiglass shields; Canadian dies in Japan",
+            "content": "Latest headlines\r\n<ul><li>Prime Minister Justin Trudeau says irregular migrants will be turned back to the United States when they reach the Canadian border.</li><li>Ottawa to boost efforts to secure supplies of medical gear</li><li>Ottawa prepares multibilli… [+15878 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Cnet.com"
+            },
+            "publishedAt": "2020-03-20T08:57:25Z",
+            "title": "Coronavirus: Zoonotic, isopropyl, PCR and every other word you should know now - CNET",
+            "url": "https://www.cnet.com/how-to/coronavirus-zoonotic-isopropyl-pcr-and-every-other-word-you-should-know-now/",
+            "urlToImage": "https://cnet1.cbsistatic.com/img/AGLyjAUbi0ZmdObzlXrf-OaD-JY=/756x567/2020/03/17/fb401153-4120-47ce-97c1-bb939ed8bccf/coronavirus-covid-19-global-cases-johnshopkinscsse-mar172020.jpg",
+            "description": "If you aren't sure what SARS-CoV-2 is, the difference between self-isolation and self-quarantine or how to flatten the curve, read this.",
+            "content": "Keeping those hands germ-free is essential.\r\nAngela Lang/CNET\r\nFor the most up-to-date news and information about the coronavirus pandemic, visit the WHO website.\r\nDo you know the difference between self-quarantine and self-isolation? How about the name for t… [+9999 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Tribune.com.pk"
+            },
+            "publishedAt": "2020-03-20T08:39:34Z",
+            "title": "World’s fastest supercomputer identifies chemicals that could stop coronavirus - The Express Tribune",
+            "url": "https://tribune.com.pk/story/2180141/8-worlds-fastest-supercomputer-identifies-chemicals-stop-coronavirus/",
+            "urlToImage": "https://c.tribune.com.pk/2020/03/2180141-image-1584686969-563-640x480.jpg",
+            "description": "Supercomputer Summit identified 77 chemicals which could help researchers bring out the most effective vaccine",
+            "content": "PHOTO: Oak Ridge laboratory \r\nThe coronavirus pandemic has created extraordinary challenges for scientists who are working diligently to bring out a solution.\r\nDue to the speed at which this virus is spreading researchers need a high-speed computer and this i… [+2457 chars]"
         },
         {
             "source": {
@@ -159,86 +219,26 @@
         {
             "source": {
                 "id": null,
-                "name": "Youtube.com"
+                "name": "Thesun.co.uk"
             },
-            "publishedAt": "2020-03-20T08:14:55Z",
-            "title": "Coronavirus: 'It's just a build-up of dead people,' says British nurse in Italy - The Telegraph",
-            "url": "https://www.youtube.com/watch?v=_suhYeWEcJg",
-            "urlToImage": "https://i.ytimg.com/vi/_suhYeWEcJg/maxresdefault.jpg",
-            "description": "Coronavirus patients in Italy are treated as \"numbers\", a British nurse has said, as hospitals struggle to deal with the huge increase in cases. Connor McAin...",
-            "content": "Coronavirus patients in Italy are treated as \"numbers\", a British nurse has said, as hospitals struggle to deal with the huge increase in cases.\r\nConnor McAinsh, who works at the Gavazzeni Hospital in Bergamo, said its intensive care unit has seen \"an endless… [+1096 chars]"
+            "publishedAt": "2020-03-20T06:10:02Z",
+            "title": "Tummy ache could be the first sign of coronavirus, scientists discover - The Sun",
+            "url": "http://www.thesun.co.uk/news/11207571/tummy-ache-sign-coronavirus-scientists-discover/",
+            "urlToImage": "https://www.thesun.co.uk/wp-content/uploads/2020/03/NINTCHDBPICT000571933160.jpg?strip=all&quality=100&w=1200&h=800&crop=1",
+            "description": "",
+            "content": "WITH coronavirus quickly spreading, people are being urged to look out for the key signs of the deadly illness.\r\nThe NHS warns the main symptoms of Covid-19 are a new, continuous cough, a high temperature - meaning you feel hot to touch on your chest or back … [+4197 chars]"
         },
         {
             "source": {
                 "id": null,
                 "name": "Youtube.com"
             },
-            "publishedAt": "2020-03-20T07:08:06Z",
-            "title": "How to cope with anxiety and stress linked to coronavirus pandemic - CNN",
-            "url": "https://www.youtube.com/watch?v=sXpIrDGXeTg",
-            "urlToImage": "https://i.ytimg.com/vi/sXpIrDGXeTg/maxresdefault.jpg",
-            "description": "CNN's Anderson Cooper and Dr. Sanjay Gupta speak with psychologist Gretchen Schmelzer during a CNN town hall about how to cope with stress induced by the cor...",
-            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Greekreporter.com"
-            },
-            "publishedAt": "2020-03-20T07:00:00Z",
-            "title": "The Truth About Coronavirus and Ibuprofen - Greek Reporter",
-            "url": "https://greece.greekreporter.com/2020/03/20/the-truth-about-coronavirus-and-ibuprofen/",
-            "urlToImage": "https://greece.greekreporter.com/files/file-20200319-22610-18gca3.jpg",
-            "description": "There's been some confusion recently on whether we should or shouldn't take ibuprofen to treat symptoms of COVID-19",
-            "content": "By Parastou Donyai, Professor and Director of Pharmacy Practice, University of Reading*\r\nTheres been some confusion recently on whether we should or shouldnt take ibuprofen to treat symptoms of COVID-19 especially after the World Health Organization (WHO) cha… [+6268 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-20T05:36:24Z",
-            "title": "CU Professor weighs in on malaria drug that may help treat coronavirus - Denver7 – The Denver Channel",
-            "url": "https://www.youtube.com/watch?v=2Gmir5H-yro",
-            "urlToImage": "https://i.ytimg.com/vi/2Gmir5H-yro/maxresdefault.jpg",
-            "description": "On Thursday, President Trump touted that chloroquine and hydroxychloroquine could help treat the novel coronavirus and the disease it causes, COVID-19. The d...",
-            "content": null
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-20T03:45:38Z",
-            "title": "Nearly 1 in 3 people with coronavirus is between 20 and 44 years old - First Coast News",
-            "url": "https://www.youtube.com/watch?v=sD0j7316o5g",
-            "urlToImage": "https://i.ytimg.com/vi/sD0j7316o5g/hqdefault.jpg",
-            "description": "While health officials have been stressing those 65 and older as the highest-risk group, young people are still contracting and possibly transmitting the virus.",
-            "content": null
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Fortmcmurraytoday.com"
-            },
-            "publishedAt": "2020-03-20T03:20:14Z",
-            "title": "First coronavirus case identified in Fort McMurray, presumptive case identified with commuter - Fort McMurray Today",
-            "url": "https://www.fortmcmurraytoday.com/news/local-news/first-coronavirus-case-identified-in-fort-mcmurray-presumptive-case-for-commuter",
-            "urlToImage": "https://nexus.prod.postmedia.digital/wp-content/uploads/2020/03/IMG_7339-scaled-2560.jpg",
-            "description": "The Regional Municipality of Wood Buffalo has confirmed its first case of coronavirus in the region. Another presumptive case has been identified in an individual who stayed at a work camp north of…",
-            "content": "The Regional Municipality of Wood Buffalo has confirmed its first case of coronavirus in the region. Another presumptive case has been identified in an individual who stayed at a work camp north of Fort McMurray.\r\nThe coronavirus presence in the region was co… [+2342 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Globalnews.ca"
-            },
-            "publishedAt": "2020-03-20T00:48:37Z",
-            "title": "Coronavirus: Dental hygienists concerned dentists are still providing non-essential service - Global News",
-            "url": "http://globalnews.ca/news/6703208/coronavirus-dental-hygienists-concerned-dentists-are-still-providing-non-essential-service/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/cpt11252016-4.jpg?quality=70&strip=all&w=720&h=379&crop=1",
-            "description": "The B.C. Dental Hygienists Association is concerned about dentists in the province ignoring advice and continuing to operate regular service.",
-            "content": "The B.C. Dental Hygienists Association is concerned dentists in the province are ignoring advice and continuing to operate regular service, despite the novel coronavirus pandemic.\r\nAndrea Burton, executive director of the association, says there are some hygi… [+2523 chars]"
+            "publishedAt": "2020-03-20T04:25:03Z",
+            "title": "Young People Can Get Coronavirus And Are Urged To Stay Away From Crowds - CBS Denver",
+            "url": "https://www.youtube.com/watch?v=vC15y1ePCys",
+            "urlToImage": "https://i.ytimg.com/vi/vC15y1ePCys/maxresdefault.jpg",
+            "description": "Young people can get COVID-19 but don't seem to pay attention to health warnings.",
+            "content": "Sign in to report inappropriate content.\r\nSign in"
         }
     ]
 }
