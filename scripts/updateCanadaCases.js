@@ -128,17 +128,22 @@ async function updateHistoryCases () {
     // PART 1: GET provinces cases today
     let casesAsOfToday = [];
     let presumptiveCases = [];
+
     let elements = $('tr', '.wikitable');  //get table rows
+    // elements.each( (index, item) => {
+    //     console.log(index, $(item).text()); 
+    //   })
+
 
     try {  
       let provAbbrs = [];
       elements.each( (index, item) => {
         // get the abbreviations of provinces
-        if(index === 1) {  // wikipedia changed table format Mar 19, 2020
+        if(index === 17) {  // wikipedia changed table format Mar 19, 2020
           provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
+          console.log(provAbbrs);
         }
-
-        if(index > 1) {
+        if(index > 17) {
           // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
           let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
           // Total confirmed row
