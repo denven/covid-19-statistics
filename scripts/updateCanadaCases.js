@@ -129,21 +129,20 @@ async function updateHistoryCases () {
     let casesAsOfToday = [];
     let presumptiveCases = [];
 
-    let elements = $('tr', '.wikitable');  //get table rows
-    // elements.each( (index, item) => {
-    //     console.log(index, $(item).text()); 
-    //   })
-
+    let $tables  = $('.wikitable');  //get wiki tables
+    let elements = $($tables[1]).find('tr');
+    
+    // let elements = $('tr', '.wikitable');  //get table rows
 
     try {  
       let provAbbrs = [];
       elements.each( (index, item) => {
         // get the abbreviations of provinces
-        if(index === 17) {  // wikipedia changed table format Mar 19, 2020
+        if(index === 1) {  // wikipedia changed table format Mar 19, 2020
           provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
           console.log(provAbbrs);
         }
-        if(index > 17) {
+        if(index > 1) {
           // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
           let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
           // Total confirmed row
@@ -247,10 +246,10 @@ async function updateHistoryCases () {
 
       // save to json file 
       const casesString = JSON.stringify(jsonData, null, 4);
-      fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
-        if(err) console.log('Error in writing data into Json file', err);
-        console.log(`Updated Canada history cases data at ${jsonData.date}`);
-      });
+      // fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
+      //   if(err) console.log('Error in writing data into Json file', err);
+      //   console.log(`Updated Canada history cases data at ${jsonData.date}`);
+      // });
 
     } catch (error) {
       console.log(`Writing Canada's latest cases to file`, error)
