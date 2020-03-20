@@ -6,7 +6,7 @@ const getCountryEnName = (country) => {
       case "库拉索岛": return "Curaçao";
       case "瓜德罗普岛": return "Guadeloupe";
       case "美属维尔京群岛": return "U.S. Virgin Islands";
-      case "圣巴泰勒米岛": return "St-Barthélemy Island";
+      case "圣巴泰勒米岛": return "St. Barthélemy Island";
       case "吉尔吉斯斯坦": return "Kyrgyzstan";
       case "马约特": return "Mayotte";
       case "黑山": return "Montenegro";
