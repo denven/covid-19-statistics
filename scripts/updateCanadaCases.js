@@ -4,6 +4,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const _ = require('lodash');
 const moment = require('moment');
+const DEBUG_MODE_ON = false;
 
 const provinces = [
   { fullname: "Ontario", abbr: 'ON'},
@@ -245,11 +246,13 @@ async function updateHistoryCases () {
       };
 
       // save to json file 
-      const casesString = JSON.stringify(jsonData, null, 4);
-      // fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
-      //   if(err) console.log('Error in writing data into Json file', err);
-      //   console.log(`Updated Canada history cases data at ${jsonData.date}`);
-      // });
+      if(!DEBUG_MODE_ON) {
+        const casesString = JSON.stringify(jsonData, null, 4);
+        fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
+          if(err) console.log('Error in writing data into Json file', err);
+          console.log(`Updated Canada history cases data at ${jsonData.date}`);
+        });
+      }
 
     } catch (error) {
       console.log(`Writing Canada's latest cases to file`, error)
