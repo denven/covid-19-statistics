@@ -35,14 +35,25 @@ const StyledTableCell = withStyles(theme => ({
   body: { fontSize: 14, },
 }))(TableCell);
 
+const isWideScreen = () => {
+    
+  let mediaQuery = window.matchMedia("(orientation: portrait)");
+  // console.log('sss', mediaQuery);
+  if(mediaQuery.matches) { return false };
+
+  if(document.body.clientWidth < 1024) { return false; }
+
+  return true;
+}
+
 const useStyles = makeStyles({
   root: { width: '100%', }, container: { maxHeight: "82vh" },
   chart: {marginTop: '2.5%'},
   switch: {
-    display: 'flex',
+    display: isWideScreen() ? 'flex' : 'none',
     position: 'fixed',
     top: '11wh',
-    marginLeft: '38vw', 
+    marginLeft: '5vw', 
     height: '2.2rem',
     // backgroundSize: '100% auto',
     zIndex: 9999,
@@ -218,6 +229,7 @@ export default function Canada() {
     });
     return () => {isCanceled = true;}
   }, []);
+
 
   switch(viewMode) {
     case 'map': 
