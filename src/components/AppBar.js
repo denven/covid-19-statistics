@@ -21,6 +21,7 @@ import TableGlobal from './TableGlobal';
 import MapChina from './MapChina';
 import CasesTrend from './LineChart';
 
+import CanadaView from './Canada';
 import MapCanada from './MapCanada';
 import Timeline from './Timeline';
 
@@ -58,7 +59,7 @@ function Canada({overall}) {
         <OverallData showGlobal={false} place={'Canada'} overall={overall}/>
       </div>
       <div className="bodyBottom">
-        <div className="bodyLeft"> <MapCanada/> </div>
+        <div className="bodyLeft"> <CanadaView/> </div>
         <div className="bodyRight"> <Timeline/> </div>
       </div>
     </div>
