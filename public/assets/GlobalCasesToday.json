@@ -1,5 +1,5 @@
 {
-    "time": "2020-03-20 20:00:06",
+    "time": "2020-03-20 21:00:03",
     "countries": [
         {
             "name": "China",
@@ -15,9 +15,9 @@
         {
             "name": "Italy",
             "total": "47,021",
-            "increased": "5,986",
+            "increased": "0",
             "dead": "4,032",
-            "newDeath": "627",
+            "newDeath": "0",
             "recovered": "5,129",
             "active": "37,860",
             "severe": "2,655",
@@ -26,9 +26,9 @@
         {
             "name": "Spain",
             "total": "21,571",
-            "increased": "3,494",
+            "increased": "0",
             "dead": "1,093",
-            "newDeath": "262",
+            "newDeath": "0",
             "recovered": "1,588",
             "active": "18,890",
             "severe": "939",
@@ -37,42 +37,42 @@
         {
             "name": "Germany",
             "total": "19,848",
-            "increased": "4,528",
+            "increased": "0",
             "dead": "68",
-            "newDeath": "24",
+            "newDeath": "0",
             "recovered": "180",
             "active": "19,600",
             "severe": "2",
             "perMppl": "237"
         },
         {
-            "name": "USA",
-            "total": "19,650",
-            "increased": "5,861",
-            "dead": "263",
-            "newDeath": "56",
-            "recovered": "147",
-            "active": "19,240",
-            "severe": "64",
-            "perMppl": "59"
-        },
-        {
             "name": "Iran",
             "total": "19,644",
-            "increased": "1,237",
+            "increased": "0",
             "dead": "1,433",
-            "newDeath": "149",
+            "newDeath": "0",
             "recovered": "6,745",
             "active": "11,466",
             "severe": "0",
             "perMppl": "234"
         },
         {
+            "name": "USA",
+            "total": "19,640",
+            "increased": "257",
+            "dead": "264",
+            "newDeath": "8",
+            "recovered": "147",
+            "active": "19,229",
+            "severe": "64",
+            "perMppl": "59"
+        },
+        {
             "name": "France",
             "total": "12,612",
-            "increased": "1,617",
+            "increased": "0",
             "dead": "450",
-            "newDeath": "78",
+            "newDeath": "0",
             "recovered": "1,587",
             "active": "10,575",
             "severe": "1,297",
@@ -81,9 +81,9 @@
         {
             "name": "S",
             "total": "8,799",
-            "increased": "234",
+            "increased": "147",
             "dead": "102",
-            "newDeath": "11",
+            "newDeath": "8",
             "recovered": "2,612",
             "active": "6,085",
             "severe": "59",
@@ -92,9 +92,9 @@
         {
             "name": "Switzerland",
             "total": "5,615",
-            "increased": "1,393",
+            "increased": "0",
             "dead": "56",
-            "newDeath": "13",
+            "newDeath": "0",
             "recovered": "15",
             "active": "5,544",
             "severe": "141",
@@ -103,9 +103,9 @@
         {
             "name": "UK",
             "total": "3,983",
-            "increased": "714",
+            "increased": "0",
             "dead": "177",
-            "newDeath": "33",
+            "newDeath": "0",
             "recovered": "65",
             "active": "3,741",
             "severe": "20",
@@ -114,9 +114,9 @@
         {
             "name": "Netherlands",
             "total": "2,994",
-            "increased": "534",
+            "increased": "0",
             "dead": "106",
-            "newDeath": "30",
+            "newDeath": "0",
             "recovered": "2",
             "active": "2,886",
             "severe": "210",
@@ -125,7 +125,7 @@
         {
             "name": "Austria",
             "total": "2,649",
-            "increased": "470",
+            "increased": "0",
             "dead": "6",
             "newDeath": "0",
             "recovered": "9",
@@ -136,9 +136,9 @@
         {
             "name": "Belgium",
             "total": "2,257",
-            "increased": "462",
+            "increased": "0",
             "dead": "37",
-            "newDeath": "16",
+            "newDeath": "0",
             "recovered": "204",
             "active": "2,016",
             "severe": "164",
@@ -147,7 +147,7 @@
         {
             "name": "Norway",
             "total": "1,959",
-            "increased": "169",
+            "increased": "0",
             "dead": "7",
             "newDeath": "0",
             "recovered": "1",
@@ -158,9 +158,9 @@
         {
             "name": "Sweden",
             "total": "1,639",
-            "increased": "200",
+            "increased": "0",
             "dead": "16",
-            "newDeath": "5",
+            "newDeath": "0",
             "recovered": "16",
             "active": "1,607",
             "severe": "21",
@@ -169,9 +169,9 @@
         {
             "name": "Denmark",
             "total": "1,255",
-            "increased": "104",
+            "increased": "0",
             "dead": "9",
-            "newDeath": "3",
+            "newDeath": "0",
             "recovered": "1",
             "active": "1,245",
             "severe": "37",
@@ -180,7 +180,7 @@
         {
             "name": "Canada",
             "total": "1,087",
-            "increased": "214",
+            "increased": "0",
             "dead": "12",
             "newDeath": "0",
             "recovered": "14",
@@ -191,20 +191,31 @@
         {
             "name": "Malaysia",
             "total": "1,030",
-            "increased": "130",
+            "increased": "0",
             "dead": "3",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "87",
             "active": "940",
             "severe": "26",
             "perMppl": "32"
         },
         {
+            "name": "Australia",
+            "total": "1,023",
+            "increased": "95",
+            "dead": "7",
+            "newDeath": "0",
+            "recovered": "46",
+            "active": "970",
+            "severe": "2",
+            "perMppl": "40"
+        },
+        {
             "name": "Portugal",
             "total": "1,020",
-            "increased": "234",
+            "increased": "0",
             "dead": "6",
-            "newDeath": "2",
+            "newDeath": "0",
             "recovered": "5",
             "active": "1,009",
             "severe": "26",
@@ -213,9 +224,9 @@
         {
             "name": "Japan",
             "total": "1,007",
-            "increased": "64",
+            "increased": "0",
             "dead": "35",
-            "newDeath": "2",
+            "newDeath": "0",
             "recovered": "215",
             "active": "757",
             "severe": "50",
@@ -224,29 +235,18 @@
         {
             "name": "Brazil",
             "total": "970",
-            "increased": "330",
+            "increased": "0",
             "dead": "11",
-            "newDeath": "4",
+            "newDeath": "0",
             "recovered": "2",
             "active": "957",
             "severe": "18",
             "perMppl": "5"
         },
         {
-            "name": "Australia",
-            "total": "928",
-            "increased": "172",
-            "dead": "7",
-            "newDeath": "0",
-            "recovered": "46",
-            "active": "875",
-            "severe": "2",
-            "perMppl": "36"
-        },
-        {
             "name": "Czechia",
             "total": "833",
-            "increased": "139",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "4",
@@ -259,7 +259,7 @@
             "total": "712",
             "increased": "0",
             "dead": "8",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "567",
             "active": "137",
             "severe": "15",
@@ -268,9 +268,9 @@
         {
             "name": "Israel",
             "total": "705",
-            "increased": "28",
+            "increased": "0",
             "dead": "1",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "15",
             "active": "689",
             "severe": "10",
@@ -279,7 +279,7 @@
         {
             "name": "Ireland",
             "total": "683",
-            "increased": "126",
+            "increased": "0",
             "dead": "3",
             "newDeath": "0",
             "recovered": "5",
@@ -290,9 +290,9 @@
         {
             "name": "Turkey",
             "total": "670",
-            "increased": "311",
+            "increased": "0",
             "dead": "9",
-            "newDeath": "5",
+            "newDeath": "0",
             "recovered": "0",
             "active": "661",
             "severe": "0",
@@ -301,9 +301,9 @@
         {
             "name": "Pakistan",
             "total": "501",
-            "increased": "47",
+            "increased": "0",
             "dead": "3",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "13",
             "active": "485",
             "severe": "0",
@@ -312,9 +312,9 @@
         {
             "name": "Greece",
             "total": "495",
-            "increased": "31",
+            "increased": "0",
             "dead": "10",
-            "newDeath": "4",
+            "newDeath": "0",
             "recovered": "19",
             "active": "466",
             "severe": "20",
@@ -323,9 +323,9 @@
         {
             "name": "Luxembourg",
             "total": "484",
-            "increased": "149",
+            "increased": "0",
             "dead": "5",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "6",
             "active": "473",
             "severe": "1",
@@ -334,7 +334,7 @@
         {
             "name": "Qatar",
             "total": "470",
-            "increased": "10",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "10",
@@ -345,7 +345,7 @@
         {
             "name": "Finland",
             "total": "450",
-            "increased": "50",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "10",
@@ -356,7 +356,7 @@
         {
             "name": "Chile",
             "total": "434",
-            "increased": "92",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "6",
@@ -367,9 +367,9 @@
         {
             "name": "Ecuador",
             "total": "426",
-            "increased": "166",
+            "increased": "0",
             "dead": "7",
-            "newDeath": "4",
+            "newDeath": "0",
             "recovered": "3",
             "active": "416",
             "severe": "2",
@@ -378,7 +378,7 @@
         {
             "name": "Poland",
             "total": "425",
-            "increased": "70",
+            "increased": "0",
             "dead": "5",
             "newDeath": "0",
             "recovered": "13",
@@ -389,7 +389,7 @@
         {
             "name": "Iceland",
             "total": "409",
-            "increased": "79",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "5",
@@ -400,7 +400,7 @@
         {
             "name": "Singapore",
             "total": "385",
-            "increased": "40",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "131",
@@ -411,9 +411,9 @@
         {
             "name": "Indonesia",
             "total": "369",
-            "increased": "60",
+            "increased": "0",
             "dead": "32",
-            "newDeath": "7",
+            "newDeath": "0",
             "recovered": "17",
             "active": "320",
             "severe": "0",
@@ -422,7 +422,7 @@
         {
             "name": "Saudi Arabia",
             "total": "344",
-            "increased": "70",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "8",
@@ -433,7 +433,7 @@
         {
             "name": "Slovenia",
             "total": "341",
-            "increased": "22",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "0",
@@ -444,7 +444,7 @@
         {
             "name": "Thailand",
             "total": "322",
-            "increased": "50",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "42",
@@ -455,7 +455,7 @@
         {
             "name": "Romania",
             "total": "308",
-            "increased": "31",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "31",
@@ -466,7 +466,7 @@
         {
             "name": "Bahrain",
             "total": "298",
-            "increased": "19",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "125",
@@ -477,9 +477,9 @@
         {
             "name": "Egypt",
             "total": "285",
-            "increased": "29",
+            "increased": "0",
             "dead": "8",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "42",
             "active": "235",
             "severe": "0",
@@ -488,7 +488,7 @@
         {
             "name": "Estonia",
             "total": "283",
-            "increased": "16",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -499,18 +499,29 @@
         {
             "name": "Peru",
             "total": "263",
-            "increased": "29",
+            "increased": "0",
             "dead": "4",
-            "newDeath": "3",
+            "newDeath": "0",
             "recovered": "1",
             "active": "258",
             "severe": "5",
             "perMppl": "8"
         },
         {
+            "name": "India",
+            "total": "258",
+            "increased": "9",
+            "dead": "5",
+            "newDeath": "0",
+            "recovered": "23",
+            "active": "230",
+            "severe": "0",
+            "perMppl": "0.2"
+        },
+        {
             "name": "Hong Kong",
             "total": "256",
-            "increased": "48",
+            "increased": "0",
             "dead": "4",
             "newDeath": "0",
             "recovered": "98",
@@ -521,7 +532,7 @@
         {
             "name": "Russia",
             "total": "253",
-            "increased": "54",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "12",
@@ -530,22 +541,11 @@
             "perMppl": "2"
         },
         {
-            "name": "India",
-            "total": "249",
-            "increased": "55",
-            "dead": "5",
-            "newDeath": "1",
-            "recovered": "23",
-            "active": "221",
-            "severe": "0",
-            "perMppl": "0.2"
-        },
-        {
             "name": "Philippines",
             "total": "230",
-            "increased": "13",
+            "increased": "0",
             "dead": "18",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "8",
             "active": "204",
             "severe": "1",
@@ -554,9 +554,9 @@
         {
             "name": "Iraq",
             "total": "208",
-            "increased": "16",
+            "increased": "0",
             "dead": "17",
-            "newDeath": "4",
+            "newDeath": "0",
             "recovered": "49",
             "active": "142",
             "severe": "0",
@@ -565,7 +565,7 @@
         {
             "name": "South Africa",
             "total": "202",
-            "increased": "52",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -576,7 +576,7 @@
         {
             "name": "Panama",
             "total": "200",
-            "increased": "63",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "1",
@@ -587,7 +587,7 @@
         {
             "name": "Lebanon",
             "total": "177",
-            "increased": "20",
+            "increased": "0",
             "dead": "4",
             "newDeath": "0",
             "recovered": "4",
@@ -598,7 +598,7 @@
         {
             "name": "Mexico",
             "total": "164",
-            "increased": "46",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "4",
@@ -609,7 +609,7 @@
         {
             "name": "Kuwait",
             "total": "159",
-            "increased": "11",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "22",
@@ -620,7 +620,7 @@
         {
             "name": "Argentina",
             "total": "158",
-            "increased": "30",
+            "increased": "0",
             "dead": "3",
             "newDeath": "0",
             "recovered": "3",
@@ -629,9 +629,20 @@
             "perMppl": "3"
         },
         {
+            "name": "Colombia",
+            "total": "158",
+            "increased": "13",
+            "dead": "0",
+            "newDeath": "0",
+            "recovered": "1",
+            "active": "157",
+            "severe": "0",
+            "perMppl": "3"
+        },
+        {
             "name": "San Marino",
             "total": "151",
-            "increased": "7",
+            "increased": "0",
             "dead": "14",
             "newDeath": "0",
             "recovered": "4",
@@ -640,22 +651,11 @@
             "perMppl": "4,450"
         },
         {
-            "name": "Colombia",
-            "total": "145",
-            "increased": "37",
-            "dead": "0",
-            "newDeath": "0",
-            "recovered": "1",
-            "active": "144",
-            "severe": "0",
-            "perMppl": "3"
-        },
-        {
             "name": "UAE",
             "total": "140",
             "increased": "0",
             "dead": "2",
-            "newDeath": "2",
+            "newDeath": "0",
             "recovered": "31",
             "active": "107",
             "severe": "2",
@@ -664,7 +664,7 @@
         {
             "name": "Slovakia",
             "total": "137",
-            "increased": "13",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -675,7 +675,7 @@
         {
             "name": "Armenia",
             "total": "136",
-            "increased": "14",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -686,9 +686,9 @@
         {
             "name": "Taiwan",
             "total": "135",
-            "increased": "27",
+            "increased": "0",
             "dead": "2",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "28",
             "active": "105",
             "severe": "0",
@@ -697,9 +697,9 @@
         {
             "name": "Serbia",
             "total": "135",
-            "increased": "32",
+            "increased": "0",
             "dead": "1",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "2",
             "active": "132",
             "severe": "4",
@@ -708,7 +708,7 @@
         {
             "name": "Croatia",
             "total": "130",
-            "increased": "20",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "5",
@@ -719,7 +719,7 @@
         {
             "name": "Bulgaria",
             "total": "127",
-            "increased": "20",
+            "increased": "0",
             "dead": "3",
             "newDeath": "0",
             "recovered": "1",
@@ -730,9 +730,9 @@
         {
             "name": "Costa Rica",
             "total": "113",
-            "increased": "26",
+            "increased": "0",
             "dead": "2",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "2",
             "active": "109",
             "severe": "2",
@@ -741,7 +741,7 @@
         {
             "name": "Latvia",
             "total": "111",
-            "increased": "25",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -752,7 +752,7 @@
         {
             "name": "Uruguay",
             "total": "110",
-            "increased": "31",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -763,9 +763,9 @@
         {
             "name": "Algeria",
             "total": "94",
-            "increased": "4",
+            "increased": "0",
             "dead": "11",
-            "newDeath": "2",
+            "newDeath": "0",
             "recovered": "32",
             "active": "51",
             "severe": "0",
@@ -774,7 +774,7 @@
         {
             "name": "Vietnam",
             "total": "91",
-            "increased": "6",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "17",
@@ -785,7 +785,7 @@
         {
             "name": "Bosnia and Herzegovina",
             "total": "89",
-            "increased": "25",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "2",
@@ -796,9 +796,9 @@
         {
             "name": "Morocco",
             "total": "86",
-            "increased": "23",
+            "increased": "0",
             "dead": "3",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "2",
             "active": "81",
             "severe": "1",
@@ -807,9 +807,9 @@
         {
             "name": "Hungary",
             "total": "85",
-            "increased": "12",
+            "increased": "0",
             "dead": "4",
-            "newDeath": "3",
+            "newDeath": "0",
             "recovered": "7",
             "active": "74",
             "severe": "6",
@@ -818,7 +818,7 @@
         {
             "name": "Jordan",
             "total": "85",
-            "increased": "16",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -829,7 +829,7 @@
         {
             "name": "Faeroe Islands",
             "total": "80",
-            "increased": "8",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "3",
@@ -840,7 +840,7 @@
         {
             "name": "Brunei",
             "total": "78",
-            "increased": "5",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -851,7 +851,7 @@
         {
             "name": "North Macedonia",
             "total": "76",
-            "increased": "26",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -862,7 +862,7 @@
         {
             "name": "Andorra",
             "total": "75",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -873,7 +873,7 @@
         {
             "name": "Cyprus",
             "total": "75",
-            "increased": "8",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -884,7 +884,7 @@
         {
             "name": "Sri Lanka",
             "total": "73",
-            "increased": "13",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "3",
@@ -895,7 +895,7 @@
         {
             "name": "Dominican Republic",
             "total": "72",
-            "increased": "38",
+            "increased": "0",
             "dead": "2",
             "newDeath": "0",
             "recovered": "0",
@@ -906,7 +906,7 @@
         {
             "name": "Albania",
             "total": "70",
-            "increased": "6",
+            "increased": "0",
             "dead": "2",
             "newDeath": "0",
             "recovered": "2",
@@ -917,7 +917,7 @@
         {
             "name": "Belarus",
             "total": "69",
-            "increased": "18",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "15",
@@ -928,7 +928,7 @@
         {
             "name": "Moldova",
             "total": "66",
-            "increased": "17",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "1",
@@ -939,7 +939,7 @@
         {
             "name": "Venezuela",
             "total": "65",
-            "increased": "23",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -950,7 +950,7 @@
         {
             "name": "Malta",
             "total": "64",
-            "increased": "11",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "2",
@@ -961,7 +961,7 @@
         {
             "name": "Lithuania",
             "total": "63",
-            "increased": "15",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -972,7 +972,7 @@
         {
             "name": "Tunisia",
             "total": "54",
-            "increased": "15",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "1",
@@ -981,20 +981,9 @@
             "perMppl": "5"
         },
         {
-            "name": "New Zealand",
-            "total": "53",
-            "increased": "25",
-            "dead": "0",
-            "newDeath": "0",
-            "recovered": "0",
-            "active": "53",
-            "severe": "0",
-            "perMppl": "11"
-        },
-        {
             "name": "Kazakhstan",
             "total": "52",
-            "increased": "8",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1003,11 +992,22 @@
             "perMppl": "3"
         },
         {
+            "name": "New Zealand",
+            "total": "52",
+            "increased": "0",
+            "dead": "0",
+            "newDeath": "0",
+            "recovered": "0",
+            "active": "52",
+            "severe": "0",
+            "perMppl": "11"
+        },
+        {
             "name": "Guadeloupe",
             "total": "51",
-            "increased": "18",
+            "increased": "0",
             "dead": "1",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "0",
             "active": "50",
             "severe": "4",
@@ -1016,7 +1016,7 @@
         {
             "name": "Cambodia",
             "total": "51",
-            "increased": "14",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -1038,7 +1038,7 @@
         {
             "name": "Palestine",
             "total": "48",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "17",
@@ -1049,7 +1049,7 @@
         {
             "name": "Senegal",
             "total": "47",
-            "increased": "11",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "5",
@@ -1071,7 +1071,7 @@
         {
             "name": "Georgia",
             "total": "44",
-            "increased": "4",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -1082,7 +1082,7 @@
         {
             "name": "Ukraine",
             "total": "41",
-            "increased": "15",
+            "increased": "0",
             "dead": "3",
             "newDeath": "0",
             "recovered": "1",
@@ -1093,7 +1093,7 @@
         {
             "name": "Burkina Faso",
             "total": "40",
-            "increased": "7",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "4",
@@ -1104,7 +1104,7 @@
         {
             "name": "R",
             "total": "38",
-            "increased": "10",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1115,7 +1115,7 @@
         {
             "name": "Uzbekistan",
             "total": "33",
-            "increased": "10",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1126,7 +1126,7 @@
         {
             "name": "Martinique",
             "total": "32",
-            "increased": "9",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "0",
@@ -1148,7 +1148,7 @@
         {
             "name": "Cameroon",
             "total": "27",
-            "increased": "14",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "2",
@@ -1159,7 +1159,7 @@
         {
             "name": "Afghanistan",
             "total": "24",
-            "increased": "2",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "1",
@@ -1170,7 +1170,7 @@
         {
             "name": "Honduras",
             "total": "24",
-            "increased": "12",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1181,7 +1181,7 @@
         {
             "name": "Cuba",
             "total": "21",
-            "increased": "10",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "0",
@@ -1192,7 +1192,7 @@
         {
             "name": "Bangladesh",
             "total": "20",
-            "increased": "2",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "3",
@@ -1203,7 +1203,7 @@
         {
             "name": "Jamaica",
             "total": "19",
-            "increased": "4",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "2",
@@ -1214,7 +1214,7 @@
         {
             "name": "DRC",
             "total": "18",
-            "increased": "4",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1225,7 +1225,7 @@
         {
             "name": "Paraguay",
             "total": "18",
-            "increased": "5",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1247,7 +1247,7 @@
         {
             "name": "Rwanda",
             "total": "17",
-            "increased": "6",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1258,7 +1258,7 @@
         {
             "name": "Bolivia",
             "total": "16",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1269,7 +1269,7 @@
         {
             "name": "Ghana",
             "total": "16",
-            "increased": "5",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1280,7 +1280,7 @@
         {
             "name": "Guyana",
             "total": "15",
-            "increased": "10",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "0",
@@ -1302,7 +1302,7 @@
         {
             "name": "Guam",
             "total": "14",
-            "increased": "2",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1313,7 +1313,7 @@
         {
             "name": "Montenegro",
             "total": "14",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1324,7 +1324,7 @@
         {
             "name": "Puerto Rico",
             "total": "14",
-            "increased": "8",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1346,7 +1346,7 @@
         {
             "name": "Guatemala",
             "total": "12",
-            "increased": "3",
+            "increased": "0",
             "dead": "1",
             "newDeath": "0",
             "recovered": "0",
@@ -1368,7 +1368,7 @@
         {
             "name": "Channel Islands",
             "total": "12",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1379,7 +1379,7 @@
         {
             "name": "Mauritius",
             "total": "12",
-            "increased": "5",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1390,7 +1390,7 @@
         {
             "name": "Monaco",
             "total": "11",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1401,7 +1401,7 @@
         {
             "name": "French Polynesia",
             "total": "11",
-            "increased": "5",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1434,7 +1434,7 @@
         {
             "name": "Ethiopia",
             "total": "9",
-            "increased": "2",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1445,7 +1445,7 @@
         {
             "name": "Togo",
             "total": "9",
-            "increased": "8",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1478,7 +1478,7 @@
         {
             "name": "Mayotte",
             "total": "7",
-            "increased": "3",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1489,7 +1489,7 @@
         {
             "name": "Seychelles",
             "total": "7",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1500,7 +1500,7 @@
         {
             "name": "Barbados",
             "total": "6",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1522,7 +1522,7 @@
         {
             "name": "Kyrgyzstan",
             "total": "6",
-            "increased": "3",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1566,9 +1566,9 @@
         {
             "name": "Gabon",
             "total": "4",
-            "increased": "1",
+            "increased": "0",
             "dead": "1",
-            "newDeath": "1",
+            "newDeath": "0",
             "recovered": "0",
             "active": "3",
             "severe": "0",
@@ -1577,7 +1577,7 @@
         {
             "name": "Bahamas",
             "total": "4",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1588,7 +1588,7 @@
         {
             "name": "Saint Martin",
             "total": "4",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1599,7 +1599,7 @@
         {
             "name": "Suriname",
             "total": "4",
-            "increased": "3",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1632,7 +1632,7 @@
         {
             "name": "CAR",
             "total": "3",
-            "increased": "2",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1654,7 +1654,7 @@
         {
             "name": "Madagascar",
             "total": "3",
-            "increased": "3",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1731,7 +1731,7 @@
         {
             "name": "Bhutan",
             "total": "2",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1753,7 +1753,7 @@
         {
             "name": "Guinea",
             "total": "2",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1764,7 +1764,7 @@
         {
             "name": "Haiti",
             "total": "2",
-            "increased": "2",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1775,7 +1775,7 @@
         {
             "name": "Isle of Man",
             "total": "2",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1819,7 +1819,7 @@
         {
             "name": "Nicaragua",
             "total": "2",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1863,7 +1863,7 @@
         {
             "name": "Angola",
             "total": "1",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1885,7 +1885,7 @@
         {
             "name": "Cabo Verde",
             "total": "1",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -1984,7 +1984,7 @@
         {
             "name": "Papua New Guinea",
             "total": "1",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -2039,7 +2039,7 @@
         {
             "name": "Zimbabwe",
             "total": "1",
-            "increased": "1",
+            "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
@@ -2050,12 +2050,12 @@
     ],
     "overall": {
         "name": "Total",
-        "total": "276,007",
-        "increased": "31,074",
-        "dead": "11,401",
-        "newDeath": ",370",
+        "total": "276,113",
+        "increased": "562",
+        "dead": "11,402",
+        "newDeath": "3",
         "recovered": "91,952",
-        "active": "172,654",
+        "active": "172,759",
         "severe": "7,911",
         "perMppl": "35.4"
     }
