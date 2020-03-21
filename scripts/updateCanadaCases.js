@@ -179,9 +179,9 @@ const getProvDetails = (elements, $) => {
         let provDetail = {};
         $(item).text().trim().split('\n').forEach( (value, idx) => { 
           // console.log('\n', tabKeys[idx], value);
-          provDetail[tabKeys[idx]] = value || 0;
+          provDetail[tabKeys[idx]] = value.replace(/,/, '') || 0;
         });
-        // console.log('prov', provDetail);    
+        // console.log('prov', provDetail);  
         allProvDetails.push(provDetail);
       }
     });

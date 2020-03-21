@@ -12,6 +12,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
+import _ from 'lodash';
 
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
@@ -21,7 +22,7 @@ const columns = [
   { label: "Province", id: "Province", align: 'left', maxWidth: 10},
   { label: "Tested", id: "Tests", align: 'right', maxWidth: 10 },
   { label: "Confirmed", id: "Conf.", align: 'right', maxWidth: 10 },
-  { label: "Suspected", id: "Pres.", align: 'right', maxWidth: 10 },
+  { label: "Presumptive", id: "Pres.", align: 'right', maxWidth: 10 },
   { label: "Total", id: "Total", align: 'right', maxWidth: 10 },
   { label: "Cases/1M", id: "Per m", align: 'right', maxWidth: 10 },
   { label: "Recovered", id: "Recov.", align: 'right', maxWidth: 10 },
@@ -58,6 +59,10 @@ function TableTitle () {
   )
 }
 
+const valueFormat = (value) => {
+  return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+}
+
 function ProvincesTable ({data}) {
   const classes = useStyles();
 
@@ -83,7 +88,7 @@ function ProvincesTable ({data}) {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.Province}>
                   {columns.map(column => {
-                    let value = row[column.id];
+                    let value = valueFormat(row[column.id]);
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
@@ -109,7 +114,6 @@ function CasesHisTrend ({days, dayCases}) {
   };
 
   const onChartReady = (chart, loaded) => {
-    // console.log(hisCases)
     if(days && Array.isArray(dayCases)) {
       setTimeout(() => {
         chart.hideLoading();
@@ -204,7 +208,12 @@ export default function Canada() {
             cases: data.cases.map(day => day.cases),  // YAxis: cases array
           };
         setCases(hisDataObj);
-        setDetail(data.details);
+
+        let allData = data.details;
+        let canada = allData.pop();
+        let tmp = _.sortBy(allData, (o) => parseInt(o.Total)).reverse();
+        tmp.push(canada);
+        setDetail(tmp);
       }
     });
     return () => {isCanceled = true;}
