@@ -1,5 +1,5 @@
 {
-    "date": "2020-03-21 12:00:08",
+    "date": "2020-03-21 13:00:07",
     "cases": [
         {
             "date": "1/28",
@@ -1017,7 +1017,7 @@
                 },
                 {
                     "name": "British Columbia",
-                    "value": "348",
+                    "value": "424",
                     "suspect": ""
                 },
                 {
@@ -1089,7 +1089,7 @@
             "Recov.": "6",
             "Deaths": "9",
             "Active": "333",
-            "Ref.": "[330]"
+            "Ref.": "[332]"
         },
         {
             "Province": "Alberta",
@@ -1101,7 +1101,7 @@
             "Recov.": "3",
             "Deaths": "1",
             "Active": "191",
-            "Ref.": "[331][332]"
+            "Ref.": "[333][334]"
         },
         {
             "Province": "Saskatchewan",
@@ -1113,7 +1113,7 @@
             "Recov.": "0",
             "Deaths": "0",
             "Active": "26",
-            "Ref.": "[333]"
+            "Ref.": "[335]"
         },
         {
             "Province": "Manitoba",
@@ -1125,7 +1125,7 @@
             "Recov.": "0",
             "Deaths": "0",
             "Active": "17",
-            "Ref.": "[334]"
+            "Ref.": "[336]"
         },
         {
             "Province": "Ontario",
@@ -1137,31 +1137,31 @@
             "Recov.": "6",
             "Deaths": "2",
             "Active": "369",
-            "Ref.": "[335]"
+            "Ref.": "[337]"
         },
         {
             "Province": "Quebec",
             "Tests": "10224",
-            "Conf.": "139",
-            "Pres.": "14",
-            "Total": "153",
-            "Per m": "18.0",
+            "Conf.": "181",
+            "Pres.": "57",
+            "Total": "238",
+            "Per m": "27.9",
             "Recov.": "1",
-            "Deaths": "1",
-            "Active": "151",
-            "Ref.": "[336][337]"
+            "Deaths": "5",
+            "Active": "232",
+            "Ref.": "[338][339]"
         },
         {
             "Province": "New Brunswick",
             "Tests": "520",
-            "Conf.": "7",
-            "Pres.": "4",
-            "Total": "11",
-            "Per m": "14.1",
+            "Conf.": "8",
+            "Pres.": "9",
+            "Total": "17",
+            "Per m": "21.8",
             "Recov.": "0",
             "Deaths": "0",
-            "Active": "11",
-            "Ref.": "[338]"
+            "Active": "17",
+            "Ref.": "[340]"
         },
         {
             "Province": "Prince Edward Island",
@@ -1173,31 +1173,55 @@
             "Recov.": "0",
             "Deaths": "0",
             "Active": "2",
-            "Ref.": "[339]"
+            "Ref.": "[341]"
         },
         {
             "Province": "Nova Scotia",
             "Tests": "1561",
-            "Conf.": "5",
-            "Pres.": "10",
-            "Total": "15",
-            "Per m": "15.4",
+            "Conf.": "9",
+            "Pres.": "12",
+            "Total": "21",
+            "Per m": "21.5",
             "Recov.": "0",
             "Deaths": "0",
-            "Active": "15",
-            "Ref.": "[340]"
+            "Active": "21",
+            "Ref.": "[342]"
         },
         {
             "Province": "Newfoundland and Labrador",
             "Tests": 0,
             "Conf.": "3",
-            "Pres.": "1",
-            "Total": "4",
-            "Per m": "7.7",
+            "Pres.": "3",
+            "Total": "6",
+            "Per m": "11.5",
             "Recov.": "0",
             "Deaths": "0",
-            "Active": "3",
-            "Ref.": "[341]"
+            "Active": "6",
+            "Ref.": "[343]"
+        },
+        {
+            "Province": "Yukon",
+            "Tests": "398",
+            "Conf.": "0",
+            "Pres.": "0",
+            "Total": "0",
+            "Per m": "0",
+            "Recov.": "0",
+            "Deaths": "0",
+            "Active": "0",
+            "Ref.": "[344]"
+        },
+        {
+            "Province": "Northwest Territories",
+            "Tests": "299",
+            "Conf.": "1",
+            "Pres.": "0",
+            "Total": "1",
+            "Per m": "22.3",
+            "Recov.": "0",
+            "Deaths": "0",
+            "Active": "1",
+            "Ref.": "[345]"
         },
         {
             "Province": "Repatriated travellers",
@@ -1209,24 +1233,24 @@
             "Recov.": "0",
             "Deaths": "0",
             "Active": "13",
-            "Ref.": "[342]"
+            "Ref.": "[346]"
         },
         {
             "Province": "Canada",
             "Tests": "54761",
-            "Conf.": "1114",
-            "Pres.": "47",
-            "Total": "1161",
-            "Per m": "30.7",
+            "Conf.": "1162",
+            "Pres.": "100",
+            "Total": "1262",
+            "Per m": "33.4",
             "Recov.": "16",
-            "Deaths": "13",
-            "Active": "1132"
+            "Deaths": "17",
+            "Active": "1229"
         }
     ],
     "overall": {
-        "confirmed": "1114",
+        "confirmed": "1162",
         "recovered": "16",
-        "death": "13",
-        "increased": 160
+        "death": "17",
+        "increased": 236
     }
 }
