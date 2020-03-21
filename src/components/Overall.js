@@ -53,6 +53,10 @@ export default function OverallData ({place, overall}) {
 
   },[data.time, time.length]);
 
+  const valueFormat = (value) => {
+    return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+  }
+
   useEffect(() => {
     const source = axios.CancelToken.source();
     let isCancelled = false;
@@ -82,7 +86,7 @@ export default function OverallData ({place, overall}) {
             suspect: data.overall.increased, 
             cured: data.overall.recovered, 
             death: data.overall.death, 
-            fatality: (100 * data.overall.death / data.overall.confirmed).toFixed(2) + '%'
+            fatality: (100 * data.overall.death.replace(/,/,'') / data.overall.confirmed.replace(/,/,'')).toFixed(2) + '%'
           });
           handleResize();
         }
@@ -119,10 +123,6 @@ export default function OverallData ({place, overall}) {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
   }, [handleResize]);
-
-  const valueFormat = (value) => {
-    return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-  }
 
   return (
     <>
