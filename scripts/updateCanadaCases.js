@@ -5,6 +5,8 @@ const axios = require('axios');
 const _ = require('lodash');
 const moment = require('moment');
 const DEBUG_MODE_ON = false;
+// const DEBUG_MODE_ON = true;
+
 
 const provinces = [
   { fullname: "Ontario", abbr: 'ON'},
@@ -101,238 +103,185 @@ async function getCasesTimeline () {
   }
 }
 
+//From wikipedia history table
+const getTodaysCases = (elements, $, allDaysCases) => {
+
+  let casesAsOfToday = [];
+  let presumptiveCases = [];
+
+  try {  
+    let provAbbrs = [];
+    elements.each( (index, item) => {
+      // get the abbreviations of provinces
+      if(index === 1) {  // wikipedia changed table format Mar 19, 2020
+        provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
+        // console.log(provAbbrs);
+      }
+
+      if(index > 1) {
+        // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
+        let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
+        // Total confirmed row
+        if(tabRow.includes('Confirmed')) {
+
+          //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5 :as of 2020-03-12
+          let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g,'').split(','); 
+          let lastDay = allDaysCases[allDaysCases.length - 1];
+          let totalHisCases = lastDay.cases.reduce((total, curProv) => {
+            return total = parseInt(total) + parseInt(curProv.value || 0); 
+          },[0]);
+
+          //there are new increased cases(5 provinces as of 2020-03-20), provCases[5] is total number
+          let tollNumberIdx = provCases.length - 1; // confirm this value by checking the html table row
+          // console.log(totalHisCases, provCases[tollNumberIdx], provCases.length);
+          if(totalHisCases !== provCases[tollNumberIdx]) { 
+            casesAsOfToday = provinces.map( (prov, index) => {
+              let provIdx = provAbbrs.indexOf(prov.abbr);
+              let value = provIdx >= 0 ? provCases[provIdx].trim() : '';
+              return {
+                "name": prov.fullname, // the map need the full name
+                "value": value > 0 ? value : ''
+              }
+            });
+          }
+        } 
+        // Presumptive Cases row Mar 15, 2020 Added
+        else if (tabRow.includes('Presumptive')) {
+          let temp = $(item).text().trim().replace(/\n[^\d]/g, ',0').replace(/0([\d]{1,3})/g,'$1');
+          presumptiveCases = temp.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g, '').trim().split(',');
+
+          if(presumptiveCases.length > 0) {
+            provinces.forEach( (prov, index) => {
+              let provIdx = provAbbrs.indexOf(prov.abbr);
+              casesAsOfToday[index].suspect = (presumptiveCases[provIdx] > 0) ? presumptiveCases[provIdx] : '';
+            });
+          }
+        }
+      }
+    });
+  } catch (error) {
+    console.log('Error when fetching Canada Latest Cases:', error);
+  }
+  return casesAsOfToday;
+}
+
+const getProvDetails = (elements, $) => {
+  let allProvDetails = [];
+  try {
+    let tabKeys = [];
+    elements.each( (index, item) => {
+      // get the abbreviations of provinces
+      if(index === 1) {
+        tabKeys = $(item).text().trim().split('\n');
+      }
+
+      if(index > 1) {
+        let provDetail = {};
+        $(item).text().trim().split('\n').forEach( (value, idx) => { 
+          // console.log('\n', tabKeys[idx], value);
+          provDetail[tabKeys[idx]] = value || 0;
+        });
+        // console.log('prov', provDetail);    
+        allProvDetails.push(provDetail);
+      }
+    });
+  } catch(error) { 
+    console.log(error);
+  };
+
+  return allProvDetails;
+}
+
+const getCanadaOverall = (canada, oldOverall, casesAsOfToday, allDaysCases) => {
+
+  // PART 3: GET/Calculate overall cases today
+  let newOverall = {...oldOverall};
+
+  try {  
+    let yesterdayCases = allDaysCases[allDaysCases.length - 2];
+    let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
+      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
+    },[0]);
+
+    let todayTotal = casesAsOfToday.reduce((total, curProv) => {
+      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
+    },[0]);
+
+    newOverall = {
+      confirmed: canada["Conf."],
+      recovered: canada["Recov."],
+      death: canada["Deaths"],
+      increased: todayTotal - yesterdayTotal
+    }
+  } catch(error) {
+    console.log('Failed to get Canada overall cases: ', error);
+  }
+     
+  return newOverall;
+}
 // get cases timeline announced by the gov
 async function updateHistoryCases () {
-
-  // step 1: read current data
-  // step 2: get last line of data
-  // step 3: compare the last data and save new cases data
-  // step 4: rewrite data to json file
 
   let oldData = fs.readFileSync(`../public/assets/CanadaCasesDb.json`);
   let allDaysCases = JSON.parse(oldData).cases;
   let oldOverall = JSON.parse(oldData).overall;
   
-  // fetch data by scraping
-  // let html = await wiki().page('2020_coronavirus_outbreak_in_Canada').then(page => page.html());
-
   let url = "https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Canada";
   let res = await axios.get(url);
 
   if(res.status === 200) {
-
     const $ = cheerio.load(res.data);
+
+    // PART 1: GET provinces cases today
+    // let elements = $('tr', '.wikitable');  //get table rows
+    let $tables  = $('.wikitable');  //get wiki tables
+    let elements = $($tables[1]).find('tr'); 
+    let casesAsOfToday = getTodaysCases(elements, $, allDaysCases);
+    // console.log(casesAsOfToday);
+
+    // PART 2: GET all provinces situation details until today
+    elements = $($tables[2]).find('tr');
+    let provDetails = getProvDetails(elements, $);
+    // console.log(provDetails);
 
     let date = new Date();
     let dateString = (date.getMonth() + 1) + '/' + date.getDate();
 
-    // PART 1: GET provinces cases today
-    let casesAsOfToday = [];
-    let presumptiveCases = [];
-
-    let $tables  = $('.wikitable');  //get wiki tables
-    let elements = $($tables[1]).find('tr');
-    
-    // let elements = $('tr', '.wikitable');  //get table rows
-
-    try {  
-      let provAbbrs = [];
-      elements.each( (index, item) => {
-        // get the abbreviations of provinces
-        if(index === 1) {  // wikipedia changed table format Mar 19, 2020
-          provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
-          console.log(provAbbrs);
-        }
-        if(index > 1) {
-          // console.log($(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,'))
-          let tabRow = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,');
-          // Total confirmed row
-          if(tabRow.includes('Confirmed')) {
-
-            //Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5 :as of 2020-03-12
-            let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g,'').split(','); 
-            let lastDay = allDaysCases[allDaysCases.length - 1];
-            let totalHisCases = lastDay.cases.reduce((total, curProv) => {
-              return total = parseInt(total) + parseInt(curProv.value || 0); 
-            },[0]);
-
-            //there are new increased cases(5 provinces as of 2020-03-20), provCases[5] is total number
-            let tollNumberIdx = provCases.length - 1; // confirm this value by checking the html table row
-            // console.log(totalHisCases, provCases[tollNumberIdx], provCases.length);
-            if(totalHisCases !== provCases[tollNumberIdx]) { 
-              casesAsOfToday = provinces.map( (prov, index) => {
-                let provIdx = provAbbrs.indexOf(prov.abbr);
-                let value = provIdx >= 0 ? provCases[provIdx].trim() : '';
-                return {
-                  "name": prov.fullname, // the map need the full name
-                  "value": value > 0 ? value : ''
-                }
-              });
-            }
-          } 
-          // Presumptive Cases row Mar 15, 2020 Added
-          else if (tabRow.includes('Presumptive')) {
-            let temp = $(item).text().trim().replace(/\n[^\d]/g, ',0').replace(/0([\d]{1,3})/g,'$1');
-            presumptiveCases = temp.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g, '').trim().split(',');
-
-            if(presumptiveCases.length > 0) {
-              provinces.forEach( (prov, index) => {
-                let provIdx = provAbbrs.indexOf(prov.abbr);
-                casesAsOfToday[index].suspect = (presumptiveCases[provIdx] > 0) ? presumptiveCases[provIdx] : '';
-              });
-            }
-          }
-        }
-      });
-    } catch (error) {
-      console.log('Error when fetching Canada Latest Cases:', error);
+    // Update todays cases into history cases
+    if(casesAsOfToday.length > 0) {
+      if(dateString !== allDaysCases[allDaysCases.length - 1].date)
+        allDaysCases.push({date: dateString, cases: casesAsOfToday});  // new day's data
+      else {
+        allDaysCases.pop();  // for updating the same day's cases
+        allDaysCases.push({date: dateString, cases: casesAsOfToday});
+      }
     }
 
-    // PART 2: GET/Calculate overall cases today
-    let overallArray = [];
-    let newOverall = {...oldOverall};
+    // PART 3: GET/Calculate overall cases today
     elements = $('td', '.infobox');  //get table rows
-    try {  
-      elements.each( (index, item) => {
-        let matches = $(item).text().match(/^[\d]{1,4}/g);  // if no matches, return null
-        if(matches) {
-          [].push.apply(overallArray, matches);
-        }
+    let canadaCases = provDetails[provDetails.length -1];
+    let newOverall = getCanadaOverall(canadaCases, oldOverall, casesAsOfToday, allDaysCases);
+    // console.log(canadaCases, newOverall);
+
+    // PART 4: Write to file
+    let jsonData = {
+        date: moment(date).format('YYYY-MM-DD HH:mm:ss'), 
+        cases: allDaysCases, 
+        details: provDetails,
+        overall: newOverall
+    };
+
+    // save to json file 
+    if(!DEBUG_MODE_ON) {
+      const casesString = JSON.stringify(jsonData, null, 4);
+      fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
+        if(err) console.log('Error in writing data into Json file', err);
+        console.log(`Updated Canada history cases data at ${jsonData.date}`);
       });
-
-      if(overallArray.length >= 3) {
-        newOverall = {
-          confirmed: overallArray[0],
-          recovered: overallArray[1],
-          death: overallArray[2]
-        }
-      }
-    } catch(error) {
-      console.log('Failed to get Canada overall cases: ', error);
     }
 
-    try {
-
-      // save new cases data to array (provinces' cases)
-      if(casesAsOfToday.length > 0) {
-        if(dateString !== allDaysCases[allDaysCases.length - 1].date)
-          allDaysCases.push({date: dateString, cases: casesAsOfToday});  // new day's data
-        else {
-          allDaysCases.pop();  // for updating the same day's cases
-          allDaysCases.push({date: dateString, cases: casesAsOfToday});
-        }
-        // console.log(casesAsOfToday);
-      }
-
-      let yesterdayCases = allDaysCases[allDaysCases.length - 2];
-      let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
-        return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
-      },[0]);
-      let todayTotal = casesAsOfToday.reduce((total, curProv) => {
-        return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
-      },[0]);
-
-      // if(dateString.replace(/\//g, '') > allDaysCases[allDaysCases.length - 1].date.replace(/\//g, '')) {
-      //   newOverall.increased = newOverall.confirmed - yesterdayTotal;
-      // } else {
-        newOverall.increased = todayTotal - yesterdayTotal;
-      // }
-      // console.log(todayTotal, yesterdayTotal, casesAsOfToday, yesterdayCases, newOverall);
-
-      let jsonData = {
-          date: moment(date).format('YYYY-MM-DD HH:mm:ss'), 
-          cases: allDaysCases, 
-          overall: newOverall
-      };
-
-      // save to json file 
-      if(!DEBUG_MODE_ON) {
-        const casesString = JSON.stringify(jsonData, null, 4);
-        fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
-          if(err) console.log('Error in writing data into Json file', err);
-          console.log(`Updated Canada history cases data at ${jsonData.date}`);
-        });
-      }
-
-    } catch (error) {
-      console.log(`Writing Canada's latest cases to file`, error)
-    }
   } else {
     console.log('Failed to get Canada cases from wiki page:', res.status);
-  }
-}
-
-// update the latest overall cases
-async function updateOverallCases () {
-
-  let oldData = fs.readFileSync(`../public/assets/CanadaCasesDb.json`);
-  let oldOverall = JSON.parse(oldData).overall;
-
-  // fetch data by scraping
-  let html = await wiki().page('2020_coronavirus_outbreak_in_Canada').then(page => page.html());
-  const $ = cheerio.load(html);
-
-  let overallArray = [];
-  let elements = $('td', '.infobox');  //get table rows
-  try {  
-    elements.each( (index, item) => {
-      let matches = $(item).text().match(/^[\d]{1,4}/g);  // if no matches, return null
-      if(matches) {
-        [].push.apply(overallArray, matches);
-      }
-    });
-
-    let newOverall = {...oldOverall};
-    if(overallArray.length >= 3) {
-      newOverall = {
-        confirmed: overallArray[0],
-        recovered: overallArray[1],
-        death: overallArray[2]
-      }
-
-      let allDaysCases = JSON.parse(oldData).cases;
-      let yesterdayCases = allDaysCases[allDaysCases.length - 2];
-      let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
-        return total = parseInt(total) + parseInt(curProv.value); 
-      },[0]);
-      newOverall.increased = newOverall.confirmed - yesterdayTotal;
-    }
-  } catch(error) {
-    console.log('Failed to get Canada overall cases: ', error);
-  }
-
-}
-// get latest cases from cdc canada(the official's data is too slow to update)
-async function getLatestCases () {
-
-  // get latest cases data
-  let url = "https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html";
-  let res = await axios.get(url);
-
-  let curCases = [];
-  if(res.status === 200) {
-    const $ = cheerio.load(res.data);
-    $(".table").each( (index, ele) => {
-      if(index === 0)              
-        $('tr', 'tbody', ele).each( (index, ele) => {
-          let province = $(ele).text().trim().split("\n")[0];
-          let cases = $(ele).text().trim().split("\n")[1].replace(/ /g, '');
-          curCases.push({name: province, value: cases});
-        });
-    });
-  }
-
-  if(curCases.length > 0) {
-    let jsonData = {
-      date: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-      cases: curCases
-    }
-
-    const casesString = JSON.stringify(jsonData, null, 4);
-    fs.writeFile("../public/assets/CasesLatest.json", casesString, (err, result) => {
-      if(err) console.log('Error in writing data into Json file', err);
-      console.log(`Updated latest cases data at ${jsonData.date}`);
-    });
   }
 }
 
