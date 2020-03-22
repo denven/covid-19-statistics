@@ -82,7 +82,7 @@ export default function MapCanada() {
       //global settings
       baseOption: {
         timeline: {  // by day
-          //loop: false,      
+          loop: false,      
           axisType: 'category',
           show: true,
           autoPlay: true,
@@ -103,7 +103,7 @@ export default function MapCanada() {
         visualMap: setVisualMap(),   
         xAxis: [{
           type: 'value',
-          max: 400,  // max cases number 3-13 2020 adjusted
+          max: 1000,  // max cases number 3-21 2020 adjusted
           axisLine: { show: false },
           axisTick: { show: false },
           axisLabel: { show: false },

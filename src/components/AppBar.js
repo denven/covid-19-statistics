@@ -7,9 +7,9 @@ import Loader from 'react-loader-spinner'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import GitHubIcon from '@material-ui/icons/GitHub';
+// import Typography from '@material-ui/core/Typography';
+// import Button from '@material-ui/core/Button';
+// import GitHubIcon from '@material-ui/icons/GitHub';
 
 import '../styles/AppBar.css'
 import AppLogo from './AppLogo';
@@ -22,7 +22,7 @@ import MapChina from './MapChina';
 import CasesTrend from './LineChart';
 
 import CanadaView from './Canada';
-import MapCanada from './MapCanada';
+// import MapCanada from './MapCanada';
 import Timeline from './Timeline';
 
 import MapUSA from './MapUsa';

@@ -38,7 +38,6 @@ const StyledTableCell = withStyles(theme => ({
 const isWideScreen = () => {
     
   let mediaQuery = window.matchMedia("(orientation: portrait)");
-  // console.log('sss', mediaQuery);
   if(mediaQuery.matches) { return false };
 
   if(document.body.clientWidth < 1024) { return false; }
@@ -51,8 +50,8 @@ const useStyles = makeStyles({
   chart: {marginTop: '2.5%'},
   switch: {
     display: isWideScreen() ? 'flex' : 'none',
-    position: 'fixed',
-    top: '11wh',
+    position: 'absolute',
+    top: '10.5vh',
     marginLeft: '5vw', 
     height: '2.2rem',
     // backgroundSize: '100% auto',
@@ -107,8 +106,8 @@ function ProvincesTable ({data}) {
                     );
                   })}
                 </TableRow>
-              );
-            })}
+                );
+            })};
           </TableBody>
 
         </Table>
@@ -118,7 +117,8 @@ function ProvincesTable ({data}) {
   );
 };
 
-function CasesHisTrend ({days, dayCases}) {
+// Line Chart
+function CasesHisTrend ({days, dayCases, dayNewCases}) {
   
   const getLoadingOption = () => {
     return { text: 'Data Loading ...' };
@@ -143,7 +143,7 @@ function CasesHisTrend ({days, dayCases}) {
       },
       legend: {
           // data: ['Confirmed', 'Suspected', 'Increased', 'Recovered', 'Deaths'], // four curves
-          data: ['Confirmed', 'Suspected'], // 2 curves
+          data: ['Confirmed', 'Presumptive', 'New Cases'], // 2 line curves, 1 bar
           top : '30px',
           textStyle: {fontSize: 12, fontWeight: 600},
       },
@@ -154,9 +154,15 @@ function CasesHisTrend ({days, dayCases}) {
           boundaryGap: false,
           data: days
       },
-      yAxis: {
+      yAxis: [
+        {
           type: 'value'
-      },
+        },
+        {
+          type: 'value',
+          splitLine: { show: false, }
+        },
+      ],
       series: [
           {
               name: 'Confirmed',
@@ -168,14 +174,20 @@ function CasesHisTrend ({days, dayCases}) {
                 }, [0]))
           },
           {
-              name: 'Suspected',
+              name: 'Presumptive',
               type: 'line',
               // stack: 'Toll',
               data: dayCases && dayCases.map( 
                 dayProvCases => dayProvCases.reduce((total, curProv) => {
                   return total = parseInt(total) + parseInt(curProv.suspect || 0); 
               }, [0]))
-          }
+          },
+          {
+            name: 'New Cases',
+            type: 'bar',        
+            yAxisIndex: 1,
+            data: dayNewCases
+        }
       ]
     };
   }
@@ -214,9 +226,21 @@ export default function Canada() {
     let isCanceled = false;
     axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
       if(!isCanceled) {
+
+        let dayCases = data.cases.map(day => day.cases);
+        let dailyTotalCases = dayCases.map( 
+          dayProvCases => dayProvCases.reduce((total, curProv) => {
+            return total = parseInt(total) + parseInt(curProv.value || 0); 
+        }, [0]));
+
+        let dailyNewCases = dailyTotalCases.map((number, index) => {
+          return (index === 0) ? number : number - dailyTotalCases[index - 1];
+        });
+
         let hisDataObj =  {
             dates: data.cases.map(day => day.date),  // xAxis: dates array
-            cases: data.cases.map(day => day.cases),  // YAxis: cases array
+            cases: dayCases,  // YAxis 0
+            dailyNewCases: dailyNewCases // YAxis 1
           };
         setCases(hisDataObj);
 
@@ -236,7 +260,7 @@ export default function Canada() {
       return (
         <>
           <Button variant="outlined" className={classes.switch} 
-                  onClick={handleSwitch} > Switch to Table
+                  onClick={handleSwitch} > Table View
           </Button>
           <MapCanada hisCases={hisCases} />
         </>);
@@ -245,13 +269,17 @@ export default function Canada() {
       return (
         <>
           <Button variant="outlined" color="primary" className={classes.switch} 
-                    onClick={handleSwitch} > Switch to Map
+                    onClick={handleSwitch} > Map View
           </Button>
           <TableTitle />
           {/* </div> */}
           <ProvincesTable data={provDetails} />
           <div className={classes.chart} >
-          <CasesHisTrend days={hisCases.dates} dayCases={hisCases.cases} />
+            <CasesHisTrend 
+              days={hisCases.dates} 
+              dayCases={hisCases.cases} 
+              dayNewCases={hisCases.dailyNewCases} 
+            />
           </div>
         </>
       );
