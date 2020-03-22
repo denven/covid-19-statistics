@@ -65,8 +65,8 @@ async function getUsaLatestCases () {
       // let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
       let stateEnglishName = $(data[key]).text().trim(); // we can get the province/state english name directly on Mar 19th
       let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,6}/g).length > 1 ? 
-                           $(data[key + 1]).text().match(/[\d]{1,6}/g)[1] : '0'; 
-      // console.log($(data[key]).text().trim(), stateEnglishName, stateIncreased, 'key:', key);
+                           $(data[key + 1]).text().match(/[\d]{1,6}/g)[1] : 'N/A'; 
+      console.log($(data[key+1]).text().match(/[\d]{1,6}/g), stateEnglishName)//, stateIncreased, 'key:', key);
       if(key > 280) break;
       if(stateEnglishName) {
         curCases.push({
