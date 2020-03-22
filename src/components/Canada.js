@@ -46,13 +46,13 @@ const isWideScreen = () => {
 }
 
 const useStyles = makeStyles({
-  root: { width: '100%', }, container: { maxHeight: "82vh" },
+  root: { width: '100%', }, container: { maxHeight: "84vh" },
   chart: {marginTop: '2.5%'},
   switch: {
     display: 'flex', // : 'none',
     position: 'absolute',  // fixed button will not move when scroll the page
-    top: isWideScreen() ? '6.5rem' : '7.9rem',
-    marginLeft: isWideScreen() ? '45%' : '1rem', 
+    top: isWideScreen() ? '6.6rem' : '8.0rem',
+    marginLeft: isWideScreen() ? '43.5%' : '1.5rem', 
     // height: '2.2rem',
     // backgroundSize: '100% auto',
     zIndex: 9999,
@@ -103,7 +103,7 @@ function ProvincesTable ({data}) {
                   })}
                 </TableRow>
                 );
-            })};
+            })}
           </TableBody>
         </Table>
       </TableContainer>
@@ -155,7 +155,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
         },
         {
           type: 'value',
-          splitLine: { show: false, }
+          splitLine: { show: false, },          
         },
       ],
       series: [
@@ -181,6 +181,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
             name: 'New Cases',
             type: 'bar',        
             yAxisIndex: 1,
+            itemStyle: { color: '#ffc0b1', }, // change default bar color
             data: dayNewCases
         }
       ]
@@ -190,7 +191,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
   return (
     (days && dayCases) ? (
       <ReactEcharts 
-        style={{height: "25vh" }}
+        style={{height: "30vh"}}
         echarts={echarts}
         option={getOption()}
         loadingOption={getLoadingOption()}
@@ -218,10 +219,11 @@ export default function Canada() {
   }
 
   useEffect(() => {
+
     let isCanceled = false;
     axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
-      if(!isCanceled) {
 
+      if(!isCanceled) {
         let dayCases = data.cases.map(day => day.cases);
         let dailyTotalCases = dayCases.map( 
           dayProvCases => dayProvCases.reduce((total, curProv) => {
@@ -236,7 +238,7 @@ export default function Canada() {
             dates: data.cases.map(day => day.date),  // xAxis: dates array
             cases: dayCases,  // YAxis 0
             dailyNewCases: dailyNewCases // YAxis 1
-          };
+        };
         setCases(hisDataObj);
 
         let allData = data.details;
@@ -261,19 +263,21 @@ export default function Canada() {
 
     case 'table':
       return (
-        <div>
+        <div>        
           <Button variant="outlined" size="small" color="primary" className={classes.switch} 
                     onClick={handleSwitch} > View Map
           </Button>
-          <TableTitle />
-          <ProvincesTable data={provDetails} />
-          <div className={classes.chart} >
+          <div style={{margin:'0 1rem 1.5rem 1rem'}}> 
+            <TableTitle style={{display: 'flex'}}/>
+            <ProvincesTable style={{width: '90%'}} data={provDetails} />
+          </div>
+          {/* <div className={classes.chart} style={{display: 'flex'}}> */}
             <CasesHisTrend 
               days={hisCases.dates} 
               dayCases={hisCases.cases} 
               dayNewCases={hisCases.dailyNewCases} 
             />
-          </div>
+          {/* </div> */}
         </div>
       );
     default: return (<></>);

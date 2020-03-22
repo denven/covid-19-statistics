@@ -93,7 +93,7 @@ export default function MapUSA() {
         padding: 30,
         orient: 'horizontal',
         showLabel: true,
-        text: ['Outbreak', 'Minor Break'],
+        text: ['Outbreak', 'Minor'],
         itemWidth: 10,
         itemHeight: 10,
         textStyle: { fontSize: 12, fontWeight: 'bold' }
