@@ -49,11 +49,11 @@ const useStyles = makeStyles({
   root: { width: '100%', }, container: { maxHeight: "82vh" },
   chart: {marginTop: '2.5%'},
   switch: {
-    display: isWideScreen() ? 'flex' : 'none',
-    position: 'absolute',
-    top: '10.5vh',
-    marginLeft: '5vw', 
-    height: '2.2rem',
+    display: 'flex', // : 'none',
+    position: 'absolute',  // fixed button will not move when scroll the page
+    top: isWideScreen() ? '6.5rem' : '7.8rem',
+    marginLeft: isWideScreen() ? '45%' : '1rem', 
+    // height: '2.2rem',
     // backgroundSize: '100% auto',
     zIndex: 9999,
     // webkitTransition: 'opacity .3s ease',
@@ -62,7 +62,7 @@ const useStyles = makeStyles({
 
 function TableTitle () {
   return (
-    <div className="timelineTitle">
+    <div className="canadaTableTitle" style={{top: 0}}>
       <div>Cases Detail by Province in Canada Today</div>
       <div className="subTitle" >Data from https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Canada</div>
     </div>
@@ -80,19 +80,15 @@ function ProvincesTable ({data}) {
     <Paper className={classes.root} elevation={0} >
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table" size="small">
-
           <TableHead >
             <TableRow>
               {columns.map(column => (
-                <StyledTableCell 
-                  key={column.id} align={column.align}
-                  style={{ minWidth: column.minWidth }} >
+                <StyledTableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
                   {column.label}
                 </StyledTableCell> )
               )}
             </TableRow>
           </TableHead>
-
           <TableBody>
             {data.map( (row, index) => {
               return (
@@ -109,7 +105,6 @@ function ProvincesTable ({data}) {
                 );
             })};
           </TableBody>
-
         </Table>
       </TableContainer>
 
@@ -215,11 +210,11 @@ export default function Canada() {
   const [provDetails, setDetail] = useState([]);
   const [viewMode, setMode] = useState('map');
 
-  const classes = useStyles();
+  let classes = useStyles();
 
   const handleSwitch = () => {
     if(viewMode === 'map') setMode('table');
-    else setMode('map');
+    else setMode('map');    
   }
 
   useEffect(() => {
@@ -254,25 +249,23 @@ export default function Canada() {
     return () => {isCanceled = true;}
   }, []);
 
-
   switch(viewMode) {
     case 'map': 
       return (
         <>
-          <Button variant="outlined" className={classes.switch} 
-                  onClick={handleSwitch} > Table View
+          <Button variant="outlined" size="small" color="primary" className={classes.switch} 
+                  onClick={handleSwitch} > View Table
           </Button>
           <MapCanada hisCases={hisCases} />
         </>);
 
     case 'table':
       return (
-        <>
-          <Button variant="outlined" color="primary" className={classes.switch} 
-                    onClick={handleSwitch} > Map View
+        <div>
+          <Button variant="outlined" size="small" color="primary" className={classes.switch} 
+                    onClick={handleSwitch} > View Map
           </Button>
           <TableTitle />
-          {/* </div> */}
           <ProvincesTable data={provDetails} />
           <div className={classes.chart} >
             <CasesHisTrend 
@@ -281,7 +274,7 @@ export default function Canada() {
               dayNewCases={hisCases.dailyNewCases} 
             />
           </div>
-        </>
+        </div>
       );
     default: return (<></>);
   }
