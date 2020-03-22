@@ -200,11 +200,11 @@ const getCanadaOverall = (canada, oldOverall, casesAsOfToday, allDaysCases) => {
   try {  
     let yesterdayCases = allDaysCases[allDaysCases.length - 2];
     let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
-      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
+      return total = parseInt(total) + parseInt(curProv.value || 0); 
     },[0]);
 
     let todayTotal = casesAsOfToday.reduce((total, curProv) => {
-      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
+      return total = parseInt(total) + parseInt(curProv.value || 0); 
     },[0]);
 
     newOverall = {
