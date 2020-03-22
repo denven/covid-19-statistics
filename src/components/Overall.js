@@ -54,7 +54,7 @@ export default function OverallData ({place, overall}) {
   },[data.time, time.length]);
 
   const valueFormat = (value) => {
-    return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+    return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
   }
 
   useEffect(() => {

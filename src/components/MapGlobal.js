@@ -79,7 +79,7 @@ export default function MapGlobal({mapData}) {
           let { currentConfirmedCount, curedCount, deadCount}  = data;
 
           const valueFormat = (value) => {
-            return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+            return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           }
 
           let lethalityStr =  (deadCount > 0) ? `Lethality:\t${(100 * deadCount / (value)).toFixed(2) + '%'}` : '';

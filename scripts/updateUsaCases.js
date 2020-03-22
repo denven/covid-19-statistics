@@ -62,17 +62,18 @@ async function getUsaLatestCases () {
       // console.log($(data[key]).text(), $(data[key+1]).text(), $(data[key+2]).text(), $(data[key+3]).text(), data.length, 'end' );
       if($(data[key]).text() === '地区') break;
 
-      let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
-      let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,4}/g).length > 1 ? 
-                           $(data[key + 1]).text().match(/[\d]{1,4}/g)[1] : '0'; 
-      // console.log(stateEnglishName, stateIncreased, 'key:', key);
-      if(key > 300) break;
+      // let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
+      let stateEnglishName = $(data[key]).text().trim(); // we can get the province/state english name directly on Mar 19th
+      let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,6}/g).length > 1 ? 
+                           $(data[key + 1]).text().match(/[\d]{1,6}/g)[1] : '0'; 
+      // console.log($(data[key]).text().trim(), stateEnglishName, stateIncreased, 'key:', key);
+      if(key > 280) break;
       if(stateEnglishName) {
         curCases.push({
           name: stateEnglishName,
-          confirmed: $(data[key + 1]).text().match(/[\d]{1,4}/g)[0],
+          confirmed: $(data[key + 1]).text().match(/[\d]{1,6}/g)[0],
           increased: stateIncreased,
-          death: $(data[key + 2]).text().match(/[\d]{1,4}/g)[0],  // this is death number
+          death: $(data[key + 2]).text().match(/[\d]{1,6}/g)[0],  // this is death number
           deathRate: $(data[key + 3]).text()   // this is death rate
         })
       }

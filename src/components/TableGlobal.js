@@ -9,20 +9,28 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 
-const columns = [
-  { id: 'no', label: '#', maxWidth: 10},
-  { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 40},
-  { id: 'confirmedCount', label: 'Confirmed', align: 'right', },
-  // { id: 'suspectedCount', label: 'Suspected', align: 'right', maxWidth: 50 },
-  { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 },
-  { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 },
-  { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 }
-];
+const columns = new Array(6);
+
+const makeColumns = (place) => {
+
+  columns[0] = { id: 'no', label: '#', maxWidth: 10};
+  columns[1] = { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 40};
+  columns[2] = { id: 'confirmedCount', label: 'Confirmed', align: 'right', };
+
+  if(place === 'USA') {
+    columns[1].label = 'State/Province';
+    columns[3] = { id: 'increased', label: 'Increased', align: 'right', maxWidth: 50 };
+    columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
+    columns[5] = { id: 'lethality', label: 'Lathality', align: 'right', maxWidth: 50 };
+  } else {
+    columns[3] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
+    columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
+    columns[5] = { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 };  
+  }
+}
 
 const StyledTableCell = withStyles(theme => ({
-  head: {
-    fontWeight: 600
-  },
+  head: { fontWeight: 600 },
   body: { fontSize: 14, },
 }))(TableCell);
 
@@ -40,46 +48,44 @@ export default function StickyHeadTable({place, rows}) {
   const classes = useStyles();
   const [rowsData, setRows] = useState((Array.isArray(rows)) ? initRows: rows);
 
+  makeColumns(place); 
+
   useEffect(() => {
 
     let isCanceled = false;
     if(place === 'USA') {
+
       axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
-        if(columns.length === 6) columns.pop();
+        // if(columns.length === 6) columns.pop();
         if(!isCanceled) {
           setRows(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
-            // the following keys doesn't match the value name, as I don't want to change the 
-            // key names for global data(the two pages share the same data structure)
             return {
               countryEnglishName: name,
               confirmedCount: confirmed,
-              suspectedCount: '0',
-              curedCount: death,
-              deadCount: deathRate
+              increased: increased,
+              deadCount: death,
+              lethality: deathRate
             }
           }));
         }
       });
     } else {
-      // Global data
-      if(columns.length === 5) {
-        columns.push({ id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 });
-      }
-      
+      // Global data      
       if(rows.length > 0) { 
         //Added infected rate per million in population Mar 14, 2020
         axios.get(`./assets/WorldPopulation.json`).then( ({data}) => {    
+
           let dataWithInfectRate = rows.map(country => {
+
             let infectRate = 0;  // infection number per million 
             if( data[country.countryEnglishName] > 0 ) {
               infectRate = Math.ceil(country.confirmedCount * 1000000 / data[country.countryEnglishName]);
             };
+
             Object.assign(country, {"infectRate": infectRate})
-            if(country.countryEnglishName === "Diamond Princess Cruise") {
-              country.infectRate = (country.confirmedCount * 100 / data[country.countryEnglishName]).toFixed(2) + '%';
-            }
             return country;
           });
+
           if(!isCanceled) setRows(dataWithInfectRate); 
         });
       } 
@@ -87,18 +93,8 @@ export default function StickyHeadTable({place, rows}) {
     return () => {isCanceled = true;};
   },[place, rows]);
 
-  if(place === 'USA') { 
-    columns[1].label = 'State/Province'; 
-    columns[3].label = 'Death'; 
-    columns[4].label = 'Lethality'; 
-  } else { 
-    columns[1].label = 'Country/Place'; 
-    columns[3].label = 'Cured'; 
-    columns[4].label = 'Death';
-  }
-
   const valueFormat = (value) => {
-    return value.toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+    return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
   }
 
   return (
