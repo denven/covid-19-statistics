@@ -17,7 +17,8 @@ async function updateGlobalCases () {
 
     for(let index = 0; index < tableRows.length;) {
 
-      let name = $(tableRows[index]).text().match(/[a-zA-Z ]+/g);  // match country or place name
+      //Match english and french letters, dot, space in country name
+      let name = $(tableRows[index]).text().match(/[a-zA-ZàâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ. ]+/g);  // match country or place name
 
       if(Array.isArray(name)){
         let increasedNum = ( name[0].trim() !== 'Total' ? 
