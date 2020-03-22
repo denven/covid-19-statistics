@@ -190,7 +190,7 @@ export default function MapCanada() {
                   value = ((value || "No Case") + '').split('.');
                   value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
                   let suspectNum = (data && 'suspect' in data) ? data.suspect : 0;
-                  return `<b>${name}</b><br />Confirmed: ${value}<br />Presumptive: ${suspectNum}<br />`;
+                  return `<b>${name}</b><br />Confirmed: ${value}<br />Presumptive: ${suspectNum || '0'}<br />`;
                 }
               },
             },
