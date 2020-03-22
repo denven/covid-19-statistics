@@ -64,14 +64,21 @@ async function getUsaLatestCases () {
 
       // let stateEnglishName = getStateEnName($(data[key]).text().trim(), statesNames);
       let stateEnglishName = $(data[key]).text().trim(); // we can get the province/state english name directly on Mar 19th
-      let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,6}/g).length > 1 ? 
-                           $(data[key + 1]).text().match(/[\d]{1,6}/g)[1] : 'N/A'; 
-      console.log($(data[key+1]).text().match(/[\d]{1,6}/g), stateEnglishName)//, stateIncreased, 'key:', key);
+      // let stateIncreased = $(data[key + 1]).text().match(/[\d]{1,6}/g).length > 1 ? 
+      //                      $(data[key + 1]).text().match(/[\d]{1,6}/g)[1] : 'N/A'; 
+      // console.log($(data[key+1]).text(), stateEnglishName)//, stateIncreased, 'key:', key);
+
+      let $confIncreased = $(data[key+1]);
+      let stateIncreased = $confIncreased.find('div').text();
+      let stateConfirmed = $confIncreased.text().replace(stateIncreased, '');
+      stateIncreased = stateIncreased.replace(/\+([\d]{1,5})$/g, '$1');  // removed '+'
+      // console.log(stateConfirmed, stateIncreased)
+
       if(key > 280) break;
       if(stateEnglishName) {
         curCases.push({
           name: stateEnglishName,
-          confirmed: $(data[key + 1]).text().match(/[\d]{1,6}/g)[0],
+          confirmed: stateConfirmed, // $(data[key + 1]).text().match(/[\d]{1,6}/g)[0],
           increased: stateIncreased,
           death: $(data[key + 2]).text().match(/[\d]{1,6}/g)[0],  // this is death number
           deathRate: $(data[key + 3]).text()   // this is death rate
