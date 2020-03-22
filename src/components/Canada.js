@@ -21,11 +21,11 @@ import 'echarts/lib/chart/line';
 const columns = [
   { label: "Province", id: "Province", align: 'left', maxWidth: 10},
   { label: "Tested", id: "Tests", align: 'right', maxWidth: 10 },
-  { label: "Confirmed", id: "Conf.", align: 'right', maxWidth: 10 },
-  { label: "Presumptive", id: "Pres.", align: 'right', maxWidth: 10 },
+  { label: "Conf.", id: "Conf.", align: 'right', maxWidth: 10 },
+  { label: "Pres.", id: "Pres.", align: 'right', maxWidth: 10 },
   { label: "Total", id: "Total", align: 'right', maxWidth: 10 },
   { label: "Cases/1M", id: "Per m", align: 'right', maxWidth: 10 },
-  { label: "Recovered", id: "Recov.", align: 'right', maxWidth: 10 },
+  { label: "Cured", id: "Recov.", align: 'right', maxWidth: 10 },
   { label: "Deaths", id: "Deaths", align: 'right', maxWidth: 10 },
   { label: "Active", id: "Active", align: 'right', maxWidth: 10 },
 ];
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
   switch: {
     display: 'flex', // : 'none',
     position: 'absolute',  // fixed button will not move when scroll the page
-    top: isWideScreen() ? '6.5rem' : '7.8rem',
+    top: isWideScreen() ? '6.5rem' : '7.9rem',
     marginLeft: isWideScreen() ? '45%' : '1rem', 
     // height: '2.2rem',
     // backgroundSize: '100% auto',
