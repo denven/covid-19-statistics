@@ -1,11 +1,18 @@
 {
-    "date": "2020-03-23 09:00:11",
+    "date": "2020-03-23 10:00:09",
     "cases": [
         {
             "name": "New York",
-            "confirmed": "16916",
-            "increased": "N/A",
-            "death": "153",
+            "confirmed": "20875",
+            "increased": "3959",
+            "death": "152",
+            "deathRate": "0.7%"
+        },
+        {
+            "name": "New Jersey",
+            "confirmed": "2844",
+            "increased": "930",
+            "death": "627",
             "deathRate": "0.9%"
         },
         {
@@ -16,25 +23,25 @@
             "deathRate": "4.8%"
         },
         {
-            "name": "New Jersey",
-            "confirmed": "1914",
-            "increased": "N/A",
-            "death": "21",
-            "deathRate": "1.1%"
-        },
-        {
             "name": "California",
-            "confirmed": "1816",
-            "increased": "2",
+            "confirmed": "1839",
+            "increased": "25",
             "death": "35",
             "deathRate": "1.9%"
+        },
+        {
+            "name": "Michigan",
+            "confirmed": "1232",
+            "increased": "194",
+            "death": "515",
+            "deathRate": "1.2%"
         },
         {
             "name": "Florida",
             "confirmed": "1171",
             "increased": "166",
-            "death": "13",
-            "deathRate": "1.1%"
+            "death": "114",
+            "deathRate": "1.2%"
         },
         {
             "name": "Illinois",
@@ -44,13 +51,6 @@
             "deathRate": "0.9%"
         },
         {
-            "name": "Michigan",
-            "confirmed": "1042",
-            "increased": "4",
-            "death": "10",
-            "deathRate": "1%"
-        },
-        {
             "name": "Louisiana",
             "confirmed": "837",
             "increased": "N/A",
@@ -58,9 +58,16 @@
             "deathRate": "2.4%"
         },
         {
+            "name": "Georgia",
+            "confirmed": "772",
+            "increased": "151",
+            "death": "25",
+            "deathRate": "3.2%"
+        },
+        {
             "name": "Texas",
-            "confirmed": "674",
-            "increased": "N/A",
+            "confirmed": "681",
+            "increased": "7",
             "death": "8",
             "deathRate": "1.2%"
         },
@@ -70,13 +77,6 @@
             "increased": "N/A",
             "death": "5",
             "deathRate": "0.8%"
-        },
-        {
-            "name": "Georgia",
-            "confirmed": "621",
-            "increased": "N/A",
-            "death": "25",
-            "deathRate": "4%"
         },
         {
             "name": "Colorado",
@@ -101,17 +101,24 @@
         },
         {
             "name": "Wisconsin",
-            "confirmed": "383",
-            "increased": "N/A",
-            "death": "4",
-            "deathRate": "1%"
+            "confirmed": "403",
+            "increased": "20",
+            "death": "15",
+            "deathRate": "1.2%"
         },
         {
             "name": "Ohio",
-            "confirmed": "358",
-            "increased": "2",
+            "confirmed": "360",
+            "increased": "4",
             "death": "3",
             "deathRate": "0.8%"
+        },
+        {
+            "name": "North Carolina",
+            "confirmed": "328",
+            "increased": "17",
+            "death": "0",
+            "deathRate": "0%"
         },
         {
             "name": "Connecticut",
@@ -119,13 +126,6 @@
             "increased": "N/A",
             "death": "8",
             "deathRate": "2.4%"
-        },
-        {
-            "name": "North Carolina",
-            "confirmed": "311",
-            "increased": "N/A",
-            "death": "0",
-            "deathRate": "0%"
         },
         {
             "name": "Maryland",
@@ -142,18 +142,18 @@
             "deathRate": "2.7%"
         },
         {
+            "name": "Mississippi",
+            "confirmed": "249",
+            "increased": "42",
+            "death": "1",
+            "deathRate": "0.4%"
+        },
+        {
             "name": "Virginia",
             "confirmed": "221",
             "increased": "N/A",
             "death": "6",
             "deathRate": "2.7%"
-        },
-        {
-            "name": "Mississippi",
-            "confirmed": "207",
-            "increased": "N/A",
-            "death": "1",
-            "deathRate": "0.5%"
         },
         {
             "name": "South Carolina",
@@ -191,18 +191,18 @@
             "deathRate": "0%"
         },
         {
+            "name": "Alabama",
+            "confirmed": "167",
+            "increased": "10",
+            "death": "0",
+            "deathRate": "0%"
+        },
+        {
             "name": "Oregon",
             "confirmed": "161",
             "increased": "N/A",
             "death": "5",
             "deathRate": "3.1%"
-        },
-        {
-            "name": "Alabama",
-            "confirmed": "157",
-            "increased": "N/A",
-            "death": "0",
-            "deathRate": "0%"
         },
         {
             "name": "Arizona",
@@ -226,18 +226,18 @@
             "deathRate": "1.7%"
         },
         {
+            "name": "Maine",
+            "confirmed": "107",
+            "increased": "21",
+            "death": "0",
+            "deathRate": "0%"
+        },
+        {
             "name": "Kentucky",
             "confirmed": "104",
             "increased": "1",
             "death": "3",
             "deathRate": "2.9%"
-        },
-        {
-            "name": "Maine",
-            "confirmed": "102",
-            "increased": "13",
-            "death": "0",
-            "deathRate": "0%"
         },
         {
             "name": "Iowa",
@@ -269,10 +269,10 @@
         },
         {
             "name": "Kansas",
-            "confirmed": "67",
+            "confirmed": "68",
             "increased": "N/A",
             "death": "2",
-            "deathRate": "3%"
+            "deathRate": "2.9%"
         },
         {
             "name": "New Mexico",
