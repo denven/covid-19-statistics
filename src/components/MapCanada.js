@@ -86,7 +86,7 @@ export default function MapCanada() {
           axisType: 'category',
           show: true,
           autoPlay: true,
-          playInterval: 1500,
+          playInterval: 1000,
           data: cases.dates,        // Days since the 1st cases
           currentIndex: cases.dates.length - 7 // start to play from the last seven days
         },  
