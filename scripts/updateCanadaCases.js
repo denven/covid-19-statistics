@@ -7,7 +7,6 @@ const moment = require('moment');
 const DEBUG_MODE_ON = false;
 // const DEBUG_MODE_ON = true;
 
-
 const provinces = [
   { fullname: "Ontario", abbr: 'ON'},
   { fullname: "British Columbia", abbr: 'BC'},
@@ -21,7 +20,8 @@ const provinces = [
   { fullname: "New Brunswick", abbr: 'NB'},
   { fullname: "Yukon", abbr: 'YK'},
   { fullname: "Northwest Territories", abbr: 'NT'},
-  { fullname: "Nunavut", abbr: 'NU'}
+  { fullname: "Nunavut", abbr: 'NU'},
+  { fullname: "Repatriated travellers", abbr: 'RT'},
 ];
 
 // get cases timeline announced by the gov
@@ -115,6 +115,7 @@ const getTodaysCases = (elements, $, allDaysCases) => {
       // get the abbreviations of provinces
       if(index === 1) {  // wikipedia changed table format Mar 19, 2020
         provAbbrs = $(item).text().trim().replace(/\n{1,5}/g, ',').replace(/\[.*\]/g,'').replace(/,,/g,',0,').split(',');
+        if(provAbbrs.length > 13) provAbbrs[13] = 'RT'; //Special process for Repatriated travellers
         // console.log(provAbbrs);
       }
 
@@ -143,6 +144,7 @@ const getTodaysCases = (elements, $, allDaysCases) => {
                 "value": value > 0 ? value : ''
               }
             });
+            // console.log(casesAsOfToday)
           }
         } 
         // Presumptive Cases row Mar 15, 2020 Added

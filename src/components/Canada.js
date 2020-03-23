@@ -22,6 +22,7 @@ const columns = [
   { label: "Province", id: "Province", align: 'left', maxWidth: 10},
   { label: "Tested", id: "Tests", align: 'right', maxWidth: 10 },
   { label: "Conf.", id: "Conf.", align: 'right', maxWidth: 10 },
+  { label: "New", id: "New", align: 'right', maxWidth: 10 },
   { label: "Pres.", id: "Pres.", align: 'right', maxWidth: 10 },
   { label: "Total", id: "Total", align: 'right', maxWidth: 10 },
   { label: "Cases/1M", id: "Per m", align: 'right', maxWidth: 10 },
@@ -114,16 +115,16 @@ function ProvincesTable ({data}) {
 
 // Line Chart
 function CasesHisTrend ({days, dayCases, dayNewCases}) {
-  
+
+  const [loaded, setReady] = useState(false);
   const getLoadingOption = () => {
     return { text: 'Data Loading ...' };
   };
 
-  const onChartReady = (chart, loaded) => {
+  const onChartReady = (chart) => {
     if(days && Array.isArray(dayCases)) {
-      setTimeout(() => {
-        chart.hideLoading();
-      }, 1000); 
+      setReady(true);
+      setTimeout(() => { chart.hideLoading(); }, 1000); 
     }
   };
 
@@ -196,7 +197,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
         option={getOption()}
         loadingOption={getLoadingOption()}
         onChartReady={onChartReady}
-        showLoading={true}  //official showloading always have bugs 
+        showLoading={!loaded}  //official showloading always have bugs 
         notMerge={true}
         lazyUpdate={true}
         theme={"theme_name"}
@@ -221,33 +222,56 @@ export default function Canada() {
   useEffect(() => {
 
     let isCanceled = false;
-    axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
+    try {
+      axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
 
-      if(!isCanceled) {
-        let dayCases = data.cases.map(day => day.cases);
-        let dailyTotalCases = dayCases.map( 
-          dayProvCases => dayProvCases.reduce((total, curProv) => {
-            return total = parseInt(total) + parseInt(curProv.value || 0); 
-        }, [0]));
+        if(!isCanceled) {
+          let dayCases = data.cases.map(day => day.cases); // cases for each province by day
+          let dailyTotalCases = dayCases.map( 
+            dayProvCases => dayProvCases.reduce((total, curProv) => {
+              return total = parseInt(total) + parseInt(curProv.value || 0); 
+          }, [0]));
+          let dailyNewCases = dailyTotalCases.map((number, index) => {
+            return (index === 0) ? number : number - dailyTotalCases[index - 1];
+          });
 
-        let dailyNewCases = dailyTotalCases.map((number, index) => {
-          return (index === 0) ? number : number - dailyTotalCases[index - 1];
-        });
+          // get new cases number by province of today
+          let today = dayCases[dayCases.length - 1];
+          let yesterday = dayCases[dayCases.length - 2];
+          let provNewCases = {}; // new cases by province
+          today.forEach( ({name}, index) => {
+            provNewCases[name] = today[index].value - yesterday[index].value;
+          });
+          
+          // hisDataObj is used for line & bar chart
+          let hisDataObj = {
+              dates: data.cases.map(day => day.date),  // xAxis: dates array
+              cases: dayCases,  // YAxis 0
+              dailyNewCases: dailyNewCases // YAxis 1
+          };
+          setCases(hisDataObj);
 
-        let hisDataObj =  {
-            dates: data.cases.map(day => day.date),  // xAxis: dates array
-            cases: dayCases,  // YAxis 0
-            dailyNewCases: dailyNewCases // YAxis 1
-        };
-        setCases(hisDataObj);
-
-        let allData = data.details;
-        let canada = allData.pop();
-        let tmp = _.sortBy(allData, (o) => parseInt(o.Total)).reverse();
-        tmp.push(canada);
-        setDetail(tmp);
-      }
-    });
+          let allData = data.details;
+          let canada = allData.pop();
+          let tmp = _.sortBy(allData, (o) => parseInt(o.Total)).reverse();
+          let tmpInsertNew = tmp.map( p => {
+            p["New"] = provNewCases[p.Province];
+            return p;
+          });
+          canada["New"] = Object.values(provNewCases).reduce((total, newCases) => {
+            return total = parseInt(total) + parseInt(newCases || 0); 
+          }, [0]);
+          tmpInsertNew.push(canada);
+          tmpInsertNew.forEach((item, index, array) => {
+            if(item["New"] > 0) tmpInsertNew[index]["New"] = '+' + item["New"];
+          });
+          // console.log(provNewCases, tmpInsertNew)
+          setDetail(tmpInsertNew);  // for table's rows
+        }
+      });
+    } catch (error) {
+      console.log(`'Error in get today's case details:`, error)
+    }
     return () => {isCanceled = true;}
   }, []);
 
