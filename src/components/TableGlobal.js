@@ -21,7 +21,7 @@ const makeColumns = (place) => {
     columns[1].label = 'State/Province';
     columns[3] = { id: 'increased', label: 'Increased', align: 'right', maxWidth: 50 };
     columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
-    columns[5] = { id: 'lethality', label: 'Lathality', align: 'right', maxWidth: 50 };
+    columns[5] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
   } else {
     columns[3] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
     columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
