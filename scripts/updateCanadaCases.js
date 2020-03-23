@@ -18,7 +18,7 @@ const provinces = [
   { fullname: "Prince Edward Island", abbr: 'PE'},
   { fullname: "Nova Scotia", abbr: 'NS'},
   { fullname: "New Brunswick", abbr: 'NB'},
-  { fullname: "Yukon", abbr: 'YK'},
+  { fullname: "Yukon", abbr: 'YT'},
   { fullname: "Northwest Territories", abbr: 'NT'},
   { fullname: "Nunavut", abbr: 'NU'},
   { fullname: "Repatriated travellers", abbr: 'RT'},
