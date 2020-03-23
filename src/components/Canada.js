@@ -37,7 +37,7 @@ const StyledTableCell = withStyles(theme => ({
 }))(TableCell);
 
 const isWideScreen = () => {
-    
+    console.log('screen change')
   let mediaQuery = window.matchMedia("(orientation: portrait)");
   if(mediaQuery.matches) { return false };
 
@@ -53,7 +53,7 @@ const useStyles = makeStyles({
     display: 'flex', // : 'none',
     position: 'absolute',  // fixed button will not move when scroll the page
     top: isWideScreen() ? '6.6rem' : '8.0rem',
-    marginLeft: isWideScreen() ? '43.5%' : '1.5rem', 
+    marginLeft: '1.5rem', 
     // height: '2.2rem',
     // backgroundSize: '100% auto',
     zIndex: 9999,
@@ -280,6 +280,7 @@ export default function Canada() {
       return (
         <>
           <Button variant="outlined" size="small" color="primary" className={classes.switch} 
+                  style={{top: isWideScreen() ? '6.6rem' : '8.0rem'}}
                   onClick={handleSwitch} > View Table
           </Button>
           <MapCanada hisCases={hisCases} />
@@ -288,8 +289,9 @@ export default function Canada() {
     case 'table':
       return (
         <div>        
-          <Button variant="outlined" size="small" color="primary" className={classes.switch} 
-                    onClick={handleSwitch} > View Map
+          <Button variant="outlined" size="small" color="primary" className={classes.switch}
+                  style={{top: isWideScreen() ? '6.6rem' : '8.0rem'}}
+                  onClick={handleSwitch} > View Map
           </Button>
           <div style={{margin:'0 1rem 1.5rem 1rem'}}> 
             <TableTitle style={{display: 'flex'}}/>
