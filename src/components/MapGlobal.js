@@ -85,9 +85,10 @@ export default function MapGlobal({mapData}) {
           let lethalityStr =  (deadCount > 0) ? `Lethality:\t${(100 * deadCount / (value)).toFixed(2) + '%'}` : '';
           let tipString = `<b>${name}</b><br />
                         Confirmed: ${valueFormat(value)}<br />
-                        Existing:\t${valueFormat(currentConfirmedCount)}<br />
                         Cured:\t${valueFormat(curedCount)}<br />
-                        Death:\t${valueFormat(deadCount)}<br />${lethalityStr}`;
+                        Death:\t${valueFormat(deadCount)}<br />
+                        Active:\t${valueFormat(currentConfirmedCount)}<br />
+                        ${lethalityStr}`;
           return tipString;
         }
       },
