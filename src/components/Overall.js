@@ -86,7 +86,7 @@ export default function OverallData ({place, overall}) {
             suspect: data.overall.increased, 
             cured: data.overall.recovered, 
             death: data.overall.death, 
-            fatality: (100 * data.overall.death.replace(/,/,'') / data.overall.confirmed.replace(/,/,'')).toFixed(2) + '%'
+            fatality: (100 * data.overall.death.replace(/,/,'') / data.overall.confirmed).toFixed(2) + '%'
           });
           handleResize();
         }
