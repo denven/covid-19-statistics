@@ -68,7 +68,7 @@ export default function StickyHeadTable({place, rows}) {
               confirmedCount: confirmed,
               increased: increased,
               deadCount: death,
-              lethality: deathRate
+              lethality: deathRate.replace(/([\d]{1,2}.[\d])%/,'$10%')
             }
           }));
         }
@@ -82,10 +82,13 @@ export default function StickyHeadTable({place, rows}) {
           let dataWithInfectRate = rows.map(country => {
 
             let infectRate = 0;  // infection number per million 
-            let lethality = 0;
+            let lethality = '0%';
             if( data[country.countryEnglishName] > 0 ) {
               infectRate = Math.ceil(country.confirmedCount * 1000000 / data[country.countryEnglishName]);
-              lethality = (100 * country.deadCount / country.confirmedCount).toFixed(2) + '%';
+              if(country.deadCount > 0) {
+                lethality = (100 * country.deadCount / country.confirmedCount).toFixed(2) + '%';
+                lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
+              }
             };
 
             Object.assign(country, {"infectRate": infectRate}, {"lethality": lethality});
