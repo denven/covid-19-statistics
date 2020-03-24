@@ -210,7 +210,7 @@ const getCanadaOverall = (canada, oldOverall, casesAsOfToday, allDaysCases) => {
     },[0]);
 
     newOverall = {
-      confirmed: canada["Conf."],
+      confirmed: canada["Conf."] + canada["Pres."],
       recovered: canada["Recov."],
       death: canada["Deaths"],
       increased: todayTotal - yesterdayTotal
