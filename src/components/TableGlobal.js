@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 
-const columns = new Array(6);
+const columns = new Array(7); // max columns is 7
 
 const makeColumns = (place) => {
 
@@ -22,10 +22,12 @@ const makeColumns = (place) => {
     columns[3] = { id: 'increased', label: 'Increased', align: 'right', maxWidth: 50 };
     columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
+    if(columns.length > 6) columns.pop();
   } else {
     columns[3] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
     columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 };  
+    columns[6] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };  
   }
 }
 
@@ -78,11 +80,13 @@ export default function StickyHeadTable({place, rows}) {
           let dataWithInfectRate = rows.map(country => {
 
             let infectRate = 0;  // infection number per million 
+            let lethality = 0;
             if( data[country.countryEnglishName] > 0 ) {
               infectRate = Math.ceil(country.confirmedCount * 1000000 / data[country.countryEnglishName]);
+              lethality = (100 * country.deadCount / country.confirmedCount).toFixed(2) + '%';
             };
 
-            Object.assign(country, {"infectRate": infectRate})
+            Object.assign(country, {"infectRate": infectRate}, {"lethality": lethality});
             return country;
           });
 

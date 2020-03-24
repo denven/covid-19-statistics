@@ -14,6 +14,9 @@ const getCountryEnName = (country) => {
       case "格陵兰": return "Greenland";
       case "赞比亚共和国": return "Zambia";
       case "阿鲁巴": return "Aruba";
+      case "新喀里多尼亚": return "New Caledonia";
+      case "厄立特里亚": return "Eritrea";
+      case "东帝汶": return "Timor-Leste";
       default:
         return null;  // don't know the actual english name  
     }
@@ -37,10 +40,16 @@ const getCountryEnName = (country) => {
     case "Somali": return "Somalia";
     case "St.Lucia": return "Saint Lucia";
     case "Cayman Is": return "Cayman Islands";
+    case "Ivory Coast": return "Côte d'Ivoire";
+    case "Burma": return "Myanmar";
+    case "Papua New Cuinea": return "Papua New Guinea";
+    case "EI Salvador": return "El Salvador";
+    case "Bosnia and Herzegovina": return "Bosnia and Herz.";
+    case "North Macedonia": return "Macedonia";
     case "United Kingdom": 
       if(country.countryName === "英国（含北爱尔兰）") return null;
       return "United Kingdom";
-    // case "Grand Princess Cruise": return "Grand Princess Cruise";
+    // case "Grand Princess Cruise": return "Grand Princ"ess Cruise";
     case "Diamond Princess Cruise Ship": return "Diamond Princess";
     default: 
       return country.countryEnglishName;
