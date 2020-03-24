@@ -16,7 +16,7 @@ import AppLogo from './AppLogo';
 import OverallData from './Overall';
 
 import MapGlobal from './MapGlobal';
-import TableGlobal from './TableGlobal';
+import Table from './Table';
 
 import MapChina from './MapChina';
 import CasesTrend from './LineChart';
@@ -79,7 +79,7 @@ function USA({loaded}) {
           <MapUSA loaded={loaded}/> 
           <CasesTrend country={'USA'}/> 
         </div>
-        <div className="bodyGlobalTable"> <TableGlobal place={'USA'} rows={ [] } /> </div>
+        <div className="bodyGlobalTable"> <Table place={'USA'} rows={ [] } /> </div>
       </div>
     </div>
   );
@@ -101,13 +101,13 @@ function Global({loaded, overall, globalMap, tableData}) {
         { 
           !loaded ? (
             <>
-              <TableGlobal rows={tableData} />
+              <Table rows={tableData} />
               <div className="dataLoading"> 
                 <Loader type="TailSpin" color="#C23531" height={25} width={25} /> 
                 <span style={{fontSize: 12, fontWeight: 600}}>&nbsp; Data Loading ...</span>
               </div>
             </>
-          ) : ( <TableGlobal rows={tableData} /> )
+          ) : ( <Table rows={tableData} /> )
         }
       </div>
       </div>
