@@ -37,28 +37,16 @@ const StyledTableCell = withStyles(theme => ({
 }))(TableCell);
 
 const isWideScreen = () => {
-    console.log('screen change')
+    // console.log('screen change')
   let mediaQuery = window.matchMedia("(orientation: portrait)");
   if(mediaQuery.matches) { return false };
-
   if(document.body.clientWidth < 1024) { return false; }
-
   return true;
 }
 
 const useStyles = makeStyles({
   root: { width: '100%', }, container: { maxHeight: "84vh" },
   chart: {marginTop: '2.5%'},
-  switch: {
-    display: 'flex', // : 'none',
-    position: 'absolute',  // fixed button will not move when scroll the page
-    top: isWideScreen() ? '6.6rem' : '8.0rem',
-    marginLeft: '1.5rem', 
-    // height: '2.2rem',
-    // backgroundSize: '100% auto',
-    zIndex: 9999,
-    // webkitTransition: 'opacity .3s ease',
-  }
 });
 
 function TableTitle () {
@@ -211,6 +199,7 @@ export default function Canada() {
   const [hisCases, setCases] = useState({dates: [], cases: []});
   const [provDetails, setDetail] = useState([]);
   const [viewMode, setMode] = useState('map');
+  const [screenMode, setScreen] = useState('PORTRAIT');
 
   let classes = useStyles();
 
@@ -275,12 +264,35 @@ export default function Canada() {
     return () => {isCanceled = true;}
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("orientationchange", () => {
+      if (window.orientation === 90 || window.orientation === -90) {
+        setScreen('LANDSCAPE');        
+      } else if (window.orientation === 0 || window.orientation === 180) {
+        setScreen('PORTRAIT');
+      }
+    });
+  });
+
+  let switchStyle = { };  
+  if(screenMode === 'LANDSCAPE') {
+    if(document.body.clientWidth >= 1024) 
+      switchStyle = { display: 'flex', position: 'absolute', top: '6.6rem', marginLeft: '44vw', zIndex: 9999, };
+    else 
+      switchStyle = { display: 'flex', position: 'absolute', top: '8.0rem', marginLeft: '4vw', zIndex: 9999, };
+  } else {
+    if(document.body.clientWidth >= 1024) 
+      switchStyle = { display: 'flex', position: 'absolute', top: '6.6rem', marginLeft: '44vw', zIndex: 9999, };
+    else
+      switchStyle = { display: 'flex', position: 'absolute', top: '8.0rem', marginLeft: '4vw', zIndex: 9999, };
+  }
+
   switch(viewMode) {
     case 'map': 
       return (
         <>
           <Button variant="outlined" size="small" color="primary" className={classes.switch} 
-                  style={{top: isWideScreen() ? '6.6rem' : '8.0rem'}}
+                  style={switchStyle}
                   onClick={handleSwitch} > View Table
           </Button>
           <MapCanada hisCases={hisCases} />
@@ -290,7 +302,7 @@ export default function Canada() {
       return (
         <div>        
           <Button variant="outlined" size="small" color="primary" className={classes.switch}
-                  style={{top: isWideScreen() ? '6.6rem' : '8.0rem'}}
+                  style={switchStyle}
                   onClick={handleSwitch} > View Map
           </Button>
           <div style={{margin:'0 1rem 1.5rem 1rem'}}> 
