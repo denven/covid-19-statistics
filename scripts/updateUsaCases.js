@@ -73,6 +73,9 @@ async function getUsaLatestCases () {
       let stateConfirmed = $confIncreased.text().replace(stateIncreased, '').replace(/,/, ''); // remove thousands separator 
       stateIncreased = stateIncreased.replace(/\+([\d]{1,5})$/g, '$1');  // remove '+'
       // console.log(stateConfirmed, stateIncreased === '' ? 'N/A' : stateIncreased)
+      let $stateDeaths = $(data[key + 2]);
+      let stateDeathsInc = $stateDeaths.find('div').text();
+      let stateDeaths = $stateDeaths.text().replace(stateDeathsInc, '').replace(/,/, '');
 
       if(key > 280) break;
       if(stateEnglishName) {
@@ -80,8 +83,8 @@ async function getUsaLatestCases () {
           name: stateEnglishName,
           confirmed: stateConfirmed, // $(data[key + 1]).text().match(/[\d]{1,6}/g)[0],
           increased: stateIncreased === '' ? 'N/A' : stateIncreased,
-          death: $(data[key + 2]).text().match(/[\d]{1,6}/g)[0],  // this is death number
-          deathRate: $(data[key + 3]).text()   // this is death rate
+          death: stateDeaths, //$(data[key + 2]).text().match(/[\d]{1,6}/g)[0],  // this is death number
+          deathRate: $(data[key + 3]).text(),   // this is death rate
         })
       }
       key = key + 4;
