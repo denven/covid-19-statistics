@@ -65,4 +65,25 @@ async function updateGlobalCases () {
   }
 }
 
-updateGlobalCases();
+const updateDataFromDXY = () => {
+
+  try {
+    axios.get('https://lab.isaaclin.cn/nCoV/api/area').then( ({ data }) => {
+
+      let time = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+      const worldCasesStr = JSON.stringify(data, null, 4);
+      fs.writeFile("../public/assets/Areas.json", worldCasesStr, (err, result) => {
+        if(err) console.log('Error in writing data into Json file', err);
+        console.log(`Updated global countries cases global at ${time}`);
+      });
+
+    }).catch( err => console.log(err));
+
+  } catch (error) {
+    console.log(`Error when request data from lab.isaaclin.cn/nCoV/api`);
+  }
+}
+
+// they canbe merged into using only one data source
+updateGlobalCases();  // scrape live toll data from worldometer.com
+updateDataFromDXY();  // use an api to get detailed cases in China and other countries
