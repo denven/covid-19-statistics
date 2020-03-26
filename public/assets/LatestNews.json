@@ -2,86 +2,182 @@
     "articles": [
         {
             "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "publishedAt": "2020-03-26T00:24:56Z",
+            "title": "COVID-19: Protecting DTES residents key to stopping coronavirus spread | Vancouver Sun - Vancouver Sun",
+            "url": "https://www.youtube.com/watch?v=liLPUmcjmP4",
+            "urlToImage": "https://i.ytimg.com/vi/liLPUmcjmP4/maxresdefault.jpg",
+            "description": "Dr. Bonnie Henry explains the strategy to protect Downtown Eastside residents from the coronavirus. ___ About: Since 1912, the Vancouver Sun has cast a watch...",
+            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
+        },
+        {
+            "source": {
+                "id": "cbc-news",
+                "name": "CBC News"
+            },
+            "publishedAt": "2020-03-25T23:14:00Z",
+            "title": "The riskiest surfaces for coronavirus and how to clean them - CBC.ca",
+            "url": "https://www.cbc.ca/news/health/covid-19-surfaces-1.5509619",
+            "urlToImage": "https://i.cbc.ca/1.5509761.1585160221!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_620/health-coronavirus-germany.JPG",
+            "description": "Worried about catching the novel coronavirus by touching the wrong thing? Here’s what we know about which surfaces are worst, which ones are safer, and how to clean them.",
+            "content": "The recent news may have you worried about catching the novel coronavirus by touching the wrong thing.\r\nPlaygrounds have been closed across Canada to prevent transmission among children touching the same swings and jungle gyms, which typically aren't sanitize… [+6789 chars]"
+        },
+        {
+            "source": {
                 "id": "cnbc",
                 "name": "CNBC"
             },
-            "publishedAt": "2020-03-24T21:53:20Z",
-            "title": "Los Angeles health officials say a child under 18 has died from the coronavirus - CNBC",
-            "url": "https://www.cnbc.com/2020/03/24/los-angeles-health-officials-say-a-child-under-18-has-died-from-the-coronavirus.html",
-            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106459123-1585082950016gettyimages-1205521597.jpeg?v=1585083437",
-            "description": "Local health officials said said 42% of the county's coronavirus patients are between 18 and 40 years old and 39% are between 41 and 65 years old.",
-            "content": "A child under 18 has died from the coronavirus in California, Los Angeles County health officials announced Tuesday. \r\n\"Tragically, one of the people who died was a person under the age of 18, a devastating reminder that COVID-19 infects people of all ages,\" … [+2495 chars]"
+            "publishedAt": "2020-03-25T21:49:11Z",
+            "title": "FDA warns consumers against fraudulent coronavirus tests, vaccines and treatments - CNBC",
+            "url": "https://www.cnbc.com/2020/03/25/fda-warns-consumers-against-fraudulent-coronavirus-tests-vaccines-and-treatments.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106434840-1583852349376gettyimages-1206352386.jpeg?v=1583852417",
+            "description": "The agency said some people and companies are trying to profit from the coronavirus pandemic by selling unproven and illegally marketed products that make false claims.",
+            "content": "Consumers should beware of buying or using products that sellers claim will help diagnose, treat, cure or prevent COVID-19 as the coronavirus continues to sweep across the country, the U.S. Food and Drug Administration said Wednesday. \r\nSome companies are try… [+1588 chars]"
+        },
+        {
+            "source": {
+                "id": "cbc-news",
+                "name": "CBC News"
+            },
+            "publishedAt": "2020-03-25T20:52:00Z",
+            "title": "Coronavirus impact spreads across U.S., with much of the population under stay-at-home orders - CBC.ca",
+            "url": "https://www.cbc.ca/news/world/us-states-coronavirus-1.5509241",
+            "urlToImage": "https://i.cbc.ca/1.5509335.1585146244!/cpImage/httpImage/image.jpg_gen/derivatives/16x9_620/aptopix-virus-outbreak-louisiana.jpg",
+            "description": "The strain of the fast-spreading coronavirus outbreak accelerated across the United States on Wednesday beyond the hot spots of New York, California and Washington state, as Louisiana and Iowa were declared federal disaster areas.",
+            "content": "New York, which is experiencing more coronavirus deaths and infections than any other U.S. state, is showing tentative signs of slowing the spread of the virus, Gov. Andrew Cuomo said Wednesday, while the health crisis deepened in hard-hit New Orleans and els… [+7315 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "Globalnews.ca"
+                "name": "Latimes.com"
             },
-            "publishedAt": "2020-03-24T21:48:30Z",
-            "title": "Coronavirus: New texting initiative gives Albertans mental health support - Global News",
-            "url": "http://globalnews.ca/news/6722244/coronavirus-alberta-mental-health-support-texts/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2019/11/nysb443-1024_2013_162210-1.jpg?quality=70&strip=all&w=720&h=379&crop=1",
-            "description": "Subscribers will receive daily supportive mental health text messages over three months.",
-            "content": "Albertans who feel they need a little extra mental health support as they face the COVID-19 pandemic have a new outlet to seek out advice.\r\nAlberta Health Services, in partnership with hospitals and other health organizations, launched the Text4Hope program o… [+3416 chars]"
+            "publishedAt": "2020-03-25T20:23:04Z",
+            "title": "Loss of smell or taste may be a symptom of coronavirus infection - Los Angeles Times",
+            "url": "https://www.latimes.com/science/story/2020-03-25/loss-of-smell-and-taste-may-be-symptoms-of-coronavirus-infection",
+            "urlToImage": "https://ca-times.brightspotcdn.com/dims4/default/2bda4c2/2147483647/strip/true/crop/3504x1840+0+248/resize/1200x630!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F5f%2Fd0%2Fa741ded846959d3f1849ea7240ff%2Fap20083790044784.jpg",
+            "description": "A loss of smell or taste may be an early sign of coronavirus infection, medical experts now say. It might serve as a useful COVID-19 screening tool.",
+            "content": "A loss of smell or taste could be an early sign of infection with the new coronavirus, say medical experts who cite reports from several countries.\r\nIt might probe to be a useful screening tool for COVID-19, they say.\r\nThe idea of a viral infection reducing s… [+2604 chars]"
         },
         {
             "source": {
                 "id": null,
                 "name": "Youtube.com"
             },
-            "publishedAt": "2020-03-24T19:50:36Z",
-            "title": "Coronavirus outbreak: Ontario cases nearing 600, one new death reported | FULL - Global News",
-            "url": "https://www.youtube.com/watch?v=fVHgIadtPGg",
-            "urlToImage": "https://i.ytimg.com/vi/fVHgIadtPGg/maxresdefault.jpg",
-            "description": "Ontario associate chief medical officer Dr. Barbara Yaffe said on Tuesday during a press briefing the province had recorded another COVID-19 related death, t...",
+            "publishedAt": "2020-03-25T20:08:53Z",
+            "title": "FDA approves plasma therapy treatment for coronavirus - Click On Detroit | Local 4 | WDIV",
+            "url": "https://www.youtube.com/watch?v=dZ0xDq7UlD8",
+            "urlToImage": "https://i.ytimg.com/vi/dZ0xDq7UlD8/maxresdefault.jpg",
+            "description": "Health experts say a coronavirus treatment could be ready in a few months, but a vaccine still wouldn’t be available for at least a year.",
             "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "publishedAt": "2020-03-25T20:02:30Z",
+            "title": "Coronavirus: How do we protect our mental health? - Al Jazeera English",
+            "url": "https://www.youtube.com/watch?v=pFOX4edCWt4",
+            "urlToImage": "https://i.ytimg.com/vi/pFOX4edCWt4/maxresdefault.jpg",
+            "description": "The coronavirus pandemic has plunged the entire world into a state of uncertainty that is taking a toll on people with existing mental health conditions. And...",
+            "content": "The coronavirus pandemic has plunged the entire world into a state of uncertainty that is taking a toll on people with existing mental health conditions. And as millions face sickness, isolation, financial hardship and information overload it is likely to tri… [+1067 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "publishedAt": "2020-03-25T19:55:41Z",
+            "title": "Coronavirus: Questions around home testing - as thousands volunteer to help NHS - Channel 4 News",
+            "url": "https://www.youtube.com/watch?v=wBfY-i3GJ1s",
+            "urlToImage": "https://i.ytimg.com/vi/wBfY-i3GJ1s/maxresdefault.jpg",
+            "description": "Hundreds of thousands of volunteers have signed up to help the NHS - but the Prime Minister warned tonight the health service only had limited equipment - so...",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Globalnews.ca"
+            },
+            "publishedAt": "2020-03-25T19:48:45Z",
+            "title": "Physiotherapists are turning to virtual visits — but insurance can be a pain in the neck - Global News",
+            "url": "http://globalnews.ca/news/6729217/coronavirus-physiotherapy-insurance/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/gettyimages-726777075-e1585144458412.jpg?quality=70&strip=all&crop=0px%2C30px%2C1025px%2C542px&resize=720%2C379",
+            "description": "As the coronavirus outbreak forces physiotherapists online, insurance providers have proven slow to update coverage policy, advocates say.",
+            "content": "For Patricia, a Toronto woman living with endometriosis, pelvic physiotherapy is a critical tool for her painful chronic condition.\r\nGlobal News has chosen to use a pseudonym to protect her privacy.\r\nUnfortunately, Patricia’s clinic is now closed due to conce… [+6884 chars]"
+        },
+        {
+            "source": {
+                "id": "the-washington-post",
+                "name": "The Washington Post"
+            },
+            "publishedAt": "2020-03-25T19:46:22Z",
+            "title": "Hospitals consider universal do-not-resuscitate orders for coronavirus patients - The Washington Post",
+            "url": "https://www.washingtonpost.com/health/2020/03/25/coronavirus-patients-do-not-resucitate/",
+            "urlToImage": "https://www.washingtonpost.com/resizer/k3452txZwMjYzrOS0TbjEVEJgyk=/1440x0/smart/d1i4t8bqe7zgj6.cloudfront.net/03-24-2020/t_8a8c5e491d224704beec957580f758f3_name_032420_AmericanDoctors_Thumb_v02.png",
+            "description": "Worries that “all hands” responses may expose doctors and nurses to infection prompts debate about prioritizing the needs of the many over the one.",
+            "content": "The conversations are driven by the realization that the risk to staff amid dwindling stores of protective equipment such as masks, gowns and gloves may be too great to justify the conventional response when a patient codes, and their heart or breathing stops… [+10106 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Globalnews.ca"
+            },
+            "publishedAt": "2020-03-25T19:11:56Z",
+            "title": "Coronavirus: What Calgary veterinarians are doing to help pets - Global News",
+            "url": "http://globalnews.ca/news/6729617/coronavirus-calgary-veterinarians-pets/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/lrg_dsc09617.jpg?quality=70&strip=all&w=720&h=379&crop=1",
+            "description": "A Calgary veterinarian is reassuring pet owners that essential services for their pets will continue despite the COVID-19 pandemic.",
+            "content": "A Calgary veterinarian is reassuring pet owners that essential services for their pets will continue despite the COVID-19 pandemic.\r\n“We will remain open to offer emergent care or anything that can cause pain, distress or a detriment of health to an animal,” … [+3223 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Globalnews.ca"
+            },
+            "publishedAt": "2020-03-25T19:06:18Z",
+            "title": "Coronavirus: St. Catharines man is Niagara’s first COVID-19-connected death - Global News",
+            "url": "http://globalnews.ca/news/6731126/coronavirus-st-catharines-death/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/st.catharines.jpg?quality=70&strip=all&w=720&h=379&crop=1",
+            "description": "Niagara currently has seven confirmed positive cases in the region.",
+            "content": "The first COVID-19-related death has been reported in Ontario’s Niagara region, according to Niagara Health.\r\nThe agency says the deceased, a man in his 80s, was a patient at the St. Catharines hospital on Fourth Avenue.\r\nThe man contracted the affliction thr… [+2488 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Youtube.com"
+            },
+            "publishedAt": "2020-03-25T18:47:04Z",
+            "title": "Former CDC director on the coronavirus: 'This is going to be a long war' | USA TODAY - USA TODAY",
+            "url": "https://www.youtube.com/watch?v=mnrIYvcq9vk",
+            "urlToImage": "https://i.ytimg.com/vi/mnrIYvcq9vk/maxresdefault.jpg",
+            "description": "Dr. Tom Frieden, former head of the Centers for Disease Control and Prevention, warns of 'catastrophic scenes' in New York. RELATED: Coronavirus $2 trillion ...",
+            "content": "Dr. Tom Frieden, former head of the Centers for Disease Control and Prevention, warns of 'catastrophic scenes' in New York.RELATED: Coronavirus $2 trillion stimulus package has been passed https://youtu.be/uv3GqTy32aM\r\n» Subscribe to USA TODAY: http://bit.ly/… [+262 chars]"
         },
         {
             "source": {
                 "id": null,
                 "name": "Ctvnews.ca"
             },
-            "publishedAt": "2020-03-24T19:36:51Z",
-            "title": "Fearing coronavirus, Arizona man dies after taking a form of chloroquine used to treat aquariums - CTV News",
-            "url": "https://www.ctvnews.ca/health/coronavirus/fearing-coronavirus-arizona-man-dies-after-taking-a-form-of-chloroquine-used-to-treat-aquariums-1.4866361",
-            "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.4866363.1585078118!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
-            "description": "A Phoenix-area man is dead and his wife is under critical care after the two took chloroquine phosphate in an apparent attempt to self-medicate for the novel coronavirus.",
-            "content": "A Phoenix-area man is dead and his wife is under critical care after the two took chloroquine phosphate in an apparent attempt to self-medicate for the novel coronavirus, according to hospital system Banner Health.\r\nIt does not appear they took the pharmaceut… [+3645 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Bgr.com"
-            },
-            "publishedAt": "2020-03-24T19:02:09Z",
-            "title": "Coronavirus vaccine might be ready for healthcare workers this fall - BGR",
-            "url": "https://bgr.com/2020/03/24/coronavirus-vaccine-usa-modernas-mrna-1273-might-be-ready-this-fall/",
-            "urlToImage": "https://boygeniusreport.files.wordpress.com/2020/03/coronavirus-covid-19-test.jpg?quality=98&strip=all",
-            "description": "Coronavirus vaccine developer Moderna said the mRNA-1273 drug that’s currently in the clinical trials phase might be ready to be deployed as soon as this fall. The first beneficiaries could b…",
-            "content": "<ul><li>Coronavirus vaccine developer Moderna said the mRNA-1273 drug that’s currently in the clinical trials phase might be ready to be deployed as soon as this fall.</li><li>The first beneficiaries could be healthcare workers and other professionals in the … [+3075 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Globalnews.ca"
-            },
-            "publishedAt": "2020-03-24T18:33:11Z",
-            "title": "One hantavirus death in China sparks ‘hysteria’ over old disease - Global News",
-            "url": "http://globalnews.ca/news/6724399/hantavirus-china-death-coronavirus/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/hantttta.jpg?quality=70&strip=all&w=720&h=379&crop=1",
-            "description": "Coronavirus anxiety has inspired uninformed fears of the hantavirus, a decades-old disease that doesn't spread between humans.",
-            "content": "One person has reportedly died of a rodent-carried hantavirus infection in China, sparking wild and completely unfounded fears of a “coronavirus 2.0″ pandemic on social media.\r\nThe Global Times, a state-controlled Chinese publication, tweeted about the death … [+5916 chars]"
+            "publishedAt": "2020-03-25T18:42:58Z",
+            "title": "Antimalarial drug hydroxychloroquine no better than standard coronavirus care: study - CTV News",
+            "url": "https://www.ctvnews.ca/health/coronavirus/antimalarial-drug-hydroxychloroquine-no-better-than-standard-coronavirus-care-study-1.4867973",
+            "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.4867976.1585161453!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
+            "description": "Hydroxychloroquine, an antimalarial drug dubbed a 'gift from God' by U.S. President Donald Trump for its potential ability to fight the new coronavirus, was found to be no more effective than standard treatment in a small Chinese study.",
+            "content": "WASHINGTON -- \r\nHydroxychloroquine, an antimalarial drug dubbed a \"gift from God\" by U.S. President Donald Trump for its potential ability to fight the new coronavirus, was found to be no more effective than standard treatment in a small Chinese study.\r\nThe p… [+2165 chars]"
         },
         {
             "source": {
                 "id": null,
                 "name": "Youtube.com"
             },
-            "publishedAt": "2020-03-24T17:16:49Z",
-            "title": "Researchers study drug to reduce coronavirus complications - Rappler",
-            "url": "https://www.youtube.com/watch?v=4vc8eJq8yTE",
-            "urlToImage": "https://i.ytimg.com/vi/4vc8eJq8yTE/maxresdefault.jpg",
-            "description": "Canadian researchers launch a study Monday, March 23, into the use of a powerful anti-inflammatory drug to reduce the risks of pulmonary complications and de...",
+            "publishedAt": "2020-03-25T18:35:08Z",
+            "title": "Coronavirus around the world: March 25, 2020 - Global News",
+            "url": "https://www.youtube.com/watch?v=4vsBHsvbG7w",
+            "urlToImage": "https://i.ytimg.com/vi/4vsBHsvbG7w/maxresdefault.jpg",
+            "description": "Here are the biggest COVID-19 stories today from around the world: Britain’s Prince Charles tests positive for COVID-19. Spain registers more than 700 deaths...",
             "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
         },
         {
@@ -89,156 +185,60 @@
                 "id": null,
                 "name": "Globalnews.ca"
             },
-            "publishedAt": "2020-03-24T17:16:20Z",
-            "title": "Coronavirus: Waterloo Public Health lists locations where public may have been exposed to COVID-19 - Global News",
-            "url": "http://globalnews.ca/news/6724756/coronavirus-waterloo-public-health-covid-19-exposure-locations/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/rjb10754414-5.jpg?quality=70&strip=all&w=720&h=379&crop=1",
-            "description": "Currently, the list includes an Italian restaurant in Kitchener as well as a meeting hall in Seaforth, Ont.",
-            "content": "Waterloo Public Health has launched a new page listing the locations where the public may have been exposed to patients with confirmed cases of COVID-19, the disease caused by the novel coronavirus.\r\nCurrently, the list includes an Italian restaurant in Kitch… [+3062 chars]"
+            "publishedAt": "2020-03-25T17:56:24Z",
+            "title": "‘If I get corona, I get corona’: Spring breaker apologizes for comments on COVID-19 - Global News",
+            "url": "http://globalnews.ca/news/6730007/coronavirus-spring-breaker-apology/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/covid-bro-e1584626098827.jpg?quality=70&strip=all&crop=0px%2C120px%2C1257px%2C664px&resize=720%2C379",
+            "description": "Brady Sluder, 22, says there's no excuse for the viral comments he made about the coronavirus during spring break in Miami, Fla.",
+            "content": "It turns out that living for the moment during a coronavirus pandemic isn’t such a great idea especially when your words make you the viral face of ignorant young people on spring break.\r\nBrady Sluder, the spring breaker who infamously shrugged off the threat… [+5235 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Forbes.com"
+            },
+            "publishedAt": "2020-03-25T17:52:34Z",
+            "title": "Is Eating Takeout Food Safe During The Coronavirus Pandemic? - Forbes",
+            "url": "https://www.forbes.com/sites/victoriaforster/2020/03/25/is-eating-takeout-food-safe-during-the-coronavirus-pandemic/",
+            "urlToImage": "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1210741457%2F0x0.jpg",
+            "description": "Takeout food seems to pose a very minimal risk of passing on coronavirus. Here, virology experts explain why.",
+            "content": "Many restaurants are permitted to stay open during the COVID-19 outbreak to serve takeout food, but ... [+] is it safe to eat? (Photo by Zhao Jun/China News Service via Getty Images)\r\nChina News Service via Getty Images\r\nAs businesses are shuttered all over t… [+4949 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Buzzfeednews.com"
+            },
+            "publishedAt": "2020-03-25T17:45:00Z",
+            "title": "Her Family Was Careful, And They Got The Coronavirus Anyway - BuzzFeed News",
+            "url": "https://www.buzzfeednews.com/article/annehelenpetersen/coronavirus-covid-19-positive-test-family-shame-stigma",
+            "urlToImage": "https://img.buzzfeed.com/buzzfeed-static/static/2020-03/25/16/asset/f887d5898973/sub-buzz-3688-1585153064-15.jpg?crop=1600:837;0,35",
+            "description": "“I do not feel like I could safely disclose my positive status, given what I've heard,” a mother in Seattle said. “However, there is a silver lining: This is a bit liberating.”",
+            "content": "The journalists at BuzzFeed News are proud to bring you trustworthy and relevant reporting about the coronavirus. To help keep this news free,become a memberand sign up for our newsletter,Outbreak Today.\r\nEarlier this week, I received an email from a reader i… [+16118 chars]"
+        },
+        {
+            "source": {
+                "id": "financial-times",
+                "name": "Financial Times"
+            },
+            "publishedAt": "2020-03-25T17:34:18Z",
+            "title": "Global rush for coronavirus drug sees India stop exports - Financial Times",
+            "url": "https://www.ft.com/content/dc8386ba-6eae-11ea-89df-41bea055720b",
+            "urlToImage": "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fprod-upp-image-read.ft.com%2F4fbc0604-6ebc-11ea-89df-41bea055720b?source=next-opengraph&fit=scale-down&width=900",
+            "description": "Supplies of chloroquine hoarded despite lack of concrete evidence about its effectiveness",
+            "content": "India is prioritising the supply of a potential coronavirus drug to its own people by banning exports, as other countries, hospitals and even individual doctors join the global grab for an unproven treatment hailed by US President Donald Trump as a game-chang… [+3768 chars]"
         },
         {
             "source": {
                 "id": null,
                 "name": "Youtube.com"
             },
-            "publishedAt": "2020-03-24T17:11:25Z",
-            "title": "UK Health Secretary Speaks about Coronavirus Updates in UK | LIVE | NowThis - NowThis News",
-            "url": "https://www.youtube.com/watch?v=0i21FAkF1s0",
-            "urlToImage": "https://i.ytimg.com/vi/0i21FAkF1s0/maxresdefault.jpg",
-            "description": "BRITAIN ON FULL LOCK DOWN: British Health Secretary Matt Hancock speaks about the latest coronavirus developments in the UK. Yesterday PM Boris Johnson annou...",
-            "content": "BRITAIN ON FULL LOCK DOWN: British Health Secretary Matt Hancock speaks about the latest coronavirus developments in the UK. Yesterday PM Boris Johnson announced a full lockdown in Britain, banning any gathering of more than two people, and making everyone st… [+986 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Victoriaadvocate.com"
-            },
-            "publishedAt": "2020-03-24T16:50:52Z",
-            "title": "3 Victoria County residents confirmed to have COVID-19 | Covid-19 - Victoria Advocate",
-            "url": "https://www.victoriaadvocate.com/covid-19/victoria-county-residents-confirmed-to-have-covid/article_5eca8458-6de6-11ea-bca8-ebfed97a142e.html",
-            "urlToImage": "https://bloximages.newyork1.vip.townnews.com/victoriaadvocate.com/content/tncms/assets/v3/editorial/6/85/68580104-68c2-11ea-b6a1-ff12227d2374/5e718b6ce4d95.image.jpg?resize=890%2C630",
-            "description": "Three Victoria County residents have COVID-19, the disease caused by the new coronavirus, the public health department said Tuesday morning.",
-            "content": "Three Victoria County residents have COVID-19, the disease caused by the new coronavirus, the public health department said Tuesday morning.\r\nTwo women in their 20s and a man in his 30s were confirmed to have the disease, according to a news release from the … [+3652 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-24T16:12:21Z",
-            "title": "Coronavirus Silent Spreaders: Loss of Smell & Taste - CBS Miami",
-            "url": "https://www.youtube.com/watch?v=UV_dLDTCdcc",
-            "urlToImage": "https://i.ytimg.com/vi/UV_dLDTCdcc/maxresdefault.jpg",
-            "description": "There's growing concern among health officials about so called silent spreaders, people who are infected with the coronavirus, but aren't sick. Now some UK d...",
-            "content": null
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-24T16:02:34Z",
-            "title": "Pets and coronavirus - FOX59 News",
-            "url": "https://www.youtube.com/watch?v=SfqR-v7XlVs",
-            "urlToImage": "https://i.ytimg.com/vi/SfqR-v7XlVs/maxresdefault.jpg",
-            "description": "Latest COVID-19 coverage: fox59.com/coronavirus",
-            "content": null
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Yahoo.com"
-            },
-            "publishedAt": "2020-03-24T16:01:00Z",
-            "title": "Coronavirus: UK deaths rise by 87 in biggest daily increase as total cases surpass 8,000 - Yahoo News UK",
-            "url": "https://consent.yahoo.com/collectConsent?sessionId=1_cc-session_051781c3-771b-48d2-8239-5de73df6647e&lang=en-GB&inline=false",
-            "urlToImage": null,
-            "description": null,
-            "content": "Yahoo is part of Verizon Media. Click 'I agree' to allow Verizon Media and our partners to use cookies and similar technologies to access your device and use your data (including location) to understand your interests, and provide and measure personalised ads… [+344 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Globalnews.ca"
-            },
-            "publishedAt": "2020-03-24T14:48:05Z",
-            "title": "Coronavirus: Guelph’s 1st COVID-19 case confirmed at St. Joseph’s Health Centre - Global News",
-            "url": "http://globalnews.ca/news/6723999/guelph-coronavirus/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/03/image-from-ios-16.jpg?quality=70&strip=all&w=720&h=379&crop=1",
-            "description": "Health officials say the man in his 80s is a patient in one of the post-acute units and is listed in stable condition.",
-            "content": "Public Health officials say a man in his 80s has become the first case of the novel coronavirus in Guelph.\r\nAccording to a news release on Tuesday, the man who tested positive for COVID-19, the disease caused by the virus, is a resident at St. Joseph’s Health… [+2670 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-24T13:59:37Z",
-            "title": "Coronavirus questions answered by 9Health expert - 9NEWS",
-            "url": "https://www.youtube.com/watch?v=aLQKDKLDIkY",
-            "urlToImage": "https://i.ytimg.com/vi/aLQKDKLDIkY/hqdefault.jpg",
-            "description": "Dr. Payal Kohli answers COVID-19 questions you have submitted on March 24. More local videos here: https://bit.ly/2Pa0d1l Subscribe to NEXT: http://bit.ly/2e...",
-            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Thesun.co.uk"
-            },
-            "publishedAt": "2020-03-24T13:56:22Z",
-            "title": "Common heart drugs could ‘increase your risk of catching coronavirus’ - The Sun",
-            "url": "http://www.thesun.co.uk/news/11242727/common-heart-drugs-increase-risk-coronavirus/",
-            "urlToImage": "https://www.thesun.co.uk/wp-content/uploads/2020/03/NINTCHDBPICT000572960069-e1585054873812.jpg?strip=all&quality=100&w=1200&h=800&crop=1",
-            "description": "",
-            "content": "DRUGS used to treat heart conditions may increase your risk of catching coronavirus, experts are warning. \r\nScientists say certain blood pressure drugs have the potential to change the shape of a person's cells and make it easier for the bug to infect them.\r\n… [+4936 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-24T11:58:30Z",
-            "title": "How to Manage Coronavirus Anxiety - Inside Edition",
-            "url": "https://www.youtube.com/watch?v=L_zhyIBOr3A",
-            "urlToImage": "https://i.ytimg.com/vi/L_zhyIBOr3A/maxresdefault.jpg",
-            "description": "Dr. Phil knows that anxiety runs deep for many of us in these trying times. As the pandemic grows, he is doing his part to calm our fears by answering some c...",
-            "content": "[[getSimpleString(data.title)]]\r\n[[getSimpleString(data.description)]]\r\n[[getSimpleString(data.videoCountText)]]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Youtube.com"
-            },
-            "publishedAt": "2020-03-24T11:12:55Z",
-            "title": "How to talk to your kids about the coronavirus pandemic - 10News WTSP",
-            "url": "https://www.youtube.com/watch?v=fIKXKbeOhbA",
-            "urlToImage": "https://i.ytimg.com/vi/fIKXKbeOhbA/hqdefault.jpg",
-            "description": "For many students, online learning started this week. With parents who might be working from home and technical glitches getting everything started, it was a...",
-            "content": "For many students, online learning started this week. With parents who might be working from home and technical glitches getting everything started, it was a little crazy for many. \r\nDr. Jennifer Katzenstein is a child psychologist from Johns Hopkins All Chil… [+777 chars]"
-        },
-        {
-            "source": {
-                "id": "cnn",
-                "name": "CNN"
-            },
-            "publishedAt": "2020-03-24T09:03:44Z",
-            "title": "Trump uses daily coronavirus briefings to replace campaign rallies - CNN",
-            "url": "https://www.cnn.com/2020/03/23/politics/trump-coronavirus-briefings-rallies/index.html",
-            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200320141100-05-trump-presser-0320-super-tease.jpg",
-            "description": "President Donald Trump complained that he is treated unfairly. He touted his tax cuts. He told his usual lie about how he is the one who got the Obama-era Veterans Choice program passed into law. He told a story about how he had never been booed before 2015. …",
-            "content": "(CNN)President Donald Trump complained that he is treated unfairly. He touted his tax cuts. He told his usual lie about how he is the one who got the Obama-era Veterans Choice program passed into law. He told a story about how he had never been booed before 2… [+7921 chars]"
-        },
-        {
-            "source": {
-                "id": "cnn",
-                "name": "CNN"
-            },
-            "publishedAt": "2020-03-24T06:33:58Z",
-            "title": "What these 34-year-old and 26-year-old coronavirus patients have to say to young adults - CNN",
-            "url": "https://www.cnn.com/2020/03/24/health/young-patient-stories-coronavirus/index.html",
-            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200324012647-young-patient-stories-coronavirus-split-super-tease.jpg",
-            "description": "They thought they were too young to be concerned about coronavirus, and then they tested positive.",
-            "content": "(CNN)They thought they were too young to be concerned about coronavirus, and then they tested positive.\r\nValerie Wilson, 34, and Fiona Lowenstein, 26, are telling their fellow millennials that they too need to be aware of their health in the coronavirus pande… [+3058 chars]"
+            "publishedAt": "2020-03-25T17:00:03Z",
+            "title": "New York Doctor Reports From Front Lines Of Coronavirus Crisis: 'It Does Not Spare Anyone' | TODAY - TODAY",
+            "url": "https://www.youtube.com/watch?v=5AsCH0IXelo",
+            "urlToImage": "https://i.ytimg.com/vi/5AsCH0IXelo/maxresdefault.jpg",
+            "description": "Dr. Craig Spencer, who contracted Ebola while fighting its outbreak in Africa, is now an emergency room doctor in New York City. He tells TODAY that “it’s ha...",
+            "content": "Dr. Craig Spencer, who contracted Ebola while fighting its outbreak in Africa, is now an emergency room doctor in New York City. He tells TODAY that its hard to find patients who are not coronavirus and says they are young as well as old: It does not spare an… [+945 chars]"
         }
     ]
 }
