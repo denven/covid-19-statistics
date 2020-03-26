@@ -202,18 +202,21 @@ const getCanadaOverall = (canada, oldOverall, casesAsOfToday, allDaysCases) => {
   try {  
     let yesterdayCases = allDaysCases[allDaysCases.length - 2];
     let yesterdayTotal = yesterdayCases.cases.reduce((total, curProv) => {
-      return total = parseInt(total) + parseInt(curProv.value || 0); 
+      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
     },[0]);
 
     let todayTotal = casesAsOfToday.reduce((total, curProv) => {
-      return total = parseInt(total) + parseInt(curProv.value || 0); 
+      return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
     },[0]);
 
+    // as the tables may not be updated syncly, so pick the largest number as latest
+    let latestConfirmed  = Math.max(todayTotal, parseInt(canada["Total"]));
+
     newOverall = {
-      confirmed: parseInt(canada["Conf."]) + parseInt(canada["Pres."]),
+      confirmed: latestConfirmed,
       recovered: canada["Recov."],
       death: canada["Deaths"],
-      increased: todayTotal - yesterdayTotal
+      increased: todayTotal - yesterdayTotal  // new cases today
     }
   } catch(error) {
     console.log('Failed to get Canada overall cases: ', error);
