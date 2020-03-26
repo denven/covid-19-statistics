@@ -70,7 +70,7 @@ async function getUsaLatestCases () {
 
       let $confIncreased = $(data[key+1]);
       let stateIncreased = $confIncreased.find('div').text();
-      let stateConfirmed = $confIncreased.text().replace(stateIncreased, '');
+      let stateConfirmed = $confIncreased.text().replace(stateIncreased, '').replace(/,/, ''); // remove thousands separator 
       stateIncreased = stateIncreased.replace(/\+([\d]{1,5})$/g, '$1');  // remove '+'
       // console.log(stateConfirmed, stateIncreased === '' ? 'N/A' : stateIncreased)
 
