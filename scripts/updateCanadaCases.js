@@ -174,16 +174,17 @@ const getProvDetails = (elements, $) => {
     elements.each( (index, item) => {
       // get the abbreviations of provinces
       if(index === 1) {
-        tabKeys = $(item).text().trim().split('\n');
+        tabKeys = $(item).text().trim().replace(/\n\n/,'\n').split('\n');
       }
 
       if(index > 1) {
         let provDetail = {};
-        $(item).text().trim().split('\n').forEach( (value, idx) => { 
-          // console.log('\n', tabKeys[idx], value);
+        // console.log($(item).text().trim().replace(/\n\n/,'\n'));
+        $(item).text().trim().replace(/\n\n/,'\n').split('\n').forEach( (value, idx) => { 
+
           provDetail[tabKeys[idx]] = value.replace(/,/, '') || 0;
         });
-        // console.log('prov', provDetail);  
+        console.log('prov', provDetail);  
         allProvDetails.push(provDetail);
       }
     });
