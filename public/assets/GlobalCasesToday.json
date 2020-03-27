@@ -1,5 +1,5 @@
 {
-    "time": "2020-03-26 20:00:06",
+    "time": "2020-03-26 21:00:06",
     "countries": [
         {
             "name": "China",
@@ -14,14 +14,14 @@
         },
         {
             "name": "USA",
-            "total": "85,489",
-            "increased": "54",
-            "dead": "1,297",
-            "newDeath": "2",
+            "total": "85,594",
+            "increased": "159",
+            "dead": "1,300",
+            "newDeath": "5",
             "recovered": "1,868",
-            "active": "82,324",
+            "active": "82,426",
             "severe": "2,122",
-            "perMppl": "258"
+            "perMppl": "259"
         },
         {
             "name": "Italy",
@@ -513,9 +513,9 @@
             "increased": "85",
             "dead": "+110",
             "newDeath": "0",
-            "recovered": "0",
+            "recovered": "+2",
             "active": "4",
-            "severe": "575",
+            "severe": "573",
             "perMppl": "1"
         },
         {
@@ -1103,6 +1103,17 @@
         },
         {
             "name": ".",
+            "total": "Cameroon",
+            "increased": "8",
+            "dead": "+13",
+            "newDeath": "0",
+            "recovered": "0",
+            "active": "2",
+            "severe": "85",
+            "perMppl": "0"
+        },
+        {
+            "name": ".",
             "total": "Palestine",
             "increased": "6",
             "dead": "0",
@@ -1157,26 +1168,15 @@
             "perMppl": "20"
         },
         {
-            "name": "Cameroon",
+            "name": "Uzbekistan",
             "total": "75",
             "increased": "0",
-            "dead": "1",
-            "newDeath": "0",
-            "recovered": "2",
-            "active": "72",
-            "severe": "0",
-            "perMppl": "3"
-        },
-        {
-            "name": ".",
-            "total": "Uzbekistan",
-            "increased": "5",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
-            "active": "0",
-            "severe": "75",
-            "perMppl": "4"
+            "active": "75",
+            "severe": "4",
+            "perMppl": "2"
         },
         {
             "name": "Guadeloupe",
@@ -2059,15 +2059,26 @@
             "perMppl": "70"
         },
         {
-            "name": "Anguilla",
+            "name": "Nicaragua",
             "total": "2",
+            "increased": "0",
+            "dead": "1",
+            "newDeath": "1",
+            "recovered": "0",
+            "active": "1",
+            "severe": "0",
+            "perMppl": "0.3"
+        },
+        {
+            "name": ".",
+            "total": "Anguilla",
             "increased": "0",
             "dead": "0",
             "newDeath": "0",
             "recovered": "0",
-            "active": "2",
-            "severe": "0",
-            "perMppl": "133"
+            "active": "0",
+            "severe": "2",
+            "perMppl": "0"
         },
         {
             "name": "Belize",
@@ -2112,17 +2123,6 @@
             "active": "2",
             "severe": "0",
             "perMppl": "1"
-        },
-        {
-            "name": "Nicaragua",
-            "total": "2",
-            "increased": "0",
-            "dead": "0",
-            "newDeath": "0",
-            "recovered": "0",
-            "active": "2",
-            "severe": "0",
-            "perMppl": "0.3"
         },
         {
             "name": "Saint Kitts and Nevis",
@@ -2204,12 +2204,12 @@
     ],
     "overall": {
         "name": "Total",
-        "total": "532,119",
-        "increased": "310",
-        "dead": "24,083",
-        "newDeath": "5",
+        "total": "532,237",
+        "increased": "428",
+        "dead": "24,089",
+        "newDeath": "1",
         "recovered": "124,326",
-        "active": "383,710",
+        "active": "383,822",
         "severe": "19,357",
         "perMppl": "68.3"
     }
