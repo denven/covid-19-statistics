@@ -38,6 +38,35 @@ const useStyles = makeStyles(theme => ({
   link: { color: '#FFF', textDecoration: 'none' },
 }));
 
+
+const isWideScreen = () => {
+  // console.log('screen change')
+let mediaQuery = window.matchMedia("(orientation: portrait)");
+if(mediaQuery.matches) { return false };
+if(document.body.clientWidth < 1024) { return false; }
+return true;
+}
+
+
+function Kofi() {
+  const classes = useStyles();
+  return (
+    <div className={classes.title}>
+      <a href='https://ko-fi.com/T6T01JT0I' target='_blank'>
+        { isWideScreen() ? 
+          <img align="right" style={{border: '0px', height:'36px', width: '140px' }} 
+          src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' 
+          border='0' alt='Buy Me a Coffee at ko-fi.com' />
+        :
+        <img align="right" style={{border: '0px', height:'36px', width: '36px'}} title='By me a coffee'
+          src='https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/5ca5bf1dff3c03fbf7cc9b3c_Kofi_logo_RGB_rounded-p-500.png' 
+          border='0' alt='Buy Me a Coffee at ko-fi.com' />
+        }
+        </a>
+    </div>
+  );
+}
+
 function China({loaded, overall, chinaMap}) {
   return (
     <div className="bodyContainer">
@@ -164,13 +193,11 @@ export default function TopAppBar() {
     <div className={classes.root}>
       <AppBar position="static" >
         <Toolbar variant="dense" >   
-          <Navigator />
-          {/* <Typography variant="h6" className={classes.title}> */}
-            {/* News */}
-          {/* </Typography> */}
+          <Navigator />        
           {/* <Button className={classes.title} color="inherit" align="right" target="_blank" href="https://github.com/denven/covid-19-statistics">
-            <GitHubIcon />
+            <GitHubIcon />            
           </Button> */}
+          <Kofi />
         </Toolbar>
       </AppBar>
       {/* Router Configuration */}
