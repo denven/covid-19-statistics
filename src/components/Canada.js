@@ -82,13 +82,21 @@ function ProvincesTable ({data}) {
             {data.map( (row, index) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.Province}>
-                  {columns.map(column => {
+                  {columns.map(column => {                    
                     let value = valueFormat(row[column.id]);
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === 'number' ? column.format(value) : value}
-                      </TableCell>
-                    );
+                    if(column.id === 'New' && value.includes('+') > 0) {
+                      return (
+                        <TableCell key={column.id} align={column.align} style={{color: 'red'}}>
+                          {column.format && typeof value === 'number' ? column.format(value) : value}
+                        </TableCell>
+                      );
+                    } else {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {column.format && typeof value === 'number' ? column.format(value) : value}
+                        </TableCell>
+                      );
+                    }
                   })}
                 </TableRow>
                 );

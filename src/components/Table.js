@@ -18,15 +18,14 @@ const makeColumns = (place) => {
   columns[0] = { id: 'no', label: '#', maxWidth: 10};
   columns[1] = { id: 'countryEnglishName', label: 'Country/Place', maxWidth: 40};
   columns[2] = { id: 'confirmedCount', label: 'Confirmed', align: 'right', };
+  columns[3] = { id: 'increased', label: 'New', align: 'right', maxWidth: 50 };
 
   if(place === 'USA') {
-    columns[1].label = 'State/Province';
-    columns[3] = { id: 'increased', label: 'Increased', align: 'right', maxWidth: 50 };
+    columns[1].label = 'State';
     columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
     if(columns.length > 6) columns.pop();
   } else {
-    columns[3] = { id: 'increased', label: 'New', align: 'right', maxWidth: 50 };
     columns[4] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
     columns[6] = { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 };  
@@ -67,7 +66,7 @@ export default function StickyHeadTable({place, rows}) {
             return {
               countryEnglishName: name,
               confirmedCount: confirmed,
-              increased: increased,
+              increased: increased !== 'N/A' ? '+' + increased : increased,
               deadCount: death,
               lethality: deathRate.replace(/([\d]{1,2}.[\d])%/,'$10%')
             }
@@ -136,11 +135,20 @@ export default function StickyHeadTable({place, rows}) {
                   {columns.map(column => {
                     let value = ((column.id === 'no') && !row[column.id]) ? (index+1) : row[column.id];
                     value = valueFormat(value);
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === 'number' ? column.format(value) : value}
-                      </TableCell>
-                    );
+
+                    if(column.id === 'increased' && value.includes('+') > 0) {
+                      return (
+                        <TableCell key={column.id} align={column.align} style={{color: 'red'}}>
+                          {column.format && typeof value === 'number' ? column.format(value) : value}
+                        </TableCell>
+                      );
+                    } else {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {column.format && typeof value === 'number' ? column.format(value) : value}
+                        </TableCell>
+                      );
+                    }
                   })}
                 </TableRow>
               );
