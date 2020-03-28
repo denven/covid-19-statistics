@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 
-const columns = new Array(7); // max columns is 7
+const columns = new Array(8); // max columns is 8
 
 const makeColumns = (place) => {
 
@@ -26,10 +26,11 @@ const makeColumns = (place) => {
     columns[5] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
     if(columns.length > 6) columns.pop();
   } else {
-    columns[3] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
-    columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
-    columns[5] = { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 };  
-    columns[6] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };  
+    columns[3] = { id: 'increased', label: 'New', align: 'right', maxWidth: 50 };
+    columns[4] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
+    columns[5] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
+    columns[6] = { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 };  
+    columns[7] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };  
   }
 }
 
@@ -74,31 +75,65 @@ export default function StickyHeadTable({place, rows}) {
         }
       });
     } else {
-      // Global data      
-      if(rows.length > 0) { 
-        //Added infected rate per million in population Mar 14, 2020
-        axios.get(`./assets/WorldPopulation.json`).then( ({data}) => {    
+      // Global data     
+      const getCountriesCases = async () => {
+        const casesResult = await axios.get(`./assets/GlobalCasesToday.json`); 
+        let dataWithInfectRate = casesResult.data.countries.map(
+          ( {name, total, active, increased, recovered, dead, perMppl} ) => {
 
-          let dataWithInfectRate = rows.map(country => {
-
-            let infectRate = 0;  // infection number per million 
             let lethality = '0%';
-            if( data[country.countryEnglishName] > 0 ) {
-              infectRate = Math.ceil(country.confirmedCount * 1000000 / data[country.countryEnglishName]);
-              if(country.deadCount > 0) {
-                lethality = (100 * country.deadCount / country.confirmedCount).toFixed(2) + '%';
-                lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
-              }
-            };
+            let deadCount = parseInt(dead.trim().replace(/,/g,''));
+            let totalCount = parseInt(total.trim().replace(/,/g,''));
+            console.log(name, ':', dead, deadCount, total, totalCount)
+            if(deadCount > 0) {
+              lethality = (100 * deadCount / totalCount).toFixed(2) + '%';
+              lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
+            }
 
-            Object.assign(country, {"infectRate": infectRate}, {"lethality": lethality});
-            return country;
-          });
-
-          if(!isCanceled) setRows(dataWithInfectRate); 
+            return {
+              countryEnglishName: name,
+              confirmedCount: total,
+              increased: increased,
+              currentConfirmedCount: active,
+              suspectedCount: increased,
+              curedCount: recovered,
+              deadCount: dead,
+              infectRate: perMppl,
+              lethality: lethality
+            }
         });
-      } 
+        
+        if(!isCanceled) setRows(dataWithInfectRate); 
+      }
+
+      getCountriesCases();  
+
+      // if(rows.length > 0) { 
+      //   //Added infected rate per million in population Mar 14, 2020
+      //   axios.get(`./assets/WorldPopulation.json`).then( ({data}) => {    
+
+      //     let dataWithInfectRate = rows.map(country => {
+
+      //       let infectRate = 0;  // infection number per million 
+      //       let lethality = '0%';
+      //       if( data[country.countryEnglishName] > 0 ) {
+      //         infectRate = Math.ceil(country.confirmedCount * 1000000 / data[country.countryEnglishName]);
+      //         if(country.deadCount > 0) {
+      //           lethality = (100 * country.deadCount / country.confirmedCount).toFixed(2) + '%';
+      //           lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
+      //         }
+      //       };
+
+      //       // console.log(country);
+      //       Object.assign(country, {"infectRate": infectRate}, {"lethality": lethality});
+      //       return country;
+      //     });
+
+      //     if(!isCanceled) setRows(dataWithInfectRate); 
+      //   });
+      // } 
     }
+
     return () => {isCanceled = true;};
   },[place, rows]);
 
