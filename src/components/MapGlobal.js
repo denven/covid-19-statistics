@@ -21,7 +21,7 @@ export default function MapGlobal({mapData}) {
           let lethality = '0%';
           let deadCount = parseInt(dead.trim().replace(/,/g,''));
           let totalCount = parseInt(total.trim().replace(/,/g,''));
-          console.log(name, ':', dead, deadCount, total, totalCount)
+          // console.log(name, ':', dead, deadCount, total, totalCount)
           if(deadCount > 0) {
             lethality = (100 * deadCount / totalCount).toFixed(2) + '%';
             lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
@@ -43,7 +43,6 @@ export default function MapGlobal({mapData}) {
       // setReady(true);  
     };
 
-
     import(`echarts/map/json/world.json`).then(map => {
       echarts.registerMap('world', map.default);      
       if(!isCancelled) {
@@ -55,41 +54,6 @@ export default function MapGlobal({mapData}) {
     return () => {isCancelled = true;};
 
   }, []);
-
-  // useEffect(() => {
-  //   let isCanceled = false;
-  //   const getCountriesCases = async () => {
-  //     const casesResult = await axios.get(`./assets/GlobalCasesToday.json`); 
-  //     let dataWithInfectRate = casesResult.data.countries.map(
-  //       ( {name, total, active, increased, recovered, dead, perMppl} ) => {
-
-  //         let lethality = '0%';
-  //         let deadCount = parseInt(dead.trim().replace(/,/g,''));
-  //         let totalCount = parseInt(total.trim().replace(/,/g,''));
-  //         console.log(name, ':', dead, deadCount, total, totalCount)
-  //         if(deadCount > 0) {
-  //           lethality = (100 * deadCount / totalCount).toFixed(2) + '%';
-  //           lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
-  //         }
-
-  //         return {
-  //           name: convertNameToMap(name),
-  //           value: total.replace(/,/g, ''),
-  //           currentConfirmedCount: active.replace(/,/g, ''),
-  //           suspectedCount: increased.replace(/,/g, ''),
-  //           curedCount: recovered.replace(/,/g, ''),
-  //           deadCount: dead.replace(/,/g, ''),
-  //           infectRate: perMppl.replace(/,/g, ''),
-  //           lethality: lethality
-  //         }
-  //     });
-      
-  //     if(!isCanceled) setData(dataWithInfectRate); 
-  //   }
-  //   getCountriesCases();
-  //   return () => {isCanceled = true;};
-
-  // }, []);
 
   const getLoadingOption = () => {
     return {

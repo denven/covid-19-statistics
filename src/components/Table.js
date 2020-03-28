@@ -84,7 +84,6 @@ export default function StickyHeadTable({place, rows}) {
             let lethality = '0%';
             let deadCount = parseInt(dead.trim().replace(/,/g,''));
             let totalCount = parseInt(total.trim().replace(/,/g,''));
-            console.log(name, ':', dead, deadCount, total, totalCount)
             if(deadCount > 0) {
               lethality = (100 * deadCount / totalCount).toFixed(2) + '%';
               lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
@@ -107,31 +106,6 @@ export default function StickyHeadTable({place, rows}) {
       }
 
       getCountriesCases();  
-
-      // if(rows.length > 0) { 
-      //   //Added infected rate per million in population Mar 14, 2020
-      //   axios.get(`./assets/WorldPopulation.json`).then( ({data}) => {    
-
-      //     let dataWithInfectRate = rows.map(country => {
-
-      //       let infectRate = 0;  // infection number per million 
-      //       let lethality = '0%';
-      //       if( data[country.countryEnglishName] > 0 ) {
-      //         infectRate = Math.ceil(country.confirmedCount * 1000000 / data[country.countryEnglishName]);
-      //         if(country.deadCount > 0) {
-      //           lethality = (100 * country.deadCount / country.confirmedCount).toFixed(2) + '%';
-      //           lethality = lethality.replace(/([\d]{1,2}).00%/,'$1%');
-      //         }
-      //       };
-
-      //       // console.log(country);
-      //       Object.assign(country, {"infectRate": infectRate}, {"lethality": lethality});
-      //       return country;
-      //     });
-
-      //     if(!isCanceled) setRows(dataWithInfectRate); 
-      //   });
-      // } 
     }
 
     return () => {isCanceled = true;};
