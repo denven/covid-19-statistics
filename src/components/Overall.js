@@ -103,12 +103,12 @@ export default function OverallData ({place, overall}) {
           }
         } else if(place === 'China') {
           if(!isCancelled) {
-            setData({...overall, time: localTime, suspect: chinaIncreased});  
+            setData({...overall, time: localTime, suspect: chinaIncreased.replace(/\+/g, '')});  
           }
         } else {
           if(!isCancelled) {
             setData({...overall, time: localTime, 
-              suspect: parseInt(data.overall.increased.replace(/,/g, '')) - parseInt(chinaIncreased.replace(/,/g, '')), 
+              suspect: parseInt(data.overall.increased.replace(/,/g, '')) - parseInt(chinaIncreased.replace(/[,+]/g, '')), 
               confirmed: parseInt(data.overall.total.replace(/,/g, '')) -  parseInt(chinaConfirmed.replace(/,/g, ''))}); 
           }
         }
