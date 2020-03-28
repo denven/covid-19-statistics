@@ -99,7 +99,7 @@ export default function OverallData ({place, overall}) {
         let localTime = getLocalTime(data.time);
         if(place === 'Global') {
           if(!isCancelled) {
-            setData({...overall, time: localTime, suspect: data.overall.increased, confirmed: data.overall.total});  
+            setData({...overall, time: localTime, suspect: data.overall.increased.replace(/\+/g, ''), confirmed: data.overall.total});  
           }
         } else if(place === 'China') {
           if(!isCancelled) {
