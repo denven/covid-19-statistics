@@ -56,6 +56,39 @@ const getCountryEnName = (country) => {
   }
 }
 
+export const convertNameToMap = (name) => {
+  switch(name) {
+    case "USA": return "United States";
+    case "UK": return "United Kingdom";
+    case "S. Korea": return "Korea";
+    case "Czechia": return "Czech Rep.";
+    case "Laos": return "Lao PDR";
+    case "Equatorial Guinea": return "Eq. Guinea";
+    case "DRC": return "Dem. Rep. Congo";
+    case "CAR": return "Central African Rep.";
+    case "UAE": return "United Arab Emirates";
+    case "Eswatini": return "Swaziland";
+    case "Bosnia and Herzegovina": return "Bosnia and Herz.";
+    case "St. Vincent Grenadines": return "St. Vincent & Grenadines";
+    case "Ivory Coast": return "Côte d'Ivoire";
+    case "North Macedonia": return "Macedonia";
+    case "Dominican Republic": return "Dominican Rep.";
+
+    // case "Kingdom of Bhutan": return "Bhutan";
+    // case "Somali": return "Somalia";
+    // case "St.Lucia": return "Saint Lucia";
+    // case "Cayman Is": return "Cayman Islands";
+    // case "Burma": return "Myanmar";
+    // case "Papua New Cuinea": return "Papua New Guinea";
+
+    // case "Grand Princess Cruise": return "Grand Princ"ess Cruise";
+    case "Diamond Princess Cruise Ship": return "Diamond Princess";
+    default: 
+      return name;
+  }
+
+}
+
 export default function processCountryNames (countries) {
   return countries.map(country => {
     return {...country, countryEnglishName: getCountryEnName(country)}    
