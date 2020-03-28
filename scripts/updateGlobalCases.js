@@ -29,32 +29,6 @@ async function updateGlobalCases () {
           if(name === "Total:") break;
       };
       index++;
-
-      // if(Array.isArray(name)){
-      //   let increasedNum = ( name[0].trim() !== 'Total' ? 
-      //                        $(tableRows[index+2]).text().trim().slice(1) :
-      //                        $(tableRows[index+2]).text().trim()) || '0';
-      //   let country = {
-      //     name: name[0].trim(),
-      //     total: $(tableRows[index+1]).text().trim(),
-      //     increased: increasedNum,
-      //     dead: $(tableRows[index+3]).text().trim() || '0',
-      //     newDeath: $(tableRows[index+4]).text().trim().slice(1) || '0',
-      //     recovered: $(tableRows[index+5]).text().trim() || '0',
-      //     active: $(tableRows[index+6]).text().trim() || '0',
-      //     severe: $(tableRows[index+7]).text().trim() || '0',
-      //     perMppl: $(tableRows[index+8]).text().trim() || '0'        
-      //   };
-      //   console.log(country)
-      //   countries.push(country);
-
-      //   if( name[0].trim() === 'Total') break;
-
-      //   index += 9;
-
-      // } else {
-      //   index++;
-      // } 
     };
 
     let overall = countries.pop();
