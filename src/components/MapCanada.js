@@ -117,6 +117,7 @@ export default function MapCanada() {
         series: [
           {
             // left: '0%', // not working, cannot be adjusted
+            z: 200,  //make bar on top of map
             stack: 'All',
             type: 'bar', 
             label: {
@@ -127,18 +128,8 @@ export default function MapCanada() {
             // name: 'Confirmed',
             // color: 'rgb(64,141,39)',
           },
-          // {
-          //   stack: 'All',
-          //   type: 'bar', 
-          //   label: {
-          //     position: 'inside',
-          //     show: true,
-          //     color: 'blue',
-          //   },
-          //   name: 'Presumptive',
-          //   color: 'rgb(224,144,115)',
-          // },
           {
+            z: 100,
             left: '15%',
             top: '19%',
             type: 'map',
