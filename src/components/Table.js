@@ -23,8 +23,9 @@ const makeColumns = (place) => {
   if(place === 'USA') {
     columns[1].label = 'State';
     columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
-    columns[5] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
-    if(columns.length > 6) columns.pop();
+    columns[5] = { id: 'newDeath', label: 'Deaths(+)', align: 'right', maxWidth: 50 };  
+    columns[6] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
+    if(columns.length > 7) columns.pop();
   } else {
     columns[4] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
@@ -62,12 +63,13 @@ export default function StickyHeadTable({place, rows}) {
       axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
         // if(columns.length === 6) columns.pop();
         if(!isCanceled) {
-          setRows(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
+          setRows(data.cases.map( ({name, confirmed, death, increased, newDeath, deathRate}) => {
             return {
               countryEnglishName: name,
               confirmedCount: confirmed,
-              increased: increased !== 'N/A' ? '+' + increased : increased,
+              increased: increased,
               deadCount: death,
+              newDeath: newDeath,
               lethality: deathRate.replace(/([\d]{1,2}.[\d])%/,'$10%')
             }
           }));
@@ -95,7 +97,7 @@ export default function StickyHeadTable({place, rows}) {
               currentConfirmedCount: active,
               suspectedCount: increased,
               curedCount: recovered,
-              deadCount: dead,
+              deadCount: deadCount,
               infectRate: perMppl,
               lethality: lethality
             }
@@ -136,7 +138,7 @@ export default function StickyHeadTable({place, rows}) {
                     let value = ((column.id === 'no') && !row[column.id]) ? (index+1) : row[column.id];
                     value = valueFormat(value);
 
-                    if(column.id === 'increased' && value.includes('+') > 0) {
+                    if(value.includes('+') > 0) {
                       return (
                         <TableCell key={column.id} align={column.align} style={{color: 'red'}}>
                           {column.format && typeof value === 'number' ? column.format(value) : value}
