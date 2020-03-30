@@ -40,7 +40,7 @@ export default function MapUSA() {
         setCases(data.cases.map( ({name, confirmed, death, increased, deathRate}) => {
           return {
             name: name,
-            value: confirmed,
+            value: confirmed.replace(/,/g,''),
             cured: death,    // this is weired as the table column name changes, recoverd/increased number cannot be fetchable
             death: deathRate // this is weired as the table column name changes
           }
@@ -68,7 +68,7 @@ export default function MapUSA() {
       title:  {
           x: 'center',
           text: 'Cases by State in USA - From 0:00(GMT-7)',
-          subtext: 'Data from https://coronavirus.1point3acres.com/',
+          subtext: 'Data from https://www.worldometers.info/coronavirus/country/us/',
           textStyle: {fontSize: 18},
       },
       visualMap: {
