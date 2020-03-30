@@ -178,33 +178,67 @@ async function updateUsaHisCases () {
   }
 }
 
-async function getCaLatestCases () {
+
+async function _getUsaLatestCases () {
 
   // get latest cases data
-  let url = "https://coronavirus.1point3acres.com/en";
+  let url = "https://www.worldometers.info/coronavirus/country/us/";
   let res = await axios.get(url);
 
   let curCases = [];
-  let statesNames = await gerateUSStatesNames();
   if(res.status === 200) {
+    
     const $ = cheerio.load(res.data);
+    let tableRows = $('tr', 'tbody').toArray();
 
-    let data = $('span', '.jsx-2915694336');
-    for(let key = 4; key < data.length;) {
-      if($(data[key]).text() === '地区') {
-        console.log(key)
-        curCases.push({
-          name: getStateEnName($(data[key]).text(), statesNames),
-          confirmed: $(data[key + 1]).text(),
-          recovered: $(data[key + 2]).text(),
-          death: $(data[key + 3]).text()
-        });
+    for(let index = 0; index < tableRows.length;) {
+
+      let rowColumns = $(tableRows[index]).find("td").toArray();
+      let tdTexts = rowColumns.map(td => $(td).text().trim());
+
+      if(Array.isArray(tdTexts)) {
+        let [ name, total, increased, dead, newDeath, active ] = tdTexts;
+        if(name === "Total:") break;
+
+        let lethality = '0%';
+        let deadCount = (dead !== '') ? dead.replace(/,/, '') : 0;
+        let totalCount = total.replace(/,/,'');
+        
+        if(parseInt(dead.trim().replace(/,/,'')) > 0) {
+          lethality = (100 * deadCount / totalCount).toFixed(2) + '%';
+        }
+
+        let stateCases = {
+          name: name,
+          confirmed: total,
+          increased: increased,
+          death: dead,
+          newDeath: newDeath,
+          deathRate: lethality
+        };
+        // console.log(stateCases);
+        curCases.push(stateCases);
+      };
+      index++;
+    };
+    // console.log(curCases)
+  }
+
+  if(!DEBUG_MODE_ON) {
+    if(curCases.length > 0) {
+      let jsonData = {
+        date: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
+        cases: curCases
       }
-      key = key + 4;
+
+      const casesString = JSON.stringify(jsonData, null, 4);
+      fs.writeFile("../public/assets/UsaStatesCases.json", casesString, (err, result) => {
+        if(err) console.log('Error in writing data into Json file', err);
+        console.log(`Updated latest US states cases at ${jsonData.date}`);
+      });
     }
-    console.log('ca', curCases);
   }
 }
 
-getUsaLatestCases();       // by states
+_getUsaLatestCases();       // by states
 updateUsaHisCases();       // by days
