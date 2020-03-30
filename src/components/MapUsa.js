@@ -67,7 +67,7 @@ export default function MapUSA() {
     return {
       title:  {
           x: 'center',
-          text: 'Cases by State in USA',
+          text: 'Cases by State in USA - From 0:00(GMT-7)',
           subtext: 'Data from https://coronavirus.1point3acres.com/',
           textStyle: {fontSize: 18},
       },
