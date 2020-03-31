@@ -92,7 +92,7 @@ export default function MapCanada() {
         },  
         title:  {
           x: 'center',
-          text: 'Cases by Province in Canada - From 0:00(GMT-7)',
+          text: 'Cases by Province in Canada',
           subtext: 'Data from https://www.canada.ca/en/public-health',
           textStyle: {fontSize: 18},
         },

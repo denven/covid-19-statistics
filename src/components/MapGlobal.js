@@ -76,7 +76,7 @@ export default function MapGlobal({mapData}) {
       // backgroundColor: '#C0C0C0',
       title:  {
           x: 'center',
-          text: 'Cases by country Worldwide - From 0:00(UTC)',
+          text: 'Cases by country Worldwide',
           subtext: 'Data from https://www.worldometers.info/coronavirus/',
           margin: '10px',
           textStyle: {fontSize: 18},

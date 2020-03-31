@@ -67,7 +67,7 @@ export default function MapUSA() {
     return {
       title:  {
           x: 'center',
-          text: 'Cases by State in USA - From 0:00(UTC)',
+          text: 'Cases by State in USA',
           subtext: 'Data from https://www.worldometers.info/coronavirus/country/us/',
           textStyle: {fontSize: 18},
       },
