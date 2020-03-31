@@ -185,7 +185,9 @@ async function _getUsaLatestCases () {
   let url = "https://www.worldometers.info/coronavirus/country/us/";
   let res = await axios.get(url);
 
-  let curCases = [];
+  let curStatesCases = [];
+  let curOverallNum = {};
+
   if(res.status === 200) {
     
     const $ = cheerio.load(res.data);
@@ -198,15 +200,26 @@ async function _getUsaLatestCases () {
 
       if(Array.isArray(tdTexts)) {
         let [ name, total, increased, dead, newDeath, active ] = tdTexts;
-        if(name === "Total:") break;
 
         let lethality = '0%';
         let deadCount = (dead !== '') ? dead.replace(/,/, '') : 0;
         let totalCount = total.replace(/,/,'');
-        
+        let activeCount = active.replace(/,/,'');
         if(parseInt(dead.trim().replace(/,/,'')) > 0) {
           lethality = (100 * deadCount / totalCount).toFixed(2) + '%';
         }
+
+        if(name === "Total:") {
+          curOverallNum = {
+            confirmed: total, 
+            suspect: increased, 
+            cured: totalCount - deadCount - activeCount, 
+            death: dead, 
+            fatality: lethality
+          };
+          // console.log(curOverallNum);          
+          break;
+        } 
 
         let stateCases = {
           name: name,
@@ -217,18 +230,21 @@ async function _getUsaLatestCases () {
           deathRate: lethality
         };
         // console.log(stateCases);
-        curCases.push(stateCases);
+        curStatesCases.push(stateCases);
       };
       index++;
     };
-    // console.log(curCases)
+    // console.log(curStatesCases)
   }
 
+
+
   if(!DEBUG_MODE_ON) {
-    if(curCases.length > 0) {
+    if(curStatesCases.length > 0) {
       let jsonData = {
         date: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-        cases: curCases
+        cases: curStatesCases,
+        overall: curOverallNum
       }
 
       const casesString = JSON.stringify(jsonData, null, 4);
