@@ -1,13 +1,93 @@
 import React, {useState, useEffect, useCallback} from 'react';
+import InfoIcon from '@material-ui/icons/InfoOutlined';
+
 import '../styles/Overall.css';
 // import moment from 'moment';
 import axios from 'axios';
 import moment from 'moment';
+
 // The moment-timezone.js can be used to convert local time(the code runs on which device located at) 
 // to another timezone, but it doesn't convert a time from one(not local) timezone to another wanted timezone
 // As we need to convert a absolute America/Vancouver time string to another local time
 // we will use `new Date().getTimezoneOffset()` and moment.diff() moment.add() to fullfil this time conversion
 // import momentTz from 'moment-timezone'; 
+
+import { withStyles } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import MuiDialogActions from '@material-ui/core/DialogActions';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import Typography from '@material-ui/core/Typography';
+
+const styles = (theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(2),
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
+  },
+});
+
+const DialogTitle = withStyles(styles)((props) => {
+  const { children, classes, onClose, ...other } = props;
+  return (
+    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+      <Typography variant="h6">{children}</Typography>
+      {onClose ? (
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </MuiDialogTitle>
+  );
+});
+
+const DialogContent = withStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+  },
+}))(MuiDialogContent);
+
+const DialogActions = withStyles((theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(1),
+  },
+}))(MuiDialogActions);
+
+function ModaldDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <InfoIcon variant="outlined" color="primary" fontSize='small' onClick={handleClickOpen}/>
+      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+          Description
+        </DialogTitle>
+        <DialogContent dividers>
+          <ul>
+            <li>Number of Global and USA cases will be reset at GMT+0. </li>
+            <li>Number of Canada cases will be reset at GMT-7(Vancouver time 0:00). </li>
+          </ul>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}
 
 export default function OverallData ({place, overall}) {  
   
@@ -129,7 +209,12 @@ export default function OverallData ({place, overall}) {
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {valueFormat(data.confirmed)}</span></div>
-      <div className="eachText">Increased <span className="suspectedNumber">&nbsp; &nbsp; {valueFormat(data.suspect)}</span></div>
+      <div className="eachText" style={{display: 'flex'}}>Increased 
+        <span className="suspectedNumber" style={{display: 'flex', flexDirection: 'row'}}>
+          &nbsp; &nbsp; {valueFormat(data.suspect)} &nbsp; <ModaldDialog/>
+        </span> 
+        
+      </div>
       <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {valueFormat(data.cured)}</span></div>
       <div className="eachText">Deaths <span className="deathNumber">&nbsp; {valueFormat(data.death)}</span></div>
       <div className="eachText">Lethality <span className="fatalityNumber">&nbsp; {data.fatality}</span></div>
