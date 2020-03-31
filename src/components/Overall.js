@@ -38,7 +38,7 @@ const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography style={{fontWeight: '600'}}>{children}</Typography>
       {onClose ? (
         <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon />
@@ -76,7 +76,7 @@ function ModaldDialog() {
       <InfoIcon variant="outlined" color="primary" fontSize='small' onClick={handleClickOpen}/>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Description
+          Description for Increased/New Cases
         </DialogTitle>
         <DialogContent dividers>
           <ul>
@@ -141,21 +141,11 @@ export default function OverallData ({place, overall}) {
     const source = axios.CancelToken.source();
     let isCancelled = false;
     if(place === 'USA') {
-      axios.get(`./assets/UsaCasesHistory.json`).then( ({data}) => {
-        if(data.cases) {
-          let lastData = data.cases[data.cases.length - 1];
-          if(!isCancelled) {
-            setData ({
-              time: getLocalTime(data.date),
-              confirmed: lastData.confirmedNum, 
-              suspect: lastData.increasedNum, 
-              cured: lastData.curesNum, 
-              death: lastData.deathsNum, 
-              fatality: (100 * lastData.deathsNum / lastData.confirmedNum).toFixed(2) + '%'
-            });
+      axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
+        if(data.overall && !isCancelled) {
+            setData ({...data.overall, time: getLocalTime(data.date)});
             handleResize();
-          }          
-        }
+        }   
       });
     } else if(place === 'Canada') {
       axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
@@ -209,11 +199,10 @@ export default function OverallData ({place, overall}) {
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {valueFormat(data.confirmed)}</span></div>
-      <div className="eachText" style={{display: 'flex'}}>Increased 
+      <div className="eachText" style={{display: 'flex', flexWrap: 'wrap'}}>Increased 
         <span className="suspectedNumber" style={{display: 'flex', flexDirection: 'row'}}>
           &nbsp; &nbsp; {valueFormat(data.suspect)} &nbsp; <ModaldDialog/>
-        </span> 
-        
+        </span>         
       </div>
       <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {valueFormat(data.cured)}</span></div>
       <div className="eachText">Deaths <span className="deathNumber">&nbsp; {valueFormat(data.death)}</span></div>
