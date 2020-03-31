@@ -1,5 +1,5 @@
 {
-    "date": "2020-03-31 12:00:20",
+    "date": "2020-03-31 13:00:21",
     "cases": [
         {
             "name": "New York",
@@ -154,6 +154,14 @@
             "deathRate": "0.53%"
         },
         {
+            "name": "Wisconsin",
+            "confirmed": "1,351",
+            "increased": "+66",
+            "death": "25",
+            "newDeath": "+2",
+            "deathRate": "1.85%"
+        },
+        {
             "name": "Missouri",
             "confirmed": "1,327",
             "increased": "+296",
@@ -168,14 +176,6 @@
             "death": "24",
             "newDeath": "+4",
             "deathRate": "1.86%"
-        },
-        {
-            "name": "Wisconsin",
-            "confirmed": "1,285",
-            "increased": "",
-            "death": "23",
-            "newDeath": "",
-            "deathRate": "1.79%"
         },
         {
             "name": "Virginia",
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "180,723",
-        "suspect": "16,935",
-        "cured": 6241,
-        "death": "3,578",
+        "confirmed": "180,789",
+        "suspect": "17,001",
+        "cured": 6262,
+        "death": "3,580",
         "fatality": "1.98%"
     }
 }
