@@ -103,7 +103,7 @@ export default function MapCanada() {
         visualMap: setVisualMap(),   
         xAxis: [{
           type: 'value',
-          max: 3000,  // max cases number 3-21 2020 adjusted
+          max: 5000,  // max cases number 3-31 2020 adjusted
           axisLine: { show: false },
           axisTick: { show: false },
           axisLabel: { show: false },
