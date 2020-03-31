@@ -52,7 +52,7 @@ function Kofi() {
   const classes = useStyles();
   return (
     <div className={classes.title}>
-      <a href='https://ko-fi.com/T6T01JT0I' target='_blank'>
+      <a href='https://ko-fi.com/T6T01JT0I' target='_blank' rel="noopener noreferrer" >
         { isWideScreen() ? 
           <img align="right" style={{border: '0px', height:'36px', width: '140px' }} 
           src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' 
