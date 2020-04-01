@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-01 00:00:28",
+    "date": "2020-04-01 07:00:26",
     "cases": [
         {
             "name": "New York",
@@ -154,6 +154,14 @@
             "deathRate": "0.52%"
         },
         {
+            "name": "Virginia",
+            "confirmed": "1,484",
+            "increased": "+234",
+            "death": "34",
+            "newDeath": "+7",
+            "deathRate": "2.29%"
+        },
+        {
             "name": "Wisconsin",
             "confirmed": "1,351",
             "increased": "",
@@ -176,14 +184,6 @@
             "death": "24",
             "newDeath": "",
             "deathRate": "1.86%"
-        },
-        {
-            "name": "Virginia",
-            "confirmed": "1,250",
-            "increased": "",
-            "death": "27",
-            "newDeath": "",
-            "deathRate": "2.16%"
         },
         {
             "name": "Nevada",
@@ -411,27 +411,27 @@
         },
         {
             "name": "Guam",
-            "confirmed": "69",
-            "increased": "",
+            "confirmed": "77",
+            "increased": "+8",
             "death": "3",
             "newDeath": "+1",
-            "deathRate": "4.35%"
+            "deathRate": "3.90%"
         },
         {
             "name": "Northern Mariana Islands",
             "confirmed": "6",
             "increased": "+4",
-            "death": "",
-            "newDeath": "",
-            "deathRate": "0%"
+            "death": "1",
+            "newDeath": "+1",
+            "deathRate": "16.67%"
         },
         {
             "name": "Puerto Rico",
-            "confirmed": "239",
-            "increased": "",
-            "death": "8",
-            "newDeath": "",
-            "deathRate": "3.35%"
+            "confirmed": "286",
+            "increased": "+47",
+            "death": "11",
+            "newDeath": "+3",
+            "deathRate": "3.85%"
         },
         {
             "name": "United States Virgin Islands",
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "188,592",
-        "suspect": "62",
+        "confirmed": "188,881",
+        "suspect": "351",
         "cured": 7251,
-        "death": "4,055",
+        "death": "4,066",
         "fatality": "2.15%"
     }
 }
