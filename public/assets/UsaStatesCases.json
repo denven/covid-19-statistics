@@ -1,5 +1,5 @@
 {
-    "date": "2020-03-31 22:00:22",
+    "date": "2020-03-31 23:00:20",
     "cases": [
         {
             "name": "New York",
@@ -378,6 +378,14 @@
             "deathRate": "0.62%"
         },
         {
+            "name": "Alaska",
+            "confirmed": "133",
+            "increased": "+14",
+            "death": "3",
+            "newDeath": "",
+            "deathRate": "2.26%"
+        },
+        {
             "name": "North Dakota",
             "confirmed": "122",
             "increased": "",
@@ -394,14 +402,6 @@
             "deathRate": "0%"
         },
         {
-            "name": "Alaska",
-            "confirmed": "119",
-            "increased": "",
-            "death": "3",
-            "newDeath": "",
-            "deathRate": "2.52%"
-        },
-        {
             "name": "South Dakota",
             "confirmed": "108",
             "increased": "",
@@ -413,9 +413,9 @@
             "name": "Guam",
             "confirmed": "69",
             "increased": "",
-            "death": "2",
-            "newDeath": "",
-            "deathRate": "2.90%"
+            "death": "3",
+            "newDeath": "+1",
+            "deathRate": "4.35%"
         },
         {
             "name": "Northern Mariana Islands",
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "188,578",
-        "suspect": "48",
+        "confirmed": "188,592",
+        "suspect": "62",
         "cured": 7251,
-        "death": "4,054",
+        "death": "4,055",
         "fatality": "2.15%"
     }
 }
