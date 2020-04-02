@@ -207,7 +207,7 @@ export default function OverallData ({place, overall}) {
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {valueFormat(data.confirmed)}</span></div>
-      <div className="eachText" style={{display: 'flex', flexWrap: 'wrap', alignContent: 'center'}}>>Increased&nbsp; &nbsp;
+      <div className="eachText" style={{display: 'flex', flexWrap: 'wrap', alignContent: 'center'}}>Increased&nbsp; &nbsp;
         <span className="increasedNumber" style={newCaseStyle}>
           {valueFormat(data.suspect)} <ModaldDialog />
         </span>         
