@@ -72,7 +72,7 @@ function ModaldDialog() {
   };
 
   return (
-    <div>
+    <>
       <InfoIcon variant="outlined" color="primary" fontSize='small' onClick={handleClickOpen}/>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
@@ -85,7 +85,7 @@ function ModaldDialog() {
           </ul>
         </DialogContent>
       </Dialog>
-    </div>
+    </>
   );
 }
 
@@ -194,14 +194,22 @@ export default function OverallData ({place, overall}) {
     window.addEventListener("resize", handleResize);
   }, [handleResize]);
 
+  const newCaseStyle={
+    display: 'flex', 
+    flexDirection: 'row', 
+    width: '4.5rem', 
+    justifyContent: 'space-between', 
+    alignItems: 'center'
+  }
+
   return (
     <>
       <div className="eachText">As of <span className="dataTime">&nbsp; {time}</span></div>
       <div className="eachText">{placeString}</div>     
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {valueFormat(data.confirmed)}</span></div>
-      <div className="eachText" style={{display: 'flex', flexWrap: 'wrap', alignContent: 'center'}}>Increased&nbsp; 
-        <span className="suspectedNumber" style={{display: 'flex', flexDirection: 'row'}}>
-          {valueFormat(data.suspect)} <ModaldDialog/>
+      <div className="eachText" style={{display: 'flex', flexWrap: 'wrap', alignContent: 'center'}}>>Increased&nbsp; &nbsp;
+        <span className="increasedNumber" style={newCaseStyle}>
+          {valueFormat(data.suspect)} <ModaldDialog />
         </span>         
       </div>
       <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {valueFormat(data.cured)}</span></div>

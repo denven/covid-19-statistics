@@ -15,11 +15,19 @@
     font-weight: 600;
   }
 
-  .suspectedNumber {
+  .increasedNumber {
     color: #FF9933;
     font-size: 1.0rem;    
     font-weight: 600;
   }
+
+  /* .infoIcon {
+    display: 'flex';
+    flex-direction: 'row';
+    width: '4.5rem';
+    justify-content: 'space-between';
+    align-items: 'center'
+  } */
 
   .curedNumber {
     color: green;
@@ -38,3 +46,4 @@
     font-size: 1.0rem;
     font-weight: 600;
   }
+  
