@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-01 18:00:45",
+    "date": "2020-04-01 19:00:24",
     "cases": [
         {
             "name": "New York",
@@ -21,9 +21,9 @@
             "name": "California",
             "confirmed": "9,807",
             "increased": "",
-            "death": "210",
-            "newDeath": "",
-            "deathRate": "2.14%"
+            "death": "213",
+            "newDeath": "+3",
+            "deathRate": "2.17%"
         },
         {
             "name": "Michigan",
@@ -75,11 +75,11 @@
         },
         {
             "name": "Washington",
-            "confirmed": "5,844",
-            "increased": "",
-            "death": "250",
-            "newDeath": "",
-            "deathRate": "4.28%"
+            "confirmed": "5,895",
+            "increased": "+51",
+            "death": "254",
+            "newDeath": "+4",
+            "deathRate": "4.31%"
         },
         {
             "name": "Georgia",
@@ -378,6 +378,14 @@
             "deathRate": "1.05%"
         },
         {
+            "name": "Alaska",
+            "confirmed": "143",
+            "increased": "+10",
+            "death": "3",
+            "newDeath": "",
+            "deathRate": "2.10%"
+        },
+        {
             "name": "North Dakota",
             "confirmed": "142",
             "increased": "",
@@ -392,14 +400,6 @@
             "death": "",
             "newDeath": "",
             "deathRate": "0%"
-        },
-        {
-            "name": "Alaska",
-            "confirmed": "133",
-            "increased": "",
-            "death": "3",
-            "newDeath": "",
-            "deathRate": "2.26%"
         },
         {
             "name": "South Dakota",
@@ -427,11 +427,11 @@
         },
         {
             "name": "Puerto Rico",
-            "confirmed": "286",
-            "increased": "",
+            "confirmed": "303",
+            "increased": "+17",
             "death": "11",
             "newDeath": "",
-            "deathRate": "3.85%"
+            "deathRate": "3.63%"
         },
         {
             "name": "United States Virgin Islands",
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "215,003",
-        "suspect": "0",
+        "confirmed": "215,081",
+        "suspect": "78",
         "cured": 8878,
-        "death": "5,102",
-        "fatality": "2.37%"
+        "death": "5,109",
+        "fatality": "2.38%"
     }
 }
