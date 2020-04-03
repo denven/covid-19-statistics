@@ -7,9 +7,9 @@ const DEBUG_MODE_ON = false;
 // const DEBUG_MODE_ON = true;
 
 const provinces = [
+  { fullname: "Quebec", abbr: 'QC', apiKey: 'quebec'},
   { fullname: "Ontario", abbr: 'ON', apiKey: 'ontario'},
   { fullname: "British Columbia", abbr: 'BC', apiKey: 'british-columbia'},
-  { fullname: "Quebec", abbr: 'QC', apiKey: 'quebec'},
   { fullname: "Alberta", abbr: 'AB', apiKey: 'alberta'},
   { fullname: "Manitoba", abbr: 'MB', apiKey: 'manitoba'},
   { fullname: "Saskatchewan", abbr: 'SK', apiKey: 'saskatchewan'},
@@ -331,6 +331,15 @@ async function updateHistoryCasesV2 () {
 
   let oldData = fs.readFileSync(`../public/assets/CanadaCasesDb.json`);
   let allDaysCases = JSON.parse(oldData).cases;
+  
+  allDaysCases = allDaysCases.map( day => {
+    let dayCases = [];
+    provinces.forEach(({fullname}) => {
+      let prov = day.cases.find( prov => prov.name === fullname );
+      if(prov) dayCases.push(prov);
+    });
+    return {...day, cases: dayCases};
+  });
 
   let provDetails = await getCanadaCases();
   let casesAsOfToday = [];
@@ -398,9 +407,9 @@ async function updateHistoryCasesV2 () {
     cases: allDaysCases, 
     details: provDetails,
     overall: overall
-  };
-
+  }
   // console.log(provDetails);
+
   // save to json file 
   if(!DEBUG_MODE_ON) {
     const casesString = JSON.stringify(jsonData, null, 4);

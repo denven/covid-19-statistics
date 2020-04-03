@@ -103,7 +103,7 @@ export default function MapCanada() {
         visualMap: setVisualMap(),   
         xAxis: [{
           type: 'value',
-          max: 5000,  // max cases number 3-31 2020 adjusted
+          max: 10000,  // max cases number 3-31 2020 adjusted
           axisLine: { show: false },
           axisTick: { show: false },
           axisLabel: { show: false },
@@ -112,7 +112,7 @@ export default function MapCanada() {
         yAxis: [{
           type: 'category',
           inverse: true,
-          data: ['ON', 'BC', 'QC', 'AB', 'MB', 'SK', 'NL', 'PE', 'NS', 'NB', 'YT', 'NT', 'NU']
+          data: ['QC', 'ON', 'BC', 'AB', 'MB', 'SK', 'NL', 'PE', 'NS', 'NB', 'YT', 'NT', 'NU']
         }],
         series: [
           {
