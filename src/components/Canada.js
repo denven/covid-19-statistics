@@ -30,6 +30,7 @@ const columns = [
   { label: "Deaths", id: "Deaths", align: 'right', maxWidth: 10 },
   { label: "Deaths(+)", id: "NewDeaths", align: 'right', maxWidth: 10 },
   { label: "Active", id: "Active", align: 'right', maxWidth: 10 },
+  { label: "Lethality", id: "Lethality", align: 'right', maxWidth: 10 },
 ];
 
 const StyledTableCell = withStyles(theme => ({
@@ -281,6 +282,7 @@ export default function Canada() {
   });
 
   let switchStyle = { };  
+  let tableStyle = { display: 'flex', position: 'absolute', top: '6.6rem', left: '2rem', zIndex: 9999, };
   if(screenMode === 'LANDSCAPE') {
     if(document.body.clientWidth >= 1024) 
       switchStyle = { display: 'flex', position: 'absolute', top: '6.6rem', marginLeft: '44vw', zIndex: 9999, };
@@ -308,7 +310,7 @@ export default function Canada() {
       return (
         <div>        
           <Button variant="outlined" size="small" color="primary" className={classes.switch}
-                  style={switchStyle}
+                  style={tableStyle}
                   onClick={handleSwitch} > View Map
           </Button>
           <div style={{margin:'0 1rem 1.5rem 1rem'}}> 

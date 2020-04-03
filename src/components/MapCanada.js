@@ -178,10 +178,22 @@ export default function MapCanada() {
               data: dayCases, // for map
               tooltip: {
                 formatter: ({name, value, data}) => {
-                  value = ((value || "No Case") + '').split('.');
-                  value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-                  let suspectNum = (data && 'suspect' in data) ? data.suspect : 0;
-                  return `<b>${name}</b><br />Confirmed: ${value}<br />Presumptive: ${suspectNum || '0'}<br />`;
+                  if(!value) {
+                    return `<b>${name}</b><br />Confirmed: ${value || "No Case"}`;
+                  }
+
+                  let { cured, death, lethality}  = data;
+                  const valueFormat = (value) => {
+                    return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+                  }
+        
+                  let tipString = `<b>${name}</b><br />
+                                Active: ${valueFormat(value - cured - death)}<br />
+                                Confirmed: ${valueFormat(value)}<br />
+                                Cured:\t${valueFormat(cured)}<br />
+                                Death:\t${valueFormat(death)}<br />
+                                Lethality:\t${valueFormat(lethality)}`;
+                  return tipString;
                 }
               },
             },
