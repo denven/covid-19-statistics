@@ -1,6 +1,5 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
-// const wiki = require('wikijs').default;
 const axios = require('axios');
 const _ = require('lodash');
 const moment = require('moment');
@@ -8,20 +7,20 @@ const DEBUG_MODE_ON = false;
 // const DEBUG_MODE_ON = true;
 
 const provinces = [
-  { fullname: "Ontario", abbr: 'ON'},
-  { fullname: "British Columbia", abbr: 'BC'},
-  { fullname: "Quebec", abbr: 'QC'},
-  { fullname: "Alberta", abbr: 'AB'},
-  { fullname: "Manitoba", abbr: 'MB'},
-  { fullname: "Saskatchewan", abbr: 'SK'},
-  { fullname: "Newfoundland and Labrador", abbr: 'NL'},
-  { fullname: "Prince Edward Island", abbr: 'PE'},
-  { fullname: "Nova Scotia", abbr: 'NS'},
-  { fullname: "New Brunswick", abbr: 'NB'},
-  { fullname: "Yukon", abbr: 'YT'},
-  { fullname: "Northwest Territories", abbr: 'NT'},
-  { fullname: "Nunavut", abbr: 'NU'},
-  { fullname: "Repatriated travellers", abbr: 'RT'},
+  { fullname: "Ontario", abbr: 'ON', apiKey: 'ontario'},
+  { fullname: "British Columbia", abbr: 'BC', apiKey: 'british-columbia'},
+  { fullname: "Quebec", abbr: 'QC', apiKey: 'quebec'},
+  { fullname: "Alberta", abbr: 'AB', apiKey: 'alberta'},
+  { fullname: "Manitoba", abbr: 'MB', apiKey: 'manitoba'},
+  { fullname: "Saskatchewan", abbr: 'SK', apiKey: 'saskatchewan'},
+  { fullname: "Newfoundland and Labrador", abbr: 'NL', apiKey: 'newfoundland-and-labrador'},
+  { fullname: "Prince Edward Island", abbr: 'PE', apiKey: 'prince-edward-island'},
+  { fullname: "Nova Scotia", abbr: 'NS', apiKey: 'nova-scotia'},
+  { fullname: "New Brunswick", abbr: 'NB', apiKey: 'new-brunswick'},
+  { fullname: "Yukon", abbr: 'YT', apiKey: 'yukon'},
+  { fullname: "Northwest Territories", abbr: 'NT', apiKey: 'northwest-territories'},
+  { fullname: "Nunavut", abbr: 'NU', apiKey: 'nunavut'},
+  { fullname: "Repatriated Canadians", abbr: 'Repatriated', apiKey: 'repatriated'},
 ];
 
 // get cases timeline announced by the gov
@@ -291,6 +290,127 @@ async function updateHistoryCases () {
   }
 }
 
-// getLatestCases(); // no needed right now
-getCasesTimeline();  // get all the cases reported
-updateHistoryCases(); // update today's cases into history table
+// // getLatestCases(); // no needed right now
+// getCasesTimeline();  // get all the cases reported
+// updateHistoryCases(); // update today's cases into history table
+
+async function getCanadaCases() {
+
+  const ApiUrl = 'https://kustom.radio-canada.ca/coronavirus/canada'
+  const provincesApiUrls = provinces.map( ({apiKey}) => ApiUrl + '_' + apiKey);
+  provincesApiUrls.push(ApiUrl); 
+
+  try {
+    let resArray = await axios.all(provincesApiUrls.map(url => axios.get(url)));   
+    let provCases = resArray.map( ({data}, index) => {
+      let {State, Confirmed, Deaths, Recovered, Tests, Hospitalizations, IntensiveCares, Population} = data[0];
+      let casesPer1M = Population > 0 ? Math.ceil(Confirmed * 1000000 / Population) : 0;
+
+      return {
+        Province: State || 'Canada',
+        Tests: Tests,
+        Abbr: (index < provinces.length) ? provinces[index].abbr : 'Canada',
+        "Conf.": Confirmed,
+        "Per m": casesPer1M,
+        Cured: Recovered,
+        InWard: Hospitalizations,
+        InICU: IntensiveCares,
+        Deaths: Deaths,
+        Active: Confirmed - Recovered - Deaths,
+        Lethality: Deaths > 0 ? (100 * Deaths / Confirmed).toFixed(2) + '%' : '0%'
+      }
+    });  
+    return provCases;
+  } catch (error) {
+    console.log('Error when fetching Canada Latest Cases by Api requests:', error);
+    return;
+  }
+};
+
+async function updateHistoryCasesV2 () {
+
+  let oldData = fs.readFileSync(`../public/assets/CanadaCasesDb.json`);
+  let allDaysCases = JSON.parse(oldData).cases;
+
+  let provDetails = await getCanadaCases();
+  let casesAsOfToday = [];
+  provDetails.forEach( item => {
+    if(item.Province !== 'Canada') {
+      casesAsOfToday.push({ 
+        name: item.Province, 
+        value: item["Conf."] === '0' ? '' : item["Conf."],
+        cured: item.Cured,
+        death: item.Deaths,
+        lethality: item.Lethality
+      });
+    }
+  });
+  // console.log(casesAsOfToday);
+
+  let date = new Date();
+  let dateString = (date.getMonth() + 1) + '/' + date.getDate();
+
+  if(casesAsOfToday.length > 0) {
+    if(dateString !== allDaysCases[allDaysCases.length - 1].date)
+      allDaysCases.push({date: dateString, cases: casesAsOfToday});  // new day's data
+    else {
+      allDaysCases.pop();  // for updating the same day's cases
+      allDaysCases.push({date: dateString, cases: casesAsOfToday});
+    }
+  }
+
+  let todayTotal = casesAsOfToday.reduce((total, curProv) => {
+    return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
+  },[0]);
+
+  let yesterday = allDaysCases[allDaysCases.length - 2];
+  let yesterdayTotal = yesterday.cases.reduce((total, curProv) => {
+    return total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0); 
+  },[0]);
+
+  let overall = {
+    confirmed: provDetails[provDetails.length - 1]["Conf."],
+    increased: todayTotal - yesterdayTotal,  // new cases today
+    recovered: provDetails[provDetails.length - 1]["Cured"],
+    death: provDetails[provDetails.length - 1]["Deaths"],
+    lethality: provDetails[provDetails.length - 1]["Lethality"]
+  }
+
+  for(let i = 0; i < provDetails.length - 1; i++) {
+    let newCase = casesAsOfToday[i].value - yesterday.cases[i].value;
+    let newDeaths = casesAsOfToday[i].death - yesterday.cases[i].death;
+    Object.assign(provDetails[i], {
+      New: (newCase > 0) ? ("+" + newCase) : 0,
+      NewDeaths: (newDeaths > 0) ? ("+" + newDeaths) : 0,
+    });
+  }
+
+  let totalNewDeaths = overall.death - yesterday.cases.reduce((total, {death}) => {
+    return total = parseInt(total) + parseInt(death);
+  },[0]);
+  Object.assign(provDetails[provDetails.length - 1], {    
+    New: (overall.increased > 0) ? ("+" + overall.increased) : 0,
+    NewDeaths: (totalNewDeaths > 0) ? ("+" + totalNewDeaths) : 0,
+  });
+
+  let jsonData = {
+    date: moment(date).format('YYYY-MM-DD HH:mm:ss'), 
+    cases: allDaysCases, 
+    details: provDetails,
+    overall: overall
+  };
+
+  // console.log(provDetails);
+  // save to json file 
+  if(!DEBUG_MODE_ON) {
+    const casesString = JSON.stringify(jsonData, null, 4);
+    fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
+      if(err) console.log('Error in writing data into Json file', err);
+      console.log(`Updated Canada history cases data at ${jsonData.date}`);
+    });
+  }
+
+}
+
+getCasesTimeline();
+updateHistoryCasesV2();

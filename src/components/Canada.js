@@ -19,15 +19,16 @@ import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
 
 const columns = [
-  { label: "Province", id: "Province", align: 'left', maxWidth: 10},
+  { label: "Province", id: "Abbr", align: 'left', maxWidth: 10},
   { label: "Tested", id: "Tests", align: 'right', maxWidth: 10 },
   { label: "Conf.", id: "Conf.", align: 'right', maxWidth: 10 },
   { label: "New", id: "New", align: 'right', maxWidth: 10 },
-  { label: "Pres.", id: "Pres.", align: 'right', maxWidth: 10 },
-  { label: "Total", id: "Total", align: 'right', maxWidth: 10 },
+  { label: "InWard", id: "InWard", align: 'right', maxWidth: 10 },
+  { label: "InICU", id: "InICU", align: 'right', maxWidth: 10 },
   { label: "Cases/1M", id: "Per m", align: 'right', maxWidth: 10 },
-  { label: "Cured", id: "Recov.", align: 'right', maxWidth: 10 },
+  { label: "Cured", id: "Cured", align: 'right', maxWidth: 10 },
   { label: "Deaths", id: "Deaths", align: 'right', maxWidth: 10 },
+  { label: "Deaths(+)", id: "NewDeaths", align: 'right', maxWidth: 10 },
   { label: "Active", id: "Active", align: 'right', maxWidth: 10 },
 ];
 
@@ -81,10 +82,10 @@ function ProvincesTable ({data}) {
           <TableBody>
             {data.map( (row, index) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.Province}>
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.Abbr}>
                   {columns.map(column => {                    
                     let value = valueFormat(row[column.id]);
-                    if(column.id === 'New' && value.includes('+') > 0) {
+                    if(value.includes('+') > 0) {
                       return (
                         <TableCell key={column.id} align={column.align} style={{color: 'red'}}>
                           {column.format && typeof value === 'number' ? column.format(value) : value}
@@ -135,7 +136,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
       },
       legend: {
           // data: ['Confirmed', 'Suspected', 'Increased', 'Recovered', 'Deaths'], // four curves
-          data: ['Confirmed', 'Presumptive', 'New Cases'], // 2 line curves, 1 bar
+          data: ['Confirmed', 'Recovered', 'Deaths', 'New Cases'], // 2 line curves, 1 bar
           top : '30px',
           textStyle: {fontSize: 12, fontWeight: 600},
       },
@@ -166,21 +167,30 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
                 }, [0]))
           },
           {
-              name: 'Presumptive',
-              type: 'line',
-              // stack: 'Toll',
-              data: dayCases && dayCases.map( 
-                dayProvCases => dayProvCases.reduce((total, curProv) => {
-                  return total = parseInt(total) + parseInt(curProv.suspect || 0); 
-              }, [0]))
-          },
-          {
             name: 'New Cases',
             type: 'bar',        
             yAxisIndex: 1,
             itemStyle: { color: '#ffc0b1', }, // change default bar color
             data: dayNewCases
-        }
+          },
+          {
+            name: 'Recovered',
+            type: 'line',
+            // stack: 'Toll',
+            data: dayCases && dayCases.map( 
+              dayProvCases => dayProvCases.reduce((total, curProv) => {
+                return total = parseInt(total) + parseInt(curProv.cured || 0); 
+            }, [0]))
+          },
+          {
+            name: 'Deaths',
+            type: 'line',
+            // stack: 'Toll',
+            data: dayCases && dayCases.map( 
+              dayProvCases => dayProvCases.reduce((total, curProv) => {
+                return total = parseInt(total) + parseInt(curProv.death || 0); 
+            }, [0]))
+          },
       ]
     };
   }
@@ -248,22 +258,10 @@ export default function Canada() {
           };
           setCases(hisDataObj);
 
-          let allData = data.details;
-          let canada = allData.pop();
-          let tmp = _.sortBy(allData, (o) => parseInt(o.Total)).reverse();
-          let tmpInsertNew = tmp.map( p => {
-            p["New"] = provNewCases[p.Province];
-            return p;
-          });
-          canada["New"] = Object.values(provNewCases).reduce((total, newCases) => {
-            return total = parseInt(total) + parseInt(newCases || 0); 
-          }, [0]);
-          tmpInsertNew.push(canada);
-          tmpInsertNew.forEach((item, index, array) => {
-            if(item["New"] > 0) tmpInsertNew[index]["New"] = '+' + item["New"];
-          });
-          // console.log(provNewCases, tmpInsertNew)
-          setDetail(tmpInsertNew);  // for table's rows
+          let canada = data.details.pop();
+          let allProvData = _.sortBy(data.details, (o) => parseInt(o["Conf."])).reverse();
+          allProvData.push(canada);
+          setDetail(allProvData);  // for table's rows
         }
       });
     } catch (error) {

@@ -34,7 +34,7 @@ export default function MapGlobal({mapData}) {
             suspectedCount: increased.replace(/,/g, ''),
             curedCount: recovered.replace(/,/g, ''),
             deadCount: dead.replace(/,/g, ''),
-            infectRate: perMppl.replace(/,/g, ''),
+            infectRate: perMppl ? perMppl.replace(/,/g, '') : '',
             lethality: lethality
           }
       });
