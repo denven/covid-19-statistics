@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-03 12:00:15",
+    "date": "2020-04-03 13:00:13",
     "cases": [
         {
             "date": "1/28",
@@ -2122,7 +2122,7 @@
                 {
                     "name": "Quebec",
                     "value": "6101",
-                    "cured": "231",
+                    "cured": "306",
                     "death": "61",
                     "lethality": "1.00%"
                 },
@@ -2149,10 +2149,10 @@
                 },
                 {
                     "name": "Manitoba",
-                    "value": "167",
+                    "value": "182",
                     "cured": "11",
-                    "death": "1",
-                    "lethality": "0.60%"
+                    "death": "2",
+                    "lethality": "1.10%"
                 },
                 {
                     "name": "Saskatchewan",
@@ -2227,11 +2227,11 @@
             "Abbr": "QC",
             "Conf.": "6101",
             "Per m": 720,
-            "Cured": "231",
+            "Cured": "306",
             "InWard": "429",
             "InICU": "122",
             "Deaths": "61",
-            "Active": 5809,
+            "Active": 5734,
             "Lethality": "1.00%",
             "New": "+583",
             "NewDeaths": "+25"
@@ -2285,16 +2285,16 @@
             "Province": "Manitoba",
             "Tests": "11327",
             "Abbr": "MB",
-            "Conf.": "167",
-            "Per m": 122,
+            "Conf.": "182",
+            "Per m": 133,
             "Cured": "11",
             "InWard": "9",
             "InICU": "6",
-            "Deaths": "1",
-            "Active": 155,
-            "Lethality": "0.60%",
-            "New": 0,
-            "NewDeaths": 0
+            "Deaths": "2",
+            "Active": 169,
+            "Lethality": "1.10%",
+            "New": "+15",
+            "NewDeaths": "+1"
         },
         {
             "Province": "Saskatchewan",
@@ -2435,23 +2435,23 @@
             "Province": "Canada",
             "Tests": "290618",
             "Abbr": "Canada",
-            "Conf.": "12360",
-            "Per m": 329,
-            "Cured": "2186",
+            "Conf.": "12375",
+            "Per m": 330,
+            "Cured": "2261",
             "InWard": null,
             "InICU": null,
-            "Deaths": "207",
-            "Active": 9967,
-            "Lethality": "1.67%",
-            "New": "+1077",
-            "NewDeaths": "+41"
+            "Deaths": "208",
+            "Active": 9906,
+            "Lethality": "1.68%",
+            "New": "+1092",
+            "NewDeaths": "+42"
         }
     ],
     "overall": {
-        "confirmed": "12360",
-        "increased": 1077,
-        "recovered": "2186",
-        "death": "207",
-        "lethality": "1.67%"
+        "confirmed": "12375",
+        "increased": 1092,
+        "recovered": "2261",
+        "death": "208",
+        "lethality": "1.68%"
     }
 }
