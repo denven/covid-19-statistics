@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-03 13:00:13",
+    "date": "2020-04-03 14:00:21",
     "cases": [
         {
             "date": "1/28",
@@ -2156,10 +2156,10 @@
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "206",
-                    "cured": "36",
+                    "value": "220",
+                    "cured": "48",
                     "death": "3",
-                    "lethality": "1.46%"
+                    "lethality": "1.36%"
                 },
                 {
                     "name": "Newfoundland and Labrador",
@@ -2199,7 +2199,7 @@
                 {
                     "name": "Northwest Territories",
                     "value": "4",
-                    "cured": "0",
+                    "cured": "1",
                     "death": "0",
                     "lethality": "0%"
                 },
@@ -2300,15 +2300,15 @@
             "Province": "Saskatchewan",
             "Tests": "11395",
             "Abbr": "SK",
-            "Conf.": "206",
-            "Per m": 176,
-            "Cured": "36",
+            "Conf.": "220",
+            "Per m": 188,
+            "Cured": "48",
             "InWard": "4",
             "InICU": "2",
             "Deaths": "3",
-            "Active": 167,
-            "Lethality": "1.46%",
-            "New": 0,
+            "Active": 169,
+            "Lethality": "1.36%",
+            "New": "+14",
             "NewDeaths": 0
         },
         {
@@ -2392,11 +2392,11 @@
             "Abbr": "NT",
             "Conf.": "4",
             "Per m": 90,
-            "Cured": "0",
+            "Cured": "1",
             "InWard": null,
             "InICU": null,
             "Deaths": "0",
-            "Active": 4,
+            "Active": 3,
             "Lethality": "0%",
             "New": "+2",
             "NewDeaths": 0
@@ -2435,22 +2435,22 @@
             "Province": "Canada",
             "Tests": "290618",
             "Abbr": "Canada",
-            "Conf.": "12375",
+            "Conf.": "12389",
             "Per m": 330,
-            "Cured": "2261",
+            "Cured": "2274",
             "InWard": null,
             "InICU": null,
             "Deaths": "208",
-            "Active": 9906,
+            "Active": 9907,
             "Lethality": "1.68%",
-            "New": "+1092",
+            "New": "+1106",
             "NewDeaths": "+42"
         }
     ],
     "overall": {
-        "confirmed": "12375",
-        "increased": 1092,
-        "recovered": "2261",
+        "confirmed": "12389",
+        "increased": 1106,
+        "recovered": "2274",
         "death": "208",
         "lethality": "1.68%"
     }
