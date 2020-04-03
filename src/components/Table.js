@@ -29,7 +29,7 @@ const makeColumns = (place) => {
   } else {
     columns[4] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
-    columns[6] = { id: 'infectRate', label: 'Cases/1M', align: 'right', maxWidth: 50 };  
+    columns[6] = { id: 'infectRate', label: 'Cases/M', align: 'right', maxWidth: 50 };  
     columns[7] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };  
   }
 }

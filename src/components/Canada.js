@@ -25,10 +25,10 @@ const columns = [
   { label: "New", id: "New", align: 'right', maxWidth: 10 },
   { label: "InWard", id: "InWard", align: 'right', maxWidth: 10 },
   { label: "InICU", id: "InICU", align: 'right', maxWidth: 10 },
-  { label: "Cases/1M", id: "Per m", align: 'right', maxWidth: 10 },
+  { label: "Cases/M", id: "Per m", align: 'right', maxWidth: 30 },
   { label: "Cured", id: "Cured", align: 'right', maxWidth: 10 },
   { label: "Deaths", id: "Deaths", align: 'right', maxWidth: 10 },
-  { label: "Deaths(+)", id: "NewDeaths", align: 'right', maxWidth: 10 },
+  { label: "New", id: "NewDeaths", align: 'right', maxWidth: 10 },
   { label: "Active", id: "Active", align: 'right', maxWidth: 10 },
   { label: "Lethality", id: "Lethality", align: 'right', maxWidth: 10 },
 ];
@@ -72,9 +72,9 @@ function ProvincesTable ({data}) {
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead >
-            <TableRow>
+            <TableRow  style={{width: 10}}>
               {columns.map(column => (
-                <StyledTableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
+                <StyledTableCell key={column.id} align={column.align} style={{ maxWidth: column.maxWidth }}>
                   {column.label}
                 </StyledTableCell> )
               )}
@@ -310,7 +310,7 @@ export default function Canada() {
       return (
         <div>        
           <Button variant="outlined" size="small" color="primary" className={classes.switch}
-                  style={tableStyle}
+                  style={switchStyle}
                   onClick={handleSwitch} > View Map
           </Button>
           <div style={{margin:'0 1rem 1.5rem 1rem'}}> 
