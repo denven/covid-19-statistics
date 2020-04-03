@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-03 07:00:21",
+    "date": "2020-04-03 08:00:26",
     "cases": [
         {
             "name": "New York",
@@ -34,20 +34,20 @@
             "deathRate": "3.86%"
         },
         {
+            "name": "Florida",
+            "confirmed": "9,585",
+            "increased": "+577",
+            "death": "163",
+            "newDeath": "+19",
+            "deathRate": "1.70%"
+        },
+        {
             "name": "Louisiana",
             "confirmed": "9,150",
             "increased": "",
             "death": "310",
             "newDeath": "",
             "deathRate": "3.39%"
-        },
-        {
-            "name": "Florida",
-            "confirmed": "9,008",
-            "increased": "",
-            "death": "144",
-            "newDeath": "",
-            "deathRate": "1.60%"
         },
         {
             "name": "Massachusetts",
@@ -114,20 +114,20 @@
             "deathRate": "2.60%"
         },
         {
+            "name": "Indiana",
+            "confirmed": "3,437",
+            "increased": "+398",
+            "death": "102",
+            "newDeath": "+24",
+            "deathRate": "2.97%"
+        },
+        {
             "name": "Tennessee",
             "confirmed": "3,194",
             "increased": "",
             "death": "32",
             "newDeath": "",
             "deathRate": "1.00%"
-        },
-        {
-            "name": "Indiana",
-            "confirmed": "3,039",
-            "increased": "",
-            "death": "78",
-            "newDeath": "",
-            "deathRate": "2.57%"
         },
         {
             "name": "Ohio",
@@ -258,6 +258,14 @@
             "deathRate": "4.03%"
         },
         {
+            "name": "District Of Columbia",
+            "confirmed": "757",
+            "increased": "+104",
+            "death": "15",
+            "newDeath": "+3",
+            "deathRate": "1.98%"
+        },
+        {
             "name": "Minnesota",
             "confirmed": "742",
             "increased": "",
@@ -280,14 +288,6 @@
             "death": "12",
             "newDeath": "",
             "deathRate": "1.83%"
-        },
-        {
-            "name": "District Of Columbia",
-            "confirmed": "653",
-            "increased": "",
-            "death": "12",
-            "newDeath": "",
-            "deathRate": "1.84%"
         },
         {
             "name": "Iowa",
@@ -413,9 +413,9 @@
             "name": "Guam",
             "confirmed": "82",
             "increased": "",
-            "death": "3",
-            "newDeath": "",
-            "deathRate": "3.66%"
+            "death": "4",
+            "newDeath": "+1",
+            "deathRate": "4.88%"
         },
         {
             "name": "Northern Mariana Islands",
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "245,442",
-        "suspect": "565",
+        "confirmed": "246,521",
+        "suspect": "1,644",
         "cured": 10411,
-        "death": "6,098",
-        "fatality": "2.48%"
+        "death": "6,145",
+        "fatality": "2.49%"
     }
 }
