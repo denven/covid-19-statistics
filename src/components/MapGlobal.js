@@ -29,9 +29,9 @@ export default function MapGlobal({mapData}) {
 
           return {
             name: convertNameToMap(name),
-            value: total.replace(/,/g, ''),
-            currentConfirmedCount: active.replace(/,/g, ''),
-            suspectedCount: increased.replace(/,/g, ''),
+            value: active.replace(/,/g, ''),
+            confirmedCount: total.replace(/,/g, ''),
+            increasedCount: increased.replace(/,/g, ''),
             curedCount: recovered.replace(/,/g, ''),
             deadCount: dead.replace(/,/g, ''),
             infectRate: perMppl ? perMppl.replace(/,/g, '') : '',
@@ -112,7 +112,7 @@ export default function MapGlobal({mapData}) {
             return `<b>${name}</b><br />Confirmed: ${value || "No Case"}`;
           };
 
-          let { currentConfirmedCount, curedCount, deadCount}  = data;
+          let { confirmedCount, curedCount, deadCount}  = data;
 
           const valueFormat = (value) => {
             return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
@@ -120,10 +120,10 @@ export default function MapGlobal({mapData}) {
 
           let lethalityStr =  (deadCount > 0) ? `Lethality:\t${(100 * deadCount / (value)).toFixed(2) + '%'}` : '';
           let tipString = `<b>${name}</b><br />
-                        Confirmed: ${valueFormat(value)}<br />
+                        Active: ${valueFormat(value)}<br />
+                        Confirmed:\t${valueFormat(confirmedCount)}<br />
                         Cured:\t${valueFormat(curedCount)}<br />
                         Death:\t${valueFormat(deadCount)}<br />
-                        Active:\t${valueFormat(currentConfirmedCount)}<br />
                         ${lethalityStr}`;
           return tipString;
         }
