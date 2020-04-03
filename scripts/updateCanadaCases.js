@@ -332,14 +332,15 @@ async function updateHistoryCasesV2 () {
   let oldData = fs.readFileSync(`../public/assets/CanadaCasesDb.json`);
   let allDaysCases = JSON.parse(oldData).cases;
   
-  allDaysCases = allDaysCases.map( day => {
-    let dayCases = [];
-    provinces.forEach(({fullname}) => {
-      let prov = day.cases.find( prov => prov.name === fullname );
-      if(prov) dayCases.push(prov);
-    });
-    return {...day, cases: dayCases};
-  });
+  // Enable this once when adjusting the order of provinces
+  // allDaysCases = allDaysCases.map( day => {
+  //   let dayCases = [];
+  //   provinces.forEach(({fullname}) => {
+  //     let prov = day.cases.find( prov => prov.name === fullname );
+  //     if(prov) dayCases.push(prov);
+  //   });
+  //   return {...day, cases: dayCases};
+  // });
 
   let provDetails = await getCanadaCases();
   let casesAsOfToday = [];
