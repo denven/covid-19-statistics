@@ -256,5 +256,5 @@ async function _getUsaLatestCases () {
   }
 }
 
-// _getUsaLatestCases();       // by states
+_getUsaLatestCases();       // by states
 updateUsaHisCases();       // by days
