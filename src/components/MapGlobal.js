@@ -112,19 +112,19 @@ export default function MapGlobal({mapData}) {
             return `<b>${name}</b><br />Confirmed: ${value || "No Case"}`;
           };
 
-          let { confirmedCount, curedCount, deadCount}  = data;
+          let { confirmedCount, curedCount, deadCount, lethality}  = data;
 
           const valueFormat = (value) => {
             return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           }
 
-          let lethalityStr =  (deadCount > 0) ? `Lethality:\t${(100 * deadCount / (value)).toFixed(2) + '%'}` : '';
+          // let lethalityStr =  (deadCount > 0) ? `Lethality:\t${(100 * deadCount / (value)).toFixed(2) + '%'}` : '';
           let tipString = `<b>${name}</b><br />
                         Active: ${valueFormat(value)}<br />
                         Confirmed:\t${valueFormat(confirmedCount)}<br />
                         Cured:\t${valueFormat(curedCount)}<br />
                         Death:\t${valueFormat(deadCount)}<br />
-                        ${lethalityStr}`;
+                        Lethality:\t${lethality}`;
           return tipString;
         }
       },

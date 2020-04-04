@@ -192,7 +192,7 @@ export default function MapCanada() {
                                 Confirmed: ${valueFormat(value)}<br />
                                 Cured:\t${valueFormat(cured)}<br />
                                 Death:\t${valueFormat(death)}<br />
-                                Lethality:\t${valueFormat(lethality)}`;
+                                Lethality:\t${lethality || '0%'}`;
                   return tipString;
                 }
               },
