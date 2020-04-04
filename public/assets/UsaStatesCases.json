@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-04 10:00:31",
+    "date": "2020-04-04 11:00:29",
     "cases": [
         {
             "name": "New York",
@@ -34,6 +34,14 @@
             "deathRate": "2.25%"
         },
         {
+            "name": "Louisiana",
+            "confirmed": "12,496",
+            "increased": "+2,199",
+            "death": "409",
+            "newDeath": "+39",
+            "deathRate": "3.27%"
+        },
+        {
             "name": "Florida",
             "confirmed": "11,111",
             "increased": "+843",
@@ -48,14 +56,6 @@
             "death": "192",
             "newDeath": "",
             "deathRate": "1.85%"
-        },
-        {
-            "name": "Louisiana",
-            "confirmed": "10,297",
-            "increased": "",
-            "death": "370",
-            "newDeath": "",
-            "deathRate": "3.59%"
         },
         {
             "name": "Pennsylvania",
@@ -91,11 +91,11 @@
         },
         {
             "name": "Texas",
-            "confirmed": "6,094",
-            "increased": "+436",
-            "death": "104",
-            "newDeath": "+7",
-            "deathRate": "1.71%"
+            "confirmed": "6,110",
+            "increased": "+452",
+            "death": "105",
+            "newDeath": "+8",
+            "deathRate": "1.72%"
         },
         {
             "name": "Connecticut",
@@ -146,20 +146,20 @@
             "deathRate": "1.70%"
         },
         {
+            "name": "North Carolina",
+            "confirmed": "2,438",
+            "increased": "+151",
+            "death": "28",
+            "newDeath": "+1",
+            "deathRate": "1.15%"
+        },
+        {
             "name": "Virginia",
             "confirmed": "2,407",
             "increased": "+395",
             "death": "52",
             "newDeath": "+6",
             "deathRate": "2.16%"
-        },
-        {
-            "name": "North Carolina",
-            "confirmed": "2,402",
-            "increased": "+115",
-            "death": "28",
-            "newDeath": "+1",
-            "deathRate": "1.17%"
         },
         {
             "name": "Missouri",
@@ -170,20 +170,20 @@
             "deathRate": "1.47%"
         },
         {
+            "name": "Wisconsin",
+            "confirmed": "2,112",
+            "increased": "+196",
+            "death": "56",
+            "newDeath": "+10",
+            "deathRate": "2.65%"
+        },
+        {
             "name": "Arizona",
             "confirmed": "2,019",
             "increased": "+250",
             "death": "52",
             "newDeath": "+11",
             "deathRate": "2.58%"
-        },
-        {
-            "name": "Wisconsin",
-            "confirmed": "1,916",
-            "increased": "",
-            "death": "50",
-            "newDeath": "+4",
-            "deathRate": "2.61%"
         },
         {
             "name": "Nevada",
@@ -203,11 +203,11 @@
         },
         {
             "name": "Alabama",
-            "confirmed": "1,550",
-            "increased": "+35",
-            "death": "41",
-            "newDeath": "+3",
-            "deathRate": "2.65%"
+            "confirmed": "1,556",
+            "increased": "+41",
+            "death": "43",
+            "newDeath": "+5",
+            "deathRate": "2.76%"
         },
         {
             "name": "Mississippi",
@@ -277,17 +277,17 @@
             "name": "Iowa",
             "confirmed": "786",
             "increased": "+87",
-            "death": "11",
-            "newDeath": "",
-            "deathRate": "1.40%"
+            "death": "14",
+            "newDeath": "+3",
+            "deathRate": "1.78%"
         },
         {
             "name": "Arkansas",
-            "confirmed": "738",
-            "increased": "",
+            "confirmed": "743",
+            "increased": "+5",
             "death": "12",
             "newDeath": "",
-            "deathRate": "1.63%"
+            "deathRate": "1.62%"
         },
         {
             "name": "Rhode Island",
@@ -299,11 +299,11 @@
         },
         {
             "name": "Kansas",
-            "confirmed": "620",
-            "increased": "",
-            "death": "17",
-            "newDeath": "",
-            "deathRate": "2.74%"
+            "confirmed": "698",
+            "increased": "+78",
+            "death": "21",
+            "newDeath": "+4",
+            "deathRate": "3.01%"
         },
         {
             "name": "New Hampshire",
@@ -322,6 +322,14 @@
             "deathRate": "2.02%"
         },
         {
+            "name": "Vermont",
+            "confirmed": "461",
+            "increased": "+72",
+            "death": "20",
+            "newDeath": "+3",
+            "deathRate": "4.34%"
+        },
+        {
             "name": "Maine",
             "confirmed": "456",
             "increased": "+24",
@@ -338,12 +346,12 @@
             "deathRate": "3.11%"
         },
         {
-            "name": "Vermont",
-            "confirmed": "389",
-            "increased": "",
-            "death": "17",
+            "name": "Nebraska",
+            "confirmed": "321",
+            "increased": "+42",
+            "death": "6",
             "newDeath": "",
-            "deathRate": "4.37%"
+            "deathRate": "1.87%"
         },
         {
             "name": "Hawaii",
@@ -362,14 +370,6 @@
             "deathRate": "0.71%"
         },
         {
-            "name": "Nebraska",
-            "confirmed": "279",
-            "increased": "",
-            "death": "6",
-            "newDeath": "",
-            "deathRate": "2.15%"
-        },
-        {
             "name": "Montana",
             "confirmed": "265",
             "increased": "+3",
@@ -379,11 +379,11 @@
         },
         {
             "name": "South Dakota",
-            "confirmed": "187",
-            "increased": "",
+            "confirmed": "212",
+            "increased": "+25",
             "death": "2",
             "newDeath": "",
-            "deathRate": "1.07%"
+            "deathRate": "0.94%"
         },
         {
             "name": "Wyoming",
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "297,768",
-        "suspect": "20,607",
-        "cured": 14436,
-        "death": "8,098",
-        "fatality": "2.72%"
+        "confirmed": "300,443",
+        "suspect": "23,282",
+        "cured": 14518,
+        "death": "8,156",
+        "fatality": "2.71%"
     }
 }
