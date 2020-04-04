@@ -1,13 +1,13 @@
 {
-    "date": "2020-04-04 08:00:29",
+    "date": "2020-04-04 09:00:26",
     "cases": [
         {
             "name": "New York",
-            "confirmed": "103,476",
-            "increased": "",
-            "death": "3,218",
-            "newDeath": "",
-            "deathRate": "3.11%"
+            "confirmed": "113,704",
+            "increased": "+10,228",
+            "death": "3,565",
+            "newDeath": "+347",
+            "deathRate": "3.14%"
         },
         {
             "name": "New Jersey",
@@ -82,20 +82,20 @@
             "deathRate": "4.18%"
         },
         {
+            "name": "Georgia",
+            "confirmed": "6,160",
+            "increased": "+193",
+            "death": "201",
+            "newDeath": "+3",
+            "deathRate": "3.26%"
+        },
+        {
             "name": "Texas",
             "confirmed": "6,094",
             "increased": "+436",
             "death": "104",
             "newDeath": "+7",
             "deathRate": "1.71%"
-        },
-        {
-            "name": "Georgia",
-            "confirmed": "5,967",
-            "increased": "",
-            "death": "198",
-            "newDeath": "",
-            "deathRate": "3.32%"
         },
         {
             "name": "Connecticut",
@@ -131,11 +131,11 @@
         },
         {
             "name": "Tennessee",
-            "confirmed": "3,194",
-            "increased": "",
+            "confirmed": "3,221",
+            "increased": "+27",
             "death": "37",
             "newDeath": "",
-            "deathRate": "1.16%"
+            "deathRate": "1.15%"
         },
         {
             "name": "Maryland",
@@ -155,11 +155,11 @@
         },
         {
             "name": "North Carolina",
-            "confirmed": "2,328",
-            "increased": "+41",
+            "confirmed": "2,402",
+            "increased": "+115",
             "death": "28",
             "newDeath": "+1",
-            "deathRate": "1.20%"
+            "deathRate": "1.17%"
         },
         {
             "name": "Missouri",
@@ -186,6 +186,14 @@
             "deathRate": "2.32%"
         },
         {
+            "name": "Nevada",
+            "confirmed": "1,742",
+            "increased": "+228",
+            "death": "43",
+            "newDeath": "",
+            "deathRate": "2.47%"
+        },
+        {
             "name": "South Carolina",
             "confirmed": "1,700",
             "increased": "",
@@ -202,20 +210,12 @@
             "deathRate": "2.66%"
         },
         {
-            "name": "Nevada",
-            "confirmed": "1,514",
-            "increased": "",
-            "death": "43",
-            "newDeath": "",
-            "deathRate": "2.84%"
-        },
-        {
             "name": "Mississippi",
-            "confirmed": "1,358",
-            "increased": "",
-            "death": "29",
-            "newDeath": "",
-            "deathRate": "2.14%"
+            "confirmed": "1,455",
+            "increased": "+97",
+            "death": "35",
+            "newDeath": "+6",
+            "deathRate": "2.41%"
         },
         {
             "name": "Utah",
@@ -274,6 +274,14 @@
             "deathRate": "2.79%"
         },
         {
+            "name": "Iowa",
+            "confirmed": "786",
+            "increased": "+87",
+            "death": "11",
+            "newDeath": "",
+            "deathRate": "1.40%"
+        },
+        {
             "name": "Arkansas",
             "confirmed": "738",
             "increased": "",
@@ -288,14 +296,6 @@
             "death": "14",
             "newDeath": "",
             "deathRate": "1.97%"
-        },
-        {
-            "name": "Iowa",
-            "confirmed": "699",
-            "increased": "",
-            "death": "11",
-            "newDeath": "",
-            "deathRate": "1.57%"
         },
         {
             "name": "Kansas",
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "280,367",
-        "suspect": "3,206",
-        "cured": 12756,
-        "death": "7,491",
-        "fatality": "2.67%"
+        "confirmed": "291,301",
+        "suspect": "14,140",
+        "cured": 14368,
+        "death": "7,847",
+        "fatality": "2.69%"
     }
 }
