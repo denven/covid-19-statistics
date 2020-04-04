@@ -269,7 +269,7 @@ export default function Canada() {
       console.log(`'Error in get today's case details:`, error)
     }
     return () => {isCanceled = true;}
-  }, []);
+  }, [viewMode]);
 
   useEffect(() => {
     window.addEventListener("orientationchange", () => {
