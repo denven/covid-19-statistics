@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-03 17:00:20",
+    "date": "2020-04-03 18:00:48",
     "cases": [
         {
             "name": "New York",
@@ -75,11 +75,11 @@
         },
         {
             "name": "Washington",
-            "confirmed": "6,896",
-            "increased": "+311",
+            "confirmed": "6,966",
+            "increased": "+381",
             "death": "291",
             "newDeath": "+19",
-            "deathRate": "4.22%"
+            "deathRate": "4.18%"
         },
         {
             "name": "Georgia",
@@ -226,6 +226,14 @@
             "deathRate": "0.56%"
         },
         {
+            "name": "Idaho",
+            "confirmed": "1,013",
+            "increased": "+122",
+            "death": "10",
+            "newDeath": "+1",
+            "deathRate": "0.99%"
+        },
+        {
             "name": "Oklahoma",
             "confirmed": "988",
             "increased": "+109",
@@ -240,14 +248,6 @@
             "death": "22",
             "newDeath": "+1",
             "deathRate": "2.45%"
-        },
-        {
-            "name": "Idaho",
-            "confirmed": "891",
-            "increased": "",
-            "death": "9",
-            "newDeath": "",
-            "deathRate": "1.01%"
         },
         {
             "name": "Kentucky",
@@ -395,8 +395,8 @@
         },
         {
             "name": "Wyoming",
-            "confirmed": "162",
-            "increased": "+12",
+            "confirmed": "166",
+            "increased": "+16",
             "death": "",
             "newDeath": "",
             "deathRate": "0%"
@@ -459,10 +459,10 @@
         }
     ],
     "overall": {
-        "confirmed": "276,965",
-        "suspect": "32,088",
+        "confirmed": "277,161",
+        "suspect": "32,284",
         "cured": 12283,
-        "death": "7,391",
+        "death": "7,392",
         "fatality": "2.67%"
     }
 }
