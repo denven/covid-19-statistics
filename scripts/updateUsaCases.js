@@ -128,10 +128,10 @@ async function updateUsaHisCases () {
     if(casesData.length > 3) {
       latestStatus = {
         date: '',
-        confirmedNum: $(casesData[0]).text(),
-        curesNum: $(casesData[1]).text(),
+        confirmedNum: $(casesData[0]).text().replace(/,/g, ''),
+        curesNum: $(casesData[1]).text().replace(/,/g, ''),
         increasedNum: 0,
-        deathsNum: $(casesData[2]).text()
+        deathsNum: $(casesData[2]).text().replace(/,/g, '')
       }
     }
     // console.log($(casesData[0]).text(), latestStatus)
@@ -148,7 +148,7 @@ async function updateUsaHisCases () {
 
     let lastDay = allCases[allCases.length - 1];
     // step 3-1: increase a new day's data by comparision
-    console.log(localSrcDateStr, lastDay.date, srcDateStr);
+    // console.log(localSrcDateStr, lastDay.date, srcDateStr);
     if(lastDay.date !== srcDateStr)  {
       latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
       latestStatus.date = srcDateStr;
@@ -256,5 +256,5 @@ async function _getUsaLatestCases () {
   }
 }
 
-_getUsaLatestCases();       // by states
+// _getUsaLatestCases();       // by states
 updateUsaHisCases();       // by days

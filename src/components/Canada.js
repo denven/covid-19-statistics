@@ -19,7 +19,7 @@ import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
 
 const columns = [
-  { label: "Province", id: "Abbr", align: 'left', maxWidth: 10},
+  { label: "Province", id: "Abbr", align: 'right', maxWidth: 10},
   { label: "Tested", id: "Tests", align: 'right', maxWidth: 10 },
   { label: "Conf.", id: "Conf.", align: 'right', maxWidth: 10 },
   { label: "New", id: "New", align: 'right', maxWidth: 10 },
@@ -72,7 +72,7 @@ function ProvincesTable ({data}) {
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead >
-            <TableRow  style={{width: 10}}>
+            <TableRow>
               {columns.map(column => (
                 <StyledTableCell key={column.id} align={column.align} style={{ maxWidth: column.maxWidth }}>
                   {column.label}
