@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-05 07:00:25",
+    "date": "2020-04-05 08:00:30",
     "cases": [
         {
             "date": "1/28",
@@ -2334,10 +2334,10 @@
                 },
                 {
                     "name": "Ontario",
-                    "value": "3630",
-                    "cured": "1219",
+                    "value": "4038",
+                    "cured": "1449",
                     "death": "135",
-                    "lethality": "3.72%"
+                    "lethality": "3.34%"
                 },
                 {
                     "name": "British Columbia",
@@ -2446,15 +2446,15 @@
             "Province": "Ontario",
             "Tests": "71338",
             "Abbr": "ON",
-            "Conf.": "3630",
-            "Per m": 250,
-            "Cured": "1219",
+            "Conf.": "4038",
+            "Per m": 278,
+            "Cured": "1449",
             "InWard": "506",
             "InICU": "196",
             "Deaths": "135",
-            "Active": 2276,
-            "Lethality": "3.72%",
-            "New": 0,
+            "Active": 2454,
+            "Lethality": "3.34%",
+            "New": "+408",
             "NewDeaths": 0
         },
         {
@@ -2641,23 +2641,23 @@
             "Province": "Canada",
             "Tests": "320305",
             "Abbr": "Canada",
-            "Conf.": "14018",
-            "Per m": 373,
-            "Cured": "2785",
+            "Conf.": "14426",
+            "Per m": 384,
+            "Cured": "3015",
             "InWard": null,
             "InICU": null,
             "Deaths": "274",
-            "Active": 10959,
-            "Lethality": "1.95%",
-            "New": 0,
+            "Active": 11137,
+            "Lethality": "1.90%",
+            "New": "+408",
             "NewDeaths": 0
         }
     ],
     "overall": {
-        "confirmed": "14018",
-        "increased": 0,
-        "recovered": "2785",
+        "confirmed": "14426",
+        "increased": 408,
+        "recovered": "3015",
         "death": "274",
-        "lethality": "1.95%"
+        "lethality": "1.90%"
     }
 }
