@@ -91,7 +91,7 @@ function ModaldDialog() {
 
 export default function OverallData ({place, overall}) {  
   
-  const [data, setData] = useState({time: '', confirmed: '', suspect: '', cured: '', death: '', fatality: '' });
+  const [data, setData] = useState({time: '', confirmed: '', increased: '', cured: '', death: '', fatality: '' });
   const [time, setTime] = useState(data.time);
 
   let placeString = 'Global Cases';
@@ -143,7 +143,7 @@ export default function OverallData ({place, overall}) {
     if(place === 'USA') {
       axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
         if(data.overall && !isCancelled) {
-            setData ({...data.overall, time: getLocalTime(data.date)});
+            setData ({...data.overall, time: getLocalTime(data.date), increased: data.overall.increased.replace(/\+/g, '')});
             handleResize();
         }   
       });
@@ -153,7 +153,7 @@ export default function OverallData ({place, overall}) {
           setData ({
             time: getLocalTime(data.date),
             confirmed: data.overall.confirmed, 
-            suspect: data.overall.increased, 
+            increased: data.overall.increased, 
             cured: data.overall.recovered, 
             death: data.overall.death, 
             fatality: (100 * data.overall.death.replace(/,/,'') / data.overall.confirmed).toFixed(2) + '%'
@@ -169,16 +169,16 @@ export default function OverallData ({place, overall}) {
         let localTime = getLocalTime(data.time);
         if(place === 'Global') {
           if(!isCancelled) {
-            setData({...overall, time: localTime, suspect: data.overall.increased.replace(/\+/g, ''), confirmed: data.overall.total});  
+            setData({...overall, time: localTime, increased: data.overall.increased.replace(/\+/g, ''), confirmed: data.overall.total});  
           }
         } else if(place === 'China') {
           if(!isCancelled) {
-            setData({...overall, time: localTime, suspect: chinaIncreased.replace(/\+/g, '')});  
+            setData({...overall, time: localTime, increased: chinaIncreased.replace(/\+/g, '')});  
           }
         } else {
           if(!isCancelled) {
             setData({...overall, time: localTime, 
-              suspect: parseInt(data.overall.increased.replace(/,/g, '')) - parseInt(chinaIncreased.replace(/[,+]/g, '')), 
+              increased: parseInt(data.overall.increased.replace(/,/g, '')) - parseInt(chinaIncreased.replace(/[,+]/g, '')), 
               confirmed: parseInt(data.overall.total.replace(/,/g, '')) -  parseInt(chinaConfirmed.replace(/,/g, ''))}); 
           }
         }
@@ -209,7 +209,7 @@ export default function OverallData ({place, overall}) {
       <div className="eachText">Confirmed <span className="confirmedNumber">&nbsp; &nbsp; {valueFormat(data.confirmed)}</span></div>
       <div className="eachText" style={{display: 'flex', flexWrap: 'wrap', alignContent: 'center'}}>Increased&nbsp; &nbsp;
         <span className="increasedNumber" style={newCaseStyle}>
-          {valueFormat(data.suspect)} <ModaldDialog />
+          {valueFormat(data.increased)} <ModaldDialog />
         </span>         
       </div>
       <div className="eachText">Recovered <span className="curedNumber">&nbsp; &nbsp; {valueFormat(data.cured)}</span></div>

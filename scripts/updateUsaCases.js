@@ -213,7 +213,7 @@ async function _getUsaLatestCases () {
         if(name === "Total:") {
           curOverallNum = {
             confirmed: total, 
-            suspect: increased, 
+            increased: increased, 
             cured: totalCount - deadCount - activeCount, 
             death: dead, 
             fatality: lethality
