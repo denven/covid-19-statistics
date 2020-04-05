@@ -200,7 +200,7 @@ async function _getUsaLatestCases () {
       let tdTexts = rowColumns.map(td => $(td).text().trim());
 
       if(Array.isArray(tdTexts)) {
-        let [ name, total, increased, dead, newDeath, active ] = tdTexts;
+        let [ name, total, increased, dead, newDeath, active, perMppl ] = tdTexts;
 
         let lethality = '0%';
         let deadCount = (dead !== '') ? dead.replace(/,/, '') : 0;
@@ -227,6 +227,7 @@ async function _getUsaLatestCases () {
           confirmed: total,
           increased: increased,
           death: dead,
+          perMppl: perMppl,
           newDeath: newDeath,
           deathRate: lethality
         };

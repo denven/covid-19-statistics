@@ -24,8 +24,8 @@ const makeColumns = (place) => {
     columns[1].label = 'State';
     columns[4] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'newDeath', label: 'Deaths(+)', align: 'right', maxWidth: 50 };  
-    columns[6] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
-    if(columns.length > 7) columns.pop();
+    columns[6] = { id: 'infectRate', label: 'Cases/M', align: 'right', maxWidth: 50 };  
+    columns[7] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
   } else {
     columns[4] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
@@ -40,7 +40,7 @@ const StyledTableCell = withStyles(theme => ({
 }))(TableCell);
 
 const useStyles = makeStyles({
-  root: { width: '100%', }, container: { maxHeight: "82vh" },
+  root: { width: '100%', }, container: { maxHeight: "83vh" },
 });
 
 let initRows = [];  // Init an empty table data array
@@ -63,13 +63,14 @@ export default function StickyHeadTable({place, rows}) {
       axios.get(`./assets/UsaStatesCases.json`).then( ({data}) => {
         // if(columns.length === 6) columns.pop();
         if(!isCanceled) {
-          setRows(data.cases.map( ({name, confirmed, death, increased, newDeath, deathRate}) => {
+          setRows(data.cases.map( ({name, confirmed, death, increased, newDeath, perMppl, deathRate}) => {
             return {
               countryEnglishName: name,
               confirmedCount: confirmed,
               increased: increased,
               deadCount: death,
               newDeath: newDeath,
+              infectRate: perMppl,
               lethality: deathRate.replace(/([\d]{1,2}.[\d])%/,'$10%')
             }
           }));
