@@ -1,6 +1,14 @@
 {
-    "date": "2020-04-04 20:00:36",
+    "date": "2020-04-04 21:00:26",
     "cases": [
+        {
+            "name": "USA Total",
+            "confirmed": "311,635",
+            "increased": "+278",
+            "death": "8,454",
+            "newDeath": "+2",
+            "deathRate": "2.71%"
+        },
         {
             "name": "New York",
             "confirmed": "114,775",
@@ -27,11 +35,11 @@
         },
         {
             "name": "California",
-            "confirmed": "13,649",
-            "increased": "",
-            "death": "319",
-            "newDeath": "",
-            "deathRate": "2.34%"
+            "confirmed": "13,927",
+            "increased": "+278",
+            "death": "321",
+            "newDeath": "+2",
+            "deathRate": "2.30%"
         },
         {
             "name": "Louisiana",
@@ -459,10 +467,10 @@
         }
     ],
     "overall": {
-        "confirmed": "311,357",
-        "suspect": "0",
+        "confirmed": "311,635",
+        "suspect": "+278",
         "cured": 14825,
-        "death": "8,452",
+        "death": "8,454",
         "fatality": "2.71%"
     }
 }
