@@ -211,7 +211,7 @@ export default function MapCanada() {
         return "65vh";
       }        
     }
-    return "85vh";
+    return "83vh";
   }
 
   return (

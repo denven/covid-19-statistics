@@ -120,7 +120,7 @@ export default function CasesTrend({country}) {
     //  </div>) :
     (
       <ReactEcharts 
-        style={{height: country === 'China' ? "83vh" : "25vh" }}
+        style={{height: country === 'China' ? "83vh" : "30vh" }}
         echarts={echarts}
         option={getOption()}
         loadingOption={getLoadingOption()}

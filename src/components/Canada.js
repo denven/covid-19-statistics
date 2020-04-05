@@ -17,6 +17,7 @@ import _ from 'lodash';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
+import { inherits } from 'util';
 
 const columns = [
   { label: "Province", id: "Abbr", align: 'right', maxWidth: 10},
@@ -25,7 +26,7 @@ const columns = [
   { label: "New", id: "New", align: 'right', maxWidth: 10 },
   { label: "InWard", id: "InWard", align: 'right', maxWidth: 10 },
   { label: "InICU", id: "InICU", align: 'right', maxWidth: 10 },
-  { label: "Cases/M", id: "Per m", align: 'right', maxWidth: 30 },
+  { label: "Cases/M", id: "Per m", align: 'right', maxWidth: 10 },
   { label: "Cured", id: "Cured", align: 'right', maxWidth: 10 },
   { label: "Deaths", id: "Deaths", align: 'right', maxWidth: 10 },
   { label: "New", id: "NewDeaths", align: 'right', maxWidth: 10 },
@@ -83,25 +84,18 @@ function ProvincesTable ({data}) {
           <TableBody>
             {data.map( (row, index) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.Abbr}>
-                  {columns.map(column => {                    
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.Abbr} >
+                  {columns.map(column => {                                      
                     let value = valueFormat(row[column.id]);
-                    if(value.includes('+') > 0) {
-                      return (
-                        <TableCell key={column.id} align={column.align} style={{color: 'red'}}>
-                          {column.format && typeof value === 'number' ? column.format(value) : value}
-                        </TableCell>
-                      );
-                    } else {
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number' ? column.format(value) : value}
-                        </TableCell>
-                      );
-                    }
+                    return (
+                      <TableCell key={column.id} align={column.align} 
+                      style={{ color: value.includes('+') > 0 ? 'red' : 'inherits', fontWeight: row.Abbr === 'Canada' ? 600 : 400 }}>
+                        {column.format && typeof value === 'number' ? column.format(value) : value}
+                      </TableCell>
+                    );
                   })}
                 </TableRow>
-                );
+              );
             })}
           </TableBody>
         </Table>

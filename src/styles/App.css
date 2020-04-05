@@ -30,18 +30,18 @@
 }
 
 .bodyGlobalMap {
-    width: 65%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    /* align-items: center; // this attribute will make items hide */
-    height: 100%;
+    /* justify-content: center; */
+    /* align-content: flex-start; */
+    /* align-items: center;* this attribute will make items hide */ 
+    height: 95%;
 }
 
   
 .bodyGlobalTable {
-    width: 35%
+    width: 40%
 }
 
 .bodyBottom {
@@ -79,7 +79,7 @@
     position: relative;  /* needed, as we set absolute for son boxes*/
     display: flex;
     width: 100%;
-    height: 92vh;
+    height: 90vh;
     flex-direction: column;
     align-items: center;
 }

@@ -119,7 +119,7 @@ export default function MapUSA() {
           return tipString
         }
       },
-      bottom: '4%',
+      // bottom: '4%',
       series: [{
         left: 'center',
         top: '18%',
@@ -159,10 +159,10 @@ export default function MapUSA() {
     // console.log('sss', mediaQuery);
     if(mediaQuery.matches) {
       if(document.body.clientWidth < 1024) {
-        return "53vh";
+        return "40vh";
       }        
     }
-    return "60vh";
+    return "55vh";
   }
 
   return (
