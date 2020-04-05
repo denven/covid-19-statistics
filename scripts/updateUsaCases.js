@@ -193,7 +193,8 @@ async function _getUsaLatestCases () {
     const $ = cheerio.load(res.data);
     let tableRows = $('tr', 'tbody').toArray();
 
-    for(let index = 0; index < tableRows.length;) {
+    // index = 0, is the same with the last line(totol number), April 05, 2020
+    for(let index = 1; index < tableRows.length;) {
 
       let rowColumns = $(tableRows[index]).find("td").toArray();
       let tdTexts = rowColumns.map(td => $(td).text().trim());

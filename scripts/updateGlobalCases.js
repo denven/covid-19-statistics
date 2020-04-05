@@ -16,9 +16,9 @@ async function updateGlobalCases () {
     let countries = [];
     let tableRows = $('tr', 'tbody').toArray();
  
-    for(let index = 0; index < tableRows.length;) {
-
-      //Match english and french letters, dot, space in country name
+    for(let index = 1; index < tableRows.length;) {
+      // index = 0, is the same with the last line(totol number), April 05, 2020
+      // Match english and french letters, dot, space in country name
       // let name = $(tableRows[index]).text().trim().match(/[a-zA-ZàâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ.\- ]+/g);  // match country or place name
       const rowColumns = $(tableRows[index]).text().trim().split('\n');
       // console.log(rowColumns)
