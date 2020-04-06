@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-06 11:00:27",
+    "date": "2020-04-06 12:00:26",
     "cases": [
         {
             "date": "1/28",
@@ -2458,10 +2458,10 @@
                 },
                 {
                     "name": "Manitoba",
-                    "value": "203",
+                    "value": "204",
                     "cured": "17",
                     "death": "2",
-                    "lethality": "0.99%"
+                    "lethality": "0.98%"
                 },
                 {
                     "name": "Saskatchewan",
@@ -2487,14 +2487,14 @@
                 {
                     "name": "Nova Scotia",
                     "value": "293",
-                    "cured": "53",
+                    "cured": "64",
                     "death": "0",
                     "lethality": "0%"
                 },
                 {
                     "name": "New Brunswick",
-                    "value": "101",
-                    "cured": "28",
+                    "value": "103",
+                    "cured": "30",
                     "death": "0",
                     "lethality": "0%"
                 },
@@ -2522,7 +2522,7 @@
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
-                    "cured": "6",
+                    "cured": "13",
                     "death": "0",
                     "lethality": "0%"
                 }
@@ -2594,15 +2594,15 @@
             "Province": "Manitoba",
             "Tests": "12998",
             "Abbr": "MB",
-            "Conf.": "203",
+            "Conf.": "204",
             "Per m": 149,
             "Cured": "17",
             "InWard": "11",
             "InICU": "7",
             "Deaths": "2",
-            "Active": 184,
-            "Lethality": "0.99%",
-            "New": 0,
+            "Active": 185,
+            "Lethality": "0.98%",
+            "New": "+1",
             "NewDeaths": 0
         },
         {
@@ -2656,11 +2656,11 @@
             "Abbr": "NS",
             "Conf.": "293",
             "Per m": 302,
-            "Cured": "53",
+            "Cured": "64",
             "InWard": "10",
             "InICU": null,
             "Deaths": "0",
-            "Active": 240,
+            "Active": 229,
             "Lethality": "0%",
             "New": "+31",
             "NewDeaths": 0
@@ -2669,15 +2669,15 @@
             "Province": "New Brunswick",
             "Tests": "5543",
             "Abbr": "NB",
-            "Conf.": "101",
-            "Per m": 131,
-            "Cured": "28",
+            "Conf.": "103",
+            "Per m": 133,
+            "Cured": "30",
             "InWard": "4",
             "InICU": "1",
             "Deaths": "0",
             "Active": 73,
             "Lethality": "0%",
-            "New": 0,
+            "New": "+2",
             "NewDeaths": 0
         },
         {
@@ -2731,11 +2731,11 @@
             "Abbr": "Repatriated",
             "Conf.": "13",
             "Per m": 0,
-            "Cured": "6",
+            "Cured": "13",
             "InWard": null,
             "InICU": null,
             "Deaths": "0",
-            "Active": 7,
+            "Active": 0,
             "Lethality": "0%",
             "New": 0,
             "NewDeaths": 0
@@ -2744,22 +2744,22 @@
             "Province": "Canada",
             "Tests": "341436",
             "Abbr": "Canada",
-            "Conf.": "16498",
+            "Conf.": "16501",
             "Per m": 439,
-            "Cured": "3434",
+            "Cured": "3454",
             "InWard": null,
             "InICU": null,
             "Deaths": "339",
-            "Active": 12725,
+            "Active": 12708,
             "Lethality": "2.05%",
-            "New": "+986",
+            "New": "+989",
             "NewDeaths": "+32"
         }
     ],
     "overall": {
-        "confirmed": "16498",
-        "increased": 986,
-        "recovered": "3434",
+        "confirmed": "16501",
+        "increased": 989,
+        "recovered": "3454",
         "death": "339",
         "lethality": "2.05%"
     }

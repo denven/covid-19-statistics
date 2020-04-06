@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-06 11:00:28",
+    "date": "2020-04-06 12:00:29",
     "cases": [
         {
             "name": "New York",
@@ -137,6 +137,15 @@
             "deathRate": "2.81%"
         },
         {
+            "name": "Ohio",
+            "confirmed": "4,450",
+            "increased": "+407",
+            "death": "142",
+            "perMppl": "382",
+            "newDeath": "+23",
+            "deathRate": "3.19%"
+        },
+        {
             "name": "Maryland",
             "confirmed": "4,045",
             "increased": "+436",
@@ -144,15 +153,6 @@
             "perMppl": "674",
             "newDeath": "+24",
             "deathRate": "2.25%"
-        },
-        {
-            "name": "Ohio",
-            "confirmed": "4,043",
-            "increased": "",
-            "death": "119",
-            "perMppl": "347",
-            "newDeath": "",
-            "deathRate": "2.94%"
         },
         {
             "name": "Tennessee",
@@ -516,10 +516,10 @@
         }
     ],
     "overall": {
-        "confirmed": "356,007",
-        "increased": "+19,334",
+        "confirmed": "356,414",
+        "increased": "+19,741",
         "cured": 19247,
-        "death": "10,467",
+        "death": "10,490",
         "fatality": "2.94%"
     }
 }
