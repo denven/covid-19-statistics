@@ -149,7 +149,7 @@ export default function MapCanada() {
             label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
             itemStyle: {
               normal:{ 
-                borderColor: 'rgba(0, 0, 0, 0.2)',
+                borderColor: 'rgba(0, 0, 0, 0.4)',
                 areaColor: '#B2E5BC'  // default area color 
               },
               emphasis:{

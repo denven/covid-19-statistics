@@ -41,8 +41,8 @@ export default function MapUSA() {
           return {
             name: name,
             value: confirmed.replace(/,/g,''),
-            cured: death,    // this is weired as the table column name changes, recoverd/increased number cannot be fetchable
-            death: deathRate // this is weired as the table column name changes
+            death: death,  
+            lethality: deathRate 
           }
         }));
       }
@@ -102,10 +102,10 @@ export default function MapUSA() {
       tooltip: {
         formatter: (params) => {
           let name = params.name;
-          let death = 0, cured = 0;
+          let death = 0, lethality = 0;
           if(params.data) {
+            lethality = params.data.lethality;
             death = params.data.death;
-            cured = params.data.cured;
           }
           let tipString = '';
           let value = ((params.value || "No Case") + '').split('.');
@@ -114,7 +114,7 @@ export default function MapUSA() {
           } else {
             value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
             name = titleize(pinyin(name, {removeTone: true}));
-            tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Death:\t${cured}<br />Lethality:\t${death}`;
+            tipString = `<b>${name}</b><br />Confirmed: ${value}<br />Death:\t${death}<br />Lethality:\t${lethality}`;
           }
           return tipString
         }
@@ -132,7 +132,7 @@ export default function MapUSA() {
         label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
         itemStyle: {
           normal:{ 
-            borderColor: 'rgba(0, 0, 0, 0.2)',
+            borderColor: 'rgba(0, 0, 0, 0.7)',
             areaColor: '#B2E5BC'  // default area color 
           },
           emphasis:{

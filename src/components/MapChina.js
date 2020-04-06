@@ -90,8 +90,6 @@ export default function MapChina({chinaMap}) {
       },
       // geo: {  },
       series: [{
-        // left: 'center',
-        // top: '19%',
         left: '5%', right: '8%', top: '17%', bottom: '7%', // similar to grid property
         type: 'map',
         name: '',
@@ -101,10 +99,10 @@ export default function MapChina({chinaMap}) {
         // the following attributes can be put in geo, but the map will smaller
         // and cannot be zoomed out
         silent: false, // province area is clickable
-        label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
+        label: { normal: { show: true, fontSize: '8', color: 'rgba(0,0,0,0.7)' }}, 
         itemStyle: {
           normal:{ 
-            borderColor: 'rgba(0, 0, 0, 0.2)',
+            borderColor: 'rgba(0, 0, 0, 0.3)',
             areaColor: '#B2E5BC'  // default area color 
           },
           emphasis:{
