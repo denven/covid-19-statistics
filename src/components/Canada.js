@@ -124,7 +124,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
     return {
       title: {
           x: 'center',
-          text: 'Accumulated Cases by day in Canada',
+          text: 'Cumulative Cases by day in Canada',
       },
       tooltip: { 
         trigger: 'axis',
@@ -135,7 +135,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
           top : '30px',
           textStyle: {fontSize: 12, fontWeight: 600},
       },
-      grid: { left: 'center', right: 'center', bottom: '3%', containLabel: true, width: '85%' },
+      grid: { left: 'center', right: 'center', bottom: '3%', containLabel: true, width: '92%' },
       toolbox: { feature: { saveAsImage: {} } },
       xAxis: {
           type: 'category',
@@ -193,7 +193,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
   return (
     (days && dayCases) ? (
       <ReactEcharts 
-        style={{height: "30vh"}}
+        style={{height: "28vh"}}
         echarts={echarts}
         option={getOption()}
         loadingOption={getLoadingOption()}

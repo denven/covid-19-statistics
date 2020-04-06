@@ -90,8 +90,9 @@ export default function MapChina({chinaMap}) {
       },
       // geo: {  },
       series: [{
-        left: 'center',
-        top: '19%',
+        // left: 'center',
+        // top: '19%',
+        left: '3%', right: '8%', top: '16%', bottom: '5%', // similar to grid property
         type: 'map',
         name: '',
         geoIndex: 0,

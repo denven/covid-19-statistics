@@ -3,6 +3,7 @@ import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
 import axios from 'axios';
+import { height } from '@material-ui/system';
 // import moment from 'moment';
 
 export default function CasesTrend({country}) {
@@ -64,7 +65,7 @@ export default function CasesTrend({country}) {
     return {
       title: {
           x: 'center',
-          text: 'Accumulated Cases by day in ' + country
+          text: 'Cumulative Cases by day in ' + country
       },
       tooltip: { 
         trigger: 'axis',
@@ -74,7 +75,7 @@ export default function CasesTrend({country}) {
           top : '30px',
           textStyle: {fontSize: 12, fontWeight: 600},
       },
-      grid: { left: 'center', right: 'center', bottom: '3%', containLabel: true, width: '85%' },
+      grid: { left: 'center', right: 'center', bottom: '8%', containLabel: true, width: '92%' },
       toolbox: { feature: { saveAsImage: {} } },
       xAxis: {
           type: 'category',
@@ -113,14 +114,26 @@ export default function CasesTrend({country}) {
     };
   }
 
+  const getModerateHeight = () => {
+    let mediaQuery = window.matchMedia("(orientation: portrait)");
+    // console.log('sss', mediaQuery);
+    if(mediaQuery.matches) {
+      if(document.body.clientWidth < 1024) {
+        return "48vh";
+      }        
+    }
+    return "85vh";
+  }
+
+  
   return (
     // (!loaded && error) ?
     // (<div className={classes.root}>
     //   <Alert severity="warning">Sorry, failed to get history data, please Refresh page!</Alert>
     //  </div>) :
-    (
+    ( 
       <ReactEcharts 
-        style={{height: country === 'China' ? "83vh" : "30vh" }}
+        style={{height: country === 'China' ? getModerateHeight() : "30vh" }}
         echarts={echarts}
         option={getOption()}
         loadingOption={getLoadingOption()}

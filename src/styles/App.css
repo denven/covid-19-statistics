@@ -31,10 +31,10 @@
 
 .bodyGlobalMap {
     width: 60%;
-    display: flex;
+    display: flex;  /* this four lines of flex can be replaced by display: block */
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-content: flex-start; */
+    justify-content: center;
+    align-content: flex-start;
     /* align-items: center;* this attribute will make items hide */ 
     height: 95%;
 }
@@ -62,13 +62,6 @@
     text-align: left;
     width: 50%;
 }
-
-/* .bodyLeft {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-} */
 
 .bodyRight {
     display: inline-block;

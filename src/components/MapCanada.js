@@ -56,7 +56,7 @@ export default function MapCanada() {
       min: 0,
       max: 10000,
       align: 'right',
-      bottom: '7%',
+      bottom: '4%',
       left: 'center',
       orient: 'horizontal',
       inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
@@ -65,8 +65,7 @@ export default function MapCanada() {
         {min: 1000, max: 2999},
         {min: 500, max: 999},
         {min: 100, max: 499},
-        {min: 20, max: 99},
-        {min: 0, max: 19},
+        {min: 0, max: 99},
       ],
       padding: 30,
       showLabel: true,
@@ -114,24 +113,33 @@ export default function MapCanada() {
           inverse: true,
           data: ['QC', 'ON', 'BC', 'AB', 'MB', 'SK', 'NL', 'PE', 'NS', 'NB', 'YT', 'NT', 'NU']
         }],
+        grid: {  // Set margin of all charts
+          left: '5%',
+          right: '5%',
+          bottom: '10%',
+          containLabel: true
+        },
         series: [
           {
             // left: '0%', // not working, cannot be adjusted
             z: 200,  //make bar on top of map
             stack: 'All',
             type: 'bar', 
+            barMinHeight: 25,
             label: {
               position: 'inside',
               show: true,
               color: 'blue',
-            },
+            }
             // name: 'Confirmed',
             // color: 'rgb(64,141,39)',
           },
           {
             z: 100,
             left: '15%',
-            top: '19%',
+            right: '10%',
+            top: '27%',
+            bottom: '13%',
             type: 'map',
             name: '',
             geoIndex: 0,

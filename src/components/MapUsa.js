@@ -121,8 +121,7 @@ export default function MapUSA() {
       },
       // bottom: '4%',
       series: [{
-        left: 'center',
-        top: '18%',
+        left: '3%', right: '8%', top: '16%', bottom: '3%', // similar to grid property
         type: 'map',
         name: '',
         geoIndex: 0,
@@ -167,7 +166,7 @@ export default function MapUSA() {
 
   return (
     <ReactEcharts 
-      style={{height: getModerateHeight()}}
+      style={{height: '55vh'}}
       echarts={echarts}
       option={getOption()}
       loadingOption={getLoadingOption()}

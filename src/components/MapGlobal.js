@@ -130,8 +130,9 @@ export default function MapGlobal({mapData}) {
       },
       // geo: {  },
       series: [{
-        top: '20%',
-        left: 'center',
+        // top: '20%',
+        // left: 'center',
+        left: '3%', right: '8%', top: '18%', bottom: '5%', // similar to grid property
         type: 'map',
         // name: 'Confirmed Cases',
         geoIndex: 0,
