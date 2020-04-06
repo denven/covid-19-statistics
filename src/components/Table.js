@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 
-const columns = new Array(8); // max columns is 8
+const columns = new Array(9); // max columns is 8
 
 const makeColumns = (place) => {
 
@@ -26,11 +26,14 @@ const makeColumns = (place) => {
     columns[5] = { id: 'newDeath', label: 'Deaths(+)', align: 'right', maxWidth: 50 };  
     columns[6] = { id: 'infectRate', label: 'Cases/M', align: 'right', maxWidth: 50 };  
     columns[7] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };
+    if(columns.length > 8)
+      columns.pop();
   } else {
     columns[4] = { id: 'curedCount', label: 'Cured', align: 'right', maxWidth: 50 };
     columns[5] = { id: 'deadCount', label: 'Deaths', align: 'right', maxWidth: 50 };
-    columns[6] = { id: 'infectRate', label: 'Cases/M', align: 'right', maxWidth: 50 };  
-    columns[7] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };  
+    columns[6] = { id: 'newDeath', label: 'Deaths(+)', align: 'right', maxWidth: 50 };
+    columns[7] = { id: 'infectRate', label: 'Cases/M', align: 'right', maxWidth: 50 };  
+    columns[8] = { id: 'lethality', label: 'Lethality', align: 'right', maxWidth: 50 };  
   }
 }
 
@@ -81,7 +84,7 @@ export default function StickyHeadTable({place, rows}) {
       const getCountriesCases = async () => {
         const casesResult = await axios.get(`./assets/GlobalCasesToday.json`); 
         let dataWithInfectRate = casesResult.data.countries.map(
-          ( {name, total, active, increased, recovered, dead, perMppl} ) => {
+          ( {name, total, active, increased, recovered, dead, newDeath, perMppl} ) => {
 
             let lethality = '0%';
             let deadCount = parseInt(dead.trim().replace(/,/g,''));
@@ -99,6 +102,7 @@ export default function StickyHeadTable({place, rows}) {
               suspectedCount: increased,
               curedCount: recovered,
               deadCount: deadCount,
+              newDeath: newDeath,
               infectRate: perMppl,
               lethality: lethality
             }
