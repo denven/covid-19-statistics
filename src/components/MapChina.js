@@ -92,7 +92,7 @@ export default function MapChina({chinaMap}) {
       series: [{
         // left: 'center',
         // top: '19%',
-        left: '3%', right: '8%', top: '16%', bottom: '5%', // similar to grid property
+        left: '5%', right: '8%', top: '17%', bottom: '7%', // similar to grid property
         type: 'map',
         name: '',
         geoIndex: 0,
@@ -130,7 +130,7 @@ export default function MapChina({chinaMap}) {
     // console.log('sss', mediaQuery);
     if(mediaQuery.matches) {
       if(document.body.clientWidth < 1024) {
-        return "48vh";
+        return "55vh";
       }        
     }
     return "85vh";

@@ -132,7 +132,7 @@ export default function MapGlobal({mapData}) {
       series: [{
         // top: '20%',
         // left: 'center',
-        left: '3%', right: '8%', top: '18%', bottom: '5%', // similar to grid property
+        left: '3%', right: '5%', top: '18%', bottom: '7%', // similar to grid property
         type: 'map',
         // name: 'Confirmed Cases',
         geoIndex: 0,
@@ -173,9 +173,9 @@ export default function MapGlobal({mapData}) {
       let mediaQuery = window.matchMedia("(orientation: portrait)");
       // console.log('sss', mediaQuery);
       if(mediaQuery.matches) {
-        if(document.body.clientWidth < 1024) {
+        // if(document.body.clientWidth < 1024) {
           return "48vh";
-        }        
+        // }        
       }
       return "85vh";
   }

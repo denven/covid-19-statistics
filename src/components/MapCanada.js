@@ -137,7 +137,7 @@ export default function MapCanada() {
           {
             z: 100,
             left: '15%',
-            right: '10%',
+            right: '5%',
             top: '27%',
             bottom: '13%',
             type: 'map',

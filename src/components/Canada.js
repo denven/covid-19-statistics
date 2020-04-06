@@ -39,16 +39,16 @@ const StyledTableCell = withStyles(theme => ({
   body: { fontSize: 14, },
 }))(TableCell);
 
-const isWideScreen = () => {
+const isPortraitMode = () => {
     // console.log('screen change')
   let mediaQuery = window.matchMedia("(orientation: portrait)");
-  if(mediaQuery.matches) { return false };
-  if(document.body.clientWidth < 1024) { return false; }
+  if(mediaQuery.matches) { return true };
   return true;
 }
 
 const useStyles = makeStyles({
-  root: { width: '100%', }, container: { maxHeight: "84vh" },
+  root: { width: '100%', }, 
+  container: { maxHeight: isPortraitMode() ? "65vh" : "48vh" },
   chart: {marginTop: '2.5%'},
 });
 
@@ -193,7 +193,7 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
   return (
     (days && dayCases) ? (
       <ReactEcharts 
-        style={{height: "28vh"}}
+        style={{height: "30vh"}}
         echarts={echarts}
         option={getOption()}
         loadingOption={getLoadingOption()}
