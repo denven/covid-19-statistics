@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-07 11:00:26",
+    "date": "2020-04-07 12:00:19",
     "cases": [
         {
             "date": "1/28",
@@ -2561,10 +2561,10 @@
                 },
                 {
                     "name": "Manitoba",
-                    "value": "204",
-                    "cured": "17",
-                    "death": "2",
-                    "lethality": "0.98%"
+                    "value": "217",
+                    "cured": "21",
+                    "death": "3",
+                    "lethality": "1.38%"
                 },
                 {
                     "name": "Saskatchewan",
@@ -2697,16 +2697,16 @@
             "Province": "Manitoba",
             "Tests": "13476",
             "Abbr": "MB",
-            "Conf.": "204",
-            "Per m": 149,
-            "Cured": "17",
+            "Conf.": "217",
+            "Per m": 159,
+            "Cured": "21",
             "InWard": "11",
             "InICU": "7",
-            "Deaths": "2",
-            "Active": 185,
-            "Lethality": "0.98%",
-            "New": 0,
-            "NewDeaths": 0
+            "Deaths": "3",
+            "Active": 193,
+            "Lethality": "1.38%",
+            "New": "+13",
+            "NewDeaths": "+1"
         },
         {
             "Province": "Saskatchewan",
@@ -2847,23 +2847,23 @@
             "Province": "Canada",
             "Tests": "353447",
             "Abbr": "Canada",
-            "Conf.": "17827",
+            "Conf.": "17840",
             "Per m": 475,
-            "Cured": "3935",
+            "Cured": "3939",
             "InWard": null,
             "InICU": null,
-            "Deaths": "398",
-            "Active": 13494,
-            "Lethality": "2.23%",
-            "New": "+1160",
-            "NewDeaths": "+39"
+            "Deaths": "399",
+            "Active": 13502,
+            "Lethality": "2.24%",
+            "New": "+1173",
+            "NewDeaths": "+40"
         }
     ],
     "overall": {
-        "confirmed": "17827",
-        "increased": 1160,
-        "recovered": "3935",
-        "death": "398",
-        "lethality": "2.23%"
+        "confirmed": "17840",
+        "increased": 1173,
+        "recovered": "3939",
+        "death": "399",
+        "lethality": "2.24%"
     }
 }
