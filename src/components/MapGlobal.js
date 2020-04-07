@@ -143,7 +143,7 @@ export default function MapGlobal({mapData}) {
         silent: false, // country area is clickable
         label: { normal: { 
           show: false,  // do not show country name
-          fontSize:'8', 
+          fontSize: 16, 
           color: 'rgba(0,0,0,0.7)'  // default area color
         }}, 
         itemStyle: {

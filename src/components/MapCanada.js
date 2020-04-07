@@ -146,10 +146,10 @@ export default function MapCanada() {
             // data: data, // area(provinces) data, put this into OPTIONS' series
             map: 'Canada',
             silent: false, // province area is clickable
-            label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
+            label: { normal: { show: false, fontSize: 16, color: 'rgba(0,0,0,0.7)' }}, 
             itemStyle: {
               normal:{ 
-                borderColor: 'rgba(0, 0, 0, 0.4)',
+                borderColor: 'rgba(0, 0, 0, 0.7)',
                 areaColor: '#B2E5BC'  // default area color 
               },
               emphasis:{

@@ -83,12 +83,12 @@ export default function MapUSA() {
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
         pieces: [ 
-          {min: 1000},
+          {min: 10000},
+          {min: 3000, max: 9999},
+          {min: 1000, max: 2999},
           {min: 500, max: 999},
-          {min: 200, max: 499},
-          {min: 50, max: 199},
-          {min: 10, max: 49},
-          {min: 1, max: 9},
+          {min: 100, max: 499},
+          {min: 0, max: 99},
         ],
         padding: 30,
         orient: 'horizontal',
@@ -121,7 +121,7 @@ export default function MapUSA() {
       },
       // bottom: '4%',
       series: [{
-        left: '3%', right: '8%', top: '16%', bottom: '3%', // similar to grid property
+        left: '5%', right: '8%', top: '16%', bottom: '3%', // similar to grid property
         type: 'map',
         name: '',
         geoIndex: 0,
@@ -129,7 +129,7 @@ export default function MapUSA() {
         map: 'USA',
         silent: false, // province area is clickable
         // layoutCenter: ['30%', '30%'],
-        label: { normal: { show: true, fontSize:'8', color: 'rgba(0,0,0,0.7)' }}, 
+        label: { normal: { show: false, fontSize: 16, color: 'rgba(0,0,0,0.7)' }}, 
         itemStyle: {
           normal:{ 
             borderColor: 'rgba(0, 0, 0, 0.7)',
