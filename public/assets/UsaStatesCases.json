@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-07 00:00:26",
+    "date": "2020-04-07 07:00:24",
     "cases": [
         {
             "name": "New York",
@@ -164,6 +164,15 @@
             "deathRate": "1.71%"
         },
         {
+            "name": "Virginia",
+            "confirmed": "3,333",
+            "increased": "+455",
+            "death": "63",
+            "perMppl": "396",
+            "newDeath": "+9",
+            "deathRate": "1.89%"
+        },
+        {
             "name": "North Carolina",
             "confirmed": "3,039",
             "increased": "",
@@ -171,15 +180,6 @@
             "perMppl": "299",
             "newDeath": "",
             "deathRate": "1.58%"
-        },
-        {
-            "name": "Virginia",
-            "confirmed": "2,878",
-            "increased": "",
-            "death": "54",
-            "perMppl": "342",
-            "newDeath": "",
-            "deathRate": "1.88%"
         },
         {
             "name": "Missouri",
@@ -230,10 +230,10 @@
             "name": "Nevada",
             "confirmed": "1,953",
             "increased": "",
-            "death": "46",
+            "death": "58",
             "perMppl": "668",
-            "newDeath": "",
-            "deathRate": "2.36%"
+            "newDeath": "+12",
+            "deathRate": "2.97%"
         },
         {
             "name": "Mississippi",
@@ -462,12 +462,12 @@
         },
         {
             "name": "Guam",
-            "confirmed": "112",
-            "increased": "",
+            "confirmed": "121",
+            "increased": "+9",
             "death": "4",
             "perMppl": "",
             "newDeath": "",
-            "deathRate": "3.57%"
+            "deathRate": "3.31%"
         },
         {
             "name": "Northern Mariana Islands",
@@ -480,12 +480,12 @@
         },
         {
             "name": "Puerto Rico",
-            "confirmed": "513",
-            "increased": "",
-            "death": "21",
-            "perMppl": "151",
-            "newDeath": "",
-            "deathRate": "4.09%"
+            "confirmed": "573",
+            "increased": "+60",
+            "death": "23",
+            "perMppl": "169",
+            "newDeath": "+2",
+            "deathRate": "4.01%"
         },
         {
             "name": "United States Virgin Islands",
@@ -516,10 +516,10 @@
         }
     ],
     "overall": {
-        "confirmed": "367,650",
-        "increased": "+646",
-        "cured": 19810,
-        "death": "10,943",
+        "confirmed": "368,174",
+        "increased": "+1,170",
+        "cured": 19814,
+        "death": "10,966",
         "fatality": "2.98%"
     }
 }
