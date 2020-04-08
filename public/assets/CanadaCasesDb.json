@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-08 15:00:30",
+    "date": "2020-04-08 16:00:24",
     "cases": [
         {
             "date": "1/28",
@@ -2645,15 +2645,15 @@
                     "name": "Ontario",
                     "value": "5276",
                     "cured": "2074",
-                    "death": "203",
-                    "lethality": "3.85%"
+                    "death": "215",
+                    "lethality": "4.08%"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "1291",
-                    "cured": "805",
-                    "death": "43",
-                    "lethality": "3.33%"
+                    "value": "1336",
+                    "cured": "838",
+                    "death": "48",
+                    "lethality": "3.59%"
                 },
                 {
                     "name": "Alberta",
@@ -2706,7 +2706,7 @@
                 },
                 {
                     "name": "Yukon",
-                    "value": "7",
+                    "value": "8",
                     "cured": "4",
                     "death": "0",
                     "lethality": "0%"
@@ -2760,26 +2760,26 @@
             "Cured": "2074",
             "InWard": "605",
             "InICU": "246",
-            "Deaths": "203",
-            "Active": 2999,
-            "Lethality": "3.85%",
+            "Deaths": "215",
+            "Active": 2987,
+            "Lethality": "4.08%",
             "New": "+550",
-            "NewDeaths": "+10"
+            "NewDeaths": "+22"
         },
         {
             "Province": "British Columbia",
             "Tests": "51423",
             "Abbr": "BC",
-            "Conf.": "1291",
-            "Per m": 255,
-            "Cured": "805",
+            "Conf.": "1336",
+            "Per m": 264,
+            "Cured": "838",
             "InWard": "138",
             "InICU": "66",
-            "Deaths": "43",
-            "Active": 443,
-            "Lethality": "3.33%",
-            "New": 0,
-            "NewDeaths": 0
+            "Deaths": "48",
+            "Active": 450,
+            "Lethality": "3.59%",
+            "New": "+45",
+            "NewDeaths": "+5"
         },
         {
             "Province": "Alberta",
@@ -2890,15 +2890,15 @@
             "Province": "Yukon",
             "Tests": "747",
             "Abbr": "YT",
-            "Conf.": "7",
-            "Per m": 172,
+            "Conf.": "8",
+            "Per m": 196,
             "Cured": "4",
             "InWard": null,
             "InICU": null,
             "Deaths": "0",
-            "Active": 3,
+            "Active": 4,
             "Lethality": "0%",
-            "New": 0,
+            "New": "+1",
             "NewDeaths": 0
         },
         {
@@ -2950,23 +2950,23 @@
             "Province": "Canada",
             "Tests": "366516",
             "Abbr": "Canada",
-            "Conf.": "19245",
-            "Per m": 512,
-            "Cured": "4633",
+            "Conf.": "19291",
+            "Per m": 514,
+            "Cured": "4666",
             "InWard": null,
             "InICU": null,
-            "Deaths": "459",
-            "Active": 14153,
-            "Lethality": "2.39%",
-            "New": "+1348",
-            "NewDeaths": "+38"
+            "Deaths": "476",
+            "Active": 14149,
+            "Lethality": "2.47%",
+            "New": "+1394",
+            "NewDeaths": "+55"
         }
     ],
     "overall": {
-        "confirmed": "19245",
-        "increased": 1348,
-        "recovered": "4633",
-        "death": "459",
-        "lethality": "2.39%"
+        "confirmed": "19291",
+        "increased": 1394,
+        "recovered": "4666",
+        "death": "476",
+        "lethality": "2.47%"
     }
 }
