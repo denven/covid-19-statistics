@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-08 11:00:20",
+    "date": "2020-04-08 12:00:33",
     "cases": [
         {
             "name": "New York",
@@ -147,12 +147,12 @@
         },
         {
             "name": "Ohio",
-            "confirmed": "4,782",
-            "increased": "",
-            "death": "167",
-            "perMppl": "411",
-            "newDeath": "",
-            "deathRate": "3.49%"
+            "confirmed": "5,148",
+            "increased": "+366",
+            "death": "193",
+            "perMppl": "442",
+            "newDeath": "+26",
+            "deathRate": "3.75%"
         },
         {
             "name": "Tennessee",
@@ -219,12 +219,12 @@
         },
         {
             "name": "Alabama",
-            "confirmed": "2,328",
-            "increased": "+131",
+            "confirmed": "2,369",
+            "increased": "+172",
             "death": "66",
-            "perMppl": "479",
+            "perMppl": "487",
             "newDeath": "+2",
-            "deathRate": "2.84%"
+            "deathRate": "2.79%"
         },
         {
             "name": "Nevada",
@@ -246,12 +246,12 @@
         },
         {
             "name": "Utah",
-            "confirmed": "1,738",
-            "increased": "",
+            "confirmed": "1,846",
+            "increased": "+108",
             "death": "13",
-            "perMppl": "571",
+            "perMppl": "606",
             "newDeath": "",
-            "deathRate": "0.75%"
+            "deathRate": "0.70%"
         },
         {
             "name": "Oklahoma",
@@ -443,6 +443,15 @@
             "deathRate": "1.59%"
         },
         {
+            "name": "Alaska",
+            "confirmed": "226",
+            "increased": "+13",
+            "death": "7",
+            "perMppl": "306",
+            "newDeath": "+1",
+            "deathRate": "3.10%"
+        },
+        {
             "name": "Wyoming",
             "confirmed": "221",
             "increased": "",
@@ -450,15 +459,6 @@
             "perMppl": "380",
             "newDeath": "",
             "deathRate": "0%"
-        },
-        {
-            "name": "Alaska",
-            "confirmed": "213",
-            "increased": "",
-            "death": "6",
-            "perMppl": "288",
-            "newDeath": "",
-            "deathRate": "2.82%"
         },
         {
             "name": "Guam",
@@ -516,10 +516,10 @@
         }
     ],
     "overall": {
-        "confirmed": "418,044",
-        "increased": "+17,709",
-        "cured": 22184,
-        "death": "14,214",
+        "confirmed": "418,572",
+        "increased": "+18,237",
+        "cured": 22187,
+        "death": "14,241",
         "fatality": "3.40%"
     }
 }

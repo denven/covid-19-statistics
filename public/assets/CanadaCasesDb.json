@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-08 11:00:18",
+    "date": "2020-04-08 12:00:31",
     "cases": [
         {
             "date": "1/28",
@@ -2664,10 +2664,10 @@
                 },
                 {
                     "name": "Manitoba",
-                    "value": "217",
-                    "cured": "21",
+                    "value": "221",
+                    "cured": "69",
                     "death": "3",
-                    "lethality": "1.38%"
+                    "lethality": "1.36%"
                 },
                 {
                     "name": "Saskatchewan",
@@ -2800,15 +2800,15 @@
             "Province": "Manitoba",
             "Tests": "14280",
             "Abbr": "MB",
-            "Conf.": "217",
-            "Per m": 159,
-            "Cured": "21",
+            "Conf.": "221",
+            "Per m": 162,
+            "Cured": "69",
             "InWard": "12",
             "InICU": "6",
             "Deaths": "3",
-            "Active": 193,
-            "Lethality": "1.38%",
-            "New": 0,
+            "Active": 149,
+            "Lethality": "1.36%",
+            "New": "+4",
             "NewDeaths": 0
         },
         {
@@ -2950,22 +2950,22 @@
             "Province": "Canada",
             "Tests": "366516",
             "Abbr": "Canada",
-            "Conf.": "19179",
+            "Conf.": "19183",
             "Per m": 511,
-            "Cured": "4487",
+            "Cured": "4535",
             "InWard": null,
             "InICU": null,
             "Deaths": "456",
-            "Active": 14236,
+            "Active": 14192,
             "Lethality": "2.38%",
-            "New": "+1282",
+            "New": "+1286",
             "NewDeaths": "+35"
         }
     ],
     "overall": {
-        "confirmed": "19179",
-        "increased": 1282,
-        "recovered": "4487",
+        "confirmed": "19183",
+        "increased": 1286,
+        "recovered": "4535",
         "death": "456",
         "lethality": "2.38%"
     }
