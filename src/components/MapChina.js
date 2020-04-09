@@ -68,7 +68,7 @@ export default function MapChina({chinaMap}) {
         padding: 30,
         orient: 'horizontal',
         showLabel: true,
-        text: ['Outbreak', 'Minor'],
+        text: ['Outbreak', 'Active Cases'],
         itemWidth: 10,
         itemHeight: 10,
         textStyle: { fontSize: 12, fontWeight: 'bold' }

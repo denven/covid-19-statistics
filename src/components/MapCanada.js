@@ -69,7 +69,7 @@ export default function MapCanada() {
       ],
       padding: 30,
       showLabel: true,
-      text: ['Outbreak', 'Minor'],
+      text: ['Outbreak', 'Confirmed Cases'],
       itemWidth: 10,
       itemHeight: 10,
       textStyle: { fontSize: 12, fontWeight: 'bold' }
