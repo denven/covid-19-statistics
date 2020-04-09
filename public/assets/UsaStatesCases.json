@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-09 14:00:26",
+    "date": "2020-04-09 15:00:26",
     "cases": [
         {
             "name": "New York",
@@ -30,12 +30,12 @@
         },
         {
             "name": "California",
-            "confirmed": "19,219",
-            "increased": "+389",
-            "death": "509",
-            "perMppl": "491",
-            "newDeath": "+11",
-            "deathRate": "2.65%"
+            "confirmed": "19,691",
+            "increased": "+861",
+            "death": "538",
+            "perMppl": "503",
+            "newDeath": "+40",
+            "deathRate": "2.73%"
         },
         {
             "name": "Massachusetts",
@@ -65,6 +65,15 @@
             "deathRate": "1.85%"
         },
         {
+            "name": "Florida",
+            "confirmed": "16,826",
+            "increased": "+1,128",
+            "death": "371",
+            "perMppl": "817",
+            "newDeath": "+48",
+            "deathRate": "2.20%"
+        },
+        {
             "name": "Illinois",
             "confirmed": "16,422",
             "increased": "+1,344",
@@ -72,15 +81,6 @@
             "perMppl": "1,281",
             "newDeath": "+66",
             "deathRate": "3.22%"
-        },
-        {
-            "name": "Florida",
-            "confirmed": "16,364",
-            "increased": "+666",
-            "death": "354",
-            "perMppl": "794",
-            "newDeath": "+31",
-            "deathRate": "2.16%"
         },
         {
             "name": "Georgia",
@@ -282,12 +282,21 @@
         },
         {
             "name": "Kentucky",
-            "confirmed": "1,346",
-            "increased": "",
-            "death": "73",
-            "perMppl": "303",
-            "newDeath": "",
-            "deathRate": "5.42%"
+            "confirmed": "1,452",
+            "increased": "+106",
+            "death": "77",
+            "perMppl": "327",
+            "newDeath": "+4",
+            "deathRate": "5.30%"
+        },
+        {
+            "name": "Oregon",
+            "confirmed": "1,321",
+            "increased": "+82",
+            "death": "44",
+            "perMppl": "324",
+            "newDeath": "+6",
+            "deathRate": "3.33%"
         },
         {
             "name": "Iowa",
@@ -308,15 +317,6 @@
             "deathRate": "4.03%"
         },
         {
-            "name": "Oregon",
-            "confirmed": "1,239",
-            "increased": "",
-            "death": "38",
-            "perMppl": "304",
-            "newDeath": "",
-            "deathRate": "3.07%"
-        },
-        {
             "name": "Idaho",
             "confirmed": "1,232",
             "increased": "",
@@ -326,6 +326,15 @@
             "deathRate": "1.46%"
         },
         {
+            "name": "Delaware",
+            "confirmed": "1,209",
+            "increased": "+93",
+            "death": "23",
+            "perMppl": "1,273",
+            "newDeath": "+4",
+            "deathRate": "1.90%"
+        },
+        {
             "name": "Arkansas",
             "confirmed": "1,119",
             "increased": "+42",
@@ -333,15 +342,6 @@
             "perMppl": "374",
             "newDeath": "+3",
             "deathRate": "1.88%"
-        },
-        {
-            "name": "Delaware",
-            "confirmed": "1,116",
-            "increased": "",
-            "death": "19",
-            "perMppl": "1,175",
-            "newDeath": "",
-            "deathRate": "1.70%"
         },
         {
             "name": "Kansas",
@@ -399,12 +399,12 @@
         },
         {
             "name": "West Virginia",
-            "confirmed": "485",
-            "increased": "+2",
+            "confirmed": "523",
+            "increased": "+40",
             "death": "5",
-            "perMppl": "265",
+            "perMppl": "286",
             "newDeath": "+1",
-            "deathRate": "1.03%"
+            "deathRate": "0.96%"
         },
         {
             "name": "South Dakota",
@@ -515,7 +515,7 @@
             "deathRate": "0%"
         },
         {
-            "name": "Diamond Princess Cruise",
+            "name": "Diamond Princess Ship",
             "confirmed": "46",
             "increased": "",
             "death": "",
@@ -525,10 +525,10 @@
         }
     ],
     "overall": {
-        "confirmed": "462,180",
-        "increased": "+27,253",
-        "cured": 24961,
-        "death": "16,444",
+        "confirmed": "463,433",
+        "increased": "+28,506",
+        "cured": 25139,
+        "death": "16,504",
         "fatality": "3.56%"
     }
 }
