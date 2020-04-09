@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-09 10:00:35",
+    "date": "2020-04-09 11:00:29",
     "cases": [
         {
             "name": "New York",
@@ -12,12 +12,12 @@
         },
         {
             "name": "New Jersey",
-            "confirmed": "47,437",
-            "increased": "",
-            "death": "1,504",
-            "perMppl": "5,341",
-            "newDeath": "",
-            "deathRate": "3.17%"
+            "confirmed": "51,027",
+            "increased": "+3,590",
+            "death": "1,700",
+            "perMppl": "5,745",
+            "newDeath": "+196",
+            "deathRate": "3.33%"
         },
         {
             "name": "Michigan",
@@ -38,6 +38,15 @@
             "deathRate": "2.66%"
         },
         {
+            "name": "Louisiana",
+            "confirmed": "18,283",
+            "increased": "+1,253",
+            "death": "702",
+            "perMppl": "3,920",
+            "newDeath": "+50",
+            "deathRate": "3.84%"
+        },
+        {
             "name": "Pennsylvania",
             "confirmed": "18,228",
             "increased": "+1,485",
@@ -45,15 +54,6 @@
             "perMppl": "1,425",
             "newDeath": "+24",
             "deathRate": "1.85%"
-        },
-        {
-            "name": "Louisiana",
-            "confirmed": "17,030",
-            "increased": "",
-            "death": "652",
-            "perMppl": "3,652",
-            "newDeath": "",
-            "deathRate": "3.83%"
         },
         {
             "name": "Massachusetts",
@@ -174,12 +174,12 @@
         },
         {
             "name": "North Carolina",
-            "confirmed": "3,694",
-            "increased": "+132",
+            "confirmed": "3,707",
+            "increased": "+145",
             "death": "69",
-            "perMppl": "364",
+            "perMppl": "365",
             "newDeath": "+6",
-            "deathRate": "1.87%"
+            "deathRate": "1.86%"
         },
         {
             "name": "Missouri",
@@ -255,12 +255,12 @@
         },
         {
             "name": "Oklahoma",
-            "confirmed": "1,524",
-            "increased": "",
-            "death": "79",
-            "perMppl": "389",
-            "newDeath": "",
-            "deathRate": "5.18%"
+            "confirmed": "1,684",
+            "increased": "+160",
+            "death": "80",
+            "perMppl": "430",
+            "newDeath": "+1",
+            "deathRate": "4.75%"
         },
         {
             "name": "District Of Columbia",
@@ -380,6 +380,15 @@
             "deathRate": "3.66%"
         },
         {
+            "name": "Nebraska",
+            "confirmed": "567",
+            "increased": "+48",
+            "death": "14",
+            "perMppl": "298",
+            "newDeath": "+2",
+            "deathRate": "2.47%"
+        },
+        {
             "name": "Maine",
             "confirmed": "560",
             "increased": "+23",
@@ -389,22 +398,13 @@
             "deathRate": "2.86%"
         },
         {
-            "name": "Nebraska",
-            "confirmed": "523",
-            "increased": "+4",
-            "death": "14",
-            "perMppl": "275",
-            "newDeath": "+2",
-            "deathRate": "2.68%"
-        },
-        {
             "name": "West Virginia",
             "confirmed": "485",
             "increased": "+2",
-            "death": "4",
+            "death": "5",
             "perMppl": "265",
-            "newDeath": "",
-            "deathRate": "0.82%"
+            "newDeath": "+1",
+            "deathRate": "1.03%"
         },
         {
             "name": "South Dakota",
@@ -525,10 +525,10 @@
         }
     ],
     "overall": {
-        "confirmed": "449,555",
-        "increased": "+14,628",
+        "confirmed": "454,615",
+        "increased": "+19,688",
         "cured": 24562,
-        "death": "15,826",
-        "fatality": "3.52%"
+        "death": "16,074",
+        "fatality": "3.54%"
     }
 }
