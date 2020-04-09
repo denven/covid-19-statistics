@@ -61,6 +61,8 @@ export const convertNameToMap = (name) => {
     case "USA": return "United States";
     case "UK": return "United Kingdom";
     case "S. Korea": return "Korea";
+    case "Western Sahara": return "W. Sahara";
+    case "South Sudan": return "S. Sudan";
     case "Czechia": return "Czech Rep.";
     case "Laos": return "Lao PDR";
     case "Equatorial Guinea": return "Eq. Guinea";

@@ -16,19 +16,19 @@ async function updateGlobalCases () {
     let countries = [];
     let tableRows = $('tr', 'tbody').toArray();
  
-    for(let index = 1; index < tableRows.length;) {
+    // the first 7 rows returned are data not for single country or place(April 9th, 2020)
+    for(let index = 8; index < tableRows.length; index++) {
       // index = 0, is the same with the last line(totol number), April 05, 2020
       // Match english and french letters, dot, space in country name
       // let name = $(tableRows[index]).text().trim().match(/[a-zA-ZàâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ.\- ]+/g);  // match country or place name
       const rowColumns = $(tableRows[index]).text().trim().split('\n');
-      // console.log(rowColumns)
+      // if(index < 10)        console.log(rowColumns)
       if(Array.isArray(rowColumns)) {
           let [ name, total, increased, dead, newDeath, recovered, active, severe, perMppl ] = rowColumns;
           // total = total.trim().replace(/,/,'');
           countries.push( {name, total, increased, dead, newDeath, recovered, active, severe, perMppl} );
           if(name === "Total:") break;
       };
-      index++;
     };
 
     let overall = countries.pop();
