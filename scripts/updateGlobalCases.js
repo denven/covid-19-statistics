@@ -22,11 +22,12 @@ async function updateGlobalCases () {
       // Match english and french letters, dot, space in country name
       // let name = $(tableRows[index]).text().trim().match(/[a-zA-ZàâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ.\- ]+/g);  // match country or place name
       const rowColumns = $(tableRows[index]).text().trim().split('\n');
-      // if(index < 10)        console.log(rowColumns)
+      // if(index < 20)        console.log(rowColumns)
       if(Array.isArray(rowColumns)) {
           let [ name, total, increased, dead, newDeath, recovered, active, severe, perMppl ] = rowColumns;
+          let continent = rowColumns.pop(); // get continent name
           // total = total.trim().replace(/,/,'');
-          countries.push( {name, total, increased, dead, newDeath, recovered, active, severe, perMppl} );
+          countries.push( {name, total, increased, dead, newDeath, recovered, active, severe, perMppl, continent} );
           if(name === "Total:") break;
       };
     };
@@ -46,7 +47,6 @@ async function updateGlobalCases () {
         console.log(`Updated ${countries.length} countries cases global at ${jsonData.time}`);
       });
     }
-
   }
 }
 
