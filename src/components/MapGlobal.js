@@ -8,10 +8,11 @@ import { convertNameToMap } from '../hooks/helper';
 
 export default function MapGlobal({mapData}) {
   const [loaded, setReady] = useState(false);
-  const [data, setData] = useState(mapData);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     let isCancelled = false;
+    const source = axios.CancelToken.source();
 
     const getCountriesCases = async () => {
       const casesResult = await axios.get(`./assets/GlobalCasesToday.json`); 
@@ -29,45 +30,42 @@ export default function MapGlobal({mapData}) {
 
           return {
             name: convertNameToMap(name),
-            value: active.replace(/,/g, ''),
+            value: perMppl ? perMppl.replace(/,/g, '') : '',
+            activeCount: active.replace(/,/g, ''),
             confirmedCount: total.replace(/,/g, ''),
             increasedCount: increased.replace(/,/g, ''),
             curedCount: recovered.replace(/,/g, ''),
             deadCount: dead.replace(/,/g, ''),
-            infectRate: perMppl ? perMppl.replace(/,/g, '') : '',
             lethality: lethality
           }
       });
       
       setData(dataWithInfectRate); 
-      // setReady(true);  
+      setReady(true);  // needed for avoid the rendering when clicking on Global tab again
     };
 
     import(`echarts/map/json/world.json`).then(map => {
       echarts.registerMap('world', map.default);      
       if(!isCancelled) {
         getCountriesCases();
-        setReady(true);  
+        // setReady(true);  
       }    
     }).catch(error => console.log(error));
     
-    return () => {isCancelled = true;};
+    return () => { source.cancel(); isCancelled = true;};
 
   }, []);
 
   const getLoadingOption = () => {
     return {
       text: 'Data Loading ...',
-      // color: '#4413c2',
-      // textColor: '#270240',
-      // maskColor: 'rgba(194, 88, 86, 0.3)',
-      // zlevel: 0
     };
   };
 
   const onChartReady = (chart, loaded) => {
     
-    if(loaded) setTimeout(() => { chart.hideLoading(); }, 1500);
+    // if(loaded) 
+    setTimeout(() => { chart.hideLoading(); }, 1000);
     // chart.hideLoading();
   };
 
@@ -92,46 +90,43 @@ export default function MapGlobal({mapData}) {
         inRange: { color: [ '#ffc0b1', '#ff8c71', '#ef1717', '#9c0505' ] },
         // cases number ranges: greater number indicates more severe epidemic area
         pieces: [ 
-          {min: 10000},
-          {min: 2000, max: 9999},
-          {min: 500, max: 1999},
-          {min: 50, max: 499},
-          {min: 1, max: 49},
+          {min: 1000},
+          {min: 500, max: 999},
+          {min: 200, max: 499},
+          {min: 50, max: 199},
+          {min: 0, max: 49},
         ],        
         padding: 35,
         orient: 'horizontal',
         showLabel: true,
-        text: ['Outbreak', 'Minor'],
+        text: ['Outbreak', 'Cases per 1M people'],
         itemWidth: 10,
         itemHeight: 10,
         textStyle: { fontSize: 12, fontWeight: 'bold' }
       },
       tooltip: {
         formatter: ({name, value, data}) => {
-          if(!value) {
+          if(!data) {
             return `<b>${name}</b><br />Confirmed: ${value || "No Case"}`;
           };
 
-          let { confirmedCount, curedCount, deadCount, lethality}  = data;
-
+          let { activeCount, confirmedCount, curedCount, deadCount, lethality}  = data;
           const valueFormat = (value) => {
-            return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+            return (value || '0').toString().trim().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
           }
 
-          // let lethalityStr =  (deadCount > 0) ? `Lethality:\t${(100 * deadCount / (value)).toFixed(2) + '%'}` : '';
           let tipString = `<b>${name}</b><br />
-                        Active: ${valueFormat(value)}<br />
+                        Per 1M ppl: ${valueFormat(value)}<br />
                         Confirmed:\t${valueFormat(confirmedCount)}<br />
+                        Active: ${valueFormat(activeCount)}<br />
                         Cured:\t${valueFormat(curedCount)}<br />
-                        Death:\t${valueFormat(deadCount)}<br />
+                        Death:\t${valueFormat(parseInt(deadCount))}<br />
                         Lethality:\t${lethality}`;
           return tipString;
         }
       },
       // geo: {  },
       series: [{
-        // top: '20%',
-        // left: 'center',
         left: '3%', right: '5%', top: '18%', bottom: '7%', // similar to grid property
         type: 'map',
         // name: 'Confirmed Cases',
