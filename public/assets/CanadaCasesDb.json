@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-09 08:00:32",
+    "date": "2020-04-09 09:00:27",
     "cases": [
         {
             "date": "1/28",
@@ -2795,10 +2795,10 @@
                 },
                 {
                     "name": "Nova Scotia",
-                    "value": "342",
-                    "cured": "77",
-                    "death": "1",
-                    "lethality": "0.29%"
+                    "value": "373",
+                    "cured": "82",
+                    "death": "2",
+                    "lethality": "0.54%"
                 },
                 {
                     "name": "New Brunswick",
@@ -2963,16 +2963,16 @@
             "Province": "Nova Scotia",
             "Tests": "11688",
             "Abbr": "NS",
-            "Conf.": "342",
-            "Per m": 353,
-            "Cured": "77",
+            "Conf.": "373",
+            "Per m": 384,
+            "Cured": "82",
             "InWard": "11",
             "InICU": "5",
-            "Deaths": "1",
-            "Active": 264,
-            "Lethality": "0.29%",
-            "New": 0,
-            "NewDeaths": 0
+            "Deaths": "2",
+            "Active": 289,
+            "Lethality": "0.54%",
+            "New": "+31",
+            "NewDeaths": "+1"
         },
         {
             "Province": "New Brunswick",
@@ -3053,23 +3053,23 @@
             "Province": "Canada",
             "Tests": "371418",
             "Abbr": "Canada",
-            "Conf.": "19774",
+            "Conf.": "19805",
             "Per m": 527,
-            "Cured": "4897",
+            "Cured": "4902",
             "InWard": null,
             "InICU": null,
-            "Deaths": "476",
-            "Active": 14401,
+            "Deaths": "477",
+            "Active": 14426,
             "Lethality": "2.41%",
-            "New": "+483",
-            "NewDeaths": 0
+            "New": "+514",
+            "NewDeaths": "+1"
         }
     ],
     "overall": {
-        "confirmed": "19774",
-        "increased": 483,
-        "recovered": "4897",
-        "death": "476",
+        "confirmed": "19805",
+        "increased": 514,
+        "recovered": "4902",
+        "death": "477",
         "lethality": "2.41%"
     }
 }
