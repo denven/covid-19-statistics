@@ -16,24 +16,30 @@ async function updateGlobalCases () {
     let countries = [];
     let tableRows = $('tr', 'tbody').toArray();
  
+    let overall = {};
     // the first 7 rows returned are data not for single country or place(April 9th, 2020)
-    for(let index = 8; index < tableRows.length; index++) {
+    for(let index = 8, countryFlag = true; index < tableRows.length; index++) {
       // index = 0, is the same with the last line(totol number), April 05, 2020
       // Match english and french letters, dot, space in country name
       // let name = $(tableRows[index]).text().trim().match(/[a-zA-ZàâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ.\- ]+/g);  // match country or place name
       const rowColumns = $(tableRows[index]).text().trim().split('\n');
-      // if(index < 20)        console.log(rowColumns)
       if(Array.isArray(rowColumns)) {
-          let [ name, total, increased, dead, newDeath, recovered, active, severe, perMppl ] = rowColumns;
-          let continent = rowColumns.pop(); // get continent name
-          // total = total.trim().replace(/,/,'');
-          countries.push( {name, total, increased, dead, newDeath, recovered, active, severe, perMppl, continent} );
-          if(name === "Total:") break;
+        let [ name, total, increased, dead, newDeath, recovered, active, severe, perMppl ] = rowColumns;
+        let continent = rowColumns.pop(); // get continent name
+        let placeCasesObj = {name, total, increased, dead, newDeath, recovered, active, severe, perMppl, continent};
+
+        if(name === "Total:") { countryFlag = false; } // end of today's data
+        if(countryFlag) {
+          countries.push(placeCasesObj);  // single country/place cases today
+        } else {
+          if(name === "Total:" && continent === 'All') {
+            overall = placeCasesObj;
+          }          
+        }
       };
     };
 
-    let overall = countries.pop();
-    // console.log(overall);
+    // let overall = countries.pop();
     if(countries.length > 0) {
       let jsonData = {
         time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
