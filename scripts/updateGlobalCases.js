@@ -34,6 +34,7 @@ async function updateGlobalCases () {
         } else {
           if(name === "Total:" && continent === 'All') {
             overall = placeCasesObj;
+            break;
           }          
         }
       };
