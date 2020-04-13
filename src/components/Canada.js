@@ -83,7 +83,7 @@ function ProvincesTable ({data, onRowClick}) {
             {data.map( (row, index) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.Abbr}
-                onClick={(event) => onRowClick(event, row.Abbr)} >
+                onClick={(event) => onRowClick(event, row)} >
                   {columns.map(column => {                                      
                     let value = valueFormat(row[column.id]);
                     return (
@@ -140,7 +140,7 @@ function CasesHisTrend ({prov, days, dayCases, dayNewCases}) {
     } else {      
       let data = dayCases && dayCases.map(          
         dayProvCases => { 
-          let p = dayProvCases.find( ({abbr}) => abbr === name);
+          let p = dayProvCases.find( (prov) => prov.name === name);
           if(p) return p[type === 'new' ? 'value' : type];
           return 0;
         }
@@ -294,10 +294,10 @@ export default function Canada() {
   const [prov, setProv] = useState('Canada');
   
   // get province abbreviation when table row clicked
-  const handleRowClick = (event, rowColumnId) => {
+  const handleRowClick = (event, rowData) => {
     if (event.target) {
-      // console.log(event.target, rowColumnId);
-      if(rowColumnId !== 'Repatriated') setProv(rowColumnId);
+      // console.log(event.target, rowData);
+      if(rowData.Abbr !== 'Repatriated') setProv(rowData.Province);
     }
   }
 
