@@ -17,7 +17,6 @@ import _ from 'lodash';
 import ReactEcharts from 'echarts-for-react';
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
-import { inherits } from 'util';
 
 const columns = [
   { label: "Province", id: "Abbr", align: 'right', maxWidth: 10},
@@ -40,7 +39,6 @@ const StyledTableCell = withStyles(theme => ({
 }))(TableCell);
 
 const isPortraitMode = () => {
-    // console.log('screen change')
   let mediaQuery = window.matchMedia("(orientation: portrait)");
   if(mediaQuery.matches) { return true };
   return true;
@@ -65,7 +63,7 @@ const valueFormat = (value) => {
   return (value || '0').toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
 }
 
-function ProvincesTable ({data}) {
+function ProvincesTable ({data, onRowClick}) {
   const classes = useStyles();
 
   return (
@@ -84,7 +82,8 @@ function ProvincesTable ({data}) {
           <TableBody>
             {data.map( (row, index) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.Abbr} >
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.Abbr}
+                onClick={(event) => onRowClick(event, row.Abbr)} >
                   {columns.map(column => {                                      
                     let value = valueFormat(row[column.id]);
                     return (
@@ -106,7 +105,7 @@ function ProvincesTable ({data}) {
 };
 
 // Line Chart
-function CasesHisTrend ({days, dayCases, dayNewCases}) {
+function CasesHisTrend ({prov, days, dayCases, dayNewCases}) {
 
   const [loaded, setReady] = useState(false);
   const getLoadingOption = () => {
@@ -120,18 +119,52 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
     }
   };
 
+  //get single province history data: confirmed/death/cured
+  const getProvData = (name, type) => {
+
+    if(name === 'Canada') {
+      if(type !== 'new') {
+        return dayCases && dayCases.map( 
+          dayProvCases => dayProvCases.reduce((total, curProv) => {
+            return total = parseInt(total) + parseInt(curProv[type] || 0); 
+        }, [0]));     
+      } else {
+        let dailyTotalCases = dayCases.map( 
+          dayProvCases => dayProvCases.reduce((total, curProv) => {
+            return total = parseInt(total) + parseInt(curProv.value || 0); 
+        }, [0]));
+        return dailyTotalCases.map((number, index) => {
+          return (index === 0) ? number : number - dailyTotalCases[index - 1];
+        });
+      }
+    } else {      
+      let data = dayCases && dayCases.map(          
+        dayProvCases => { 
+          let p = dayProvCases.find( ({abbr}) => abbr === name);
+          if(p) return p[type === 'new' ? 'value' : type];
+          return 0;
+        }
+      );
+
+      if(type !== 'new') return data;
+      return data.map((number, index) => {
+        return (index === 0) ? number : number - data[index - 1];
+      });      
+    }
+  };
+
   const getOption = () => {
     return {
       title: {
           x: 'center',
-          text: 'Cumulative Cases by day in Canada',
+          text: 'Cumulative Cases by day in ' + prov,
       },
       tooltip: { 
         trigger: 'axis',
       },
       legend: {
           // data: ['Confirmed', 'Suspected', 'Increased', 'Recovered', 'Deaths'], // four curves
-          data: ['Confirmed', 'Recovered', 'Deaths', 'New Cases'], // 2 line curves, 1 bar
+          data: ['Confirmed', 'Recovered', 'Deaths', 'New Cases'], // 3 line curves, 1 bar chart
           top : '30px',
           textStyle: {fontSize: 12, fontWeight: 600},
       },
@@ -143,48 +176,34 @@ function CasesHisTrend ({days, dayCases, dayNewCases}) {
           data: days
       },
       yAxis: [
-        {
-          type: 'value'
-        },
-        {
-          type: 'value',
-          splitLine: { show: false, },          
-        },
+        { type: 'value' },  // line charts
+        { type: 'value', splitLine: { show: false, }, },  // bar chart
       ],
       series: [
           {
               name: 'Confirmed',
               type: 'line',
               // stack: 'Toll',
-              data: dayCases && dayCases.map( 
-                  dayProvCases => dayProvCases.reduce((total, curProv) => {
-                    return total = parseInt(total) + parseInt(curProv.value || 0); 
-                }, [0]))
+              data: getProvData(prov, 'value')  //confirmed cases
           },
           {
             name: 'New Cases',
             type: 'bar',        
             yAxisIndex: 1,
             itemStyle: { color: '#ffc0b1', }, // change default bar color
-            data: dayNewCases
+            data: getProvData(prov, 'new')  //new cases
           },
           {
             name: 'Recovered',
             type: 'line',
             // stack: 'Toll',
-            data: dayCases && dayCases.map( 
-              dayProvCases => dayProvCases.reduce((total, curProv) => {
-                return total = parseInt(total) + parseInt(curProv.cured || 0); 
-            }, [0]))
+            data: getProvData(prov, 'cured')
           },
           {
             name: 'Deaths',
             type: 'line',
             // stack: 'Toll',
-            data: dayCases && dayCases.map( 
-              dayProvCases => dayProvCases.reduce((total, curProv) => {
-                return total = parseInt(total) + parseInt(curProv.death || 0); 
-            }, [0]))
+            data: getProvData(prov, 'death')
           },
       ]
     };
@@ -228,30 +247,13 @@ export default function Canada() {
       axios.get(`./assets/CanadaCasesDb.json`).then( ({data}) => {
 
         if(!isCanceled) {
-          let dayCases = data.cases.map(day => day.cases); // cases for each province by day
-          let dailyTotalCases = dayCases.map( 
-            dayProvCases => dayProvCases.reduce((total, curProv) => {
-              return total = parseInt(total) + parseInt(curProv.value || 0); 
-          }, [0]));
-          let dailyNewCases = dailyTotalCases.map((number, index) => {
-            return (index === 0) ? number : number - dailyTotalCases[index - 1];
-          });
 
-          // get new cases number by province of today
-          let today = dayCases[dayCases.length - 1];
-          let yesterday = dayCases[dayCases.length - 2];
-          let provNewCases = {}; // new cases by province
-          today.forEach( ({name}, index) => {
-            provNewCases[name] = today[index].value - yesterday[index].value;
-          });
-          
-          // hisDataObj is used for line & bar chart
+          let dayCases = data.cases.map(day => day.cases); // cases for all provinces by day          
           let hisDataObj = {
               dates: data.cases.map(day => day.date),  // xAxis: dates array
-              cases: dayCases,  // YAxis 0
-              dailyNewCases: dailyNewCases // YAxis 1
+              cases: dayCases,  // YAxis 0 (confirmed/cured/deaths)
           };
-          setCases(hisDataObj);
+          setCases(hisDataObj);  // for charts
 
           let canada = data.details.pop();
           let allProvData = _.sortBy(data.details, (o) => parseInt(o["Conf."])).reverse();
@@ -289,6 +291,16 @@ export default function Canada() {
       switchStyle = { display: 'flex', position: 'absolute', top: '8.0rem', marginLeft: '4vw', zIndex: 9999, };
   }
 
+  const [prov, setProv] = useState('Canada');
+  
+  // get province abbreviation when table row clicked
+  const handleRowClick = (event, rowColumnId) => {
+    if (event.target) {
+      // console.log(event.target, rowColumnId);
+      if(rowColumnId !== 'Repatriated') setProv(rowColumnId);
+    }
+  }
+
   switch(viewMode) {
     case 'map': 
       return (
@@ -309,13 +321,13 @@ export default function Canada() {
           </Button>
           <div style={{margin:'0 1rem 1.5rem 1rem'}}> 
             <TableTitle style={{display: 'flex'}}/>
-            <ProvincesTable style={{width: '90%'}} data={provDetails} />
+            <ProvincesTable style={{width: '90%'}} data={provDetails} onRowClick = {handleRowClick} />
           </div>
           {/* <div className={classes.chart} style={{display: 'flex'}}> */}
             <CasesHisTrend 
+              prov={prov}
               days={hisCases.dates} 
-              dayCases={hisCases.cases} 
-              dayNewCases={hisCases.dailyNewCases} 
+              dayCases={hisCases.cases}  // confirmed/cured/deaths
             />
           {/* </div> */}
         </div>
