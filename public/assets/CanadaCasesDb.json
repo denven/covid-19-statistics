@@ -1,12 +1,53 @@
 {
-    "date": "2020-04-12 12:00:30",
+    "date": "2020-04-12 13:26:58",
     "cases": [
+        {
+            "date": "1/26",
+            "cases": [
+                {
+                    "name": "Ontario",
+                    "value": "1",
+                    "abbr": "ON"
+                }
+            ]
+        },   
+        {
+            "date": "1/27",
+            "cases": [
+                {
+                    "name": "Ontario",
+                    "value": "1",
+                    "abbr": "ON"
+                }
+            ]
+        },     
         {
             "date": "1/28",
             "cases": [
                 {
+                    "name": "Ontario",
+                    "value": "1",
+                    "abbr": "ON"
+                },
+                {
                     "name": "British Columbia",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "BC"
+                }
+            ]
+        },
+        {
+            "date": "1/31",
+            "cases": [
+                {
+                    "name": "Ontario",
+                    "value": "3",
+                    "abbr": "ON"
+                },
+                {
+                    "name": "British Columbia",
+                    "value": "1",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -15,11 +56,13 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "3"
+                    "value": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -28,11 +71,13 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "3"
+                    "value": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "2"
+                    "value": "2",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -41,11 +86,29 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "3"
+                    "value": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "4"
+                    "value": "4",
+                    "abbr": "BC"
+                }
+            ]
+        },
+        {
+            "date": "2/12",
+            "cases": [
+                {
+                    "name": "Ontario",
+                    "value": "3",
+                    "cured": "1",
+                    "abbr": "ON"
+                },
+                {
+                    "name": "British Columbia",
+                    "value": "4",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -54,11 +117,14 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "3"
+                    "value": "3",
+                    "cured": "1",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "5"
+                    "value": "5",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -67,11 +133,14 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "3"
+                    "value": "3",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "6"
+                    "value": "6",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -80,11 +149,14 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "4"
+                    "value": "4",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "6"
+                    "value": "6",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -93,11 +165,14 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "4"
+                    "value": "4",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "7"
+                    "value": "7",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -106,11 +181,14 @@
             "cases": [
                 {
                     "name": "Ontario",
-                    "value": "6"
+                    "value": "6",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "7"
+                    "value": "7",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -119,15 +197,20 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "6"
+                    "value": "6",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "7"
+                    "value": "7",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -136,15 +219,20 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "11"
+                    "value": "11",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "8"
+                    "value": "8",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -153,15 +241,20 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "15"
+                    "value": "15",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "8"
+                    "value": "8",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -170,15 +263,19 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "15"
+                    "value": "15",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "8"
+                    "value": "8",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -187,15 +284,20 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "18"
+                    "value": "18",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "8"
+                    "value": "8",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -204,15 +306,20 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "20"
+                    "value": "20",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "9"
+                    "value": "9",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -221,15 +328,20 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "20"
+                    "value": "20",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "13"
+                    "value": "13",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -238,19 +350,20 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "3"
+                    "value": "2",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "23"
+                    "value": "22",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "21"
-                },
-                {
-                    "name": "Alberta",
-                    "value": "1"
+                    "value": "21",
+                    "cured": "3",
+                    "abbr": "BC"
                 }
             ]
         },
@@ -259,19 +372,25 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "3"
+                    "value": "2",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "28"
+                    "value": "25",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "21"
+                    "value": "21",
+                    "cured": "3",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "2"
+                    "value": "1",
+                    "abbr": "AB"
                 }
             ]
         },
@@ -280,19 +399,25 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "3"
+                    "value": "3",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "28"
+                    "value": "28",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "27"
+                    "value": "27",
+                    "cured": "4",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "2"
+                    "value": "2",
+                    "abbr": "AB"
                 }
             ]
         },
@@ -301,19 +426,25 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "4"
+                    "value": "4",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "32"
+                    "value": "29",
+                    "cured": "3",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
-                    "value": "27"
+                    "value": "27",
+                    "cured": "4",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "4"
+                    "value": "4",
+                    "abbr": "AB"
                 }
             ]
         },
@@ -322,21 +453,26 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "4"
+                    "value": "4",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "35"
+                    "value": "34",
+                    "cured": "4",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "cured": "4",
                     "death": "1",
-                    "value": "32"
+                    "value": "32",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "7"
+                    "value": "7",
+                    "abbr": "AB"
                 }
             ]
         },
@@ -345,21 +481,26 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "7"
+                    "value": "4",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "36"
+                    "value": "36",
+                    "cured": "4",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "cured": "4",
                     "death": "1",
-                    "value": "39"
+                    "value": "32",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "14"
+                    "value": "7",
+                    "abbr": "AB"
                 }
             ]
         },
@@ -368,57 +509,61 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "8"
+                    "value": "8",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "42"
+                    "value": "41",
+                    "cured": "4",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "cured": "4",
                     "death": "1",
-                    "value": "46"
+                    "value": "39",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "19"
+                    "value": "19",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": ""
+                    "value": "",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": ""
+                    "value": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
-                    "value": ""
-                },
-                {
-                    "name": "Prince Edward Island",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Nova Scotia",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
-                    "value": "1"
-                },
-                {
-                    "name": "Yukon",
-                    "value": ""
+                    "value": "1",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -427,57 +572,61 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "17"
+                    "value": "9",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "59"
+                    "value": "42",
+                    "cured": "4",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "cured": "4",
                     "death": "1",
-                    "value": "53"
+                    "value": "46",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "23"
+                    "value": "23",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "3"
+                    "value": "3",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
-                    "value": ""
-                },
-                {
-                    "name": "Prince Edward Island",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Nova Scotia",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
-                    "value": "1"
-                },
-                {
-                    "name": "Yukon",
-                    "value": ""
+                    "value": "1",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -486,57 +635,66 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "17"
+                    "value": "17",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "79"
+                    "value": "74",
+                    "cured": "4",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "cured": "4",
                     "death": "1",
-                    "value": "64"
+                    "value": "64",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "29"
+                    "value": "29",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "4"
+                    "value": "4",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "2"
+                    "value": "2",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
-                    "value": ""
+                    "value": "0",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
-                    "value": "1"
-                },
-                {
-                    "name": "Yukon",
-                    "value": ""
+                    "value": "1",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -545,57 +703,66 @@
             "cases": [
                 {
                     "name": "Quebec",
-                    "value": "21"
+                    "value": "24",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "103"
+                    "value": "103",
+                    "cured": "5",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "cured": "4",
                     "death": "1",
-                    "value": "73"
+                    "value": "72",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
-                    "value": "39"
+                    "value": "39",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "4"
+                    "value": "4",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "2"
+                    "value": "2",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
-                    "value": "1"
+                    "value": "1",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
-                    "value": "1"
-                },
-                {
-                    "name": "Yukon",
-                    "value": ""
+                    "value": "1",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
-                    "value": ""
+                    "value": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -605,69 +772,77 @@
                 {
                     "name": "Quebec",
                     "value": "39",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "145",
-                    "suspect": ""
+                    "value": "146",
+                    "cured": "5",
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "73",
                     "cured": "4",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "56",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "4",
-                    "suspect": "3"
+                    "suspect": "3",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "1",
-                    "suspect": "5"
+                    "value": "2",
+                    "suspect": "5",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "",
-                    "suspect": "1"
+                    "suspect": "1",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "",
-                    "suspect": "3"
+                    "suspect": "3",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "1",
-                    "suspect": "5"
-                },
-                {
-                    "name": "Yukon",
-                    "value": "",
-                    "suspect": ""
+                    "suspect": "5",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -677,71 +852,78 @@
                 {
                     "name": "Quebec",
                     "value": "50",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "177",
                     "cured": "5",
                     "death": "0",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "103",
                     "cured": "5",
                     "death": "4",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "74",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "7",
-                    "suspect": "1"
+                    "suspect": "1",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "2",
-                    "suspect": "5"
+                    "suspect": "5",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "",
-                    "suspect": "1"
+                    "suspect": "1",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "1",
-                    "suspect": "4"
+                    "suspect": "4",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "2",
-                    "suspect": "5"
-                },
-                {
-                    "name": "Yukon",
-                    "value": "",
-                    "suspect": ""
+                    "suspect": "5",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -753,71 +935,78 @@
                     "value": "74",
                     "cured": "0",
                     "death": "0",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "189",
+                    "value": "190",
                     "cured": "5",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "186",
-                    "cured": "10",
-                    "death": "6",
-                    "suspect": ""
+                    "cured": "5",
+                    "death": "7",
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "97",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "8",
-                    "suspect": "7"
+                    "suspect": "7",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "2",
-                    "suspect": "6"
+                    "suspect": "6",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "",
-                    "suspect": "3"
+                    "suspect": "3",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "1",
-                    "suspect": "6"
+                    "suspect": "6",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "2",
-                    "suspect": "6"
-                },
-                {
-                    "name": "Yukon",
-                    "value": "",
-                    "suspect": ""
+                    "suspect": "6",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -829,71 +1018,78 @@
                     "value": "94",
                     "cured": "0",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "214",
                     "cured": "5",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "231",
                     "cured": "5",
-                    "death": "5",
-                    "suspect": ""
+                    "death": "7",
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "119",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "15",
-                    "suspect": "2"
+                    "suspect": "2",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "2",
-                    "suspect": "14"
+                    "suspect": "14",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "",
-                    "suspect": "3"
+                    "suspect": "3",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "3",
-                    "suspect": "9"
+                    "suspect": "9",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "2",
-                    "suspect": "9"
-                },
-                {
-                    "name": "Yukon",
-                    "value": "",
-                    "suspect": ""
+                    "suspect": "9",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -905,72 +1101,87 @@
                     "value": "121",
                     "cured": "1",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "258",
                     "cured": "5",
                     "death": "2",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "271",
-                    "cured": "8",
-                    "death": "5",
-                    "suspect": ""
+                    "cured": "5",
+                    "death": "8",
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "146",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "17",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "8",
-                    "suspect": "12"
+                    "suspect": "12",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "1",
-                    "suspect": "2"
+                    "suspect": "2",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "2",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "5",
-                    "suspect": "9"
+                    "suspect": "9",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "7",
-                    "suspect": "4"
+                    "suspect": "4",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -982,73 +1193,80 @@
                     "value": "139",
                     "cured": "1",
                     "death": "1",
-                    "suspect": "14"
+                    "suspect": "14",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "318",
                     "cured": "5",
                     "death": "2",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "348",
-                    "cured": "8",
-                    "death": "6",
-                    "suspect": ""
+                    "cured": "6",
+                    "death": "8",
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "195",
                     "death": "1",
                     "cured": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "17",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "8",
-                    "suspect": "18"
+                    "suspect": "18",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "3",
-                    "suspect": "1"
+                    "suspect": "1",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "2",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "5",
-                    "suspect": "10"
+                    "suspect": "10",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "7",
-                    "suspect": "4"
-                },
-                {
-                    "name": "Yukon",
-                    "value": "",
-                    "suspect": ""
+                    "suspect": "4",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
-                    "value": "",
-                    "suspect": ""
+                    "value": "0",
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1060,73 +1278,80 @@
                     "value": "181",
                     "cured": "1",
                     "death": "4",
-                    "suspect": "57"
+                    "suspect": "57",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "377",
                     "cured": "6",
                     "death": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "424",
-                    "cured": "10",
-                    "death": "6",
-                    "suspect": ""
+                    "cured": "6",
+                    "death": "10",
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "226",
                     "death": "1",
                     "cured": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "11",
-                    "suspect": "8"
+                    "value": "17",
+                    "suspect": "8",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "25",
-                    "suspect": "19"
+                    "suspect": "19",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "3",
-                    "suspect": "3"
+                    "suspect": "3",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "2",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "9",
-                    "suspect": "12"
+                    "suspect": "12",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
-                    "value": "9",
-                    "suspect": "8"
-                },
-                {
-                    "name": "Yukon",
-                    "value": "",
-                    "suspect": ""
+                    "value": "8",
+                    "suspect": "8",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1138,73 +1363,88 @@
                     "value": "219",
                     "cured": "1",
                     "death": "4",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "425",
                     "cured": "8",
                     "death": "5",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "424",
-                    "cured": "10",
-                    "death": "6",
-                    "suspect": ""
+                    "cured": "6",
+                    "death": "10",
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "259",
                     "death": "1",
                     "cured": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "11",
-                    "suspect": "8"
+                    "value": "19",
+                    "suspect": "8",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "33",
-                    "suspect": "19"
+                    "suspect": "19",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "3",
-                    "suspect": "6"
+                    "suspect": "6",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "28",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "8",
-                    "suspect": "9"
+                    "suspect": "9",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
-                    "value": "",
-                    "suspect": ""
+                    "value": "2",
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1216,73 +1456,88 @@
                     "value": "628",
                     "cured": "1",
                     "death": "4",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "503",
+                    "value": "504",
                     "cured": "8",
                     "death": "6",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "472",
                     "cured": "100",
                     "death": "13",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "301",
                     "death": "1",
                     "cured": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "11",
-                    "suspect": "9"
+                    "value": "20",
+                    "suspect": "9",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "65",
-                    "suspect": "1"
+                    "suspect": "1",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "4",
-                    "suspect": "20"
+                    "suspect": "20",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "41",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "17",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "2",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1294,73 +1549,88 @@
                     "value": "1013",
                     "cured": "1",
                     "death": "4",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "588",
                     "cured": "8",
                     "death": "8",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "617",
                     "cured": "173",
                     "death": "13",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "358",
                     "death": "2",
                     "cured": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "11",
-                    "suspect": "10"
+                    "value": "21",
+                    "suspect": "10",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "72",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "4",
-                    "suspect": "31"
+                    "suspect": "31",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "51",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "18",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "2",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1372,73 +1642,88 @@
                     "value": "1339",
                     "cured": "1",
                     "death": "7",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "688",
                     "cured": "8",
                     "death": "13",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "659",
                     "cured": "183",
                     "death": "14",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "419",
                     "death": "2",
                     "cured": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "11",
-                    "suspect": "24"
+                    "value": "35",
+                    "suspect": "24",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "86",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "67",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "5",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "68",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "26",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "3",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1450,73 +1735,89 @@
                     "value": "1629",
                     "cured": "1",
                     "death": "8",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "858",
                     "cured": "8",
                     "death": "15",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "725",
                     "cured": "186",
                     "death": "14",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "486",
                     "death": "2",
                     "cured": "27",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "11",
-                    "suspect": "25"
+                    "value": "36",
+                    "suspect": "25",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "95",
-                    "suspect": ""
+                    "cured": "3",
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "82",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "9",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "73",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "33",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "3",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1528,74 +1829,91 @@
                     "value": "2021",
                     "cured": "29",
                     "death": "18",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "993",
                     "cured": "8",
                     "death": "18",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "792",
                     "cured": "275",
                     "death": "16",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "death": "2",
                     "value": "542",
                     "cured": "27",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "25",
-                    "suspect": "14"
+                    "value": "39",
+                    "death": "1",
+                    "suspect": "14",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "104",
-                    "suspect": ""
+                    "cured": "3",
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "102",
                     "cured": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "11",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "90",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "45",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "4",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1607,76 +1925,92 @@
                     "value": "2498",
                     "cured": "29",
                     "death": "22",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "1144",
                     "cured": "9",
                     "death": "19",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "884",
                     "cured": "396",
                     "death": "17",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "621",
                     "death": "2",
                     "cured": "53",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "61",
+                    "value": "64",
                     "death": "1",
-                    "cured": "2",
-                    "suspect": "3"
+                    "cured": "0",
+                    "suspect": "3",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "134",
-                    "suspect": ""
+                    "cured": "4",
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "120",
                     "cured": "4",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "11",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "110",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "51",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "4",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1688,76 +2022,93 @@
                     "value": "2840",
                     "cured": "84",
                     "death": "22",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "1355",
                     "cured": "9",
                     "death": "23",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "884",
                     "cured": "396",
                     "death": "17",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "661",
                     "death": "3",
-                    "cured": "53",
-                    "suspect": ""
+                    "cured": "73",
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "72",
                     "death": "1",
                     "cured": "2",
-                    "suspect": "3"
+                    "suspect": "3",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "156",
-                    "suspect": ""
+                    "cured": "8",
+                    "death": "0",
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "135",
                     "cured": "4",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "11",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "122",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "66",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "4",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1769,77 +2120,94 @@
                     "value": "3430",
                     "cured": "84",
                     "death": "25",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "1706",
+                    "value": "1732",
                     "cured": "431",
                     "death": "36",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "970",
                     "cured": "469",
                     "death": "19",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "690",
                     "death": "8",
                     "cured": "94",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "69",
+                    "value": "96",
                     "death": "1",
                     "cured": "2",
-                    "suspect": "3"
+                    "suspect": "3",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "156",
-                    "suspect": ""
+                    "value": "176",
+                    "cured": "14",
+                    "death": "2",
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "135",
                     "cured": "7",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "18",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
-                    "value": "122",
-                    "suspect": ""
+                    "value": "127",
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "68",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "4",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1851,77 +2219,94 @@
                     "value": "4162",
                     "cured": "84",
                     "death": "31",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
-                    "value": "1966",
+                    "value": "1987",
                     "cured": "534",
                     "death": "40",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1013",
                     "cured": "507",
                     "death": "24",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "754",
                     "death": "9",
                     "cured": "120",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "100",
+                    "value": "103",
                     "death": "1",
-                    "cured": "2",
-                    "suspect": "3"
+                    "cured": "4",
+                    "suspect": "3",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "184",
-                    "suspect": ""
+                    "cured": "21",
+                    "death": "2",
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "152",
                     "cured": "7",
                     "death": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "21",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "147",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "70",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "5",
-                    "suspect": ""
+                    "death": "0",
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "1",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -1933,83 +2318,102 @@
                     "value": "4611",
                     "cured": "231",
                     "death": "33",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "2392",
                     "cured": "689",
                     "death": "55",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1066",
                     "cured": "606",
                     "death": "25",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "871",
                     "death": "11",
-                    "cured": "120",
-                    "suspect": ""
+                    "cured": "142",
+                    "suspect": "",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "109",
+                    "value": "127",
                     "death": "1",
-                    "cured": "2",
-                    "suspect": "18"
+                    "cured": "4",
+                    "suspect": "18",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "193",
+                    "cured": "30",
                     "death": "3",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "175",
                     "death": "1",
-                    "suspect": ""
+                    "cured": "7",
+                    "suspect": "",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "21",
+                    "cured": "0",
                     "death": "0",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "173",
                     "death": "0",
-                    "suspect": ""
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "81",
                     "death": "0",
-                    "suspect": ""
+                    "cured": "0",
+                    "suspect": "",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "6",
                     "death": "0",
-                    "suspect": ""
+                    "cured": "3",
+                    "suspect": "",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "2",
                     "death": "0",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "death": "0",
-                    "suspect": ""
+                    "suspect": "",
+                    "abbr": "NU"
                 }
             ]
         },
@@ -2021,98 +2425,112 @@
                     "value": "5518",
                     "cured": "231",
                     "death": "36",
-                    "lethality": "0.65%"
+                    "lethality": "0.65%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "2793",
                     "cured": "831",
                     "death": "81",
-                    "lethality": "2.90%"
+                    "lethality": "2.90%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1121",
                     "cured": "641",
                     "death": "31",
-                    "lethality": "2.77%"
+                    "lethality": "2.77%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "968",
                     "cured": "174",
                     "death": "13",
-                    "lethality": "1.34%"
+                    "lethality": "1.34%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "167",
                     "cured": "11",
                     "death": "1",
-                    "lethality": "0.60%"
+                    "lethality": "0.60%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "206",
                     "cured": "36",
                     "death": "3",
-                    "lethality": "1.46%"
+                    "lethality": "1.46%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "183",
                     "cured": "10",
                     "death": "1",
-                    "lethality": "0.55%"
+                    "lethality": "0.55%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "22",
                     "cured": "3",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "193",
                     "cured": "11",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "91",
                     "cured": "22",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "6",
                     "cured": "3",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "2",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "6",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2124,98 +2542,112 @@
                     "value": "6101",
                     "cured": "306",
                     "death": "61",
-                    "lethality": "1.00%"
+                    "lethality": "1.00%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "3255",
                     "cured": "1023",
                     "death": "99",
-                    "lethality": "3.04%"
+                    "lethality": "3.04%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1174",
-                    "cured": "641",
+                    "cured": "673",
                     "death": "35",
-                    "lethality": "2.98%"
+                    "lethality": "2.98%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1075",
                     "cured": "196",
                     "death": "18",
-                    "lethality": "1.67%"
+                    "lethality": "1.67%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "182",
                     "cured": "11",
                     "death": "2",
-                    "lethality": "1.10%"
+                    "lethality": "1.10%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "220",
                     "cured": "48",
                     "death": "3",
-                    "lethality": "1.36%"
+                    "lethality": "1.36%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "195",
                     "cured": "11",
                     "death": "1",
-                    "lethality": "0.51%"
+                    "lethality": "0.51%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "22",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "207",
                     "cured": "21",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "95",
                     "cured": "25",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "6",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "4",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "6",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2227,98 +2659,112 @@
                     "value": "6997",
                     "cured": "437",
                     "death": "75",
-                    "lethality": "1.07%"
+                    "lethality": "1.07%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "3630",
                     "cured": "1219",
                     "death": "135",
-                    "lethality": "3.72%"
+                    "lethality": "3.72%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1203",
                     "cured": "704",
                     "death": "38",
-                    "lethality": "3.16%"
+                    "lethality": "3.16%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1181",
                     "cured": "240",
                     "death": "20",
-                    "lethality": "1.69%"
+                    "lethality": "1.69%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "194",
                     "cured": "17",
                     "death": "2",
-                    "lethality": "1.03%"
+                    "lethality": "1.03%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "231",
                     "cured": "55",
                     "death": "3",
-                    "lethality": "1.30%"
+                    "lethality": "1.30%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "203",
                     "cured": "18",
                     "death": "1",
-                    "lethality": "0.49%"
+                    "lethality": "0.49%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "22",
                     "cured": "6",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "236",
                     "cured": "50",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "98",
                     "cured": "28",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "6",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "4",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "6",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2330,98 +2776,112 @@
                     "value": "7944",
                     "cured": "464",
                     "death": "94",
-                    "lethality": "1.18%"
+                    "lethality": "1.18%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "4038",
                     "cured": "1449",
                     "death": "146",
-                    "lethality": "3.62%"
+                    "lethality": "3.62%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1203",
                     "cured": "704",
                     "death": "38",
-                    "lethality": "3.16%"
+                    "lethality": "3.16%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1250",
                     "cured": "279",
                     "death": "23",
-                    "lethality": "1.84%"
+                    "lethality": "1.84%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "203",
                     "cured": "17",
                     "death": "2",
-                    "lethality": "0.99%"
+                    "lethality": "0.99%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "249",
                     "cured": "67",
                     "death": "3",
-                    "lethality": "1.20%"
+                    "lethality": "1.20%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "217",
                     "cured": "28",
                     "death": "1",
-                    "lethality": "0.46%"
+                    "lethality": "0.46%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "22",
                     "cured": "6",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "262",
                     "cured": "53",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "101",
                     "cured": "28",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "6",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "4",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "6",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2433,98 +2893,112 @@
                     "value": "8580",
                     "cured": "611",
                     "death": "121",
-                    "lethality": "1.41%"
+                    "lethality": "1.41%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "4347",
                     "cured": "1624",
                     "death": "168",
-                    "lethality": "3.86%"
+                    "lethality": "3.86%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1266",
                     "cured": "783",
                     "death": "39",
-                    "lethality": "3.08%"
+                    "lethality": "3.08%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1348",
                     "cured": "361",
                     "death": "24",
-                    "lethality": "1.78%"
+                    "lethality": "1.78%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "204",
                     "cured": "17",
                     "death": "2",
-                    "lethality": "0.98%"
+                    "lethality": "0.98%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "253",
                     "cured": "81",
                     "death": "3",
-                    "lethality": "1.19%"
+                    "lethality": "1.19%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "226",
                     "cured": "32",
                     "death": "2",
-                    "lethality": "0.88%"
+                    "lethality": "0.88%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "22",
                     "cured": "8",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "293",
                     "cured": "64",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "103",
                     "cured": "30",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "7",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "5",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "13",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2536,98 +3010,112 @@
                     "value": "9340",
                     "cured": "720",
                     "death": "150",
-                    "lethality": "1.61%"
+                    "lethality": "1.61%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "4726",
                     "cured": "1802",
                     "death": "193",
-                    "lethality": "4.08%"
+                    "lethality": "4.08%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1291",
                     "cured": "805",
                     "death": "43",
-                    "lethality": "3.33%"
+                    "lethality": "3.33%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1373",
                     "cured": "447",
                     "death": "26",
-                    "lethality": "1.89%"
+                    "lethality": "1.89%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "217",
                     "cured": "21",
                     "death": "3",
-                    "lethality": "1.38%"
+                    "lethality": "1.38%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "260",
                     "cured": "88",
                     "death": "3",
-                    "lethality": "1.15%"
+                    "lethality": "1.15%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "228",
                     "cured": "49",
                     "death": "2",
-                    "lethality": "0.88%"
+                    "lethality": "0.88%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "22",
                     "cured": "8",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "310",
                     "cured": "66",
                     "death": "1",
-                    "lethality": "0.32%"
+                    "lethality": "0.32%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "105",
                     "cured": "30",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "7",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "5",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "13",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2639,98 +3127,112 @@
                     "value": "10031",
                     "cured": "827",
                     "death": "175",
-                    "lethality": "1.74%"
+                    "lethality": "1.74%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "5276",
                     "cured": "2074",
                     "death": "215",
-                    "lethality": "4.08%"
+                    "lethality": "4.08%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1336",
                     "cured": "838",
                     "death": "48",
-                    "lethality": "3.59%"
+                    "lethality": "3.59%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1423",
                     "cured": "519",
                     "death": "29",
-                    "lethality": "2.04%"
+                    "lethality": "2.04%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "221",
                     "cured": "69",
                     "death": "3",
-                    "lethality": "1.36%"
+                    "lethality": "1.36%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "271",
                     "cured": "103",
                     "death": "3",
-                    "lethality": "1.11%"
+                    "lethality": "1.11%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "232",
                     "cured": "74",
                     "death": "2",
-                    "lethality": "0.86%"
+                    "lethality": "0.86%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "25",
                     "cured": "17",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "342",
                     "cured": "77",
                     "death": "1",
-                    "lethality": "0.29%"
+                    "lethality": "0.29%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "108",
                     "cured": "50",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "8",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "5",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "13",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2742,98 +3244,112 @@
                     "value": "10912",
                     "cured": "1112",
                     "death": "216",
-                    "lethality": "1.98%"
+                    "lethality": "1.98%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "5759",
                     "cured": "2305",
                     "death": "235",
-                    "lethality": "4.08%"
+                    "lethality": "4.08%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1370",
                     "cured": "858",
                     "death": "50",
-                    "lethality": "3.65%"
+                    "lethality": "3.65%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1451",
                     "cured": "592",
                     "death": "32",
-                    "lethality": "2.21%"
+                    "lethality": "2.21%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "224",
                     "cured": "76",
                     "death": "3",
-                    "lethality": "1.34%"
+                    "lethality": "1.34%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "278",
                     "cured": "115",
                     "death": "3",
-                    "lethality": "1.08%"
+                    "lethality": "1.08%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "236",
                     "cured": "96",
                     "death": "3",
-                    "lethality": "1.27%"
+                    "lethality": "1.27%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "25",
                     "cured": "17",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "373",
                     "cured": "82",
                     "death": "2",
-                    "lethality": "0.54%"
+                    "lethality": "0.54%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "111",
                     "cured": "53",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "8",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "5",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "13",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2845,98 +3361,112 @@
                     "value": "11677",
                     "cured": "1341",
                     "death": "241",
-                    "lethality": "2.06%"
+                    "lethality": "2.06%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "6237",
                     "cured": "2574",
                     "death": "274",
-                    "lethality": "4.39%"
+                    "lethality": "4.39%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1410",
                     "cured": "879",
                     "death": "55",
-                    "lethality": "3.90%"
+                    "lethality": "3.90%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1500",
                     "cured": "713",
                     "death": "39",
-                    "lethality": "2.60%"
+                    "lethality": "2.60%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
                     "value": "230",
                     "cured": "92",
                     "death": "4",
-                    "lethality": "1.74%"
+                    "lethality": "1.74%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "285",
                     "cured": "136",
                     "death": "3",
-                    "lethality": "1.05%"
+                    "lethality": "1.05%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "239",
                     "cured": "103",
                     "death": "3",
-                    "lethality": "1.26%"
+                    "lethality": "1.26%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "25",
                     "cured": "17",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "407",
                     "cured": "93",
                     "death": "2",
-                    "lethality": "0.49%"
+                    "lethality": "0.49%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "112",
                     "cured": "60",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "8",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "5",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "13",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -2948,98 +3478,112 @@
                     "value": "12292",
                     "cured": "1563",
                     "death": "289",
-                    "lethality": "2.35%"
+                    "lethality": "2.35%",
+                    "abbr": "QC"
                 },
                 {
                     "name": "Ontario",
                     "value": "6648",
                     "cured": "2858",
                     "death": "302",
-                    "lethality": "4.54%"
+                    "lethality": "4.54%",
+                    "abbr": "ON"
                 },
                 {
                     "name": "British Columbia",
                     "value": "1445",
                     "cured": "905",
                     "death": "58",
-                    "lethality": "4.01%"
+                    "lethality": "4.01%",
+                    "abbr": "BC"
                 },
                 {
                     "name": "Alberta",
                     "value": "1569",
                     "cured": "774",
                     "death": "40",
-                    "lethality": "2.55%"
+                    "lethality": "2.55%",
+                    "abbr": "AB"
                 },
                 {
                     "name": "Manitoba",
-                    "value": "243",
+                    "value": "242",
                     "cured": "96",
                     "death": "4",
-                    "lethality": "1.65%"
+                    "lethality": "1.65%",
+                    "abbr": "MB"
                 },
                 {
                     "name": "Saskatchewan",
                     "value": "289",
                     "cured": "147",
                     "death": "4",
-                    "lethality": "1.38%"
+                    "lethality": "1.38%",
+                    "abbr": "SK"
                 },
                 {
                     "name": "Newfoundland and Labrador",
                     "value": "241",
                     "cured": "120",
                     "death": "3",
-                    "lethality": "1.24%"
+                    "lethality": "1.24%",
+                    "abbr": "NL"
                 },
                 {
                     "name": "Prince Edward Island",
                     "value": "25",
                     "cured": "17",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "PE"
                 },
                 {
                     "name": "Nova Scotia",
                     "value": "428",
                     "cured": "95",
                     "death": "2",
-                    "lethality": "0.47%"
+                    "lethality": "0.47%",
+                    "abbr": "NS"
                 },
                 {
                     "name": "New Brunswick",
                     "value": "112",
                     "cured": "70",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NB"
                 },
                 {
                     "name": "Yukon",
                     "value": "8",
                     "cured": "4",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "YT"
                 },
                 {
                     "name": "Northwest Territories",
                     "value": "5",
                     "cured": "1",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NT"
                 },
                 {
                     "name": "Nunavut",
                     "value": "",
                     "cured": "0",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "NU"
                 },
                 {
                     "name": "Repatriated Canadians",
                     "value": "13",
                     "cured": "13",
                     "death": "0",
-                    "lethality": "0%"
+                    "lethality": "0%",
+                    "abbr": "Repatriated"
                 }
             ]
         },
@@ -3048,6 +3592,7 @@
             "cases": [
                 {
                     "name": "Quebec",
+                    "abbr": "QC",
                     "value": "12846",
                     "cured": "1745",
                     "death": "328",
@@ -3055,6 +3600,7 @@
                 },
                 {
                     "name": "Ontario",
+                    "abbr": "ON",
                     "value": "7049",
                     "cured": "3121",
                     "death": "309",
@@ -3062,6 +3608,7 @@
                 },
                 {
                     "name": "British Columbia",
+                    "abbr": "BC",
                     "value": "1445",
                     "cured": "905",
                     "death": "58",
@@ -3069,6 +3616,7 @@
                 },
                 {
                     "name": "Alberta",
+                    "abbr": "AB",
                     "value": "1569",
                     "cured": "774",
                     "death": "40",
@@ -3076,6 +3624,7 @@
                 },
                 {
                     "name": "Manitoba",
+                    "abbr": "MB",
                     "value": "242",
                     "cured": "96",
                     "death": "4",
@@ -3083,13 +3632,15 @@
                 },
                 {
                     "name": "Saskatchewan",
-                    "value": "289",
-                    "cured": "147",
+                    "abbr": "SK",
+                    "value": "298",
+                    "cured": "164",
                     "death": "4",
-                    "lethality": "1.38%"
+                    "lethality": "1.34%"
                 },
                 {
                     "name": "Newfoundland and Labrador",
+                    "abbr": "NL",
                     "value": "242",
                     "cured": "129",
                     "death": "3",
@@ -3097,6 +3648,7 @@
                 },
                 {
                     "name": "Prince Edward Island",
+                    "abbr": "PE",
                     "value": "25",
                     "cured": "17",
                     "death": "0",
@@ -3104,6 +3656,7 @@
                 },
                 {
                     "name": "Nova Scotia",
+                    "abbr": "NS",
                     "value": "445",
                     "cured": "97",
                     "death": "2",
@@ -3111,6 +3664,7 @@
                 },
                 {
                     "name": "New Brunswick",
+                    "abbr": "NB",
                     "value": "114",
                     "cured": "70",
                     "death": "0",
@@ -3118,6 +3672,7 @@
                 },
                 {
                     "name": "Yukon",
+                    "abbr": "YT",
                     "value": "8",
                     "cured": "4",
                     "death": "0",
@@ -3125,6 +3680,7 @@
                 },
                 {
                     "name": "Northwest Territories",
+                    "abbr": "NT",
                     "value": "5",
                     "cured": "1",
                     "death": "0",
@@ -3132,6 +3688,7 @@
                 },
                 {
                     "name": "Nunavut",
+                    "abbr": "NU",
                     "value": "",
                     "cured": "0",
                     "death": "0",
@@ -3139,6 +3696,7 @@
                 },
                 {
                     "name": "Repatriated Canadians",
+                    "abbr": "Repatriated",
                     "value": "13",
                     "cured": "13",
                     "death": "0",
@@ -3227,15 +3785,15 @@
             "Province": "Saskatchewan",
             "Tests": "18448",
             "Abbr": "SK",
-            "Conf.": "289",
-            "Per m": 247,
-            "Cured": "147",
+            "Conf.": "298",
+            "Per m": 254,
+            "Cured": "164",
             "InWard": "7",
             "InICU": "1",
             "Deaths": "4",
-            "Active": 138,
-            "Lethality": "1.38%",
-            "New": 0,
+            "Active": 130,
+            "Lethality": "1.34%",
+            "New": "+9",
             "NewDeaths": 0
         },
         {
@@ -3362,22 +3920,22 @@
             "Province": "Canada",
             "Tests": "424419",
             "Abbr": "Canada",
-            "Conf.": "24292",
+            "Conf.": "24301",
             "Per m": 647,
-            "Cured": "7119",
+            "Cured": "7136",
             "InWard": null,
             "InICU": null,
             "Deaths": "748",
-            "Active": 16425,
+            "Active": 16417,
             "Lethality": "3.08%",
-            "New": "+974",
+            "New": "+983",
             "NewDeaths": "+46"
         }
     ],
     "overall": {
-        "confirmed": "24292",
-        "increased": 974,
-        "recovered": "7119",
+        "confirmed": "24301",
+        "increased": 983,
+        "recovered": "7136",
         "death": "748",
         "lethality": "3.08%"
     }

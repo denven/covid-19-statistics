@@ -68,7 +68,9 @@ async function getCasesTimeline () {
       ...getOneMonthReports(tmp, 'February'),
       ...getOneMonthReports(tmp, 'March'),
       ...getOneMonthReports(tmp, 'April'),
-      ...getOneMonthReports(tmp, 'May')
+      ...getOneMonthReports(tmp, 'May'),
+      ...getOneMonthReports(tmp, 'June'),
+      ...getOneMonthReports(tmp, 'July'),
     ];
 
     $('p', 'div').each( (index, ele) => {
@@ -335,9 +337,9 @@ async function updateHistoryCasesV2 () {
   // Enable this once when adjusting the order of provinces
   // allDaysCases = allDaysCases.map( day => {
   //   let dayCases = [];
-  //   provinces.forEach(({fullname}) => {
+  //   provinces.forEach(({fullname, abbr}) => {
   //     let prov = day.cases.find( prov => prov.name === fullname );
-  //     if(prov) dayCases.push(prov);
+  //     if(prov) dayCases.push({...prov, abbr: abbr});
   //   });
   //   return {...day, cases: dayCases};
   // });
@@ -348,6 +350,7 @@ async function updateHistoryCasesV2 () {
     if(item.Province !== 'Canada') {
       casesAsOfToday.push({ 
         name: item.Province, 
+        abbr: provinces.find( p => p.fullname === item.Province).abbr,
         value: item["Conf."] === '0' ? '' : item["Conf."],
         cured: item.Cured,
         death: item.Deaths,
