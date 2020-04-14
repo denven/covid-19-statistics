@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-13 20:00:33",
+    "date": "2020-04-14 00:00:59",
     "cases": [
         {
             "name": "New York",
@@ -38,6 +38,15 @@
             "deathRate": "6.25%"
         },
         {
+            "name": "California",
+            "confirmed": "24,371",
+            "increased": "+232",
+            "death": "731",
+            "perMppl": "623",
+            "newDeath": "+4",
+            "deathRate": "3.00%"
+        },
+        {
             "name": "Pennsylvania",
             "confirmed": "24,292",
             "increased": "",
@@ -45,15 +54,6 @@
             "perMppl": "1,899",
             "newDeath": "",
             "deathRate": "2.43%"
-        },
-        {
-            "name": "California",
-            "confirmed": "24,139",
-            "increased": "",
-            "death": "727",
-            "perMppl": "617",
-            "newDeath": "",
-            "deathRate": "3.01%"
         },
         {
             "name": "Illinois",
@@ -543,10 +543,10 @@
         }
     ],
     "overall": {
-        "confirmed": "586,941",
-        "increased": "",
+        "confirmed": "587,173",
+        "increased": "+232",
         "cured": 36948,
-        "death": "23,640",
+        "death": "23,644",
         "fatality": "4.03%"
     }
 }
