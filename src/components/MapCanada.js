@@ -111,7 +111,7 @@ export default function MapCanada() {
         yAxis: [{
           type: 'category',
           inverse: true,
-          data: ['QC', 'ON', 'BC', 'AB', 'MB', 'SK', 'NL', 'PE', 'NS', 'NB', 'YT', 'NT', 'NU']
+          data: ['QC', 'ON', 'AB', 'BC', 'NS', 'SK', 'MB', 'NL', 'NB', 'PE', 'YT', 'NT', 'NU']
         }],
         grid: {  // Set margin of all charts
           left: '5%',

@@ -9,14 +9,14 @@ const DEBUG_MODE_ON = false;
 const provinces = [
   { fullname: "Quebec", abbr: 'QC', apiKey: 'quebec'},
   { fullname: "Ontario", abbr: 'ON', apiKey: 'ontario'},
-  { fullname: "British Columbia", abbr: 'BC', apiKey: 'british-columbia'},
   { fullname: "Alberta", abbr: 'AB', apiKey: 'alberta'},
-  { fullname: "Manitoba", abbr: 'MB', apiKey: 'manitoba'},
-  { fullname: "Saskatchewan", abbr: 'SK', apiKey: 'saskatchewan'},
-  { fullname: "Newfoundland and Labrador", abbr: 'NL', apiKey: 'newfoundland-and-labrador'},
-  { fullname: "Prince Edward Island", abbr: 'PE', apiKey: 'prince-edward-island'},
+  { fullname: "British Columbia", abbr: 'BC', apiKey: 'british-columbia'},
   { fullname: "Nova Scotia", abbr: 'NS', apiKey: 'nova-scotia'},
+  { fullname: "Saskatchewan", abbr: 'SK', apiKey: 'saskatchewan'},
+  { fullname: "Manitoba", abbr: 'MB', apiKey: 'manitoba'},
+  { fullname: "Newfoundland and Labrador", abbr: 'NL', apiKey: 'newfoundland-and-labrador'},
   { fullname: "New Brunswick", abbr: 'NB', apiKey: 'new-brunswick'},
+  { fullname: "Prince Edward Island", abbr: 'PE', apiKey: 'prince-edward-island'},
   { fullname: "Yukon", abbr: 'YT', apiKey: 'yukon'},
   { fullname: "Northwest Territories", abbr: 'NT', apiKey: 'northwest-territories'},
   { fullname: "Nunavut", abbr: 'NU', apiKey: 'nunavut'},
@@ -339,7 +339,7 @@ async function updateHistoryCasesV2 () {
   //   let dayCases = [];
   //   provinces.forEach(({fullname, abbr}) => {
   //     let prov = day.cases.find( prov => prov.name === fullname );
-  //     if(prov) dayCases.push({...prov, abbr: abbr});
+  //     if(prov) dayCases.push(prov);
   //   });
   //   return {...day, cases: dayCases};
   // });
