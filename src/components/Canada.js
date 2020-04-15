@@ -19,34 +19,38 @@ import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
 
 const columns = [
-  { label: "Province", id: "Abbr", align: 'right', maxWidth: 10},
-  { label: "Tested", id: "Tests", align: 'right', maxWidth: 10 },
-  { label: "Conf.", id: "Conf.", align: 'right', maxWidth: 10 },
-  { label: "New", id: "New", align: 'right', maxWidth: 10 },
-  { label: "InWard", id: "InWard", align: 'right', maxWidth: 10 },
-  { label: "InICU", id: "InICU", align: 'right', maxWidth: 10 },
-  { label: "Cases/M", id: "Per m", align: 'right', maxWidth: 10 },
-  { label: "Cured", id: "Cured", align: 'right', maxWidth: 10 },
-  { label: "Deaths", id: "Deaths", align: 'right', maxWidth: 10 },
-  { label: "New", id: "NewDeaths", align: 'right', maxWidth: 10 },
-  { label: "Active", id: "Active", align: 'right', maxWidth: 10 },
-  { label: "Lethality", id: "Lethality", align: 'right', maxWidth: 10 },
+  { label: "Province", id: "Abbr", align: 'right', maxWidth: 60},
+  { label: "Tested", id: "Tests", align: 'right', maxWidth: 65 },
+  { label: "Conf.", id: "Conf.", align: 'right', maxWidth: 50 },
+  { label: "New", id: "New", align: 'right', maxWidth: 35 },
+  { label: "Cases/M", id: "Per m", align: 'right', maxWidth: 60 },
+  { label: "Hosp(ICU)", id: "InWard", align: 'right', maxWidth: 65 },
+  // { label: "InICU", id: "InICU", align: 'right', maxWidth: 30 },
+  { label: "Cured", id: "Cured", align: 'right', maxWidth: 40 },
+  { label: "Deaths", id: "Deaths", align: 'right', maxWidth: 40 },
+  { label: "New", id: "NewDeaths", align: 'right', maxWidth: 25 },
+  { label: "Active", id: "Active", align: 'right', maxWidth: 50 },
+  { label: "Lethality", id: "Lethality", align: 'right', maxWidth: 55 },
 ];
 
 const StyledTableCell = withStyles(theme => ({
   head: { fontWeight: 600 },
-  body: { fontSize: 14, },
+  body: { fontSize: 14 },
+  sizeSmall: { padding: '4px 16px 4px 0px'}
+}))(TableCell);
+
+const StyledTableBodyCell = withStyles(theme => ({
+  sizeSmall: { padding: '4px 16px 4px 0px'}
 }))(TableCell);
 
 const isPortraitMode = () => {
   let mediaQuery = window.matchMedia("(orientation: portrait)");
-  if(mediaQuery.matches) { return true };
-  return true;
+  return mediaQuery.matches;
 }
 
 const useStyles = makeStyles({
   root: { width: '100%', }, 
-  container: { maxHeight: isPortraitMode() ? "65vh" : "48vh" },
+  container: { maxHeight: isPortraitMode() ? "65vh" : "42.5vh" },
   chart: {marginTop: '2.5%'},
 });
 
@@ -66,6 +70,25 @@ const valueFormat = (value) => {
 function ProvincesTable ({data, onRowClick}) {
   const classes = useStyles();
 
+  //merge ICU number into InWard
+  let rowsData = data.map( (row, index) => {
+    let {InWard, InICU} = row;
+
+    if(index === data.length - 1) {
+      InWard = data.reduce((total, curProv) => {
+        return total += parseInt(curProv.InWard || 0);
+      }, 0);
+      InICU = data.reduce((total, curProv) => {
+        return total += parseInt(curProv.InICU || 0);
+      }, 0);
+    }
+
+    if(InICU > 0) InWard = InWard + `(${InICU})`;
+    let obj = Object.assign({...row}, {InWard: InWard});
+    delete Object.assign(obj).InICU;
+    return obj;
+  });
+
   return (
     <Paper className={classes.root} elevation={0} >
       <TableContainer className={classes.container}>
@@ -73,24 +96,27 @@ function ProvincesTable ({data, onRowClick}) {
           <TableHead >
             <TableRow>
               {columns.map(column => (
-                <StyledTableCell key={column.id} align={column.align} style={{ maxWidth: column.maxWidth }}>
+                <StyledTableCell key={column.id} align={column.align}
+                  style={{ maxWidth: column.maxWidth}}>
                   {column.label}
                 </StyledTableCell> )
               )}
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map( (row, index) => {
+            {rowsData.map( (row, index) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.Abbr}
                 onClick={(event) => onRowClick(event, row)} >
                   {columns.map(column => {                                      
                     let value = valueFormat(row[column.id]);
                     return (
-                      <TableCell key={column.id} align={column.align} 
-                      style={{ color: value.includes('+') > 0 ? 'red' : 'inherits', fontWeight: row.Abbr === 'Canada' ? 600 : 400 }}>
+                      <StyledTableBodyCell key={column.id} align={column.align}                      
+                      style={{ maxWidth: column.maxWidth,
+                               color: value.includes('+') > 0 ? 'red' : 'inherits', 
+                               fontWeight: row.Abbr === 'Canada' ? 600 : 400 }}>
                         {column.format && typeof value === 'number' ? column.format(value) : value}
-                      </TableCell>
+                      </StyledTableBodyCell>
                     );
                   })}
                 </TableRow>
@@ -212,7 +238,7 @@ function CasesHisTrend ({prov, days, dayCases, dayNewCases}) {
   return (
     (days && dayCases) ? (
       <ReactEcharts 
-        style={{height: "30vh"}}
+        style={{height: "35vh"}}
         echarts={echarts}
         option={getOption()}
         loadingOption={getLoadingOption()}
@@ -236,8 +262,11 @@ export default function Canada() {
   let classes = useStyles();
 
   const handleSwitch = () => {
-    if(viewMode === 'map') setMode('table');
-    else setMode('map');    
+    if(viewMode === 'map') {
+      setMode('table');
+      setProv('Canada');
+    } else 
+      setMode('map');    
   }
 
   useEffect(() => {
@@ -319,7 +348,7 @@ export default function Canada() {
                   style={switchStyle}
                   onClick={handleSwitch} > View Map
           </Button>
-          <div style={{margin:'0 1rem 1.5rem 1rem'}}> 
+          <div style={{margin:'0 1rem 1rem 1rem'}}> 
             <TableTitle style={{display: 'flex'}}/>
             <ProvincesTable style={{width: '90%'}} data={provDetails} onRowClick = {handleRowClick} />
           </div>
