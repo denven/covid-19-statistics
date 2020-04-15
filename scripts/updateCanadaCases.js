@@ -449,7 +449,5 @@ async function updateHistoryCasesV2 () {
 
 }
 
-// getCasesTimeline();
-// updateHistoryCasesV2();
-
-getCanadaCases()
+getCasesTimeline();
+updateHistoryCasesV2();
