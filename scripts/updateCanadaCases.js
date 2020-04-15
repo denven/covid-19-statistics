@@ -303,10 +303,16 @@ async function getCanadaCases() {
   provincesApiUrls.push(ApiUrl); 
 
   try {
+    let bcTestsCount = await getBCTestsNumber ();  // April 15th added for more accurate tests number
     let resArray = await axios.all(provincesApiUrls.map(url => axios.get(url)));   
     let provCases = resArray.map( ({data}, index) => {
       let {State, Confirmed, Deaths, Recovered, Tests, Hospitalizations, IntensiveCares, Population} = data[0];
       let casesPer1M = Population > 0 ? Math.ceil(Confirmed * 1000000 / Population) : 0;
+
+      // Update BC Tests exclusively
+      if(State === 'British Columbia' && Tests < bcTestsCount) { 
+        Tests = bcTestsCount;       
+      };
 
       return {
         Province: State || 'Canada',
@@ -328,6 +334,24 @@ async function getCanadaCases() {
     return;
   }
 };
+
+async function getBCTestsNumber () {
+  let bccdcUrl = 'http://www.bccdc.ca/health-info/diseases-conditions/covid-19/case-counts-press-statements';
+  let res = await axios.get(bccdcUrl);
+  let testsCount = 0;
+
+  if(res.status === 200) {
+    const $ = cheerio.load(res.data);
+    $('ul li').each( (index, ele) => {
+      let text = $(ele).text();
+      if(text.includes("tests completed")) {
+        testsCount = text.replace(/^([\d,]{1,8}).*/g, '$1').replace(/,/, '');
+      }
+    });
+  }
+
+  return testsCount;
+}
 
 async function updateHistoryCasesV2 () {
 
@@ -425,5 +449,7 @@ async function updateHistoryCasesV2 () {
 
 }
 
-getCasesTimeline();
-updateHistoryCasesV2();
+// getCasesTimeline();
+// updateHistoryCasesV2();
+
+getCanadaCases()
