@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-18 04:00:22",
+    "date": "2020-04-18 08:00:46",
     "cases": [
         {
             "date": "1/26",
@@ -4303,10 +4303,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "9525",
-                    "cured": "4556",
+                    "value": "",
+                    "cured": "4875",
                     "death": "534",
-                    "lethality": "5.61%"
+                    "lethality": "Infinity%"
                 },
                 {
                     "name": "Alberta",
@@ -4427,14 +4427,14 @@
             "Province": "Ontario",
             "Tests": "136992",
             "Abbr": "ON",
-            "Conf.": "9525",
-            "Per m": 654,
-            "Cured": "4556",
+            "Conf.": "0",
+            "Per m": 0,
+            "Cured": "4875",
             "InWard": "829",
             "InICU": "245",
             "Deaths": "534",
-            "Active": 4435,
-            "Lethality": "5.61%",
+            "Active": -5409,
+            "Lethality": "Infinity%",
             "New": 0,
             "NewDeaths": 0
         },
@@ -4622,23 +4622,23 @@
             "Province": "Canada",
             "Tests": "514902",
             "Abbr": "Canada",
-            "Conf.": "31927",
-            "Per m": 850,
-            "Cured": "10556",
+            "Conf.": "22402",
+            "Per m": 596,
+            "Cured": "10875",
             "InWard": null,
             "InICU": null,
             "Deaths": "1366",
-            "Active": 20005,
-            "Lethality": "4.28%",
+            "Active": 10161,
+            "Lethality": "6.10%",
             "New": 0,
             "NewDeaths": 0
         }
     ],
     "overall": {
-        "confirmed": "31927",
-        "increased": 0,
-        "recovered": "10556",
+        "confirmed": "22402",
+        "increased": -9525,
+        "recovered": "10875",
         "death": "1366",
-        "lethality": "4.28%"
+        "lethality": "6.10%"
     }
 }
