@@ -1,5 +1,5 @@
 {
-    "date": "2020-04-23 20:00:31",
+    "date": "2020-04-24 00:00:36",
     "cases": [
         {
             "name": "New York",
@@ -30,12 +30,12 @@
         },
         {
             "name": "California",
-            "confirmed": "39,288",
-            "increased": "",
-            "death": "1,523",
-            "perMppl": "1,004",
-            "newDeath": "",
-            "deathRate": "3.88%"
+            "confirmed": "39,555",
+            "increased": "+267",
+            "death": "1,530",
+            "perMppl": "1,010",
+            "newDeath": "+7",
+            "deathRate": "3.87%"
         },
         {
             "name": "Pennsylvania",
@@ -497,6 +497,15 @@
             "deathRate": "5.56%"
         },
         {
+            "name": "Veteran Affairs",
+            "confirmed": "6,238",
+            "increased": "",
+            "death": "391",
+            "perMppl": "",
+            "newDeath": "",
+            "deathRate": "6.27%"
+        },
+        {
             "name": "US Military",
             "confirmed": "5,901",
             "increased": "",
@@ -552,10 +561,10 @@
         }
     ],
     "overall": {
-        "confirmed": "880,204",
-        "increased": "",
+        "confirmed": "886,709",
+        "increased": "+267",
         "cured": 85922,
-        "death": "49,845",
-        "fatality": "5.66%"
+        "death": "50,243",
+        "fatality": "5.67%"
     }
 }
