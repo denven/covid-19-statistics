@@ -335,23 +335,27 @@ async function getCanadaCases() {
   }
 };
 
-async function getBCTestsNumber () {
-  let bccdcUrl = 'http://www.bccdc.ca/health-info/diseases-conditions/covid-19/case-counts-press-statements';
-  let res = await axios.get(bccdcUrl);
-  let testsCount = 0;
 
-  if(res.status === 200) {
-    const $ = cheerio.load(res.data);
-    $('ul li').each( (index, ele) => {
-      let text = $(ele).text();
-      if(text.includes("tests completed")) {
-        testsCount = text.replace(/^([\d,]{1,8}).*/g, '$1').replace(/,/, '');
-      }
-    });
+const getBCTestsNumber = async () => {
+
+  const BCLabTestUrl = 'http://www.bccdc.ca/Health-Info-Site/Documents/BCCDC_COVID19_Dashboard_Lab_Information.csv';
+  let csvFile = await axios.get(BCLabTestUrl);
+  let rows = csvFile.data.split('\r\n');
+
+  let BCTests = [];
+   for(const row of rows) {
+    let rowColsData = row.split(',');
+    if(rowColsData[1] === `"BC"`) BCTests.push(rowColsData);
   }
 
-  return testsCount;
+  // console.log(BCTests);
+  if(BCTests.length > 0) {
+    return BCTests[BCTests.length - 1][3];
+  } else {
+    return 0;
+  }  
 }
+
 
 async function updateHistoryCasesV2 () {
 
