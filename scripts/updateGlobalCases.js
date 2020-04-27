@@ -44,7 +44,7 @@ async function updateGlobalCases () {
     if(countries.length > 0) {
       let jsonData = {
         time: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-        countries: _.sortBy(countries, (o) => parseInt(o.total.replace(/,/,''))).reverse(),
+        countries: _.sortBy(countries, (o) => parseInt(o.total.replace(/,/g,''))).reverse(),
         overall: overall
       }
 
