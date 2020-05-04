@@ -1,5 +1,5 @@
 {
-    "date": "2020-05-04 00:00:38",
+    "date": "2020-05-04 04:00:33",
     "cases": [
         {
             "name": "New York",
@@ -102,12 +102,12 @@
         },
         {
             "name": "Georgia",
-            "confirmed": "28,671",
-            "increased": "",
-            "death": "1,179",
-            "perMppl": "2,784",
-            "newDeath": "",
-            "deathRate": "4.11%"
+            "confirmed": "28,942",
+            "increased": "+271",
+            "death": "1,183",
+            "perMppl": "2,811",
+            "newDeath": "+4",
+            "deathRate": "4.09%"
         },
         {
             "name": "Maryland",
@@ -308,6 +308,15 @@
             "deathRate": "4.93%"
         },
         {
+            "name": "Kansas",
+            "confirmed": "5,030",
+            "increased": "+134",
+            "death": "143",
+            "perMppl": "1,729",
+            "newDeath": "",
+            "deathRate": "2.84%"
+        },
+        {
             "name": "District Of Columbia",
             "confirmed": "5,016",
             "increased": "",
@@ -315,15 +324,6 @@
             "perMppl": "7,328",
             "newDeath": "",
             "deathRate": "5.00%"
-        },
-        {
-            "name": "Kansas",
-            "confirmed": "4,896",
-            "increased": "",
-            "death": "143",
-            "perMppl": "1,683",
-            "newDeath": "",
-            "deathRate": "2.92%"
         },
         {
             "name": "Oklahoma",
@@ -561,10 +561,10 @@
         }
     ],
     "overall": {
-        "confirmed": "1,188,421",
-        "increased": "+299",
+        "confirmed": "1,188,826",
+        "increased": "+704",
         "cured": null,
-        "death": "68,602",
+        "death": "68,606",
         "fatality": "NaN%"
     }
 }
