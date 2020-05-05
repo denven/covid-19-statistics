@@ -107,7 +107,7 @@ export default function MapCanada() {
 				xAxis: [
 					{
 						type: "value",
-						max: 15000, // max cases number, May 4th, 2020 adjusted
+						max: 20000, // max cases number, May 4th, 2020 adjusted
 						axisLine: { show: false },
 						axisTick: { show: false },
 						axisLabel: { show: false },
