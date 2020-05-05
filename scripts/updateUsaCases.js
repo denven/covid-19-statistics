@@ -251,8 +251,8 @@ async function _getUsaLatestCases() {
 					});
 
 					if (overallCases.length > 1) {
-						console.log(overallCases);
-						_updateUsaHisCases(overallCases); // Mar 5th, 2020
+						// console.log(overallCases);
+						await _updateUsaHisCases(overallCases); // Mar 5th, 2020
 						break;
 					}
 				}
@@ -308,12 +308,7 @@ async function _updateUsaHisCases(totalCases) {
 		.replace(/^0/, "")
 		.replace(/-[0]{0,1}/, "/");
 
-	console.log(curGMTDate);
-
 	let lastDay = allCases.pop();
-
-	console.log(totalCases);
-
 	let yesterdayCases = {
 		date: lastDay.date,
 		confirmedNum: totalCases[1].confirmed.replace(/[+,]/g, ""),
