@@ -243,7 +243,6 @@ async function _getUsaLatestCases() {
 				}
 
 				if (name === "Total:") {
-					bAllStatesFetched = true;
 					overallCases.push({
 						confirmed: total,
 						increased: increased,
@@ -271,6 +270,11 @@ async function _getUsaLatestCases() {
 					};
 					// console.log(stateCases);
 					curStatesCases.push(stateCases);
+
+					// flag to prevent pushing yesterday's data into array
+					if (name === "Total:") {
+						bAllStatesFetched = true;
+					}
 				}
 			}
 			index++;
