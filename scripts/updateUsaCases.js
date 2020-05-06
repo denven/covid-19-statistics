@@ -213,7 +213,8 @@ async function _getUsaLatestCases() {
 	let res = await axios.get(url);
 
 	let curStatesCases = [];
-	let overallCases = []; // today and yesterday's
+	let overallCases = []; // today and yesterday's overall cases
+	let bAllStatesFetched = false;
 
 	if (res.status === 200) {
 		const $ = cheerio.load(res.data);
@@ -242,6 +243,7 @@ async function _getUsaLatestCases() {
 				}
 
 				if (name === "Total:") {
+					bAllStatesFetched = true;
 					overallCases.push({
 						confirmed: total,
 						increased: increased,
@@ -257,17 +259,19 @@ async function _getUsaLatestCases() {
 					}
 				}
 
-				let stateCases = {
-					name: name,
-					confirmed: total,
-					increased: increased,
-					death: dead,
-					perMppl: perMppl,
-					newDeath: newDeath,
-					deathRate: lethality
-				};
-				// console.log(stateCases);
-				curStatesCases.push(stateCases);
+				if (!bAllStatesFetched) {
+					let stateCases = {
+						name: name,
+						confirmed: total,
+						increased: increased,
+						death: dead,
+						perMppl: perMppl,
+						newDeath: newDeath,
+						deathRate: lethality
+					};
+					// console.log(stateCases);
+					curStatesCases.push(stateCases);
+				}
 			}
 			index++;
 		}
@@ -313,7 +317,7 @@ async function _updateUsaHisCases(totalCases) {
 		date: lastDay.date,
 		confirmedNum: totalCases[1].confirmed.replace(/[+,]/g, ""),
 		curesNum: totalCases[1].cured,
-		increasedNum: totalCases[1].increased.replace(/[+,]/g, ""),
+		increasedNum: totalCases[1].increased.replace(/[+,]/g, "") || 0,
 		deathsNum: totalCases[1].death.replace(/[+,]/g, "")
 	};
 
@@ -321,7 +325,7 @@ async function _updateUsaHisCases(totalCases) {
 		date: curGMTDate,
 		confirmedNum: totalCases[0].confirmed.replace(/[+,]/g, ""),
 		curesNum: totalCases[0].cured,
-		increasedNum: totalCases[0].increased.replace(/\+/g, ""),
+		increasedNum: totalCases[0].increased.replace(/\+/g, "") || 0,
 		deathsNum: totalCases[0].death.replace(/[+,]/g, "")
 	};
 
