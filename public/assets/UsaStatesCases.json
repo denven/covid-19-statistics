@@ -1,5 +1,5 @@
 {
-    "date": "2020-05-06 00:00:31",
+    "date": "2020-05-06 04:00:30",
     "cases": [
         {
             "name": "New York",
@@ -92,6 +92,15 @@
             "deathRate": "8.60%"
         },
         {
+            "name": "Georgia",
+            "confirmed": "30,044",
+            "increased": "+152",
+            "death": "1,295",
+            "perMppl": "2,918",
+            "newDeath": "",
+            "deathRate": "4.31%"
+        },
+        {
             "name": "Louisiana",
             "confirmed": "29,996",
             "increased": "",
@@ -99,15 +108,6 @@
             "perMppl": "6,432",
             "newDeath": "",
             "deathRate": "7.05%"
-        },
-        {
-            "name": "Georgia",
-            "confirmed": "29,892",
-            "increased": "",
-            "death": "1,295",
-            "perMppl": "2,903",
-            "newDeath": "",
-            "deathRate": "4.33%"
         },
         {
             "name": "Maryland",
@@ -210,12 +210,12 @@
         },
         {
             "name": "Missouri",
-            "confirmed": "8,977",
-            "increased": "",
-            "death": "400",
-            "perMppl": "1,474",
-            "newDeath": "",
-            "deathRate": "4.46%"
+            "confirmed": "9,100",
+            "increased": "+123",
+            "death": "409",
+            "perMppl": "1,494",
+            "newDeath": "+9",
+            "deathRate": "4.49%"
         },
         {
             "name": "Wisconsin",
@@ -282,12 +282,12 @@
         },
         {
             "name": "Kansas",
-            "confirmed": "5,632",
-            "increased": "",
+            "confirmed": "5,648",
+            "increased": "+16",
             "death": "161",
-            "perMppl": "1,936",
+            "perMppl": "1,942",
             "newDeath": "",
-            "deathRate": "2.86%"
+            "deathRate": "2.85%"
         },
         {
             "name": "Nevada",
@@ -561,19 +561,19 @@
         },
         {
             "name": "Total:",
-            "confirmed": "1,237,761",
-            "increased": "+128",
-            "death": "72,275",
-            "perMppl": "3,739",
-            "newDeath": "+4",
+            "confirmed": "1,238,052",
+            "increased": "+419",
+            "death": "72,284",
+            "perMppl": "3,740",
+            "newDeath": "+13",
             "deathRate": "5.84%"
         }
     ],
     "overall": {
-        "confirmed": "1,237,761",
-        "increased": "+128",
+        "confirmed": "1,238,052",
+        "increased": "+419",
         "cured": 200669,
-        "death": "72,275",
+        "death": "72,284",
         "fatality": "5.84%"
     }
 }
