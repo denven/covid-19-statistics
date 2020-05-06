@@ -329,7 +329,7 @@ async function _updateUsaHisCases(totalCases) {
 		date: curGMTDate,
 		confirmedNum: totalCases[0].confirmed.replace(/[+,]/g, ""),
 		curesNum: totalCases[0].cured,
-		increasedNum: totalCases[0].increased.replace(/\+/g, "") || 0,
+		increasedNum: totalCases[0].increased.replace(/[+,]/g, "") || 0,
 		deathsNum: totalCases[0].death.replace(/[+,]/g, "")
 	};
 
