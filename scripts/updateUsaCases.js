@@ -342,7 +342,7 @@ async function _updateUsaHisCases(totalCases) {
 	) {
 		allCases.push(todayCases); //update new data for the same day
 	} else {
-		allCases.push(lastDay);
+		// allCases.push(todayCases);  //no new data, do not update
 	}
 
 	// step 4: save new data back to json file
