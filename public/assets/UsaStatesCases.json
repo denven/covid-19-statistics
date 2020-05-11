@@ -1,5 +1,5 @@
 {
-    "date": "2020-05-11 00:00:47",
+    "date": "2020-05-11 04:00:45",
     "cases": [
         {
             "name": "New York",
@@ -83,6 +83,15 @@
             "deathRate": "2.84%"
         },
         {
+            "name": "Georgia",
+            "confirmed": "33,833",
+            "increased": "+325",
+            "death": "1,405",
+            "perMppl": "3,187",
+            "newDeath": "",
+            "deathRate": "4.15%"
+        },
+        {
             "name": "Connecticut",
             "confirmed": "33,554",
             "increased": "",
@@ -90,15 +99,6 @@
             "perMppl": "9,411",
             "newDeath": "",
             "deathRate": "8.84%"
-        },
-        {
-            "name": "Georgia",
-            "confirmed": "33,508",
-            "increased": "",
-            "death": "1,405",
-            "perMppl": "3,156",
-            "newDeath": "",
-            "deathRate": "4.19%"
         },
         {
             "name": "Maryland",
@@ -561,17 +561,17 @@
         },
         {
             "name": "Total:",
-            "confirmed": "1,367,638",
-            "increased": "",
+            "confirmed": "1,367,963",
+            "increased": "+325",
             "death": "80,787",
-            "perMppl": "4,132",
+            "perMppl": "4,133",
             "newDeath": "",
             "deathRate": "5.91%"
         }
     ],
     "overall": {
-        "confirmed": "1,367,638",
-        "increased": "",
+        "confirmed": "1,367,963",
+        "increased": "+325",
         "cured": 256336,
         "death": "80,787",
         "fatality": "5.91%"
