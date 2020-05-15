@@ -144,4 +144,4 @@ const updateDataFromDXY = () => {
 
 // they canbe merged into using only one data source
 updateGlobalCases(); // scrape live toll data from worldometer.com
-// updateDataFromDXY(); // use an api to get detailed cases in China and other countries
+updateDataFromDXY(); // use an api to get detailed cases in China and other countries
