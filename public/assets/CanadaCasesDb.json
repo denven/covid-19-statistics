@@ -1,5 +1,5 @@
 {
-    "date": "2020-05-17 12:00:41",
+    "date": "2020-05-17 16:00:46",
     "cases": [
         {
             "date": "1/26",
@@ -7698,15 +7698,15 @@
                     "abbr": "ON",
                     "value": "22653",
                     "cured": "17360",
-                    "death": "1970",
-                    "lethality": "8.70%"
+                    "death": "1986",
+                    "lethality": "8.77%"
                 },
                 {
                     "name": "Alberta",
                     "abbr": "AB",
-                    "value": "6587",
-                    "cured": "5377",
-                    "death": "126",
+                    "value": "6644",
+                    "cured": "5453",
+                    "death": "127",
                     "lethality": "1.91%"
                 },
                 {
@@ -7728,10 +7728,10 @@
                 {
                     "name": "Saskatchewan",
                     "abbr": "SK",
-                    "value": "591",
-                    "cured": "433",
+                    "value": "592",
+                    "cured": "444",
                     "death": "6",
-                    "lethality": "1.02%"
+                    "lethality": "1.01%"
                 },
                 {
                     "name": "Manitoba",
@@ -7825,26 +7825,26 @@
             "Cured": "17360",
             "InWard": "934",
             "InICU": "171",
-            "Deaths": "1970",
-            "Active": 3323,
-            "Lethality": "8.70%",
+            "Deaths": "1986",
+            "Active": 3307,
+            "Lethality": "8.77%",
             "New": "+340",
-            "NewDeaths": "+9"
+            "NewDeaths": "+25"
         },
         {
             "Province": "Alberta",
             "Tests": "193098",
             "Abbr": "AB",
-            "Conf.": "6587",
-            "Per m": 1507,
-            "Cured": "5377",
-            "InWard": "60",
-            "InICU": "8",
-            "Deaths": "126",
-            "Active": 1084,
+            "Conf.": "6644",
+            "Per m": 1520,
+            "Cured": "5453",
+            "InWard": "57",
+            "InICU": "9",
+            "Deaths": "127",
+            "Active": 1064,
             "Lethality": "1.91%",
-            "New": 0,
-            "NewDeaths": 0
+            "New": "+57",
+            "NewDeaths": "+1"
         },
         {
             "Province": "British Columbia",
@@ -7880,15 +7880,15 @@
             "Province": "Saskatchewan",
             "Tests": "37403",
             "Abbr": "SK",
-            "Conf.": "591",
-            "Per m": 504,
-            "Cured": "433",
-            "InWard": "8",
+            "Conf.": "592",
+            "Per m": 505,
+            "Cured": "444",
+            "InWard": "5",
             "InICU": "3",
             "Deaths": "6",
-            "Active": 152,
-            "Lethality": "1.02%",
-            "New": 0,
+            "Active": 142,
+            "Lethality": "1.01%",
+            "New": "+1",
             "NewDeaths": 0
         },
         {
@@ -8015,23 +8015,23 @@
             "Province": "Canada",
             "Tests": "1296695",
             "Abbr": "Canada",
-            "Conf.": "76944",
-            "Per m": 2047,
-            "Cured": "38476",
+            "Conf.": "77002",
+            "Per m": 2049,
+            "Cured": "38563",
             "InWard": null,
             "InICU": null,
-            "Deaths": "5870",
-            "Active": 32598,
-            "Lethality": "7.63%",
-            "New": "+1080",
-            "NewDeaths": "+88"
+            "Deaths": "5887",
+            "Active": 32552,
+            "Lethality": "7.65%",
+            "New": "+1138",
+            "NewDeaths": "+105"
         }
     ],
     "overall": {
-        "confirmed": "76944",
-        "increased": 1080,
-        "recovered": "38476",
-        "death": "5870",
-        "lethality": "7.63%"
+        "confirmed": "77002",
+        "increased": 1138,
+        "recovered": "38563",
+        "death": "5887",
+        "lethality": "7.65%"
     }
 }
