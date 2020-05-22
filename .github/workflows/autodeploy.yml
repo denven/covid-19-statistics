@@ -1,10 +1,10 @@
 # This action is used to deploy latest data to AWS S3 every 1 hours
-name: CI-Auto-Deploy  
+name: CI-Auto-Deploy
 
-on: 
-    schedule:
-    - cron: '5 */1 * * *'
-      
+on:
+  schedule:
+    - cron: "5 */4 * * *"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,23 +14,24 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: 'us-west-2' 
-    # - name: Use Node.js ${{ matrix.node-version }}
-    #   uses: actions/setup-node@v1
-    #   with:
-    #     node-version: ${{ matrix.node-version }}
-    # - run: |
-    #     npm install
-    #     npm install react-scripts        
-    #   env:
-    #     CI: true  
-    - name: Upload latest data file to S3 bucket ...
-      run: aws s3 sync ./public/assets s3://covid-19-statistics/assets --acl public-read
+      - uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: "us-west-2"
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      # - run: |
+      #     npm install
+      #     npm install react-scripts
+      #   env:
+      #     CI: true
+      - name: Upload latest data file to S3 bucket ...
+        run:
+          aws s3 sync ./public/assets s3://covid-19-statistics/assets --acl public-read
           # npm run build
-          # npm run deploy  
+          # npm run deploy
