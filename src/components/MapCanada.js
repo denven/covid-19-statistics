@@ -95,7 +95,7 @@ export default function MapCanada() {
 				},
 				title: {
 					x: "center",
-					text: "Cases by Province in Canada",
+					text: "Cases by Province (clickable) in Canada",
 					subtext: "Data from https://www.canada.ca/en/public-health",
 					textStyle: { fontSize: 18 }
 				},
@@ -206,7 +206,9 @@ export default function MapCanada() {
 				return {
 					title: {
 						text:
-							"Cases by Province in Canada on " + cases.dates[index] + ", 2020"
+							"Cases by Province (clickable) in Canada on " +
+							cases.dates[index] +
+							", 2020"
 					}, //by day
 					series: [
 						{
