@@ -206,7 +206,7 @@ export default function MapCanada() {
 				return {
 					title: {
 						text:
-							"Cases by Province (clickable) in Canada on " +
+							"Cases by Province (clickable) on " +
 							cases.dates[index] +
 							", 2020"
 					}, //by day

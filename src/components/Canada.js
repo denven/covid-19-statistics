@@ -410,7 +410,6 @@ export default function Canada() {
 						style={switchStyle}
 						onClick={handleSwitch}
 					>
-						{" "}
 						View Table
 					</Button>
 					<MapCanada hisCases={hisCases} />
@@ -428,7 +427,6 @@ export default function Canada() {
 						style={switchStyle}
 						onClick={handleSwitch}
 					>
-						{" "}
 						View Map
 					</Button>
 					<div style={{ margin: "0 1rem 1rem 1rem" }}>
