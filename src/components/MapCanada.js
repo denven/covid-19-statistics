@@ -95,7 +95,7 @@ export default function MapCanada() {
 				},
 				title: {
 					x: "center",
-					text: "Cases by Province (clickable) in Canada",
+					text: "Cases by Province in Canada",
 					subtext: "Data from https://www.canada.ca/en/public-health",
 					textStyle: { fontSize: 18 }
 				},
