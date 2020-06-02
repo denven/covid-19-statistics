@@ -29,7 +29,7 @@ export default function MapGlobal({ mapData }) {
 
 					return {
 						name: convertNameToMap(name),
-						value: perMppl ? perMppl.replace(/,/g, "") : "",
+						value: perMppl ? perMppl.replace(/,/g, "") : "1",
 						activeCount: active.replace(/,/g, ""),
 						confirmedCount: total.replace(/,/g, ""),
 						increasedCount: increased.replace(/,/g, ""),
