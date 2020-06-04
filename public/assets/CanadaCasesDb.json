@@ -1,5 +1,5 @@
 {
-    "date": "2020-06-04 04:00:46",
+    "date": "2020-06-04 08:00:42",
     "cases": [
         {
             "date": "1/26",
@@ -9802,10 +9802,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "29047",
-                    "cured": "22811",
+                    "value": "29403",
+                    "cured": "23208",
                     "death": "2373",
-                    "lethality": "8.17%"
+                    "lethality": "8.07%"
                 },
                 {
                     "name": "Alberta",
@@ -9860,8 +9860,8 @@
                     "abbr": "NB",
                     "value": "135",
                     "cured": "120",
-                    "death": "0",
-                    "lethality": "0%"
+                    "death": "1",
+                    "lethality": "0.74%"
                 },
                 {
                     "name": "Prince Edward Island",
@@ -9926,15 +9926,15 @@
             "Province": "Ontario",
             "Tests": "740469",
             "Abbr": "ON",
-            "Conf.": "29047",
-            "Per m": 1995,
-            "Cured": "22811",
+            "Conf.": "29403",
+            "Per m": 2019,
+            "Cured": "23208",
             "InWard": "791",
             "InICU": "127",
             "Deaths": "2373",
-            "Active": 3863,
-            "Lethality": "8.17%",
-            "New": 0,
+            "Active": 3822,
+            "Lethality": "8.07%",
+            "New": "+356",
             "NewDeaths": 0
         },
         {
@@ -10036,11 +10036,11 @@
             "Cured": "120",
             "InWard": "5",
             "InICU": "1",
-            "Deaths": "0",
-            "Active": 15,
-            "Lethality": "0%",
+            "Deaths": "1",
+            "Active": 14,
+            "Lethality": "0.74%",
             "New": 0,
-            "NewDeaths": 0
+            "NewDeaths": "+1"
         },
         {
             "Province": "Prince Edward Island",
@@ -10121,23 +10121,23 @@
             "Province": "Canada",
             "Tests": "1755850",
             "Abbr": "Canada",
-            "Conf.": "93085",
-            "Per m": 2477,
-            "Cured": "51048",
+            "Conf.": "93441",
+            "Per m": 2486,
+            "Cured": "51445",
             "InWard": null,
             "InICU": null,
-            "Deaths": "7559",
-            "Active": 34478,
-            "Lethality": "8.12%",
-            "New": 0,
-            "NewDeaths": 0
+            "Deaths": "7560",
+            "Active": 34436,
+            "Lethality": "8.09%",
+            "New": "+356",
+            "NewDeaths": "+1"
         }
     ],
     "overall": {
-        "confirmed": "93085",
-        "increased": 0,
-        "recovered": "51048",
-        "death": "7559",
-        "lethality": "8.12%"
+        "confirmed": "93441",
+        "increased": 356,
+        "recovered": "51445",
+        "death": "7560",
+        "lethality": "8.09%"
     }
 }
