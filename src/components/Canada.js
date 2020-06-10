@@ -294,7 +294,8 @@ function CasesHisTrend({ prov, days, dayCases, dayNewCases }) {
 export default function Canada() {
 	const [hisCases, setCases] = useState({ dates: [], cases: [] });
 	const [provDetails, setDetail] = useState([]);
-	const [viewMode, setMode] = useState("map");
+	const initialMode = document.body.clientWidth >= 1024 ? "map" : "table";
+	const [viewMode, setMode] = useState(initialMode);
 	const [screenMode, setScreen] = useState("PORTRAIT");
 
 	let classes = useStyles();
