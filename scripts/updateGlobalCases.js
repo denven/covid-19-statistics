@@ -34,13 +34,15 @@ async function updateGlobalCases() {
 					dead,
 					newDeath,
 					recovered,
+					pad1, // for source data format change, added on June, 10th
 					active,
 					severe,
 					perMppl
 				] = rowColumns;
 				name = name.trim().replace(/,/g, "");
 				dead = dead.trim();
-				let continent = rowColumns.pop(); // get continent name
+
+				let continent = rowColumns[rowColumns.length - 3]; // get continent name
 				let placeCasesObj = {
 					name,
 					total,
@@ -54,7 +56,7 @@ async function updateGlobalCases() {
 					continent
 				};
 
-				if (continent === "All") {
+				if (rowColumns[rowColumns.length - 1] === "All") {
 					countryFlag = false;
 				} // end of today's data
 
@@ -62,8 +64,7 @@ async function updateGlobalCases() {
 					// use isNaN(name) to exclude continents' toll data
 					countries.push(placeCasesObj); // single country/place cases today
 				} else {
-					// if (name === "Total:" && continent === "All") {
-					if (continent === "All") {
+					if (rowColumns[rowColumns.length - 1] === "All") {
 						// console.log(rowColumns);
 						let [
 							name,
