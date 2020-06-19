@@ -1,5 +1,5 @@
 {
-    "date": "2020-06-19 04:01:06",
+    "date": "2020-06-19 08:01:07",
     "cases": [
         {
             "date": "1/26",
@@ -11717,10 +11717,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "32917",
-                    "cured": "28004",
+                    "value": "33095",
+                    "cured": "28250",
                     "death": "2605",
-                    "lethality": "7.91%"
+                    "lethality": "7.87%"
                 },
                 {
                     "name": "Alberta",
@@ -11841,15 +11841,15 @@
             "Province": "Ontario",
             "Tests": "1060845",
             "Abbr": "ON",
-            "Conf.": "32917",
-            "Per m": 2260,
-            "Cured": "28004",
-            "InWard": "351",
-            "InICU": "84",
+            "Conf.": "33095",
+            "Per m": 2272,
+            "Cured": "28250",
+            "InWard": "331",
+            "InICU": "82",
             "Deaths": "2605",
-            "Active": 2308,
-            "Lethality": "7.91%",
-            "New": 0,
+            "Active": 2240,
+            "Lethality": "7.87%",
+            "New": "+178",
             "NewDeaths": 0
         },
         {
@@ -12036,23 +12036,23 @@
             "Province": "Canada",
             "Tests": "2295364",
             "Abbr": "Canada",
-            "Conf.": "100220",
-            "Per m": 2667,
-            "Cured": "62496",
+            "Conf.": "100398",
+            "Per m": 2671,
+            "Cured": "62742",
             "InWard": null,
             "InICU": null,
             "Deaths": "8352",
-            "Active": 29372,
-            "Lethality": "8.33%",
-            "New": 0,
+            "Active": 29304,
+            "Lethality": "8.32%",
+            "New": "+178",
             "NewDeaths": 0
         }
     ],
     "overall": {
-        "confirmed": "100220",
-        "increased": 0,
-        "recovered": "62496",
+        "confirmed": "100398",
+        "increased": 178,
+        "recovered": "62742",
         "death": "8352",
-        "lethality": "8.33%"
+        "lethality": "8.32%"
     }
 }
