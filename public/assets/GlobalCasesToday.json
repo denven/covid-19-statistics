@@ -1,15 +1,15 @@
 {
-    "time": "2020-06-21 20:00:03",
+    "time": "2020-06-22 00:00:03",
     "countries": [
         {
             "name": "USA",
-            "total": "2,356,657",
-            "increased": "",
-            "dead": "122,247",
-            "newDeath": "",
-            "recovered": "980,355",
-            "active": "1,254,055",
-            "severe": " 16,477",
+            "total": "2,356,715",
+            "increased": "+58",
+            "dead": "122,248",
+            "newDeath": "+1",
+            "recovered": "980,367",
+            "active": "1,254,100",
+            "severe": "16,477",
             "perMppl": "7,121",
             "continent": "North America"
         },
@@ -56,7 +56,7 @@
             "dead": "42,632",
             "newDeath": "",
             "recovered": "N/A",
-            "active": " N/A",
+            "active": "N/A",
             "severe": "379",
             "perMppl": "4,484",
             "continent": "Europe"
@@ -80,7 +80,7 @@
             "dead": "8,045",
             "newDeath": "",
             "recovered": "141,967",
-            "active": " 104,924",
+            "active": "104,924",
             "severe": "1,143",
             "perMppl": "7,735",
             "continent": "South America"
@@ -142,7 +142,19 @@
             "recovered": "160,240",
             "active": "22,495",
             "severe": "803",
-            "perMppl": "2,226",
+            "perMppl": " 2,226",
+            "continent": "Asia"
+        },
+        {
+            "name": "Pakistan",
+            "total": "181,088",
+            "increased": "+4,471",
+            "dead": "3,590",
+            "newDeath": "+89",
+            "recovered": "71,458",
+            "active": "106,040",
+            "severe": "111",
+            "perMppl": "820",
             "continent": "Asia"
         },
         {
@@ -151,30 +163,18 @@
             "increased": "+5,343",
             "dead": "21,825",
             "newDeath": "+1,044",
-            "recovered": " 135,279",
+            "recovered": "135,279",
             "active": "23,441",
             "severe": "378",
             "perMppl": "1,401",
             "continent": "North America"
         },
         {
-            "name": "Pakistan",
-            "total": "176,617",
-            "increased": "",
-            "dead": "3,501",
-            "newDeath": "",
-            "recovered": "67,892",
-            "active": "105,224",
-            "severe": "111",
-            "perMppl": "800",
-            "continent": "Asia"
-        },
-        {
             "name": "France",
             "total": "160,377",
             "increased": "",
             "dead": "29,640",
-            "newDeath": " ",
+            "newDeath": "",
             "recovered": "74,372",
             "active": "56,365",
             "severe": "715",
@@ -328,7 +328,7 @@
         {
             "name": "Netherlands",
             "total": "49,593",
-            "increased": " ",
+            "increased": "",
             "dead": "6,090",
             "newDeath": "",
             "recovered": "N/A",
@@ -342,7 +342,7 @@
             "total": "45,891",
             "increased": "",
             "dead": "2,465",
-            "newDeath": "",
+            "newDeath": " ",
             "recovered": "18,404",
             "active": "25,022",
             "severe": "",
@@ -411,14 +411,14 @@
         },
         {
             "name": "Ukraine",
-            "total": "36,560",
-            "increased": "",
-            "dead": "1,002",
-            "newDeath": "",
-            "recovered": "16,509",
-            "active": "19,049",
-            "severe": "350",
-            "perMppl": "836",
+            "total": "37,241",
+            "increased": "+681",
+            "dead": "1,012",
+            "newDeath": "+10",
+            "recovered": "16,642",
+            "active": "19,587",
+            "severe": "353",
+            "perMppl": "851",
             "continent": "Europe"
         },
         {
@@ -459,7 +459,7 @@
         },
         {
             "name": "Philippines",
-            "total": "30,052",
+            "total": " 30,052",
             "increased": "",
             "dead": "1,169",
             "newDeath": "",
@@ -483,14 +483,14 @@
         },
         {
             "name": "Afghanistan",
-            "total": "28,833",
-            "increased": "",
-            "dead": "581",
-            "newDeath": "",
-            "recovered": "8,764",
-            "active": "19,488",
+            "total": "29,143",
+            "increased": "+310",
+            "dead": "598",
+            "newDeath": "+17",
+            "recovered": "8,841",
+            "active": "19,704",
             "severe": "19",
-            "perMppl": "741",
+            "perMppl": "749",
             "continent": "Asia"
         },
         {
@@ -579,14 +579,14 @@
         },
         {
             "name": "Armenia",
-            "total": "20,268",
-            "increased": "",
-            "dead": "350",
-            "newDeath": "",
-            "recovered": "9,002",
-            "active": "10,916",
+            "total": "20,588",
+            "increased": "+320",
+            "dead": "360",
+            "newDeath": "+10",
+            "recovered": "9,131",
+            "active": "11,097",
             "severe": "10",
-            "perMppl": "6,840",
+            "perMppl": "6,948",
             "continent": "Asia"
         },
         {
@@ -614,6 +614,18 @@
             "continent": "Asia"
         },
         {
+            "name": "Kazakhstan",
+            "total": "17,732",
+            "increased": "+507",
+            "dead": "120",
+            "newDeath": "",
+            "recovered": "10,897",
+            "active": "6,715",
+            "severe": "121",
+            "perMppl": "945",
+            "continent": " Asia"
+        },
+        {
             "name": "Austria",
             "total": "17,341",
             "increased": "",
@@ -626,18 +638,6 @@
             "continent": "Europe"
         },
         {
-            "name": "Kazakhstan",
-            "total": "17,225",
-            "increased": "",
-            "dead": "120",
-            "newDeath": "",
-            "recovered": "10,897",
-            "active": "6,208",
-            "severe": " 121",
-            "perMppl": "918",
-            "continent": "Asia"
-        },
-        {
             "name": "Moldova",
             "total": "14,200",
             "increased": "",
@@ -647,7 +647,7 @@
             "active": "5,831",
             "severe": "440",
             "perMppl": "3,520",
-            "continent": "Europe"
+            "continent": " Europe"
         },
         {
             "name": "Ghana",
@@ -726,7 +726,7 @@
             "total": "12,391",
             "increased": "",
             "dead": "600",
-            "newDeath": " ",
+            "newDeath": "",
             "recovered": "11,282",
             "active": "509",
             "severe": "6",
@@ -750,7 +750,7 @@
             "total": "11,771",
             "increased": "",
             "dead": "845",
-            "newDeath": " ",
+            "newDeath": "",
             "recovered": "8,422",
             "active": "2,504",
             "severe": "41",
@@ -814,7 +814,7 @@
             "recovered": "3,325",
             "active": "4,734",
             "severe": "",
-            "perMppl": "196",
+            "perMppl": " 196",
             "continent": "Africa"
         },
         {
@@ -838,17 +838,17 @@
             "recovered": "3,068",
             "active": "4,370",
             "severe": "",
-            "perMppl": "284",
+            "perMppl": " 284",
             "continent": "Africa"
         },
         {
             "name": "Australia",
-            "total": "7,461",
-            "increased": "",
+            "total": "7,474",
+            "increased": "+13",
             "dead": "102",
             "newDeath": "",
-            "recovered": "6,896",
-            "active": "463",
+            "recovered": "6,903",
+            "active": "469",
             "severe": "2",
             "perMppl": "293",
             "continent": "Australia/Oceania"
@@ -867,14 +867,14 @@
         },
         {
             "name": "Uzbekistan",
-            "total": "6,315",
-            "increased": "",
+            "total": "6,358",
+            "increased": "+43",
             "dead": "19",
             "newDeath": "",
             "recovered": "4,377",
-            "active": "1,919",
-            "severe": "16",
-            "perMppl": "189",
+            "active": "1,962",
+            "severe": "18",
+            "perMppl": "190",
             "continent": "Asia"
         },
         {
@@ -884,7 +884,7 @@
             "dead": "84",
             "newDeath": "",
             "recovered": "3,919",
-            "active": "1,885",
+            "active": " 1,885",
             "severe": "16",
             "perMppl": "352",
             "continent": "Africa"
@@ -892,7 +892,7 @@
         {
             "name": "DRC",
             "total": "5,826",
-            "increased": " ",
+            "increased": "",
             "dead": "130",
             "newDeath": "",
             "recovered": "841",
@@ -914,9 +914,21 @@
             "continent": "Asia"
         },
         {
+            "name": "Haiti",
+            "total": "5,211",
+            "increased": "+134",
+            "dead": "88",
+            "newDeath": "",
+            "recovered": "24",
+            "active": "5,099",
+            "severe": "",
+            "perMppl": "457",
+            "continent": "North America"
+        },
+        {
             "name": "North Macedonia",
             "total": "5,106",
-            "increased": " ",
+            "increased": "",
             "dead": "238",
             "newDeath": "",
             "recovered": "1,926",
@@ -924,18 +936,6 @@
             "severe": "34",
             "perMppl": "2,451",
             "continent": "Europe"
-        },
-        {
-            "name": "Haiti",
-            "total": "5,077",
-            "increased": "",
-            "dead": "88",
-            "newDeath": "",
-            "recovered": "24",
-            "active": "4,965",
-            "severe": "",
-            "perMppl": "445",
-            "continent": "North America"
         },
         {
             "name": "Guinea",
@@ -965,10 +965,10 @@
             "name": "El Salvador",
             "total": "4,626",
             "increased": "",
-            "dead": "98",
-            "newDeath": "",
-            "recovered": "2,535",
-            "active": "1,993",
+            "dead": "107",
+            "newDeath": "+9",
+            "recovered": "2,542",
+            "active": "1,977",
             "severe": "136",
             "perMppl": "713",
             "continent": "North America"
@@ -987,7 +987,7 @@
         },
         {
             "name": "Ethiopia",
-            "total": " 4,532",
+            "total": "4,532",
             "increased": "",
             "dead": "74",
             "newDeath": "",
@@ -1023,15 +1023,27 @@
         },
         {
             "name": "Hungary",
-            "total": "4,094",
-            "increased": "",
-            "dead": "570",
-            "newDeath": "",
-            "recovered": "2,589",
-            "active": "935",
-            "severe": "15",
-            "perMppl": "424",
+            "total": "4,102",
+            "increased": "+8",
+            "dead": "572",
+            "newDeath": " +2",
+            "recovered": "2,590",
+            "active": "940",
+            "severe": "14",
+            "perMppl": "425",
             "continent": "Europe"
+        },
+        {
+            "name": "Venezuela",
+            "total": "3,917",
+            "increased": "",
+            "dead": "33",
+            "newDeath": "",
+            "recovered": "835",
+            "active": "3,049",
+            "severe": "6",
+            "perMppl": "138",
+            "continent": "South America"
         },
         {
             "name": "Bulgaria",
@@ -1046,21 +1058,21 @@
             "continent": "Europe"
         },
         {
-            "name": "Venezuela",
-            "total": "3,789",
-            "increased": "",
-            "dead": "33",
-            "newDeath": "",
-            "recovered": "835",
-            "active": "2,921",
-            "severe": "6",
-            "perMppl": "133",
-            "continent": "South America"
+            "name": "Kyrgyzstan",
+            "total": "3,356",
+            "increased": "+205",
+            "dead": "40",
+            "newDeath": "+3",
+            "recovered": "2,021",
+            "active": "1,295",
+            "severe": "30",
+            "perMppl": "515",
+            "continent": "Asia"
         },
         {
             "name": "Bosnia and Herzegovina",
             "total": "3,273",
-            "increased": "",
+            "increased": " ",
             "dead": "169",
             "newDeath": "",
             "recovered": "2,241",
@@ -1082,25 +1094,13 @@
             "continent": "Europe"
         },
         {
-            "name": "Kyrgyzstan",
-            "total": "3,151",
-            "increased": "",
-            "dead": "37",
-            "newDeath": "",
-            "recovered": "2,011",
-            "active": "1,103",
-            "severe": "30",
-            "perMppl": "483",
-            "continent": "Asia"
-        },
-        {
             "name": "Thailand",
-            "total": "3,148",
-            "increased": "",
+            "total": "3,151",
+            "increased": "+3",
             "dead": "58",
             "newDeath": "",
-            "recovered": "3,018",
-            "active": "72",
+            "recovered": "3,022",
+            "active": "71",
             "severe": "1",
             "perMppl": "45",
             "continent": "Asia"
@@ -1515,15 +1515,15 @@
         },
         {
             "name": "Georgia",
-            "total": "906",
-            "increased": "",
+            "total": "908",
+            "increased": "+2",
             "dead": "14",
             "newDeath": "",
-            "recovered": "755",
-            "active": "137",
+            "recovered": "761",
+            "active": "133",
             "severe": "5",
-            "perMppl": "227",
-            "continent": "Asia"
+            "perMppl": "228",
+            "continent": " Asia"
         },
         {
             "name": "Burkina Faso",
@@ -1547,7 +1547,7 @@
             "active": "469",
             "severe": "",
             "perMppl": "1,601",
-            "continent": "Africa"
+            "continent": " Africa"
         },
         {
             "name": "Congo",
@@ -1571,7 +1571,7 @@
             "active": "37",
             "severe": "4",
             "perMppl": "252",
-            "continent": "South America"
+            "continent": " South America"
         },
         {
             "name": "Chad",
@@ -1595,7 +1595,7 @@
             "active": "11",
             "severe": "8",
             "perMppl": "11,066",
-            "continent": "Europe"
+            "continent": " Europe"
         },
         {
             "name": "Palestine",
@@ -1619,7 +1619,7 @@
             "active": "192",
             "severe": "",
             "perMppl": "17",
-            "continent": "Africa"
+            "continent": " Africa"
         },
         {
             "name": "Benin",
@@ -1690,7 +1690,7 @@
             "active": "483",
             "severe": "",
             "perMppl": "3,187",
-            "continent": "Africa"
+            "continent": " Africa"
         },
         {
             "name": "San Marino",
@@ -1714,7 +1714,7 @@
             "active": "40",
             "severe": "",
             "perMppl": "1,506",
-            "continent": "Europe"
+            "continent": " Europe"
         },
         {
             "name": "Jamaica",
@@ -1934,14 +1934,14 @@
         },
         {
             "name": "Mongolia",
-            "total": "206",
-            "increased": "",
+            "total": "213",
+            "increased": "+7",
             "dead": "",
             "newDeath": "",
-            "recovered": "139",
-            "active": "67",
+            "recovered": "153",
+            "active": "60",
             "severe": "8",
-            "perMppl": "63",
+            "perMppl": "65",
             "continent": "Asia"
         },
         {
@@ -2190,8 +2190,8 @@
             "increased": "",
             "dead": "",
             "newDeath": "",
-            "recovered": "30",
-            "active": "38",
+            "recovered": "32",
+            "active": "36",
             "severe": "",
             "perMppl": "88",
             "continent": "Asia"
@@ -2240,7 +2240,7 @@
             "newDeath": "",
             "recovered": "36",
             "active": "3",
-            "severe": " 1",
+            "severe": "1",
             "perMppl": "1,087",
             "continent": "North America"
         },
@@ -2312,7 +2312,7 @@
             "newDeath": "",
             "recovered": "19",
             "active": "3",
-            "severe": "",
+            "severe": " ",
             "perMppl": "140",
             "continent": "North America"
         },
@@ -2359,7 +2359,7 @@
             "dead": "",
             "newDeath": "",
             "recovered": "19",
-            "active": "0",
+            "active": " 0",
             "severe": "",
             "perMppl": "3",
             "continent": "Asia"
@@ -2383,7 +2383,7 @@
             "dead": "",
             "newDeath": "",
             "recovered": "18",
-            "active": "0",
+            "active": " 0",
             "severe": "",
             "perMppl": "250",
             "continent": "North America"
@@ -2430,7 +2430,7 @@
             "increased": "",
             "dead": "",
             "newDeath": "",
-            "recovered": "13",
+            "recovered": " 13",
             "active": "0",
             "severe": "",
             "perMppl": "3,740",
@@ -2453,7 +2453,7 @@
             "total": "11",
             "increased": "",
             "dead": "",
-            "newDeath": "",
+            "newDeath": " ",
             "recovered": "11",
             "active": "0",
             "severe": "",
@@ -2474,14 +2474,14 @@
         },
         {
             "name": "Western Sahara",
-            "total": "9",
-            "increased": "",
+            "total": "10",
+            "increased": "+1",
             "dead": "1",
             "newDeath": "",
             "recovered": "8",
-            "active": "0",
+            "active": "1",
             "severe": "",
-            "perMppl": "15",
+            "perMppl": "17",
             "continent": "Africa"
         },
         {
@@ -2489,7 +2489,7 @@
             "total": "9",
             "increased": "",
             "dead": "2",
-            "newDeath": "",
+            "newDeath": " ",
             "recovered": "",
             "active": "7",
             "continent": ""
@@ -2499,7 +2499,7 @@
             "total": "8",
             "increased": "",
             "dead": "",
-            "newDeath": "",
+            "newDeath": " ",
             "recovered": "8",
             "active": "0",
             "severe": "",
@@ -2521,7 +2521,7 @@
         {
             "name": "Caribbean Netherlands",
             "total": "7",
-            "increased": " ",
+            "increased": "",
             "dead": "",
             "newDeath": "",
             "recovered": "7",
@@ -2568,7 +2568,7 @@
         },
         {
             "name": "Saint Pierre Miquelon",
-            "total": " 1",
+            "total": "1",
             "increased": "",
             "dead": "",
             "newDeath": "",
@@ -2581,14 +2581,14 @@
     ],
     "overall": {
         "name": "Total:",
-        "total": "9,046,067",
-        "increased": "+7,258",
-        "dead": "470,703",
-        "newDeath": "+1,099",
-        "recovered": "4,838,338",
-        "active": "+4,199",
-        "server": "3,737,026",
-        "perMppl": "54,734",
+        "total": "9,052,958",
+        "increased": "+14,021",
+        "dead": "470,844",
+        "newDeath": "+1,240",
+        "recovered": "4,842,306",
+        "active": "+8,167",
+        "server": "3,739,808",
+        "perMppl": "54,738",
         "continent": ""
     }
 }
