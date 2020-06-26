@@ -1,5 +1,5 @@
 {
-    "date": "2020-06-26 04:00:33",
+    "date": "2020-06-26 08:00:36",
     "cases": [
         {
             "name": "New York",
@@ -93,12 +93,12 @@
         },
         {
             "name": "Maryland",
-            "confirmed": "65,777",
-            "increased": "",
-            "death": "3,129",
-            "perMppl": "10,880",
-            "newDeath": "",
-            "deathRate": "4.76%"
+            "confirmed": "66,115",
+            "increased": "+338",
+            "death": "3,142",
+            "perMppl": "10,936",
+            "newDeath": "+13",
+            "deathRate": "4.75%"
         },
         {
             "name": "Arizona",
@@ -111,12 +111,12 @@
         },
         {
             "name": "Virginia",
-            "confirmed": "59,946",
-            "increased": "",
-            "death": "1,675",
-            "perMppl": "7,023",
-            "newDeath": "",
-            "deathRate": "2.79%"
+            "confirmed": "60,570",
+            "increased": "+624",
+            "death": "1,700",
+            "perMppl": "7,096",
+            "newDeath": "+25",
+            "deathRate": "2.81%"
         },
         {
             "name": "North Carolina",
@@ -219,12 +219,12 @@
         },
         {
             "name": "Iowa",
-            "confirmed": "27,384",
-            "increased": "+88",
+            "confirmed": "27,552",
+            "increased": "+256",
             "death": "701",
-            "perMppl": "8,679",
+            "perMppl": "8,733",
             "newDeath": "+5",
-            "deathRate": "2.56%"
+            "deathRate": "2.54%"
         },
         {
             "name": "Wisconsin",
@@ -345,12 +345,12 @@
         },
         {
             "name": "District Of Columbia",
-            "confirmed": "10,159",
-            "increased": "",
-            "death": "543",
-            "perMppl": "14,395",
-            "newDeath": "",
-            "deathRate": "5.35%"
+            "confirmed": "10,185",
+            "increased": "+26",
+            "death": "546",
+            "perMppl": "14,431",
+            "newDeath": "+3",
+            "deathRate": "5.36%"
         },
         {
             "name": "Oregon",
@@ -408,12 +408,12 @@
         },
         {
             "name": "West Virginia",
-            "confirmed": "2,694",
-            "increased": "",
+            "confirmed": "2,712",
+            "increased": "+18",
             "death": "92",
-            "perMppl": "1,503",
+            "perMppl": "1,513",
             "newDeath": "",
-            "deathRate": "3.41%"
+            "deathRate": "3.39%"
         },
         {
             "name": "Wyoming",
@@ -462,12 +462,12 @@
         },
         {
             "name": "Guam",
-            "confirmed": "231",
-            "increased": "",
+            "confirmed": "247",
+            "increased": "+16",
             "death": "5",
             "perMppl": "",
             "newDeath": "",
-            "deathRate": "2.16%"
+            "deathRate": "2.02%"
         },
         {
             "name": "Northern Mariana Islands",
@@ -480,30 +480,30 @@
         },
         {
             "name": "Puerto Rico",
-            "confirmed": "6,877",
-            "increased": "",
+            "confirmed": "6,922",
+            "increased": "+45",
             "death": "151",
-            "perMppl": "2,030",
+            "perMppl": "2,044",
             "newDeath": "",
-            "deathRate": "2.20%"
+            "deathRate": "2.18%"
         },
         {
             "name": "United States Virgin Islands",
-            "confirmed": "80",
-            "increased": "",
+            "confirmed": "81",
+            "increased": "+1",
             "death": "6",
             "perMppl": "",
             "newDeath": "",
-            "deathRate": "7.50%"
+            "deathRate": "7.41%"
         },
         {
             "name": "Veteran Affairs",
-            "confirmed": "20,172",
-            "increased": "",
-            "death": "1,561",
+            "confirmed": "20,509",
+            "increased": "+337",
+            "death": "1,573",
             "perMppl": "",
-            "newDeath": "",
-            "deathRate": "7.74%"
+            "newDeath": "+12",
+            "deathRate": "7.67%"
         },
         {
             "name": "US Military",
@@ -515,6 +515,15 @@
             "deathRate": "0.25%"
         },
         {
+            "name": "Navajo Nation",
+            "confirmed": "7,278",
+            "increased": "+121",
+            "death": "348",
+            "perMppl": "",
+            "newDeath": "+1",
+            "deathRate": "4.78%"
+        },
+        {
             "name": "Federal Prisons",
             "confirmed": "7,158",
             "increased": "",
@@ -522,15 +531,6 @@
             "perMppl": "",
             "newDeath": "",
             "deathRate": "1.26%"
-        },
-        {
-            "name": "Navajo Nation",
-            "confirmed": "7,157",
-            "increased": "",
-            "death": "347",
-            "perMppl": "",
-            "newDeath": "",
-            "deathRate": "4.85%"
         },
         {
             "name": "Grand Princess Ship",
@@ -561,19 +561,19 @@
         },
         {
             "name": "Total:",
-            "confirmed": "2,504,676",
-            "increased": "+88",
-            "death": "126,785",
-            "perMppl": "7,567",
-            "newDeath": "+5",
+            "confirmed": "2,506,370",
+            "increased": "+1,782",
+            "death": "126,839",
+            "perMppl": "7,572",
+            "newDeath": "+59",
             "deathRate": "5.06%"
         }
     ],
     "overall": {
-        "confirmed": "2,504,676",
-        "increased": "+88",
-        "cured": 1052389,
-        "death": "126,785",
+        "confirmed": "2,506,370",
+        "increased": "+1,782",
+        "cured": 1052446,
+        "death": "126,839",
         "fatality": "5.06%"
     }
 }
