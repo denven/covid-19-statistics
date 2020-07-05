@@ -1,5 +1,5 @@
 {
-    "date": "2020-07-05 12:00:38",
+    "date": "2020-07-05 16:00:32",
     "cases": [
         {
             "date": "1/26",
@@ -13591,7 +13591,7 @@
                     "abbr": "ON",
                     "value": "35794",
                     "cured": "31266",
-                    "death": "2733",
+                    "death": "2734",
                     "lethality": "7.64%"
                 },
                 {
@@ -13718,11 +13718,11 @@
             "Cured": "31266",
             "InWard": "139",
             "InICU": "39",
-            "Deaths": "2733",
-            "Active": 1795,
+            "Deaths": "2734",
+            "Active": 1794,
             "Lethality": "7.64%",
             "New": "+138",
-            "NewDeaths": 0
+            "NewDeaths": "+1"
         },
         {
             "Province": "Alberta",
@@ -13821,7 +13821,7 @@
             "Conf.": "165",
             "Per m": 213,
             "Cured": "162",
-            "InWard": "1",
+            "InWard": null,
             "InICU": null,
             "Deaths": "2",
             "Active": 1,
@@ -13913,18 +13913,18 @@
             "Cured": "69239",
             "InWard": null,
             "InICU": null,
-            "Deaths": "8728",
-            "Active": 27569,
+            "Deaths": "8729",
+            "Active": 27568,
             "Lethality": "8.27%",
             "New": "+219",
-            "NewDeaths": "+8"
+            "NewDeaths": "+9"
         }
     ],
     "overall": {
         "confirmed": "105536",
         "increased": 219,
         "recovered": "69239",
-        "death": "8728",
+        "death": "8729",
         "lethality": "8.27%"
     }
 }
