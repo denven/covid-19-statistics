@@ -2,15 +2,75 @@
     "articles": [
         {
             "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-07-09T22:28:55Z",
+            "title": "Coronavirus stress leads to stress and 'broken hearts' - Click On Detroit | Local 4 | WDIV",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9YUJqOFZpUkJNV03SAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "publishedAt": "2020-07-09T21:45:00Z",
+            "title": "Americans made 'tremendous sacrifices.' The great reopening of the pandemic summer still got derailed - CNN",
+            "url": "https://www.cnn.com/2020/07/09/us/us-coronavirus-summer-reopening/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200706095134-03-weekend-crowds-0703-miami-beach-super-tease.jpg",
+            "description": "The big US reopening of the pandemic summer has gone off track after uncontrollable surge in coronavirus cases.",
+            "content": "(CNN)The sprawling Camp Ozark in Mount Ida, Arkansas, was shuttered after an undisclosed number of campers and a counselor contracted the coronavirus. \r\nHarvard University students will take courses … [+6800 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-07-09T21:31:45Z",
+            "title": "Study Finds Coronavirus Could Cause Brain Damage - Newsy",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9TjFhZ2hGWVR5SkHSAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Euronews"
+            },
+            "publishedAt": "2020-07-09T21:17:58Z",
+            "title": "Airborne spread of coronavirus may be possible, World Health Organization says - Euronews",
+            "url": "https://www.euronews.com/2020/07/09/airborne-spread-of-coronavirus-may-be-possible-world-health-organization-says",
+            "urlToImage": "https://static.euronews.com/articles/stories/04/80/41/74/1000x563_cmsv2_7a3cc209-5410-5d04-ba5e-92b14f99d761-4804174.jpg",
+            "description": "The WHO scientific brief was published after more than 200 experts wrote in an open letter to the World Health Organization about airborne transmission of the virus.",
+            "content": "The World Health Organization (WHO) said on Thursday that indoor airborne transmission of the coronavirus may be possible after more than 200 scientists urged them to address it. \r\nThe organisation h… [+2160 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "publishedAt": "2020-07-09T20:43:00Z",
+            "title": "Oregon woman has battled coronavirus symptoms since March - CNN",
+            "url": "https://www.cnn.com/2020/07/09/us/chelsea-alionar-long-battle-with-covid/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200709144713-chelsea-alionar-super-tease.jpg",
+            "description": "Chelsea Alionar hoped she'd be better by now.",
+            "content": null
+        },
+        {
+            "source": {
                 "id": null,
                 "name": "Global News"
             },
-            "publishedAt": "2020-07-09T16:56:27Z",
-            "title": "WHO says more research needed on possible airborne transmission of coronavirus - Global News",
-            "url": "http://globalnews.ca/news/7157668/coronavirus-airborne-transmission/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/07/2020-07-08t000000z_1448996453_rc2xoh9hteus_rtrmadp_3_health-coronavirus-britain-tedros.jpg?quality=85&strip=all&w=720&h=379&crop=1",
-            "description": "The agency said some outbreak reports related to indoor crowded spaces have suggested the possibility of aerosol transmission, combined with droplet transmission, such as during choir practice, in restaurants or in fitness classes.",
-            "content": "The World Health Organization on Thursday released new guidelines on the transmission of the novel coronavirus that acknowledge some reports of airborne transmission of the virus that causes COVID-19… [+2470 chars]"
+            "publishedAt": "2020-07-09T18:33:41Z",
+            "title": "Coronavirus: Health unit order aims to protect migrant farm workers in Kawarthas, Haliburton, Northumberland - Globalnews.ca",
+            "url": "http://globalnews.ca/news/7158488/coronavirus-health-unit-issues-order-for-farms-employing-migrant-workers-in-kawartha-lakes-haliburton-northumberland/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2018/09/cpt125503241.jpg?quality=85&strip=all&w=720&h=379&crop=1",
+            "description": "The Haliburton, Kawartha, Pine Ridge District Health Unit has issued an order for farms that employ migrant workers to help prevent the spread of the novel coronavirus.",
+            "content": "The Haliburton, Kawartha, Pine Ridge District Health Unit has issued an order for agricultural farms with migrant workers to help mitigate the spread of the novel coronavirus.\r\nThe order, under Secti… [+2488 chars]"
         },
         {
             "source": {
@@ -27,62 +87,14 @@
         {
             "source": {
                 "id": null,
-                "name": "WKMG News 6 & ClickOrlando"
-            },
-            "publishedAt": "2020-07-09T15:55:00Z",
-            "title": "Doctor: Florida is coronavirus epicenter for the Southeast - WKMG News 6 & ClickOrlando",
-            "url": "https://www.clickorlando.com/news/local/2020/07/09/doctor-florida-is-coronavirus-epicenter-for-the-southeast/",
-            "urlToImage": "https://www.clickorlando.com/resizer/UexymsVKq-m_ntqC7i4ob5d_GSs=/1600x1066/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/cloudfront-us-east-1.images.arcpublishing.com/gmg/5XLLZZKBHNG5NEB3ICSLZGRZCI.jpg",
-            "description": "Florida has taken its place as the leader in rising coronavirus cases in the United States.",
-            "content": "Florida has taken its place among the leaders in rising coronavirus cases in the United States.\r\nTheres Texas and Arizona. (Florida is) the epicenter for the Southeast, Dr. Jay Wolfson of the Univers… [+3600 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Global News"
-            },
-            "publishedAt": "2020-07-09T14:51:55Z",
-            "title": "Why some people still refuse to wear masks - Globalnews.ca",
-            "url": "http://globalnews.ca/news/7152424/psychology-behind-anti-masks/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/07/untitled-design-47.png?w=720&h=379&crop=1",
-            "description": "Masks are a physical symbol that things have changed during the coronavirus pandemic and we have to adapt from the way we previously lived.",
-            "content": "Public health and government officials say that mask-wearing is an important part of helping to curb the spread of the novel coronavirus but not everyone is listening.\r\nAcross the U.S., fights have e… [+11198 chars]"
-        },
-        {
-            "source": {
-                "id": null,
                 "name": "Yahoo Entertainment"
             },
-            "publishedAt": "2020-07-09T13:28:00Z",
-            "title": "Revealed: The areas with the highest number of new coronavirus cases in England - Yahoo News Canada",
-            "url": "https://ca.news.yahoo.com/coronavirus-new-cases-data-england-132849171.html",
-            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/EsGXLj9LDqPANl9uXrx6gQ--~B/aD0yNjIwO3c9NDAwMDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-images/2020-07/de41ba00-c1cc-11ea-bf7b-312447db693e",
-            "description": "The government has revealed the areas which had the most new coronavirus cases in England last week.",
-            "content": "The government has revealed the areas which had the most new coronavirus cases in England last week.\r\nThough Leicester remains the council area with the most new cases per 100,000 people in the week … [+4495 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Toronto Star"
-            },
-            "publishedAt": "2020-07-09T10:29:34Z",
-            "title": "Today's coronavirus news: Mississauga joins Toronto with mandatory mask bylaw; COVID-19 shows no signs of slowing in U.S., India, Brazil - StCatharinesStandard.ca",
-            "url": "https://www.thestar.com/news/canada/2020/07/09/coronavirus-covid-19-updates-gta-toronto-canada-july-9.html",
-            "urlToImage": "https://images.thestar.com/5gsCKI2jqpsVN9wYY9eN4zlhq-0=/1200x800/smart/filters:cb(1594313543924)/https://www.thestar.com/content/dam/thestar/news/canada/2020/07/09/coronavirus-covid-19-updates-gta-toronto-canada-july-9/mask.jpg",
-            "description": "The virus is showing no signs of slowing in the worst-affected countries: the United States, Brazil and India.",
-            "content": "The latest coronavirusnews from Canada and around the world Thursday. This file will be updated throughout the day. Web links to longer stories if available.\r\n12 p.m.: Prince Edward Island’s chief me… [+13694 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Theguardian.comus-news"
-            },
-            "publishedAt": "2020-07-09T09:00:00Z",
-            "title": "How accurate are antibody tests and is it worth getting one? - The Guardian",
-            "url": "https://amp.theguardian.comus-news/2020/jul/09/antibody-tests-covid-19-immunity-should-i-get-one-coronavirus",
-            "urlToImage": "https://i.guim.co.uk/img/media/8f67db670c64fe250216abf6d8be035cc7ea0e64/0_200_6000_3600/master/6000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=c9f158540f8db123e0490e58d57ffd81",
-            "description": "As many as a quarter of all New Yorkers may have coronavirus antibodies – but it’s unclear whether antibodies confer immunity from the virus",
-            "content": "Across the US, Americans are anxious to learn whether they may have been infected with the coronavirus which they hope would offer some immunity going forward. In New York, researchers found that nea… [+4482 chars]"
+            "publishedAt": "2020-07-09T14:10:00Z",
+            "title": "The three places in England with zero new coronavirus cases - Yahoo Canada Shine On",
+            "url": "https://ca.style.yahoo.com/areas-england-zero-coronavirus-cases-141017119.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/CueX0rEa5a.GCPXLU9sg2w--~B/aD0yMzM1O3c9MzUyNTtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-images/2020-06/09cdfa00-a597-11ea-9fb7-ff7ed3729b74",
+            "description": "These three areas had no new infections in the week ending 5 July.",
+            "content": "Three places in England recorded no new coronavirus cases last week, the government has revealed.\r\nPublic Health Englands latest COVID-19 surveillance report, released on Thursday, showed Bath and No… [+1899 chars]"
         },
         {
             "source": {
@@ -95,18 +107,6 @@
             "urlToImage": null,
             "description": null,
             "content": null
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "National Post"
-            },
-            "publishedAt": "2020-07-09T01:59:32Z",
-            "title": "Mexico posts new case record to overtake Spain; official says virus 'slowing' - National Post",
-            "url": "https://nationalpost.com/pmn/health-pmn/mexico-posts-new-case-record-to-overtake-spain-official-says-virus-slowing",
-            "urlToImage": null,
-            "description": "MEXICO CITY — Mexico on Wednesday posted a fresh record for new coronavirus cases reported on a single day, with 6,995 infections, overtaking Spain to register the world’s eighth highest case count, according to a Reuters tally.",
-            "content": "MEXICO CITY Mexico on Wednesday posted a fresh record for new coronavirus cases reported on a single day, with 6,995 infections, overtaking Spain to register the worlds eighth highest case count, acc… [+1357 chars]"
         },
         {
             "source": {
@@ -125,42 +125,6 @@
                 "id": null,
                 "name": "Global News"
             },
-            "publishedAt": "2020-07-08T20:43:40Z",
-            "title": "Strokes, ‘lumpy’ lungs: what doctors know about unusual ways coronavirus attacks your body - Globalnews.ca",
-            "url": "http://globalnews.ca/news/7154380/strokes-lungs-coronavirus-blood/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/04/mti501-324_2020_152105.jpg?quality=85&strip=all&w=720&h=379&crop=1",
-            "description": "Growing evidence that coronavirus can lead to blood clots and damage to blood vessels could affect how we treat the disease, doctors say.",
-            "content": "Dr. Clare Bryce and her team have performed about 100 autopsies on COVID-19 patients at New Yorks Mount Sinai Health System, and in that time, shes begun to notice some patterns.\r\nMany of the decease… [+6686 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "BBC News"
-            },
-            "publishedAt": "2020-07-08T20:09:55Z",
-            "title": "Coronavirus: How fast is it spreading in Africa? - BBC News",
-            "url": "https://www.bbc.com/news/world-africa-53181555",
-            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/CDBA/production/_113266625_kenyakidsmasks.jpg",
-            "description": "There are fears that the number of cases is growing rapidly, so what are the key trends?",
-            "content": "Image copyrightGetty Images\r\nAfrica is seeing coronavirus cases rapidly increasing and deaths rising, according to the World Health Organization (WHO). \r\nWe've looked at the situation across the cont… [+6249 chars]"
-        },
-        {
-            "source": {
-                "id": "financial-post",
-                "name": "Financial Post"
-            },
-            "publishedAt": "2020-07-08T19:09:17Z",
-            "title": "Virus tricks the body into attacking brain; common heartburn drugs linked to coronavirus risk - Regina Leader-Post",
-            "url": "https://business.financialpost.com/pmn/business-pmn/virus-tricks-the-body-into-attacking-brain-common-heartburn-drugs-linked-to-coronavirus-risk",
-            "urlToImage": null,
-            "description": "The following is a brief roundup of some of the latest scientific studies on the novel coronavirus and efforts to find treatments and vaccines for COVID-19, the illness caused by the virus.",
-            "content": "The following is a brief roundup of some of the latest scientific studies on the novel coronavirus and efforts to find treatments and vaccines for COVID-19, the illness caused by the virus.\r\nCoronavi… [+1409 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Global News"
-            },
             "publishedAt": "2020-07-08T18:10:50Z",
             "title": "Nausea, diarrhea are now official symptoms of COVID-19: CDC - Globalnews.ca",
             "url": "http://globalnews.ca/news/7152027/coronavirus-most-common-symptoms/",
@@ -170,15 +134,27 @@
         },
         {
             "source": {
-                "id": null,
-                "name": "The Sun"
+                "id": "google-news",
+                "name": "Google News"
             },
-            "publishedAt": "2020-07-08T14:56:00Z",
-            "title": "UK coronavirus death toll rises by 126 to 44,517 but Northern Ireland reports no fatalities for SIXTH day in - The Sun",
-            "url": "http://www.thesun.co.uk/news/12063895/uk-deaths-coronavirus-bug-figures/",
-            "urlToImage": "https://www.thesun.co.uk/wp-content/uploads/2020/07/NINTCHDBPICT000593079397-1.jpg?strip=all&quality=100&w=1200&h=800&crop=1",
-            "description": "",
-            "content": "NORTHERN Ireland has reported no new coronavirus deaths for the sixth day running - as the UK's toll rises by 126.\r\nThe grim death tally has now risen to 44,517, health officials said today, but the … [+3266 chars]"
+            "publishedAt": "2020-07-08T16:08:29Z",
+            "title": "U.S. Coronavirus Cases Surpass 3 Million as States Pull Back on Reopening - Newsweek",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiYmh0dHBzOi8vd3d3Lm5ld3N3ZWVrLmNvbS91cy1jb3JvbmF2aXJ1cy1jYXNlcy1zdXJwYXNzLTMtbWlsbGlvbi1zdGF0ZXMtcHVsbC1iYWNrLXJlb3BlbmluZy0xNTE1Njgz0gFoaHR0cHM6Ly93d3cubmV3c3dlZWsuY29tL3VzLWNvcm9uYXZpcnVzLWNhc2VzLXN1cnBhc3MtMy1taWxsaW9uLXN0YXRlcy1wdWxsLWJhY2stcmVvcGVuaW5nLTE1MTU2ODM_YW1wPTE?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Global News"
+            },
+            "publishedAt": "2020-07-08T15:43:52Z",
+            "title": "67 active COVID-19 cases remain in Waterloo Region - Globalnews.ca",
+            "url": "http://globalnews.ca/news/7152636/kitchener-waterloo-coronavirus-cases-july-8-covid19/",
+            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/06/23354057.jpg?quality=85&strip=all&w=720&h=379&crop=1",
+            "description": "The number of active coronavirus cases in the region reached 171 on June 3, but it has been on the decline since then.",
+            "content": "The number of active COVID-19 cases continues its descent southward in the region as 67 active cases remain, Waterloo Public Health announced Wednesday morning.\r\nOn June 3, the number reached 171 but… [+1128 chars]"
         },
         {
             "source": {
