@@ -2,6 +2,42 @@
     "articles": [
         {
             "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-07-12T21:21:35Z",
+            "title": "More than 70 workers contract coronavirus at farm in Herefordshire - BBC News - BBC News",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9OVQ4ZmxkbExhUW_SAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "publishedAt": "2020-07-12T20:02:00Z",
+            "title": "First cases of coronavirus-related inflammatory syndrome identified in children in South Carolina - CNN",
+            "url": "https://www.cnn.com/2020/07/12/health/south-carolina-mis-c-coronavirus-children/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200417125229-01-coronavirus-cdc-image-super-tease.jpg",
+            "description": "Two children in South Carolina have been diagnosed with the coronavirus-related pediatric inflammatory syndrome, according to the state's Department of Health and Environmental Control.",
+            "content": "(CNN)Two children in South Carolina have been diagnosed with the coronavirus-related pediatric inflammatory syndrome, according to the state's Department of Health and Environmental Control. \r\nThe ch… [+2370 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Daily Hive"
+            },
+            "publishedAt": "2020-07-12T17:43:00Z",
+            "title": "Officials name Kelowna hotels with potential coronavirus exposure | News - Daily Hive",
+            "url": "https://dailyhive.com/vancouver/kelowna-hotels-coronavirus-exposure",
+            "urlToImage": "https://images.dailyhive.com/20200712104229/kelwona-social-distancing-500x258.jpg",
+            "description": "People who attended gatherings at them are asked to self-isolate.",
+            "content": "Further contact tracing has allowed Interior Health to name a couple of specific locations where coronavirus transmission could have occurred in Kelowna recently.\r\nOn Saturday, the health authority a… [+1231 chars]"
+        },
+        {
+            "source": {
                 "id": null,
                 "name": "Teesside Live"
             },
@@ -11,6 +47,18 @@
             "urlToImage": "https://i2-prod.gazettelive.co.uk/news/teesside-news/article18263608.ece/ALTERNATES/s1200/5_JS211942542.jpg",
             "description": "One more person has tested positive for Covid-19 in Middlesbrough",
             "content": "One more person has tested positive for coronavirus on Teesside. \r\nThe new case of Covid-19 was recorded in Middlesbrough.\r\nThe total number of cases on Teesside is now 3,213.\r\nThe current totals for… [+1037 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Manchester Evening News"
+            },
+            "publishedAt": "2020-07-12T16:01:00Z",
+            "title": "UK coronavirus death toll rises by 21 in 24 hours - Manchester Evening News",
+            "url": "https://www.manchestereveningnews.co.uk/news/uk-news/uk-coronavirus-death-toll-rises-18584325",
+            "urlToImage": "https://i2-prod.manchestereveningnews.co.uk/incoming/article18585158.ece/ALTERNATES/s1200/0_Coronavirus-Wed-Apr-22-2020.jpg",
+            "description": "The death toll now stands at 44,819",
+            "content": "A further 21 deaths involving coronavirus have been recorded by the Department of Health in the last 24 hours. \r\nThe new data from the Department of Health and Social Care takes into account fataliti… [+1566 chars]"
         },
         {
             "source": {
@@ -27,26 +75,14 @@
         {
             "source": {
                 "id": null,
-                "name": "Global News"
+                "name": "Telegraph.co.uk"
             },
-            "publishedAt": "2020-07-12T14:35:17Z",
-            "title": "Ontario reports 129 new coronavirus cases, 3 deaths; total cases top 36,700 - Global News",
-            "url": "http://globalnews.ca/news/7167517/ontario-coronavirus-cases-july-12-covid19/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/06/rjb10767309-1-e1592143474581.jpg?quality=85&strip=all&crop=0px%2C0px%2C720px%2C380px&resize=720%2C379",
-            "description": "With Sunday's coronavirus update, Ontario's death toll stands at 2,719.",
-            "content": "Ontario reported 129 new cases of the novel coronavirus on Sunday, bringing the provincial total to 36,723.\r\nThirty-six of the new cases are from Toronto and 30 from Peel Region.\r\nThree new deaths we… [+1887 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Daily Mail"
-            },
-            "publishedAt": "2020-07-12T13:53:52Z",
-            "title": "Fifteen more people die of coronavirus in UK hospitals in 24 hours - taking total deaths to 44,813 - Daily Mail",
-            "url": "https://www.dailymail.co.uk/news/article-8514905/Fifteen-people-die-coronavirus-UK-hospitals-24-hours-taking-total-deaths-44-813.html",
-            "urlToImage": "https://i.dailymail.co.uk/1s/2020/07/12/17/30677950-0-image-a-30_1594570033558.jpg",
-            "description": "Today's UK-wide death toll figure is the lowest Sunday figure since lockdown began in March. Some 650 people tested positive for the virus today, bringing the total number of cases to 289,603.",
-            "content": "A further 21 people have died from coronavirus in 24 hours bringing the UK's total death toll to 44,819.\r\nToday's figure - which covers deaths in care homes, hospitals and the wider community - is th… [+9028 chars]"
+            "publishedAt": "2020-07-12T14:58:00Z",
+            "title": "Coronavirus survives in the air for more than an hour, says Sage expert - Telegraph.co.uk",
+            "url": "https://www.telegraph.co.uk/news/2020/07/12/coronavirus-survives-air-hour-sage-expert-says/",
+            "urlToImage": "https://www.telegraph.co.uk/content/dam/news/2020/07/12/TELEMMGLPICT000227979688_trans_NvBQzQNjv4Bq8JWdQZ1J_PyHeSO_SJ-VAoyYNSukMALmIzuk96PqrxU.jpeg?impolicy=logo-overlay",
+            "description": "The comments may undermine Boris Johnson's drive to get people back to work and to return to the high street",
+            "content": "\"We do know that SARS-CoV-2, the virus that causes Covid, can remain viable, can remain infectious, in these very small droplets so that raises the possibility and indeed the likelihood that Covid ca… [+901 chars]"
         },
         {
             "source": {
@@ -62,87 +98,39 @@
         },
         {
             "source": {
-                "id": "bbc-news",
-                "name": "BBC News"
+                "id": "independent",
+                "name": "Independent"
             },
-            "publishedAt": "2020-07-12T12:33:45Z",
-            "title": "Coronavirus: Mathon farm workers isolating after 73 Covid-19 cases - BBC News",
-            "url": "https://www.bbc.co.uk/news/uk-england-hereford-worcester-53381802",
-            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/7A16/production/_113345213_gettyimages-936859246.jpg",
-            "description": "The vegetable pickers and packers will remain on the farm in Herefordshire while isolating.",
-            "content": "Image copyrightGetty ImagesImage caption\r\n The workers, who carry out picking and packing work, are being asked to remain on the farm\r\nAbout 200 workers on a farm are isolating after 73 people tested… [+2094 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Wales Online"
-            },
-            "publishedAt": "2020-07-12T12:18:22Z",
-            "title": "Coronavirus can stay in the air for an hour, says SAGE expert - Wales Online",
-            "url": "https://www.walesonline.co.uk/news/uk-news/coronavirus-can-stay-air-hour-18584111",
-            "urlToImage": "https://i2-prod.walesonline.co.uk/news/uk-news/article18584092.ece/ALTERNATES/s1200/0_fusion-medical-animation-rnr8D3FNUNY-unsplash-2.jpg",
-            "description": "She said Covid-19 particles 'can remain suspended in the air and can travel some distance away from the person who’s breathed them out'",
-            "content": "Coronavirus particles can stay airborne and active for an hour at a time, a SAGE expert has warned.\r\nProfessor Wendy Barclay, chairwoman in influenza virology at Imperial College London, discussed th… [+3489 chars]"
-        },
-        {
-            "source": {
-                "id": "usa-today",
-                "name": "USA Today"
-            },
-            "publishedAt": "2020-07-12T12:00:40Z",
-            "title": "'No one is safe until everyone is safe': Vaccine nationalism threatens global coronavirus effort - USA TODAY",
-            "url": "https://www.usatoday.com/story/news/health/2020/07/12/vaccine-nationalism-threatens-global-efforts-race-stop-coronavirus/5384850002/",
-            "urlToImage": "https://www.gannett-cdn.com/-mm-/265126af0adacd682f93d730f49c79645243a3e7/c=0-105-2130-1303/local/-/media/2020/07/08/USATODAY/usatsports/injecting-covid-19-vaccine-into-globe.jpg?width=1600&height=800&fit=crop",
-            "description": "Instead of collaboration, coordination and sharing, vaccine nationalism pits nation against nation to get and keep enough doses for their citizens.",
-            "content": "Dr. Anthony Fauci, the U.S. government's leading infectious disease expert, says he is cautiously optimistic a vaccine \"with some degree\" of effectiveness will be successfully developed by the beginn… [+9352 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "News18"
-            },
-            "publishedAt": "2020-07-12T11:25:00Z",
-            "title": "Covid-19 is Killing Humans or Making Them Sick, But How are Bats Immune to Coronavirus? - News18",
-            "url": "https://www.news18.com/news/buzz/covid-19-is-killing-humans-or-making-them-sick-but-how-are-bats-immune-to-coronavirus-2712839.html",
-            "urlToImage": "https://images.news18.com/ibnlive/uploads/2020/07/1594552671_untitled-design-2020-07-12t164336.944.png",
-            "description": "Many species of bats live in large, dense colonies, and hang close together on cave ceilings or in trees. Those conditions are ideal for transmitting viruses and other pathogens.",
-            "content": "Bats which are carriers of deadly viruses that affect humans like Ebola, rabies, and possibly the SARS-CoV-2 strain of the virus that causes coronavirus. However, these viruses have not killed bats b… [+2894 chars]"
+            "publishedAt": "2020-07-12T12:51:00Z",
+            "title": "Coronavirus: Some air conditioning units risk spreading Covid-19 and should be turned off, advise experts - The Independent",
+            "url": "https://www.independent.co.uk/news/health/coronavirus-air-conditioning-covid-19-office-a9614621.html",
+            "urlToImage": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/07/12/13/pri156628761.jpg",
+            "description": "Systems that recycle air ‘could be responsible for recirculating and spreading airborne viral particles into the path of socially distanced users’",
+            "content": "The Independent employs reporters around the world to bring you truly independent journalism. To support us, please consider a contribution.\r\nAir conditioning units that recirculate air in rooms and … [+3226 chars]"
         },
         {
             "source": {
                 "id": null,
                 "name": "Birmingham Live"
             },
-            "publishedAt": "2020-07-12T11:25:00Z",
-            "title": "Call for crackdown on hairdressers who are failing to follow coronavirus rules - Birmingham Live",
-            "url": "https://www.birminghammail.co.uk/news/uk-news/crackdown-hairdressers-barbers-coronavirus-rules-18583414",
-            "urlToImage": "https://i2-prod.birminghammail.co.uk/news/midlands-news/article18407687.ece/ALTERNATES/s1200/0_haircut.jpg",
-            "description": "There have been complaints that some hairdressers are failing to wear visors or ensure social distancing and the National Hair & Beauty Federation says it would welcome stricter enforcement",
-            "content": "Some hairdressers are failing to follow coronavirus rules, it's been reported.\r\nHair salons and barbers were allowed to reopen from July 4, with beauty salons, nail bars and tattoo studios following … [+4059 chars]"
+            "publishedAt": "2020-07-12T12:16:00Z",
+            "title": "Coronavirus vaccine 'could be available in first half of 2021' say researchers - Birmingham Live",
+            "url": "https://www.birminghammail.co.uk/news/uk-news/coronavirus-vaccine-first-half-2021-18584093",
+            "urlToImage": "https://i2-prod.coventrytelegraph.net/incoming/article18139929.ece/ALTERNATES/s1200/0_Coronavirus-Wed-Apr-22-2020.jpg",
+            "description": "But scientists developing the vaccine currently do not know what level of immunity people need to prevent infection, which makes the chance of success \"difficult to predict\" they say",
+            "content": "A Covid-19 vaccine could be rolled out across the country in the first half of 2021 if trials are successful, according to a scientist leading research in the UK.\r\nProfessor Robin Shattock, who heads… [+3004 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "Live Science"
+                "name": "INSIDER"
             },
-            "publishedAt": "2020-07-12T11:00:00Z",
-            "title": "Does UV light kill the new coronavirus? - Live Science",
-            "url": "https://www.livescience.com/uv-light-kill-coronavirus.html",
-            "urlToImage": "https://cdn.mos.cms.futurecdn.net/CxbAU4fC7jayV6Qd2ixDaH-1200-80.jpg",
-            "description": "",
-            "content": "Ultraviolet light has been used to stop pathogens in their tracks for decades. But does it work against SARS-CoV-2, the virus behind the pandemic?\r\nThe short answer is yes. But it takes the right kin… [+4110 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "CanIndia News"
-            },
-            "publishedAt": "2020-07-12T10:23:00Z",
-            "title": "'COVID-19 particles can remain infectious in air for over an hr' - CanIndia News",
-            "url": "https://www.canindia.com/covid-19-particles-can-remain-infectious-in-air-for-over-an-hr/",
-            "urlToImage": "https://www.canindia.com/wp-content/themes/pennews/images/no-thumb.jpg",
-            "description": "London, July 12 (IANS) Wendy Barclay, chairwoman in influenza virology at Imperial College London, has said that coronavirus particles can remain infectious in the air for more than an hour. Speaking to the BBC on Sunday, Barclay said: “”It is the first time …",
-            "content": "London, July 12 (IANS) Wendy Barclay, chairwoman in influenza virology at Imperial College London, has said that coronavirus particles can remain infectious in the air for more than an hour.\r\n Speaki… [+1402 chars]"
+            "publishedAt": "2020-07-12T11:52:55Z",
+            "title": "New York ER doctor died of suicide due to coronavirus-stress at work - Insider - INSIDER",
+            "url": "https://www.insider.com/new-york-doctor-died-suicide-due-to-coronavirus-stress-work-2020-7",
+            "urlToImage": "https://i.insider.com/5f0af4012618b9403e7afd83?width=1200&format=jpeg",
+            "description": "Dr. Lorna Breen found that she couldn't keep up with the 12-hour shift and was exhausted. Her family said she had no history of mental illness.",
+            "content": "An ER doctor from New York was driven to suicide after struggling to cope with the pressures of work during the height coronavirus outbreak, according to her family. \r\nDr. Lorna Breen was the medical… [+2476 chars]"
         },
         {
             "source": {
@@ -161,30 +149,6 @@
                 "id": "cnn",
                 "name": "CNN"
             },
-            "publishedAt": "2020-07-12T09:12:00Z",
-            "title": "Love in the time of coronavirus: Couples share how they found matches in the middle of a pandemic - CNN",
-            "url": "https://www.cnn.com/2020/07/12/us/love-dating-during-coronavirus-pandemic-wellness/index.html",
-            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200709043212-02-alec-mahon-and-brooke-super-tease.jpg",
-            "description": "If you asked Alec Mahon one month ago whether he believed in love, he'd probably tell you he had \"given up.\"",
-            "content": "Los Angeles (CNN)If you asked Alec Mahon one month ago whether he believed in love, he'd probably tell you he had \"given up.\"\r\nWhen coronavirus first hit in March, the freelance production manager pa… [+12135 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "News18"
-            },
-            "publishedAt": "2020-07-12T07:58:00Z",
-            "title": "Large Number of Coronavirus Patients Suffer Kidney, Heart and Brain Damage, Studies Find - News18",
-            "url": "https://www.news18.com/news/world/large-number-of-coronavirus-patients-suffer-kidney-heart-and-brain-damage-studies-find-2712561.html",
-            "urlToImage": "https://images.news18.com/ibnlive/uploads/2020/07/1593885674_coronavirus-3.jpg",
-            "description": "Scientists recommended that physicians treat it as a multi-system disease with manifestations including blood clots, kidney failure, and neurological symptoms like delirium.",
-            "content": "Scientists, including those of Indian-origin, have provided the first extensive review of COVID-19's effects outside the lungs, and have recommended that physicians treat it as a multi-system disease… [+3427 chars]"
-        },
-        {
-            "source": {
-                "id": "cnn",
-                "name": "CNN"
-            },
             "publishedAt": "2020-07-12T07:17:00Z",
             "title": "US Covid-19 cases are climbing but some state and local leaders are clashing over moves to curb the spread - MSN Money",
             "url": "https://www.cnn.com/2020/07/12/health/us-coronavirus-sunday/index.html",
@@ -195,50 +159,86 @@
         {
             "source": {
                 "id": null,
-                "name": "Toronto Star"
+                "name": "KSL.com"
             },
-            "publishedAt": "2020-07-12T01:11:10Z",
-            "title": "Texas patient in 30s dies after reportedly citing ‘mistake’ of attending ‘COVID party’ - Toronto Star",
-            "url": "https://www.thestar.com/news/world/2020/07/11/texas-patient-in-30s-dies-after-reportedly-citing-mistake-of-attending-covid-party.html",
-            "urlToImage": "https://images.thestar.com/8PGwZ23TJZWB3cQQWVL5PQPzuxA=/1200x801/smart/filters:cb(1594516212726)/https://www.thestar.com/content/dam/thestar/news/world/2020/07/11/texas-patient-in-30s-dies-after-reportedly-citing-mistake-of-attending-covid-party/texas.jpg",
-            "description": "‘COVID parties’ are get-togethers involving a person who has been diagnosed with the coronavirus, with attendees supposedly gathering as a dare.",
-            "content": "DALLAS—A 30-something patient has died from the coronavirus after reportedly attending a “COVID party” and ultimately telling their nurse they had acted in error, San Antonio’s WOAI-TV reported.\r\n“Ju… [+882 chars]"
+            "publishedAt": "2020-07-12T00:02:20Z",
+            "title": "US coronavirus deaths take a long-expected turn for the worse - KSL.com",
+            "url": "https://www.ksl.com/article/46775614/us-coronavirus-deaths-take-a-long-expected-turn-for-the-worse",
+            "urlToImage": "https://img.ksl.com/slc/2788/278833/27883329.jpg?filter=ksl/responsive_story_lg",
+            "description": "A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic.",
+            "content": "NEW YORK (AP) A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic.\r\nThe number of deaths per day from … [+6208 chars]"
+        },
+        {
+            "source": {
+                "id": "usa-today",
+                "name": "USA Today"
+            },
+            "publishedAt": "2020-07-11T23:26:15Z",
+            "title": "Coronavirus updates: More than 66K new cases; Walt Disney World reopens amid surge in Florida; Trump wears mask - USA TODAY",
+            "url": "https://www.usatoday.com/story/news/health/2020/07/11/coronavirus-update-cases-rise-florida-walt-disney-world-reopens/5415791002/",
+            "urlToImage": "https://www.gannett-cdn.com/presto/2020/07/08/USAT/4b431fae-f7bc-4ca7-956a-adef1b4a8aa9-GettyImages-1225692555.jpg?crop=1023,576,x0,y52&width=1600&height=800&fit=bounds",
+            "description": "Walt Disney World was expected to begin a phased reopening this weekend, nearly four months after the theme park shut down due to COVID-19.",
+            "content": "Annual passholders were treated to a special preview of the Magic Kingdom's reopening. Walt Disney World has been closed for nearly four months.\r\nWochit\r\nWalt Disney World began a phased reopening Sa… [+17379 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "New York Post"
+                "name": "Japan Today"
             },
-            "publishedAt": "2020-07-12T00:24:00Z",
-            "title": "NYC ER doctor battled COVID-19 before taking her own life - New York Post ",
-            "url": "https://nypost.com/2020/07/11/nyc-er-doctor-battled-covid-19-before-taking-her-own-life/",
-            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2020/07/breen.jpg?quality=90&strip=all&w=1200",
-            "description": "A heroic New York City emergency room doctor was driven to suicide in the depths of the coronavirus crisis, her family says — and the relentless strain of modern medicine, which rewards perfe…",
-            "content": "A heroic New York City emergency room doctor was driven to suicide in the depths of the coronavirus crisis, her family says — and the relentless strain of modern medicine, which rewards perfection an… [+2341 chars]"
+            "publishedAt": "2020-07-11T20:45:00Z",
+            "title": "Coronavirus deaths in U.S. take long-expected turn for the worse - Japan Today",
+            "url": "https://japantoday.com/category/world/coronavirus-deaths-take-a-long-expected-turn-for-the-worse",
+            "urlToImage": null,
+            "description": "A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic. The number of deaths per day from the virus had been falling for months, and even remained down as states lik…",
+            "content": "A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic.\r\nThe number of deaths per day from the virus had … [+4292 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "WKYC.com"
+                "name": "Birmingham Live"
             },
-            "publishedAt": "2020-07-11T23:52:00Z",
-            "title": "Port Clinton Army veteran dies from coronavirus at 37; friends hope his death will serve as cautionary tale - WKYC.com",
-            "url": "https://www.wkyc.com/article/news/health/coronavirus/port-clinton-army-veteran-dies-from-coronavirus-at-37-friends-hope-his-death-will-serve-as-cautionary-tale/95-2c322cf5-90af-41f4-8849-23fe5d937559",
-            "urlToImage": "https://media.wkyc.com/assets/WKYC/images/29567842-7d60-4f88-88d3-a5578d75c5ef/29567842-7d60-4f88-88d3-a5578d75c5ef_1140x641.jpg",
-            "description": "The Iraq & Afghanistan vet apparently did not like wearing a mask until after his diagnosis, & by then, it was too late.",
-            "content": "PORT CLINTON, Ohio A Port Clinton man is being remembered after he lost his battle with the coronavirus\r\nRichard Rose III, an Army veteran who served in Iraq and Afghanistan, died last week at the ag… [+1029 chars]"
+            "publishedAt": "2020-07-11T16:03:00Z",
+            "title": "Latest coronavirus update on symptoms to look for, says World Health Organisation - Birmingham Live",
+            "url": "https://www.birminghammail.co.uk/news/midlands-news/coronavirus-update-symptoms-testing-near-18581953",
+            "urlToImage": "https://i2-prod.birminghammail.co.uk/incoming/article18454928.ece/ALTERNATES/s1200/3_Coronavirus-Wed-Jun-10-2020.jpg",
+            "description": "There are other things apart from a temperature and a cough that might indicate signs of Covid-19 according to the most up-to-date coronavirus symptoms checker",
+            "content": "During the coronavirus pandemic, we have all been looking out for signs in ourselves or others that we might have the infection.\r\nThe list of possible symptoms continues to be updated by health exper… [+3923 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "WDIV ClickOnDetroit"
+                "name": "CityNews Vancouver"
             },
-            "publishedAt": "2020-07-11T23:28:00Z",
-            "title": "Torch Lake sandbar listed as probable coronavirus (COVID-19) exposure site - WDIV ClickOnDetroit",
-            "url": "https://www.clickondetroit.com/news/local/2020/07/11/torch-lake-sandbar-listed-as-probable-coronavirus-covid-19-exposure-site/",
-            "urlToImage": "https://www.clickondetroit.com/resizer/iZg4zzQs1C_gOC7psDiXgUdig4s=/1600x900/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/d1vhqlrjc8h82r.cloudfront.net/07-11-2020/t_8d339327d6964068844ffe07e82d217f_name_image.jpg",
-            "description": "The Torch Lake sandbar has been listed as a possible coronavirus (COVID-19) exposure site after a large number of people gathered there over the Fourth of July weekend.",
-            "content": "RAPID CITY, Mich. The Torch Lake sandbar has been listed as a possible coronavirus (COVID-19) exposure site after a large number of people gathered there over the Fourth of July weekend.\r\nThe Health … [+3662 chars]"
+            "publishedAt": "2020-07-11T14:45:42Z",
+            "title": "Coronavirus deaths in US take a long-expected turn for the worse - News1130",
+            "url": "https://www.citynews1130.com/2020/07/11/coronavirus-deaths-take-a-long-expected-turn-for-the-worse/",
+            "urlToImage": "https://www.citynews1130.com/wp-content/blogs.dir/sites/9/2020/07/TXEG104-77_2020_142349.jpg",
+            "description": "NEW YORK — A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic. The number of deaths per day from the virus had been falling for months, and even remained down as…",
+            "content": "NEW YORK A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic.\r\nThe number of deaths per day from the v… [+5991 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "publishedAt": "2020-07-11T14:44:00Z",
+            "title": "Coronavirus deaths take a long-expected turn for the worse - Yahoo News Canada",
+            "url": "https://ca.news.yahoo.com/coronavirus-deaths-long-expected-turn-144458387.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/nHzI5umEs_yLdJjd4cqXOg--~B/aD0zMzI5O3c9NTAwMDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ap.org/81800d683da32941ed7afc996f9c02fc",
+            "description": "A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic. The number of deaths per day from the virus had been falling for months, and even remained down as states lik…",
+            "content": "NEW YORK (AP) A long-expected upturn in U.S. coronavirus deaths has begun, driven by fatalities in states in the South and West, according to data on the pandemic.\r\nThe number of deaths per day from … [+6432 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Hindustan Times"
+            },
+            "publishedAt": "2020-07-11T10:55:00Z",
+            "title": "Coronavirus: High blood sugar without previous diabetes diagnosis linked to Covid-19 death risk - Hindustan Times",
+            "url": "https://www.hindustantimes.com/health/coronavirus-high-blood-sugar-without-previous-diabetes-diagnosis-linked-to-covid-19-death-risk/story-MFqaG3zaE6j7ubAV8D3j5N.html",
+            "urlToImage": "https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/07/11/Pictures/_9b421b16-c364-11ea-a85c-8ff81cd7ae5a.jpg",
+            "description": "Blood sugar testing and control should be recommended to all COVID-19 patients even if they do not have pre-existing diabetes, as most COVID-19 patients are prone to glucose metabolic disorders.",
+            "content": "Patients with COVID-19 who have elevated blood sugar levels without a previous diagnosis of diabetes may be at a high risk of death and an increased risk of severe complications from the infectious d… [+4504 chars]"
         }
     ]
 }

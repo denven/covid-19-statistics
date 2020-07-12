@@ -1,5 +1,5 @@
 {
-    "date": "2020-07-12 12:00:28",
+    "date": "2020-07-12 16:00:37",
     "cases": [
         {
             "date": "1/26",
@@ -14410,7 +14410,7 @@
                     "abbr": "ON",
                     "value": "36723",
                     "cured": "32534",
-                    "death": "2754",
+                    "death": "2755",
                     "lethality": "7.50%"
                 },
                 {
@@ -14472,7 +14472,7 @@
                 {
                     "name": "Prince Edward Island",
                     "abbr": "PE",
-                    "value": "33",
+                    "value": "34",
                     "cured": "27",
                     "death": "0",
                     "lethality": "0%"
@@ -14537,11 +14537,11 @@
             "Cured": "32534",
             "InWard": "116",
             "InICU": "29",
-            "Deaths": "2754",
-            "Active": 1435,
+            "Deaths": "2755",
+            "Active": 1434,
             "Lethality": "7.50%",
             "New": "+129",
-            "NewDeaths": "+2"
+            "NewDeaths": "+3"
         },
         {
             "Province": "Alberta",
@@ -14652,15 +14652,15 @@
             "Province": "Prince Edward Island",
             "Tests": "14331",
             "Abbr": "PE",
-            "Conf.": "33",
-            "Per m": 211,
+            "Conf.": "34",
+            "Per m": 217,
             "Cured": "27",
             "InWard": null,
             "InICU": null,
             "Deaths": "0",
-            "Active": 6,
+            "Active": 7,
             "Lethality": "0%",
-            "New": 0,
+            "New": "+1",
             "NewDeaths": 0
         },
         {
@@ -14727,23 +14727,23 @@
             "Province": "Canada",
             "Tests": "3183440",
             "Abbr": "Canada",
-            "Conf.": "107589",
+            "Conf.": "107590",
             "Per m": 2863,
             "Cured": "71467",
             "InWard": null,
             "InICU": null,
-            "Deaths": "8818",
+            "Deaths": "8819",
             "Active": 27304,
             "Lethality": "8.20%",
-            "New": "+243",
-            "NewDeaths": "+9"
+            "New": "+244",
+            "NewDeaths": "+10"
         }
     ],
     "overall": {
-        "confirmed": "107589",
-        "increased": 243,
+        "confirmed": "107590",
+        "increased": 244,
         "recovered": "71467",
-        "death": "8818",
+        "death": "8819",
         "lethality": "8.20%"
     }
 }
