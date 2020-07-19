@@ -2,6 +2,42 @@
     "articles": [
         {
             "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-07-19T05:21:28Z",
+            "title": "Coronavirus mixers - 12 News",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9U2M4YWdId3JaUlHSAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "publishedAt": "2020-07-19T04:09:00Z",
+            "title": "Brain fog, fatigue, breathlessness. Long-term symptoms linger on for many coronavirus victims - CNN",
+            "url": "https://www.cnn.com/2020/07/19/health/long-covid-italy-uk-gbr-intl/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200717055530-06-long-covid-recovery-emiliano-pescarolo-super-tease.jpg",
+            "description": "Professional diver Emiliano Pescarolo contracted coronavirus in March and spent 17 days in hospital in the Italian port city of Genoa before being discharged on April 10.",
+            "content": "Genoa, Italy (CNN)Professional diver Emiliano Pescarolo contracted coronavirus in March and spent 17 days in hospital in the Italian port city of Genoa before being discharged on April 10.\r\nNow, thre… [+16946 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "HuffPost"
+            },
+            "publishedAt": "2020-07-19T01:28:00Z",
+            "title": "Emergency Rooms Swamped As Virus Surges In Some States - HuffPost",
+            "url": "https://www.huffpost.com/entry/coronavirus-surge-emergency-room-swamped_n_5f13a08ec5b619afc40231c0",
+            "urlToImage": "https://img.huffingtonpost.com/asset/5f13a1681f0000cb0d33848c.jpeg?cache=eek4tvvdra&ops=1778_1000",
+            "description": "Patients struggling to breathe because of the coronavirus are being placed on ventilators in emergency wards since intensive care units are full, officia...",
+            "content": "A fast-rising tide of new coronavirus cases is flooding emergency rooms in parts of the United States, with some patients moved into hallways and nurses working extra shifts to keep up with the surge… [+4974 chars]"
+        },
+        {
+            "source": {
                 "id": "bbc-news",
                 "name": "BBC News"
             },
@@ -27,50 +63,38 @@
         {
             "source": {
                 "id": null,
-                "name": "New York Times"
+                "name": "Forbes"
             },
-            "publishedAt": "2020-07-18T22:05:00Z",
-            "title": "Older Children Spread the Coronavirus Just as Much as Adults, New Study Finds - The New York Times",
-            "url": "https://www.nytimes.com/2020/07/18/health/coronavirus-children-schools.html",
-            "urlToImage": "https://static01.nyt.com/images/2020/07/18/science/18virus--kids/merlin_174135054_aed03bad-4e4b-4a8f-8ee7-b89113da5478-facebookJumbo.jpg",
-            "description": "The study of nearly 65,000 people in South Korea suggests that school reopenings will trigger more outbreaks.",
-            "content": "These older children are frequently as big as adults, and yet may have some of the same unhygienic habits as young children do. They may also have been more likely than the younger children to social… [+1537 chars]"
+            "publishedAt": "2020-07-18T21:49:00Z",
+            "title": "Young People Most Likely To Spread Coronavirus At Home, Large Study Finds - Forbes",
+            "url": "https://www.forbes.com/sites/rachelsandler/2020/07/18/young-people-most-likely-to-spread-coronavirus-at-home-large-study-finds/",
+            "urlToImage": "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f136c527dc00c000698d217%2F0x0.jpg%3FcropX1%3D0%26cropX2%3D3132%26cropY1%3D48%26cropY2%3D1810",
+            "description": "Study offers troubling data as schools consider reopening.",
+            "content": "Younger people aged 10 to 19 years old are more likely than other age groups to spread the coronavirus in their household, according to a large contact tracing study in South Korea soon to be publish… [+3107 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "publishedAt": "2020-07-18T19:05:00Z",
+            "title": "The latest on the coronavirus pandemic - CNN International",
+            "url": "https://www.cnn.com/world/live-news/coronavirus-pandemic-07-18-20-intl/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200213175736-02-coronavirus-0213-super-tease.jpg",
+            "description": "The coronavirus pandemic has brought countries to a standstill. In many places, as countries reopen, Covid-19 cases are on the rise. Follow here for the latest.",
+            "content": "The South Carolina Department of Health and Environmental Control (DHEC) said in a series of tweets Saturday that their daily report contained incomplete laboratory information.\r\nThe incomplete data … [+1179 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "Hindustan Times"
+                "name": "Tampa Bay Newspapers"
             },
-            "publishedAt": "2020-07-18T19:38:00Z",
-            "title": "Old coronavirus infections may boost Covid-19 immunity: Study - Hindustan Times",
-            "url": "https://www.hindustantimes.com/india-news/old-coronavirus-infections-may-boost-covid-19-immunity-study/story-qt3NBea456RJR1Dcf05x5M.html",
-            "urlToImage": "https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2020/07/19/Pictures/medical-workers-hospital-patients-infected-disease-coronavirus_d905a4b2-c92d-11ea-bb10-7020e33bb367.jpg",
-            "description": "Some people have T-cells that recognise both proteins on the virus called structural or nucleocapsid protein, and non-structural viral proteins (NSP) produced within an infected cell, the study states.",
-            "content": "Some people who have never been exposed to the new coronavirus Sars-CoV-2 may have an immune system prepared to respond to it because of previous infections from other coronaviruses, according to a n… [+3302 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Global News"
-            },
-            "publishedAt": "2020-07-18T18:53:39Z",
-            "title": "First case of coronavirus reported on Haida Gwaii - Globalnews.ca",
-            "url": "http://globalnews.ca/news/7192914/haida-gwaii-coronavirus-case/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/07/haida.png?w=720&h=379&crop=1",
-            "description": "The Council of the Haida Nation has been trying to prevent people from coming to the remote chain of islands to control the potential spread of the coronavirus.",
-            "content": "The Council of the Haida Nation says Haida Gwaii has recorded its first case of the novel coronavirus.\r\nThe First Nation issued a bulletin Friday saying that it had been notified of a self-reported c… [+1534 chars]"
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "publishedAt": "2020-07-18T18:49:59Z",
-            "title": "How coronavirus has further divided the US - TRT World",
-            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9QWxzWXIxbm5pcnfSAQA?oc=5",
-            "urlToImage": null,
-            "description": null,
-            "content": null
+            "publishedAt": "2020-07-18T17:59:00Z",
+            "title": "More than 13000 COVID-19 cases reported in Pinellas: Death toll up to 312 - Tampa Bay Newspapers",
+            "url": "https://www.tbnweekly.com/coronavirus/article_77373492-c920-11ea-a1be-1bc3ef0d42d8.html",
+            "urlToImage": "https://bloximages.newyork1.vip.townnews.com/tbnweekly.com/content/tncms/assets/v3/editorial/f/d1/fd1574f2-c920-11ea-8d6e-6714132a3f2b/5f1339730bc92.image.jpg?resize=892%2C630",
+            "description": "Florida Department of Health reported 305 new COVID-19 cases in Pinellas County on Saturday, bringing the total to 13,019. Ten more residents have died due to the novel coronavirus, upping",
+            "content": "Florida Department of Health reported 305 new COVID-19 cases in Pinellas County on Saturday, bringing the total to 13,019. Ten more residents have died due to the novel coronavirus, upping the death … [+22890 chars]"
         },
         {
             "source": {
@@ -99,6 +123,18 @@
         {
             "source": {
                 "id": null,
+                "name": "AL.com"
+            },
+            "publishedAt": "2020-07-18T16:26:00Z",
+            "title": "Alabama doctor who survived COVID-19 frustrated by public disregard of coronavirus threat - AL.com",
+            "url": "https://www.al.com/news/2020/07/alabama-doctor-who-survived-covid-19-frustrated-by-public-disregard-of-coronavirus-threat.html",
+            "urlToImage": "https://www.al.com/resizer/O84SHCTYoYVvibywAZ4-oTlyV0g=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/JSX2D4IRDNDLFLOWYLSI2DLLUQ.jpg",
+            "description": "Dr. Michael Saag said he hopes the statewide mask order helps, but it all depends on compliance.",
+            "content": "By JAY REEVES Associated Press\r\nBIRMINGHAM Dr. Michael Saag spends much of his time treating patients fighting for their lives and working with colleagues who are overwhelmed and exhausted by the rel… [+5012 chars]"
+        },
+        {
+            "source": {
+                "id": null,
                 "name": "Vancouver Sun"
             },
             "publishedAt": "2020-07-18T16:07:32Z",
@@ -123,38 +159,50 @@
         {
             "source": {
                 "id": null,
-                "name": "Deseret News"
+                "name": "9News"
             },
-            "publishedAt": "2020-07-18T14:00:00Z",
-            "title": "Coronavirus: Blood type doesn’t increase COVID-19 risk, study says - Deseret News",
-            "url": "https://www.deseret.com/u-s-world/2020/7/18/21328296/coronavirus-blood-type-covid-19-risk-study",
-            "urlToImage": "https://cdn.vox-cdn.com/thumbor/t9I9dBqzmfuiS_wrxBFPYJxJCe8=/0x0:4674x2447/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/20089147/AP20169803301974.jpg",
-            "description": "Those with Type A blood might not be at a greater risk for COVID-19",
-            "content": "Two new studies suggest that blood type might not matter when it comes to the severity of ones COVID-19 risk, despite earlier research that showed those with Type A blood might be more at risk.\r\nWhat… [+1491 chars]"
+            "publishedAt": "2020-07-18T15:59:00Z",
+            "title": "Some young 'recovered' COVID-19 survivors still struggling with symptoms - 9News",
+            "url": "https://www.9news.com.au/world/coronavirus-health-news-young-covid-19-sufferers-still-suffering/645a394e-91de-451d-b089-f4b62a415d1b",
+            "urlToImage": "https://imageresizer.static9.net.au/965edKqkqY3EMsf03d7ta_XdHhU=/1200x628/smart/https%3A%2F%2Fprod.static9.net.au%2Ffs%2Ffdedb30b-c6b9-44d9-8f6d-2d56997ef6dc",
+            "description": "<p>Millennials COVID-19 survivors are warning other millennials not to play the odds with coronavirus, after many were left with permanent damage to their body.</p>",
+            "content": "Property News: Personal Space: Inside the eclectic home of Lynda Gardener - domain.com.au"
         },
         {
             "source": {
-                "id": "cnn",
-                "name": "CNN"
+                "id": "engadget",
+                "name": "Engadget"
             },
-            "publishedAt": "2020-07-18T08:24:00Z",
-            "title": "Health experts urge Americans to wear masks and take other precautions as coronavirus cases continue to climb - CNN",
-            "url": "https://www.cnn.com/2020/07/18/health/us-coronavirus-saturday/index.html",
-            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200718022252-houston-covid-death-0630-super-tease.jpg",
-            "description": "More than 150,000 people are now projected to die of Covid-19 by August 8 -- and though the US knows how to fight the virus, a health expert warns the battle is not going in the country's favor.",
-            "content": "(CNN)More than 150,000 people are now projected to die of Covid-19 by August 8 -- and though the US knows how to fight the virus, a health expert warns the battle is not going in the country's favor.… [+5421 chars]"
+            "publishedAt": "2020-07-18T07:23:02Z",
+            "title": "Google will ban coronavirus conspiracy ads to fight misinformation - Engadget",
+            "url": "https://www.engadget.com/google-will-ban-coronavirus-conspiracy-ads-070526640.html",
+            "urlToImage": "https://o.aolcdn.com/images/dims?resize=1200%2C630&crop=1200%2C630%2C0%2C0&quality=95&image_uri=https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-images%2F2020-07%2F40419710-c8a9-11ea-b4e3-0c090406f1bb&client=amp-blogside-v2&signature=d80f45c60dfda532582212f8d0b2068990ea44c8",
+            "description": "Google is amping up its fight against coronavirus—related misinformation by banning ads that “[contradict] authoritative scientific consensus” about the pandemic.  According to Bloomberg, Google will start enforcing the new rule next month.",
+            "content": "Google is amping up its fight against coronavirus—related misinformation by banning ads that “[contradict] authoritative scientific consensus” about the pandemic. That means websites and apps can no … [+781 chars]"
         },
         {
             "source": {
-                "id": "business-insider",
-                "name": "Business Insider"
+                "id": null,
+                "name": "WWL News, Talk, Sports Radio Station"
             },
-            "publishedAt": "2020-07-17T15:53:56Z",
-            "title": "Google will block ads from appearing on sites that spread coronavirus conspiracy theories - Business Insider - Business Insider",
-            "url": "https://www.businessinsider.com/google-to-prevent-ads-on-coronavirus-conspiracy-theory-content-2020-7",
-            "urlToImage": "https://i.insider.com/5f0e13755af6cc7cf247855a?width=1200&format=jpeg",
-            "description": "Google will prohibit sites from running ads on \"dangerous content\" that goes against scientific consensus during the coronavirus pandemic.",
-            "content": "Alphabet Inc's Google on Friday said it will prohibit websites and apps that use its advertising technology from running ads on \"dangerous content\" that goes against scientific consensus during the c… [+975 chars]"
+            "publishedAt": "2020-07-17T15:00:00Z",
+            "title": "Dad Hospitalized with COVID-19 After Son Infects Family - RADIO.COM",
+            "url": "https://www.radio.com/news/dad-hospitalized-with-covid-19-after-son-infects-family",
+            "urlToImage": "https://images.radio.com/aiu-media/GettyImages1204594965-cacea45f-bca5-4a64-b438-bbfdec9dd6c0.jpg",
+            "description": "A Florida man is battling for his life in the hospital after contracting coronavirus from his son. The  21-year-old son went out with friends and unknowingly transmitted the virus to the household.",
+            "content": "A Florida man is battling for his life in the hospital after contracting coronavirus from his son.\r\nJohn Place, 42, is currently in the intensive care unit at Westside Regional Medical Center and has… [+1918 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Orlando Sentinel"
+            },
+            "publishedAt": "2020-07-17T14:55:56Z",
+            "title": "Florida coronavirus: 327,241 infected, 4,805 killed - Orlando Sentinel",
+            "url": "https://www.orlandosentinel.com/coronavirus/os-ne-florida-coronavirus-friday-july-17-20200717-t54744v54je77fr4z5b4kp2uwm-story.html",
+            "urlToImage": "https://www.orlandosentinel.com/resizer/4rORPwaiyiS-uDkesIO033-njlo=/1200x0/top/cloudfront-us-east-1.images.arcpublishing.com/tronc/WHSPRESB7FF2XGCOJUMYGBHRIA.png",
+            "description": "Florida reported 11,466 new coronavirus cases and 128 new deaths on Friday. Statewide, there have now been 327,241 infected and 4,805 killed. The total number of COVID-19 hospitalizations statewide also passed 20,000.",
+            "content": null
         },
         {
             "source": {
@@ -170,51 +218,27 @@
         },
         {
             "source": {
-                "id": "cbc-news",
-                "name": "CBC News"
+                "id": null,
+                "name": "LADbible"
             },
-            "publishedAt": "2020-07-17T08:00:00Z",
-            "title": "Did COVID-19 skip Vancouver's poorest neighbourhood? Antibody testing might have the answer - CBC.ca",
-            "url": "https://www.cbc.ca/news/canada/british-columbia/vancouver-covid-downtown-eastside-1.5652316",
-            "urlToImage": "https://i.cbc.ca/1.5524338.1594942668!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_620/despite-the-covid-19-crisis-the-streets-of-vancouver-s-downtown-eastside-remain-crowded.JPG",
-            "description": "The coronavirus was expected to tear through the vulnerable population of Vancouver's impoverished Downtown Eastside. That didn't happen, and now a B.C. medical sleuth is trying to find out why. The results of antibody testing could provide new insight into t…",
-            "content": "When the COVID-19 pandemic hit Canada mid-March, health experts feared Vancouver's impoverished Downtown Eastside would be decimated  the coronavirus expected to tear through its vulnerable populatio… [+5588 chars]"
+            "publishedAt": "2020-07-17T11:31:00Z",
+            "title": "Dad Fighting For Life After Catching Coronavirus From 21-Year-Old Son - LADbible",
+            "url": "https://www.ladbible.com/news/news-42-year-old-man-fighting-for-life-after-catching-coronavirus-from-son-20200717",
+            "urlToImage": "https://images.ladbible.com/thumbnail?type=jpeg&url=http://beta.ems.ladbiblegroup.com/s3/content/caadd5e45f115033397f238985d26d71.png&quality=70&width=808",
+            "description": "John Place has been in hospital for nearly three weeks after his son met up with friends and brought the virus home",
+            "content": "A dad from Florida is now fighting for his life after contracting coronavirus from his son, who ignored his parents' advice to stay home and gathered with his friends.\r\nJohn Place, from Plantation, h… [+2165 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "Mirror Online"
+                "name": "The Scottish Sun"
             },
-            "publishedAt": "2020-07-17T06:19:00Z",
-            "title": "Dad fights for life after son met friends and infected his whole family with coronavirus - Mirror Online",
-            "url": "https://www.mirror.co.uk/news/us-news/dad-fights-life-after-son-22369688",
-            "urlToImage": "https://i2-prod.mirror.co.uk/incoming/article22369732.ece/ALTERNATES/s1200/0_Florida-dad-42-is-fighting-for-life-after-his-son-ignored-his-parents-advice-and-went-out-with-fr.jpg",
-            "description": "John Place has been intensive care for nearly three weeks after his son ignored his parents' advice and met friends and took off his face mask. John was on a ventilator for two weeks",
-            "content": "A dad is fighting for his life with coronavirus after his son ignored advice to wear a face mask and not meet with friends.\r\nJohn Place, 42, from Plantation in Florida, is currently in intensive care… [+3948 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Global News"
-            },
-            "publishedAt": "2020-07-17T03:09:46Z",
-            "title": "Alberta Hutterite colonies facing coronavirus-related discrimination - Globalnews.ca",
-            "url": "http://globalnews.ca/news/7187253/hutterite-colonies-discrimination-coronavirus/",
-            "urlToImage": "https://shawglobalnews.files.wordpress.com/2020/07/md-of-willow-creek.jpg?quality=85&strip=all&w=639&h=313&crop=1",
-            "description": "\"It started off with rumour,\" said Mayor Doug MacPherson.",
-            "content": "EDITOR’S NOTE: This story originally said that there are 19 active cases in the M.D. of Willow Creek which was incorrect. It has been updated to say there are 10 active cases. We regret the error.\r\nT… [+4068 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "BroBible"
-            },
-            "publishedAt": "2020-07-11T20:35:55Z",
-            "title": "30-Year-Old Patient Reportedly Died Of Coronavirus After Attending A ‘COVID Party’ Where People Attempt To Get Infected To See If Virus Is Real - BroBible",
-            "url": "https://brobible.com/culture/article/30-year-old-patient-covid-party/",
-            "urlToImage": "https://brobible.com/wp-content/uploads/2020/07/GettyImages-1219957959.jpg?quality=90&w=650",
-            "description": "A patient in their 30s has reportedly died from the…",
-            "content": "Getty Image\r\nA patient in their 30s has reportedly died from the coronavirus after attending a “COVID party” in San Antonio, Texas. \r\nAccording to Chief Medical Officer of Methodist Healthcare Dr. Ja… [+934 chars]"
+            "publishedAt": "2020-07-17T08:40:02Z",
+            "title": "Dad, 42, fighting for life with coronavirus after son met friends without mask and infected whole family - The Scottish Sun",
+            "url": "http://www.thescottishsun.co.uk/news/5821731/dad-fighting-life-son-ignored-parents-friends-mask-infected/",
+            "urlToImage": "https://www.thescottishsun.co.uk/wp-content/uploads/sites/2/2020/07/NINTCHDBPICT000596131531-1.jpg?strip=all&quality=100&w=1105&h=737&crop=1",
+            "description": "",
+            "content": "A FLORIDA dad is in intensive care after his son met up with friends without a mask and brought coronavirus back to their home. \r\nJohn Place, from Plantation, tested positive along with his whole fam… [+2847 chars]"
         }
     ]
 }
