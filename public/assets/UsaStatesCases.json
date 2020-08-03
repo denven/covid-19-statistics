@@ -1,13 +1,13 @@
 {
-    "date": "2020-08-03 00:00:47",
+    "date": "2020-08-03 04:00:53",
     "cases": [
         {
             "name": "California",
             "confirmed": "515,686",
             "increased": "",
-            "death": "9,397",
+            "death": "9,400",
             "perMppl": "13,051",
-            "newDeath": "",
+            "newDeath": "+3",
             "deathRate": "1.82%"
         },
         {
@@ -255,11 +255,11 @@
         },
         {
             "name": "Iowa",
-            "confirmed": "45,571",
-            "increased": "",
-            "death": "876",
-            "perMppl": "14,444",
-            "newDeath": "",
+            "confirmed": "45,724",
+            "increased": "+153",
+            "death": "878",
+            "perMppl": "14,492",
+            "newDeath": "+2",
             "deathRate": "1.92%"
         },
         {
@@ -462,12 +462,12 @@
         },
         {
             "name": "Guam",
-            "confirmed": "356",
-            "increased": "",
+            "confirmed": "368",
+            "increased": "+12",
             "death": "5",
             "perMppl": "",
             "newDeath": "",
-            "deathRate": "1.40%"
+            "deathRate": "1.36%"
         },
         {
             "name": "Northern Mariana Islands",
@@ -497,6 +497,15 @@
             "deathRate": "1.90%"
         },
         {
+            "name": "Veteran Affairs",
+            "confirmed": "39,641",
+            "increased": "+172",
+            "death": "2,140",
+            "perMppl": "",
+            "newDeath": "+5",
+            "deathRate": "5.40%"
+        },
+        {
             "name": "US Military",
             "confirmed": "39,591",
             "increased": "",
@@ -504,15 +513,6 @@
             "perMppl": "",
             "newDeath": "",
             "deathRate": "0.17%"
-        },
-        {
-            "name": "Veteran Affairs",
-            "confirmed": "39,469",
-            "increased": "",
-            "death": "2,135",
-            "perMppl": "",
-            "newDeath": "",
-            "deathRate": "5.41%"
         },
         {
             "name": "Federal Prisons",
@@ -561,19 +561,19 @@
         },
         {
             "name": "Total:",
-            "confirmed": "4,813,647",
-            "increased": "",
-            "death": "158,365",
-            "perMppl": "14,543",
-            "newDeath": "",
+            "confirmed": "4,813,984",
+            "increased": "+337",
+            "death": "158,375",
+            "perMppl": "14,544",
+            "newDeath": "+10",
             "deathRate": "3.29%"
         }
     ],
     "overall": {
-        "confirmed": "4,813,647",
-        "increased": "",
-        "cured": 2380217,
-        "death": "158,365",
+        "confirmed": "4,813,984",
+        "increased": "+337",
+        "cured": 2380548,
+        "death": "158,375",
         "fatality": "3.29%"
     }
 }
