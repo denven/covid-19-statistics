@@ -1,5 +1,5 @@
 {
-    "date": "2020-08-07 20:00:55",
+    "date": "2020-08-08 00:01:05",
     "cases": [
         {
             "name": "California",
@@ -254,6 +254,15 @@
             "deathRate": "3.72%"
         },
         {
+            "name": "Iowa",
+            "confirmed": "48,112",
+            "increased": "+224",
+            "death": "925",
+            "perMppl": "15,249",
+            "newDeath": "+10",
+            "deathRate": "1.92%"
+        },
+        {
             "name": "Arkansas",
             "confirmed": "48,039",
             "increased": "",
@@ -261,15 +270,6 @@
             "perMppl": "15,919",
             "newDeath": "",
             "deathRate": "1.08%"
-        },
-        {
-            "name": "Iowa",
-            "confirmed": "47,888",
-            "increased": "",
-            "death": "915",
-            "perMppl": "15,178",
-            "newDeath": "",
-            "deathRate": "1.91%"
         },
         {
             "name": "Utah",
@@ -561,19 +561,19 @@
         },
         {
             "name": "Total:",
-            "confirmed": "5,095,524",
-            "increased": "",
-            "death": "164,094",
-            "perMppl": "15,394",
-            "newDeath": "",
+            "confirmed": "5,095,748",
+            "increased": "+224",
+            "death": "164,104",
+            "perMppl": "15,395",
+            "newDeath": "+10",
             "deathRate": "3.22%"
         }
     ],
     "overall": {
-        "confirmed": "5,095,524",
-        "increased": "",
-        "cured": 2616967,
-        "death": "164,094",
+        "confirmed": "5,095,748",
+        "increased": "+224",
+        "cured": 2617458,
+        "death": "164,104",
         "fatality": "3.22%"
     }
 }
