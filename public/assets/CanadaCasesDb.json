@@ -1,5 +1,5 @@
 {
-    "date": "2020-08-11 04:01:05",
+    "date": "2020-08-11 08:01:05",
     "cases": [
         {
             "date": "1/26",
@@ -17918,8 +17918,8 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "40161",
-                    "cured": "36381",
+                    "value": "40194",
+                    "cured": "36456",
                     "death": "2824",
                     "lethality": "7.03%"
                 },
@@ -18042,15 +18042,15 @@
             "Province": "Ontario",
             "Tests": "2321735",
             "Abbr": "ON",
-            "Conf.": "40161",
-            "Per m": 2758,
-            "Cured": "36381",
-            "InWard": "49",
-            "InICU": "25",
+            "Conf.": "40194",
+            "Per m": 2760,
+            "Cured": "36456",
+            "InWard": "60",
+            "InICU": "21",
             "Deaths": "2824",
-            "Active": 956,
+            "Active": 914,
             "Lethality": "7.03%",
-            "New": 0,
+            "New": "+33",
             "NewDeaths": 0
         },
         {
@@ -18237,22 +18237,22 @@
             "Province": "Canada",
             "Tests": "4447734",
             "Abbr": "Canada",
-            "Conf.": "120132",
-            "Per m": 3196,
-            "Cured": "106355",
+            "Conf.": "120165",
+            "Per m": 3197,
+            "Cured": "106430",
             "InWard": null,
             "InICU": null,
             "Deaths": "9025",
-            "Active": 4752,
+            "Active": 4710,
             "Lethality": "7.51%",
-            "New": 0,
+            "New": "+33",
             "NewDeaths": 0
         }
     ],
     "overall": {
-        "confirmed": "120132",
-        "increased": 0,
-        "recovered": "106355",
+        "confirmed": "120165",
+        "increased": 33,
+        "recovered": "106430",
         "death": "9025",
         "lethality": "7.51%"
     }
