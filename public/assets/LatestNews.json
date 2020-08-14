@@ -2,6 +2,78 @@
     "articles": [
         {
             "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "publishedAt": "2020-08-14T22:11:00Z",
+            "title": "The latest on the coronavirus pandemic: Live updates - CNN",
+            "url": "https://www.cnn.com/world/live-news/coronavirus-pandemic-08-14-20-intl/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200213175736-02-coronavirus-0213-super-tease.jpg",
+            "description": "The coronavirus pandemic has brought countries to a standstill. In many places, as countries reopen, Covid-19 cases are on the rise. Follow here for the latest.",
+            "content": "More than 96% of California students will start the school year with distance learning, Gov. Gavin Newsom said in a news conference.\r\nAs the coronavirus pandemic continues to bear down on the west co… [+1202 chars]"
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "publishedAt": "2020-08-14T20:57:00Z",
+            "title": "CDC suggests recovered COVID-19 patients have protection for 3 months - NBC News",
+            "url": "https://www.nbcnews.com/health/health-news/cdc-suggests-recovered-covid-patients-can-t-spread-virus-3-n1236782",
+            "urlToImage": "https://media2.s-nbcnews.com/j/newscms/2020_33/3404654/200814-coronavirus-test-ew-147p_ccae6647f5a06676c71bdf8b7f020bf7.nbcnews-fp-1200-630.jpg",
+            "description": "Are you immune to the coronavirus after you get sick? Is there immunity from COVID-19? Updated CDC suggests that a person may be immune for up to 3 months.",
+            "content": "People who have recovered from COVID-19 can safely interact with others for three months, according to a recent update from the Centers for Disease Control and Prevention suggesting that immunity to … [+2609 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Science Magazine"
+            },
+            "publishedAt": "2020-08-14T20:30:00Z",
+            "title": "How will COVID-19 affect the coming flu season? Scientists struggle for clues - Science Magazine",
+            "url": "https://www.sciencemag.org/news/2020/08/how-will-covid-19-affect-coming-flu-season-scientists-struggle-clues",
+            "urlToImage": "https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/Flu_COVID_1280x720_0.jpg?itok=YtNZNbho",
+            "description": "Northern Hemisphere prepares for winter with little insight about how the new coronavirus and other respiratory viruses interact",
+            "content": "Fearing that a combination of seasonal influenza and COVID-19 will overwhelm hospitals, many countries are stepping up campaigns to increase flu vaccination.\r\nSpeed Media/Icon Sportswire \r\nBy Kelly S… [+8171 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-08-14T20:01:16Z",
+            "title": "Coronavirus Pandemic Leads To Wave Of Innovations To Prevent Spread - CBS Miami",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9OFNLWVlaZkw5amfSAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Global News"
+            },
+            "publishedAt": "2020-08-14T19:12:15Z",
+            "title": "Coronavirus: London-Middlex reports 2 new cases Friday, including health-care worker - Global News",
+            "url": "https://globalnews.ca/news/7275615/coronavirus-london-middlex-2-cases-aug-14/",
+            "urlToImage": "https://globalnews.ca/wp-content/uploads/2020/08/coronavirus-50047466533_4b3864c2d5_o.jpg?quality=85&strip=all&w=720&h=379&crop=1",
+            "description": "The two most recent cases reported by the Middlesex-London Health Unit involve a health-care worker in their 30s, and someone in their 40s.",
+            "content": "Two people, including a health-care worker, have tested positive for the novel coronavirus in London and Middlesex while two people have recovered, local health officials said Friday.\r\nThe update bri… [+5726 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Toronto Star"
+            },
+            "publishedAt": "2020-08-14T19:06:29Z",
+            "title": "Today’s coronavirus news: Canada preparing for COVID-19 surge in fall, Tam says; Canada-U.S. border restrictions extended to Sept. 21 - Toronto Star",
+            "url": "https://www.thestar.com/news/canada/2020/08/14/coronavirus-updates-covid-19-canada-toronto-gta-ontario-august-14-2020.html",
+            "urlToImage": "https://images.thestar.com/AsGyVYT6de6WuDbtadf6_Se1kBc=/1200x800/smart/filters:cb(1597444292424)/https://www.thestar.com/content/dam/thestar/news/canada/2020/08/14/coronavirus-updates-covid-19-canada-toronto-gta-ontario-august-14-2020/rl_brassrail_06.jpg",
+            "description": "As Canada continues to reopen and as more people gather together indoors, the federal government is planning for a “reasonable worst-case scenario.”",
+            "content": "The latest coronavirus news from Canada and around the world Friday. This file will be updated throughout the day. Web links to longer stories if available.\r\n6:27 p.m. As of 5 p.m. Friday, Ontario’s … [+46166 chars]"
+        },
+        {
+            "source": {
                 "id": "google-news",
                 "name": "Google News"
             },
@@ -14,27 +86,39 @@
         },
         {
             "source": {
-                "id": "al-jazeera-english",
-                "name": "Al Jazeera English"
+                "id": null,
+                "name": "Irish Mirror"
             },
-            "publishedAt": "2020-08-14T16:52:00Z",
-            "title": "LIVE: European nations step up coronavirus measures as cases rise - Al Jazeera English",
-            "url": "https://www.aljazeera.com/news/2020/08/uk-adds-france-netherlands-quarantine-list-coronavirus-live-200814003230439.html",
-            "urlToImage": "https://www.aljazeera.com/mritems/Images/2020/8/14/cd88fd0ea7cc43cf97581511ae31868a_18.jpg",
-            "description": "UK imposes quarantine for France and the Netherlands; Spain shuts nightclubs; Italy orders testing for some travellers.",
-            "content": "<ul><li>The United Kingdom says all arrivals from France and the Netherlands will be subject to a 14-day quarantine starting on Saturday, prompting Paris to warn of a \"reciprocal measure\".  \r\n</li><l… [+27880 chars]"
+            "publishedAt": "2020-08-14T16:49:00Z",
+            "title": "Coronavirus Ireland cases update as 67 more confirmed with no further deaths - Irish Mirror",
+            "url": "https://www.irishmirror.ie/news/irish-news/health-news/coronavirus-ireland-cases-update-67-22522975",
+            "urlToImage": "https://i2-prod.irishmirror.ie/incoming/article22279127.ece/ALTERNATES/s1200/1_CC-DUB-AIRPORT-RESTRICTIONS-EASE1890465596.jpg",
+            "description": "The latest update from the National Public Health Emergency Team (NPHET) is in",
+            "content": "There have been another 67 cases of coronavirus confirmed in Ireland, with no further deaths reported.\r\nThe latest update from the National Public Health Emergency Team (NPHET) is in.\r\nThe total numb… [+1565 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "Study Finds"
+                "name": "The Guardian"
             },
-            "publishedAt": "2020-08-14T14:58:54Z",
-            "title": "Coronavirus Lockdowns Could Ramp Up Obesity Epidemic, Study Warns - Study Finds",
-            "url": "https://www.studyfinds.org/coronavirus-lockdowns-obesity-epidemic/",
-            "urlToImage": "https://www.studyfinds.org/wp-content/uploads/2019/08/AdobeStock_199211500-1024x683.jpeg",
-            "description": "All of the physical inactivity, time spent stuck home, and emotional stress during the COVID-19 pandemic, may escalate the obesity epidemic, a new study from the University of Copenhagen finds.",
-            "content": "COPENHAGEN, Denmark — What’s the point in working out, dieting right, and sculpting the perfect beach body if you never get the chance to show it off? All of the physical inactivity, time spent stuck… [+3204 chars]"
+            "publishedAt": "2020-08-14T15:36:00Z",
+            "title": "Coronavirus infection rates levelling off, English data suggests - The Guardian",
+            "url": "https://www.theguardian.com/world/2020/aug/14/coronavirus-infection-rates-levelling-off-english-data-suggests",
+            "urlToImage": "https://i.guim.co.uk/img/media/3defa1467eee93bab8660d5aea3a394c6723804b/0_210_5285_3173/master/5285.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=eaeddd27eec0c4e1b16b63f3034d2ac3",
+            "description": "No clear sign of rise or fall in cases, says ONS, as government eases lockdown further",
+            "content": "Rates of people testing positive for Covid-19 in England still appear to be levelling off, the latest figures from the Office for National Statistics (ONS) suggest.\r\nThe data, which covers the period… [+4414 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "The Daily Star"
+            },
+            "publishedAt": "2020-08-14T15:21:40Z",
+            "title": "No evidence of Covid-19 spreading through food, packaging: WHO - The Daily Star",
+            "url": "https://www.thedailystar.net/coronavirus-deadly-new-threat/news/no-evidence-covid-19-spreading-through-food-packaging-who-1945033",
+            "urlToImage": "https://assetsds.cdnedge.bluemix.net/sites/default/files/styles/social_share/public/feature/images/1-minute-baza_0.jpg?itok=EdDyKtDz",
+            "description": "The World Health Organization has said it saw no evidence of coronavirus being spread by food or packaging and urged people not to be afraid of the virus entering the food chain.",
+            "content": "The World Health Organization said on Thursday it saw no evidence of coronavirus being spread by food or packaging and urged people not to be afraid of the virus entering the food chain.\r\nTwo cities … [+2434 chars]"
         },
         {
             "source": {
@@ -75,26 +159,14 @@
         {
             "source": {
                 "id": null,
-                "name": "Canoe"
+                "name": "Global News"
             },
-            "publishedAt": "2020-08-14T12:54:00Z",
-            "title": "U.S. to make coronavirus strain for possible human challenge trials - CANOE",
-            "url": "https://canoe.com/news/world/u-s-to-make-coronavirus-strain-for-possible-human-challenge-trials",
-            "urlToImage": "https://postmediacanoe.files.wordpress.com/2020/08/afp_1wf91f.jpg-e1597409414370.jpeg",
-            "description": "CHICAGO — U.S. government scientists have begun efforts to manufacture a strain of the novel coronavirus that could be used in human challenge trials of vaccines, a controversial type of stud…",
-            "content": "CHICAGO — U.S. government scientists have begun efforts to manufacture a strain of the novel coronavirus that could be used in human challenge trials of vaccines, a controversial type of study in whi… [+3622 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "BBC News"
-            },
-            "publishedAt": "2020-08-14T11:48:45Z",
-            "title": "Coronavirus cases stable across most of England - BBC News",
-            "url": "https://www.bbc.com/news/health-53781140",
-            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/176D1/production/_112735959_gettyimages-1215463252.jpg",
-            "description": "A survey by the Office for National Statistics suggests fewer than 0.05% of the population has the virus.",
-            "content": "Image copyrightGetty Images\r\nCoronavirus cases across England appear to be levelling off, despite flare-ups in local hotspots, according to estimates from the Office for National Statistics (ONS).\r\nA… [+2160 chars]"
+            "publishedAt": "2020-08-14T13:22:53Z",
+            "title": "U.S. recruits scientists abroad to test COVID-19 vaccine candidates, pledges access to doses - Global News",
+            "url": "https://globalnews.ca/news/7274837/us-recruits-scientists-abroad-covid-19-vaccines/",
+            "urlToImage": "https://globalnews.ca/wp-content/uploads/2020/06/nycd504-316_2020_173707.jpg?quality=85&strip=all&w=720&h=379&crop=1",
+            "description": "Reuters has learned the Trump administration’s coronavirus vaccine project is recruiting scientists abroad to test possible vaccines in U.S.- backed clinical trials.",
+            "content": "WASHINGTON The Trump administrations coronavirus vaccine project is recruiting scientists in South Africa and Latin America to help test possible vaccines in U.S.- backed clinical trials, pledging to… [+8207 chars]"
         },
         {
             "source": {
@@ -107,42 +179,6 @@
             "urlToImage": "https://miro.medium.com/focal/1200/632/15/27/1*SFdlkdrRg0E3jwSyBjZ2Qw.jpeg",
             "description": "Early research helps quantify coronavirus long-haulers' experiences.",
             "content": "New Survey Identifies 98 Long-Lasting Covid Symptoms\r\nEarly research helps quantify coronavirus long-haulers experiences\r\nPhoto: RuslanDashinsky/Getty Images\r\nTheres a growing number of people around… [+5181 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "National Post"
-            },
-            "publishedAt": "2020-08-14T05:50:57Z",
-            "title": "French govt decree: Paris is 'red' high-risk COVID zone again - National Post",
-            "url": "https://nationalpost.com/pmn/health-pmn/french-govt-decree-paris-is-red-high-risk-covid-zone-again",
-            "urlToImage": null,
-            "description": "PARIS — The French government has declared Paris and the Bouches-du-Rhone area around Marseille on the Mediterranean coast as “red” zones with a high coronavirus infection risk, according to a government decree published on Friday.",
-            "content": "PARIS The French government has declared Paris and the Bouches-du-Rhone area around Marseille on the Mediterranean coast as red zones with a high coronavirus infection risk, according to a government… [+466 chars]"
-        },
-        {
-            "source": {
-                "id": "associated-press",
-                "name": "Associated Press"
-            },
-            "publishedAt": "2020-08-14T04:31:37Z",
-            "title": "Indonesia takes part in late-stage China vaccine trial - The Associated Press",
-            "url": "https://apnews.com/78bf7646047dc6add207ecce1f91a591",
-            "urlToImage": "https://storage.googleapis.com/afs-prod/media/1209298db3614d8a9a4b785239cc72d3/3000.jpeg",
-            "description": "JAKARTA, Indonesia (AP) — More people in Indonesia rolled up their sleeves Friday to test a potential coronavirus vaccine developed by a Chinese company.  The Indonesian government announced...",
-            "content": "JAKARTA, Indonesia (AP) More people in Indonesia rolled up their sleeves Friday to test a potential coronavirus vaccine developed by a Chinese company. \r\nThe Indonesian government announced the partn… [+2621 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "BloombergQuint"
-            },
-            "publishedAt": "2020-08-14T02:18:53Z",
-            "title": "Covid-19 Shaping Up to Be Battle for Years Even With Vaccine - BloombergQuint",
-            "url": "https://www.bloombergquint.com/coronavirus-outbreak/get-used-to-living-with-covid-19-for-a-long-time-experts-say",
-            "urlToImage": "https://gumlet.assettype.com/bloombergquint%2F2020-08%2Fc9186960-6886-41ac-8001-8420d54abbd0%2F363919091.jpg?rect=0%2C271%2C4000%2C2100&w=1200&auto=format%2Ccompress&ogImage=true",
-            "description": "While a vaccine will provide some measure of protection, the coronavirus is likely to flare up from time to time.",
-            "content": ""
         },
         {
             "source": {
@@ -171,14 +207,14 @@
         {
             "source": {
                 "id": null,
-                "name": "Mirror Online"
+                "name": "Global News"
             },
-            "publishedAt": "2020-08-13T18:39:00Z",
-            "title": "UK coronavirus death toll increases by 18 but no update on new cases - Mirror Online",
-            "url": "https://www.mirror.co.uk/news/uk-news/breaking-uk-coronavirus-death-toll-22516759",
-            "urlToImage": "https://i2-prod.mirror.co.uk/incoming/article22516852.ece/ALTERNATES/s1200/0_BRITAIN-HEALTH-VIRUS-HOSPITAL.jpg",
-            "description": "Earlier today it was announced that 13 coronavirus patients died in the UK's hospitals - all of which were recorded in England",
-            "content": "The UK's coronavirus death toll has climbed by 18 bringing the total number of fatalities in all settings to 41,347. \r\nThe latest figure refers to all deaths of patients who have died within the 28 d… [+2290 chars]"
+            "publishedAt": "2020-08-13T19:40:05Z",
+            "title": "Vancouver Coastal Health warns of coronavirus exposure at IVY Lounge in Trump hotel - Global News",
+            "url": "https://globalnews.ca/news/7272894/vancouver-coronavirus-ivy-lounge-trump-hotel/",
+            "urlToImage": "https://globalnews.ca/wp-content/uploads/2017/02/cpt146388626_high.jpg?quality=85&strip=all&w=650&h=379&crop=1",
+            "description": "Health authorities have warned of new potential exposures to COVID-19 in Metro Vancouver.",
+            "content": "Health authorities have expanded a warning about potential exposures to the coronavirus at a Vancouver bar.\r\nVancouver Coastal Health says people who visited IVY Lounge at the Trump International Hot… [+1012 chars]"
         },
         {
             "source": {
@@ -195,50 +231,14 @@
         {
             "source": {
                 "id": null,
-                "name": "Digital Journal"
+                "name": "CNBC"
             },
-            "publishedAt": "2020-08-13T16:44:30Z",
-            "title": "Coronavirus anti-viral inhaler medication being developed - Digital Journal",
-            "url": "http://www.digitaljournal.com/tech-and-science/science/coronavirus-anti-viral-inhaler-medication-being-developed/article/576302",
-            "urlToImage": "http://www.digitaljournal.com/img/1/0/4/8/0/9/3/i/4/6/8/p-large/60ddce8702c75c5962b62e038f80aa247fcd0c89.jpg",
-            "description": "Scientists are working on an anti-COVID-19 medication that can be administered via an inhaler. The preliminary results has been published and their are pointers that this could develop into an effective treatment.",
-            "content": null
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "The Guardian"
-            },
-            "publishedAt": "2020-08-13T09:00:00Z",
-            "title": "US hospitals pressure healthcare staff to work even if they have Covid symptoms - The Guardian",
-            "url": "https://www.theguardian.com/us-news/2020/aug/13/us-nurses-doctors-covid-19-symptoms-working",
-            "urlToImage": "https://i.guim.co.uk/img/media/0079dfcdd153253dae1cbf49972936388d501e60/0_483_7236_4346/master/7236.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=937af5e02dbf2e755fb82b4217097514",
-            "description": "Hospital employees say they must choose between their paychecks and their health amid the coronavirus pandemic",
-            "content": "The first call in early April was from the testing center, informing the nurse she was positive for Covid-19 and should quarantine for two weeks.\r\nKHN logo\r\nThe second call, less than 20 minutes late… [+6681 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "The Indian Express"
-            },
-            "publishedAt": "2020-08-13T02:33:57Z",
-            "title": "Explained: Study zeroes in on the most effective face mask to block Covid-19 - The Indian Express",
-            "url": "https://indianexpress.com/article/explained/coronavirus-covid-19-most-effective-face-mask-study-6551759/",
-            "urlToImage": "https://images.indianexpress.com/2020/08/main-featured-image.jpg",
-            "description": "Coronavirus (COVID-19) Face Mask: The best face mask for preventing spread of droplets were N95 masks without valves while fleece coverings and bandanas were the least effective",
-            "content": "Written by Abhishek De\r\n, Edited by Explained Desk | New Delhi | \r\nUpdated: August 14, 2020 9:12:51 am\r\nA study by Duke University in the US has thrown light on which masks are the most effective at … [+6163 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Toronto Star"
-            },
-            "publishedAt": "2020-08-13T01:44:15Z",
-            "title": "Alberta teachers, school staff should be tested before classes start: Hinshaw - StCatharinesStandard.ca",
-            "url": "https://www.thestar.com/news/canada/2020/08/12/alberta-teachers-school-staff-should-be-tested-before-classes-start-hinshaw.html",
-            "urlToImage": "https://images.thestar.com/Ko1fWAClpw14BMoT-95ZE65gQK0=/1200x801/smart/filters:cb(1597282718986)/https://www.thestar.com/content/dam/thestar/news/canada/2020/08/12/alberta-teachers-school-staff-should-be-tested-before-classes-start-hinshaw/alta.jpg",
-            "description": "Hinshaw also encouraged other Albertans who do not have coronavirus symptoms and have not been in contact with anyone diagnosed with the virus to post...",
-            "content": "EDMONTON—All teachers and school staff in Alberta should get tested for COVID-19 before students return to classrooms in September, the province’s chief medical officer of heath recommended.\r\n“In add… [+2068 chars]"
+            "publishedAt": "2020-08-13T16:28:00Z",
+            "title": "WHO says there's 'no evidence' the coronavirus is being transmitted by food - CNBC",
+            "url": "https://www.cnbc.com/2020/08/13/who-says-theres-no-evidence-the-coronavirus-is-being-transmitted-by-food.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106553902-15905961992020-05-03t000000z_392955759_rc24hg9p1seb_rtrmadp_0_health-coronavirus-who-ryan.jpeg?v=1594656215",
+            "description": null,
+            "content": "The World Health Organization said Thursday there is \"no evidence\" the coronavirus is being transmitted through food.\r\nResearchers in China are studying the issue, and the international agency is tra… [+1875 chars]"
         }
     ]
 }
