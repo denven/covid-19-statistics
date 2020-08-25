@@ -1,5 +1,5 @@
 {
-    "date": "2020-08-24 20:01:00",
+    "date": "2020-08-25 00:01:07",
     "cases": [
         {
             "date": "1/26",
@@ -19541,6 +19541,123 @@
                     "lethality": "0%"
                 }
             ]
+        },
+        {
+            "date": "8/25",
+            "cases": [
+                {
+                    "name": "Quebec",
+                    "abbr": "QC",
+                    "value": "61741",
+                    "cured": "54761",
+                    "death": "5744",
+                    "lethality": "9.30%"
+                },
+                {
+                    "name": "Ontario",
+                    "abbr": "ON",
+                    "value": "41507",
+                    "cured": "37673",
+                    "death": "2834",
+                    "lethality": "6.83%"
+                },
+                {
+                    "name": "Alberta",
+                    "abbr": "AB",
+                    "value": "13006",
+                    "cured": "11600",
+                    "death": "234",
+                    "lethality": "1.80%"
+                },
+                {
+                    "name": "British Columbia",
+                    "abbr": "BC",
+                    "value": "5184",
+                    "cured": "4068",
+                    "death": "203",
+                    "lethality": "3.92%"
+                },
+                {
+                    "name": "Nova Scotia",
+                    "abbr": "NS",
+                    "value": "1080",
+                    "cured": "1008",
+                    "death": "65",
+                    "lethality": "6.02%"
+                },
+                {
+                    "name": "Saskatchewan",
+                    "abbr": "SK",
+                    "value": "1602",
+                    "cured": "1482",
+                    "death": "22",
+                    "lethality": "1.37%"
+                },
+                {
+                    "name": "Manitoba",
+                    "abbr": "MB",
+                    "value": "993",
+                    "cured": "586",
+                    "death": "12",
+                    "lethality": "1.21%"
+                },
+                {
+                    "name": "Newfoundland and Labrador",
+                    "abbr": "NL",
+                    "value": "268",
+                    "cured": "265",
+                    "death": "3",
+                    "lethality": "1.12%"
+                },
+                {
+                    "name": "New Brunswick",
+                    "abbr": "NB",
+                    "value": "189",
+                    "cured": "178",
+                    "death": "2",
+                    "lethality": "1.06%"
+                },
+                {
+                    "name": "Prince Edward Island",
+                    "abbr": "PE",
+                    "value": "44",
+                    "cured": "40",
+                    "death": "0",
+                    "lethality": "0%"
+                },
+                {
+                    "name": "Yukon",
+                    "abbr": "YT",
+                    "value": "15",
+                    "cured": "15",
+                    "death": "0",
+                    "lethality": "0%"
+                },
+                {
+                    "name": "Northwest Territories",
+                    "abbr": "NT",
+                    "value": "5",
+                    "cured": "5",
+                    "death": "0",
+                    "lethality": "0%"
+                },
+                {
+                    "name": "Nunavut",
+                    "abbr": "NU",
+                    "value": "",
+                    "cured": "0",
+                    "death": "0",
+                    "lethality": "0%"
+                },
+                {
+                    "name": "Repatriated Canadians",
+                    "abbr": "Repatriated",
+                    "value": "13",
+                    "cured": "13",
+                    "death": "0",
+                    "lethality": "0%"
+                }
+            ]
         }
     ],
     "details": [
@@ -19556,8 +19673,8 @@
             "Deaths": "5744",
             "Active": 1236,
             "Lethality": "9.30%",
-            "New": "+68",
-            "NewDeaths": "+4"
+            "New": 0,
+            "NewDeaths": 0
         },
         {
             "Province": "Ontario",
@@ -19571,7 +19688,7 @@
             "Deaths": "2834",
             "Active": 1000,
             "Lethality": "6.83%",
-            "New": "+105",
+            "New": 0,
             "NewDeaths": 0
         },
         {
@@ -19586,8 +19703,8 @@
             "Deaths": "234",
             "Active": 1172,
             "Lethality": "1.80%",
-            "New": "+258",
-            "NewDeaths": "+4"
+            "New": 0,
+            "NewDeaths": 0
         },
         {
             "Province": "British Columbia",
@@ -19601,8 +19718,8 @@
             "Deaths": "203",
             "Active": 913,
             "Lethality": "3.92%",
-            "New": "+269",
-            "NewDeaths": "+1"
+            "New": 0,
+            "NewDeaths": 0
         },
         {
             "Province": "Nova Scotia",
@@ -19631,7 +19748,7 @@
             "Deaths": "22",
             "Active": 98,
             "Lethality": "1.37%",
-            "New": "+2",
+            "New": 0,
             "NewDeaths": 0
         },
         {
@@ -19646,7 +19763,7 @@
             "Deaths": "12",
             "Active": 395,
             "Lethality": "1.21%",
-            "New": "+49",
+            "New": 0,
             "NewDeaths": 0
         },
         {
@@ -19766,13 +19883,13 @@
             "Deaths": "9119",
             "Active": 4834,
             "Lethality": "7.26%",
-            "New": "+751",
-            "NewDeaths": "+9"
+            "New": 0,
+            "NewDeaths": 0
         }
     ],
     "overall": {
         "confirmed": "125647",
-        "increased": 751,
+        "increased": 0,
         "recovered": "111694",
         "death": "9119",
         "lethality": "7.26%"
