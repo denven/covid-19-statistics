@@ -2,6 +2,18 @@
     "articles": [
         {
             "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-09-15T02:42:43Z",
+            "title": "VERIFY: Scientists do not believe the coronavirus is a synthetic virus - KSDK News",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9Y3NaOU9WajNLTVnSAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
+        },
+        {
+            "source": {
                 "id": null,
                 "name": "Global News"
             },
@@ -11,18 +23,6 @@
             "urlToImage": "https://globalnews.ca/wp-content/uploads/2020/09/CP17415149-e1599918004351.jpg?quality=85&strip=all&w=720&h=379&crop=1",
             "description": "The individual visited the Whitewood Petro Canada gas station and convenience store while likely infectious, says the SHA.",
             "content": "The Saskatchewan Health Authority (SHA) is warning of possible exposure to the novel coronavirus at a Whitewood business.\r\nRead more: \r\nPossible COVID-19 exposure at 2 Tisdale, Sask., businesses\r\nIn … [+698 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Global News"
-            },
-            "publishedAt": "2020-09-14T20:10:03Z",
-            "title": "Pilot project testing London wastewater yields first coronavirus sample: city - Global News",
-            "url": "https://globalnews.ca/news/7334108/pilot-project-testing-london-wastewater-coronavirus/",
-            "urlToImage": "https://globalnews.ca/wp-content/uploads/2020/09/2020-greenway.png?w=720&h=379&crop=1",
-            "description": "The city and health unit have been collecting wastewater samples from pollution control plants in the area since July.",
-            "content": "A pilot project testing local wastewater for genetic evidence of the novel coronavirus has come up with its first positive sample, local health and city officials said.\r\nThe city and Middlesex-London… [+1643 chars]"
         },
         {
             "source": {
@@ -38,15 +38,15 @@
         },
         {
             "source": {
-                "id": null,
-                "name": "BNNBloomberg.ca"
+                "id": "financial-post",
+                "name": "Financial Post"
             },
-            "publishedAt": "2020-09-14T18:56:07Z",
-            "title": "Pandemic may permanently replace some human jobs with machines - BNN",
-            "url": "http://www.bnnbloomberg.ca/pandemic-may-permanently-replace-some-human-jobs-with-machines-1.1493836",
-            "urlToImage": "http://www.bnnbloomberg.ca/polopoly_fs/1.1278532!/fileimage/httpImage/image.jpg_gen/derivatives/landscape_620/a-robot-moves-a-large-metal-safe-component-at-the-liberty-safe-security-products-inc-manufacturing-facility-in-payson-utah-u-s-on-wednesday-aug-29-2018-the-u-s-census-bureau-is-expected-to-release-durable-goods-orders-figures-on-september-6.jpg",
-            "description": "The coronavirus pandemic has the potential to permanently replace some humans with machines, according to a new study on Monday from the Federal Reserve Bank of Philadelphia.",
-            "content": "A robot moves a large metal safe component at the Liberty Safe &amp; Security Products Inc. manufacturing facility in Payson, Utah, U.S., on Wednesday, Aug. 29, 2018. The U.S. Census Bureau is expect… [+1562 chars]"
+            "publishedAt": "2020-09-14T17:35:17Z",
+            "title": "US CDC reports 193705 deaths from coronavirus - Regina Leader-Post",
+            "url": "https://financialpost.com/pmn/business-pmn/u-s-cdc-reports-193705-deaths-from-coronavirus",
+            "urlToImage": null,
+            "description": "The U.S. Centers for Disease Control and Prevention (CDC) on Monday reported 6,503,030 cases of the new coronavirus, an increase of 35,549 cases from its…",
+            "content": "The U.S. Centers for Disease Control and Prevention (CDC) on Monday reported 6,503,030 cases of the new coronavirus, an increase of 35,549 cases from its previous count, and said the number of deaths… [+385 chars]"
         },
         {
             "source": {
@@ -54,47 +54,71 @@
                 "name": "Yahoo Entertainment"
             },
             "publishedAt": "2020-09-14T17:30:00Z",
-            "title": "Scientists could predict coronavirus hotspots from Google searches in previous weeks - Yahoo News Canada",
-            "url": "https://ca.news.yahoo.com/coronavirus-google-trends-prediction-173050193.html",
+            "title": "Scientists could predict coronavirus hotspots from Google searches in previous weeks - Yahoo Canada Sports",
+            "url": "https://ca.sports.yahoo.com/news/coronavirus-google-trends-prediction-173050193.html",
             "urlToImage": "https://s.yimg.com/uu/api/res/1.2/LHxSLHD79lbu.grkh5lrxQ--~B/aD00MDAwO3c9NjAwMDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-09/9727a950-f6af-11ea-bff2-2ba8233a4f9b",
             "description": "Researchers found that surges in search terms related to coronavirus symptoms tend to happen weeks before a rise in infections is reported in an area.",
-            "content": "TORONTO Fears that an invisible virus may be lurking among trick-or-treaters will keep Melanie Vicente's two children home this Halloween, but the Toronto mom says she's determined to make sure her b… [+6392 chars]"
+            "content": "Scientists might be able to predict where coronavirus hotspots are about to emerge simply by analysing Google searches. \r\nResearchers found that surges in search terms related to coronavirus symptoms… [+2096 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-09-14T15:19:07Z",
+            "title": "Total US coronavirus cases trends downward amid pressure for a vaccine l GMA - Good Morning America",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9ZGFhWFQxMnZjcVHSAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
         },
         {
             "source": {
                 "id": null,
-                "name": "Daily Hive"
+                "name": "Ctvnews.ca"
             },
-            "publishedAt": "2020-09-14T17:03:00Z",
-            "title": "King County reports over 150 new coronavirus cases over the weekend | News - Daily Hive",
-            "url": "https://dailyhive.com/seattle/king-county-coronavirus-cases-september-14",
-            "urlToImage": "https://images.dailyhive.com/20200724141515/shutterstock_1723264393-500x258.jpg",
-            "description": "And no new deaths.",
-            "content": "King County health officials reported 169 new cases of COVID-19 over the past weekend along with no new deaths related to the virus.\r\nThe county currently has 2,301 people in hospital due to coronavi… [+321 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Medical Xpress"
-            },
-            "publishedAt": "2020-09-14T16:40:02Z",
-            "title": "UK tests if COVID-19 vaccines might work better inhaled - Medical Xpress",
-            "url": "https://medicalxpress.com/news/2020-09-uk-covid-vaccines-inhaled.html",
-            "urlToImage": "https://scx2.b-cdn.net/gfx/news/hires/2020/1-nihclinicalt.jpg",
+            "publishedAt": "2020-09-14T13:38:00Z",
+            "title": "U.K. tests if COVID-19 vaccines might work better inhaled - CTV News",
+            "url": "https://www.ctvnews.ca/health/coronavirus/u-k-tests-if-covid-19-vaccines-might-work-better-inhaled-1.5103702",
+            "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.5103715.1600090667!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
             "description": "British scientists are beginning a small study comparing how two experimental coronavirus vaccines might work when they are inhaled by people instead of being injected.",
-            "content": "British scientists are beginning a small study comparing how two experimental coronavirus vaccines might work when they are inhaled by people instead of being injected.\r\nIn a statement on Monday, res… [+2622 chars]"
+            "content": "LONDON -- \r\nBritish scientists are beginning a small study comparing how two experimental coronavirus vaccines might work when they are inhaled by people instead of being injected.\r\nIn a statement on… [+2071 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "The Boston Globe"
+                "name": "EurekAlert"
             },
-            "publishedAt": "2020-09-14T16:38:00Z",
-            "title": "Vaccine producer says it could take 'four to five years' for the world to receive a COVID-19 dose - msnNOW",
-            "url": "https://www.bostonglobe.com/2020/09/14/nation/vaccine-producer-ceo-says-it-could-take-four-five-years-world-receive-covid-19-dose/",
-            "urlToImage": "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/hgJB5nGzQJb-Qr-uodMCeOqNNqk=/506x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/V4D22VG7UV2N4JLRXBLHUUOZ4Q.jpg",
-            "description": "The chief executive of the world’s largest vaccine producer is cautioning that the world’s population may not be fully vaccinated against the coronavirus until at least the end of 2024, he said in an interview with the Financial Times.",
-            "content": "The head executive of the worlds largest vaccine producer is cautioning that the worlds population may not be fully vaccinated against the coronavirus until at least the end of 2024, he said in an in… [+2088 chars]"
+            "publishedAt": "2020-09-14T13:31:20Z",
+            "title": "COVID-19 pandemic halts cancer care and damages oncologists' wellbeing - EurekAlert",
+            "url": "https://www.eurekalert.org/pub_releases/2020-09/esfm-cph091320.php",
+            "urlToImage": "https://www.eurekalert.org/socialshare/EurekAlert-bluebg_Twitter_1200x675.jpg",
+            "description": "Delays and cancellation of cancer treatments and other safety measures undertaken to minimise the risk of exposure to the coronavirus (COVID-19) have generated a huge backlog in oncology care and research. The threat of delayed diagnoses looms while oncology …",
+            "content": "Lugano, Switzerland, 14 September 2020 - Delays and cancellation of cancer treatments and other safety measures undertaken to minimise the risk of exposure to the coronavirus (COVID-19) have generate… [+9844 chars]"
+        },
+        {
+            "source": {
+                "id": "newsweek",
+                "name": "Newsweek"
+            },
+            "publishedAt": "2020-09-14T11:41:25Z",
+            "title": "Inhaled Coronavirus Vaccine That Delivers Drug Directly to Airways to Be Trialled - Newsweek",
+            "url": "https://www.newsweek.com/inhaled-coronavirus-vaccine-uk-oxford-astrazeneca-1531674",
+            "urlToImage": "https://d.newsweek.com/en/full/1635960/nose.jpg",
+            "description": "Scientists will test the Oxford vaccine and another being developed by scientists at Imperial College London.",
+            "content": "A trial to see if an inhaled coronavirus vaccine would be more effective than one delivered via injection is starting in the U.K.\r\nA small trial of 30 people will see participants inhale either the O… [+3888 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Daily Mail"
+            },
+            "publishedAt": "2020-09-14T10:48:55Z",
+            "title": "China will not carry out mass vaccinations on its population, Beijing's health chief says - Daily Mail",
+            "url": "https://www.dailymail.co.uk/news/article-8730359/China-not-carry-mass-vaccinations-population-Beijings-health-chief-says.html",
+            "urlToImage": "https://i.dailymail.co.uk/1s/2020/09/14/10/29369502-0-image-a-37_1600077508173.jpg",
+            "description": "Director of the Chinese Center for Disease Control and Prevention, Dr Gao Fu, said nationwide coronavirus vaccinations would only be necessary if there was another major outbreak.",
+            "content": "Beijing's health chief has said that China will not carry out mass vaccinations on its population because Covid-19 has largely been wiped out in the country. \r\nDirector of the Chinese Center for Dise… [+2412 chars]"
         },
         {
             "source": {
@@ -111,30 +135,6 @@
         {
             "source": {
                 "id": null,
-                "name": "Express"
-            },
-            "publishedAt": "2020-09-14T06:11:00Z",
-            "title": "Coronavirus symptoms: The main difference you’d feel if you have COVID-19, cold or flu - Express",
-            "url": "https://www.express.co.uk/life-style/health/1334647/coronavirus-symptoms-update-symptoms-covid-cold-flu-allergies",
-            "urlToImage": "https://cdn.images.express.co.uk/img/dynamic/11/750x445/1334647.jpg",
-            "description": "CORONAVIRUS is still on the tip of the public's tongues. Have you noticed that sensation when you want to sneeze, but believe it's best not to - especially when in an enclosed space? How can people tell the difference between symptoms of COVID-19, a cold, the…",
-            "content": "What we do know is that COVID-19 is up to three times more contagious than the flu.\r\nUnfortunately, the researchers from Southern California attested that \"a large number of others are asymptomatic\" … [+259 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "CMAJ"
-            },
-            "publishedAt": "2020-09-14T05:10:31Z",
-            "title": "Kidney injury associated with COVID-19 - CMAJ",
-            "url": "https://www.cmaj.ca/content/192/37/E1065",
-            "urlToImage": "https://www.cmaj.ca/sites/default/files/highwire/cmaj/192/37.cover-source.jpg",
-            "description": "Acute kidney injury (AKI) is a common complication of coronavirus disease 2019 (COVID-19) and is usually related to disease severity. Accordingly, it typically occurs in patients who are critically ill, those with pre-existing conditions, older adults and Bla…",
-            "content": "Hemodynamic insults, immunologic injury, hypercoagulability and microangiopathy drive kidney injury associated with COVID-193\r\nThere is no strong evidence that severe acute respiratory syndrome coron… [+552 chars]"
-        },
-        {
-            "source": {
-                "id": null,
                 "name": "OurWindsor.ca"
             },
             "publishedAt": "2020-09-14T00:25:53Z",
@@ -143,18 +143,6 @@
             "urlToImage": "https://dynamicmedia.zuza.com/zz/m/original_/1/4/14420631-aafc-46ec-9b64-d7949a90f30f/Thestar_fb6f1c73_71eb_44c6_9023_59e09e9de350_Image1_Super_Portrait.jpg",
             "description": "MONTREAL—Quebec reported 279 new cases of <a href=\"https://www.thestar.com/coronavirus.html\">COVID-19 on Sunday, bringing the total to 64,986 cases since the pandemic began.",
             "content": null
-        },
-        {
-            "source": {
-                "id": "financial-post",
-                "name": "Financial Post"
-            },
-            "publishedAt": "2020-09-13T18:25:10Z",
-            "title": "US CDC reports 193195 deaths from coronavirus - Financial Post",
-            "url": "https://financialpost.com/pmn/business-pmn/u-s-cdc-reports-193195-deaths-from-coronavirus",
-            "urlToImage": null,
-            "description": "The U.S. Centers for Disease Control and Prevention (CDC) on Sunday reported 6,467,481 cases of the new coronavirus, an increase of 40,423 cases from its…",
-            "content": "The U.S. Centers for Disease Control and Prevention (CDC) on Sunday reported 6,467,481 cases of the new coronavirus, an increase of 40,423 cases from its previous count, and said the number of deaths… [+348 chars]"
         }
     ]
 }
