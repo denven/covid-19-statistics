@@ -1,5 +1,5 @@
 {
-    "date": "2020-09-17 04:01:05",
+    "date": "2020-09-17 08:01:08",
     "cases": [
         {
             "date": "1/26",
@@ -22247,10 +22247,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "45383",
-                    "cured": "40245",
+                    "value": "45676",
+                    "cured": "40424",
                     "death": "2864",
-                    "lethality": "6.31%"
+                    "lethality": "6.27%"
                 },
                 {
                     "name": "Alberta",
@@ -22371,15 +22371,15 @@
             "Province": "Ontario",
             "Tests": "3287440",
             "Abbr": "ON",
-            "Conf.": "45383",
-            "Per m": 3116,
-            "Cured": "40245",
-            "InWard": "44",
+            "Conf.": "45676",
+            "Per m": 3136,
+            "Cured": "40424",
+            "InWard": "53",
             "InICU": null,
             "Deaths": "2864",
-            "Active": 2274,
-            "Lethality": "6.31%",
-            "New": 0,
+            "Active": 2388,
+            "Lethality": "6.27%",
+            "New": "+293",
             "NewDeaths": 0
         },
         {
@@ -22566,23 +22566,23 @@
             "Province": "Canada",
             "Tests": "6354581",
             "Abbr": "Canada",
-            "Conf.": "139747",
-            "Per m": 3718,
-            "Cured": "122449",
+            "Conf.": "140040",
+            "Per m": 3726,
+            "Cured": "122628",
             "InWard": null,
             "InICU": null,
             "Deaths": "9235",
-            "Active": 8063,
-            "Lethality": "6.61%",
-            "New": 0,
+            "Active": 8177,
+            "Lethality": "6.59%",
+            "New": "+293",
             "NewDeaths": 0
         }
     ],
     "overall": {
-        "confirmed": "139747",
-        "increased": 0,
-        "recovered": "122449",
+        "confirmed": "140040",
+        "increased": 293,
+        "recovered": "122628",
         "death": "9235",
-        "lethality": "6.61%"
+        "lethality": "6.59%"
     }
 }
