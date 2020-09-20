@@ -146,7 +146,7 @@ async function updateUsaHisCases() {
 
 		let lastDay = allCases[allCases.length - 1];
 		// step 3-1: increase a new day's data by comparision
-		// console.log(localSrcDateStr, lastDay.date, srcDateStr);
+		console.log(localSrcDateStr, lastDay.date, srcDateStr);
 		if (lastDay.date !== srcDateStr) {
 			latestStatus.increasedNum = latestStatus.confirmedNum - lastDay.confirmedNum;
 			latestStatus.date = srcDateStr;
@@ -195,7 +195,8 @@ async function _getUsaLatestCases() {
 			let tdTexts = rowColumns.map((td) => $(td).text().trim());
 
 			if (Array.isArray(tdTexts)) {
-				let [no, name, total, increased, dead, newDeath, active, perMppl] = tdTexts;
+				// 20th Sept. added no and totalRecovered
+				let [no, name, total, increased, dead, newDeath, totalRecovered, active, perMppl] = tdTexts;
 
 				let lethality = "0%";
 				let deadCount = dead ? dead.replace(/,/g, "") : 0;
@@ -213,6 +214,7 @@ async function _getUsaLatestCases() {
 						death: dead,
 						fatality: lethality,
 					});
+					console.log(overallCases);
 
 					if (overallCases.length > 1) {
 						// console.log(overallCases);
