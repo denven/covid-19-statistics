@@ -16,7 +16,6 @@ import _ from "lodash";
 
 import ReactEcharts from "echarts-for-react";
 import echarts from "echarts/lib/echarts";
-import "echarts/lib/chart/line";
 
 const columns = [
 	{ label: "Province", id: "Abbr", align: "right", maxWidth: 60 },
@@ -418,13 +417,13 @@ export default function Canada() {
 						<TableTitle style={{ display: "flex" }} />
 						<ProvincesTable style={{ width: "90%" }} data={provDetails} onRowClick={handleRowClick} />
 					</div>
-					{/* <div className={classes.chart} style={{display: 'flex'}}> */}
-					<CasesHisTrend
-						prov={prov}
-						days={hisCases.dates}
-						dayCases={hisCases.cases} // confirmed/cured/deaths
-					/>
-					{/* </div> */}
+					{hisCases.dates.length > 0 ? (
+						<CasesHisTrend
+							prov={prov}
+							days={hisCases.dates}
+							dayCases={hisCases.cases} // confirmed/cured/deaths
+						/>
+					) : null}
 				</div>
 			);
 		default:
