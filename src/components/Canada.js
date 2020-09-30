@@ -30,17 +30,17 @@ const columns = [
 	{ label: "Deaths", id: "Deaths", align: "right", maxWidth: 40 },
 	{ label: "New", id: "NewDeaths", align: "right", maxWidth: 25 },
 	{ label: "Active", id: "Active", align: "right", maxWidth: 50 },
-	{ label: "Lethality", id: "Lethality", align: "right", maxWidth: 55 }
+	{ label: "Lethality", id: "Lethality", align: "right", maxWidth: 55 },
 ];
 
-const StyledTableCell = withStyles(theme => ({
+const StyledTableCell = withStyles((theme) => ({
 	head: { fontWeight: 600 },
 	body: { fontSize: 14 },
-	sizeSmall: { padding: "4px 16px 4px 0px" }
+	sizeSmall: { padding: "4px 16px 4px 0px" },
 }))(TableCell);
 
-const StyledTableBodyCell = withStyles(theme => ({
-	sizeSmall: { padding: "4px 16px 4px 0px" }
+const StyledTableBodyCell = withStyles((theme) => ({
+	sizeSmall: { padding: "4px 16px 4px 0px" },
 }))(TableCell);
 
 const isPortraitMode = () => {
@@ -51,28 +51,20 @@ const isPortraitMode = () => {
 const useStyles = makeStyles({
 	root: { width: "100%" },
 	container: { maxHeight: isPortraitMode() ? "65vh" : "42.5vh" },
-	chart: { marginTop: "2.5%" }
+	chart: { marginTop: "2.5%" },
 });
 
 function TableTitle() {
 	return (
-		<div
-			className="canadaTableTitle"
-			style={{ top: 0, fontSize: 18, fontFamily: "Arial|Verdana|sans-serif" }}
-		>
+		<div className="canadaTableTitle" style={{ top: 0, fontSize: 18, fontFamily: "Arial|Verdana|sans-serif" }}>
 			<div>Cases Detail by Province (clickable) in Canada Today</div>
-			<div className="subTitle">
-				Data from
-				https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Canada
-			</div>
+			<div className="subTitle">Data from https://en.wikipedia.org/wiki/2020_coronavirus_outbreak_in_Canada</div>
 		</div>
 	);
 }
 
-const valueFormat = value => {
-	return (value || "0")
-		.toString()
-		.replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, "$1,");
+const valueFormat = (value) => {
+	return (value || "0").toString().replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, "$1,");
 };
 
 function ProvincesTable({ data, onRowClick }) {
@@ -103,12 +95,8 @@ function ProvincesTable({ data, onRowClick }) {
 				<Table stickyHeader aria-label="sticky table" size="small">
 					<TableHead>
 						<TableRow>
-							{columns.map(column => (
-								<StyledTableCell
-									key={column.id}
-									align={column.align}
-									style={{ maxWidth: column.maxWidth }}
-								>
+							{columns.map((column) => (
+								<StyledTableCell key={column.id} align={column.align} style={{ maxWidth: column.maxWidth }}>
 									{column.label}
 								</StyledTableCell>
 							))}
@@ -122,9 +110,9 @@ function ProvincesTable({ data, onRowClick }) {
 									role="checkbox"
 									tabIndex={-1}
 									key={row.Abbr}
-									onClick={event => onRowClick(event, row)}
+									onClick={(event) => onRowClick(event, row)}
 								>
-									{columns.map(column => {
+									{columns.map((column) => {
 										let value = valueFormat(row[column.id]);
 										return (
 											<StyledTableBodyCell
@@ -133,12 +121,10 @@ function ProvincesTable({ data, onRowClick }) {
 												style={{
 													maxWidth: column.maxWidth,
 													color: value.includes("+") > 0 ? "red" : "inherits",
-													fontWeight: row.Abbr === "Canada" ? 600 : 400
+													fontWeight: row.Abbr === "Canada" ? 600 : 400,
 												}}
 											>
-												{column.format && typeof value === "number"
-													? column.format(value)
-													: value}
+												{column.format && typeof value === "number" ? column.format(value) : value}
 											</StyledTableBodyCell>
 										);
 									})}
@@ -159,7 +145,7 @@ function CasesHisTrend({ prov, days, dayCases, dayNewCases }) {
 		return { text: "Data Loading ..." };
 	};
 
-	const onChartReady = chart => {
+	const onChartReady = (chart) => {
 		if (days && Array.isArray(dayCases)) {
 			setReady(true);
 			setTimeout(() => {
@@ -174,7 +160,7 @@ function CasesHisTrend({ prov, days, dayCases, dayNewCases }) {
 			if (type !== "new") {
 				return (
 					dayCases &&
-					dayCases.map(dayProvCases =>
+					dayCases.map((dayProvCases) =>
 						dayProvCases.reduce(
 							(total, curProv) => {
 								return (total = parseInt(total) + parseInt(curProv[type] || 0));
@@ -184,7 +170,7 @@ function CasesHisTrend({ prov, days, dayCases, dayNewCases }) {
 					)
 				);
 			} else {
-				let dailyTotalCases = dayCases.map(dayProvCases =>
+				let dailyTotalCases = dayCases.map((dayProvCases) =>
 					dayProvCases.reduce(
 						(total, curProv) => {
 							return (total = parseInt(total) + parseInt(curProv.value || 0));
@@ -199,8 +185,8 @@ function CasesHisTrend({ prov, days, dayCases, dayNewCases }) {
 		} else {
 			let data =
 				dayCases &&
-				dayCases.map(dayProvCases => {
-					let p = dayProvCases.find(prov => prov.name === name);
+				dayCases.map((dayProvCases) => {
+					let p = dayProvCases.find((prov) => prov.name === name);
 					if (p) return p[type === "new" ? "value" : type];
 					return 0;
 				});
@@ -216,61 +202,61 @@ function CasesHisTrend({ prov, days, dayCases, dayNewCases }) {
 		return {
 			title: {
 				x: "center",
-				text: "Cumulative Cases by day (clickable) in " + prov
+				text: "Cumulative Cases by day (clickable) in " + prov,
 			},
 			tooltip: {
-				trigger: "axis"
+				trigger: "axis",
 			},
 			legend: {
 				// data: ['Confirmed', 'Suspected', 'Increased', 'Recovered', 'Deaths'], // four curves
 				data: ["Confirmed", "Recovered", "Deaths", "New Cases"], // 3 line curves, 1 bar chart
 				top: "30px",
-				textStyle: { fontSize: 12, fontWeight: 600 }
+				textStyle: { fontSize: 12, fontWeight: 600 },
 			},
 			grid: {
 				left: "center",
 				right: "center",
 				bottom: "3%",
 				containLabel: true,
-				width: "92%"
+				width: "92%",
 			},
 			toolbox: { feature: { saveAsImage: {} } },
 			xAxis: {
 				type: "category",
 				boundaryGap: false,
-				data: days
+				data: days,
 			},
 			yAxis: [
 				{ type: "value" }, // line charts
-				{ type: "value", splitLine: { show: false } } // bar chart
+				{ type: "value", splitLine: { show: false } }, // bar chart
 			],
 			series: [
 				{
 					name: "Confirmed",
 					type: "line",
 					// stack: 'Toll',
-					data: getProvData(prov, "value") //confirmed cases
+					data: getProvData(prov, "value"), //confirmed cases
 				},
 				{
 					name: "New Cases",
 					type: "bar",
 					yAxisIndex: 1,
 					itemStyle: { color: "#ffc0b1" }, // change default bar color
-					data: getProvData(prov, "new") //new cases
+					data: getProvData(prov, "new"), //new cases
 				},
 				{
 					name: "Recovered",
 					type: "line",
 					// stack: 'Toll',
-					data: getProvData(prov, "cured")
+					data: getProvData(prov, "cured"),
 				},
 				{
 					name: "Deaths",
 					type: "line",
 					// stack: 'Toll',
-					data: getProvData(prov, "death")
-				}
-			]
+					data: getProvData(prov, "death"),
+				},
+			],
 		};
 	};
 
@@ -294,7 +280,7 @@ function CasesHisTrend({ prov, days, dayCases, dayNewCases }) {
 export default function Canada() {
 	const [hisCases, setCases] = useState({ dates: [], cases: [] });
 	const [provDetails, setDetail] = useState([]);
-	const initialMode = document.body.clientWidth >= 1024 ? "map" : "table";
+	const initialMode = document.body.clientWidth >= 1024 ? "table" : "map";
 	const [viewMode, setMode] = useState(initialMode);
 	const [screenMode, setScreen] = useState("PORTRAIT");
 
@@ -312,17 +298,15 @@ export default function Canada() {
 		try {
 			axios.get(`./assets/CanadaCasesDb.json`).then(({ data }) => {
 				if (!isCanceled) {
-					let dayCases = data.cases.map(day => day.cases); // cases for all provinces by day
+					let dayCases = data.cases.map((day) => day.cases); // cases for all provinces by day
 					let hisDataObj = {
-						dates: data.cases.map(day => day.date), // xAxis: dates array
-						cases: dayCases // YAxis 0 (confirmed/cured/deaths)
+						dates: data.cases.map((day) => day.date), // xAxis: dates array
+						cases: dayCases, // YAxis 0 (confirmed/cured/deaths)
 					};
 					setCases(hisDataObj); // for charts
 
 					let canada = data.details.pop();
-					let allProvData = _.sortBy(data.details, o =>
-						parseInt(o["Conf."])
-					).reverse();
+					let allProvData = _.sortBy(data.details, (o) => parseInt(o["Conf."])).reverse();
 					allProvData.push(canada);
 					setDetail(allProvData); // for table's rows
 				}
@@ -351,7 +335,7 @@ export default function Canada() {
 		position: "absolute",
 		top: "6.6rem",
 		left: "2rem",
-		zIndex: 9999
+		zIndex: 9999,
 	};
 	if (screenMode === "LANDSCAPE") {
 		if (document.body.clientWidth >= 1024)
@@ -360,7 +344,7 @@ export default function Canada() {
 				position: "absolute",
 				top: "6.6rem",
 				marginLeft: "44vw",
-				zIndex: 9999
+				zIndex: 9999,
 			};
 		else
 			switchStyle = {
@@ -368,7 +352,7 @@ export default function Canada() {
 				position: "absolute",
 				top: "8.0rem",
 				marginLeft: "4vw",
-				zIndex: 9999
+				zIndex: 9999,
 			};
 	} else {
 		if (document.body.clientWidth >= 1024)
@@ -377,7 +361,7 @@ export default function Canada() {
 				position: "absolute",
 				top: "6.6rem",
 				marginLeft: "44vw",
-				zIndex: 9999
+				zIndex: 9999,
 			};
 		else
 			switchStyle = {
@@ -385,7 +369,7 @@ export default function Canada() {
 				position: "absolute",
 				top: "8.0rem",
 				marginLeft: "4vw",
-				zIndex: 9999
+				zIndex: 9999,
 			};
 	}
 
@@ -432,11 +416,7 @@ export default function Canada() {
 					</Button>
 					<div style={{ margin: "0 1rem 1rem 1rem" }}>
 						<TableTitle style={{ display: "flex" }} />
-						<ProvincesTable
-							style={{ width: "90%" }}
-							data={provDetails}
-							onRowClick={handleRowClick}
-						/>
+						<ProvincesTable style={{ width: "90%" }} data={provDetails} onRowClick={handleRowClick} />
 					</div>
 					{/* <div className={classes.chart} style={{display: 'flex'}}> */}
 					<CasesHisTrend
