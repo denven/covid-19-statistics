@@ -1,5 +1,5 @@
 {
-    "date": "2020-10-03 00:01:02",
+    "date": "2020-10-03 08:01:03",
     "cases": [
         {
             "date": "1/26",
@@ -24119,10 +24119,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "52980",
-                    "cured": "44850",
-                    "death": "2927",
-                    "lethality": "5.52%"
+                    "value": "53633",
+                    "cured": "45285",
+                    "death": "2968",
+                    "lethality": "5.53%"
                 },
                 {
                     "name": "Alberta",
@@ -24243,16 +24243,16 @@
             "Province": "Ontario",
             "Tests": "3872299",
             "Abbr": "ON",
-            "Conf.": "52980",
-            "Per m": 3638,
-            "Cured": "44850",
-            "InWard": "167",
+            "Conf.": "53633",
+            "Per m": 3682,
+            "Cured": "45285",
+            "InWard": "155",
             "InICU": null,
-            "Deaths": "2927",
-            "Active": 5203,
-            "Lethality": "5.52%",
-            "New": 0,
-            "NewDeaths": 0
+            "Deaths": "2968",
+            "Active": 5380,
+            "Lethality": "5.53%",
+            "New": "+653",
+            "NewDeaths": "+41"
         },
         {
             "Province": "Alberta",
@@ -24438,23 +24438,23 @@
             "Province": "Canada",
             "Tests": "7490129",
             "Abbr": "Canada",
-            "Conf.": "162659",
-            "Per m": 4328,
-            "Cured": "137614",
+            "Conf.": "163312",
+            "Per m": 4345,
+            "Cured": "138049",
             "InWard": null,
             "InICU": null,
-            "Deaths": "9409",
-            "Active": 15636,
-            "Lethality": "5.78%",
-            "New": 0,
-            "NewDeaths": 0
+            "Deaths": "9450",
+            "Active": 15813,
+            "Lethality": "5.79%",
+            "New": "+653",
+            "NewDeaths": "+41"
         }
     ],
     "overall": {
-        "confirmed": "162659",
-        "increased": 0,
-        "recovered": "137614",
-        "death": "9409",
-        "lethality": "5.78%"
+        "confirmed": "163312",
+        "increased": 653,
+        "recovered": "138049",
+        "death": "9450",
+        "lethality": "5.79%"
     }
 }
