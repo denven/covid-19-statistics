@@ -2,6 +2,42 @@
     "articles": [
         {
             "source": {
+                "id": null,
+                "name": "Post Magazine"
+            },
+            "publishedAt": "2020-10-06T05:31:54Z",
+            "title": "Coronavirus ‘could kill more than 2 million people by end of the year’ - South China Morning Post",
+            "url": "https://www.scmp.com/news/china/society/article/3104338/coronavirus-could-kill-more-2-million-people-end-year",
+            "urlToImage": "https://cdn.i-scmp.com/sites/default/files/styles/og_image_scmp_coronavirus_generic/public/d8/images/methode/2020/10/06/46cb1950-06ff-11eb-afc8-92e0da0ef1c3_image_hires_134425.jpg?itok=FQcSxtbI&v=1601963072",
+            "description": "It’s accelerating because the virus is so infectious and control measures aren’t coordinated and systematic, according to health expert.",
+            "content": "Published: 1:31pm, 6 Oct, 2020\r\nUpdated: 1:44pm, 6 Oct, 2020"
+        },
+        {
+            "source": {
+                "id": "bbc-news",
+                "name": "BBC News"
+            },
+            "publishedAt": "2020-10-06T00:00:02Z",
+            "title": "'Long Covid': Why are some people not recovering? - BBC News",
+            "url": "https://www.bbc.co.uk/news/health-54296223",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/753A/production/_114601003_gettyimages-694034013.jpg",
+            "description": "Why is coronavirus leaving some people with long-term health problems including fatigue?",
+            "content": "Image copyrightGetty Images\r\nFor most people, Covid-19 is a brief and mild disease but some are left struggling with symptoms including lasting fatigue, persistent pain and breathlessness for months.… [+7287 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Daily Mail"
+            },
+            "publishedAt": "2020-10-05T22:32:14Z",
+            "title": "Coronavirus can survive for up to NINE HOURS on human skin, study finds - Daily Mail",
+            "url": "https://www.dailymail.co.uk/health/article-8808063/Coronavirus-survive-NINE-HOURS-human-skin-study-finds.html",
+            "urlToImage": "https://i.dailymail.co.uk/1s/2020/10/05/23/34021000-0-image-a-42_1601935501295.jpg",
+            "description": "A new study, from Kyoto Prefectural University of Medicine, in Japan, found that the flu virus survived for less than two hours on human skin while the coronavirus lived for up to nine hours.",
+            "content": "The novel coronavirus can survive for up to several hours on human skin, a new study suggests.\r\nIn laboratory experiments, researchers tested cadaver skin that otherwise would have been used for skin… [+3030 chars]"
+        },
+        {
+            "source": {
                 "id": "cnn",
                 "name": "CNN"
             },
@@ -11,6 +47,18 @@
             "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/201005091557-fauci-intv-coronavirus-timeline-exposure-to-symptoms-trump-newday-vpx-00000000-super-tease.jpg",
             "description": "As New York City closes some schools again, National Institute of Allergy and Infectious Diseases Director Dr. Anthony Fauci says he is \"disturbed and concerned\" about the baseline of coronavirus cases in the US. CNN's Nick Watt reports.",
             "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "New York Times"
+            },
+            "publishedAt": "2020-10-05T21:14:00Z",
+            "title": "Charting a Covid-19 Immune Response - The New York Times",
+            "url": "https://www.nytimes.com/interactive/2020/10/05/science/charting-a-covid-immune-response.html",
+            "urlToImage": "https://static01.nyt.com/images/2020/10/05/us/charting-a-covid-immune-response-promo-1601930447347/charting-a-covid-immune-response-promo-1601930447347-facebookJumbo-v3.png",
+            "description": "How the body responds to a coronavirus infection.",
+            "content": "Amid a flurry of press conferences delivering upbeat news, President Trumps doctors have administered an array of experimental therapies that are typically reserved for the most severe cases of Covid… [+9358 chars]"
         },
         {
             "source": {
@@ -27,14 +75,14 @@
         {
             "source": {
                 "id": null,
-                "name": "Irish Mirror"
+                "name": "wknd."
             },
-            "publishedAt": "2020-10-05T16:55:00Z",
-            "title": "Coronavirus Ireland new cases update today as 518 more confirmed with no further deaths - Irish Mirror",
-            "url": "https://www.irishmirror.ie/news/irish-news/health-news/coronavirus-ireland-new-cases-update-22796272",
-            "urlToImage": "https://i2-prod.irishmirror.ie/incoming/article22796378.ece/ALTERNATES/s1200/0_CC-COVID-PUBLIC-TRANSPORT1290474669.jpg",
-            "description": "The latest statement from the National Public Health Emergency Team (NPHET) is in",
-            "content": "There have been 518 more coronavirus cases confirmed in Ireland today, with no further deaths.\r\nThe latest update from the National Public Health Emergency Team (NPHET) is in.\r\nThe total number of co… [+2874 chars]"
+            "publishedAt": "2020-10-05T19:40:49Z",
+            "title": "India's paper-based coronavirus test could be a 'game changer' - Khaleej Times",
+            "url": "https://www.khaleejtimes.com/coronavirus-pandemic/indias-paper-based-coronavirus-test-could-be-a-game-changer-",
+            "urlToImage": "https://images.khaleejtimes.com/storyimage/KT/20201006/ARTICLE/201009298/AR/0/AR-201009298.jpg&NCS_modified=20201006040810&exif=.jpg",
+            "description": "A team of scientists in India has developed an inexpensive paper-based test for coronavirus that could give fast results similar to a pregna...",
+            "content": "A team of scientists in India has developed an inexpensive paper-based test for coronavirus that could give fast results similar to a pregnancy test, according to a BBC report.\r\nThe test, named after… [+3327 chars]"
         },
         {
             "source": {
@@ -51,18 +99,6 @@
         {
             "source": {
                 "id": null,
-                "name": "Birmingham Live"
-            },
-            "publishedAt": "2020-10-05T14:14:00Z",
-            "title": "New coronavirus symptom could become fourth added to official NHS list - Birmingham Live",
-            "url": "https://www.birminghammail.co.uk/news/midlands-news/new-coronavirus-symptom-could-become-19052890",
-            "urlToImage": "https://i2-prod.birminghammail.co.uk/incoming/article19051680.ece/ALTERNATES/s1200/0_Coronavirus-Wed-Sep-16-2020.jpg",
-            "description": "Currently the NHS identifies a few things as symptoms of the deadly bug, including high temperatures/fevers, persistent coughs, and a sudden loss of taste or smell",
-            "content": "A fourth sign of Covid-19 could be added to the official list of coronavirus symptoms carried on the NHS website.\r\nCurrently the NHS identifies a few things as symptoms of the deadly bug, including h… [+1394 chars]"
-        },
-        {
-            "source": {
-                "id": null,
                 "name": "Wales Online"
             },
             "publishedAt": "2020-10-05T13:38:00Z",
@@ -71,42 +107,6 @@
             "urlToImage": "https://i2-prod.walesonline.co.uk/incoming/article19052349.ece/ALTERNATES/s1200/2_MH_140920_Covid-19_06JPG.jpg",
             "description": "There has been another big leap in coronavirus cases recorded by Public Health Wales (PHW)",
             "content": "The number of new coronavirus infections reported in the last 24 hours in Wales has hit a new daily record, it has been revealed.\r\nLatest figures from Public Health Wales (PHW) for Monday, October 5,… [+4658 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "DW (English)"
-            },
-            "publishedAt": "2020-10-05T13:35:05Z",
-            "title": "Coronavirus: WHO estimates 10% of global population infected with COVID-19 - DW (English)",
-            "url": "https://www.dw.com/en/coronavirus-who-estimates-10-of-global-population-infected-with-covid-19/a-55162783",
-            "urlToImage": "https://www.dw.com/image/55146996_304.jpg",
-            "description": "Roughly one in 10 people across the globe may have already been infected with the novel coronavirus. The estimate from the WHO comes as it predicts \"a difficult period\" lies ahead.",
-            "content": "The World Health Organization (WHO) said Monday its \"best estimates\" suggest 1 in 10 people worldwide may have been infected by the coronavirus.\r\nThe figure represents more than 20 times the number o… [+4388 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Newstalk 610 CKTB (iHeartRadio)"
-            },
-            "publishedAt": "2020-10-05T12:42:37Z",
-            "title": "Outbreak declared again at one of Niagara's hardest hit retirement homes - Newstalk 610 CKTB (iHeartRadio)",
-            "url": "https://www.iheartradio.ca/610cktb/news/outbreak-declared-again-at-one-of-niagara-s-hardest-hit-retirement-homes-1.13647383",
-            "urlToImage": "http://www.iheartradio.ca/image/policy:1.13647391:1601901579/-Mustafa-Hirji.jpg?a=16%3A9&w=1000&$p$a$w=c0db3c6",
-            "description": "Lundy Manor was the scene of one of the region's worst outbreaks in the spring, with 18 residents losing their lives after contracting the coronavirus.",
-            "content": "Once again a Niagara Falls retirement residence is listed as having an outbreak of COVID-19.\r\nLundy Manor was the scene of one of the region's worst outbreaks in the spring, with 18 residents losing … [+716 chars]"
-        },
-        {
-            "source": {
-                "id": "the-times-of-india",
-                "name": "The Times of India"
-            },
-            "publishedAt": "2020-10-05T10:30:00Z",
-            "title": "COVID-long haulers: People who have tested negative but continue to battle the symptoms - Times of India",
-            "url": "https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/covid-long-haulers-people-who-have-tested-negative-but-continue-to-battle-the-symptoms/photostory/78489883.cms",
-            "urlToImage": "https://static.toiimg.com/photo/78489904.cms",
-            "description": "Some of the most common symptoms of a long-haul COVID-19 are same as coronavirus and include extreme fatigue, muscle or body ache, shortness of breath or difficulty in breathing, massively reduced stamina, exhaustion, and inability to exercise or lead an acti…",
-            "content": "Some of the most common symptoms of a long-haul COVID-19 are same as coronavirus and include extreme fatigue, muscle or body ache, shortness of breath or difficulty in breathing, massively reduced st… [+798 chars]"
         },
         {
             "source": {
@@ -123,38 +123,26 @@
         {
             "source": {
                 "id": null,
-                "name": "Daily Mail"
+                "name": "Yahoo Entertainment"
             },
-            "publishedAt": "2020-10-05T09:03:09Z",
-            "title": "Dozens of mammals could be susceptible to coronavirus, study suggests - Daily Mail",
-            "url": "https://www.dailymail.co.uk/sciencetech/article-8805831/Dozens-mammals-susceptible-coronavirus-study-suggests.html",
-            "urlToImage": "https://i.dailymail.co.uk/1s/2020/10/05/12/33999642-0-image-a-15_1601898728658.jpg",
-            "description": "A total of 26 species were identified as being vulnerable to SARS-CoV-2, the same virus causing the Covid-19 pandemic in humans.",
-            "content": "Dozens of animals which regularly come into close contact with humans are susceptible to infection with the coronavirus, a study shows. \r\nMore than two dozen species were identified as being vulnerab… [+7834 chars]"
+            "publishedAt": "2020-10-05T09:00:00Z",
+            "title": "26 animals 'regularly in contact with people may be susceptible to coronavirus', study suggests - Yahoo Lifestyle UK",
+            "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_9ac115b1-347e-4666-98d8-7011ec2b7f21",
+            "urlToImage": null,
+            "description": null,
+            "content": "Yahoo is part of Verizon Media. We and our partners will store and/or access information on your device through the use of cookies and similar technologies, to display personalised ads and content, f… [+646 chars]"
         },
         {
             "source": {
-                "id": null,
-                "name": "Daily Mail"
+                "id": "bloomberg",
+                "name": "Bloomberg"
             },
-            "publishedAt": "2020-10-05T08:54:03Z",
-            "title": "Less than HALF of Britons will get coronavirus vaccine as it will be saved for the vulnerable - Daily Mail",
-            "url": "https://www.dailymail.co.uk/news/article-8805587/Less-HALF-Britons-coronavirus-vaccine-saved-vulnerable.html",
-            "urlToImage": "https://i.dailymail.co.uk/1s/2020/10/05/09/33992100-0-image-a-13_1601884918442.jpg",
-            "description": "Kate Bingham, chair of the UK's Vaccine Taskforce for Covid-19, said officials were hoping for around 30million adults  of around 67million to receive the potentially life-saving coronavirus vaccine.",
-            "content": "Kate Bingham told the Financial Times less than half of the UK population will get a coronavirus vaccine if one is produced\r\nLess than half of Britain will get vaccinated against Covid-19, according … [+13593 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Cgtn.com"
-            },
-            "publishedAt": "2020-10-05T02:06:20Z",
-            "title": "Vaccinating all of UK 'not going to happen,' task force chair says - CGTN",
-            "url": "https://news.cgtn.com/news/2020-10-05/Vaccinating-all-of-UK-not-going-to-happen-task-force-chair-says-UkFascrEB2/index.html",
-            "urlToImage": "https://news.cgtn.com/news/2020-10-05/Vaccinating-all-of-UK-not-going-to-happen-task-force-chair-says-UkFascrEB2/img/095161f59b724f06975b4668b03b0445/095161f59b724f06975b4668b03b0445-750.jpeg",
-            "description": "Britain's vaccine task force chair, Kate Bingham, said that vaccinating everyone in the country for the coronavirus was \"not going to happen,\" telling the Financial Times only those at risk need to be vaccinated.",
-            "content": "Britain's vaccine task force chair, Kate Bingham, has said that vaccinating everyone in the country for the coronavirus was \"not going to happen,\" telling the Financial Timesonly those at risk need t… [+1230 chars]"
+            "publishedAt": "2020-10-05T05:59:00Z",
+            "title": "Philippines Lets Malls Reopen Further While Virus Deaths Rise - Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2020-10-05/philippines-lets-malls-reopen-further-while-virus-deaths-rise",
+            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i2gK3BhXdzV4/v1/1200x800.jpg",
+            "description": "The Philippines has allowed malls and several businesses to reopen further even as the Southeast Asian nation recorded more coronavirus deaths last month.",
+            "content": "An employee sanitizes an escalator inside a mall in Manila. \r\nSign up here for our daily coronavirus newsletter on what you need to know, and \r\nsubscribe to our Covid-19 podcast for the latest news a… [+1983 chars]"
         },
         {
             "source": {
@@ -170,18 +158,6 @@
         },
         {
             "source": {
-                "id": "independent",
-                "name": "Independent"
-            },
-            "publishedAt": "2020-10-04T23:58:00Z",
-            "title": "Coronavirus: Only half of UK population to get vaccine, task force boss says - The Independent",
-            "url": "https://www.independent.co.uk/news/health/coronavirus-vaccine-when-uk-population-age-b791949.html",
-            "urlToImage": "https://static.independent.co.uk/2020/10/01/13/Flu_Vaccine_12218.jpg",
-            "description": "<p>‘There is going to be no vaccination of people under 18,' says Kate Bingham</p>",
-            "content": "Less than half of the UK population could be vaccinated against coronavirus, according to the head of the country's vaccine taskforce.\r\nKate Bingham told the Financial Times that officials were hopin… [+2394 chars]"
-        },
-        {
-            "source": {
                 "id": null,
                 "name": "Get Reading"
             },
@@ -191,30 +167,6 @@
             "urlToImage": "https://i2-prod.liverpoolecho.co.uk/news/uk-world-news/article18758934.ece/ALTERNATES/s1200/1_JS216127410.jpg",
             "description": "The areas has recorded two new deaths in the past 24 hours",
             "content": "Berkshire has seen a huge rise of 156 coronavirus cases in 24 hour and two new recorded deaths.\r\nThe latest data from Public Health England today (October 4) also shows the total number of UK cases i… [+3425 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Bangor Daily News"
-            },
-            "publishedAt": "2020-10-04T14:08:27Z",
-            "title": "36 new coronavirus cases have been reported in Maine - Bangor Daily News",
-            "url": "http://bangordailynews.com/2020/10/04/news/36-new-coronavirus-cases-have-been-reported-in-maine-0vzoa9n507wn/",
-            "urlToImage": "https://i1.wp.com/bdn-data.s3.amazonaws.com/uploads/2020/07/Nirav-Shah.jpg?fit=2500%2C1667&ssl=1",
-            "description": "No new deaths were reported Sunday, leaving the statewide death toll at 142.",
-            "content": "Another 36 coronavirus cases have been reported in Maine, health officials said Sunday.\r\nSundays report brings the total number of coronavirus cases in Maine to 5,519. Of those, 4,944 have been confi… [+2802 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Cheshire Live"
-            },
-            "publishedAt": "2020-10-04T13:48:00Z",
-            "title": "No new coronavirus deaths recorded in Cheshire hospitals - but 28 more die in England - Cheshire Live",
-            "url": "https://www.cheshire-live.co.uk/news/chester-cheshire-news/no-new-coronavirus-deaths-recorded-19047488",
-            "urlToImage": "https://i2-prod.birminghammail.co.uk/incoming/article19039569.ece/ALTERNATES/s1200/1_NHS-workforce-plan.jpg",
-            "description": "The latest figures for Sunday, October 4 have been released by NHS England",
-            "content": "No new deaths from coronavirus have been recorded in Cheshire hospitals during the last 24 hours.\r\n The previous 24 hours had seen two deaths recorded in the county, including the first since July fo… [+1488 chars]"
         }
     ]
 }
