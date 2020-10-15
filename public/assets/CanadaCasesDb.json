@@ -1,5 +1,5 @@
 {
-    "date": "2020-10-15 00:00:55",
+    "date": "2020-10-15 08:01:01",
     "cases": [
         {
             "date": "1/26",
@@ -25523,10 +25523,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "61413",
-                    "cured": "52512",
-                    "death": "3017",
-                    "lethality": "4.91%"
+                    "value": "62196",
+                    "cured": "53291",
+                    "death": "3022",
+                    "lethality": "4.86%"
                 },
                 {
                     "name": "Alberta",
@@ -25548,7 +25548,7 @@
                     "name": "Nova Scotia",
                     "abbr": "NS",
                     "value": "1092",
-                    "cured": "1023",
+                    "cured": "1024",
                     "death": "65",
                     "lethality": "5.95%"
                 },
@@ -25643,14 +25643,14 @@
         {
             "Province": "Ontario",
             "Abbr": "ON",
-            "Conf.": "61413",
-            "Per m": 4217,
-            "Cured": "52512",
-            "Deaths": "3017",
-            "Active": 5884,
-            "Lethality": "4.91%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "62196",
+            "Per m": 4270,
+            "Cured": "53291",
+            "Deaths": "3022",
+            "Active": 5883,
+            "Lethality": "4.86%",
+            "New": "+783",
+            "NewDeaths": "+5"
         },
         {
             "Province": "Alberta",
@@ -25681,9 +25681,9 @@
             "Abbr": "NS",
             "Conf.": "1092",
             "Per m": 1125,
-            "Cured": "1023",
+            "Cured": "1024",
             "Deaths": "65",
-            "Active": 4,
+            "Active": 3,
             "Lethality": "5.95%",
             "New": 0,
             "NewDeaths": 0
@@ -25799,21 +25799,21 @@
         {
             "Province": "Canada",
             "Abbr": "Canada",
-            "Conf.": "189385",
-            "Per m": 5039,
-            "Cured": "159351",
-            "Deaths": "9663",
-            "Active": 20371,
-            "Lethality": "5.10%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "190168",
+            "Per m": 5060,
+            "Cured": "160131",
+            "Deaths": "9668",
+            "Active": 20369,
+            "Lethality": "5.08%",
+            "New": "+783",
+            "NewDeaths": "+5"
         }
     ],
     "overall": {
-        "confirmed": "189385",
-        "increased": 0,
-        "recovered": "159351",
-        "death": "9663",
-        "lethality": "5.10%"
+        "confirmed": "190168",
+        "increased": 783,
+        "recovered": "160131",
+        "death": "9668",
+        "lethality": "5.08%"
     }
 }
