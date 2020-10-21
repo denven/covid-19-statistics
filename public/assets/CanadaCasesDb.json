@@ -1,5 +1,5 @@
 {
-    "date": "2020-10-21 00:01:10",
+    "date": "2020-10-21 08:01:11",
     "cases": [
         {
             "date": "1/26",
@@ -26225,10 +26225,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "65896",
-                    "cured": "56606",
-                    "death": "3053",
-                    "lethality": "4.63%"
+                    "value": "66686",
+                    "cured": "57325",
+                    "death": "3062",
+                    "lethality": "4.59%"
                 },
                 {
                     "name": "Alberta",
@@ -26281,10 +26281,10 @@
                 {
                     "name": "New Brunswick",
                     "abbr": "NB",
-                    "value": "313",
-                    "cured": "215",
-                    "death": "3",
-                    "lethality": "0.96%"
+                    "value": "319",
+                    "cured": "223",
+                    "death": "4",
+                    "lethality": "1.25%"
                 },
                 {
                     "name": "Prince Edward Island",
@@ -26345,14 +26345,14 @@
         {
             "Province": "Ontario",
             "Abbr": "ON",
-            "Conf.": "65896",
-            "Per m": 4524,
-            "Cured": "56606",
-            "Deaths": "3053",
-            "Active": 6237,
-            "Lethality": "4.63%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "66686",
+            "Per m": 4579,
+            "Cured": "57325",
+            "Deaths": "3062",
+            "Active": 6299,
+            "Lethality": "4.59%",
+            "New": "+790",
+            "NewDeaths": "+9"
         },
         {
             "Province": "Alberta",
@@ -26429,14 +26429,14 @@
         {
             "Province": "New Brunswick",
             "Abbr": "NB",
-            "Conf.": "313",
-            "Per m": 403,
-            "Cured": "215",
-            "Deaths": "3",
-            "Active": 95,
-            "Lethality": "0.96%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "319",
+            "Per m": 411,
+            "Cured": "223",
+            "Deaths": "4",
+            "Active": 92,
+            "Lethality": "1.25%",
+            "New": "+6",
+            "NewDeaths": "+1"
         },
         {
             "Province": "Prince Edward Island",
@@ -26501,21 +26501,21 @@
         {
             "Province": "Canada",
             "Abbr": "Canada",
-            "Conf.": "203689",
-            "Per m": 5419,
-            "Cured": "171743",
-            "Deaths": "9794",
-            "Active": 22152,
-            "Lethality": "4.81%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "204485",
+            "Per m": 5440,
+            "Cured": "172470",
+            "Deaths": "9804",
+            "Active": 22211,
+            "Lethality": "4.79%",
+            "New": "+796",
+            "NewDeaths": "+10"
         }
     ],
     "overall": {
-        "confirmed": "203689",
-        "increased": 0,
-        "recovered": "171743",
-        "death": "9794",
-        "lethality": "4.81%"
+        "confirmed": "204485",
+        "increased": 796,
+        "recovered": "172470",
+        "death": "9804",
+        "lethality": "4.79%"
     }
 }
