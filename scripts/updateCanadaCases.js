@@ -56,9 +56,7 @@ async function getCasesTimeline() {
 					.text()
 					.replace(/\[\d{1,3}\]/g, ""); //remove [no] refereneces
 				let date = message.match(/^On [A-Z][a-z]{2,10} \d{1,2}/g);
-				let content = message
-					.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, "")
-					.trim();
+				let content = message.replace(/^On [A-Z][a-z]{2,10} \d{1,2},/g, "").trim();
 				if (date) {
 					date = (date[0].slice(3) + ", 2020").replace(/ ([\d],)/g, " 0$1");
 					content = content.charAt(0).toUpperCase() + content.substring(1);
@@ -102,9 +100,7 @@ async function getCasesTimeline() {
 					.text()
 					.replace(/\[[a-z]{0,10}\d{0,2}\]/g, "");
 				let date = message.match(/As of [A-Z][a-z]{2,10}.*, 2020/g);
-				let content = message
-					.replace(/(.*)As of [A-Z][a-z]{2,10}.*, 2020, /g, "")
-					.trim();
+				let content = message.replace(/(.*)As of [A-Z][a-z]{2,10}.*, 2020, /g, "").trim();
 				if (date) {
 					date = date[0];
 					content = content.charAt(0).toUpperCase() + content.substring(1);
@@ -120,14 +116,10 @@ async function getCasesTimeline() {
 			};
 			const timelineString = JSON.stringify(jsonData, null, 4);
 			// console.log(timelineString);
-			fs.writeFile(
-				"../public/assets/CanadaTimeline.json",
-				timelineString,
-				(err, result) => {
-					if (err) console.log("Error in writing data into Json file", err);
-					console.log(`Updated Canada timeline data at ${jsonData.time}`);
-				}
-			);
+			fs.writeFile("../public/assets/CanadaTimeline.json", timelineString, (err, result) => {
+				if (err) console.log("Error in writing data into Json file", err);
+				console.log(`Updated Canada timeline data at ${jsonData.time}`);
+			});
 		}
 	} else {
 		console.log("Failed to get Canada cases from wiki page:", res.status);
@@ -167,9 +159,7 @@ const getTodaysCases = (elements, $, allDaysCases) => {
 				// Total confirmed row
 				if (tabRow.includes("Confirmed")) {
 					//Order: BC:0,	AB:1,	ON:2, NB,3	QC:4, SK:5, MB:6  total provinces: 5 :as of 2020-03-12
-					let provCases = tabRow
-						.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g, "")
-						.split(",");
+					let provCases = tabRow.replace(/[,]{0,1}[a-zA-Z][,]{0,1}/g, "").split(",");
 					let lastDay = allDaysCases[allDaysCases.length - 1];
 					let totalHisCases = lastDay.cases.reduce(
 						(total, curProv) => {
@@ -208,8 +198,7 @@ const getTodaysCases = (elements, $, allDaysCases) => {
 					if (presumptiveCases.length > 0) {
 						provinces.forEach((prov, index) => {
 							let provIdx = provAbbrs.indexOf(prov.abbr);
-							casesAsOfToday[index].suspect =
-								presumptiveCases[provIdx] > 0 ? presumptiveCases[provIdx] : "";
+							casesAsOfToday[index].suspect = presumptiveCases[provIdx] > 0 ? presumptiveCases[provIdx] : "";
 						});
 					}
 				}
@@ -261,20 +250,14 @@ const getCanadaOverall = (canada, oldOverall, casesAsOfToday, allDaysCases) => {
 		let yesterdayCases = allDaysCases[allDaysCases.length - 2];
 		let yesterdayTotal = yesterdayCases.cases.reduce(
 			(total, curProv) => {
-				return (total =
-					parseInt(total) +
-					parseInt(curProv.value || 0) +
-					parseInt(curProv.suspect || 0));
+				return (total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0));
 			},
 			[0]
 		);
 
 		let todayTotal = casesAsOfToday.reduce(
 			(total, curProv) => {
-				return (total =
-					parseInt(total) +
-					parseInt(curProv.value || 0) +
-					parseInt(curProv.suspect || 0));
+				return (total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0));
 			},
 			[0]
 		);
@@ -335,12 +318,7 @@ async function updateHistoryCases() {
 		// PART 3: GET/Calculate overall cases today
 		elements = $("td", ".infobox"); //get table rows
 		let canadaCases = provDetails[provDetails.length - 1];
-		let newOverall = getCanadaOverall(
-			canadaCases,
-			oldOverall,
-			casesAsOfToday,
-			allDaysCases
-		);
+		let newOverall = getCanadaOverall(canadaCases, oldOverall, casesAsOfToday, allDaysCases);
 		// console.log(canadaCases, newOverall);
 
 		// PART 4: Write to file
@@ -354,14 +332,10 @@ async function updateHistoryCases() {
 		// save to json file
 		if (!DEBUG_MODE_ON) {
 			const casesString = JSON.stringify(jsonData, null, 4);
-			fs.writeFile(
-				"../public/assets/CanadaCasesDb.json",
-				casesString,
-				(err, result) => {
-					if (err) console.log("Error in writing data into Json file", err);
-					console.log(`Updated Canada history cases data at ${jsonData.date}`);
-				}
-			);
+			fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
+				if (err) console.log("Error in writing data into Json file", err);
+				console.log(`Updated Canada history cases data at ${jsonData.date}`);
+			});
 		}
 	} else {
 		console.log("Failed to get Canada cases from wiki page:", res.status);
@@ -379,22 +353,24 @@ async function getCanadaCases() {
 
 	try {
 		let bcTestsCount = await getBCTestsNumber(); // April 15th added for more accurate tests number
-		let resArray = await axios.all(
-			provincesApiUrls.map((url) => axios.get(url))
-		);
+		let resArray = await axios.all(provincesApiUrls.map((url) => axios.get(url)));
 		let provCases = resArray.map(({ data }, index) => {
 			let {
 				State,
 				Confirmed,
 				Deaths,
 				Recovered,
-				Tests,
-				Hospitalizations,
-				IntensiveCares,
+				// The following items were changed in 20th, Oct.
+				// Tests,
+				// Hospitalizations,
+				// IntensiveCares,
 				Population,
 			} = data[0];
-			let casesPer1M =
-				Population > 0 ? Math.ceil((Confirmed * 1000000) / Population) : 0;
+
+			// Added to adatp new changes in October, 2020
+			let { H: Hospitalizations, I: IntensiveCares, T: Tests } = data[0].History[0];
+
+			let casesPer1M = Population > 0 ? Math.ceil((Confirmed * 1000000) / Population) : 0;
 
 			// Update BC Tests exclusively
 			if (State === "British Columbia" && Tests < bcTestsCount) {
@@ -412,23 +388,18 @@ async function getCanadaCases() {
 				InICU: IntensiveCares,
 				Deaths: Deaths,
 				Active: Confirmed - Recovered - Deaths,
-				Lethality:
-					Deaths > 0 ? ((100 * Deaths) / Confirmed).toFixed(2) + "%" : "0%",
+				Lethality: Deaths > 0 ? ((100 * Deaths) / Confirmed).toFixed(2) + "%" : "0%",
 			};
 		});
 		return provCases;
 	} catch (error) {
-		console.log(
-			"Error when fetching Canada Latest Cases by Api requests:",
-			error
-		);
+		console.log("Error when fetching Canada Latest Cases by Api requests:", error);
 		return;
 	}
 }
 
 const getBCTestsNumber = async () => {
-	const BCLabTestUrl =
-		"http://www.bccdc.ca/Health-Info-Site/Documents/BCCDC_COVID19_Dashboard_Lab_Information.csv";
+	const BCLabTestUrl = "http://www.bccdc.ca/Health-Info-Site/Documents/BCCDC_COVID19_Dashboard_Lab_Information.csv";
 	let csvFile = await axios.get(BCLabTestUrl);
 	let rows = csvFile.data.split("\r\n");
 
@@ -491,10 +462,7 @@ async function updateHistoryCasesV2() {
 
 	let todayTotal = casesAsOfToday.reduce(
 		(total, curProv) => {
-			return (total =
-				parseInt(total) +
-				parseInt(curProv.value || 0) +
-				parseInt(curProv.suspect || 0));
+			return (total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0));
 		},
 		[0]
 	);
@@ -502,10 +470,7 @@ async function updateHistoryCasesV2() {
 	let yesterday = allDaysCases[allDaysCases.length - 2];
 	let yesterdayTotal = yesterday.cases.reduce(
 		(total, curProv) => {
-			return (total =
-				parseInt(total) +
-				parseInt(curProv.value || 0) +
-				parseInt(curProv.suspect || 0));
+			return (total = parseInt(total) + parseInt(curProv.value || 0) + parseInt(curProv.suspect || 0));
 		},
 		[0]
 	);
@@ -551,14 +516,10 @@ async function updateHistoryCasesV2() {
 	// save to json file
 	if (!DEBUG_MODE_ON) {
 		const casesString = JSON.stringify(jsonData, null, 4);
-		fs.writeFile(
-			"../public/assets/CanadaCasesDb.json",
-			casesString,
-			(err, result) => {
-				if (err) console.log("Error in writing data into Json file", err);
-				console.log(`Updated Canada history cases data at ${jsonData.date}`);
-			}
-		);
+		fs.writeFile("../public/assets/CanadaCasesDb.json", casesString, (err, result) => {
+			if (err) console.log("Error in writing data into Json file", err);
+			console.log(`Updated Canada history cases data at ${jsonData.date}`);
+		});
 	}
 }
 
