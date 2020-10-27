@@ -1,5 +1,5 @@
 {
-    "date": "2020-10-27 00:00:54",
+    "date": "2020-10-27 08:01:04",
     "cases": [
         {
             "date": "1/26",
@@ -26927,10 +26927,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "71224",
-                    "cured": "60839",
-                    "death": "3099",
-                    "lethality": "4.35%"
+                    "value": "72051",
+                    "cured": "61530",
+                    "death": "3103",
+                    "lethality": "4.31%"
                 },
                 {
                     "name": "Alberta",
@@ -26951,7 +26951,7 @@
                 {
                     "name": "Nova Scotia",
                     "abbr": "NS",
-                    "value": "1101",
+                    "value": "1102",
                     "cured": "1031",
                     "death": "65",
                     "lethality": "5.90%"
@@ -27049,18 +27049,18 @@
         },
         {
             "Province": "Ontario",
-            "Tests": "4937423",
+            "Tests": "4961368",
             "Abbr": "ON",
-            "Conf.": "71224",
-            "Per m": 4890,
-            "Cured": "60839",
-            "InWard": "295",
-            "InICU": "78",
-            "Deaths": "3099",
-            "Active": 7286,
-            "Lethality": "4.35%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "72051",
+            "Per m": 4947,
+            "Cured": "61530",
+            "InWard": "312",
+            "InICU": "75",
+            "Deaths": "3103",
+            "Active": 7418,
+            "Lethality": "4.31%",
+            "New": "+827",
+            "NewDeaths": "+4"
         },
         {
             "Province": "Alberta",
@@ -27096,15 +27096,15 @@
             "Province": "Nova Scotia",
             "Tests": "0",
             "Abbr": "NS",
-            "Conf.": "1101",
-            "Per m": 1134,
+            "Conf.": "1102",
+            "Per m": 1135,
             "Cured": "1031",
             "InWard": "0",
             "InICU": "0",
             "Deaths": "65",
-            "Active": 5,
+            "Active": 6,
             "Lethality": "5.90%",
-            "New": 0,
+            "New": "+1",
             "NewDeaths": 0
         },
         {
@@ -27244,25 +27244,25 @@
         },
         {
             "Province": "Canada",
-            "Tests": "11003138",
+            "Tests": "11027083",
             "Abbr": "Canada",
-            "Conf.": "220213",
-            "Per m": 5859,
-            "Cured": "184306",
-            "InWard": "1135",
-            "InICU": "233",
-            "Deaths": "9973",
-            "Active": 25934,
-            "Lethality": "4.53%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "221041",
+            "Per m": 5881,
+            "Cured": "184997",
+            "InWard": "1152",
+            "InICU": "230",
+            "Deaths": "9977",
+            "Active": 26067,
+            "Lethality": "4.51%",
+            "New": "+828",
+            "NewDeaths": "+4"
         }
     ],
     "overall": {
-        "confirmed": "220213",
-        "increased": 0,
-        "recovered": "184306",
-        "death": "9973",
-        "lethality": "4.53%"
+        "confirmed": "221041",
+        "increased": 828,
+        "recovered": "184997",
+        "death": "9977",
+        "lethality": "4.51%"
     }
 }
