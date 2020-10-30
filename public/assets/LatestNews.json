@@ -2,75 +2,123 @@
     "articles": [
         {
             "source": {
-                "id": "reuters",
-                "name": "Reuters"
+                "id": null,
+                "name": "Global News"
             },
-            "publishedAt": "2020-10-30T03:02:00Z",
-            "title": "U.S. breaks daily record for coronavirus cases with over 91,000 new infections - Reuters UK",
-            "url": "https://uk.reuters.com/article/uk-health-coronavirus-usa-record-idUKKBN27F0AG",
-            "urlToImage": "https://static.reuters.com/resources/r/?m=02&d=20201030&t=2&i=1539359498&r=LYNXMPEG9T05T&w=800",
-            "description": "The United States broke its single-day record for new coronavirus infections on Thursday, reporting over 91,000 new cases, as hospitalizations also hit new highs in many states, according to a Reuters tally.",
-            "content": "By Reuters Staff\r\n(Reuters) - The United States broke its single-day record for new coronavirus infections on Thursday, reporting over 91,000 new cases, as hospitalizations also hit new highs in many… [+1612 chars]"
+            "publishedAt": "2020-10-30T20:47:25Z",
+            "title": "Yukon reports 1st death related to coronavirus - Global News",
+            "url": "https://globalnews.ca/news/7433467/yukon-coronavirus-death/",
+            "urlToImage": "https://globalnews.ca/wp-content/uploads/2020/09/GettyImages-1215372120.jpg?quality=85&strip=all&w=720&h=379&crop=1",
+            "description": "The death of a Watson Lake, Yukon, resident is the first coronavirus-related fatality in Canada's North.",
+            "content": "The first coronavirus-related death in Canada’s North has been recorded in Yukon, health authorities say.\r\nThe territory’s chief medical officer Dr. Brendan Hanley said in a statement the person died… [+1543 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "publishedAt": "2020-10-30T17:03:17Z",
+            "title": "How long does immunity against the coronavirus last? | COVID-19 Special - DW News",
+            "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9R3V4a05TQ1dPeGfSAQA?oc=5",
+            "urlToImage": null,
+            "description": null,
+            "content": null
         },
         {
             "source": {
                 "id": null,
-                "name": "中国日报"
+                "name": "Evening Standard"
             },
-            "publishedAt": "2020-10-30T01:31:14Z",
-            "title": "Mutated virus linked to new case upsurge - Chinadaily USA",
-            "url": "http://global.chinadaily.com.cn/a/202010/30/WS5f9b6778a31024ad0ba820b1.html",
-            "urlToImage": "//img2.chinadaily.com.cn/images/202010/30/5f9b6778a31024adbd9cffc8.jpeg",
-            "description": "Research that tracks how the novel coronavirus mutates shows the rapid spread of a variant in Europe since the summer accounts for the majority of new cases in the United Kingdom and several other countries.",
-            "content": "Tourists and locals gather at a lookout point, with a view of the city of Barcelona in the background, after regional authorities across Spain introduced fresh coronavirus disease (COVID-19) restrict… [+4044 chars]"
+            "publishedAt": "2020-10-30T15:25:00Z",
+            "title": "Eat Out to Help Out caused ‘significant’ rise in coronavirus infections, study suggests - Evening Standard",
+            "url": "https://www.standard.co.uk/news/uk/eat-out-to-help-out-rise-coronavirus-infections-b29035.html",
+            "urlToImage": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2020/10/14/10/soho-alfresco-dining.jpg",
+            "description": "",
+            "content": "The Eat Out to Help Out scheme accelerated the UKs coronavirus second wave and damaged the hospitality sector in the long term, a new study suggests.\r\nThe scheme involved the Government paying up to … [+1751 chars]"
         },
         {
             "source": {
                 "id": null,
-                "name": "Daily Hive"
+                "name": "The Telegram"
             },
-            "publishedAt": "2020-10-29T23:39:00Z",
-            "title": "Washington reports over 800 new coronavirus cases in the past 24 hours | News - Daily Hive",
-            "url": "https://dailyhive.com/seattle/washington-coronavirus-cases-october-29",
-            "urlToImage": "https://images.dailyhive.com/20200626162336/shutterstock_16250279652-500x258.jpg",
-            "description": "And six new deaths.",
-            "content": "The Washington government has revealed that the states COVID-19-related death toll is 2,359 after announcing six new deaths since Wednesday afternoon."
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Ctvnews.ca"
-            },
-            "publishedAt": "2020-10-29T22:50:00Z",
-            "title": "Coronavirus update: BC's largest health authority is asking people to consider not hosting anyone at their homes - CTV News Vancouver",
-            "url": "https://bc.ctvnews.ca/zero-guests-b-c-s-biggest-health-authority-asks-residents-not-to-host-anyone-at-home-1.5166989",
-            "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.4961900.1590870772!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
-            "description": "There's already a public health order restricting the size of gatherings in private homes in B.C., but the province's most populous health authority is taking things further.",
-            "content": "VANCOUVER -- \r\nThere's already a public health order restricting the size of gatherings in private homes in B.C., but the province's most populous health authority is taking things further.\r\nFraser H… [+3295 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Yahoo Entertainment"
-            },
-            "publishedAt": "2020-10-29T17:14:00Z",
-            "title": "Religious school retreat led to coronavirus outbreak in Wisconsin - Yahoo Canada Shine On",
-            "url": "https://ca.style.yahoo.com/religious-school-retreat-led-to-covid-outbreak-in-wisconsin-171425123.html",
-            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/YewB601jmO_5xtQtZKf57A--~B/aD03NTY7dz0xMzQ0O3NtPTE7YXBwaWQ9eXRhY2h5b24-/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-10/47a28441-19ff-11eb-b49f-e19fc2d64fa9",
-            "description": "Although nobody fell seriously ill, the scope of the outbreak — an exceptionally high 76 percent infection rate — suggests the intensity with which the airborne pathogen can proliferate in the absence of appropriate measures.",
-            "content": "WASHINGTON The coronavirus tore through a religious school retreat in Wisconsin over the summer, fueled by a lack of proper mitigation measures. Although nobody fell seriously ill, the scope of the o… [+3329 chars]"
+            "publishedAt": "2020-10-30T15:17:00Z",
+            "title": "Austria's COVID-19 infections leap as nation awaits new restrictions - The Telegram",
+            "url": "https://www.thetelegram.com/news/world/austrias-daily-covid-infections-surge-past-5000-to-new-record-515231/",
+            "urlToImage": "https://www.thetelegram.com/media/photologue/photos/cache/austrias-daily-covid-infections-surge-past-5000-to-new-record_medium",
+            "description": "VIENNA (Reuters) - Austria's daily coronavirus infections jumped by more than a quarter to a new record on Friday, nearing the level at which the government says hospitals will be stretched beyond capacity, as it works on new restrictions to stem the",
+            "content": "VIENNA (Reuters) - Austria's daily coronavirus infections jumped by more than a quarter to a new record on Friday, nearing the level at which the government says hospitals will be stretched beyond ca… [+2168 chars]"
         },
         {
             "source": {
                 "id": null,
                 "name": "Yahoo Entertainment"
             },
-            "publishedAt": "2020-10-29T13:10:00Z",
-            "title": "This is Why Less People are Dying From Coronavirus - Yahoo Canada Shine On",
-            "url": "https://ca.style.yahoo.com/why-less-people-dying-coronavirus-131011425.html",
-            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/_TMSTyeylUheSs_9HP8WGw--~B/aD04MDE7dz0xMjAwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/galvanized/3972373bfd32ecce41f8e3ae3259970a",
-            "description": "During the spring, when the COVID-19 pandemic was ravaging the northeast, thousands of people were dying every day across the country. However, while the virus is still raging — with the United States even experiencing a record high of infections, per the sev…",
-            "content": "During the spring, when the COVID-19 pandemic was ravaging the northeast, thousands of people were dying every day across the country. However, while the virus is still raging with the United States … [+4827 chars]"
+            "publishedAt": "2020-10-30T13:01:00Z",
+            "title": "App could one day detect asymptomatic coronavirus by listening to forced coughs - Yahoo News Canada",
+            "url": "https://ca.style.yahoo.com/coronavirus-covid19-app-cough-symptoms-diagnosis-130128750.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/d5unCVyRbI8dtD90N3rXUw--~B/aD0zMzM1O3c9NTAwMztzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-images/2019-12/fb717070-28a2-11ea-afbf-e0d32558dcd3",
+            "description": "A person could one day cough into their phone and be told whether to get tested.",
+            "content": "An app could one day detect whether a person is an asymptomatic carrier of the coronavirus.\r\nA new continuous cough is one of the tell-tale signs of the infection, however, not everyone who catches t… [+3966 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "publishedAt": "2020-10-30T12:51:00Z",
+            "title": "Europe is ‘paying for summer holidays with winter lockdowns’, says expert - Yahoo Canada Sports",
+            "url": "https://ca.sports.yahoo.com/news/coronavirus-europe-paying-summer-holidays-winter-lockdowns-125132467.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/V7PfZwcNj8Yi8cdWK_ar5Q--~B/aD0zOTc0O3c9NjA4MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-10/977c60a0-1aac-11eb-bbdf-29e41c1b43fc",
+            "description": "Professor Devi Sridhar said Europe is \"paying for summer holidays with winter lockdowns\" after a study suggested a strain of coronavirus from Spain is causing UK cases.",
+            "content": "Europe is paying for summer holidays with winter lockdowns, a leading scientific expert has suggested.\r\nProfessor Devi Sridhar, scientific adviser to Scottish first minister Nicola Sturgeon, made the… [+2532 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Wales Online"
+            },
+            "publishedAt": "2020-10-30T12:24:38Z",
+            "title": "What a circuit-breaker Covid lockdown in England would look like - Hull Live",
+            "url": "https://www.walesonline.co.uk/news/uk-news/what-circuit-breaker-covid-lockdown-19192953",
+            "urlToImage": "https://i2-prod.bristolpost.co.uk/incoming/article4653240.ece/ALTERNATES/s1200/0_Coronavirus-Thu-Oct-29-2020.jpg",
+            "description": "Pressure is mounting to impose a lockdown in response to rising coronavirus infections",
+            "content": "Pressure is mounting in England to impose a national lockdown, a circuit-breaker or a firebreak, in response to rising coronavirus infections.\r\nThe effectiveness of the current three-tier system of r… [+3859 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "National Post"
+            },
+            "publishedAt": "2020-10-30T11:07:54Z",
+            "title": "Study suggests novel reason for wide range in COVID illness: people never exposed to virus have some antibodies - Fairview Post",
+            "url": "https://nationalpost.com/health/study-suggests-novel-reason-for-wide-range-in-covid-illness-people-never-exposed-to-virus-have-some-antibodies",
+            "urlToImage": "https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2020/10/antibodies-1.png",
+            "description": "Where those antibodies came from is unclear. It might be they’re a result of contracting seasonal coronaviruses, the kind that cause colds",
+            "content": "Even if they are legitimate, he said, it would be speculative to suggest that antibodies in unexposed subjects explain the wide range of illness caused by the coronavirus. Age is the clearest predict… [+1658 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Global News"
+            },
+            "publishedAt": "2020-10-29T17:16:43Z",
+            "title": "Ottawa adds 58 new coronavirus cases as outbreaks on sports teams end - Global News",
+            "url": "https://globalnews.ca/news/7429946/ottawa-coronavirus-covid-19-update-october-29/",
+            "urlToImage": "https://globalnews.ca/wp-content/uploads/2020/10/Hockey.jpg?quality=85&strip=all&w=720&h=379&crop=1",
+            "description": "The seven coronavirus outbreaks linked to organized sports teams in Ottawa have ended, according to the local public health unit.",
+            "content": "Ottawa Public Health (OPH) reported 58 new coronavirus cases on Thursday and confirmed four additional deaths related to COVID-19 in the past 24 hours.\r\nOttawa has now seen 6,830 cases of the virus s… [+1531 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Southend Standard"
+            },
+            "publishedAt": "2020-10-29T15:40:00Z",
+            "title": "New Covid symptom labeled 'Covid toes' turns feet purple - Southend Standard",
+            "url": "https://www.southendstandard.co.uk/news/18831975.new-covid-symptom-labeled-covid-toes-turns-feet-purple/",
+            "urlToImage": "https://www.southendstandard.co.uk/resources/images/11972654/",
+            "description": "People infected with coronavirus may experience a new symptom where their toes become red and swollen, scientists say.",
+            "content": "People infected with coronavirus may experience a new symptom where their toes become red and swollen, scientists say.\r\nScientists have found some who suffer from the virus can develop chilblain-like… [+2026 chars]"
         },
         {
             "source": {
@@ -99,50 +147,14 @@
         {
             "source": {
                 "id": null,
-                "name": "TheChronicleHerald.ca"
+                "name": "Euronews"
             },
-            "publishedAt": "2020-10-29T07:42:22Z",
-            "title": "UK COVID researcher says any lockdown should come sooner not later - TheChronicleHerald.ca",
-            "url": "https://www.thechronicleherald.ca/news/world/uk-covid-researcher-says-any-lockdown-should-come-sooner-not-later-514631/",
-            "urlToImage": "https://www.thechronicleherald.ca/media/photologue/photos/cache/uk-covid-researcher-says-any-lockdown-should-come-sooner-not-later_medium",
-            "description": "LONDON (Reuters) - Britain should act sooner rather than later if it is going to follow Germany and France and take nationwide steps to slow a second wave of the coronavirus, said Steven Riley, author of an Imperial College study into the spread of",
-            "content": "LONDON (Reuters) - Britain should act sooner rather than later if it is going to follow Germany and France and take nationwide steps to slow a second wave of the coronavirus, said Steven Riley, autho… [+612 chars]"
-        },
-        {
-            "source": {
-                "id": "reuters",
-                "name": "Reuters"
-            },
-            "publishedAt": "2020-10-29T05:01:58Z",
-            "title": "Next crop of COVID-19 vaccine developers take more traditional route - Reuters",
-            "url": "https://www.reuters.com/article/health-coronavirus-vaccine-next-idUSKBN27E0JM",
-            "urlToImage": "https://static.reuters.com/resources/r/?m=02&d=20201029&t=2&i=1539218363&r=LYNXMPEG9S0BG&w=800",
-            "description": "The handful of drugmakers dominating the global coronavirus vaccine race are pushing the boundaries of vaccine technology. The next crop under development feature more conventional, proven designs.",
-            "content": "CHICAGO/BERLIN (Reuters) - The handful of drugmakers dominating the global coronavirus vaccine race are pushing the boundaries of vaccine technology. The next crop under development feature more conv… [+5161 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "SciTechDaily"
-            },
-            "publishedAt": "2020-10-29T00:04:53Z",
-            "title": "Nanoparticle Developed to Target “Achilles Heel” of Coronavirus – Could Be Key for Effective COVID-19 Vaccine - SciTechDaily",
-            "url": "https://scitechdaily.com/nanoparticle-developed-to-target-achilles-heel-of-coronavirus-could-be-key-for-effective-covid-19-vaccine/",
-            "urlToImage": "https://scitechdaily.com/images/RBD-Particle-Vaccine-scaled.jpg",
-            "description": "Changing the makeup of a specific protein has the potential to neutralize the virus. A University at Buffalo-led research team has discovered a technique that could help increase the effectiveness of vaccines against the novel coronavirus, the virus that caus…",
-            "content": "A close-up view of the RBD particle vaccine (green). Credit: Facility for Electron Microscopy Research (FEMR) at McGill University\r\nChanging the makeup of a specific protein has the potential to neut… [+4943 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Global News"
-            },
-            "publishedAt": "2020-10-28T20:22:13Z",
-            "title": "Coronavirus: Hamilton reports 33 new COVID-19 cases, outbreak at west Mountain LTC grows - y108.ca",
-            "url": "https://globalnews.ca/news/7427731/coronavirus-hamilton-update-oct-28-covid19/",
-            "urlToImage": "https://globalnews.ca/wp-content/uploads/2020/10/hold-up-1.jpg?quality=85&strip=all&w=720&h=379&crop=1",
-            "description": "The COVID-19 outbreak at the Chartwell Willowgrove long-term care centre now has 18 total cases.",
-            "content": "Hamilton reported 33 new COVID-19 cases on Wednesday and says the outbreak at the Chartwell Willowgrove long-term care home has grown by three more cases.\r\nThe care home now has 18 total cases involv… [+5911 chars]"
+            "publishedAt": "2020-10-29T07:55:53Z",
+            "title": "Coronavirus: Up to 100000 people infected every day in England, study finds - Euronews",
+            "url": "https://www.euronews.com/2020/10/29/coronavirus-up-to-100-000-people-infected-every-day-in-england-study-finds",
+            "urlToImage": "https://static.euronews.com/articles/stories/05/09/29/86/1000x563_cmsv2_a10cad9d-ba35-5daf-9377-e6be3b764603-5092986.jpg",
+            "description": "Scientists at Imperial College London estimated that there are about 96,000 new cases of COVID-19 in England every day and that the outbreak is doubling every nine days.",
+            "content": "Nearly 100,000 people are being infected with COVID-19 every day in England, a new study has found, warning that \"something needs to change before Christmas\".\r\nScientists at Imperial College London e… [+2611 chars]"
         }
     ]
 }
