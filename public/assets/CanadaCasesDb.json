@@ -1,5 +1,5 @@
 {
-    "date": "2020-11-26 00:01:09",
+    "date": "2020-11-26 08:01:11",
     "cases": [
         {
             "date": "1/26",
@@ -30437,10 +30437,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "107883",
-                    "cured": "91550",
-                    "death": "3554",
-                    "lethality": "3.29%"
+                    "value": "109361",
+                    "cured": "92915",
+                    "death": "3575",
+                    "lethality": "3.27%"
                 },
                 {
                     "name": "Alberta",
@@ -30501,7 +30501,7 @@
                 {
                     "name": "Prince Edward Island",
                     "abbr": "PE",
-                    "value": "69",
+                    "value": "70",
                     "cured": "68",
                     "death": "0",
                     "lethality": "0%"
@@ -30510,9 +30510,9 @@
                     "name": "Yukon",
                     "abbr": "YT",
                     "value": "39",
-                    "cured": "15",
-                    "death": "23",
-                    "lethality": "58.97%"
+                    "cured": "23",
+                    "death": "1",
+                    "lethality": "2.56%"
                 },
                 {
                     "name": "Northwest Territories",
@@ -30559,18 +30559,18 @@
         },
         {
             "Province": "Ontario",
-            "Tests": "6020852",
+            "Tests": "6068428",
             "Abbr": "ON",
-            "Conf.": "107883",
-            "Per m": 7407,
-            "Cured": "91550",
-            "InWard": "523",
-            "InICU": "159",
-            "Deaths": "3554",
-            "Active": 12779,
-            "Lethality": "3.29%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "109361",
+            "Per m": 7508,
+            "Cured": "92915",
+            "InWard": "556",
+            "InICU": "151",
+            "Deaths": "3575",
+            "Active": 12871,
+            "Lethality": "3.27%",
+            "New": "+1478",
+            "NewDeaths": "+21"
         },
         {
             "Province": "Alberta",
@@ -30681,15 +30681,15 @@
             "Province": "Prince Edward Island",
             "Tests": "0",
             "Abbr": "PE",
-            "Conf.": "69",
-            "Per m": 440,
+            "Conf.": "70",
+            "Per m": 447,
             "Cured": "68",
             "InWard": "0",
             "InICU": "0",
             "Deaths": "0",
-            "Active": 1,
+            "Active": 2,
             "Lethality": "0%",
-            "New": 0,
+            "New": "+1",
             "NewDeaths": 0
         },
         {
@@ -30698,12 +30698,12 @@
             "Abbr": "YT",
             "Conf.": "39",
             "Per m": 955,
-            "Cured": "15",
+            "Cured": "23",
             "InWard": "0",
             "InICU": "0",
-            "Deaths": "23",
-            "Active": 1,
-            "Lethality": "58.97%",
+            "Deaths": "1",
+            "Active": 15,
+            "Lethality": "2.56%",
             "New": 0,
             "NewDeaths": 0
         },
@@ -30754,25 +30754,25 @@
         },
         {
             "Province": "Canada",
-            "Tests": "13455510",
+            "Tests": "13503086",
             "Abbr": "Canada",
-            "Conf.": "347465",
-            "Per m": 9244,
-            "Cured": "277224",
-            "InWard": "2243",
-            "InICU": "453",
-            "Deaths": "11732",
-            "Active": 58509,
-            "Lethality": "3.38%",
-            "New": 0,
+            "Conf.": "348944",
+            "Per m": 9284,
+            "Cured": "278597",
+            "InWard": "2276",
+            "InICU": "445",
+            "Deaths": "11731",
+            "Active": 58616,
+            "Lethality": "3.36%",
+            "New": "+1479",
             "NewDeaths": 0
         }
     ],
     "overall": {
-        "confirmed": "347465",
-        "increased": 0,
-        "recovered": "277224",
-        "death": "11732",
-        "lethality": "3.38%"
+        "confirmed": "348944",
+        "increased": 1479,
+        "recovered": "278597",
+        "death": "11731",
+        "lethality": "3.36%"
     }
 }
