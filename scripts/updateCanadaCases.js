@@ -448,7 +448,7 @@ async function updateHistoryCasesV2() {
 	// console.log(casesAsOfToday);
 
 	let date = new Date();
-	let dateString = date.getMonth() + 1 + "/" + date.getDate();
+	let dateString = date.getFullYear() + date.getMonth() + 1 + "/" + date.getDate();
 
 	if (casesAsOfToday.length > 0) {
 		if (dateString !== allDaysCases[allDaysCases.length - 1].date)
