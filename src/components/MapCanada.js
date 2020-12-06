@@ -7,7 +7,9 @@ import axios from "axios";
 export default function MapCanada() {
 	// const [data, setData] = useState([]);
 	const [loaded, setReady] = useState(false);
-	const [cases, setCases] = useState({ dates: [], data: [] });
+  const [cases, setCases] = useState({ dates: [], data: [] });
+  // NOTE: cannot set Yaxis value dynamically, it leads to too many renders
+  // const [barXaxis, setXaxis ] = useState(["QC", "ON", "AB", "BC", "NS", "SK", "MB", "NL", "NB", "PE", "YT", "NT", "NU"]);
 
 	useEffect(() => {
 		let isCanceled = false;
@@ -29,7 +31,6 @@ export default function MapCanada() {
 				setCases({
 					dates: data.cases.map(day => day.date), // for timeline component
 					data: data.cases.map(day => day.cases) // for map component
-					// barData: cases.map(day => day.cases.map(prov => prov.value))  // for bar Chart component
 				});
 			}
 		});
@@ -89,9 +90,9 @@ export default function MapCanada() {
 					axisType: "category",
 					show: true,
 					autoPlay: true,
-					playInterval: 200, // fast play, adjusted on 10th, June
+					playInterval: 500, // fast play, adjusted on 10th, June
 					data: cases.dates, // Days since the 1st cases
-					currentIndex: 0 //cases.dates.length - 7 // start to play from the last seven days
+					currentIndex: 0, //cases.dates.length - 7 // start to play from the last seven days
 				},
 				title: {
 					x: "center",
@@ -107,7 +108,7 @@ export default function MapCanada() {
 				xAxis: [
 					{
 						type: "value",
-						max: 20000, // max cases number, May 4th, 2020 adjusted
+            max: 150000, // max cases number, May 4th, 2020 adjusted
 						axisLine: { show: false },
 						axisTick: { show: false },
 						axisLabel: { show: false },
@@ -118,21 +119,8 @@ export default function MapCanada() {
 					{
 						type: "category",
 						inverse: true,
-						data: [
-							"QC",
-							"ON",
-							"AB",
-							"BC",
-							"NS",
-							"SK",
-							"MB",
-							"NL",
-							"NB",
-							"PE",
-							"YT",
-							"NT",
-							"NU"
-						]
+            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],  // 13 provinces and territories in Canada
+            // [ "QC", "ON", "AB", "BC", "MB", "SK", "NS", "NL", "NB", "PE", "YT", "NT", "NU" ]
 					}
 				],
 				grid: {
@@ -148,11 +136,51 @@ export default function MapCanada() {
 						z: 200, //make bar on top of map
 						stack: "All",
 						type: "bar",
-						barMinHeight: 25,
+            barMinHeight: 32,
+            // itemStyle: {
+            //   // normal:{
+            //     color: function(params) {
+            //       return '#cccccc';
+            //       if(params.data.value < 100) return "#9c0505";
+            //       if(params.data.value < 500) return "#ef1717";
+            //       if(params.data.value < 1000) return "#ff8c71";
+                  
+            //     // }
+            //   },
+            // },
 						label: {
-							position: "inside",
+              position: "insideRight",
+              distance: -20,
 							show: true,
-							color: "blue"
+              color: "blue", // font color
+              fontWeight: 'bold',
+              // width: 300,
+              // align: 'left',
+
+              // padding: [0, 10, 0, 10],
+              // formatter: name => (`{name|${name}}`),
+              formatter: function (params) {
+                return params.data.value + '  ' + params.data.abbr
+                // return  ['{name|' + params.data.abbr + '}',  '{value|' + params.data.value + '}'];
+                // console.log(option.xAxis.data.length);
+                // return  [`{name|${params.data.abbr}}`, `{c|${params.data.value}}`].join("");
+
+              },
+              // The rich text feature is not working well in react, e.g. the align prop doesn't work
+              // And it's not easy to align two text fragments to space between the full bar length
+              // rich: {
+              //   name: {
+              //     color: '#fff',
+              //     shadowBlur: 3,
+              //     borderWidth: 1,
+              //     borderColor: 'green',
+              //     borderRadius: 2,
+              //     // width: '200%'
+              //   },
+              //   c: {
+              //     color: 'blue',
+              //   },
+              // }
 						}
 						// name: 'Confirmed',
 						// color: 'rgb(64,141,39)',
@@ -200,34 +228,53 @@ export default function MapCanada() {
 				]
 			},
 
-			// played data changes here, one timespot(day) one data
+      // played data changes here, one timespot(day) one data
+      // returns an array, each item is one-day's data array containing provinces' daily cases
+      // how did the day case number map to the coresponding province name?
 			options: cases.data.map((dayCases, index) => {
+
+        dayCases.sort( (provA, provB) => {
+          let provAvalue =  Number(provA.value) + Number(provA.suspect ? provA.suspect : 0);
+          let provBvalue =  Number(provB.value) + Number(provB.suspect ? provB.suspect : 0);
+          return (provBvalue - provAvalue);
+        });
+
+        let repIndex = dayCases.findIndex(prov => prov.abbr === "Repatriated");
+        if(repIndex != -1) dayCases.splice(repIndex, 1);
+
+        // if(!casesDescProvs.every( (item, index) => item === barXaxis[index])) {
+        //   setXaxis(casesDescProvs);
+        // }
+
+        // console.log(JSON.stringify(casesDescProvs) === JSON.stringify(barXaxis))
+        // if(JSON.stringify(casesDescProvs) !== JSON.stringify(barXaxis)) {
+        //   setXaxis(casesDescProvs);
+
+        // }
+
+        // console.log("TESTING....",  dayCases, cases.data, casesDescProvs);
+
 				// for different days
 				return {
 					title: {
-						text:
-							"Cases by Province (clickable) on " +
-							cases.dates[index] +
-							", 2020"
+						text: "Cases by Province (clickable) on " + cases.dates[index] + ", 2020"
 					}, //by day
 					series: [
-						{
-							data: dayCases.map(
-								prov =>
-									parseInt(prov.value) +
-									parseInt(prov.suspect ? prov.suspect : 0)
-							) // for bar chart(province data)
+            { 
+              // bar data: one day's case number for all provinces
+              // the proivinces data is listed according to map data
+              data: dayCases
+              // .map(
+							// 	prov => parseInt(prov.value) + parseInt(prov.suspect ? prov.suspect : 0)
+							// ) 
 						},
-						// {
-						//   data: dayCases.map(prov => prov.suspect ? prov.suspect : ''), // for bar chart(province data)
-						// },
+
 						{
-							data: dayCases, // for map
+							data: dayCases, // map data: match map by province name
 							tooltip: {
 								formatter: ({ name, value, data }) => {
 									if (!value) {
-										return `<b>${name}</b><br />Confirmed: ${value ||
-											"No Case"}`;
+										return `<b>${name}</b><br />Confirmed: ${value || "No Case"}`;
 									}
 
 									let { cured, death, lethality } = data;
@@ -264,8 +311,9 @@ export default function MapCanada() {
 			}
 		}
 		return "83vh";
-	};
+  };
 
+  
 	return (
 		<ReactEcharts
 			style={{ height: getModerateHeight() }}
