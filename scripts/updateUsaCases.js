@@ -135,7 +135,7 @@ async function updateUsaHisCases() {
 		// extract the exact date and time(UTC time)
 		// let utcSrcDateStr = $(srcDate).text().match(/2020-([\d]{2}-[\d]{2} [\d]{2}:[\d]{2} UTC)/g).join();
 		// change UTC time to localtime(its important for the src string containing the letters 'UTC' )
-		let localSrcDateStr = moment(new Date()).format("YYYY-MM-DD");
+    let localSrcDateStr = moment(new Date()).format("YYYY-MM-DD");
 		let srcDateStr = localSrcDateStr
 			.slice(5)
 			.replace(/^0/, "")
@@ -268,12 +268,12 @@ async function _updateUsaHisCases(totalCases) {
 	let oldData = fs.readFileSync(`../public/assets/UsaCasesHistory.json`);
 	let allCases = JSON.parse(oldData).cases;
 
-	let curGMTDate = moment().toDate().toISOString("");
-
-	curGMTDate = curGMTDate
-		.slice(5, 10)
-		.replace(/^0/, "")
-		.replace(/-[0]{0,1}/, "/");
+  // let curGMTDate = moment().toDate().toISOString("");
+  let curGMTDate = moment().format("MM-DD-YYYY");
+	curGMTDate = curGMTDate.replace(/-[0]{0,1}/g, "/");
+		// .slice(5, 10)
+		// .replace(/^0/, "")
+		// .replace(/-[0]{0,1}/, "/");
 
 	let lastDay = allCases.pop();
 	let yesterdayCases = {
