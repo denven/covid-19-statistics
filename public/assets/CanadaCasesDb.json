@@ -1,5 +1,5 @@
 {
-    "date": "2020-12-31 00:00:55",
+    "date": "2020-12-31 08:01:01",
     "cases": [
         {
             "date": "1/26/2020",
@@ -34181,10 +34181,10 @@
                 {
                     "name": "Ontario",
                     "abbr": "ON",
-                    "value": "178831",
-                    "cured": "153799",
-                    "death": "4474",
-                    "lethality": "2.50%"
+                    "value": "182159",
+                    "cured": "156012",
+                    "death": "4530",
+                    "lethality": "2.49%"
                 },
                 {
                     "name": "Alberta",
@@ -34303,18 +34303,18 @@
         },
         {
             "Province": "Ontario",
-            "Tests": "7858200",
+            "Tests": "7922058",
             "Abbr": "ON",
-            "Conf.": "178831",
-            "Per m": 12138,
-            "Cured": "153799",
-            "InWard": "1177",
-            "InICU": "323",
-            "Deaths": "4474",
-            "Active": 20558,
-            "Lethality": "2.50%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "182159",
+            "Per m": 12364,
+            "Cured": "156012",
+            "InWard": "1235",
+            "InICU": "337",
+            "Deaths": "4530",
+            "Active": 21617,
+            "Lethality": "2.49%",
+            "New": "+3328",
+            "NewDeaths": "+56"
         },
         {
             "Province": "Alberta",
@@ -34498,25 +34498,25 @@
         },
         {
             "Province": "Canada",
-            "Tests": "17854243",
+            "Tests": "17918101",
             "Abbr": "Canada",
-            "Conf.": "572980",
-            "Per m": 15077,
-            "Cured": "484582",
-            "InWard": "4091",
-            "InICU": "769",
-            "Deaths": "15472",
-            "Active": 72926,
-            "Lethality": "2.70%",
-            "New": 0,
-            "NewDeaths": 0
+            "Conf.": "576308",
+            "Per m": 15164,
+            "Cured": "486795",
+            "InWard": "4149",
+            "InICU": "783",
+            "Deaths": "15528",
+            "Active": 73985,
+            "Lethality": "2.69%",
+            "New": "+3328",
+            "NewDeaths": "+56"
         }
     ],
     "overall": {
-        "confirmed": "572980",
-        "increased": 0,
-        "recovered": "484582",
-        "death": "15472",
-        "lethality": "2.70%"
+        "confirmed": "576308",
+        "increased": 3328,
+        "recovered": "486795",
+        "death": "15528",
+        "lethality": "2.69%"
     }
 }
