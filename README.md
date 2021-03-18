@@ -1,5 +1,7 @@
 https://covid19-stat.site/
 
+**Due to failure of EC2 instance, there were some data loss(not collected) during January-March, 2021.**
+
 ## Reminder
 
 - It is highly recommended to **<font size=4 color='blue'>ZOOM OUT</font>** your broswer to view all data in a single page view;
