@@ -1,6 +1,6 @@
 ## Website description
 
-https://covid19-stat.com/
+https://covid19-sdata.site/
 
 > This website was created at the early stage when COVID19 came into Canada, 2020. Due to failure of EC2 instance, there were data loss(not collected) since 1st Jan, 2021. It archived data to the end of 2020 and will not collect new data since then. As today, there are many websites providing COVID19 data, I won't spent extra time to fix it.
 
